@@ -1,56 +1,145 @@
 {
-  "version": "1.0",
-  "updated_at": "2026-05-17T08:00:00Z",
-  "_hermes_note": "Hermes updates hourly. Pull from Google Maps Distance Matrix API (Route 6 north, Route 3 south) or MassDOT 511 feed. Delay = current_seconds - free_flow_seconds.",
   "current": {
     "sagamore": {
       "name": "Sagamore Bridge",
-      "current_delay_min": 12,
-      "current_status": "moderate",
+      "current_delay_min": 0,
+      "current_status": "light",
       "direction": "off_cape",
-      "advice": "Leave by 5:42pm to beat the worst",
-      "live_speed_mph": 35,
+      "advice": "Sail through \u2014 no delays right now",
+      "live_speed_mph": 30,
       "free_flow_mph": 55,
-      "last_check": "2 min ago"
+      "last_check": "just now"
     },
     "bourne": {
       "name": "Bourne Bridge",
-      "current_delay_min": 5,
+      "current_delay_min": 0,
       "current_status": "light",
       "direction": "off_cape",
-      "advice": "Wide open right now",
-      "live_speed_mph": 50,
+      "advice": "Sail through \u2014 no delays right now",
+      "live_speed_mph": 26,
       "free_flow_mph": 55,
-      "last_check": "2 min ago"
+      "last_check": "just now"
     }
   },
   "forecast_24h": [
-    {"hour":"9 AM","sagamore_delay":8,"bourne_delay":4},
-    {"hour":"10 AM","sagamore_delay":5,"bourne_delay":3},
-    {"hour":"11 AM","sagamore_delay":3,"bourne_delay":2},
-    {"hour":"12 PM","sagamore_delay":4,"bourne_delay":3},
-    {"hour":"1 PM","sagamore_delay":6,"bourne_delay":4},
-    {"hour":"2 PM","sagamore_delay":15,"bourne_delay":8},
-    {"hour":"3 PM","sagamore_delay":22,"bourne_delay":12},
-    {"hour":"4 PM","sagamore_delay":35,"bourne_delay":18},
-    {"hour":"5 PM","sagamore_delay":48,"bourne_delay":24},
-    {"hour":"6 PM","sagamore_delay":38,"bourne_delay":20},
-    {"hour":"7 PM","sagamore_delay":18,"bourne_delay":10},
-    {"hour":"8 PM","sagamore_delay":5,"bourne_delay":3}
+    {
+      "hour": "9 AM",
+      "sagamore_delay": 8,
+      "bourne_delay": 4
+    },
+    {
+      "hour": "10 AM",
+      "sagamore_delay": 5,
+      "bourne_delay": 3
+    },
+    {
+      "hour": "11 AM",
+      "sagamore_delay": 3,
+      "bourne_delay": 2
+    },
+    {
+      "hour": "12 PM",
+      "sagamore_delay": 4,
+      "bourne_delay": 3
+    },
+    {
+      "hour": "1 PM",
+      "sagamore_delay": 6,
+      "bourne_delay": 4
+    },
+    {
+      "hour": "2 PM",
+      "sagamore_delay": 15,
+      "bourne_delay": 8
+    },
+    {
+      "hour": "3 PM",
+      "sagamore_delay": 22,
+      "bourne_delay": 12
+    },
+    {
+      "hour": "4 PM",
+      "sagamore_delay": 35,
+      "bourne_delay": 18
+    },
+    {
+      "hour": "5 PM",
+      "sagamore_delay": 48,
+      "bourne_delay": 24
+    },
+    {
+      "hour": "6 PM",
+      "sagamore_delay": 38,
+      "bourne_delay": 20
+    },
+    {
+      "hour": "7 PM",
+      "sagamore_delay": 18,
+      "bourne_delay": 10
+    },
+    {
+      "hour": "8 PM",
+      "sagamore_delay": 5,
+      "bourne_delay": 3
+    }
   ],
   "forecast_7day": [
-    {"day":"Mon","worst_hour":"5 PM","worst_delay":42,"best_hour":"6 AM","best_delay":2},
-    {"day":"Tue","worst_hour":"5 PM","worst_delay":38,"best_hour":"6 AM","best_delay":2},
-    {"day":"Wed","worst_hour":"5 PM","worst_delay":35,"best_hour":"6 AM","best_delay":2},
-    {"day":"Thu","worst_hour":"5 PM","worst_delay":40,"best_hour":"6 AM","best_delay":2},
-    {"day":"Fri","worst_hour":"4 PM","worst_delay":75,"best_hour":"5 AM","best_delay":2},
-    {"day":"Sat","worst_hour":"11 AM","worst_delay":48,"best_hour":"6 AM","best_delay":3},
-    {"day":"Sun","worst_hour":"11 AM","worst_delay":62,"best_hour":"5 AM","best_delay":2}
+    {
+      "day": "Mon",
+      "worst_hour": "5 PM",
+      "worst_delay": 42,
+      "best_hour": "6 AM",
+      "best_delay": 2
+    },
+    {
+      "day": "Tue",
+      "worst_hour": "5 PM",
+      "worst_delay": 38,
+      "best_hour": "6 AM",
+      "best_delay": 2
+    },
+    {
+      "day": "Wed",
+      "worst_hour": "5 PM",
+      "worst_delay": 35,
+      "best_hour": "6 AM",
+      "best_delay": 2
+    },
+    {
+      "day": "Thu",
+      "worst_hour": "5 PM",
+      "worst_delay": 40,
+      "best_hour": "6 AM",
+      "best_delay": 2
+    },
+    {
+      "day": "Fri",
+      "worst_hour": "4 PM",
+      "worst_delay": 75,
+      "best_hour": "5 AM",
+      "best_delay": 2
+    },
+    {
+      "day": "Sat",
+      "worst_hour": "11 AM",
+      "worst_delay": 48,
+      "best_hour": "6 AM",
+      "best_delay": 3
+    },
+    {
+      "day": "Sun",
+      "worst_hour": "11 AM",
+      "worst_delay": 62,
+      "best_hour": "5 AM",
+      "best_delay": 2
+    }
   ],
   "best_times_to_leave": {
     "off_cape_sunday": "Before 8 AM or after 7 PM",
     "off_cape_weekday": "Before 2 PM or after 7 PM",
     "on_cape_friday": "Before 10 AM or after 9 PM",
     "on_cape_saturday": "Before 8 AM"
-  }
+  },
+  "version": "1.0",
+  "updated_at": "2026-05-20T17:49:32Z"
 }
