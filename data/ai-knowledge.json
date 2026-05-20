@@ -1,0 +1,86 @@
+{
+  "version": "1.0",
+  "_hermes_note": "AI knowledge base for the local Concierge. The app scores user questions against keyword patterns and returns the highest-match response. Hermes-optional: replace this with a Claude API proxy URL via window.TCC_AI_ENDPOINT for live AI responses.",
+  "patterns": [
+    {
+      "id": "beach_today",
+      "keywords": ["beach today", "best beach", "which beach", "what beach", "beach now"],
+      "response": "**Best beach right now:** Skaket Beach in Orleans. Bay-side, water is 66°F, parking still wide open per latest update. Low tide hits at 2:14pm — perfect timing to walk a half-mile out on the flats. Free parking after 5pm. If you want surf, head to Marconi Beach in Wellfleet instead (41 spots open, 64°F)."
+    },
+    {
+      "id": "lobster_roll",
+      "keywords": ["lobster", "lobster roll", "best lobster", "where lobster"],
+      "response": "**Locals' lobster roll pick:** Skip Arnold's on Route 6 (1hr wait right now). Drive 12 min to **The Friendly Fisherman in Eastham** — same family, $4 cheaper, no line. Order it cold with mayo, not hot with butter. If you're up Cape, **Sesuit Harbor Café in Dennis** is the sleeper hit — BYOB, outdoor harbor seating, $24 roll."
+    },
+    {
+      "id": "rainy_day",
+      "keywords": ["rain", "rainy", "raining", "indoor", "wet weather"],
+      "response": "**Rainy afternoon plan:**\n\n• **Sandwich Glass Museum** (Sandwich · $12 · glassblowing demo at 3pm)\n• **Cape Cod Aquarium** in Brewster if you've got kids ($8)\n• **JFK Hyannis Museum** ($15) — the First Family on the Cape\n• Cinnamon buns at **Hot Chocolate Sparrow in Orleans** to round it out\n\nIf you're up Cape, the **Provincetown Art Association Museum** is great rainy-day art."
+    },
+    {
+      "id": "kids",
+      "keywords": ["kids", "family", "children", "child", "toddler", "5 year", "8 year", "young"],
+      "response": "**Family plan, kids in tow:** Head to **Skaket Beach in Orleans** — at low tide the flats stretch a half-mile and kids will lose their minds chasing hermit crabs. After: **Sundae School Ice Cream in Dennis** for the hot fudge ($6). If it's hot, **Cape Cod Inflatable Park in East Wareham** is the all-day winner. **Adventure Isle in South Yarmouth** for mini-golf + go-karts is great evening fun."
+    },
+    {
+      "id": "sunset",
+      "keywords": ["sunset", "evening", "watch sunset", "where sunset", "best view"],
+      "response": "**Tonight's sunset is 8:02 PM.** Best spot: **Skaket Beach in Orleans** — bay-side, low tide flats reflect the light. Get there by 7:15pm. Free parking after 5pm.\n\nAlternatives:\n• **Race Point Beach in P-Town** — the dramatic one\n• **Rock Harbor in Orleans** — bay-side, parking right at the water\n• **Mayflower Beach in Dennis** — family-friendly + ice cream nearby"
+    },
+    {
+      "id": "breakfast",
+      "keywords": ["breakfast", "brunch", "coffee", "morning", "donuts", "bagel"],
+      "response": "**Locals' breakfast picks:**\n\n• **Spoon and Seed in Hyannis** — smoked salmon hash, opens 7am\n• **PB Boulangerie in Wellfleet** — French bakery, worth the line\n• **Hole in One Donuts in Eastham** — Cape Sunday tradition\n• **Marshside in East Dennis** — water-view Sunday brunch\n\nFor coffee on the run: **Hot Chocolate Sparrow in Orleans** — cinnamon buns + iced lattes."
+    },
+    {
+      "id": "live_music",
+      "keywords": ["music", "live music", "concert", "band", "tonight music"],
+      "response": "**Tonight's music:**\n\n• 🎵 **The Wailers at Beachcomber (Wellfleet)** — 9pm, $25 cover\n• 🎷 **Stone Highway at The Squire (Chatham)** — 8:30pm, $10\n• 🎤 **Open Mic at The Mews (P-Town)** — 8pm, free\n• 🎺 **Sunset Concert · Chatham Bandstand** — 7:30pm, free (Tom Yates Band)\n• 🍷 **Wine + Jazz at Truro Vineyards** — 6-9pm, $15 flight\n\nCheck the Today tab for the full updated list."
+    },
+    {
+      "id": "happy_hour",
+      "keywords": ["happy hour", "drinks deal", "drink special", "deal", "discount"],
+      "response": "**Happy hour right now:**\n\n• **Sundancers (Dennis)** — half-off oysters til 6pm ($1.50 each)\n• **Aqua Grille (Sandwich)** — $5 cocktails 4-6pm\n• **The Squire (Chatham)** — $3 drafts til 6pm\n\nThe Sundancers deck is open and oyster prices are unreal — that's where I'd go."
+    },
+    {
+      "id": "whale_watch",
+      "keywords": ["whale", "whales", "see whale", "humpback", "whale watch"],
+      "response": "**Whale sightings today:** 3 humpbacks at Stellwagen Bank North reported 48 min ago. A pair was breaching at Race Point Channel this morning. The fastest way to see them is the **Provincetown Whale Watch** boat from MacMillan Pier — $65/adult, 3.5 hour trip, sightings guaranteed or you ride again free. Best afternoon trip leaves at 2pm. Check the Whale Spotter tab for live updates."
+    },
+    {
+      "id": "where_eat_dinner",
+      "keywords": ["dinner", "eat tonight", "where eat", "restaurant tonight", "where dinner"],
+      "response": "**Dinner picks tonight by vibe:**\n\n• **Splurge:** Mac's Shack in Wellfleet — fresh oysters, raw bar, $$$\n• **Local:** The Bookstore & Restaurant in Wellfleet — locals' joint\n• **Bay views:** Sesuit Harbor Café in Dennis — BYOB outdoor harbor\n• **Quick:** Friendly Fisherman in Eastham — fish market sandwiches\n• **Romantic:** The Lobster Pot in P-Town — sunset water views\n• **Family:** Cobie's Clam Shack in Brewster — roadside classic"
+    },
+    {
+      "id": "bridge_traffic",
+      "keywords": ["bridge", "traffic", "off cape", "leaving cape", "when leave"],
+      "response": "**Current bridges:**\n• Sagamore: 12 min delay (moderate)\n• Bourne: 5 min delay (light, wide open right now)\n\n**Tonight's projection:** Sagamore peaks at 48 min around 5pm. Bourne stays under 30. If you're heading off Cape, leave by 5:42pm to beat the worst — or wait until after 7pm.\n\n**This Sunday:** Worst delay 62 min at 11am. Leave before 8am or after 7pm. Bourne is consistently lighter than Sagamore — use it."
+    },
+    {
+      "id": "lighthouse",
+      "keywords": ["lighthouse", "lighthouses", "light tower"],
+      "response": "**Cape Cod lighthouses worth visiting today:**\n\n• **Nauset Light (Eastham)** — the iconic red-and-white one, free audio tour in the app\n• **Highland Light (Truro)** — oldest on the Cape, 1797, museum on site\n• **Race Point (P-Town)** — most remote, requires beach walk\n• **Nobska Point (Falmouth)** — easiest access, drive right up\n• **Chatham Light** — best sunset spot, walking distance from town\n\nDownload Pro to unlock all 12 audio tours."
+    },
+    {
+      "id": "free_things",
+      "keywords": ["free", "cheap", "no cost", "budget"],
+      "response": "**Free Cape Cod tonight:**\n\n• Chatham Bandstand sunset concert — 7:30pm\n• Wellfleet Gallery Walk — 5-8pm, 15+ galleries\n• Movie on the Lawn in Hyannis — 8pm at Aselton Park\n• Open Mic at The Mews (P-Town) — 8pm\n• P-Town Aquarium seal feeding — daily at 2pm\n\nAlways free: every National Seashore beach off-season, Cape Cod Rail Trail, Province Lands dunes, Bass Hole Boardwalk in Yarmouth."
+    },
+    {
+      "id": "outer_cape",
+      "keywords": ["wellfleet", "truro", "provincetown", "outer cape", "p-town", "ptown"],
+      "response": "**Outer Cape essentials:**\n\n• **Wellfleet:** Mac's Shack, oyster farm tour, Cahoon Hollow Beach + Beachcomber\n• **Truro:** Highland Light, Truro Vineyards, Head of Meadow Beach\n• **P-Town:** Race Point sunset, Pilgrim Monument, Crown & Anchor cabaret, Lobster Pot dinner\n\nDon't miss the **Wellfleet Drive-In** — open tonight showing Top Gun Maverick, $14/car, cash only."
+    },
+    {
+      "id": "tide",
+      "keywords": ["tide", "tides", "low tide", "high tide", "when tide"],
+      "response": "**Today's tides (Chatham reference):**\n• High: 3:48 AM (9.2 ft)\n• Low: 10:14 AM (-0.4 ft)\n• High: 4:22 PM (9.5 ft)\n• Low: 10:38 PM (-0.2 ft)\n\nFor tide-flat walking go to Skaket or Mayflower around 2pm. For shellfishing, that's a great low tide. Surf cast at the incoming tide between 11am and 3pm."
+    },
+    {
+      "id": "fallback",
+      "keywords": [],
+      "response": "Great question! Try asking me about: **best beach today**, **lobster rolls**, **rainy day with kids**, **sunset tonight**, **live music**, **happy hour deals**, **bridge traffic**, **whale watching**, **lighthouses**, or **free things to do**. I'm tuned for Cape Cod questions — give me one!"
+    }
+  ]
+}

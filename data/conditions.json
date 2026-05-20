@@ -1,0 +1,42 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-05-17T05:00:00Z",
+  "_hermes_note": "Hermes overwrites this daily at 5am ET. Sunrise/sunset from sunrise-sunset.org API (free). Tides from NOAA Tides API station 8447435 (Chatham). Weather from weather.gov free API.",
+  "today": {
+    "date": "2026-05-17",
+    "weather": {
+      "temp_high": 72,
+      "temp_low": 58,
+      "condition": "Sunny",
+      "icon": "☀️",
+      "wind_mph": 8,
+      "wind_dir": "SW",
+      "humidity": 65,
+      "uv_index": 7
+    },
+    "sun": {
+      "sunrise": "5:24 AM",
+      "sunset": "8:02 PM",
+      "civil_twilight_end": "8:32 PM",
+      "best_sunset_spot": {"name":"Skaket Beach","town":"Orleans","reason":"Bay side, low tide flats reflect light"}
+    },
+    "tides": [
+      {"time":"3:48 AM","type":"high","height_ft":9.2},
+      {"time":"10:14 AM","type":"low","height_ft":-0.4},
+      {"time":"4:22 PM","type":"high","height_ft":9.5},
+      {"time":"10:38 PM","type":"low","height_ft":-0.2}
+    ],
+    "water_temp_f": 64,
+    "swell_height_ft": 2,
+    "swell_period_sec": 8
+  },
+  "forecast_7day": [
+    {"date":"2026-05-18","day":"Mon","temp_high":75,"temp_low":60,"condition":"Sunny","icon":"☀️","sunrise":"5:23 AM","sunset":"8:03 PM","low_tide":"10:48 AM","high_tide":"4:56 PM","water_temp":64},
+    {"date":"2026-05-19","day":"Tue","temp_high":78,"temp_low":62,"condition":"Partly Cloudy","icon":"⛅","sunrise":"5:22 AM","sunset":"8:04 PM","low_tide":"11:24 AM","high_tide":"5:32 PM","water_temp":65},
+    {"date":"2026-05-20","day":"Wed","temp_high":71,"temp_low":59,"condition":"Showers","icon":"🌧️","sunrise":"5:21 AM","sunset":"8:05 PM","low_tide":"12:00 PM","high_tide":"6:12 PM","water_temp":63},
+    {"date":"2026-05-21","day":"Thu","temp_high":68,"temp_low":56,"condition":"Cloudy","icon":"☁️","sunrise":"5:20 AM","sunset":"8:06 PM","low_tide":"12:42 PM","high_tide":"6:56 PM","water_temp":62},
+    {"date":"2026-05-22","day":"Fri","temp_high":74,"temp_low":58,"condition":"Sunny","icon":"☀️","sunrise":"5:19 AM","sunset":"8:07 PM","low_tide":"1:24 PM","high_tide":"7:42 PM","water_temp":64},
+    {"date":"2026-05-23","day":"Sat","temp_high":79,"temp_low":63,"condition":"Sunny","icon":"☀️","sunrise":"5:19 AM","sunset":"8:08 PM","low_tide":"2:12 PM","high_tide":"8:30 PM","water_temp":66},
+    {"date":"2026-05-24","day":"Sun","temp_high":81,"temp_low":65,"condition":"Sunny","icon":"☀️","sunrise":"5:18 AM","sunset":"8:09 PM","low_tide":"3:04 PM","high_tide":"9:22 PM","water_temp":67}
+  ]
+}

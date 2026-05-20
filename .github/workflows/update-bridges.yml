@@ -1,0 +1,38 @@
+name: "[hermes] bridges"
+
+on:
+  schedule:
+    # Every hour from 10:00 UTC (6 AM ET) to 03:00 UTC (11 PM ET) — 18 runs/day.
+    - cron: "0 10-23,0-3 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: bridges
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r scripts/requirements.txt
+      - run: python scripts/update_bridges.py
+        env:
+          GOOGLE_MAPS_KEY: ${{ secrets.GOOGLE_MAPS_KEY }}
+      - name: Commit & push if changed
+        run: |
+          git config user.name "hermes-bot"
+          git config user.email "hermes-bot@users.noreply.github.com"
+          git add data/bridges.json
+          if git diff --cached --quiet; then
+            echo "no changes"
+            exit 0
+          fi
+          git commit -m "[hermes] bridges.json update $(date -u +%F-%H%M)"
+          git push

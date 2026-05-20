@@ -1,0 +1,111 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-05-19T17:51:43Z",
+  "_hermes_note": "Hermes appends new sightings from operator SMS webhook + user submissions. Auto-prune entries older than 7 days. Operators: PWW (Provincetown Whale Watch), DF (Dolphin Fleet), HWW (Hyannis Whale Watcher).",
+  "recent_sightings": [
+    {
+      "id": "w001",
+      "species": "humpback",
+      "count": 3,
+      "lat": 42.18,
+      "lng": -70.32,
+      "location": "Stellwagen Bank North",
+      "reported_by": "Provincetown Whale Watch",
+      "reported_at": "2026-05-17T13:42:00Z",
+      "time_ago": "48 min ago",
+      "photo_url": "",
+      "notes": "Mother + calf + escort, surface feeding"
+    },
+    {
+      "id": "w002",
+      "species": "fin",
+      "count": 1,
+      "lat": 42.21,
+      "lng": -70.28,
+      "location": "Stellwagen Bank East",
+      "reported_by": "Dolphin Fleet",
+      "reported_at": "2026-05-17T12:15:00Z",
+      "time_ago": "2 hr ago",
+      "photo_url": "",
+      "notes": "Large solo fin whale, traveling south"
+    },
+    {
+      "id": "w003",
+      "species": "seal",
+      "count": 150,
+      "lat": 41.662,
+      "lng": -69.9612,
+      "location": "Monomoy Island",
+      "reported_by": "Operator",
+      "reported_at": "2026-05-17T10:30:00Z",
+      "time_ago": "4 hr ago",
+      "photo_url": "",
+      "notes": "Harbor seals hauled out on sandbar"
+    },
+    {
+      "id": "w004",
+      "species": "humpback",
+      "count": 2,
+      "lat": 42.08,
+      "lng": -70.21,
+      "location": "Race Point Channel",
+      "reported_by": "PWW",
+      "reported_at": "2026-05-17T09:18:00Z",
+      "time_ago": "5 hr ago",
+      "photo_url": "",
+      "notes": "Pair breaching repeatedly"
+    },
+    {
+      "id": "w005",
+      "species": "minke",
+      "count": 1,
+      "lat": 42.05,
+      "lng": -70.18,
+      "location": "Off Race Point",
+      "reported_by": "User: anonymous",
+      "reported_at": "2026-05-17T07:55:00Z",
+      "time_ago": "6 hr ago",
+      "photo_url": "",
+      "notes": "Quick spot from shore"
+    },
+    {
+      "id": "w006",
+      "species": "seal",
+      "count": 40,
+      "lat": 41.6814,
+      "lng": -69.9544,
+      "location": "Chatham Fish Pier",
+      "reported_by": "User: tourist123",
+      "reported_at": "2026-05-16T16:20:00Z",
+      "time_ago": "Yesterday",
+      "photo_url": "",
+      "notes": "Gray seals waiting for fish scraps"
+    },
+    {
+      "id": "w007",
+      "species": "humpback",
+      "count": 1,
+      "lat": 42.16,
+      "lng": -70.3,
+      "location": "Stellwagen Bank",
+      "reported_by": "Hyannis Whale Watcher",
+      "reported_at": "2026-05-16T14:00:00Z",
+      "time_ago": "Yesterday",
+      "photo_url": "",
+      "notes": "Big breach, photographed"
+    },
+    {
+      "id": "w008",
+      "species": "dolphin",
+      "count": 12,
+      "lat": 41.96,
+      "lng": -70.05,
+      "location": "Off Wellfleet Harbor",
+      "reported_by": "Local fisherman",
+      "reported_at": "2026-05-16T11:30:00Z",
+      "time_ago": "Yesterday",
+      "photo_url": "",
+      "notes": "Atlantic white-sided dolphins"
+    }
+  ]
+}
