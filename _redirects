@@ -1,12 +1,14 @@
-# Old PWA URLs → new locations (301 = permanent for SEO)
-/app.html         /app                301!
-/index.html       /                   301!
+# Force rewrites for /app — the trailing ! makes these win over the static
+# app.html file at the repo root (which would otherwise be served by Netlify's
+# pretty-URL matching before _redirects rules run).
+/app               /app/index.html    200!
+/app/              /app/index.html    200!
 
-# PWA at /app/ uses relative paths for data + manifest — rewrite them to repo root.
-# 200 = rewrite (URL stays /app/...) so the PWA's fetch('data/foo.json') still works.
-/app/data/*        /data/:splat       200
-/app/manifest.json /manifest.json     200
+# Old PWA URLs → new locations (301 = permanent for SEO).
+/app.html          /app                301!
+/index.html        /                   301!
 
-# Pretty URL: /app → serves the PWA without a 404 detour
-/app               /app/index.html    200
-/app/              /app/index.html    200
+# PWA at /app/ uses relative paths for data + manifest — rewrite back to root.
+# 200 = rewrite (URL stays /app/...) so the PWA's fetch('data/foo.json') resolves.
+/app/data/*        /data/:splat        200
+/app/manifest.json /manifest.json      200
