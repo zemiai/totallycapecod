@@ -1,2 +1,12 @@
-/app.html  /app/  301!
-/index.html  /  301!
+# Old PWA URLs → new locations (301 = permanent for SEO)
+/app.html         /app                301!
+/index.html       /                   301!
+
+# PWA at /app/ uses relative paths for data + manifest — rewrite them to repo root.
+# 200 = rewrite (URL stays /app/...) so the PWA's fetch('data/foo.json') still works.
+/app/data/*        /data/:splat       200
+/app/manifest.json /manifest.json     200
+
+# Pretty URL: /app → serves the PWA without a 404 detour
+/app               /app/index.html    200
+/app/              /app/index.html    200

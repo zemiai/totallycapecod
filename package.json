@@ -1,0 +1,9 @@
+{
+  "name": "totallycapecod",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Totally Cape Cod PWA — static site + Netlify functions for email capture and sponsored listings.",
+  "dependencies": {
+    "@netlify/blobs": "^8.0.0"
+  }
+}

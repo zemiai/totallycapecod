@@ -1,0 +1,25 @@
+# Netlify build configuration — locked in via file so UI changes can't break it.
+#
+# This is a static site (no build step) with two serverless functions:
+#   - netlify/functions/email-capture.js   (newsletter signup → Netlify Blobs)
+#   - netlify/functions/sponsored-submit.js (paid business listings → Netlify Blobs)
+#
+# package.json at the repo root declares @netlify/blobs so the functions bundle correctly.
+
+[build]
+  publish = "."
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Long-cache for the heavy assets, short-cache for HTML + JSON so updates appear fast.
+[[headers]]
+  for = "/data/*.json"
+  [headers.values]
+    Cache-Control = "public, max-age=60, must-revalidate"
+
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=300, must-revalidate"
