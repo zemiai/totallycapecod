@@ -1,14 +1,16 @@
-# Force rewrites for /app — the trailing ! makes these win over the static
-# app.html file at the repo root (which would otherwise be served by Netlify's
-# pretty-URL matching before _redirects rules run).
+# Root → serve the PWA. URL bar stays at /, but the content is the app.
+# This makes the first-touch experience the live tide/beach data, not marketing.
+/                  /app/index.html    200!
+
+# Keep /app and /app/ working too — for anyone who bookmarked or shared the old URL.
 /app               /app/index.html    200!
 /app/              /app/index.html    200!
 
-# Old PWA URLs → new locations (301 = permanent for SEO).
-/app.html          /app                301!
+# Old paths kept for backwards compatibility.
+/app.html          /                   301!
 /index.html        /                   301!
 
-# PWA at /app/ uses relative paths for data + manifest — rewrite back to root.
-# 200 = rewrite (URL stays /app/...) so the PWA's fetch('data/foo.json') resolves.
+# When the PWA is accessed via /app/ directly, its relative `data/foo.json`
+# fetches resolve to /app/data/foo.json — rewrite those back to the real files.
 /app/data/*        /data/:splat        200
 /app/manifest.json /manifest.json      200
