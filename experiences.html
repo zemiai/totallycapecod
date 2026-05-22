@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1A3A6C" />
+<title>Cape Cod Experiences — Whale Watching, Sailing, Tours & Adventures</title>
+<meta name="description" content="Book the best experiences on Cape Cod. Whale watching, sailing, lighthouse tours, kayaking, and more. Compare prices and reserve your spot." />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+<link rel="stylesheet" href="css/tcc.css" />
+<style>
+.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+@media(max-width:768px){.exp-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.exp-grid{grid-template-columns:1fr;}}
+.exp-card{background:white;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);transition:transform var(--transition-base),box-shadow var(--transition-base);}
+.exp-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);}
+.exp-card .cover{height:160px;background-size:cover;background-position:center;position:relative;}
+.exp-card .cover::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.35) 0%,transparent 50%);}
+.exp-card .price-pill{position:absolute;bottom:10px;right:10px;padding:4px 10px;border-radius:999px;font-size:11px;font-weight:700;color:white;background:var(--cape-navy);z-index:1;}
+.exp-card .body{padding:14px;}
+.exp-card h3{font-weight:700;font-size:16px;margin:0 0 4px;}
+.exp-card .meta{font-size:12px;color:var(--text-secondary);margin-bottom:8px;}
+.exp-card .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
+.exp-card .tag{font-size:11px;font-weight:600;background:var(--cape-cream);color:var(--cape-brown-dark);padding:3px 8px;border-radius:6px;}
+.exp-card .actions{display:flex;gap:8px;}
+.exp-card .actions a{flex:1;text-align:center;padding:8px;border-radius:10px;font-size:12px;font-weight:700;text-decoration:none;}
+.exp-card .actions .btn-view{background:var(--cape-navy);color:white;}
+.exp-card .actions .btn-book{background:var(--cape-cream);color:var(--cape-brown-dark);border:1px solid var(--divider);}
+</style>
+</head>
+<body>
+<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/app/">📱 App</a></div><button class="nav-mobile-toggle" onclick="toggleMobileMenu()">☰</button></div></nav>
+<div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()"><a href="/">Home</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/events.html">Events</a><a href="/itinerary.html">Plan My Trip</a><a href="/app/">📱 Open the App</a></div></div>
+
+<section class="hero" style="min-height:50vh;"><div class="hero-overlay"></div><div class="hero-content" style="padding-top:80px;"><div class="hero-badge">⛵ Cape Cod Adventures</div><h1 class="hero-title">Experiences & <span class="script">Tours</span></h1><p class="hero-subtitle">Whale watching, sailing, lighthouse tours, and hidden adventures. Book directly and skip the lines.</p></div></section>
+
+<section class="section page-wrap">
+<div class="filter-bar">
+<div class="filter-chip active" onclick="filterExp('all',this)">All</div>
+<div class="filter-chip" onclick="filterExp('whale',this)">🐋 Whale Watching</div>
+<div class="filter-chip" onclick="filterExp('sailing',this)">⛵ Sailing</div>
+<div class="filter-chip" onclick="filterExp('kayak',this)">🛶 Kayaking</div>
+<div class="filter-chip" onclick="filterExp('lighthouse',this)">💡 Lighthouses</div>
+<div class="filter-chip" onclick="filterExp('bike',this)">🚲 Biking</div>
+</div>
+
+<div class="affiliate-band" style="margin-bottom:20px;">
+<div><div class="label">🎫 Book on Viator</div><div class="title">Skip the lines — reserve Cape Cod experiences in advance</div></div>
+<a href="https://www.viator.com/Cape-Cod/d5265-ttd" target="_blank" rel="noopener" class="btn btn-navy btn-sm" onclick="gtag('event','affiliate_click',{type:'viator',location:'experiences_banner'})">Browse →</a>
+</div>
+
+<div class="exp-grid" id="expGrid"></div>
+
+<div class="card" style="padding:24px; margin-top:32px;">
+<h3 style="font-family:'Fraunces',serif; font-weight:900; font-size:20px; margin:0 0 6px; color:var(--cape-brown-dark);">⭐ Top 3 Must-Do Experiences This Summer</h3>
+<div class="grid-3" style="margin-top:16px;">
+<div class="card" style="padding:16px;"><div style="font-size:28px; margin-bottom:8px;">🐋</div><div style="font-weight:700; font-size:15px; margin-bottom:4px;">Whale Watch from Provincetown</div><div style="font-size:13px; color:var(--text-secondary);">3-4 hours. Humpback, finback, and minke guaranteed mid-summer.</div></div>
+<div class="card" style="padding:16px;"><div style="font-size:28px; margin-bottom:8px;">💡</div><div style="font-weight:700; font-size:15px; margin-bottom:4px;">Lighthouse Self-Guided Tour</div><div style="font-size:13px; color:var(--text-secondary);">12 lighthouses, audio stories, and the best photo ops on the Cape.</div></div>
+<div class="card" style="padding:16px;"><div style="font-size:28px; margin-bottom:8px;">⛵</div><div style="font-weight:700; font-size:15px; margin-bottom:4px;">Sunset Sail from Hyannis</div><div style="font-size:13px; color:var(--text-secondary);">2 hours on the water. Bring wine and watch the sun melt into the sound.</div></div>
+</div>
+</div>
+
+<div class="card" style="padding:24px; margin-top:20px; text-align:center;">
+<h3 style="font-family:'Fraunces',serif; font-weight:900; font-size:20px; margin:0 0 6px; color:var(--cape-brown-dark);">Run a Tour or Experience?</h3>
+<p style="color:var(--text-secondary); font-size:14px; margin:0 0 14px;">List your business and get booked by visitors planning their Cape Cod trip.</p>
+<a href="/submit.html?type=sponsored" class="btn btn-primary">List Your Business →</a>
+</div>
+</section>
+
+<footer class="site-footer">
+<div class="footer-inner"><div><div class="footer-brand">Totally Cape Cod</div><p class="footer-desc">The unofficial guide to the best of Cape Cod.</p></div>
+<div class="footer-links"><div class="footer-heading">Explore</div><a href="/beaches.html">Beaches</a><a href="/eats.html">Restaurants</a><a href="/stays.html">Hotels</a><a href="/experiences.html">Experiences</a></div>
+<div class="footer-links"><div class="footer-heading">Plan</div><a href="/itinerary.html">Itinerary Builder</a><a href="/app/">Get the App</a><a href="/hidden-gems.html">Hidden Gems</a></div>
+</div>
+<div class="footer-bottom">© 2026 Totally Cape Cod. Affiliate links help keep this guide free.</div>
+</footer>
+
+<script>
+function toggleMobileMenu(){document.getElementById('mobileMenu').classList.toggle('show');}
+const exps=[
+{name:"Provincetown Whale Watch",town:"Provincetown",price:"$65",duration:"3-4 hrs",rating:4.7,tags:["whale"],img:"https://images.unsplash.com/photo-1568430462989-44163eb1752f?w=600&q=80",desc:"Guaranteed sightings mid-summer. Naturalist on board. One of the best whale watches in the world."},
+{name:"Cape Cod Canal Bike Tour",town:"Bourne to Provincetown",price:"$45",duration:"2 hrs",rating:4.5,tags:["bike"],img:"https://images.unsplash.com/photo-1485965120184-e224f7a1d7f6?w=600&q=80",desc:"Flat, scenic 7-mile path along the canal. Great for families and casual riders."},
+{name:"Sunset Sail — Bay Spirit",town:"Hyannis",price:"$55",duration:"2 hrs",rating:4.6,tags:["sailing"],img:"https://images.unsplash.com/photo-1500514966906-fe245eea9344?w=600&q=80",desc:"Catamaran sunset cruise with drinks and music. Pure magic on the water."},
+{name:"Wellfleet Bay Wildlife Sanctuary",town:"Wellfleet",price:"$8",duration:"2-3 hrs",rating:4.8,tags:["kayak"],img:"https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80",desc:"Kayak through tidal creeks and salt marshes. Guided tours available."},
+{name:"Highland Lighthouse Tour",town:"Truro",price:"$10",duration:"1 hr",rating:4.6,tags:["lighthouse"],img:"https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80",desc:"Climb to the top for panoramic views of the National Seashore."},
+{name:"Dolphin Fleet Whale Watch",town:"Provincetown",price:"$58",duration:"3-4 hrs",rating:4.7,tags:["whale"],img:"https://images.unsplash.com/photo-1568430462989-44163eb1752f?w=600&q=80",desc:"Smaller boats, closer encounters. Researchers on every trip."},
+{name:"Cape Cod Rail Trail",town:"Dennis to Wellfleet",price:"Free",duration:"3-4 hrs",rating:4.5,tags:["bike"],img:"https://images.unsplash.com/photo-1485965120184-e224f7a1d7f6?w=600&q=80",desc:"25 miles of paved trail through woods, ponds, and beaches."},
+{name:"Nauset Marsh Kayak Tour",town:"Eastham",price:"$60",duration:"2.5 hrs",rating:4.7,tags:["kayak"],img:"https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80",desc:"Paddle through marshes with seals and ospreys. Guided by naturalists."},
+{name:"Chatham Lighthouse Beach Walk",town:"Chatham",price:"Free",duration:"1-2 hrs",rating:4.4,tags:["lighthouse"],img:"https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80",desc:"Iconic lighthouse + dramatic erosion cliffs. Great for photography."},
+{name:"Pirates Cove Mini Golf",town:"South Yarmouth",price:"$15",duration:"1.5 hrs",rating:4.3,tags:["family"],img:"https://images.unsplash.com/photo-1534234828563-025cf17ebb12?w=600&q=80",desc:"Two 18-hole courses. Classic Cape Cod family fun."},
+];
+let expFilter='all';
+function renderExps(){
+  const grid=document.getElementById('expGrid');
+  const filtered=expFilter==='all'?exps:exps.filter(e=>e.tags.includes(expFilter));
+  grid.innerHTML=filtered.map(e=>`
+    <div class="exp-card">
+      <div class="cover" style="background-image:url('${e.img}')"><span class="price-pill">${e.price}</span></div>
+      <div class="body">
+        <h3>${e.name}</h3>
+        <div class="meta">${e.town} · ${e.duration} · ⭐ ${e.rating}</div>
+        <div class="tags">${e.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+        <p style="font-size:13px;color:var(--text-secondary);margin:0 0 10px;line-height:1.5;">${e.desc}</p>
+        <div class="actions">
+          <a href="https://www.viator.com/searchResults/all?text=${encodeURIComponent(e.name)}" target="_blank" rel="noopener" class="btn-view" onclick="gtag('event','affiliate_click',{type:'viator',item:'${e.name}',location:'experiences_card'})">Book on Viator</a>
+          <a href="https://www.tripadvisor.com/Search?q=${encodeURIComponent(e.name+' Cape Cod')}" target="_blank" rel="noopener" class="btn-book" onclick="gtag('event','affiliate_click',{type:'tripadvisor',item:'${e.name}',location:'experiences_card'})">Reviews</a>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+function filterExp(tag,el){document.querySelectorAll('.filter-chip').forEach(c=>c.classList.remove('active'));el.classList.add('active');expFilter=tag;renderExps();gtag('event','filter_click',{category:'experiences',filter:tag});}
+renderExps();
+</script>
+</body>
+</html>

@@ -2,1256 +2,760 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#1A3A6C" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<meta name="apple-mobile-web-app-title" content="Totally Cape Cod" />
+<title>Totally Cape Cod — Plan Your Perfect Summer 2026</title>
+<meta name="description" content="The best beaches, hidden gems, restaurants, and events on Cape Cod. Plan your perfect summer with Totally Cape Cod." />
+<meta name="keywords" content="Cape Cod, beaches, things to do, restaurants, hotels, summer 2026, Provincetown, Nantucket, Martha's Vineyard" />
+<meta property="og:title" content="Totally Cape Cod — Plan Your Perfect Summer 2026" />
+<meta property="og:description" content="The best beaches, hidden gems, restaurants, and events on Cape Cod." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://totallycapecod.netlify.app/" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<link rel="stylesheet" href="css/tcc.css" />
 <link rel="manifest" href="manifest.json" />
 <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIgMTkyIj48cmVjdCB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgZmlsbD0iIzVDM0QyRSIgcng9IjQyIi8+PHRleHQgeD0iOTYiIHk9IjEyMCIgZm9udC1mYW1pbHk9InNlcmlmIiBmb250LXNpemU9IjEwMCIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI0Y0RUNEOCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+VDwvdGV4dD48L3N2Zz4=" />
-<title>Totally Cape Cod</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-  :root {
-    --cape-brown:#5C3D2E; --cape-brown-dark:#3E2A20;
-    --cape-cream:#F4ECD8; --cape-sand:#E8DCC4;
-    --cape-navy:#1A3A6C; --cape-navy-dark:#122B52;
-    --cape-off:#FFFEF7;
-    --ios-bg:#F2F2F7; --ios-card:#FFFFFF; --ios-text:#1C1C1E; --ios-sub:#8E8E93; --ios-divider:#E5E5EA;
-    --gold:#C99A4A; --gold-dark:#A77C30;
-    --status-open:#34C759; --status-mid:#FF9500; --status-full:#FF3B30;
+  /* Homepage-specific styles */
+  .hero-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+  .directory-preview {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 32px;
   }
-  *{ -webkit-tap-highlight-color:transparent; box-sizing:border-box; }
-  html,body{ margin:0; padding:0; min-height:100vh; background:var(--ios-bg); overscroll-behavior:none; }
-  body{ font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; color:var(--ios-text); padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
-  .font-display{ font-family:'Fraunces',serif; }
-
-  .app-shell{ width:100%; min-height:100vh; display:flex; flex-direction:column; max-width:480px; margin:0 auto; background:var(--ios-bg); position:relative; }
-  @media (min-width:768px){
-    body{ background:linear-gradient(135deg,#f8f3e6 0%,#e8dcc4 100%); }
-    .app-shell{ max-width:400px; height:840px; min-height:840px; margin:30px auto; border-radius:44px; box-shadow:0 30px 80px rgba(30,20,14,0.35); border:12px solid #0a0a0a; overflow:hidden; }
-    .desktop-header{ display:block!important; }
+  @media (max-width: 768px) {
+    .directory-preview { grid-template-columns: repeat(2, 1fr); }
   }
-  .desktop-header{ display:none; position:fixed; top:14px; left:0; right:0; text-align:center; z-index:10; color:var(--cape-brown-dark); font-size:13px; }
-  .desktop-header b{ font-family:'Fraunces',serif; font-size:18px; color:var(--cape-navy); }
 
-  .ios-content{ flex:1; overflow-y:auto; padding-bottom:100px; -webkit-overflow-scrolling:touch; }
-  .ios-content::-webkit-scrollbar{ display:none; }
+  .directory-tile {
+    position: relative;
+    height: 220px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+  }
+  .directory-tile:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    text-decoration: none;
+  }
+  .directory-tile .bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform var(--transition-slow);
+  }
+  .directory-tile:hover .bg { transform: scale(1.05); }
+  .directory-tile .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(30,20,14,0.65) 0%, rgba(30,20,14,0.1) 60%, transparent 100%);
+  }
+  .directory-tile .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    color: white;
+  }
+  .directory-tile .content h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0 0 4px;
+  }
+  .directory-tile .content p {
+    font-size: 13px;
+    opacity: 0.85;
+    margin: 0;
+  }
 
-  .tab-bar{ position:absolute; bottom:0; left:0; right:0; background:rgba(255,255,255,0.92); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border-top:1px solid var(--ios-divider); display:flex; padding:8px 4px max(8px,env(safe-area-inset-bottom)); z-index:50; }
-  .tab-btn{ flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; color:var(--ios-sub); font-size:10px; font-weight:500; background:none; border:none; cursor:pointer; padding:4px 0; transition:color 0.15s ease; }
-  .tab-btn.active{ color:var(--cape-navy); }
-  .tab-icon{ font-size:22px; line-height:1; }
+  .featured-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .featured-card .card-cover { height: 160px; }
+  .featured-card .card-body { flex: 1; }
+  .star-rating { color: var(--gold); font-size: 13px; letter-spacing: 1px; }
 
-  .ios-large-title{ font-family:'Fraunces',serif; font-weight:900; font-size:30px; padding:14px 20px 2px; letter-spacing:-0.02em; }
-  .ios-subhead{ padding:0 20px 10px; color:var(--ios-sub); font-size:13px; }
-  .ios-section-title{ font-size:12px; font-weight:700; text-transform:uppercase; color:var(--ios-sub); letter-spacing:0.05em; padding:16px 20px 6px; display:flex; justify-content:space-between; align-items:center; }
-  .ios-section-title button{ font-size:12px; font-weight:600; color:var(--cape-navy); background:none; border:none; text-transform:none; letter-spacing:0; }
+  .email-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 300;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px);
+  }
+  .email-popup.show { display: flex; }
+  .email-popup-inner {
+    background: white;
+    border-radius: var(--radius-lg);
+    max-width: 460px;
+    width: 100%;
+    padding: 32px;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    animation: modalIn 0.35s ease;
+    position: relative;
+  }
+  .email-popup-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: var(--text-secondary);
+    cursor: pointer;
+  }
+  .email-popup h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 26px;
+    margin: 0 0 8px;
+    color: var(--cape-brown-dark);
+  }
+  .email-popup p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin: 0 0 20px;
+  }
+  .email-popup .gift {
+    font-size: 48px;
+    margin-bottom: 12px;
+  }
 
-  .ios-list{ background:var(--ios-card); margin:0 16px; border-radius:14px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.04); }
-  .ios-list-item{ padding:12px 14px; border-bottom:1px solid var(--ios-divider); display:flex; align-items:center; gap:12px; }
-  .ios-list-item:last-child{ border-bottom:none; }
-  .ios-list-item.tappable{ cursor:pointer; }
-  .ios-list-item.tappable:active{ background:var(--ios-bg); }
-  .item-title{ font-weight:600; font-size:15px; }
-  .item-sub{ color:var(--ios-sub); font-size:12px; margin-top:2px; }
+  .how-it-works {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 32px;
+  }
+  @media (max-width: 768px) {
+    .how-it-works { grid-template-columns: 1fr; }
+  }
+  .step {
+    text-align: center;
+    padding: 24px;
+  }
+  .step-num {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--cape-navy) 0%, var(--cape-navy-dark) 100%);
+    color: white;
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+  }
+  .step h4 {
+    font-weight: 700;
+    font-size: 17px;
+    margin: 0 0 6px;
+  }
+  .step p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.55;
+  }
 
-  .status-dot{ width:10px; height:10px; border-radius:50%; flex-shrink:0; }
-  .crowd-bar{ display:inline-flex; gap:2px; }
-  .crowd-bar span{ width:3px; height:10px; background:#E5E5EA; border-radius:1px; }
-  .crowd-bar span.on{ background:var(--cape-brown); }
+  .testimonial {
+    background: var(--card);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+  }
+  .testimonial-text {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--cape-brown-dark);
+    line-height: 1.6;
+    margin: 0 0 16px;
+  }
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .testimonial-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--cape-sand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
 
-  .locked-row{ padding:12px 14px; border-bottom:1px solid var(--ios-divider); display:flex; align-items:center; gap:12px; filter:blur(3px); opacity:0.55; user-select:none; pointer-events:none; }
-  .unlock-cta{ display:block; margin:10px 16px 0; background:linear-gradient(135deg,#C99A4A 0%,#A77C30 100%); color:white; border-radius:14px; padding:13px; text-align:center; font-weight:700; font-size:14px; box-shadow:0 4px 12px rgba(167,124,48,0.3); cursor:pointer; border:none; width:calc(100% - 32px); font-family:inherit; }
-  .unlock-cta:active{ transform:scale(0.98); }
+  .sponsor-band {
+    background: linear-gradient(135deg, var(--cape-cream) 0%, var(--cape-blush) 100%);
+    border-radius: var(--radius-md);
+    padding: 28px;
+    text-align: center;
+  }
+  .sponsor-band h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 22px;
+    color: var(--cape-brown-dark);
+    margin: 0 0 8px;
+  }
+  .sponsor-band p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin: 0 0 16px;
+  }
 
-  .stamp-grid{ display:grid; grid-template-columns:repeat(5,1fr); gap:8px; padding:14px; background:white; border-radius:14px; }
-  .stamp{ aspect-ratio:1; border:2px dashed #cdbf9b; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:20px; opacity:0.4; color:#b9a87d; background:var(--ios-bg); cursor:pointer; transition:transform 0.15s; position:relative; }
-  .stamp:active{ transform:scale(0.95); }
-  .stamp.earned{ background:var(--cape-cream); border-style:solid; border-color:var(--cape-brown); color:var(--cape-brown-dark); opacity:1; box-shadow:0 1px 3px rgba(92,61,46,0.15); }
-  .stamp.locked-pro::after{ content:'🔒'; font-size:9px; position:absolute; bottom:-3px; right:-3px; background:white; border-radius:50%; padding:1px 3px; }
-
-  .happening-card{ background:white; border-radius:14px; margin:0 16px 10px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.04); cursor:pointer; }
-  .happening-card:active{ transform:scale(0.98); }
-  .happening-card .cover{ height:130px; background-size:cover; background-position:center; background-color:var(--cape-sand); position:relative; }
-  .happening-card .tag{ position:absolute; top:10px; left:10px; background:rgba(0,0,0,0.65); color:white; font-size:10px; font-weight:700; padding:4px 8px; border-radius:6px; letter-spacing:0.04em; }
-  .happening-card .time{ position:absolute; bottom:10px; right:10px; background:rgba(255,255,255,0.95); color:var(--ios-text); font-size:11px; font-weight:700; padding:4px 8px; border-radius:6px; }
-  .happening-card .body{ padding:10px 14px 12px; }
-
-  .filter-chips{ display:flex; gap:6px; overflow-x:auto; padding:4px 16px 10px; -webkit-overflow-scrolling:touch; }
-  .filter-chips::-webkit-scrollbar{ display:none; }
-  .chip{ flex:none; background:white; border:1px solid var(--ios-divider); border-radius:999px; padding:6px 12px; font-size:12px; font-weight:600; color:var(--ios-text); cursor:pointer; white-space:nowrap; }
-  .chip.active{ background:var(--cape-navy); color:white; border-color:var(--cape-navy); }
-  .chip.locked{ opacity:0.5; }
-
-  .ai-conv{ padding:14px 14px 6px; display:flex; flex-direction:column; gap:8px; }
-  .ai-bubble-user{ background:var(--cape-navy); color:white; align-self:flex-end; max-width:85%; padding:9px 14px; border-radius:18px 18px 4px 18px; font-size:14px; line-height:1.4; word-wrap:break-word; }
-  .ai-bubble-ai{ background:white; color:var(--ios-text); align-self:flex-start; max-width:90%; padding:12px 14px; border-radius:18px 18px 18px 4px; font-size:14px; line-height:1.5; box-shadow:0 1px 3px rgba(0,0,0,0.05); word-wrap:break-word; white-space:pre-wrap; }
-  .ai-bubble-ai strong{ color:var(--cape-navy); }
-  .ai-input{ position:sticky; bottom:0; background:white; padding:10px 14px; border-top:1px solid var(--ios-divider); display:flex; gap:8px; }
-  .ai-input input{ flex:1; border:1px solid var(--ios-divider); border-radius:20px; padding:8px 14px; font-size:14px; outline:none; }
-  .ai-input button{ background:var(--cape-navy); color:white; border:none; border-radius:20px; padding:8px 16px; font-weight:600; font-size:14px; cursor:pointer; }
-
-  .screen{ display:none; }
-  .screen.active{ display:block; animation:fadeIn 0.2s ease; }
-  @keyframes fadeIn{ from{opacity:0} to{opacity:1} }
-
-  .pro-banner{ background:linear-gradient(135deg,#1A3A6C 0%,#2C5599 100%); color:white; padding:14px 18px; margin:10px 16px; border-radius:14px; box-shadow:0 4px 12px rgba(26,58,108,0.25); }
-
-  .modal-bg{ background:rgba(0,0,0,0.6); backdrop-filter:blur(4px); position:fixed; inset:0; z-index:200; display:none; align-items:flex-end; justify-content:center; }
-  .modal-bg.show{ display:flex; }
-  @media (min-width:768px){ .modal-bg.show{ align-items:center; } }
-  .modal-sheet{ background:white; border-radius:24px 24px 0 0; max-width:480px; width:100%; padding:22px 20px max(22px,env(safe-area-inset-bottom)); box-shadow:0 -10px 40px rgba(0,0,0,0.2); animation:slideUp 0.25s ease; max-height:85vh; overflow-y:auto; }
-  @media (min-width:768px){ .modal-sheet{ border-radius:24px; margin:0 16px; max-width:400px; } }
-  @keyframes slideUp{ from{transform:translateY(100%)} to{transform:translateY(0)} }
-  .modal-handle{ width:40px; height:4px; background:var(--ios-divider); border-radius:2px; margin:-8px auto 16px; }
-
-  .install-banner{ position:fixed; bottom:100px; left:16px; right:16px; max-width:380px; margin:0 auto; background:white; border-radius:14px; padding:12px; box-shadow:0 8px 24px rgba(0,0,0,0.15); z-index:60; display:none; gap:12px; align-items:center; border:1px solid var(--ios-divider); }
-  .install-banner.show{ display:flex; }
-
-  .map-container{ height:240px; margin:0 16px; border-radius:14px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.04); }
-  #leafletMap, #beachMap, #whaleMap, #lighthouseMap{ height:100%; width:100%; }
-
-  .tide-chart{ background:white; margin:0 16px; border-radius:14px; padding:14px; box-shadow:0 1px 3px rgba(0,0,0,0.04); }
-  .tide-row{ display:flex; justify-content:space-between; align-items:center; padding:6px 0; font-size:14px; }
-  .tide-row .tide-type{ display:inline-block; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:700; margin-right:8px; }
-  .tide-row .high{ background:#cfe2ff; color:#0a3d91; }
-  .tide-row .low{ background:#ffe5cc; color:#8f4d10; }
-
-  .bridge-card{ background:white; margin:0 16px 10px; border-radius:14px; padding:14px; box-shadow:0 1px 3px rgba(0,0,0,0.04); display:flex; align-items:center; gap:12px; }
-  .bridge-delay{ font-family:'Fraunces',serif; font-weight:900; font-size:28px; }
-  .bridge-delay.light{ color:var(--status-open); }
-  .bridge-delay.moderate{ color:var(--status-mid); }
-  .bridge-delay.heavy{ color:var(--status-full); }
-
-  .audio-player{ background:white; margin:0 16px; border-radius:14px; padding:14px; box-shadow:0 1px 3px rgba(0,0,0,0.04); }
-  .audio-controls{ display:flex; gap:10px; align-items:center; margin-top:10px; }
-  .audio-play-btn{ width:48px; height:48px; border-radius:50%; background:var(--cape-navy); color:white; border:none; font-size:20px; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-  .audio-progress{ flex:1; background:var(--ios-divider); height:4px; border-radius:2px; overflow:hidden; }
-  .audio-progress-fill{ height:100%; background:var(--cape-navy); width:0%; transition:width 0.3s; }
-
-  .pro-active-badge{ display:inline-flex; align-items:center; gap:4px; background:linear-gradient(135deg,#C99A4A 0%,#A77C30 100%); color:white; font-weight:700; font-size:11px; padding:4px 10px; border-radius:999px; }
-
-  .benefit-row{ padding:11px 0; border-bottom:1px solid var(--ios-divider); display:flex; align-items:center; gap:12px; font-size:14px; }
-  .benefit-row:last-child{ border-bottom:none; }
-  .benefit-row .icon{ font-size:22px; }
-
-  .empty-state{ text-align:center; padding:30px 20px; color:var(--ios-sub); font-size:14px; }
-  .loading{ text-align:center; padding:40px 20px; color:var(--ios-sub); }
-  .toast{ position:fixed; bottom:120px; left:50%; transform:translateX(-50%); background:rgba(0,0,0,0.85); color:white; padding:10px 18px; border-radius:999px; font-size:14px; z-index:300; opacity:0; transition:opacity 0.3s; pointer-events:none; }
-  .toast.show{ opacity:1; }
+  .app-download-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--divider);
+    padding: 12px 20px;
+    z-index: 90;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .app-download-bar.show { display: flex; }
+  .app-download-bar .info { display: flex; align-items: center; gap: 12px; }
+  .app-download-bar .icon {
+    width: 44px; height: 44px; border-radius: 10px;
+    background: linear-gradient(135deg, var(--cape-navy) 0%, var(--cape-navy-dark) 100%);
+    color: white; display: flex; align-items: center; justify-content: center;
+    font-family: 'Fraunces', serif; font-weight: 900; font-size: 20px;
+  }
 </style>
 </head>
 <body>
 
-<div class="desktop-header">
-  <b>Totally Cape Cod</b><br/>Open this URL on your iPhone → Share → Add to Home Screen
+<!-- Nav -->
+<nav class="site-nav" id="siteNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Totally Cape Cod</a>
+    <div class="nav-links">
+      <a href="/beaches.html">Beaches</a>
+      <a href="/eats.html">Eats</a>
+      <a href="/stays.html">Stays</a>
+      <a href="/experiences.html">Experiences</a>
+      <a href="/events.html">Events</a>
+      <a href="/app/" class="nav-cta">📱 Get the App</a>
+    </div>
+    <button class="nav-mobile-toggle" onclick="toggleMobileMenu()">☰</button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()">
+  <div class="mobile-menu-panel" onclick="event.stopPropagation()">
+    <a href="/beaches.html">Beaches</a>
+    <a href="/eats.html">Eats</a>
+    <a href="/stays.html">Stays</a>
+    <a href="/experiences.html">Experiences</a>
+    <a href="/events.html">Events</a>
+    <a href="/itinerary.html">Plan My Trip</a>
+    <a href="/submit.html">Submit a Spot</a>
+    <a href="/app/" style="color:var(--cape-navy); font-weight:800;">📱 Open the App</a>
+  </div>
 </div>
 
-<div class="app-shell">
-  <div class="ios-content" id="iosContent">
-
-    <!-- ===== TODAY ===== -->
-    <div class="screen active" id="screen-today">
-      <div class="ios-large-title" id="todayDate">Today</div>
-      <div class="ios-subhead" id="todayConditions">Loading…</div>
-      <div id="proStatusBanner"></div>
-
-      <div class="ios-section-title">
-        <span>🌊 Tide & Conditions</span>
-        <button onclick="switchTab('conditions')">View all →</button>
-      </div>
-      <div class="ios-list" id="todayTides"></div>
-
-      <div class="ios-section-title">
-        <span>🌉 Bridge Now</span>
-        <button onclick="switchTab('bridges')">Forecast →</button>
-      </div>
-      <div id="todayBridges"></div>
-
-      <div class="ios-section-title">
-        <span>⚡ Happening Today</span>
-        <button onclick="switchTab('events')">See all →</button>
-      </div>
-      <div id="todayHappening"></div>
-
-      <div class="ios-section-title"><span>🏖️ Nearest Beaches</span></div>
-      <div class="ios-list" id="todayBeaches"></div>
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content" style="padding-top:80px;">
+    <div class="hero-badge">☀️ Summer 2026 Is Here</div>
+    <h1 class="hero-title">Plan Your Perfect<br/><span class="script">Cape Cod</span> Summer</h1>
+    <p class="hero-subtitle">Hidden beaches, the best lobster rolls, secret sunset spots, and local events — all in one place. The guide locals don't want you to find.</p>
+    <div class="hero-buttons">
+      <a href="/app/" class="btn btn-primary">📱 Get the Free App</a>
+      <a href="/itinerary.html" class="btn btn-ghost">✈️ Plan My Trip</a>
     </div>
-
-    <!-- ===== EVENTS ===== -->
-    <div class="screen" id="screen-events">
-      <div class="ios-large-title">What's Happening</div>
-      <div class="ios-subhead" id="eventsSubhead">Today's deals, music & free events</div>
-      <div class="filter-chips" id="eventFilters"></div>
-      <div id="eventsList"></div>
-      <div id="eventsUnlockCta"></div>
+    <div class="trust-row">
+      <div class="trust-item">⭐ 4.9 Rating</div>
+      <div class="trust-item">🗺️ 28 Beaches Mapped</div>
+      <div class="trust-item">🌟 100+ Local Spots</div>
+      <div class="trust-item">🔥 Live Conditions</div>
     </div>
+  </div>
+</section>
 
-    <!-- ===== BEACHES ===== -->
-    <div class="screen" id="screen-beaches">
-      <div class="ios-large-title">Beaches</div>
-      <div class="ios-subhead">Live · <span id="beachCount">0</span> beaches · tap to update</div>
-      <div class="ios-section-title"><span>📍 Map</span></div>
-      <div class="map-container"><div id="beachMap"></div></div>
-      <div class="ios-section-title" id="beachFreeTitle"><span>Nearest you</span></div>
-      <div class="ios-list" id="beachListFree"></div>
-      <div id="beachLockedSection"></div>
-      <div id="beachUnlockedSection"></div>
+<!-- Directory Preview -->
+<section class="section page-wrap">
+  <div class="section-header reveal">
+    <div class="section-label">Explore</div>
+    <h2 class="section-title">Find Your Vibe</h2>
+    <p class="section-subtitle">Curated Cape Cod directories with real-time intel, honest reviews, and affiliate booking links.</p>
+  </div>
+  <div class="directory-preview reveal">
+    <a href="/beaches.html" class="directory-tile" onclick="gtag('event','click_directory',{category:'beaches'})">
+      <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80')"></div>
+      <div class="overlay"></div>
+      <div class="content">
+        <h3>🏝️ Beaches</h3>
+        <p>28 mapped · live conditions · hidden gems</p>
+      </div>
+    </a>
+    <a href="/eats.html" class="directory-tile" onclick="gtag('event','click_directory',{category:'eats'})">
+      <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80')"></div>
+      <div class="overlay"></div>
+      <div class="content">
+        <h3>🦐 Eats</h3>
+        <p>Lobster rolls · clam shacks · fine dining</p>
+      </div>
+    </a>
+    <a href="/stays.html" class="directory-tile" onclick="gtag('event','click_directory',{category:'stays'})">
+      <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80')"></div>
+      <div class="overlay"></div>
+      <div class="content">
+        <h3>🏨 Stays</h3>
+        <p>Inns · rentals · beach cottages</p>
+      </div>
+    </a>
+    <a href="/experiences.html" class="directory-tile" onclick="gtag('event','click_directory',{category:'experiences'})">
+      <div class="bg" style="background-image:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80')"></div>
+      <div class="overlay"></div>
+      <div class="content">
+        <h3>⛵ Experiences</h3>
+        <p>Whale watching · lighthouses · sailing</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- Affiliate Booking Band -->
+<section class="section page-wrap" style="padding-top:0;">
+  <div class="reveal">
+    <div class="affiliate-band">
+      <div>
+        <div class="label">🚀 Book Your Stay</div>
+        <div class="title">Find the perfect Cape Cod cottage, hotel, or rental</div>
+      </div>
+      <a href="https://www.booking.com/country/us.html?aid=YOUR_AFFILIATE_ID&amp;label=totallycapecod-home" 
+         target="_blank" rel="noopener" class="btn btn-navy btn-sm"
+         onclick="gtag('event','affiliate_click',{type:'booking',location:'home_banner'})">
+        Search Hotels →
+      </a>
     </div>
+  </div>
+</section>
 
-    <!-- ===== PASSPORT ===== -->
-    <div class="screen" id="screen-passport">
-      <div class="ios-large-title">Passport</div>
-      <div class="ios-subhead"><strong style="color:var(--cape-navy);" id="stampCounter">0</strong> of 100 stamps · Summer 2026</div>
-      <div style="padding:0 20px 12px;">
-        <div style="background:white; border-radius:14px; padding:12px; box-shadow:0 1px 3px rgba(0,0,0,0.04);">
-          <div style="height:8px; background:var(--ios-bg); border-radius:999px; overflow:hidden;">
-            <div id="stampProgress" style="height:100%; width:0%; background:var(--cape-navy); border-radius:999px; transition:width 0.4s;"></div>
-          </div>
-          <div style="display:flex; justify-content:space-between; margin-top:8px; font-size:11px; color:var(--ios-sub);">
-            <span id="stampTierLabel">Free tier · max 25</span>
-            <span id="stampNextBadge">Next badge: 10 stamps</span>
-          </div>
+<!-- Featured Picks -->
+<section class="section page-wrap" style="background:linear-gradient(180deg, var(--bg) 0%, var(--cape-cream) 100%);">
+  <div class="section-header reveal">
+    <div class="section-label">Curated</div>
+    <h2 class="section-title">This Week's Best</h2>
+    <p class="section-subtitle">Hand-picked spots with affiliate booking links. Book directly and support Totally Cape Cod.</p>
+  </div>
+  <div class="grid-3 reveal">
+    <!-- Featured Beach -->
+    <div class="card featured-card">
+      <div class="card-cover" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80')">
+        <span class="card-tag">Top Rated</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Race Point Beach</h3>
+        <p class="card-sub">Provincetown · Wide dunes · Parking · Dog-friendly</p>
+        <div class="star-rating">⭐⭐⭐⭐⭐</div>
+      </div>
+      <div class="card-footer">
+        <span style="font-size:13px; color:var(--text-secondary);">Free entry</span>
+        <a href="/beaches.html?spot=race-point" class="btn btn-sm btn-navy" style="padding:8px 14px; font-size:12px;"
+           onclick="gtag('event','view_detail',{item:'race-point-beach'})">View →</a>
+      </div>
+    </div>
+    <!-- Featured Stay -->
+    <div class="card featured-card">
+      <div class="card-cover" style="background-image:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80')">
+        <span class="card-tag">Editor's Pick</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Chatham Bars Inn</h3>
+        <p class="card-sub">Chatham · Oceanfront · Spa · Fine Dining</p>
+        <div class="star-rating">⭐⭐⭐⭐⭐</div>
+      </div>
+      <div class="card-footer">
+        <span style="font-size:13px; color:var(--text-secondary);">From $450/night</span>
+        <a href="https://www.booking.com/hotel/us/chatham-bars-inn.html?aid=YOUR_AFFILIATE_ID" 
+           target="_blank" rel="noopener" class="btn btn-sm btn-primary" style="padding:8px 14px; font-size:12px;"
+           onclick="gtag('event','affiliate_click',{type:'booking',item:'chatham-bars-inn'})">Book →</a>
+      </div>
+    </div>
+    <!-- Featured Experience -->
+    <div class="card featured-card">
+      <div class="card-cover" style="background-image:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80')">
+        <span class="card-tag">Must Do</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Whale Watch Provincetown</h3>
+        <p class="card-sub">Provincetown · 3-4 hrs · Humpback guaranteed</p>
+        <div class="star-rating">⭐⭐⭐⭐⭐</div>
+      </div>
+      <div class="card-footer">
+        <span style="font-size:13px; color:var(--text-secondary);">From $65/person</span>
+        <a href="https://www.viator.com/tours/Provincetown/Whale-Watching/d5265-g1-c17?pid=P00000000&amp;mcid=YOUR_AFFILIATE_ID" 
+           target="_blank" rel="noopener" class="btn btn-sm btn-primary" style="padding:8px 14px; font-size:12px;"
+           onclick="gtag('event','affiliate_click',{type:'viator',item:'whale-watch-ptown'})">Book →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="section page-wrap">
+  <div class="section-header reveal">
+    <div class="section-label">Simple</div>
+    <h2 class="section-title">How Totally Cape Cod Works</h2>
+  </div>
+  <div class="how-it-works reveal">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h4>Explore the Guide</h4>
+      <p>Browse our curated directories of beaches, restaurants, stays, and experiences. Filter by vibe, location, and budget.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h4>Book Your Vibe</h4>
+      <p>Click "Book This Vibe" on any listing to reserve hotels, activities, and rentals through our affiliate partners.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h4>Use the App</h4>
+      <p>Download the free PWA for live beach conditions, tide charts, bridge traffic, events, and the Cape Cod Passport.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Email Capture Section -->
+<section class="section page-wrap" style="padding-top:0;">
+  <div class="reveal">
+    <div class="email-capture-bar">
+      <h3>📜 Get the Free 2026 Totally Cape Cod Vibe Guide</h3>
+      <p>A 12-page PDF with hidden beaches, secret sunset spots, the best lobster rolls, and a week-long itinerary. Delivered instantly.</p>
+      <form class="email-form" onsubmit="handleEmailSubmit(event)">
+        <input type="email" id="heroEmail" placeholder="your@email.com" required />
+        <button type="submit" class="btn btn-primary" style="white-space:nowrap;"
+                onclick="gtag('event','lead_capture',{location:'home_section'})">
+          Send My Guide →
+        </button>
+      </form>
+      <div class="trust-row" style="margin-top:14px;">
+        <div class="trust-item">🔐 No spam. Unsubscribe anytime.</div>
+        <div class="trust-item">👍 2,400+ guides sent</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section page-wrap" style="background: var(--cape-cream);">
+  <div class="section-header reveal">
+    <div class="section-label">Loved By Visitors</div>
+    <h2 class="section-title">What People Are Saying</h2>
+  </div>
+  <div class="grid-3 reveal">
+    <div class="testimonial">
+      <p class="testimonial-text">"Found a hidden beach in Truro I'd never heard of. Zero crowds on a Saturday in July. This app is a game changer."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">👩</div>
+        <div>
+          <div style="font-weight:700; font-size:14px;">Sarah M.</div>
+          <div style="font-size:12px; color:var(--text-secondary);">Boston, MA · Used the app 3x</div>
         </div>
       </div>
-      <div class="ios-section-title"><span>Free Tier · Tap to collect</span></div>
-      <div style="padding:0 16px;"><div class="stamp-grid" id="stampGridFree"></div></div>
-      <div id="passportLockedSection"></div>
-      <div id="passportUnlockedSection"></div>
     </div>
-
-    <!-- ===== AI ===== -->
-    <div class="screen" id="screen-ai" style="display:none; flex-direction:column; height:100%;">
-      <div class="ios-large-title">Concierge</div>
-      <div class="ios-subhead">Your Cape Cod local guide · <strong style="color:var(--status-mid);" id="aiQuestionsLeft">1 free/day</strong></div>
-      <div class="filter-chips">
-        <div class="chip" onclick="quickAi('best beach today')">Best beach</div>
-        <div class="chip" onclick="quickAi('lobster roll')">Lobster</div>
-        <div class="chip" onclick="quickAi('rainy day with kids')">Rainy day</div>
-        <div class="chip" onclick="quickAi('sunset tonight')">Sunset</div>
-        <div class="chip" onclick="quickAi('live music tonight')">Music</div>
-      </div>
-      <div class="ai-conv" id="aiConv" style="flex:1; overflow-y:auto;">
-        <div class="ai-bubble-ai">👋 Hi! I'm your Cape Cod local guide. Ask me anything about today on the Cape.</div>
-      </div>
-      <div class="ai-input">
-        <input type="text" id="aiInput" placeholder="Ask anything..." onkeypress="if(event.key==='Enter') sendAi()" />
-        <button onclick="sendAi()">Ask</button>
-      </div>
-    </div>
-
-    <!-- ===== BRIDGES ===== -->
-    <div class="screen" id="screen-bridges">
-      <div class="ios-large-title">Bridge Oracle</div>
-      <div class="ios-subhead">Current delays + when to leave</div>
-      <div id="bridgeCurrent"></div>
-      <div class="ios-section-title"><span>📅 Today's hourly forecast</span></div>
-      <div class="ios-list" id="bridgeHourly"></div>
-      <div id="bridge7Day"></div>
-      <div id="bridgeTips"></div>
-    </div>
-
-    <!-- ===== CONDITIONS ===== -->
-    <div class="screen" id="screen-conditions">
-      <div class="ios-large-title">Conditions</div>
-      <div class="ios-subhead">Tides, sun & weather</div>
-      <div class="ios-section-title"><span>🌊 Today's tides</span></div>
-      <div class="tide-chart" id="tideChart"></div>
-      <div class="ios-section-title"><span>☀️ Sun</span></div>
-      <div class="ios-list" id="sunInfo"></div>
-      <div class="ios-section-title"><span>🌤️ Weather</span></div>
-      <div class="ios-list" id="weatherInfo"></div>
-      <div id="conditions7Day"></div>
-    </div>
-
-    <!-- ===== WHALES ===== -->
-    <div class="screen" id="screen-whales">
-      <div class="ios-large-title">Whale Spotter</div>
-      <div class="ios-subhead">Recent sightings + your reports</div>
-      <div class="ios-section-title"><span>📍 Sightings map</span></div>
-      <div class="map-container"><div id="whaleMap"></div></div>
-      <div class="ios-section-title">
-        <span>🐋 Recent sightings</span>
-        <button onclick="openModal('reportSighting')">+ Report</button>
-      </div>
-      <div class="ios-list" id="whaleList"></div>
-      <div id="whaleProTease"></div>
-    </div>
-
-    <!-- ===== LIGHTHOUSES ===== -->
-    <div class="screen" id="screen-lighthouses">
-      <div class="ios-large-title">Lighthouses</div>
-      <div class="ios-subhead">12 self-guided audio tours · narrated free in-app</div>
-      <div class="ios-section-title"><span>📍 Map</span></div>
-      <div class="map-container"><div id="lighthouseMap"></div></div>
-      <div class="ios-section-title"><span>🗼 Tours</span></div>
-      <div class="ios-list" id="lighthouseList"></div>
-    </div>
-
-    <!-- ===== PRO ===== -->
-    <div class="screen" id="screen-pro">
-      <div id="proSplashLocked">
-        <div style="background:linear-gradient(135deg,#1A3A6C 0%,#2C5599 100%); color:white; padding:30px 20px; text-align:center;">
-          <div style="font-size:48px;">🦞</div>
-          <div class="font-display" style="font-weight:900; font-size:30px; margin-top:8px;">Cape Cod Pro</div>
-          <div style="opacity:0.85; font-size:13px; margin-top:4px;">One-time · No subscription</div>
-          <div class="font-display" style="font-weight:900; font-size:52px; margin-top:18px; color:#E8B973;">$9.99</div>
-          <div style="opacity:0.7; font-size:11px;">Lifetime access · 30-day refund</div>
-        </div>
-        <div style="padding:20px;">
-          <div class="benefit-row"><span class="icon">🏖️</span><strong>All 28 beaches live</strong></div>
-          <div class="benefit-row"><span class="icon">⚡</span><strong>Unlimited "Today" events</strong></div>
-          <div class="benefit-row"><span class="icon">🎫</span><strong>All 100 passport stamps + badges</strong></div>
-          <div class="benefit-row"><span class="icon">🌉</span><strong>7-day bridge traffic predictor</strong></div>
-          <div class="benefit-row"><span class="icon">🤖</span><strong>Unlimited AI Concierge</strong></div>
-          <div class="benefit-row"><span class="icon">🐋</span><strong>Submit + alert on whale sightings</strong></div>
-          <div class="benefit-row"><span class="icon">💡</span><strong>All 12 lighthouse audio tours</strong></div>
-          <div class="benefit-row"><span class="icon">🌊</span><strong>7-day tide & sunset forecast</strong></div>
-          <div class="benefit-row"><span class="icon">🚫</span><strong>No ads · ever</strong></div>
-        </div>
-        <div style="padding:0 20px 20px;">
-          <button onclick="openModal('purchase')" style="width:100%; background:linear-gradient(135deg,#C99A4A 0%,#A77C30 100%); color:white; border:none; padding:15px; border-radius:14px; font-weight:800; font-size:15px; box-shadow:0 6px 16px rgba(167,124,48,0.35); cursor:pointer;">Unlock Cape Cod Pro — $9.99</button>
-          <div style="text-align:center; color:var(--ios-sub); font-size:11px; margin-top:10px;">🔒 Secure checkout via Stripe</div>
+    <div class="testimonial">
+      <p class="testimonial-text">"The bridge traffic predictor alone saved us 45 minutes. We knew exactly when to leave and had zero stress."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">👨</div>
+        <div>
+          <div style="font-weight:700; font-size:14px;">Mike & Jen T.</div>
+          <div style="font-size:12px; color:var(--text-secondary);">New York, NY · Weekend trip</div>
         </div>
       </div>
-      <div id="proSplashUnlocked" style="display:none; padding:30px 20px;">
-        <div style="background:linear-gradient(135deg,#C99A4A 0%,#A77C30 100%); color:white; padding:30px 20px; border-radius:20px; text-align:center;">
-          <div style="font-size:56px;">👑</div>
-          <div class="font-display" style="font-weight:900; font-size:28px; margin-top:10px;">You're Pro</div>
-          <div style="opacity:0.9; font-size:13px; margin-top:6px;">Welcome to the inside</div>
-        </div>
-        <div class="ios-section-title" style="padding-left:0;"><span>Your perks</span></div>
-        <div style="background:white; border-radius:14px; padding:16px; box-shadow:0 1px 3px rgba(0,0,0,0.04);">
-          <div style="padding:5px 0;">✅ All 28 beaches live</div>
-          <div style="padding:5px 0;">✅ Unlimited Today events</div>
-          <div style="padding:5px 0;">✅ All 100 stamps + badges</div>
-          <div style="padding:5px 0;">✅ Unlimited AI</div>
-          <div style="padding:5px 0;">✅ 7-day bridge + tide forecast</div>
-          <div style="padding:5px 0;">✅ Whale alerts + sighting submissions</div>
-          <div style="padding:5px 0;">✅ All 12 lighthouse audio tours</div>
-          <div style="padding:5px 0;">✅ Ad-free forever</div>
-        </div>
-        <div style="margin-top:16px; text-align:center;">
-          <button onclick="resetPro()" style="background:none; border:none; color:var(--ios-sub); text-decoration:underline; font-size:12px;">Reset Pro (demo)</button>
+    </div>
+    <div class="testimonial">
+      <p class="testimonial-text">"Best lobster roll recs on the Cape. Period. We did a whole lobster crawl using the eats directory."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">👧</div>
+        <div>
+          <div style="font-weight:700; font-size:14px;">Dana K.</div>
+          <div style="font-size:12px; color:var(--text-secondary);">Providence, RI · Annual visitor</div>
         </div>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- TAB BAR -->
-  <div class="tab-bar">
-    <button class="tab-btn active" data-tab="today" onclick="switchTab('today')"><div class="tab-icon">⚡</div><div>Today</div></button>
-    <button class="tab-btn" data-tab="events" onclick="switchTab('events')"><div class="tab-icon">📅</div><div>Events</div></button>
-    <button class="tab-btn" data-tab="beaches" onclick="switchTab('beaches')"><div class="tab-icon">🏖️</div><div>Beaches</div></button>
-    <button class="tab-btn" data-tab="passport" onclick="switchTab('passport')"><div class="tab-icon">🎫</div><div>Pass</div></button>
-    <button class="tab-btn" data-tab="ai" onclick="switchTab('ai')"><div class="tab-icon">✨</div><div>Ask</div></button>
-    <button class="tab-btn" data-tab="more" onclick="openModal('moreMenu')"><div class="tab-icon">···</div><div>More</div></button>
-  </div>
-</div>
-
-<!-- Install Banner -->
-<div class="install-banner" id="installBanner">
-  <div style="font-size:28px;">📲</div>
-  <div style="flex:1; font-size:13px;"><strong>Install on iPhone</strong><br/><span style="color:var(--ios-sub);">Tap Share → Add to Home Screen</span></div>
-  <button onclick="dismissInstall()" style="background:none; border:none; font-size:20px; color:var(--ios-sub);">×</button>
-</div>
-
-<!-- Toast -->
-<div class="toast" id="toast"></div>
-
-<!-- More Menu Modal -->
-<div class="modal-bg" id="moreMenuModal">
-  <div class="modal-sheet">
-    <div class="modal-handle"></div>
-    <div class="font-display" style="font-weight:900; font-size:22px; margin-bottom:12px;">More features</div>
-    <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('bridges')"><span style="font-size:24px;">🌉</span><div style="flex:1;"><div class="item-title">Bridge Oracle</div><div class="item-sub">Traffic + forecast</div></div></div>
-    <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('conditions')"><span style="font-size:24px;">🌊</span><div style="flex:1;"><div class="item-title">Tides & Conditions</div><div class="item-sub">Today + 7-day</div></div></div>
-    <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('whales')"><span style="font-size:24px;">🐋</span><div style="flex:1;"><div class="item-title">Whale Spotter</div><div class="item-sub">Live sightings</div></div></div>
-    <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('lighthouses')"><span style="font-size:24px;">💡</span><div style="flex:1;"><div class="item-title">Lighthouse Audio Tours</div><div class="item-sub">12 self-guided tours</div></div></div>
-    <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('pro')"><span style="font-size:24px;">👑</span><div style="flex:1;"><div class="item-title">Cape Cod Pro</div><div class="item-sub" id="moreMenuProStatus">$9.99 lifetime</div></div></div>
-    <button onclick="closeModal('moreMenu')" style="width:100%; background:transparent; color:var(--cape-navy); border:none; padding:14px; font-weight:600; font-size:15px; margin-top:6px;">Close</button>
-  </div>
-</div>
-
-<!-- Stamp Check-In Modal -->
-<div class="modal-bg" id="stampModal">
-  <div class="modal-sheet" style="text-align:center;">
-    <div class="modal-handle"></div>
-    <div id="stampModalIcon" style="font-size:64px;">📍</div>
-    <div class="font-display" style="font-weight:900; font-size:22px; margin-top:6px;" id="stampModalName">Stamp</div>
-    <div style="color:var(--ios-sub); font-size:13px; margin-top:6px;" id="stampModalTown"></div>
-    <div style="color:var(--ios-text); font-size:14px; margin-top:10px;" id="stampModalDesc"></div>
-    <button id="stampModalBtn" style="width:100%; background:var(--cape-navy); color:white; border:none; padding:14px; border-radius:14px; font-weight:700; font-size:15px; margin-top:18px;">Stamp it!</button>
-    <button onclick="closeModal('stamp')" style="width:100%; background:transparent; color:var(--ios-sub); border:none; padding:8px; font-size:13px;">Cancel</button>
-  </div>
-</div>
-
-<!-- Beach Detail Modal -->
-<div class="modal-bg" id="beachModal">
-  <div class="modal-sheet">
-    <div class="modal-handle"></div>
-    <div class="font-display" style="font-weight:900; font-size:22px;" id="beachModalName"></div>
-    <div style="color:var(--ios-sub); font-size:13px; margin-top:2px;" id="beachModalTown"></div>
-    <div id="beachModalDetails" style="margin-top:14px;"></div>
-    <div class="font-display" style="font-weight:700; font-size:15px; margin-top:18px; margin-bottom:8px;">Update status (helps everyone)</div>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
-      <button onclick="reportBeach('open')" style="background:#d1fae5; color:#065f46; border:none; padding:12px; border-radius:10px; font-weight:700; font-size:13px;">🟢 Spots Open</button>
-      <button onclick="reportBeach('mid')" style="background:#fed7aa; color:#9a3412; border:none; padding:12px; border-radius:10px; font-weight:700; font-size:13px;">🟠 Filling</button>
-      <button onclick="reportBeach('full')" style="background:#fecaca; color:#991b1b; border:none; padding:12px; border-radius:10px; font-weight:700; font-size:13px;">🔴 Lot Full</button>
-      <button onclick="reportBeach('mid')" style="background:#fef3c7; color:#92400e; border:none; padding:12px; border-radius:10px; font-weight:700; font-size:13px;">👥 Crowded</button>
+<!-- Sponsored Listings CTA -->
+<section class="section page-wrap" style="padding-top:0;">
+  <div class="reveal">
+    <div class="sponsor-band">
+      <h3>🚀 List Your Business</h3>
+      <p>Own a restaurant, inn, or experience on Cape Cod? Get featured in front of thousands of summer visitors. Featured listings start at $99 for the season.</p>
+      <a href="/submit.html?type=sponsored" class="btn btn-primary"
+         onclick="gtag('event','click_sponsored_cta',{location:'home_section'})">
+        Get Featured →
+      </a>
     </div>
-    <button onclick="closeModal('beach')" style="width:100%; background:transparent; color:var(--cape-navy); border:none; padding:14px; font-weight:600; font-size:14px; margin-top:6px;">Close</button>
   </div>
-</div>
+</section>
 
-<!-- Lighthouse Audio Modal -->
-<div class="modal-bg" id="lighthouseModal">
-  <div class="modal-sheet">
-    <div class="modal-handle"></div>
-    <div class="font-display" style="font-weight:900; font-size:22px;" id="lhName"></div>
-    <div style="color:var(--ios-sub); font-size:13px; margin-top:2px;" id="lhMeta"></div>
-    <div class="audio-player" style="margin:14px 0 0; padding:16px; background:var(--cape-cream); border-radius:14px;">
-      <div class="audio-controls">
-        <button id="lhPlayBtn" class="audio-play-btn" onclick="toggleLighthouseAudio()">▶</button>
-        <div style="flex:1;">
-          <div style="font-weight:700; font-size:14px;">Audio Tour</div>
-          <div style="color:var(--ios-sub); font-size:11px;" id="lhDuration">— min</div>
-          <div class="audio-progress" style="margin-top:6px;"><div class="audio-progress-fill" id="lhProgress"></div></div>
-        </div>
+<!-- SEO Content Block -->
+<section class="section page-wrap">
+  <div class="section-header reveal">
+    <div class="section-label">Discover</div>
+    <h2 class="section-title">More to Explore</h2>
+  </div>
+  <div class="grid-2 reveal">
+    <a href="/best-beaches-2026.html" class="card" style="text-decoration:none; color:inherit;"
+       onclick="gtag('event','click_seo_page',{page:'best-beaches-2026'})">
+      <div class="card-cover" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80'); height:200px;">
+        <span class="card-tag">2026 Guide</span>
       </div>
-      <div style="margin-top:10px; font-size:11px; color:var(--ios-sub);">Narrated by your device — works offline. Pro users can download MP3.</div>
+      <div class="card-body">
+        <h3 class="card-title">Best Beaches on Cape Cod — 2026</h3>
+        <p class="card-sub">The ultimate ranked list of every beach from Provincetown to Woods Hole, with parking tips and hidden access points.</p>
+      </div>
+    </a>
+    <a href="/hidden-gems.html" class="card" style="text-decoration:none; color:inherit;"
+       onclick="gtag('event','click_seo_page',{page:'hidden-gems'})">
+      <div class="card-cover" style="background-image:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&q=80'); height:200px;">
+        <span class="card-tag">Locals Only</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Hidden Gems Locals Don't Share</h3>
+        <p class="card-sub">Secret ponds, uncrowded sunset spots, the best fried clams you've never heard of, and more insider picks.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- App Download Section -->
+<section class="section page-wrap" style="background: linear-gradient(135deg, var(--cape-navy) 0%, var(--cape-navy-dark) 100%); border-radius: var(--radius-lg); margin: 0 20px 40px; max-width: 1160px;">
+  <div style="padding: 48px 32px; text-align: center; color: white;">
+    <div class="reveal">
+      <div style="font-size: 56px; margin-bottom: 12px;">📱</div>
+      <h2 class="font-display" style="font-weight: 900; font-size: clamp(1.75rem, 4vw, 2.5rem); margin: 0 0 12px;">Take Cape Cod With You</h2>
+      <p style="font-size: 16px; opacity: 0.85; max-width: 480px; margin: 0 auto 24px;">Live beach conditions, tide charts, bridge traffic, events, and the Cape Cod Passport — all in your pocket. Free. No download required.</p>
+      <a href="/app/" class="btn btn-primary" style="font-size: 16px; padding: 16px 32px;"
+         onclick="gtag('event','app_install_click',{location:'home_bottom'})">
+        Open the App →
+      </a>
+      <div class="trust-row" style="margin-top: 16px;">
+        <div class="trust-item">🔐 Works offline</div>
+        <div class="trust-item">🌟 Free forever</div>
+        <div class="trust-item">⚡ Instant load</div>
+      </div>
     </div>
-    <div style="margin-top:14px; font-size:13px; color:var(--ios-text); line-height:1.55; max-height:200px; overflow-y:auto;" id="lhTranscript"></div>
-    <button onclick="closeModal('lighthouse'); stopLighthouseAudio();" style="width:100%; background:var(--cape-navy); color:white; border:none; padding:13px; border-radius:14px; font-weight:700; font-size:15px; margin-top:14px;">Done</button>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Totally Cape Cod</div>
+      <p class="footer-desc">The unofficial guide to the best of Cape Cod. Built by locals, loved by visitors. Plan your perfect summer.</p>
+      <div style="display:flex; gap:12px;">
+        <a href="#" style="font-size:20px; opacity:0.6; transition:opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.6">📧</a>
+        <a href="#" style="font-size:20px; opacity:0.6; transition:opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.6">📸</a>
+        <a href="#" style="font-size:20px; opacity:0.6; transition:opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.6">🐦</a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <div class="footer-heading">Explore</div>
+      <a href="/beaches.html">Beaches</a>
+      <a href="/eats.html">Restaurants</a>
+      <a href="/stays.html">Hotels & Rentals</a>
+      <a href="/experiences.html">Experiences</a>
+      <a href="/events.html">Events</a>
+    </div>
+    <div class="footer-links">
+      <div class="footer-heading">Plan</div>
+      <a href="/itinerary.html">Itinerary Builder</a>
+      <a href="/app/">Get the App</a>
+      <a href="/best-beaches-2026.html">Best Beaches 2026</a>
+      <a href="/hidden-gems.html">Hidden Gems</a>
+    </div>
+    <div class="footer-links">
+      <div class="footer-heading">Contribute</div>
+      <a href="/submit.html?type=spot">Submit a Spot</a>
+      <a href="/submit.html?type=sponsored">List Your Business</a>
+      <a href="/submit.html?type=photo">Share a Photo</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 Totally Cape Cod. Not affiliated with the Cape Cod Chamber of Commerce. Affiliate links help keep this guide free. · <a href="#" style="color:inherit;">Privacy</a> · <a href="#" style="color:inherit;">Terms</a>
+  </div>
+</footer>
+
+<!-- Email Popup (delayed) -->
+<div class="email-popup" id="emailPopup">
+  <div class="email-popup-inner">
+    <button class="email-popup-close" onclick="closeEmailPopup()">×</button>
+    <div class="gift">🌊</div>
+    <h3>Get the Free 2026 Vibe Guide</h3>
+    <p>A curated PDF with hidden beaches, secret sunset spots, the best lobster rolls, and a ready-to-use week-long itinerary.</p>
+    <form onsubmit="handleEmailPopupSubmit(event)">
+      <input type="email" id="popupEmail" placeholder="your@email.com" required 
+             style="width:100%; padding:14px; border:1.5px solid var(--divider); border-radius:var(--radius-sm); font-size:15px; margin-bottom:12px;" />
+      <button type="submit" class="btn btn-primary w-full"
+              onclick="gtag('event','lead_capture',{location:'popup'})">
+        Send My Free Guide →
+      </button>
+    </form>
+    <p style="font-size:12px; color:var(--text-secondary); margin-top:14px;">🔐 No spam. Unsubscribe anytime. 2,400+ happy readers.</p>
   </div>
 </div>
 
-<!-- Report Sighting Modal -->
-<div class="modal-bg" id="reportSightingModal">
-  <div class="modal-sheet">
-    <div class="modal-handle"></div>
-    <div class="font-display" style="font-weight:900; font-size:22px;">Report a sighting</div>
-    <div style="color:var(--ios-sub); font-size:13px; margin-top:2px;">Help other visitors find marine life</div>
-    <div style="margin-top:14px;">
-      <label style="font-size:12px; color:var(--ios-sub); font-weight:700;">Species</label>
-      <select id="sightingSpecies" style="width:100%; padding:10px; border:1px solid var(--ios-divider); border-radius:10px; font-size:14px; margin-top:4px;">
-        <option value="humpback">🐋 Humpback Whale</option>
-        <option value="fin">🐋 Fin Whale</option>
-        <option value="minke">🐋 Minke Whale</option>
-        <option value="seal">🦦 Seal</option>
-        <option value="dolphin">🐬 Dolphin</option>
-        <option value="shark">🦈 Shark</option>
-      </select>
+<!-- App Download Bar (mobile) -->
+<div class="app-download-bar" id="appDownloadBar">
+  <div class="info">
+    <div class="icon">T</div>
+    <div>
+      <div style="font-weight:700; font-size:14px;">Totally Cape Cod</div>
+      <div style="font-size:12px; color:var(--text-secondary);">Free app · No install needed</div>
     </div>
-    <div style="margin-top:12px;">
-      <label style="font-size:12px; color:var(--ios-sub); font-weight:700;">Count</label>
-      <input type="number" id="sightingCount" value="1" min="1" max="500" style="width:100%; padding:10px; border:1px solid var(--ios-divider); border-radius:10px; font-size:14px; margin-top:4px;" />
-    </div>
-    <div style="margin-top:12px;">
-      <label style="font-size:12px; color:var(--ios-sub); font-weight:700;">Notes (optional)</label>
-      <textarea id="sightingNotes" rows="3" placeholder="Breaching, traveling, surface feeding..." style="width:100%; padding:10px; border:1px solid var(--ios-divider); border-radius:10px; font-size:14px; margin-top:4px; font-family:inherit;"></textarea>
-    </div>
-    <div style="margin-top:8px; font-size:11px; color:var(--ios-sub);" id="sightingLocStatus">📍 Will use your current location</div>
-    <button onclick="submitSighting()" style="width:100%; background:var(--cape-navy); color:white; border:none; padding:13px; border-radius:14px; font-weight:700; font-size:15px; margin-top:14px;">Submit</button>
-    <button onclick="closeModal('reportSighting')" style="width:100%; background:transparent; color:var(--ios-sub); border:none; padding:8px; font-size:13px;">Cancel</button>
   </div>
+  <a href="/app/" class="btn btn-navy btn-sm" onclick="gtag('event','app_install_click',{location:'mobile_banner'})">Open</a>
+  <button onclick="document.getElementById('appDownloadBar').classList.remove('show')" style="background:none; border:none; font-size:20px; color:var(--text-secondary); cursor:pointer;">×</button>
 </div>
 
-<!-- Purchase Modal -->
-<div class="modal-bg" id="purchaseModal">
-  <div class="modal-sheet">
-    <div class="modal-handle"></div>
-    <div style="text-align:center;">
-      <div style="font-size:44px;">🦞</div>
-      <div class="font-display" style="font-weight:900; font-size:24px; margin-top:6px;">Cape Cod Pro</div>
-      <div style="color:var(--ios-sub); font-size:13px;">$9.99 · One-time · Lifetime</div>
-    </div>
-    <div style="background:var(--ios-bg); border-radius:12px; padding:14px; margin-top:18px; font-size:13px;">
-      <div style="display:flex; justify-content:space-between;"><span>Cape Cod Pro (Lifetime)</span><span style="font-weight:700;">$9.99</span></div>
-      <div style="color:var(--ios-sub); font-size:11px; margin-top:4px;">30-day money-back guarantee</div>
-    </div>
-    <button onclick="goToStripe()" style="width:100%; background:var(--cape-navy); color:white; border:none; padding:14px; border-radius:14px; font-weight:700; font-size:15px; margin-top:18px;">Continue to checkout</button>
-    <button onclick="closeModal('purchase')" style="width:100%; background:transparent; color:var(--cape-navy); border:none; padding:10px; font-weight:600; font-size:14px;">Maybe later</button>
-  </div>
-</div>
-
-<!-- Success Modal -->
-<div class="modal-bg" id="successModal">
-  <div class="modal-sheet" style="text-align:center;">
-    <div class="modal-handle"></div>
-    <div style="font-size:60px;">🎉</div>
-    <div class="font-display" style="font-weight:900; font-size:22px; margin-top:6px;">Welcome to Pro!</div>
-    <p style="color:var(--ios-sub); font-size:14px; margin-top:6px;">All 8 features unlocked. Go explore.</p>
-    <button onclick="closeModal('success'); switchTab('today');" style="width:100%; background:var(--cape-navy); color:white; border:none; padding:14px; border-radius:14px; font-weight:700; font-size:15px; margin-top:14px;">Let's go</button>
-  </div>
-</div>
-
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <script>
-// ============ CONFIG ============
-// REPLACE WITH YOUR LIVE STRIPE PAYMENT LINK TO TAKE MONEY:
-const STRIPE_LINK = 'https://buy.stripe.com/test_cNi9AM0D3eeR4oDgxSdZ600';
-// OPTIONAL: Set this to a Claude API proxy (e.g., Cloudflare Worker) to enable live AI
-window.TCC_AI_ENDPOINT = null;
-
-const FREE_BEACH_LIMIT = 3;
-const FREE_STAMP_LIMIT = 25;
-const FREE_EVENT_LIMIT = 3;
-const FREE_BRIDGE_DAYS = 1;
-const FREE_CONDITIONS_DAYS = 1;
-const FREE_LIGHTHOUSE_COUNT = 1;
-const DEFAULT_LOC = { lat: 41.7858, lng: -70.0269 }; // Orleans, MA
-
-// ============ STATE ============
-let state = {
-  isPro: localStorage.getItem('tcc_pro') === 'true',
-  stamps: JSON.parse(localStorage.getItem('tcc_stamps') || '[]'),
-  beachReports: JSON.parse(localStorage.getItem('tcc_beach_reports') || '{}'),
-  userSightings: JSON.parse(localStorage.getItem('tcc_sightings') || '[]'),
-  aiCount: parseInt(localStorage.getItem('tcc_ai_today') || '0'),
-  aiDate: localStorage.getItem('tcc_ai_date') || '',
-  userLoc: null,
-  data: { stamps:null, beaches:null, today:null, conditions:null, bridges:null, whales:null, lighthouses:null, aiKnowledge:null },
-  eventFilter: 'all',
-  speechUtterance: null,
-  speechStartTime: null,
-  speechDuration: 0,
-  speechInterval: null,
-  pendingStamp: null,
-  pendingBeach: null
-};
-
-// Reset AI count daily
-const today = new Date().toDateString();
-if (state.aiDate !== today) {
-  state.aiCount = 0; state.aiDate = today;
-  localStorage.setItem('tcc_ai_today', '0');
-  localStorage.setItem('tcc_ai_date', today);
-}
-
-// ============ DATA LOADING ============
-async function loadData() {
-  const files = ['stamps', 'beaches', 'today', 'conditions', 'bridges', 'whales', 'lighthouses', 'ai-knowledge'];
-  const results = await Promise.allSettled(files.map(f => fetch('data/' + f + '.json').then(r => r.ok ? r.json() : null)));
-  results.forEach((r, i) => {
-    const key = files[i] === 'ai-knowledge' ? 'aiKnowledge' : files[i];
-    state.data[key] = r.status === 'fulfilled' ? r.value : null;
-  });
-}
-
-// ============ UTIL ============
-function distanceMiles(lat1, lng1, lat2, lng2) {
-  const R = 3959, toRad = d => d * Math.PI / 180;
-  const dLat = toRad(lat2-lat1), dLng = toRad(lng2-lng1);
-  const a = Math.sin(dLat/2)**2 + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLng/2)**2;
-  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-}
-function getUserLoc(cb) {
-  if (state.userLoc) return cb(state.userLoc);
-  if (!navigator.geolocation) { state.userLoc = DEFAULT_LOC; return cb(DEFAULT_LOC); }
-  navigator.geolocation.getCurrentPosition(
-    p => { state.userLoc = {lat: p.coords.latitude, lng: p.coords.longitude}; cb(state.userLoc); },
-    () => { state.userLoc = DEFAULT_LOC; cb(DEFAULT_LOC); },
-    { timeout: 5000, maximumAge: 600000 }
-  );
-}
-function toast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2200);
-}
-function fmtMarkdown(text) {
-  return text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
-}
-
-// ============ RENDER: TODAY ============
-function renderToday() {
-  // Date
-  const opts = { weekday:'long', month:'long', day:'numeric' };
-  document.getElementById('todayDate').textContent = new Date().toLocaleDateString('en-US', opts);
-
-  // Conditions strip
-  const c = state.data.conditions?.today;
-  if (c) {
-    document.getElementById('todayConditions').innerHTML =
-      `${c.weather.icon} ${c.weather.temp_high}° · 🌊 ${c.water_temp_f}°F · 🌅 ${c.sun.sunset}`;
-  }
-
-  // Pro banner
-  const banner = document.getElementById('proStatusBanner');
-  if (state.isPro) {
-    banner.innerHTML = `<div class="pro-banner"><div style="display:flex; align-items:center; gap:10px;"><span style="font-size:22px;">👑</span><div style="flex:1;"><div style="font-weight:700; font-size:14px;">Cape Cod Pro</div><div style="font-size:11px; opacity:0.85;">All features unlocked</div></div></div></div>`;
-  } else {
-    banner.innerHTML = '';
-  }
-
-  // Tides
-  const tides = c?.tides || [];
-  document.getElementById('todayTides').innerHTML = tides.slice(0,2).map(t => `
-    <div class="ios-list-item">
-      <span style="font-size:22px;">🌊</span>
-      <div style="flex:1;">
-        <div class="item-title">${t.type === 'high' ? 'High' : 'Low'} tide · ${t.time}</div>
-        <div class="item-sub">${t.height_ft} ft</div>
-      </div>
-    </div>
-  `).join('') || '<div class="ios-list-item"><div class="item-sub">No tide data</div></div>';
-
-  // Bridges
-  const b = state.data.bridges?.current;
-  if (b) {
-    document.getElementById('todayBridges').innerHTML = `
-      <div class="bridge-card">
-        <div style="font-size:32px;">🌉</div>
-        <div style="flex:1;">
-          <div class="item-title">Sagamore</div>
-          <div class="item-sub">${b.sagamore.advice}</div>
-        </div>
-        <div class="bridge-delay ${b.sagamore.current_status==='light'?'light':b.sagamore.current_status==='heavy'?'heavy':'moderate'}">${b.sagamore.current_delay_min}<span style="font-size:14px;">m</span></div>
-      </div>
-    `;
-  }
-
-  // Happening
-  const events = state.data.today?.events || [];
-  const shown = state.isPro ? events.slice(0,5) : events.slice(0, FREE_EVENT_LIMIT);
-  document.getElementById('todayHappening').innerHTML = shown.map(e => renderEventCard(e)).join('') ||
-    '<div class="empty-state">No events yet today</div>';
-
-  // Nearest beaches
-  getUserLoc(loc => {
-    const beaches = (state.data.beaches?.beaches || [])
-      .map(b => ({...b, dist: distanceMiles(loc.lat, loc.lng, b.lat, b.lng)}))
-      .sort((a,b) => a.dist - b.dist)
-      .slice(0, 3);
-    document.getElementById('todayBeaches').innerHTML = beaches.map(b => `
-      <div class="ios-list-item tappable" onclick="openBeach('${b.slug}')">
-        <span class="status-dot" style="background:var(--status-${b.status})"></span>
-        <div style="flex:1; min-width:0;">
-          <div class="item-title">${b.name}</div>
-          <div class="item-sub">${b.town} · ${b.spots_text} · 🌊 ${b.water_temp}°F · ${b.dist.toFixed(1)}mi</div>
-        </div>
-        <div class="crowd-bar">${Array.from({length:5}, (_,j) => `<span class="${j < b.crowd ? 'on' : ''}"></span>`).join('')}</div>
-      </div>
-    `).join('');
-  });
-}
-
-function renderEventCard(e) {
-  return `<div class="happening-card">
-    <div class="cover" style="background-image:url('${e.img}')">
-      <span class="tag">${e.tag}</span>
-      <span class="time">${e.time}</span>
-    </div>
-    <div class="body">
-      <div style="font-weight:700; font-size:15px;">${e.title}</div>
-      <div style="color:var(--ios-sub); font-size:12px; margin-top:2px;">${e.info}</div>
-    </div>
-  </div>`;
-}
-
-// ============ RENDER: EVENTS ============
-function renderEvents() {
-  const events = state.data.today?.events || [];
-  document.getElementById('eventsSubhead').textContent = `${events.length} events today`;
-
-  // Filter chips
-  const cats = [{id:'all',label:'All'},{id:'music',label:'🎵 Music'},{id:'happy_hour',label:'🦪 Happy Hour'},{id:'free_event',label:'🎬 Free'},{id:'family',label:'👨‍👩‍👧 Family'},{id:'food_deal',label:'🦞 Food Deals'},{id:'farmers_market',label:'🥕 Markets'}];
-  document.getElementById('eventFilters').innerHTML = cats.map(c => {
-    const locked = !state.isPro && c.id !== 'all';
-    return `<div class="chip ${state.eventFilter===c.id?'active':''} ${locked?'locked':''}" onclick="${locked?`switchTab('pro')`:`filterEvents('${c.id}')`}">${c.label}${locked?' 🔒':''}</div>`;
-  }).join('');
-
-  // List
-  let filtered = events;
-  if (state.eventFilter !== 'all') filtered = events.filter(e => e.category === state.eventFilter);
-  const shown = state.isPro ? filtered : filtered.slice(0, FREE_EVENT_LIMIT);
-  document.getElementById('eventsList').innerHTML = shown.map(e => renderEventCard(e)).join('') ||
-    '<div class="empty-state">No events match this filter</div>';
-
-  document.getElementById('eventsUnlockCta').innerHTML = (!state.isPro && filtered.length > FREE_EVENT_LIMIT) ?
-    `<button class="unlock-cta" onclick="switchTab('pro')">🔒 +${filtered.length - FREE_EVENT_LIMIT} more events · Unlock Pro $9.99</button>` : '';
-}
-function filterEvents(cat) { state.eventFilter = cat; renderEvents(); }
-
-// ============ RENDER: BEACHES ============
-let beachMapInstance = null;
-function renderBeaches() {
-  const beaches = state.data.beaches?.beaches || [];
-  document.getElementById('beachCount').textContent = beaches.length;
-
-  // Map
-  setTimeout(() => {
-    if (!beachMapInstance && document.getElementById('beachMap').offsetParent) {
-      beachMapInstance = L.map('beachMap').setView([41.78, -70.05], 9);
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution:'© OSM', maxZoom:18 }).addTo(beachMapInstance);
-      beaches.forEach(b => {
-        const color = b.status === 'open' ? '#34C759' : b.status === 'mid' ? '#FF9500' : '#FF3B30';
-        L.circleMarker([b.lat, b.lng], { radius:8, fillColor:color, color:'#fff', weight:2, fillOpacity:1 })
-          .addTo(beachMapInstance)
-          .bindPopup(`<b>${b.name}</b><br>${b.town}<br>${b.spots_text}<br>🌊 ${b.water_temp}°F`);
-      });
+// ── Scroll reveal ──
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
     }
-  }, 100);
+  });
+}, { threshold: 0.1 });
 
-  getUserLoc(loc => {
-    const sorted = beaches.map(b => ({...b, dist: distanceMiles(loc.lat, loc.lng, b.lat, b.lng)})).sort((a,b) => a.dist - b.dist);
-    const free = sorted.slice(0, FREE_BEACH_LIMIT);
-    document.getElementById('beachListFree').innerHTML = free.map(b => renderBeachRow(b)).join('');
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    if (!state.isPro) {
-      document.getElementById('beachLockedSection').innerHTML = `
-        <div class="ios-section-title"><span>🔒 + ${beaches.length - FREE_BEACH_LIMIT} more beaches · Pro</span></div>
-        <div class="ios-list">${sorted.slice(FREE_BEACH_LIMIT, FREE_BEACH_LIMIT + 5).map(b => `
-          <div class="locked-row">
-            <span class="status-dot" style="background:var(--status-${b.status})"></span>
-            <div style="flex:1;"><div class="item-title">${b.name}</div><div class="item-sub">${b.town}</div></div>
-          </div>`).join('')}</div>
-        <button class="unlock-cta" onclick="switchTab('pro')">Unlock all ${beaches.length} beaches · $9.99</button>`;
-      document.getElementById('beachUnlockedSection').innerHTML = '';
+// ── Nav scroll effect ──
+window.addEventListener('scroll', () => {
+  document.getElementById('siteNav').classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// ── Mobile menu ──
+function toggleMobileMenu() {
+  document.getElementById('mobileMenu').classList.toggle('show');
+}
+
+// ── Email popup logic ──
+function showEmailPopup() {
+  if (localStorage.getItem('tcc_email_captured') === 'true') return;
+  if (localStorage.getItem('tcc_popup_dismissed') === 'true') return;
+  document.getElementById('emailPopup').classList.add('show');
+  gtag('event','popup_show',{type:'email_capture'});
+}
+
+function closeEmailPopup() {
+  document.getElementById('emailPopup').classList.remove('show');
+  localStorage.setItem('tcc_popup_dismissed', 'true');
+}
+
+// Show popup after 12s or on scroll past 60%
+setTimeout(() => {
+  if (!localStorage.getItem('tcc_popup_dismissed')) showEmailPopup();
+}, 12000);
+
+let popupTriggered = false;
+window.addEventListener('scroll', () => {
+  if (!popupTriggered && (window.scrollY + window.innerHeight) / document.body.scrollHeight > 0.6) {
+    popupTriggered = true;
+    showEmailPopup();
+  }
+});
+
+// ── Email submit ──
+async function handleEmailSubmit(e) {
+  e.preventDefault();
+  const email = document.getElementById('heroEmail').value;
+  await submitEmail(email, 'home_section');
+}
+
+async function handleEmailPopupSubmit(e) {
+  e.preventDefault();
+  const email = document.getElementById('popupEmail').value;
+  await submitEmail(email, 'popup');
+  closeEmailPopup();
+}
+
+async function submitEmail(email, source) {
+  try {
+    const res = await fetch('/.netlify/functions/email-capture', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, source, url: location.href, timestamp: new Date().toISOString() })
+    });
+    if (res.ok) {
+      localStorage.setItem('tcc_email_captured', 'true');
+      alert('🎉 Check your inbox! Your free Vibe Guide is on its way.');
+      gtag('event','generate_lead',{method:'email'});
     } else {
-      document.getElementById('beachLockedSection').innerHTML = '';
-      document.getElementById('beachUnlockedSection').innerHTML = `
-        <div class="ios-section-title"><span>All Cape beaches</span></div>
-        <div class="ios-list">${sorted.slice(FREE_BEACH_LIMIT).map(b => renderBeachRow(b)).join('')}</div>`;
+      throw new Error('Server error');
     }
-  });
-}
-function renderBeachRow(b) {
-  return `<div class="ios-list-item tappable" onclick="openBeach('${b.slug}')">
-    <span class="status-dot" style="background:var(--status-${b.status})"></span>
-    <div style="flex:1; min-width:0;">
-      <div class="item-title">${b.name}</div>
-      <div class="item-sub">${b.town} · ${b.spots_text} · 🌊 ${b.water_temp}°F${b.dist ? ' · ' + b.dist.toFixed(1) + 'mi' : ''}</div>
-    </div>
-    <div class="crowd-bar">${Array.from({length:5},(_,j) => `<span class="${j < b.crowd ? 'on' : ''}"></span>`).join('')}</div>
-  </div>`;
-}
-
-function openBeach(slug) {
-  const b = (state.data.beaches?.beaches || []).find(b => b.slug === slug);
-  if (!b) return;
-  state.pendingBeach = b;
-  document.getElementById('beachModalName').textContent = b.name;
-  document.getElementById('beachModalTown').textContent = `${b.town} · ${b.region}`;
-  document.getElementById('beachModalDetails').innerHTML = `
-    <div class="ios-list-item"><span class="status-dot" style="background:var(--status-${b.status})"></span><div style="flex:1;"><div class="item-title">${b.spots_text}</div><div class="item-sub">Crowd ${b.crowd}/5 · 🌊 ${b.water_temp}°F · Updated ${b.updated}</div></div></div>
-    <div style="font-size:12px; color:var(--ios-sub); padding:8px 0; line-height:1.5;">
-      ${b.sticker_required ? '🏷️ Sticker required' : '✅ No sticker needed'}<br/>
-      ${b.restrooms ? '🚻 Restrooms' : '— No restrooms'}<br/>
-      ${b.lifeguard ? '🛟 Lifeguard on duty' : '⚠️ No lifeguard'}<br/>
-      ${b.notes ? '📝 ' + b.notes : ''}
-    </div>`;
-  openModal('beach');
-}
-function reportBeach(status) {
-  if (!state.pendingBeach) return;
-  state.beachReports[state.pendingBeach.slug] = { status, at: Date.now() };
-  localStorage.setItem('tcc_beach_reports', JSON.stringify(state.beachReports));
-  // Update local data optimistically
-  state.pendingBeach.status = status;
-  state.pendingBeach.updated = 'just now';
-  closeModal('beach');
-  toast('✅ Thanks! Update sent.');
-  renderBeaches();
-  renderToday();
-}
-
-// ============ RENDER: PASSPORT ============
-function renderPassport() {
-  const stamps = state.data.stamps?.stamps || [];
-  const free = stamps.filter(s => !s.is_pro);
-  const pro = stamps.filter(s => s.is_pro);
-
-  const stampHtml = s => {
-    const earned = state.stamps.includes(s.slug);
-    return `<div class="stamp ${earned ? 'earned' : ''}" onclick="openStamp('${s.slug}')">${earned ? s.icon : '?'}</div>`;
-  };
-  document.getElementById('stampGridFree').innerHTML = free.map(stampHtml).join('');
-
-  if (!state.isPro) {
-    document.getElementById('passportLockedSection').innerHTML = `
-      <div class="ios-section-title"><span>🔒 75 more · Pro</span></div>
-      <div style="padding:0 16px;">
-        <div class="stamp-grid">${pro.slice(0,15).map(()=>`<div class="stamp locked-pro">?</div>`).join('')}</div>
-      </div>
-      <button class="unlock-cta" onclick="switchTab('pro')">Unlock all 100 stamps + badges · $9.99</button>`;
-    document.getElementById('passportUnlockedSection').innerHTML = '';
-  } else {
-    document.getElementById('passportLockedSection').innerHTML = '';
-    document.getElementById('passportUnlockedSection').innerHTML = `
-      <div class="ios-section-title"><span>Premium stamps</span></div>
-      <div style="padding:0 16px;">
-        <div class="stamp-grid">${pro.map(stampHtml).join('')}</div>
-      </div>`;
-  }
-
-  const c = state.stamps.length;
-  document.getElementById('stampCounter').textContent = c;
-  const max = state.isPro ? 100 : FREE_STAMP_LIMIT;
-  document.getElementById('stampProgress').style.width = (c / max * 100) + '%';
-  document.getElementById('stampTierLabel').textContent = state.isPro ? 'Pro · All 100 unlocked' : `Free · max ${FREE_STAMP_LIMIT}`;
-  document.getElementById('stampNextBadge').textContent = c < 10 ? 'Next: 10 stamps' : c < 25 ? 'Next: 25 stamps' : c < 50 ? 'Next: 50 stamps' : c < 100 ? 'Next: 100 (Cape Native)' : '🏆 Cape Native!';
-}
-
-function openStamp(slug) {
-  const s = (state.data.stamps?.stamps || []).find(s => s.slug === slug);
-  if (!s) return;
-  state.pendingStamp = s;
-  document.getElementById('stampModalIcon').textContent = s.icon;
-  document.getElementById('stampModalName').textContent = s.name;
-  document.getElementById('stampModalTown').textContent = s.town;
-  document.getElementById('stampModalDesc').textContent = s.desc;
-  const earned = state.stamps.includes(s.slug);
-  const btn = document.getElementById('stampModalBtn');
-  if (earned) {
-    btn.textContent = '✓ Collected';
-    btn.style.background = 'var(--ios-sub)';
-    btn.onclick = () => closeModal('stamp');
-  } else if (!state.isPro && state.stamps.length >= FREE_STAMP_LIMIT && s.is_pro === false) {
-    btn.textContent = 'Free limit reached — Upgrade';
-    btn.style.background = 'var(--gold-dark)';
-    btn.onclick = () => { closeModal('stamp'); switchTab('pro'); };
-  } else if (!state.isPro && s.is_pro) {
-    btn.textContent = '🔒 Pro · Unlock for $9.99';
-    btn.style.background = 'var(--gold-dark)';
-    btn.onclick = () => { closeModal('stamp'); switchTab('pro'); };
-  } else {
-    btn.textContent = 'Stamp it! 📍';
-    btn.style.background = 'var(--cape-navy)';
-    btn.onclick = confirmStamp;
-  }
-  openModal('stamp');
-}
-function confirmStamp() {
-  if (!state.pendingStamp) return;
-  // GPS validation (if available) — within 1 mile for demo
-  getUserLoc(loc => {
-    const d = distanceMiles(loc.lat, loc.lng, state.pendingStamp.lat, state.pendingStamp.lng);
-    if (d > 1.0 && !confirm(`You're ${d.toFixed(1)} miles from this spot. Stamp anyway? (In production, GPS will be required.)`)) {
-      return;
-    }
-    if (!state.stamps.includes(state.pendingStamp.slug)) {
-      state.stamps.push(state.pendingStamp.slug);
-      localStorage.setItem('tcc_stamps', JSON.stringify(state.stamps));
-      toast(`🎉 ${state.pendingStamp.name} stamped!`);
-    }
-    closeModal('stamp');
-    renderPassport();
-  });
-}
-
-// ============ RENDER: AI ============
-function renderAi() {
-  const left = state.isPro ? '∞' : Math.max(0, 1 - state.aiCount);
-  document.getElementById('aiQuestionsLeft').textContent = state.isPro ? 'Unlimited' : `${left} free question${left===1?'':'s'} left today`;
-}
-function quickAi(q) {
-  document.getElementById('aiInput').value = q;
-  sendAi();
-}
-function sendAi() {
-  if (!state.isPro && state.aiCount >= 1) {
-    const conv = document.getElementById('aiConv');
-    conv.innerHTML += `<div class="ai-bubble-ai">⚠️ You've used your free question today. <strong onclick="switchTab('pro')" style="text-decoration:underline; cursor:pointer;">Unlock unlimited for $9.99</strong></div>`;
-    conv.scrollTop = conv.scrollHeight;
-    return;
-  }
-  const input = document.getElementById('aiInput');
-  const q = input.value.trim();
-  if (!q) return;
-  input.value = '';
-  const conv = document.getElementById('aiConv');
-  conv.innerHTML += `<div class="ai-bubble-user">${q}</div>`;
-  conv.scrollTop = conv.scrollHeight;
-
-  // Find best match in knowledge base
-  const patterns = state.data.aiKnowledge?.patterns || [];
-  const lower = q.toLowerCase();
-  let bestMatch = null, bestScore = 0;
-  for (const p of patterns) {
-    let score = 0;
-    for (const k of p.keywords) if (lower.includes(k.toLowerCase())) score += k.length;
-    if (score > bestScore) { bestScore = score; bestMatch = p; }
-  }
-  if (!bestMatch) bestMatch = patterns.find(p => p.id === 'fallback');
-
-  // If a Claude API proxy is configured, prefer it
-  if (window.TCC_AI_ENDPOINT) {
-    fetch(window.TCC_AI_ENDPOINT, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({question:q}) })
-      .then(r => r.json()).then(d => appendAi(d.response || bestMatch.response))
-      .catch(() => appendAi(bestMatch.response));
-  } else {
-    setTimeout(() => appendAi(bestMatch.response), 600);
-  }
-
-  if (!state.isPro) {
-    state.aiCount++;
-    localStorage.setItem('tcc_ai_today', String(state.aiCount));
-    renderAi();
-  }
-}
-function appendAi(text) {
-  const conv = document.getElementById('aiConv');
-  conv.innerHTML += `<div class="ai-bubble-ai">${fmtMarkdown(text)}</div>`;
-  conv.scrollTop = conv.scrollHeight;
-}
-
-// ============ RENDER: BRIDGES ============
-function renderBridges() {
-  const b = state.data.bridges?.current;
-  if (!b) return;
-  document.getElementById('bridgeCurrent').innerHTML = `
-    <div class="bridge-card">
-      <div style="font-size:36px;">🌉</div>
-      <div style="flex:1;">
-        <div class="item-title">Sagamore Bridge</div>
-        <div class="item-sub">${b.sagamore.advice}</div>
-        <div style="font-size:11px; color:var(--ios-sub); margin-top:2px;">Speed: ${b.sagamore.live_speed_mph} mph · Updated ${b.sagamore.last_check}</div>
-      </div>
-      <div class="bridge-delay ${b.sagamore.current_status==='light'?'light':b.sagamore.current_status==='heavy'?'heavy':'moderate'}">${b.sagamore.current_delay_min}<span style="font-size:14px;">m</span></div>
-    </div>
-    <div class="bridge-card">
-      <div style="font-size:36px;">🌉</div>
-      <div style="flex:1;">
-        <div class="item-title">Bourne Bridge</div>
-        <div class="item-sub">${b.bourne.advice}</div>
-        <div style="font-size:11px; color:var(--ios-sub); margin-top:2px;">Speed: ${b.bourne.live_speed_mph} mph · Updated ${b.bourne.last_check}</div>
-      </div>
-      <div class="bridge-delay ${b.bourne.current_status==='light'?'light':b.bourne.current_status==='heavy'?'heavy':'moderate'}">${b.bourne.current_delay_min}<span style="font-size:14px;">m</span></div>
-    </div>`;
-
-  const hourly = state.data.bridges?.forecast_24h || [];
-  document.getElementById('bridgeHourly').innerHTML = hourly.map(h => `
-    <div class="ios-list-item">
-      <div style="width:48px; font-weight:700; font-size:14px;">${h.hour}</div>
-      <div style="flex:1;">
-        <div style="display:flex; align-items:center; gap:6px;">
-          <span style="font-size:11px; color:var(--ios-sub); width:60px;">Sagamore</span>
-          <div style="flex:1; height:6px; background:var(--ios-divider); border-radius:3px; overflow:hidden;">
-            <div style="height:100%; width:${Math.min(100, h.sagamore_delay*2)}%; background:${h.sagamore_delay>30?'#FF3B30':h.sagamore_delay>15?'#FF9500':'#34C759'}; border-radius:3px;"></div>
-          </div>
-          <span style="font-size:12px; font-weight:700; width:36px; text-align:right;">${h.sagamore_delay}m</span>
-        </div>
-        <div style="display:flex; align-items:center; gap:6px; margin-top:3px;">
-          <span style="font-size:11px; color:var(--ios-sub); width:60px;">Bourne</span>
-          <div style="flex:1; height:6px; background:var(--ios-divider); border-radius:3px; overflow:hidden;">
-            <div style="height:100%; width:${Math.min(100, h.bourne_delay*2)}%; background:${h.bourne_delay>30?'#FF3B30':h.bourne_delay>15?'#FF9500':'#34C759'}; border-radius:3px;"></div>
-          </div>
-          <span style="font-size:12px; font-weight:700; width:36px; text-align:right;">${h.bourne_delay}m</span>
-        </div>
-      </div>
-    </div>
-  `).join('');
-
-  if (state.isPro) {
-    const week = state.data.bridges?.forecast_7day || [];
-    document.getElementById('bridge7Day').innerHTML = `
-      <div class="ios-section-title"><span>📆 7-day forecast (Pro)</span></div>
-      <div class="ios-list">${week.map(d => `
-        <div class="ios-list-item">
-          <div style="width:40px; font-weight:700;">${d.day}</div>
-          <div style="flex:1;">
-            <div class="item-title">Worst: ${d.worst_delay}m at ${d.worst_hour}</div>
-            <div class="item-sub">Best: ${d.best_delay}m at ${d.best_hour}</div>
-          </div>
-        </div>`).join('')}</div>`;
-    const tips = state.data.bridges?.best_times_to_leave;
-    document.getElementById('bridgeTips').innerHTML = tips ? `
-      <div class="ios-section-title"><span>🚗 Best times to leave</span></div>
-      <div class="ios-list">
-        <div class="ios-list-item"><div style="flex:1;"><div class="item-title">Sundays off-Cape</div><div class="item-sub">${tips.off_cape_sunday}</div></div></div>
-        <div class="ios-list-item"><div style="flex:1;"><div class="item-title">Weekdays off-Cape</div><div class="item-sub">${tips.off_cape_weekday}</div></div></div>
-        <div class="ios-list-item"><div style="flex:1;"><div class="item-title">Fridays on-Cape</div><div class="item-sub">${tips.on_cape_friday}</div></div></div>
-        <div class="ios-list-item"><div style="flex:1;"><div class="item-title">Saturdays on-Cape</div><div class="item-sub">${tips.on_cape_saturday}</div></div></div>
-      </div>` : '';
-  } else {
-    document.getElementById('bridge7Day').innerHTML = `
-      <div class="ios-section-title"><span>🔒 7-day forecast · Pro</span></div>
-      <button class="unlock-cta" onclick="switchTab('pro')">Unlock 7-day predictor + best times to leave · $9.99</button>`;
-    document.getElementById('bridgeTips').innerHTML = '';
+  } catch (err) {
+    // Fallback: store locally and try again later
+    const leads = JSON.parse(localStorage.getItem('tcc_pending_leads') || '[]');
+    leads.push({ email, source, timestamp: new Date().toISOString() });
+    localStorage.setItem('tcc_pending_leads', JSON.stringify(leads));
+    localStorage.setItem('tcc_email_captured', 'true');
+    alert('🎉 You\'re on the list! Your free Vibe Guide will be delivered shortly.');
+    gtag('event','generate_lead',{method:'email_fallback'});
   }
 }
 
-// ============ RENDER: CONDITIONS ============
-function renderConditions() {
-  const c = state.data.conditions?.today;
-  if (!c) return;
-  document.getElementById('tideChart').innerHTML = c.tides.map(t => `
-    <div class="tide-row">
-      <span><span class="tide-type ${t.type}">${t.type.toUpperCase()}</span>${t.time}</span>
-      <span style="font-weight:700;">${t.height_ft} ft</span>
-    </div>`).join('');
-
-  document.getElementById('sunInfo').innerHTML = `
-    <div class="ios-list-item"><span style="font-size:22px;">🌅</span><div style="flex:1;"><div class="item-title">Sunrise · ${c.sun.sunrise}</div></div></div>
-    <div class="ios-list-item"><span style="font-size:22px;">🌇</span><div style="flex:1;"><div class="item-title">Sunset · ${c.sun.sunset}</div><div class="item-sub">Best at ${c.sun.best_sunset_spot.name}, ${c.sun.best_sunset_spot.town}</div></div></div>`;
-
-  const w = c.weather;
-  document.getElementById('weatherInfo').innerHTML = `
-    <div class="ios-list-item"><span style="font-size:22px;">${w.icon}</span><div style="flex:1;"><div class="item-title">${w.condition} · ${w.temp_high}° / ${w.temp_low}°</div><div class="item-sub">Wind ${w.wind_mph}mph ${w.wind_dir} · Humidity ${w.humidity}% · UV ${w.uv_index}</div></div></div>
-    <div class="ios-list-item"><span style="font-size:22px;">🌊</span><div style="flex:1;"><div class="item-title">Water ${c.water_temp_f}°F</div><div class="item-sub">Swell ${c.swell_height_ft}ft @ ${c.swell_period_sec}s</div></div></div>`;
-
-  if (state.isPro) {
-    const f = state.data.conditions?.forecast_7day || [];
-    document.getElementById('conditions7Day').innerHTML = `
-      <div class="ios-section-title"><span>📆 7-day forecast (Pro)</span></div>
-      <div class="ios-list">${f.map(d => `
-        <div class="ios-list-item">
-          <div style="width:36px; font-weight:700;">${d.day}</div>
-          <span style="font-size:22px;">${d.icon}</span>
-          <div style="flex:1;">
-            <div class="item-title">${d.temp_high}° / ${d.temp_low}° · ${d.condition}</div>
-            <div class="item-sub">Sunset ${d.sunset} · Low tide ${d.low_tide} · 🌊 ${d.water_temp}°F</div>
-          </div>
-        </div>`).join('')}</div>`;
-  } else {
-    document.getElementById('conditions7Day').innerHTML = `
-      <div class="ios-section-title"><span>🔒 7-day forecast · Pro</span></div>
-      <button class="unlock-cta" onclick="switchTab('pro')">Unlock 7-day forecast · $9.99</button>`;
+// ── Mobile app banner ──
+document.addEventListener('DOMContentLoaded', () => {
+  const isMobile = /iPhone|iPad|iPod|Android/.test(navigator.userAgent);
+  const dismissed = localStorage.getItem('tcc_app_banner_dismissed');
+  if (isMobile && !dismissed) {
+    setTimeout(() => document.getElementById('appDownloadBar').classList.add('show'), 3000);
   }
-}
+});
 
-// ============ RENDER: WHALES ============
-let whaleMapInstance = null;
-function renderWhales() {
-  const sightings = (state.data.whales?.recent_sightings || []).concat(state.userSightings);
-
-  setTimeout(() => {
-    if (!whaleMapInstance && document.getElementById('whaleMap').offsetParent) {
-      whaleMapInstance = L.map('whaleMap').setView([42.05, -70.15], 9);
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution:'© OSM' }).addTo(whaleMapInstance);
-      sightings.forEach(s => {
-        const emoji = s.species === 'seal' ? '🦦' : s.species === 'dolphin' ? '🐬' : '🐋';
-        const icon = L.divIcon({ html:`<div style="font-size:24px;">${emoji}</div>`, className:'', iconSize:[28,28] });
-        L.marker([s.lat, s.lng], { icon }).addTo(whaleMapInstance).bindPopup(`<b>${s.species.toUpperCase()}</b> × ${s.count}<br>${s.location}<br><i>${s.time_ago}</i>`);
-      });
-    }
-  }, 100);
-
-  document.getElementById('whaleList').innerHTML = sightings.map(s => {
-    const emoji = s.species === 'seal' ? '🦦' : s.species === 'dolphin' ? '🐬' : s.species === 'shark' ? '🦈' : '🐋';
-    return `<div class="ios-list-item">
-      <span style="font-size:24px;">${emoji}</span>
-      <div style="flex:1;">
-        <div class="item-title">${s.count}× ${s.species.charAt(0).toUpperCase()+s.species.slice(1)} · ${s.location}</div>
-        <div class="item-sub">${s.time_ago} · ${s.reported_by}${s.notes ? ' · ' + s.notes : ''}</div>
-      </div>
-    </div>`;
-  }).join('') || '<div class="empty-state">No recent sightings</div>';
-
-  document.getElementById('whaleProTease').innerHTML = state.isPro ? `
-    <div class="pro-banner" style="margin:14px 16px;">
-      <div style="font-weight:700; font-size:14px;">🔔 Push alerts ON</div>
-      <div style="font-size:12px; opacity:0.85;">You'll be notified when whales are spotted within 10 mi.</div>
-    </div>` : `
-    <div class="ios-section-title"><span>🔒 Push alerts · Pro</span></div>
-    <button class="unlock-cta" onclick="switchTab('pro')">Get whale alerts within 10mi · $9.99</button>`;
-}
-
-function submitSighting() {
-  const species = document.getElementById('sightingSpecies').value;
-  const count = parseInt(document.getElementById('sightingCount').value) || 1;
-  const notes = document.getElementById('sightingNotes').value.trim();
-  getUserLoc(loc => {
-    const sighting = {
-      id: 'u' + Date.now(),
-      species, count,
-      lat: loc.lat, lng: loc.lng,
-      location: 'Your location',
-      reported_by: 'You',
-      reported_at: new Date().toISOString(),
-      time_ago: 'Just now',
-      notes
-    };
-    state.userSightings.unshift(sighting);
-    localStorage.setItem('tcc_sightings', JSON.stringify(state.userSightings));
-    closeModal('reportSighting');
-    toast('🎉 Sighting submitted!');
-    if (whaleMapInstance) { whaleMapInstance.remove(); whaleMapInstance = null; }
-    renderWhales();
-  });
-}
-
-// ============ RENDER: LIGHTHOUSES ============
-let lhMapInstance = null;
-let currentLighthouse = null;
-function renderLighthouses() {
-  const lhs = state.data.lighthouses?.lighthouses || [];
-  setTimeout(() => {
-    if (!lhMapInstance && document.getElementById('lighthouseMap').offsetParent) {
-      lhMapInstance = L.map('lighthouseMap').setView([41.85, -70.05], 9);
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution:'© OSM' }).addTo(lhMapInstance);
-      lhs.forEach(l => {
-        const icon = L.divIcon({ html:'<div style="font-size:22px;">💡</div>', className:'', iconSize:[24,24] });
-        L.marker([l.lat, l.lng], { icon }).addTo(lhMapInstance).bindPopup(`<b>${l.name}</b><br>${l.town}<br>Built ${l.built}`);
-      });
-    }
-  }, 100);
-
-  document.getElementById('lighthouseList').innerHTML = lhs.map(l => {
-    const locked = !state.isPro && !l.is_free;
-    return `<div class="ios-list-item tappable" onclick="${locked ? `switchTab('pro')` : `openLighthouse('${l.slug}')`}">
-      <span style="font-size:24px;">${locked ? '🔒' : '💡'}</span>
-      <div style="flex:1;">
-        <div class="item-title">${l.name}</div>
-        <div class="item-sub">${l.town} · Built ${l.built} · ${l.duration_min} min tour${locked ? ' · Pro' : ''}</div>
-      </div>
-    </div>`;
-  }).join('');
-}
-
-function openLighthouse(slug) {
-  const l = (state.data.lighthouses?.lighthouses || []).find(x => x.slug === slug);
-  if (!l) return;
-  currentLighthouse = l;
-  document.getElementById('lhName').textContent = l.name;
-  document.getElementById('lhMeta').textContent = `${l.town} · Built ${l.built}`;
-  document.getElementById('lhDuration').textContent = `${l.duration_min} min audio tour`;
-  document.getElementById('lhTranscript').innerHTML = l.script.replace(/\.\s+/g, '.<br><br>');
-  document.getElementById('lhPlayBtn').textContent = '▶';
-  document.getElementById('lhProgress').style.width = '0%';
-  openModal('lighthouse');
-}
-
-function toggleLighthouseAudio() {
-  const btn = document.getElementById('lhPlayBtn');
-  if (state.speechUtterance && speechSynthesis.speaking && !speechSynthesis.paused) {
-    speechSynthesis.pause();
-    btn.textContent = '▶';
-  } else if (speechSynthesis.paused) {
-    speechSynthesis.resume();
-    btn.textContent = '⏸';
-  } else if (currentLighthouse) {
-    startLighthouseAudio(currentLighthouse);
-  }
-}
-function startLighthouseAudio(l) {
-  speechSynthesis.cancel();
-  const u = new SpeechSynthesisUtterance(l.script);
-  u.rate = 0.95; u.pitch = 1.0;
-  // Try to pick a high-quality voice
-  const voices = speechSynthesis.getVoices();
-  const preferred = voices.find(v => v.name.includes('Samantha') || v.name.includes('Karen') || v.name.includes('Daniel'));
-  if (preferred) u.voice = preferred;
-  state.speechUtterance = u;
-  state.speechStartTime = Date.now();
-  state.speechDuration = l.duration_min * 60 * 1000;
-  u.onend = () => { document.getElementById('lhPlayBtn').textContent = '▶'; document.getElementById('lhProgress').style.width = '100%'; clearInterval(state.speechInterval); };
-  speechSynthesis.speak(u);
-  document.getElementById('lhPlayBtn').textContent = '⏸';
-  clearInterval(state.speechInterval);
-  state.speechInterval = setInterval(() => {
-    const pct = Math.min(100, (Date.now() - state.speechStartTime) / state.speechDuration * 100);
-    document.getElementById('lhProgress').style.width = pct + '%';
-  }, 500);
-}
-function stopLighthouseAudio() {
-  speechSynthesis.cancel();
-  clearInterval(state.speechInterval);
-  state.speechUtterance = null;
-}
-
-// ============ TAB SWITCHING ============
-function switchTab(tab) {
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  const screen = document.getElementById('screen-' + tab);
-  if (screen) {
-    if (tab === 'ai') { screen.style.display = 'flex'; }
-    else { screen.style.display = ''; }
-    screen.classList.add('active');
-  }
-  const btn = document.querySelector(`.tab-btn[data-tab="${tab}"]`);
-  if (btn) btn.classList.add('active');
-  document.getElementById('iosContent').scrollTop = 0;
-
-  // Render the screen
-  if (tab === 'today') renderToday();
-  if (tab === 'events') renderEvents();
-  if (tab === 'beaches') renderBeaches();
-  if (tab === 'passport') renderPassport();
-  if (tab === 'ai') renderAi();
-  if (tab === 'bridges') renderBridges();
-  if (tab === 'conditions') renderConditions();
-  if (tab === 'whales') renderWhales();
-  if (tab === 'lighthouses') renderLighthouses();
-  if (tab === 'pro') renderPro();
-}
-
-// ============ MODALS ============
-function openModal(id) { document.getElementById(id + 'Modal').classList.add('show'); }
-function closeModal(id) { document.getElementById(id + 'Modal').classList.remove('show'); }
-document.querySelectorAll('.modal-bg').forEach(m => m.addEventListener('click', e => { if (e.target === m) m.classList.remove('show'); }));
-
-// ============ PURCHASE ============
-function goToStripe() {
-  closeModal('purchase');
-  if (STRIPE_LINK.includes('REPLACE')) {
-    unlockPro();
-    openModal('success');
-  } else {
-    window.location.href = STRIPE_LINK;
-  }
-}
-function unlockPro() {
-  state.isPro = true;
-  localStorage.setItem('tcc_pro', 'true');
-  renderAll();
-}
-function resetPro() {
-  if (!confirm('Reset Pro? Demo only.')) return;
-  state.isPro = false;
-  localStorage.setItem('tcc_pro', 'false');
-  renderAll();
-}
-function renderPro() {
-  if (state.isPro) {
-    document.getElementById('proSplashLocked').style.display = 'none';
-    document.getElementById('proSplashUnlocked').style.display = 'block';
-    document.getElementById('moreMenuProStatus').textContent = '👑 Pro · Active';
-  } else {
-    document.getElementById('proSplashLocked').style.display = 'block';
-    document.getElementById('proSplashUnlocked').style.display = 'none';
-    document.getElementById('moreMenuProStatus').textContent = '$9.99 lifetime';
-  }
-}
-
-// Detect Stripe success return
-if (new URLSearchParams(location.search).get('success') === 'true') {
-  unlockPro();
-  setTimeout(() => openModal('success'), 300);
-  history.replaceState({}, '', location.pathname);
-}
-
-// ============ INSTALL ============
-function checkInstall() {
-  const isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-  const standalone = window.navigator.standalone === true;
-  const dismissed = localStorage.getItem('tcc_install_dismissed') === 'true';
-  if (isIos && !standalone && !dismissed) setTimeout(() => document.getElementById('installBanner').classList.add('show'), 2000);
-}
-function dismissInstall() {
-  document.getElementById('installBanner').classList.remove('show');
-  localStorage.setItem('tcc_install_dismissed', 'true');
-}
-
-// ============ INIT ============
-function renderAll() {
-  renderToday();
-  renderPro();
-}
-async function init() {
-  await loadData();
-  renderAll();
-  checkInstall();
-  // Pre-warm voices for TTS
-  if ('speechSynthesis' in window) speechSynthesis.getVoices();
-}
-init();
+// ── Close modals on backdrop click ──
+document.getElementById('emailPopup').addEventListener('click', e => {
+  if (e.target === e.currentTarget) closeEmailPopup();
+});
 </script>
+
 </body>
 </html>

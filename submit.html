@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1A3A6C" />
+<title>Submit a Spot — Totally Cape Cod</title>
+<meta name="description" content="Submit your favorite Cape Cod spot, share a photo, or list your business on Totally Cape Cod." />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+<link rel="stylesheet" href="css/tcc.css" />
+<style>
+  .submit-tabs { display:flex; gap:8px; margin-bottom:24px; flex-wrap:wrap; }
+  .submit-tab { flex:1; min-width:120px; padding:14px; border-radius:var(--radius-md); border:2px solid var(--divider); background:white; cursor:pointer; text-align:center; transition:all var(--transition-fast); }
+  .submit-tab:hover { border-color:var(--cape-navy); }
+  .submit-tab.active { border-color:var(--cape-navy); background:var(--cape-navy); color:white; }
+  .submit-tab .emoji { font-size:28px; display:block; margin-bottom:6px; }
+  .submit-tab .label { font-weight:700; font-size:14px; }
+  .submit-tab .sub { font-size:12px; opacity:0.7; margin-top:2px; }
+
+  .tier-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:20px 0; }
+  @media(max-width:768px){ .tier-cards{ grid-template-columns:1fr; } }
+  .tier-card { border:2px solid var(--divider); border-radius:var(--radius-md); padding:20px; background:white; cursor:pointer; transition:all var(--transition-fast); position:relative; }
+  .tier-card:hover { border-color:var(--gold); }
+  .tier-card.selected { border-color:var(--gold); background:linear-gradient(135deg, var(--cape-cream) 0%, white 100%); box-shadow:var(--shadow-gold); }
+  .tier-card .badge { position:absolute; top:-10px; left:50%; transform:translateX(-50%); background:var(--gold); color:white; font-size:10px; font-weight:700; padding:4px 12px; border-radius:var(--radius-full); text-transform:uppercase; letter-spacing:0.06em; }
+  .tier-card .price { font-family:'Fraunces',serif; font-weight:900; font-size:32px; color:var(--cape-brown-dark); margin:8px 0; }
+  .tier-card .price span { font-size:14px; font-weight:500; color:var(--text-secondary); }
+  .tier-card ul { list-style:none; padding:0; margin:12px 0 0; font-size:13px; }
+  .tier-card ul li { padding:5px 0; border-bottom:1px solid var(--divider); }
+  .tier-card ul li:last-child { border-bottom:none; }
+
+  .form-section { display:none; }
+  .form-section.active { display:block; animation:fadeIn 0.3s ease; }
+  @keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+
+  .photo-upload { border:2px dashed var(--divider); border-radius:var(--radius-md); padding:24px; text-align:center; cursor:pointer; transition:all var(--transition-fast); }
+  .photo-upload:hover { border-color:var(--cape-navy); background:rgba(26,58,108,0.02); }
+  .photo-upload .emoji { font-size:32px; margin-bottom:8px; }
+
+  .success-box { background:linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); border-radius:var(--radius-md); padding:24px; text-align:center; color:#065f46; }
+  .success-box h3 { font-family:'Fraunces',serif; font-weight:900; font-size:22px; margin:0 0 8px; }
+
+  .hero-mini { min-height:40vh; display:flex; align-items:flex-end; justify-content:center; padding:0 20px 40px; background:linear-gradient(180deg, var(--cape-sky) 0%, var(--cape-cream) 100%); position:relative; }
+  .hero-mini::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); opacity:0.6; }
+  .hero-mini-overlay { position:absolute; inset:0; background:linear-gradient(180deg, rgba(26,58,108,0.1) 0%, rgba(26,58,108,0.35) 100%); }
+  .hero-mini-content { position:relative; z-index:2; text-align:center; max-width:600px; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" id="siteNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Totally Cape Cod</a>
+    <div class="nav-links">
+      <a href="/beaches.html">Beaches</a>
+      <a href="/eats.html">Eats</a>
+      <a href="/stays.html">Stays</a>
+      <a href="/experiences.html">Experiences</a>
+      <a href="/app/">📱 App</a>
+    </div>
+    <button class="nav-mobile-toggle" onclick="toggleMobileMenu()">☰</button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()">
+  <div class="mobile-menu-panel" onclick="event.stopPropagation()">
+    <a href="/beaches.html">Beaches</a>
+    <a href="/eats.html">Eats</a>
+    <a href="/stays.html">Stays</a>
+    <a href="/experiences.html">Experiences</a>
+    <a href="/events.html">Events</a>
+    <a href="/app/">📱 Open the App</a>
+  </div>
+</div>
+
+<section class="hero-mini">
+  <div class="hero-mini-overlay"></div>
+  <div class="hero-mini-content" style="padding-top:80px;">
+    <div class="hero-badge">Contribute</div>
+    <h1 class="hero-title">Share Your Cape Cod</h1>
+    <p class="hero-subtitle">Submit a hidden spot, share your photos, or list your business for thousands of summer visitors.</p>
+  </div>
+</section>
+
+<section class="section page-wrap">
+
+  <!-- Tabs -->
+  <div class="submit-tabs">
+    <div class="submit-tab active" onclick="switchSubmitTab('spot')">
+      <span class="emoji">📍</span>
+      <span class="label">Submit a Spot</span>
+      <div class="sub">Free · Share a hidden gem</div>
+    </div>
+    <div class="submit-tab" onclick="switchSubmitTab('photo')">
+      <span class="emoji">📸</span>
+      <span class="label">Share a Photo</span>
+      <div class="sub">Free · Get featured</div>
+    </div>
+    <div class="submit-tab" onclick="switchSubmitTab('sponsored')">
+      <span class="emoji">🚀</span>
+      <span class="label">List Your Business</span>
+      <div class="sub">Paid · Get discovered</div>
+    </div>
+  </div>
+
+  <!-- Submit a Spot -->
+  <div class="form-section active" id="tab-spot">
+    <div class="card" style="padding:28px;">
+      <h3 style="font-family:'Fraunces',serif; font-weight:900; font-size:22px; margin:0 0 6px; color:var(--cape-brown-dark);">Submit a Hidden Spot</h3>
+      <p style="color:var(--text-secondary); font-size:14px; margin:0 0 20px;">Found a secret beach, quiet pond, or amazing view? Share it with the community.</p>
+      <form onsubmit="handleSpotSubmit(event)">
+        <div class="form-group">
+          <label class="form-label">Spot Name</label>
+          <input type="text" class="form-input" placeholder="e.g., Secret Cove in Truro" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Category</label>
+          <select class="form-select" required>
+            <option value="">Select category</option>
+            <option>Beach</option>
+            <option>Restaurant</option>
+            <option>Viewpoint / Sunset Spot</option>
+            <option>Hiking Trail</option>
+            <option>Swimming Hole / Pond</option>
+            <option>Shop / Market</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Town / Area</label>
+          <input type="text" class="form-input" placeholder="e.g., Truro" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Why is this spot special?</label>
+          <textarea class="form-textarea" rows="4" placeholder="Tell us what makes this place worth visiting..." required></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">How to get there (optional)</label>
+          <input type="text" class="form-input" placeholder="Parking tips, trailheads, landmarks..." />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Your Name</label>
+          <input type="text" class="form-input" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Your Email</label>
+          <input type="email" class="form-input" placeholder="so we can credit you" required />
+        </div>
+        <div class="photo-upload" onclick="alert('In production, this opens a file picker. For now, email photos to hello@totallycapecod.com')">
+          <div class="emoji">📸</div>
+          <div style="font-weight:600; font-size:14px;">Upload a photo</div>
+          <div style="font-size:12px; color:var(--text-secondary); margin-top:4px;">Drag & drop or click to browse</div>
+        </div>
+        <button type="submit" class="btn btn-primary w-full" style="margin-top:20px;"
+                onclick="gtag('event','submit_form',{type:'spot'})">Submit Spot →</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Share a Photo -->
+  <div class="form-section" id="tab-photo">
+    <div class="card" style="padding:28px;">
+      <h3 style="font-family:'Fraunces',serif; font-weight:900; font-size:22px; margin:0 0 6px; color:var(--cape-brown-dark);">Share Your Cape Cod Photos</h3>
+      <p style="color:var(--text-secondary); font-size:14px; margin:0 0 20px;">We feature the best community photos on our homepage and social channels. You'll get full credit.</p>
+      <form onsubmit="handlePhotoSubmit(event)">
+        <div class="form-group">
+          <label class="form-label">Photo Title</label>
+          <input type="text" class="form-input" placeholder="e.g., Sunset at Race Point" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Location</label>
+          <input type="text" class="form-input" placeholder="Where was this taken?" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Your Instagram Handle (optional)</label>
+          <input type="text" class="form-input" placeholder="@yourhandle" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Your Email</label>
+          <input type="email" class="form-input" required />
+        </div>
+        <div class="photo-upload" onclick="alert('In production, this opens a file picker. For now, email photos to hello@totallycapecod.com')">
+          <div class="emoji">📸</div>
+          <div style="font-weight:600; font-size:14px;">Upload your photo</div>
+          <div style="font-size:12px; color:var(--text-secondary); margin-top:4px;">Max 10MB · JPG or PNG · We compress automatically</div>
+        </div>
+        <div style="margin-top:12px; font-size:12px; color:var(--text-secondary);">
+          By submitting, you grant Totally Cape Cod permission to feature your photo with credit. You retain all rights.
+        </div>
+        <button type="submit" class="btn btn-primary w-full" style="margin-top:16px;"
+                onclick="gtag('event','submit_form',{type:'photo'})">Share Photo →</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Sponsored Listing -->
+  <div class="form-section" id="tab-sponsored">
+    <div class="card" style="padding:28px;">
+      <h3 style="font-family:'Fraunces',serif; font-weight:900; font-size:22px; margin:0 0 6px; color:var(--cape-brown-dark);">List Your Business</h3>
+      <p style="color:var(--text-secondary); font-size:14px; margin:0 0 20px;">Get discovered by thousands of Cape Cod visitors. Choose your tier and submit in under 2 minutes.</p>
+
+      <div class="tier-cards">
+        <div class="tier-card" onclick="selectTier(this, 'basic')">
+          <div class="price">$99<span>/season</span></div>
+          <div style="font-weight:700; font-size:15px; color:var(--cape-brown-dark);">Basic Listing</div>
+          <ul>
+            <li>✅ Listed in directory</li>
+            <li>✅ Business name + description</li>
+            <li>✅ Link to your website</li>
+            <li>✅ 1 photo</li>
+            <li>❌ No priority placement</li>
+          </ul>
+        </div>
+        <div class="tier-card selected" onclick="selectTier(this, 'featured')">
+          <div class="badge">Most Popular</div>
+          <div class="price">$299<span>/season</span></div>
+          <div style="font-weight:700; font-size:15px; color:var(--cape-brown-dark);">Featured</div>
+          <ul>
+            <li>✅ Everything in Basic</li>
+            <li>✅ Priority placement (top 3)</li>
+            <li>✅ Up to 5 photos</li>
+            <li>✅ "Editor's Pick" badge</li>
+            <li>✅ Social media shoutout</li>
+          </ul>
+        </div>
+        <div class="tier-card" onclick="selectTier(this, 'premium')">
+          <div class="price">$799<span>/season</span></div>
+          <div style="font-weight:700; font-size:15px; color:var(--cape-brown-dark);">Premium Partner</div>
+          <ul>
+            <li>✅ Everything in Featured</li>
+            <li>✅ Homepage spotlight</li>
+            <li>✅ Dedicated page + SEO</li>
+            <li>✅ Email blast to 2,400+ subscribers</li>
+            <li>✅ Instagram feature story</li>
+          </ul>
+        </div>
+      </div>
+
+      <form onsubmit="handleSponsoredSubmit(event)">
+        <input type="hidden" id="selectedTier" value="featured" />
+        <div class="form-group">
+          <label class="form-label">Business Name</label>
+          <input type="text" class="form-input" id="bizName" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Category</label>
+          <select class="form-select" id="bizCategory" required>
+            <option value="">Select category</option>
+            <option>Restaurant / Bar</option>
+            <option>Hotel / Inn / Rental</option>
+            <option>Experience / Tour</option>
+            <option>Shop / Gallery</option>
+            <option>Service</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Description (2-3 sentences)</label>
+          <textarea class="form-textarea" rows="3" id="bizDesc" placeholder="What makes your business special?" required></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Town</label>
+          <input type="text" class="form-input" id="bizTown" placeholder="e.g., Provincetown" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Website</label>
+          <input type="url" class="form-input" id="bizWebsite" placeholder="https://..." />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Contact Email</label>
+          <input type="email" class="form-input" id="bizEmail" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone</label>
+          <input type="tel" class="form-input" id="bizPhone" placeholder="(508) 555-0199" />
+        </div>
+        <div class="photo-upload" onclick="alert('In production, upload up to 5 photos. For now, email them to hello@totallycapecod.com after submission.')">
+          <div class="emoji">📸</div>
+          <div style="font-weight:600; font-size:14px;">Upload photos</div>
+          <div style="font-size:12px; color:var(--text-secondary); margin-top:4px;">Up to 5 photos · JPG or PNG</div>
+        </div>
+        <div style="margin-top:16px; padding:14px; background:var(--cape-cream); border-radius:var(--radius-sm); font-size:13px; color:var(--cape-brown-dark);">
+          <strong>🔐 Payment is handled securely via Stripe.</strong> After submitting, you'll be redirected to checkout. Your listing goes live within 24 hours of payment.
+        </div>
+        <button type="submit" class="btn btn-primary w-full" style="margin-top:16px;"
+                onclick="gtag('event','begin_checkout',{item:'sponsored_listing'})">Continue to Payment →</button>
+      </form>
+    </div>
+  </div>
+
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Totally Cape Cod</div>
+      <p class="footer-desc">The unofficial guide to the best of Cape Cod. Built by locals, loved by visitors.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-heading">Explore</div>
+      <a href="/beaches.html">Beaches</a>
+      <a href="/eats.html">Restaurants</a>
+      <a href="/stays.html">Hotels & Rentals</a>
+      <a href="/experiences.html">Experiences</a>
+    </div>
+    <div class="footer-links">
+      <div class="footer-heading">Plan</div>
+      <a href="/itinerary.html">Itinerary Builder</a>
+      <a href="/app/">Get the App</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 Totally Cape Cod. Affiliate links help keep this guide free. · <a href="#" style="color:inherit;">Privacy</a> · <a href="#" style="color:inherit;">Terms</a>
+  </div>
+</footer>
+
+<script>
+function toggleMobileMenu() {
+  document.getElementById('mobileMenu').classList.toggle('show');
+}
+
+function switchSubmitTab(tab) {
+  document.querySelectorAll('.submit-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.form-section').forEach(s => s.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  document.getElementById('tab-' + tab).classList.add('active');
+  gtag('event','switch_tab',{tab});
+}
+
+function selectTier(el, tier) {
+  document.querySelectorAll('.tier-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('selectedTier').value = tier;
+  gtag('event','select_content',{content_type:'sponsored_tier',item:tier});
+}
+
+async function handleSpotSubmit(e) {
+  e.preventDefault();
+  alert('🎉 Thanks for submitting! We\'ll review your spot and feature it soon.');
+  gtag('event','submit_form',{type:'spot',success:true});
+}
+
+async function handlePhotoSubmit(e) {
+  e.preventDefault();
+  alert('📸 Photo submitted! If we feature it, we\'ll email you with credit details.');
+  gtag('event','submit_form',{type:'photo',success:true});
+}
+
+async function handleSponsoredSubmit(e) {
+  e.preventDefault();
+  const tier = document.getElementById('selectedTier').value;
+  const data = {
+    name: document.getElementById('bizName').value,
+    category: document.getElementById('bizCategory').value,
+    description: document.getElementById('bizDesc').value,
+    town: document.getElementById('bizTown').value,
+    website: document.getElementById('bizWebsite').value,
+    email: document.getElementById('bizEmail').value,
+    phone: document.getElementById('bizPhone').value,
+    tier: tier,
+  };
+
+  try {
+    const res = await fetch('/.netlify/functions/sponsored-submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    if (res.ok) {
+      gtag('event','purchase',{transaction_id:data.email, value: tier==='basic'?99:tier==='featured'?299:799, currency:'USD'});
+      // Redirect to Stripe payment link based on tier
+      const stripeLinks = {
+        basic: 'https://buy.stripe.com/test_REPLACE_BASIC',
+        featured: 'https://buy.stripe.com/test_REPLACE_FEATURED',
+        premium: 'https://buy.stripe.com/test_REPLACE_PREMIUM',
+      };
+      window.location.href = stripeLinks[tier] || '/';
+    } else {
+      throw new Error('Server error');
+    }
+  } catch (err) {
+    // Fallback: just redirect to Stripe
+    const stripeLinks = {
+      basic: 'https://buy.stripe.com/test_REPLACE_BASIC',
+      featured: 'https://buy.stripe.com/test_REPLACE_FEATURED',
+      premium: 'https://buy.stripe.com/test_REPLACE_PREMIUM',
+    };
+    window.location.href = stripeLinks[tier] || '/';
+  }
+}
+
+// Pre-select tab from URL
+const params = new URLSearchParams(location.search);
+const type = params.get('type');
+if (type === 'sponsored') {
+  document.querySelectorAll('.submit-tab')[2].click();
+} else if (type === 'photo') {
+  document.querySelectorAll('.submit-tab')[1].click();
+}
+</script>
+
+</body>
+</html>

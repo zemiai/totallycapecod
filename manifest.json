@@ -2,7 +2,7 @@
   "name": "Totally Cape Cod",
   "short_name": "Cape Cod",
   "description": "The Cape Cod app locals don't want you to find. Live beach intel, today's events, and the Cape Cod Passport.",
-  "start_url": "./index.html",
+  "start_url": "/app/index.html",
   "display": "standalone",
   "orientation": "portrait",
   "theme_color": "#1A3A6C",

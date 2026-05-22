@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1A3A6C" />
+<title>Plan My Trip — Totally Cape Cod Itinerary Builder</title>
+<meta name="description" content="Build your perfect Cape Cod itinerary in minutes. Pick your vibes and we'll generate a custom day-by-day plan with affiliate booking links." />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+<link rel="stylesheet" href="css/tcc.css" />
+<style>
+  .step-indicator { display:flex; justify-content:center; gap:8px; margin-bottom:28px; }
+  .step-dot { width:10px; height:10px; border-radius:50%; background:var(--divider); transition:all var(--transition-fast); }
+  .step-dot.active { background:var(--cape-navy); transform:scale(1.2); }
+  .step-dot.done { background:var(--gold); }
+
+  .builder-step { display:none; max-width:600px; margin:0 auto; }
+  .builder-step.active { display:block; animation:fadeIn 0.35s ease; }
+
+  .vibe-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+  @media(min-width:640px){ .vibe-grid{ grid-template-columns:repeat(3,1fr); } }
+  .vibe-option { border:2px solid var(--divider); border-radius:var(--radius-md); padding:16px; text-align:center; cursor:pointer; background:white; transition:all var(--transition-fast); }
+  .vibe-option:hover { border-color:var(--cape-navy); }
+  .vibe-option.selected { border-color:var(--cape-navy); background:rgba(26,58,108,0.04); }
+  .vibe-option .emoji { font-size:28px; margin-bottom:6px; display:block; }
+  .vibe-option .label { font-weight:700; font-size:14px; }
+
+  .day-card { background:white; border-radius:var(--radius-md); padding:20px; margin-bottom:16px; box-shadow:var(--shadow-sm); }
+  .day-card h4 { font-family:'Fraunces',serif; font-weight:900; font-size:18px; margin:0 0 12px; color:var(--cape-brown-dark); }
+  .activity-row { display:flex; align-items:center; gap:12px; padding:10px 0; border-bottom:1px solid var(--divider); }
+  .activity-row:last-child { border-bottom:none; }
+  .activity-time { width:48px; font-weight:700; font-size:13px; color:var(--cape-navy); flex-shrink:0; }
+  .activity-body { flex:1; }
+  .activity-title { font-weight:700; font-size:14px; }
+  .activity-sub { font-size:12px; color:var(--text-secondary); }
+  .activity-cta { flex-shrink:0; }
+
+  .share-bar { background:linear-gradient(135deg, var(--cape-cream) 0%, var(--cape-sand) 100%); border-radius:var(--radius-md); padding:20px; text-align:center; margin-top:20px; }
+
+  .hero-mini { min-height:40vh; display:flex; align-items:flex-end; justify-content:center; padding:0 20px 40px; background:linear-gradient(180deg, var(--cape-blush) 0%, var(--cape-cream) 100%); position:relative; }
+  .hero-mini::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); opacity:0.6; }
+  .hero-mini-overlay { position:absolute; inset:0; background:linear-gradient(180deg, rgba(62,42,32,0.1) 0%, rgba(62,42,32,0.3) 100%); }
+  .hero-mini-content { position:relative; z-index:2; text-align:center; max-width:600px; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" id="siteNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Totally Cape Cod</a>
+    <div class="nav-links">
+      <a href="/beaches.html">Beaches</a>
+      <a href="/eats.html">Eats</a>
+      <a href="/stays.html">Stays</a>
+      <a href="/experiences.html">Experiences</a>
+      <a href="/app/">📱 App</a>
+    </div>
+    <button class="nav-mobile-toggle" onclick="toggleMobileMenu()">☰</button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()">
+  <div class="mobile-menu-panel" onclick="event.stopPropagation()">
+    <a href="/beaches.html">Beaches</a>
+    <a href="/eats.html">Eats</a>
+    <a href="/stays.html">Stays</a>
+    <a href="/experiences.html">Experiences</a>
+    <a href="/events.html">Events</a>
+    <a href="/app/">📱 Open the App</a>
+  </div>
+</div>
+
+<section class="hero-mini">
+  <div class="hero-mini-overlay"></div>
+  <div class="hero-mini-content" style="padding-top:80px;">
+    <div class="hero-badge">✈️ Itinerary Builder</div>
+    <h1 class="hero-title">Plan Your Perfect<br/><span class="script">Cape Cod</span> Trip</h1>
+    <p class="hero-subtitle">Answer 4 quick questions and we'll build a custom day-by-day itinerary with booking links.</p>
+  </div>
+</section>
+
+<section class="section page-wrap">
+
+  <div class="step-indicator">
+    <div class="step-dot active" id="dot-0"></div>
+    <div class="step-dot" id="dot-1"></div>
+    <div class="step-dot" id="dot-2"></div>
+    <div class="step-dot" id="dot-3"></div>
+  </div>
+
+  <!-- Step 1: Vibe -->
+  <div class="builder-step active" id="step-0">
+    <div class="section-header" style="margin-bottom:24px;">
+      <h2 class="section-title" style="font-size:1.5rem;">What's your vibe?</h2>
+      <p class="section-subtitle">Pick all that apply</p>
+    </div>
+    <div class="vibe-grid">
+      <div class="vibe-option" onclick="toggleVibe(this, 'beach')"><span class="emoji">🏝️</span><span class="label">Beach Bum</span></div>
+      <div class="vibe-option" onclick="toggleVibe(this, 'foodie')"><span class="emoji">🦐</span><span class="label">Foodie</span></div>
+      <div class="vibe-option" onclick="toggleVibe(this, 'adventure')"><span class="emoji">⛵</span><span class="label">Adventure</span></div>
+      <div class="vibe-option" onclick="toggleVibe(this, 'family')"><span class="emoji">👨‍👩‍👧</span><span class="label">Family Fun</span></div>
+      <div class="vibe-option" onclick="toggleVibe(this, 'romantic')"><span class="emoji">💕</span><span class="label">Romantic</span></div>
+      <div class="vibe-option" onclick="toggleVibe(this, 'hidden')"><span class="emoji">🗺️</span><span class="label">Hidden Gems</span></div>
+      <div class="vibe-option" onclick="toggleVibe(this, 'luxury')"><span class="emoji">✨</span><span class="label">Luxury</span></div>
+      <div class="vibe-option" onclick="toggleVibe(this, 'budget')"><span class="emoji">💰</span><span class="label">Budget</span></div>
+      <div class="vibe-option" onclick="toggleVibe(this, 'nightlife')"><span class="emoji">🍾</span><span class="label">Nightlife</span></div>
+    </div>
+    <div style="text-align:center; margin-top:28px;">
+      <button class="btn btn-primary" onclick="nextStep()" id="btn-step-0">Continue →</button>
+    </div>
+  </div>
+
+  <!-- Step 2: Duration -->
+  <div class="builder-step" id="step-1">
+    <div class="section-header" style="margin-bottom:24px;">
+      <h2 class="section-title" style="font-size:1.5rem;">How long is your trip?</h2>
+    </div>
+    <div class="vibe-grid" style="max-width:400px; margin:0 auto;">
+      <div class="vibe-option" onclick="selectDuration(this, 1)"><span class="emoji">🌅</span><span class="label">Day Trip</span></div>
+      <div class="vibe-option" onclick="selectDuration(this, 2)"><span class="emoji">🌟</span><span class="label">Weekend</span></div>
+      <div class="vibe-option" onclick="selectDuration(this, 3)"><span class="emoji">🌅</span><span class="label">3-4 Days</span></div>
+      <div class="vibe-option" onclick="selectDuration(this, 7)"><span class="emoji">🌟</span><span class="label">Full Week</span></div>
+    </div>
+    <div style="text-align:center; margin-top:28px; display:flex; gap:12px; justify-content:center;">
+      <button class="btn btn-ghost" style="color:var(--text); border-color:var(--divider);" onclick="prevStep()">← Back</button>
+      <button class="btn btn-primary" onclick="nextStep()" id="btn-step-1">Continue →</button>
+    </div>
+  </div>
+
+  <!-- Step 3: Region -->
+  <div class="builder-step" id="step-2">
+    <div class="section-header" style="margin-bottom:24px;">
+      <h2 class="section-title" style="font-size:1.5rem;">Where are you staying?</h2>
+    </div>
+    <div class="vibe-grid">
+      <div class="vibe-option" onclick="selectRegion(this, 'provincetown')"><span class="emoji">🌟</span><span class="label">Provincetown</span></div>
+      <div class="vibe-option" onclick="selectRegion(this, 'wellfleet-truro')"><span class="emoji">🌊</span><span class="label">Wellfleet / Truro</span></div>
+      <div class="vibe-option" onclick="selectRegion(this, 'orleans-chatham')"><span class="emoji">🐠</span><span class="label">Orleans / Chatham</span></div>
+      <div class="vibe-option" onclick="selectRegion(this, 'hyannis')"><span class="emoji">⛵</span><span class="label">Hyannis / Mid-Cape</span></div>
+      <div class="vibe-option" onclick="selectRegion(this, 'falmouth')"><span class="emoji">🌳</span><span class="label">Falmouth / Woods Hole</span></div>
+      <div class="vibe-option" onclick="selectRegion(this, 'anywhere')"><span class="emoji">🗺️</span><span class="label">Anywhere on Cape</span></div>
+    </div>
+    <div style="text-align:center; margin-top:28px; display:flex; gap:12px; justify-content:center;">
+      <button class="btn btn-ghost" style="color:var(--text); border-color:var(--divider);" onclick="prevStep()">← Back</button>
+      <button class="btn btn-primary" onclick="nextStep()" id="btn-step-2">Continue →</button>
+    </div>
+  </div>
+
+  <!-- Step 4: Email + Generate -->
+  <div class="builder-step" id="step-3">
+    <div class="section-header" style="margin-bottom:24px;">
+      <h2 class="section-title" style="font-size:1.5rem;">Where should we send your itinerary?</h2>
+      <p class="section-subtitle">Plus our free Vibe Guide PDF</p>
+    </div>
+    <div class="card" style="padding:28px; max-width:460px; margin:0 auto;">
+      <form onsubmit="generateItinerary(event)">
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-input" id="itineraryEmail" placeholder="your@email.com" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Trip dates (optional)</label>
+          <input type="text" class="form-input" placeholder="e.g., July 15-22" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Who are you traveling with? (optional)</label>
+          <select class="form-select">
+            <option>Solo</option>
+            <option>Partner</option>
+            <option>Family with kids</option>
+            <option>Friends</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary w-full"
+                onclick="gtag('event','generate_lead',{method:'itinerary_builder'})">
+          🎯 Generate My Itinerary →
+        </button>
+      </form>
+    </div>
+    <div style="text-align:center; margin-top:16px;">
+      <button class="btn btn-ghost" style="color:var(--text); border-color:var(--divider);" onclick="prevStep()">← Back</button>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div class="builder-step" id="step-result">
+    <div class="section-header" style="margin-bottom:24px;">
+      <h2 class="section-title" style="font-size:1.5rem;">Your Custom Cape Cod Itinerary</h2>
+      <p class="section-subtitle">Curated based on your vibes. Affiliate links help us keep this free.</p>
+    </div>
+    <div id="itineraryOutput"></div>
+    <div class="share-bar">
+      <h4 style="font-family:'Fraunces',serif; font-weight:900; font-size:18px; margin:0 0 8px; color:var(--cape-brown-dark);">Share this itinerary</h4>
+      <p style="font-size:13px; color:var(--text-secondary); margin:0 0 14px;">Send it to your travel crew or save it for later.</p>
+      <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+        <button class="btn btn-sm btn-navy" onclick="copyLink()">📋 Copy Link</button>
+        <button class="btn btn-sm btn-primary" onclick="shareEmail()">📧 Email</button>
+        <a href="/" class="btn btn-sm btn-ghost" style="color:var(--cape-brown-dark); border-color:var(--divider);">🏠 Home</a>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Totally Cape Cod</div>
+      <p class="footer-desc">The unofficial guide to the best of Cape Cod.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-heading">Explore</div>
+      <a href="/beaches.html">Beaches</a>
+      <a href="/eats.html">Restaurants</a>
+      <a href="/stays.html">Hotels & Rentals</a>
+    </div>
+    <div class="footer-links">
+      <div class="footer-heading">Plan</div>
+      <a href="/app/">Get the App</a>
+      <a href="/submit.html">Submit a Spot</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 Totally Cape Cod. Affiliate links help keep this guide free.
+  </div>
+</footer>
+
+<script>
+function toggleMobileMenu() {
+  document.getElementById('mobileMenu').classList.toggle('show');
+}
+
+let currentStep = 0;
+const itinerary = { vibes: [], duration: 3, region: 'anywhere', email: '' };
+
+function toggleVibe(el, vibe) {
+  el.classList.toggle('selected');
+  if (el.classList.contains('selected')) {
+    itinerary.vibes.push(vibe);
+  } else {
+    itinerary.vibes = itinerary.vibes.filter(v => v !== vibe);
+  }
+}
+
+function selectDuration(el, days) {
+  document.querySelectorAll('#step-1 .vibe-option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  itinerary.duration = days;
+}
+
+function selectRegion(el, region) {
+  document.querySelectorAll('#step-2 .vibe-option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  itinerary.region = region;
+}
+
+function updateDots() {
+  for (let i = 0; i < 4; i++) {
+    const dot = document.getElementById('dot-' + i);
+    dot.classList.remove('active', 'done');
+    if (i < currentStep) dot.classList.add('done');
+    else if (i === currentStep) dot.classList.add('active');
+  }
+}
+
+function nextStep() {
+  if (currentStep === 0 && itinerary.vibes.length === 0) {
+    alert('Pick at least one vibe!');
+    return;
+  }
+  document.getElementById('step-' + currentStep).classList.remove('active');
+  currentStep++;
+  document.getElementById('step-' + currentStep).classList.add('active');
+  updateDots();
+  gtag('event','itinerary_step',{step:currentStep});
+}
+
+function prevStep() {
+  document.getElementById('step-' + currentStep).classList.remove('active');
+  currentStep--;
+  document.getElementById('step-' + currentStep).classList.add('active');
+  updateDots();
+}
+
+function generateItinerary(e) {
+  e.preventDefault();
+  itinerary.email = document.getElementById('itineraryEmail').value;
+
+  // Send lead
+  fetch('/.netlify/functions/email-capture', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: itinerary.email, source: 'itinerary_builder', url: location.href, timestamp: new Date().toISOString() })
+  }).catch(()=>{});
+
+  // Build output
+  const days = buildItineraryDays(itinerary);
+  let html = '';
+  days.forEach((day, i) => {
+    html += `<div class="day-card">
+      <h4>Day ${i+1} — ${day.title}</h4>
+      ${day.activities.map(a => `
+        <div class="activity-row">
+          <div class="activity-time">${a.time}</div>
+          <div class="activity-body">
+            <div class="activity-title">${a.emoji} ${a.title}</div>
+            <div class="activity-sub">${a.sub}</div>
+          </div>
+          ${a.link ? `<div class="activity-cta"><a href="${a.link}" target="_blank" rel="noopener" class="btn btn-sm btn-navy" style="padding:6px 12px; font-size:11px;"
+            onclick="gtag('event','affiliate_click',{type:'${a.affiliateType}',item:'${a.affiliateItem}',location:'itinerary'})">Book →</a></div>` : ''}
+        </div>
+      `).join('')}
+    </div>`;
+  });
+
+  document.getElementById('itineraryOutput').innerHTML = html;
+  document.getElementById('step-3').classList.remove('active');
+  document.getElementById('step-result').classList.add('active');
+  document.querySelector('.step-indicator').style.display = 'none';
+  gtag('event','itinerary_generated',{duration:itinerary.duration,vibes:itinerary.vibes.join(',')});
+}
+
+function buildItineraryDays(it) {
+  const isBeach = it.vibes.includes('beach');
+  const isFoodie = it.vibes.includes('foodie');
+  const isAdventure = it.vibes.includes('adventure');
+  const isFamily = it.vibes.includes('family');
+  const isRomantic = it.vibes.includes('romantic');
+  const isHidden = it.vibes.includes('hidden');
+
+  const days = [];
+  const n = it.duration;
+
+  // Day 1: Arrival + Beach
+  days.push({
+    title: isRomantic ? 'Sunset Arrival' : isFamily ? 'Beach Day One' : 'Hit the Beach',
+    activities: [
+      { time:'10am', emoji:'🏝️', title:isHidden ? 'Ballston Beach (Hidden Gem)' : 'Race Point Beach', sub:'Wide dunes, great swimming' },
+      { time:'1pm', emoji:'🦐', title:isFoodie ? 'The Lobster Pot' : 'Local Clam Shack', sub:'Best lobster roll in town', link:'https://www.yelp.com/search?find_desc=lobster+roll&find_loc=Provincetown%2C+MA', affiliateType:'yelp', affiliateItem:'lobster-ptown' },
+      { time:'4pm', emoji:'🏝️', title:'Beach Round 2', sub:'Cape Cod National Seashore' },
+      { time:'7pm', emoji:'🌅', title:isRomantic ? 'Sunset at Herring Cove' : 'Sunset Beach Walk', sub:'Best sunset on the Outer Cape' },
+    ]
+  });
+
+  if (n >= 2) {
+    days.push({
+      title: isAdventure ? 'Adventure Day' : 'Explore the Towns',
+      activities: [
+        { time:'9am', emoji:'☕', title:'Coffee at The Wired Puppy', sub:'Best coffee in Ptown' },
+        { time:'11am', emoji:isAdventure ? '⛵' : '🗺️', title:isAdventure ? 'Whale Watch Tour' : 'Provincetown Stroll', sub:isAdventure ? '3-4hr tour, humpback guaranteed' : 'Galleries, shops, history', link:isAdventure?'https://www.viator.com/tours/Provincetown/Whale-Watching/d5265-g1-c17?pid=P00000000':'', affiliateType:isAdventure?'viator':'', affiliateItem:isAdventure?'whale-watch':'', },
+        { time:'3pm', emoji:'🍦', title:'Ice Cream at Lewis Bros', sub:'Homemade, legendary' },
+        { time:'6pm', emoji:'🍽️', title:'Dinner at The Mews', sub:'Oceanfront dining', link:'https://www.opentable.com/r/the-mews-restaurant-and-cafe-provincetown', affiliateType:'opentable', affiliateItem:'the-mews' },
+      ]
+    });
+  }
+
+  if (n >= 3) {
+    days.push({
+      title: isFamily ? 'Family Fun Day' : 'Hidden Gems',
+      activities: [
+        { time:'10am', emoji:isFamily ? '🐠' : '🗺️', title:isFamily ? 'Cape Cod Inflatable Park' : 'Great Pond Trail', sub:isFamily ? 'Obstacle courses & slides' : 'Quiet pond, great for kayaking', link:isFamily?'https://www.viator.com/searchResults?text=Provincetown':'', affiliateType:isFamily?'viator':'', affiliateItem:isFamily?'inflatable-park':'', },
+        { time:'1pm', emoji:'🦐', title:'Lunch at The Canteen', sub:'Beachfront, casual, fresh' },
+        { time:'3pm', emoji:'📸', title:isHidden ? 'Long Point Lighthouse' : 'Pilgrim Monument', sub:isHidden ? 'Quiet, scenic, few visitors' : 'Best view of the Outer Cape' },
+        { time:'7pm', emoji:'🎭', title:'Dinner + Show', sub:'Drag show or live music', link:'https://www.viator.com/Provincetown/d5265-ttd', affiliateType:'viator', affiliateItem:'ptown-nightlife' },
+      ]
+    });
+  }
+
+  if (n >= 4) {
+    days.push({
+      title: 'Day Trip',
+      activities: [
+        { time:'9am', emoji:'🚗', title:'Drive the Cape Cod Scenic Highway', sub:'Route 6A through quaint towns' },
+        { time:'12pm', emoji:'🦐', title:'Lunch in Chatham', sub:'Chatham Squire or Bluefins' },
+        { time:'2pm', emoji:'🐠', title:'Shark Center', sub:'Learn about local sharks (family fave)' },
+        { time:'5pm', emoji:'🌅', title:'Beach in Chatham', sub:'Lighthouse Beach — calm, beautiful' },
+      ]
+    });
+  }
+
+  // Fill remaining days with variations
+  while (days.length < n) {
+    days.push({
+      title: 'Relax & Repeat',
+      activities: [
+        { time:'10am', emoji:'🏝️', title:'Beach Morning', sub:'Your favorite spot from Day 1' },
+        { time:'1pm', emoji:'🦐', title:'Long Lunch', sub:'Try a new restaurant' },
+        { time:'4pm', emoji:'☕', title:'Coffee Break', sub:'People watching in town' },
+        { time:'7pm', emoji:'🌅', title:'Final Sunset', sub:'Make it count' },
+      ]
+    });
+  }
+
+  return days;
+}
+
+function copyLink() {
+  navigator.clipboard.writeText(location.href).then(() => alert('📋 Link copied to clipboard!'));
+}
+
+function shareEmail() {
+  window.location.href = `mailto:?subject=My Cape Cod Itinerary&body=Check out my custom Cape Cod itinerary: ${encodeURIComponent(location.href)}`;
+}
+</script>
+
+</body>
+</html>

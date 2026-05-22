@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1A3A6C" />
+<title>Where to Eat on Cape Cod — Lobster Rolls, Clam Shacks & Fine Dining</title>
+<meta name="description" content="The best restaurants on Cape Cod. Lobster rolls, clam shacks, fine dining, and hidden gems. Filter by cuisine, price, and vibe." />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+<link rel="stylesheet" href="css/tcc.css" />
+<style>
+.eat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+@media(max-width:768px){.eat-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.eat-grid{grid-template-columns:1fr;}}
+.eat-card{background:white;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);transition:transform var(--transition-base),box-shadow var(--transition-base);}
+.eat-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);}
+.eat-card .cover{height:160px;background-size:cover;background-position:center;position:relative;}
+.eat-card .cover::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.35) 0%,transparent 50%);}
+.eat-card .price-pill{position:absolute;bottom:10px;right:10px;padding:4px 10px;border-radius:999px;font-size:11px;font-weight:700;color:white;background:var(--cape-navy);z-index:1;}
+.eat-card .body{padding:14px;}
+.eat-card h3{font-weight:700;font-size:16px;margin:0 0 4px;}
+.eat-card .meta{font-size:12px;color:var(--text-secondary);margin-bottom:8px;}
+.eat-card .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
+.eat-card .tag{font-size:11px;font-weight:600;background:var(--cape-cream);color:var(--cape-brown-dark);padding:3px 8px;border-radius:6px;}
+.eat-card .actions{display:flex;gap:8px;}
+.eat-card .actions a{flex:1;text-align:center;padding:8px;border-radius:10px;font-size:12px;font-weight:700;text-decoration:none;}
+.eat-card .actions .btn-view{background:var(--cape-navy);color:white;}
+.eat-card .actions .btn-book{background:var(--cape-cream);color:var(--cape-brown-dark);border:1px solid var(--divider);}
+</style>
+</head>
+<body>
+<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/app/">📱 App</a></div><button class="nav-mobile-toggle" onclick="toggleMobileMenu()">☰</button></div></nav>
+<div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()"><a href="/">Home</a><a href="/beaches.html">Beaches</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events.html">Events</a><a href="/itinerary.html">Plan My Trip</a><a href="/app/">📱 Open the App</a></div></div>
+
+<section class="hero" style="min-height:50vh;"><div class="hero-overlay"></div><div class="hero-content" style="padding-top:80px;"><div class="hero-badge">🦐 Cape Cod Dining</div><h1 class="hero-title">Where to <span class="script">Eat</span></h1><p class="hero-subtitle">Lobster rolls that change lives. Clam shacks with lines worth waiting in. Fine dining with ocean views.</p></div></section>
+
+<section class="section page-wrap">
+<div class="filter-bar">
+<div class="filter-chip active" onclick="filterEats('all',this)">All</div>
+<div class="filter-chip" onclick="filterEats('lobster',this)">🦐 Lobster Rolls</div>
+<div class="filter-chip" onclick="filterEats('clam',this)">🦪 Clam Shack</div>
+<div class="filter-chip" onclick="filterEats('fine',this)">🍽️ Fine Dining</div>
+<div class="filter-chip" onclick="filterEats('breakfast',this)">☕ Breakfast</div>
+<div class="filter-chip" onclick="filterEats('icecream',this)">🍦 Ice Cream</div>
+</div>
+
+<div class="affiliate-band" style="margin-bottom:20px;">
+<div><div class="label">🎯 Reserve Your Table</div><div class="title">Book restaurants in advance — summer weekends fill up fast</div></div>
+<a href="https://www.opentable.com/region/cape-cod" target="_blank" rel="noopener" class="btn btn-navy btn-sm" onclick="gtag('event','affiliate_click',{type:'opentable',location:'eats_banner'})">Find Tables →</a>
+</div>
+
+<div class="eat-grid" id="eatGrid"></div>
+
+<div class="card" style="padding:24px; margin-top:32px;">
+<h3 style="font-family:'Fraunces',serif; font-weight:900; font-size:20px; margin:0 0 6px; color:var(--cape-brown-dark);">🦐 Best Lobster Rolls on Cape Cod</h3>
+<p style="color:var(--text-secondary); font-size:14px; margin:0 0 14px;">We ate them all so you don't have to. Here are the top 3.</p>
+<div class="grid-3" style="margin-top:16px;">
+<div class="card" style="padding:16px;"><div style="font-size:28px; margin-bottom:8px;">🤝</div><div style="font-weight:700; font-size:15px; margin-bottom:4px;">Arnold's — Eastham</div><div style="font-size:13px; color:var(--text-secondary);">Butter AND mayo. Toasted split-top bun. The standard.</div></div>
+<div class="card" style="padding:16px;"><div style="font-size:28px; margin-bottom:8px;">🦐</div><div style="font-weight:700; font-size:15px; margin-bottom:4px;">The Lobster Pot — Ptown</div><div style="font-size:13px; color:var(--text-secondary);">Generous chunks, waterfront deck, iconic since 1979.</div></div>
+<div class="card" style="padding:16px;"><div style="font-size:28px; margin-bottom:8px;">👌</div><div style="font-weight:700; font-size:15px; margin-bottom:4px;">Lobster Claw — Orleans</div><div style="font-size:13px; color:var(--text-secondary);">Cold with light mayo, celery, and a perfect soft roll.</div></div>
+</div>
+</div>
+
+<div class="card" style="padding:24px; margin-top:20px; text-align:center;">
+<h3 style="font-family:'Fraunces',serif; font-weight:900; font-size:20px; margin:0 0 6px; color:var(--cape-brown-dark);">Own a Restaurant?</h3>
+<p style="color:var(--text-secondary); font-size:14px; margin:0 0 14px;">Get listed and discovered by thousands of hungry summer visitors.</p>
+<a href="/submit.html?type=sponsored" class="btn btn-primary">List Your Business →</a>
+</div>
+</section>
+
+<footer class="site-footer">
+<div class="footer-inner"><div><div class="footer-brand">Totally Cape Cod</div><p class="footer-desc">The unofficial guide to the best of Cape Cod.</p></div>
+<div class="footer-links"><div class="footer-heading">Explore</div><a href="/beaches.html">Beaches</a><a href="/eats.html">Restaurants</a><a href="/stays.html">Hotels</a><a href="/experiences.html">Experiences</a></div>
+<div class="footer-links"><div class="footer-heading">Plan</div><a href="/itinerary.html">Itinerary Builder</a><a href="/app/">Get the App</a><a href="/hidden-gems.html">Hidden Gems</a></div>
+</div>
+<div class="footer-bottom">© 2026 Totally Cape Cod. Affiliate links help keep this guide free.</div>
+</footer>
+
+<script>
+function toggleMobileMenu(){document.getElementById('mobileMenu').classList.toggle('show');}
+const eats=[
+{name:"The Lobster Pot",town:"Provincetown",price:"$$$",rating:4.7,cuisine:"Seafood",tags:["lobster","fine"],img:"https://images.unsplash.com/photo-1553163147-621957516919?w=600&q=80",desc:"Iconic waterfront since 1979. Lobster rolls, clam chowder, and harbor views."},
+{name:"Arnold's Lobster & Clam Bar",town:"Eastham",price:"$$",rating:4.6,cuisine:"Seafood",tags:["lobster","clam"],img:"https://images.unsplash.com/photo-1553163147-621957516919?w=600&q=80",desc:"The standard for lobster rolls. Mini golf, ice cream, and epic onion rings."},
+{name:"The Canteen",town:"Provincetown",price:"$$",rating:4.5,cuisine:"Casual",tags:["clam","breakfast"],img:"https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80",desc:"Beachfront counter with the freshest catch. Go for the clam strips."},
+{name:"PB Boulangerie",town:"Wellfleet",price:"$$",rating:4.8,cuisine:"Bakery / Cafe",tags:["breakfast"],img:"https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80",desc:"French-trained pastry chef. Croissants that ruin all other croissants."},
+{name:"Mac's Seafood",town:"Wellfleet",price:"$$",rating:4.4,cuisine:"Seafood",tags:["lobster","clam"],img:"https://images.unsplash.com/photo-1553163147-621957516919?w=600&q=80",desc:"Right on the harbor. Eat oysters while watching the fleet come in."},
+{name:"The Mews",town:"Provincetown",price:"$$$$",rating:4.6,cuisine:"Fine Dining",tags:["fine"],img:"https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80",desc:"Oceanfront fine dining. Special occasion spot with a view."},
+{name:"Four Seas Ice Cream",town:"Centerville",price:"$",rating:4.9,cuisine:"Ice Cream",tags:["icecream"],img:"https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=600&q=80",desc:"Since 1934. The Cape's most legendary ice cream. Peanut butter cup."},
+{name:"Lobster Claw",town:"Orleans",price:"$$",rating:4.5,cuisine:"Seafood",tags:["lobster","clam"],img:"https://images.unsplash.com/photo-1553163147-621957516919?w=600&q=80",desc:"No-frills shack with perfect cold lobster rolls and great clam plates."},
+{name:"The Red Inn",town:"Provincetown",price:"$$$$",rating:4.5,cuisine:"Fine Dining",tags:["fine"],img:"https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80",desc:"Sunset dining on the water. Pricey but unforgettable."},
+{name:"Box Lunch",town:"Provincetown",price:"$",rating:4.3,cuisine:"Sandwiches",tags:["breakfast"],img:"https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80",desc:"Famous wrap sandwiches. The Ptown roll is iconic."},
+{name:"Cafe Heaven",town:"Provincetown",price:"$$",rating:4.4,cuisine:"Brunch",tags:["breakfast"],img:"https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80",desc:"Best brunch in Ptown. French toast, mimosas, and a backyard patio."},
+{name:"Sundae School",town:"Dennisport",price:"$",rating:4.8,cuisine:"Ice Cream",tags:["icecream"],img:"https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=600&q=80",desc:"Homemade ice cream in a schoolhouse. Do not skip the frozen pudding."},
+];
+let eatFilter='all';
+function renderEats(){
+  const grid=document.getElementById('eatGrid');
+  const filtered=eatFilter==='all'?eats:eats.filter(r=>r.tags.includes(eatFilter));
+  grid.innerHTML=filtered.map(r=>`
+    <div class="eat-card">
+      <div class="cover" style="background-image:url('${r.img}')"><span class="price-pill">${r.price}</span></div>
+      <div class="body">
+        <h3>${r.name}</h3>
+        <div class="meta">${r.town} · ${r.cuisine} · ⭐ ${r.rating}</div>
+        <div class="tags">${r.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+        <p style="font-size:13px;color:var(--text-secondary);margin:0 0 10px;line-height:1.5;">${r.desc}</p>
+        <div class="actions">
+          <a href="https://www.yelp.com/search?find_desc=${encodeURIComponent(r.name)}&find_loc=${encodeURIComponent(r.town)}%2C+MA" target="_blank" rel="noopener" class="btn-view" onclick="gtag('event','affiliate_click',{type:'yelp',item:'${r.name}',location:'eats_card'})">Reviews</a>
+          <a href="https://www.opentable.com/s?term=${encodeURIComponent(r.name)}&metroId=66" target="_blank" rel="noopener" class="btn-book" onclick="gtag('event','affiliate_click',{type:'opentable',item:'${r.name}',location:'eats_card'})">Reserve</a>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+function filterEats(tag,el){document.querySelectorAll('.filter-chip').forEach(c=>c.classList.remove('active'));el.classList.add('active');eatFilter=tag;renderEats();gtag('event','filter_click',{category:'eats',filter:tag});}
+renderEats();
+</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1A3A6C" />
+<title>Where to Stay on Cape Cod — Hotels, Rentals, B&Bs & Camping</title>
+<meta name="description" content="Find the perfect place to stay on Cape Cod. Hotels, vacation rentals, B&Bs, and campgrounds. Compare prices and book direct." />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+<link rel="stylesheet" href="css/tcc.css" />
+<style>
+.stay-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+@media(max-width:768px){.stay-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.stay-grid{grid-template-columns:1fr;}}
+.stay-card{background:white;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);transition:transform var(--transition-base),box-shadow var(--transition-base);}
+.stay-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);}
+.stay-card .cover{height:170px;background-size:cover;background-position:center;position:relative;}
+.stay-card .cover::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.35) 0%,transparent 50%);}
+.stay-card .price-pill{position:absolute;bottom:10px;left:10px;padding:4px 10px;border-radius:999px;font-size:11px;font-weight:700;color:white;background:var(--cape-navy);z-index:1;}
+.stay-card .body{padding:14px;}
+.stay-card h3{font-weight:700;font-size:16px;margin:0 0 4px;}
+.stay-card .meta{font-size:12px;color:var(--text-secondary);margin-bottom:8px;}
+.stay-card .amenities{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
+.stay-card .amenity{font-size:11px;background:var(--cape-cream);color:var(--cape-brown-dark);padding:3px 8px;border-radius:6px;}
+.stay-card .actions{display:flex;gap:8px;}
+.stay-card .actions a{flex:1;text-align:center;padding:8px;border-radius:10px;font-size:12px;font-weight:700;text-decoration:none;}
+.stay-card .actions .btn-view{background:var(--cape-navy);color:white;}
+.stay-card .actions .btn-book{background:var(--cape-cream);color:var(--cape-brown-dark);border:1px solid var(--divider);}
+</style>
+</head>
+<body>
+<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/app/">📱 App</a></div><button class="nav-mobile-toggle" onclick="toggleMobileMenu()">☰</button></div></nav>
+<div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()"><a href="/">Home</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/experiences.html">Experiences</a><a href="/events.html">Events</a><a href="/itinerary.html">Plan My Trip</a><a href="/app/">📱 Open the App</a></div></div>
+
+<section class="hero" style="min-height:50vh;"><div class="hero-overlay"></div><div class="hero-content" style="padding-top:80px;"><div class="hero-badge">🏨 Cape Cod Stays</div><h1 class="hero-title">Where to <span class="script">Stay</span></h1><p class="hero-subtitle">From beachfront hotels to cozy B&Bs. Compare prices across Booking.com, VRBO, and Expedia.</p></div></section>
+
+<section class="section page-wrap">
+<div class="filter-bar">
+<div class="filter-chip active" onclick="filterStays('all',this)">All</div>
+<div class="filter-chip" onclick="filterStays('hotel',this)">🏨 Hotels</div>
+<div class="filter-chip" onclick="filterStays('rental',this)">🏠 Rentals</div>
+<div class="filter-chip" onclick="filterStays('bnb',this)">💛 B&Bs</div>
+<div class="filter-chip" onclick="filterStays('camping',this)">⛺ Camping</div>
+<div class="filter-chip" onclick="filterStays('luxury',this)">✨ Luxury</div>
+</div>
+
+<div class="affiliate-band" style="margin-bottom:20px;">
+<div><div class="label">🔍 Compare Prices</div><div class="title">Check Booking.com, VRBO, and Expedia for the best rates</div></div>
+<a href="https://www.booking.com/country/us.html?aid=YOUR_AFFILIATE_ID&label=totallycapecod-stays" target="_blank" rel="noopener" class="btn btn-navy btn-sm" onclick="gtag('event','affiliate_click',{type:'booking',location:'stays_banner'})">Search →</a>
+</div>
+
+<div class="stay-grid" id="stayGrid"></div>
+
+<div class="card" style="padding:24px; margin-top:32px; text-align:center;">
+<h3 style="font-family:'Fraunces',serif; font-weight:900; font-size:20px; margin:0 0 6px; color:var(--cape-brown-dark);">Own a Property?</h3>
+<p style="color:var(--text-secondary); font-size:14px; margin:0 0 14px;">List your rental or B&B and get booked by thousands of summer visitors.</p>
+<a href="/submit.html?type=sponsored" class="btn btn-primary">List Your Property →</a>
+</div>
+</section>
+
+<footer class="site-footer">
+<div class="footer-inner"><div><div class="footer-brand">Totally Cape Cod</div><p class="footer-desc">The unofficial guide to the best of Cape Cod.</p></div>
+<div class="footer-links"><div class="footer-heading">Explore</div><a href="/beaches.html">Beaches</a><a href="/eats.html">Restaurants</a><a href="/stays.html">Hotels</a><a href="/experiences.html">Experiences</a></div>
+<div class="footer-links"><div class="footer-heading">Plan</div><a href="/itinerary.html">Itinerary Builder</a><a href="/app/">Get the App</a><a href="/best-beaches-2026.html">Best Beaches 2026</a></div>
+</div>
+<div class="footer-bottom">© 2026 Totally Cape Cod. Affiliate links help keep this guide free.</div>
+</footer>
+
+<script>
+function toggleMobileMenu(){document.getElementById('mobileMenu').classList.toggle('show');}
+const stays=[
+{name:"Chatham Bars Inn",town:"Chatham",price:"$650",per:"night",rating:4.7,type:"hotel",amenities:["Beachfront","Pool","Spa","Fine Dining"],img:"https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80",desc:"The Cape's most iconic resort. Private beach, oceanfront dining, and timeless luxury."},
+{name:"The Red Jacket Beach Resort",town:"South Yarmouth",price:"$380",per:"night",rating:4.4,type:"hotel",amenities:["Pool","Beach","Family"],img:"https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80",desc:"Family-friendly with multiple pools, beach access, and activities for kids."},
+{name:"Wequassett Resort",town:"Harwich",price:"$720",per:"night",rating:4.8,type:"luxury",amenities:["Golf","Pool","Spa","Beachfront"],img:"https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80",desc:"Relaxed luxury on Pleasant Bay. Two pools, golf, and incredible sunsets."},
+{name:"Race Point Beach Cottage",town:"Provincetown",price:"$280",per:"night",rating:4.5,type:"rental",amenities:["Ocean View","Pet-friendly","Kitchen"],img:"https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80",desc:"Steps from Race Point Beach. Private deck, full kitchen, and National Seashore access."},
+{name:"The Provincetown Hotel",town:"Provincetown",price:"$220",per:"night",rating:4.3,type:"hotel",amenities:["Pool","Breakfast","Center of Town"],img:"https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80",desc:"Heart of Commercial Street. Rooftop pool and walk to everything."},
+{name:"Outer Cape Vacation Rental",town:"Truro",price:"$340",per:"night",rating:4.6,type:"rental",amenities:["Ocean View","Private","Kitchen"],img:"https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80",desc:"Secluded dune home with panoramic ocean views. Perfect for a quiet escape."},
+{name:"The Old Harbor Inn",town:"Chatham",price:"$190",per:"night",rating:4.5,type:"bnb",amenities:["Breakfast","Historic","Walk to Beach"],img:"https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80",desc:"Charming B&B in a historic captain's house. Gourmet breakfast and wine hour."},
+{name:"North of Highland Camping",town:"North Truro",price:"$55",per:"night",rating:4.4,type:"camping",amenities:["Beach Access","Showers","Tent Sites"],img:"https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80",desc:"Walk to Head of the Meadow Beach. Simple, affordable, and right on the dunes."},
+{name:"The Captain's House Inn",town:"Chatham",price:"$210",per:"night",rating:4.7,type:"bnb",amenities:["Breakfast","Pool","Historic"],img:"https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80",desc:"Elegant B&B with heated pool, gardens, and afternoon tea. Romance central."},
+{name:"Wellfleet Harbor Cottage",town:"Wellfleet",price:"$260",per:"night",rating:4.5,type:"rental",amenities:["Harbor View","Kayak","Kitchen"],img:"https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80",desc:"Cozy cottage on the harbor. Kayak from your backyard, walk to town."},
+];
+let stayFilter='all';
+function renderStays(){
+  const grid=document.getElementById('stayGrid');
+  const filtered=stayFilter==='all'?stays:stays.filter(s=>s.type===stayFilter||s.amenities.some(a=>a.toLowerCase().includes(stayFilter)));
+  grid.innerHTML=filtered.map(s=>`
+    <div class="stay-card">
+      <div class="cover" style="background-image:url('${s.img}')"><span class="price-pill">$${s.price.replace(/\$/g,'')}/${s.per}</span></div>
+      <div class="body">
+        <h3>${s.name}</h3>
+        <div class="meta">${s.town} · ⭐ ${s.rating}</div>
+        <div class="amenities">${s.amenities.map(a=>`<span class="amenity">${a}</span>`).join('')}</div>
+        <p style="font-size:13px;color:var(--text-secondary);margin:0 0 10px;line-height:1.5;">${s.desc}</p>
+        <div class="actions">
+          <a href="https://www.booking.com/searchresults.html?aid=YOUR_AFFILIATE_ID&ss=${encodeURIComponent(s.name+' '+s.town)}" target="_blank" rel="noopener" class="btn-view" onclick="gtag('event','affiliate_click',{type:'booking',item:'${s.name}',location:'stays_card'})">Booking.com</a>
+          <a href="https://www.vrbo.com/search/keywords:${encodeURIComponent(s.town+'-cape-cod-massachusetts')}" target="_blank" rel="noopener" class="btn-book" onclick="gtag('event','affiliate_click',{type:'vrbo',item:'${s.name}',location:'stays_card'})">VRBO</a>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+function filterStays(tag,el){document.querySelectorAll('.filter-chip').forEach(c=>c.classList.remove('active'));el.classList.add('active');stayFilter=tag;renderStays();gtag('event','filter_click',{category:'stays',filter:tag});}
+renderStays();
+</script>
+</body>
+</html>

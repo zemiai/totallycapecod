@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1A3A6C" />
+<title>Cape Cod Events Calendar — Summer 2026 | Totally Cape Cod</title>
+<meta name="description" content="Cape Cod events calendar for summer 2026. Music, food and drink, art, family activities, and free local events across the Cape." />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+<link rel="stylesheet" href="css/tcc.css" />
+<style>
+  .content-wrap{max-width:1080px;margin:0 auto;padding:0 20px 64px;}
+  .event-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  @media(max-width:760px){.event-grid{grid-template-columns:1fr;}}
+  .event-card{background:white;border-radius:var(--radius-md);padding:18px;box-shadow:var(--shadow-sm);border:1px solid rgba(0,0,0,0.03);} 
+  .event-card h3{font-family:'Fraunces',serif;font-weight:900;font-size:20px;margin:0 0 6px;color:var(--cape-brown-dark);} 
+  .event-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;flex-wrap:wrap;} 
+  .event-date{background:var(--cape-cream);padding:8px 12px;border-radius:12px;font-weight:800;color:var(--cape-brown-dark);font-size:12px;} 
+  .event-tags{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 12px;} 
+  .event-tag{font-size:11px;font-weight:700;padding:4px 8px;border-radius:999px;background:#f3f4f6;color:#374151;} 
+  .week-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:20px 0;}
+  @media(max-width:760px){.week-strip{grid-template-columns:repeat(2,1fr);}}
+  .week-box{background:white;border:1px solid var(--divider);border-radius:14px;padding:14px;text-align:center;}
+  .week-box .m{font-weight:800;color:var(--cape-navy);font-size:12px;text-transform:uppercase;letter-spacing:.06em;}
+  .week-box .v{font-family:'Fraunces',serif;font-weight:900;font-size:18px;color:var(--cape-brown-dark);margin-top:4px;}
+  .calendar-banner{background:linear-gradient(135deg,var(--cape-navy) 0%,var(--cape-navy-dark) 100%);color:white;border-radius:var(--radius-lg);padding:22px;display:flex;justify-content:space-between;gap:14px;align-items:center;flex-wrap:wrap;}
+  .calendar-banner a{background:white;color:var(--cape-navy);padding:12px 18px;border-radius:12px;font-weight:800;text-decoration:none;}
+</style>
+</head>
+<body>
+<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/app/">📱 App</a></div><button class="nav-mobile-toggle" onclick="toggleMobileMenu()">☰</button></div></nav>
+<div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()"><a href="/">Home</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/itinerary.html">Itinerary</a><a href="/app/">📱 Open the App</a></div></div>
+
+<section class="hero" style="min-height:56vh;"><div class="hero-overlay"></div><div class="hero-content" style="padding-top:84px;max-width:860px;"><div class="hero-badge">Summer 2026 Calendar</div><h1 class="hero-title">Cape Cod Events</h1><p class="hero-subtitle">The best music, food, art, family, and free events across the Cape — organized so you can actually plan your weekend.</p></div></section>
+
+<div class="content-wrap">
+  <div class="calendar-banner" style="margin-top:-28px;position:relative;z-index:2;">
+    <div><div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.8;font-weight:700;">Plan around the weekends</div><div style="font-family:'Fraunces',serif;font-size:24px;font-weight:900;margin-top:4px;">Book hotels before the event weekends sell out</div><div style="opacity:.9;font-size:14px;margin-top:6px;max-width:640px;">Especially for July 4th, Carnival, and OysterFest.</div></div>
+    <a href="https://www.booking.com/searchresults.html?aid=YOUR_AFFILIATE_ID&ss=Cape+Cod" target="_blank" rel="noopener" onclick="gtag('event','affiliate_click',{type:'booking',location:'events_banner'})">Search stays →</a>
+  </div>
+
+  <section class="section">
+    <h2 class="section-title">Quick season snapshot</h2>
+    <div class="week-strip">
+      <div class="week-box"><div class="m">June</div><div class="v">Warm-up</div><div style="font-size:12px;color:var(--text-secondary);margin-top:6px;">Concerts, markets, low-crowd weekends</div></div>
+      <div class="week-box"><div class="m">July</div><div class="v">Peak season</div><div style="font-size:12px;color:var(--text-secondary);margin-top:6px;">Fireworks, family events, busy beaches</div></div>
+      <div class="week-box"><div class="m">August</div><div class="v">Big energy</div><div style="font-size:12px;color:var(--text-secondary);margin-top:6px;">Carnival, OysterFest, summer festivals</div></div>
+      <div class="week-box"><div class="m">September</div><div class="v">Best-kept secret</div><div style="font-size:12px;color:var(--text-secondary);margin-top:6px;">Cooler nights, great food, fewer crowds</div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">June 2026</h2>
+    <div class="event-grid">
+      <div class="event-card"><div class="event-top"><div><h3>Pops by the Sea</h3><div style="color:var(--text-secondary);font-size:13px;">Hyannis · Music</div></div><div class="event-date">June 20</div></div><div class="event-tags"><span class="event-tag">Music</span><span class="event-tag">Family</span></div><p>Big summer kickoff concert energy. Lawn chairs, picnic blankets, and that first real “the Cape is back” feeling.</p><a href="#" class="btn btn-sm btn-navy" onclick="gtag('event','event_click',{item:'pops_by_the_sea'})">Learn more</a> <a href="/itinerary.html" class="btn btn-sm btn-ghost" onclick="gtag('event','add_to_itinerary',{item:'pops_by_the_sea'})">Add to itinerary</a></div>
+      <div class="event-card"><div class="event-top"><div><h3>Chatham Fish Pier Seafood Fest</h3><div style="color:var(--text-secondary);font-size:13px;">Chatham · Food & Drink</div></div><div class="event-date">June 28</div></div><div class="event-tags"><span class="event-tag">Food</span><span class="event-tag">Local</span></div><p>Fresh catch, local vendors, live music, and a reason to spend the whole afternoon in Chatham.</p><a href="/itinerary.html" class="btn btn-sm btn-ghost">Add to itinerary</a></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">July 2026</h2>
+    <div class="event-grid">
+      <div class="event-card"><div class="event-top"><div><h3>4th of July Fireworks</h3><div style="color:var(--text-secondary);font-size:13px;">Multiple towns · Family</div></div><div class="event-date">July 4</div></div><div class="event-tags"><span class="event-tag">Free</span><span class="event-tag">Family</span></div><p>The Cape does July 4th very well. Expect parades, beach traffic, and spectacular fireworks everywhere.</p><a href="/itinerary.html" class="btn btn-sm btn-ghost">Add to itinerary</a></div>
+      <div class="event-card"><div class="event-top"><div><h3>Sandcastle Contest at Race Point</h3><div style="color:var(--text-secondary);font-size:13px;">Provincetown · Family</div></div><div class="event-date">July 19</div></div><div class="event-tags"><span class="event-tag">Family</span><span class="event-tag">Art</span></div><p>Low-stakes summer joy: teams, buckets, ridiculous castles, and a beach day that somehow becomes a memory.</p><a href="/itinerary.html" class="btn btn-sm btn-ghost">Add to itinerary</a></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">August 2026</h2>
+    <div class="event-grid">
+      <div class="event-card"><div class="event-top"><div><h3>Provincetown Carnival</h3><div style="color:var(--text-secondary);font-size:13px;">Provincetown · Festival</div></div><div class="event-date">Aug 16-23</div></div><div class="event-tags"><span class="event-tag">Music</span><span class="event-tag">Art</span><span class="event-tag">Nightlife</span></div><p>One of the Cape’s biggest and most electric weeks. Plan early, book early, and leave room for spontaneous late nights.</p><a href="/itinerary.html" class="btn btn-sm btn-ghost">Add to itinerary</a></div>
+      <div class="event-card"><div class="event-top"><div><h3>Wellfleet OysterFest</h3><div style="color:var(--text-secondary);font-size:13px;">Wellfleet · Food & Drink</div></div><div class="event-date">Aug 24</div></div><div class="event-tags"><span class="event-tag">Food</span><span class="event-tag">Local</span></div><p>Classic Cape Cod summer food pilgrimage. Oysters, chowder, and the kind of crowd that knows exactly why they’re here.</p><a href="/itinerary.html" class="btn btn-sm btn-ghost">Add to itinerary</a></div>
+      <div class="event-card"><div class="event-top"><div><h3>Harbor Days on the Mid-Cape</h3><div style="color:var(--text-secondary);font-size:13px;">Hyannis · Family</div></div><div class="event-date">Aug 8</div></div><div class="event-tags"><span class="event-tag">Free</span><span class="event-tag">Family</span></div><p>Boat parade, local vendors, music, and a good reason to stay near the water until dinner.</p><a href="/itinerary.html" class="btn btn-sm btn-ghost">Add to itinerary</a></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">September 2026</h2>
+    <div class="event-grid">
+      <div class="event-card"><div class="event-top"><div><h3>Truro Vineyards Harvest Festival</h3><div style="color:var(--text-secondary);font-size:13px;">Truro · Food & Drink</div></div><div class="event-date">Sept 12</div></div><div class="event-tags"><span class="event-tag">Food</span><span class="event-tag">Wine</span></div><p>Harvest-season Cape energy: tastings, live music, and cooler weather that makes you want to stay longer.</p><a href="/itinerary.html" class="btn btn-sm btn-ghost">Add to itinerary</a></div>
+      <div class="event-card"><div class="event-top"><div><h3>Fall on the Cape Weekend Market</h3><div style="color:var(--text-secondary);font-size:13px;">Various towns · Art / Free</div></div><div class="event-date">Sept 20</div></div><div class="event-tags"><span class="event-tag">Art</span><span class="event-tag">Free</span></div><p>Local makers, food stalls, live music, and the perfect excuse to do a slow, scenic Cape weekend before summer fully fades.</p><a href="/itinerary.html" class="btn btn-sm btn-ghost">Add to itinerary</a></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="calendar-banner">
+      <div><div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.8;font-weight:700;">Want the full weekend plan?</div><div style="font-family:'Fraunces',serif;font-size:24px;font-weight:900;margin-top:4px;">Turn any event into a whole Cape Cod trip</div><div style="opacity:.9;font-size:14px;margin-top:6px;max-width:640px;">Pair events with beaches, restaurants, and a hotel near the action.</div></div>
+      <a href="/itinerary.html">Build itinerary →</a>
+    </div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner"><div><div class="footer-brand">Totally Cape Cod</div><p class="footer-desc">The unofficial guide to the best of Cape Cod.</p></div><div class="footer-links"><div class="footer-heading">Explore</div><a href="/beaches.html">Beaches</a><a href="/eats.html">Restaurants</a><a href="/stays.html">Hotels</a><a href="/experiences.html">Experiences</a></div><div class="footer-links"><div class="footer-heading">Plan</div><a href="/itinerary.html">Itinerary Builder</a><a href="/app/">Get the App</a><a href="/hidden-gems.html">Hidden Gems</a></div></div>
+  <div class="footer-bottom">© 2026 Totally Cape Cod. Affiliate links help keep this guide free.</div>
+</footer>
+
+<script>
+function toggleMobileMenu(){document.getElementById('mobileMenu').classList.toggle('show');}
+</script>
+</body>
+</html>

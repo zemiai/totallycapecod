@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1A3A6C" />
+<title>Cape Cod Beaches — 28 Mapped with Live Conditions | Totally Cape Cod</title>
+<meta name="description" content="Discover the best beaches on Cape Cod. 28 mapped beaches with live conditions, parking info, and hidden gems. Filter by family-friendly, dog-friendly, surfing, and more." />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+<link rel="stylesheet" href="css/tcc.css" />
+<style>
+  .beach-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  @media(max-width:768px){ .beach-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media(max-width:480px){ .beach-grid{ grid-template-columns:1fr; } }
+  .beach-card { background:white; border-radius:var(--radius-md); overflow:hidden; box-shadow:var(--shadow-sm); transition:transform var(--transition-base), box-shadow var(--transition-base); }
+  .beach-card:hover { transform:translateY(-3px); box-shadow:var(--shadow-md); }
+  .beach-card .cover { height:160px; background-size:cover; background-position:center; position:relative; }
+  .beach-card .cover::after { content:''; position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.35) 0%, transparent 50%); }
+  .beach-card .status-pill { position:absolute; bottom:10px; left:10px; padding:4px 10px; border-radius:999px; font-size:11px; font-weight:700; color:white; z-index:1; }
+  .beach-card .status-pill.open { background:#34C759; }
+  .beach-card .status-pill.mid { background:#FF9500; }
+  .beach-card .status-pill.full { background:#FF3B30; }
+  .beach-card .body { padding:14px; }
+  .beach-card h3 { font-weight:700; font-size:16px; margin:0 0 4px; }
+  .beach-card .meta { font-size:12px; color:var(--text-secondary); margin-bottom:8px; }
+  .beach-card .tags { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px; }
+  .beach-card .tag { font-size:11px; font-weight:600; background:var(--cape-cream); color:var(--cape-brown-dark); padding:3px 8px; border-radius:6px; }
+  .beach-card .actions { display:flex; gap:8px; }
+  .beach-card .actions a { flex:1; text-align:center; padding:8px; border-radius:10px; font-size:12px; font-weight:700; text-decoration:none; }
+  .beach-card .actions .btn-view { background:var(--cape-navy); color:white; }
+  .beach-card .actions .btn-book { background:var(--cape-cream); color:var(--cape-brown-dark); border:1px solid var(--divider); }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" id="siteNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Totally Cape Cod</a>
+    <div class="nav-links">
+      <a href="/beaches.html">Beaches</a>
+      <a href="/eats.html">Eats</a>
+      <a href="/stays.html">Stays</a>
+      <a href="/experiences.html">Experiences</a>
+      <a href="/app/">📱 App</a>
+    </div>
+    <button class="nav-mobile-toggle" onclick="toggleMobileMenu()">☰</button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()">
+  <div class="mobile-menu-panel" onclick="event.stopPropagation()">
+    <a href="/">Home</a>
+    <a href="/eats.html">Eats</a>
+    <a href="/stays.html">Stays</a>
+    <a href="/experiences.html">Experiences</a>
+    <a href="/events.html">Events</a>
+    <a href="/itinerary.html">Plan My Trip</a>
+    <a href="/app/">📱 Open the App</a>
+  </div>
+</div>
+
+<section class="hero" style="min-height:50vh;">
+  <div class="hero-overlay"></div>
+  <div class="hero-content" style="padding-top:80px;">
+    <div class="hero-badge">28 Beaches Mapped</div>
+    <h1 class="hero-title">Cape Cod <span class="script">Beaches</span></h1>
+    <p class="hero-subtitle">Live conditions. Real parking info. Hidden gems only locals know. Filter by your vibe and find your perfect beach.</p>
+  </div>
+</section>
+
+<section class="section page-wrap">
+  <div class="filter-bar">
+    <div class="filter-chip active" onclick="filterBeaches('all',this)">All</div>
+    <div class="filter-chip" onclick="filterBeaches('family',this)">👨‍👩‍👧 Family</div>
+    <div class="filter-chip" onclick="filterBeaches('hidden',this)">🗺️ Hidden Gem</div>
+    <div class="filter-chip" onclick="filterBeaches('dog',this)">🐕 Dog-friendly</div>
+    <div class="filter-chip" onclick="filterBeaches('surf',this)">🏄 Surfing</div>
+    <div class="filter-chip" onclick="filterBeaches('sunset',this)">🌅 Sunset Spot</div>
+  </div>
+
+  <div class="affiliate-band" style="margin-bottom:20px;">
+    <div>
+      <div class="label">🚀 Book a Stay Near the Beach</div>
+      <div class="title">Hotels & vacation rentals walking distance to the sand</div>
+    </div>
+    <a href="https://www.booking.com/country/us.html?aid=YOUR_AFFILIATE_ID&label=totallycapecod-beaches" target="_blank" rel="noopener" class="btn btn-navy btn-sm"
+       onclick="gtag('event','affiliate_click',{type:'booking',location:'beaches_banner'})">Search →</a>
+  </div>
+
+  <div class="beach-grid" id="beachGrid">
+    <!-- Beach cards injected by JS -->
+  </div>
+
+  <div class="card" style="padding:24px; margin-top:32px; text-align:center;">
+    <h3 style="font-family:'Fraunces',serif; font-weight:900; font-size:20px; margin:0 0 6px; color:var(--cape-brown-dark);">Know a Hidden Beach?</h3>
+    <p style="color:var(--text-secondary); font-size:14px; margin:0 0 14px;">Help us keep this guide complete. Submit a beach we missed.</p>
+    <a href="/submit.html?type=spot" class="btn btn-primary">Submit a Beach →</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Totally Cape Cod</div>
+      <p class="footer-desc">The unofficial guide to the best of Cape Cod.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-heading">Explore</div>
+      <a href="/beaches.html">Beaches</a>
+      <a href="/eats.html">Restaurants</a>
+      <a href="/stays.html">Hotels</a>
+      <a href="/experiences.html">Experiences</a>
+    </div>
+    <div class="footer-links">
+      <div class="footer-heading">Plan</div>
+      <a href="/itinerary.html">Itinerary Builder</a>
+      <a href="/app/">Get the App</a>
+      <a href="/best-beaches-2026.html">Best Beaches 2026</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Totally Cape Cod. Affiliate links help keep this guide free.</div>
+</footer>
+
+<script>
+function toggleMobileMenu(){document.getElementById('mobileMenu').classList.toggle('show');}
+
+const beaches = [
+  {name:'Race Point Beach',town:'Provincetown',tags:['family','dog','sunset'],status:'open',img:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',spots:'Plenty of parking',desc:'Wide dunes, calm water, and some of the best sunsets on the Outer Cape.'},
+  {name:'Coast Guard Beach',town:'Eastham',tags:['family','surf','sunset'],status:'open',img:'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80',spots:'Limited — arrive early',desc:'Part of the National Seashore. Stunning cliffs and great waves for body surfing.'},
+  {name:'Nauset Beach',town:'Orleans',tags:['family','surf'],status:'mid',img:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',spots:'Filling up',desc:'Miles of sand, great for long walks. Food trucks and restrooms nearby.'},
+  {name:'Sandy Neck Beach',town:'Barnstable',tags:['family','dog','hidden'],status:'open',img:'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80',spots:'Open',desc:'Massive dunes, off-roading allowed with permit. Dog-friendly year-round.'},
+  {name:'Mayflower Beach',town:'Dennis',tags:['family','sunset'],status:'open',img:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',spots:'Plenty',desc:'Gentle tide pools at low tide — perfect for kids. Amazing sunsets.'},
+  {name:'Ballston Beach',town:'Truro',tags:['hidden','surf','dog'],status:'open',img:'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80',spots:'Open',desc:'A local secret. Fewer crowds, great waves, and beautiful dunes.'},
+  {name:'Herring Cove Beach',town:'Provincetown',tags:['family','sunset','dog'],status:'mid',img:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',spots:'Filling',desc:'Calm, warm water. THE spot for sunset watching on the Outer Cape.'},
+  {name:'Old Silver Beach',town:'Falmouth',tags:['family'],status:'full',img:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',spots:'Lot Full',desc:'Buzzing beach with warm water, snack bar, and plenty of parking (when available).'},
+  {name:'Craigville Beach',town:'Centerville',tags:['family','surf'],status:'open',img:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',spots:'Open',desc:'Young crowd, warm water, concession stand, and beach volleyball.'},
+];
+
+let currentFilter = 'all';
+
+function renderBeaches() {
+  const grid = document.getElementById('beachGrid');
+  const filtered = currentFilter === 'all' ? beaches : beaches.filter(b => b.tags.includes(currentFilter));
+  grid.innerHTML = filtered.map(b => `
+    <div class="beach-card" data-tags="${b.tags.join(' ')}">
+      <div class="cover" style="background-image:url('${b.img}')">
+        <span class="status-pill ${b.status}">${b.status === 'open' ? '✅ Open' : b.status === 'mid' ? '🟠 Filling' : '❌ Full'}</span>
+      </div>
+      <div class="body">
+        <h3>${b.name}</h3>
+        <div class="meta">${b.town} · ${b.spots}</div>
+        <div class="tags">${b.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+        <p style="font-size:13px; color:var(--text-secondary); margin:0 0 10px; line-height:1.5;">${b.desc}</p>
+        <div class="actions">
+          <a href="/app/?beach=${encodeURIComponent(b.name)}" class="btn-view" onclick="gtag('event','view_detail',{item:'${b.name}'})">View</a>
+          <a href="https://www.booking.com/searchresults.html?aid=YOUR_AFFILIATE_ID&ss=${encodeURIComponent(b.town+', Cape Cod')}" target="_blank" rel="noopener" class="btn-book"
+             onclick="gtag('event','affiliate_click',{type:'booking',item:'${b.name}',location:'beaches_card'})">Book Stay</a>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function filterBeaches(tag, el) {
+  document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  currentFilter = tag;
+  renderBeaches();
+  gtag('event','filter_click',{category:'beaches',filter:tag});
+}
+
+renderBeaches();
+</script>
+
+</body>
+</html>
