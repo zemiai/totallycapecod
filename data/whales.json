@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-23T10:52:16Z",
+  "updated_at": "2026-05-23T11:59:27Z",
   "_hermes_note": "Hermes appends new sightings from operator SMS webhook + user submissions. Auto-prune entries older than 7 days. Operators: PWW (Provincetown Whale Watch), DF (Dolphin Fleet), HWW (Hyannis Whale Watcher).",
   "recent_sightings": [
     {
@@ -93,19 +93,6 @@
       "time_ago": "Yesterday",
       "photo_url": "",
       "notes": "Big breach, photographed"
-    },
-    {
-      "id": "w008",
-      "species": "dolphin",
-      "count": 12,
-      "lat": 41.96,
-      "lng": -70.05,
-      "location": "Off Wellfleet Harbor",
-      "reported_by": "Local fisherman",
-      "reported_at": "2026-05-16T11:30:00Z",
-      "time_ago": "Yesterday",
-      "photo_url": "",
-      "notes": "Atlantic white-sided dolphins"
     }
   ]
 }
