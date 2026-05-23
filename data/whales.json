@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-23T15:07:14Z",
+  "updated_at": "2026-05-23T16:30:57Z",
   "_hermes_note": "Hermes appends new sightings from operator SMS webhook + user submissions. Auto-prune entries older than 7 days. Operators: PWW (Provincetown Whale Watch), DF (Dolphin Fleet), HWW (Hyannis Whale Watcher).",
   "recent_sightings": [
     {
@@ -67,19 +67,6 @@
       "time_ago": "6 hr ago",
       "photo_url": "",
       "notes": "Quick spot from shore"
-    },
-    {
-      "id": "w006",
-      "species": "seal",
-      "count": 40,
-      "lat": 41.6814,
-      "lng": -69.9544,
-      "location": "Chatham Fish Pier",
-      "reported_by": "User: tourist123",
-      "reported_at": "2026-05-16T16:20:00Z",
-      "time_ago": "Yesterday",
-      "photo_url": "",
-      "notes": "Gray seals waiting for fish scraps"
     }
   ]
 }
