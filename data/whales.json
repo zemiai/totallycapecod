@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-23T20:51:34Z",
+  "updated_at": "2026-05-23T21:54:26Z",
   "_hermes_note": "Hermes appends new sightings from operator SMS webhook + user submissions. Auto-prune entries older than 7 days. Operators: PWW (Provincetown Whale Watch), DF (Dolphin Fleet), HWW (Hyannis Whale Watcher).",
   "recent_sightings": [
     {
