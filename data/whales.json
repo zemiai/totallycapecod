@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-23T13:57:44Z",
+  "updated_at": "2026-05-23T15:07:14Z",
   "_hermes_note": "Hermes appends new sightings from operator SMS webhook + user submissions. Auto-prune entries older than 7 days. Operators: PWW (Provincetown Whale Watch), DF (Dolphin Fleet), HWW (Hyannis Whale Watcher).",
   "recent_sightings": [
     {
@@ -80,19 +80,6 @@
       "time_ago": "Yesterday",
       "photo_url": "",
       "notes": "Gray seals waiting for fish scraps"
-    },
-    {
-      "id": "w007",
-      "species": "humpback",
-      "count": 1,
-      "lat": 42.16,
-      "lng": -70.3,
-      "location": "Stellwagen Bank",
-      "reported_by": "Hyannis Whale Watcher",
-      "reported_at": "2026-05-16T14:00:00Z",
-      "time_ago": "Yesterday",
-      "photo_url": "",
-      "notes": "Big breach, photographed"
     }
   ]
 }
