@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-24T09:29:14Z",
+  "updated_at": "2026-05-24T10:57:02Z",
   "_hermes_note": "Hermes appends new sightings from operator SMS webhook + user submissions. Auto-prune entries older than 7 days. Operators: PWW (Provincetown Whale Watch), DF (Dolphin Fleet), HWW (Hyannis Whale Watcher).",
   "recent_sightings": [
     {
@@ -28,19 +28,6 @@
       "time_ago": "2 hr ago",
       "photo_url": "",
       "notes": "Large solo fin whale, traveling south"
-    },
-    {
-      "id": "w003",
-      "species": "seal",
-      "count": 150,
-      "lat": 41.662,
-      "lng": -69.9612,
-      "location": "Monomoy Island",
-      "reported_by": "Operator",
-      "reported_at": "2026-05-17T10:30:00Z",
-      "time_ago": "4 hr ago",
-      "photo_url": "",
-      "notes": "Harbor seals hauled out on sandbar"
     }
   ]
 }
