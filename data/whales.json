@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-24T07:27:43Z",
+  "updated_at": "2026-05-24T09:29:14Z",
   "_hermes_note": "Hermes appends new sightings from operator SMS webhook + user submissions. Auto-prune entries older than 7 days. Operators: PWW (Provincetown Whale Watch), DF (Dolphin Fleet), HWW (Hyannis Whale Watcher).",
   "recent_sightings": [
     {
@@ -41,32 +41,6 @@
       "time_ago": "4 hr ago",
       "photo_url": "",
       "notes": "Harbor seals hauled out on sandbar"
-    },
-    {
-      "id": "w004",
-      "species": "humpback",
-      "count": 2,
-      "lat": 42.08,
-      "lng": -70.21,
-      "location": "Race Point Channel",
-      "reported_by": "PWW",
-      "reported_at": "2026-05-17T09:18:00Z",
-      "time_ago": "5 hr ago",
-      "photo_url": "",
-      "notes": "Pair breaching repeatedly"
-    },
-    {
-      "id": "w005",
-      "species": "minke",
-      "count": 1,
-      "lat": 42.05,
-      "lng": -70.18,
-      "location": "Off Race Point",
-      "reported_by": "User: anonymous",
-      "reported_at": "2026-05-17T07:55:00Z",
-      "time_ago": "6 hr ago",
-      "photo_url": "",
-      "notes": "Quick spot from shore"
     }
   ]
 }
