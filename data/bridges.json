@@ -6,7 +6,7 @@
       "current_status": "light",
       "direction": "off_cape",
       "advice": "Sail through \u2014 no delays right now",
-      "live_speed_mph": 32,
+      "live_speed_mph": 33,
       "free_flow_mph": 55,
       "last_check": "just now"
     },
@@ -141,5 +141,5 @@
     "on_cape_saturday": "Before 8 AM"
   },
   "version": "1.0",
-  "updated_at": "2026-05-30T06:15:29Z"
+  "updated_at": "2026-05-30T11:12:46Z"
 }
