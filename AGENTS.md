@@ -112,6 +112,62 @@ All keyless, all free.
 
 ---
 
+## Media — photos & videos (auto)
+
+Every event, beach, whale sighting, or venue benefits from imagery. The app renders `img` as the card background. Your job on every sweep:
+
+### Photos — order of preference
+
+1. **`og:image` from the source page.** When you scrape a venue's calendar / event page, parse `<meta property="og:image">`. That is almost always the cleanest hero shot — venues curate it for social sharing. Use it.
+2. **Venue Instagram / Facebook latest post.** If the source page has no `og:image`, cloud-browse the venue's public Instagram or Facebook profile and grab the most recent post's image URL. Skip Reels covers and Story placeholders — only static feed posts.
+3. **First inline `<img>` on the page** whose width ≥ 600 px and that is NOT a logo / icon / sidebar banner. Heuristics: filename contains `logo`, `icon`, `banner`, `bg`, `placeholder` → skip.
+4. **Cape Cod Chamber press-kit photos** for generic town shots when nothing venue-specific is available.
+5. **No photo** — leave `img` as empty string. The app handles this gracefully. Do NOT generate fake photos.
+
+### Photo delivery — wrap in Cloudinary fetch URL
+
+Whenever you write an external image URL to `img`, wrap it through Cloudinary's fetch proxy. This gives you auto-format (WebP), auto-quality, CDN caching, and resilience if the source goes down:
+
+```
+https://res.cloudinary.com/<CLOUDINARY_CLOUD_NAME>/image/fetch/q_auto,f_auto,w_1200/<URL-ENCODED-SOURCE-URL>
+```
+
+Read `CLOUDINARY_CLOUD_NAME` from env. If unset, fall back to the raw source URL — degrade gracefully, don't fail.
+
+### Videos
+
+Schema for events / venues: add a `video_url` field (string, optional).
+
+Capture videos when:
+- Source page embeds YouTube or Vimeo → extract the watch URL → store the canonical embed form (`https://www.youtube.com/embed/<id>` or `https://player.vimeo.com/video/<id>`).
+- Venue has a public YouTube channel and the latest video is < 30 days old → use it as a teaser.
+
+Never re-host video. Embed only. The app does not yet render `video_url` — populate it anyway so it's ready when we wire the UI.
+
+### Media quality rules
+
+- Image must be ≥ 600 px on the longest side
+- Skip GIFs > 5 MB (hard cap)
+- Skip images with watermarks "stock photo", "alamy", "shutterstock", "getty"
+- Skip videos behind login walls (private YouTube, etc.)
+- Always include the photo's source URL in a sibling `img_credit` field when known, so Lindsay can verify and credit on social posts
+
+### Refresh behavior
+
+- Each sweep, check whether an item's `img` source URL still returns 200. If broken, re-run the discovery flow above and replace.
+- For Instagram/Facebook-sourced photos, refresh weekly even if not broken — venues rotate their feeds.
+
+### When Lindsay sends YOU a photo on Telegram
+
+She'll occasionally send you a photo with a caption like "Nauset Beach 2 PM" or "Wailers last night." When this happens:
+
+1. Upload the file to Cloudinary (use the upload API with `CLOUDINARY_API_KEY` + `CLOUDINARY_API_SECRET` from env).
+2. Match the caption to the most relevant existing entry in `data/today.json` or `data/beaches.json`. If ambiguous, ask her which one.
+3. Replace that entry's `img` with the new Cloudinary URL. Set `img_credit` to `Lindsay`.
+4. Propose the diff back to her for ✅ via the normal approval flow.
+
+---
+
 ## When something breaks
 
 - **A source returns 404 or HTML changed:** log it locally, continue with other sources. At end of run, send Lindsay ONE summary Telegram: `⚠️ Sources failing today: X, Y, Z — please check.`
