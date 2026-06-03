@@ -590,9 +590,23 @@ if (state.aiDate !== today) {
 }
 
 // ============ DATA LOADING ============
-// Data is fetched directly from GitHub raw so Hermes cron updates don't trigger
+// Data is fetched directly from GitHub raw so cron updates don't trigger
 // a Netlify rebuild on every push. Netlify only redeploys when code changes.
-const DATA_BASE = 'https://raw.githubusercontent.com/zemiai/totallycapecod/main/data/';
+// `?preview=<branch>` loads the proposed data from that branch instead of main —
+// used to review scheduled-agent PRs before merging.
+const PREVIEW_BRANCH = new URLSearchParams(location.search).get('preview');
+const DATA_BRANCH = PREVIEW_BRANCH && /^[A-Za-z0-9._\/-]+$/.test(PREVIEW_BRANCH) ? PREVIEW_BRANCH : 'main';
+const DATA_BASE = `https://raw.githubusercontent.com/zemiai/totallycapecod/${DATA_BRANCH}/data/`;
+if (PREVIEW_BRANCH) {
+  document.documentElement.dataset.preview = DATA_BRANCH;
+  document.addEventListener('DOMContentLoaded', () => {
+    const banner = document.createElement('div');
+    banner.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:9999;background:#ff9500;color:#fff;font:600 13px/1.3 -apple-system,sans-serif;padding:8px 12px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.15)';
+    banner.textContent = `👁 PREVIEW — viewing proposed data from branch "${DATA_BRANCH}". Not yet live.`;
+    document.body.prepend(banner);
+    document.body.style.paddingTop = '36px';
+  });
+}
 async function loadData() {
   const files = ['stamps', 'beaches', 'today', 'conditions', 'bridges', 'whales', 'lighthouses', 'ai-knowledge'];
   const results = await Promise.allSettled(files.map(f => fetch(DATA_BASE + f + '.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).catch(() => null)));
