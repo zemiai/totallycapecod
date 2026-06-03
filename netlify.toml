@@ -8,6 +8,11 @@
 
 [build]
   publish = "."
+  # Skip the Netlify build when a commit ONLY touches data/*.json.
+  # Hermes cron jobs push ~100 data updates/day; the app now fetches data
+  # directly from GitHub raw, so we don't need a redeploy for those.
+  # Exit 0 = skip build. Exit non-zero = run build.
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- . ':(exclude)data/'"
 
 [functions]
   directory = "netlify/functions"

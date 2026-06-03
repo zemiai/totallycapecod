@@ -590,9 +590,12 @@ if (state.aiDate !== today) {
 }
 
 // ============ DATA LOADING ============
+// Data is fetched directly from GitHub raw so Hermes cron updates don't trigger
+// a Netlify rebuild on every push. Netlify only redeploys when code changes.
+const DATA_BASE = 'https://raw.githubusercontent.com/zemiai/totallycapecod/main/data/';
 async function loadData() {
   const files = ['stamps', 'beaches', 'today', 'conditions', 'bridges', 'whales', 'lighthouses', 'ai-knowledge'];
-  const results = await Promise.allSettled(files.map(f => fetch('data/' + f + '.json').then(r => r.ok ? r.json() : null)));
+  const results = await Promise.allSettled(files.map(f => fetch(DATA_BASE + f + '.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).catch(() => null)));
   results.forEach((r, i) => {
     const key = files[i] === 'ai-knowledge' ? 'aiKnowledge' : files[i];
     state.data[key] = r.status === 'fulfilled' ? r.value : null;
