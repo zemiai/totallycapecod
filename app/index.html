@@ -8,7 +8,10 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <meta name="apple-mobile-web-app-title" content="Totally Cape Cod" />
 <link rel="manifest" href="manifest.json" />
-<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTIgMTkyIj48cmVjdCB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgZmlsbD0iIzVDM0QyRSIgcng9IjQyIi8+PHRleHQgeD0iOTYiIHk9IjEyMCIgZm9udC1mYW1pbHk9InNlcmlmIiBmb250LXNpemU9IjEwMCIgZm9udC13ZWlnaHQ9IjkwMCIgZmlsbD0iI0Y0RUNEOCIgdGV4dC1hbmNob3I9Im1pZGRsZSI+VDwvdGV4dD48L3N2Zz4=" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <title>Totally Cape Cod — Live Beaches, Tides, Bridges & Events for Summer 2026</title>
 
 <!-- SEO: discovery + rich snippets -->
@@ -22,11 +25,13 @@
 <meta property="og:title" content="Totally Cape Cod — Live Beaches, Tides & Events" />
 <meta property="og:description" content="Live Cape Cod intel: beach parking, water temp, tides, bridge delays, lighthouse audio tours, 100-stamp passport." />
 <meta property="og:site_name" content="Totally Cape Cod" />
+<meta property="og:image" content="https://totallycapecod.netlify.app/og-image.png" />
 
 <!-- Twitter/X card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Totally Cape Cod" />
 <meta name="twitter:description" content="Live Cape Cod intel: beaches, tides, bridges, events, stamps." />
+<meta name="twitter:image" content="https://totallycapecod.netlify.app/og-image.png" />
 
 <!-- Schema.org structured data — helps Google understand it's an app -->
 <script type="application/ld+json">
@@ -48,12 +53,12 @@
 </script>
 
 <!-- GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0YM9WQLWK"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
+  gtag('config', 'G-Q0YM9WQLWK');
 </script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -550,7 +555,7 @@
 <script>
 // ============ CONFIG ============
 // REPLACE WITH YOUR LIVE STRIPE PAYMENT LINK TO TAKE MONEY:
-const STRIPE_LINK = 'https://buy.stripe.com/test_cNi9AM0D3eeR4oDgxSdZ600';
+const STRIPE_LINK = 'https://buy.stripe.com/6oU8wIfTVbmhdZveHQbo401';
 // OPTIONAL: Set this to a Claude API proxy (e.g., Cloudflare Worker) to enable live AI
 window.TCC_AI_ENDPOINT = null;
 
@@ -827,7 +832,7 @@ function openBeach(slug) {
         <div style="font-size:11px; font-weight:700; color:var(--cape-coral); text-transform:uppercase; letter-spacing:0.06em;">Book Nearby</div>
         <div style="font-weight:700; font-size:13px; color:var(--cape-brown-dark);">Hotels & rentals near ${b.name}</div>
       </div>
-      <a href="https://www.booking.com/searchresults.html?aid=YOUR_AFFILIATE_ID&ss=${encodeURIComponent(b.town+', Cape Cod')}" target="_blank" rel="noopener"
+      <a href="https://www.booking.com/searchresults.html?ss=${encodeURIComponent(b.town+', Cape Cod')}" target="_blank" rel="noopener"
          style="background:var(--cape-navy); color:white; text-decoration:none; padding:8px 14px; border-radius:10px; font-weight:700; font-size:12px; white-space:nowrap;"
          onclick="gtag&&gtag('event','affiliate_click',{type:'booking',item:'${b.slug}',location:'app_beach_modal'})">Search →</a>
     </div>`;

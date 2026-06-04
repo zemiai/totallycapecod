@@ -6,9 +6,12 @@
 <meta name="theme-color" content="#1A3A6C" />
 <title>Where to Stay on Cape Cod — Hotels, Rentals, B&Bs & Camping</title>
 <meta name="description" content="Find the perfect place to stay on Cape Cod. Hotels, vacation rentals, B&Bs, and campgrounds. Compare prices and book direct." />
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0YM9WQLWK"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q0YM9WQLWK');</script>
 <link rel="stylesheet" href="css/tcc.css" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <style>
 .stay-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
 @media(max-width:768px){.stay-grid{grid-template-columns:repeat(2,1fr);}}
@@ -47,7 +50,7 @@
 
 <div class="affiliate-band" style="margin-bottom:20px;">
 <div><div class="label">🔍 Compare Prices</div><div class="title">Check Booking.com, VRBO, and Expedia for the best rates</div></div>
-<a href="https://www.booking.com/country/us.html?aid=YOUR_AFFILIATE_ID&label=totallycapecod-stays" target="_blank" rel="noopener" class="btn btn-navy btn-sm" onclick="gtag('event','affiliate_click',{type:'booking',location:'stays_banner'})">Search →</a>
+<a href="https://www.booking.com/country/us.html?label=totallycapecod-stays" target="_blank" rel="noopener" class="btn btn-navy btn-sm" onclick="gtag('event','affiliate_click',{type:'booking',location:'stays_banner'})">Search →</a>
 </div>
 
 <div class="stay-grid" id="stayGrid"></div>
@@ -94,7 +97,7 @@ function renderStays(){
         <div class="amenities">${s.amenities.map(a=>`<span class="amenity">${a}</span>`).join('')}</div>
         <p style="font-size:13px;color:var(--text-secondary);margin:0 0 10px;line-height:1.5;">${s.desc}</p>
         <div class="actions">
-          <a href="https://www.booking.com/searchresults.html?aid=YOUR_AFFILIATE_ID&ss=${encodeURIComponent(s.name+' '+s.town)}" target="_blank" rel="noopener" class="btn-view" onclick="gtag('event','affiliate_click',{type:'booking',item:'${s.name}',location:'stays_card'})">Booking.com</a>
+          <a href="https://www.booking.com/searchresults.html?ss=${encodeURIComponent(s.name+' '+s.town)}" target="_blank" rel="noopener" class="btn-view" onclick="gtag('event','affiliate_click',{type:'booking',item:'${s.name}',location:'stays_card'})">Booking.com</a>
           <a href="https://www.vrbo.com/search/keywords:${encodeURIComponent(s.town+'-cape-cod-massachusetts')}" target="_blank" rel="noopener" class="btn-book" onclick="gtag('event','affiliate_click',{type:'vrbo',item:'${s.name}',location:'stays_card'})">VRBO</a>
         </div>
       </div>

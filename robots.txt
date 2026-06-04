@@ -1,0 +1,9 @@
+# Totally Cape Cod — robots.txt
+User-agent: *
+Allow: /
+
+# Keep crawlers out of raw data + internal app plumbing
+Disallow: /data/
+Disallow: /netlify/
+
+Sitemap: https://totallycapecod.netlify.app/sitemap.xml

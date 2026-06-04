@@ -6,14 +6,17 @@
 <meta name="theme-color" content="#1A3A6C" />
 <title>Cape Cod Beaches — 28 Mapped with Live Conditions | Totally Cape Cod</title>
 <meta name="description" content="Discover the best beaches on Cape Cod. 28 mapped beaches with live conditions, parking info, and hidden gems. Filter by family-friendly, dog-friendly, surfing, and more." />
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0YM9WQLWK"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
+  gtag('config', 'G-Q0YM9WQLWK');
 </script>
 <link rel="stylesheet" href="css/tcc.css" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 <style>
   .beach-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
   @media(max-width:768px){ .beach-grid{ grid-template-columns:repeat(2,1fr); } }
@@ -89,7 +92,7 @@
       <div class="label">🚀 Book a Stay Near the Beach</div>
       <div class="title">Hotels & vacation rentals walking distance to the sand</div>
     </div>
-    <a href="https://www.booking.com/country/us.html?aid=YOUR_AFFILIATE_ID&label=totallycapecod-beaches" target="_blank" rel="noopener" class="btn btn-navy btn-sm"
+    <a href="https://www.booking.com/country/us.html?label=totallycapecod-beaches" target="_blank" rel="noopener" class="btn btn-navy btn-sm"
        onclick="gtag('event','affiliate_click',{type:'booking',location:'beaches_banner'})">Search →</a>
   </div>
 
@@ -159,7 +162,7 @@ function renderBeaches() {
         <p style="font-size:13px; color:var(--text-secondary); margin:0 0 10px; line-height:1.5;">${b.desc}</p>
         <div class="actions">
           <a href="/app/?beach=${encodeURIComponent(b.name)}" class="btn-view" onclick="gtag('event','view_detail',{item:'${b.name}'})">View</a>
-          <a href="https://www.booking.com/searchresults.html?aid=YOUR_AFFILIATE_ID&ss=${encodeURIComponent(b.town+', Cape Cod')}" target="_blank" rel="noopener" class="btn-book"
+          <a href="https://www.booking.com/searchresults.html?ss=${encodeURIComponent(b.town+', Cape Cod')}" target="_blank" rel="noopener" class="btn-book"
              onclick="gtag('event','affiliate_click',{type:'booking',item:'${b.name}',location:'beaches_card'})">Book Stay</a>
         </div>
       </div>
