@@ -155,7 +155,7 @@
           <label class="form-label">Your Email</label>
           <input type="email" class="form-input" placeholder="so we can credit you" required />
         </div>
-        <div class="photo-upload" onclick="alert('In production, this opens a file picker. For now, email photos to hello@totallycapecod.com')">
+        <div class="photo-upload" onclick="alert('In production, this opens a file picker. For now, email photos to info@totallycapecod.com')">
           <div class="emoji">📸</div>
           <div style="font-weight:600; font-size:14px;">Upload a photo</div>
           <div style="font-size:12px; color:var(--text-secondary); margin-top:4px;">Drag & drop or click to browse</div>
@@ -188,7 +188,7 @@
           <label class="form-label">Your Email</label>
           <input type="email" class="form-input" required />
         </div>
-        <div class="photo-upload" onclick="alert('In production, this opens a file picker. For now, email photos to hello@totallycapecod.com')">
+        <div class="photo-upload" onclick="alert('In production, this opens a file picker. For now, email photos to info@totallycapecod.com')">
           <div class="emoji">📸</div>
           <div style="font-weight:600; font-size:14px;">Upload your photo</div>
           <div style="font-size:12px; color:var(--text-secondary); margin-top:4px;">Max 10MB · JPG or PNG · We compress automatically</div>
@@ -283,7 +283,7 @@
           <label class="form-label">Phone</label>
           <input type="tel" class="form-input" id="bizPhone" placeholder="(508) 555-0199" />
         </div>
-        <div class="photo-upload" onclick="alert('In production, upload up to 5 photos. For now, email them to hello@totallycapecod.com after submission.')">
+        <div class="photo-upload" onclick="alert('In production, upload up to 5 photos. For now, email them to info@totallycapecod.com after submission.')">
           <div class="emoji">📸</div>
           <div style="font-weight:600; font-size:14px;">Upload photos</div>
           <div style="font-size:12px; color:var(--text-secondary); margin-top:4px;">Up to 5 photos · JPG or PNG</div>
@@ -379,9 +379,9 @@ async function handleSponsoredSubmit(e) {
       gtag('event','purchase',{transaction_id:data.email, value: tier==='basic'?99:tier==='featured'?299:799, currency:'USD'});
       // Redirect to Stripe payment link based on tier
       const stripeLinks = {
-        basic: 'https://buy.stripe.com/test_REPLACE_BASIC',
-        featured: 'https://buy.stripe.com/test_REPLACE_FEATURED',
-        premium: 'https://buy.stripe.com/test_REPLACE_PREMIUM',
+        basic: 'https://buy.stripe.com/14AeV6bDF8a53kR43cbo402',
+        featured: 'https://buy.stripe.com/6oUdR29vx61Xg7D9nwbo403',
+        premium: 'https://buy.stripe.com/5kQ4gs379cql4oVbvEbo404',
       };
       window.location.href = stripeLinks[tier] || '/';
     } else {
@@ -390,9 +390,9 @@ async function handleSponsoredSubmit(e) {
   } catch (err) {
     // Fallback: just redirect to Stripe
     const stripeLinks = {
-      basic: 'https://buy.stripe.com/test_REPLACE_BASIC',
-      featured: 'https://buy.stripe.com/test_REPLACE_FEATURED',
-      premium: 'https://buy.stripe.com/test_REPLACE_PREMIUM',
+      basic: 'https://buy.stripe.com/14AeV6bDF8a53kR43cbo402',
+      featured: 'https://buy.stripe.com/6oUdR29vx61Xg7D9nwbo403',
+      premium: 'https://buy.stripe.com/5kQ4gs379cql4oVbvEbo404',
     };
     window.location.href = stripeLinks[tier] || '/';
   }

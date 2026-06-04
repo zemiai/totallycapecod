@@ -78,10 +78,10 @@ exports.handler = async (event, context) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          from: 'Totally Cape Cod <hello@totallycapecod.com>',
+          from: 'Totally Cape Cod <info@totallycapecod.com>',
           to: cleanEmail,
           subject: 'Welcome to Totally Cape Cod! 🌊',
-          html: `<p>Hey there!</p><p>Thanks for joining <strong>Totally Cape Cod</strong> — your locals-first guide to the best beaches, eats, stays, and events from Bourne to Provincetown.</p><p>Here's where to start:</p><ul><li>🏖 <a href="https://totallycapecod.netlify.app/beaches.html">The best beaches</a> — with live conditions &amp; water temps</li><li>🦞 <a href="https://totallycapecod.netlify.app/eats.html">Where to eat</a> — the lobster rolls and sunset spots worth your time</li><li>🗓 <a href="https://totallycapecod.netlify.app/itinerary.html">Build your itinerary</a> — plan a perfect Cape day or week</li></ul><p>📱 <a href="https://totallycapecod.netlify.app/app/" style="background:#4A90A4;color:white;padding:12px 24px;border-radius:10px;text-decoration:none;display:inline-block;">Open the free app</a></p><p>We'll send you the occasional update on what's happening around the Cape. See you on the beach!</p>`,
+          html: `<p>Hey there!</p><p>Thanks for joining <strong>Totally Cape Cod</strong> — your locals-first guide to the best beaches, eats, stays, and events from Bourne to Provincetown.</p><p>Here's where to start:</p><ul><li>🏖 <a href="https://totallycapecod.com/beaches.html">The best beaches</a> — with live conditions &amp; water temps</li><li>🦞 <a href="https://totallycapecod.com/eats.html">Where to eat</a> — the lobster rolls and sunset spots worth your time</li><li>🗓 <a href="https://totallycapecod.com/itinerary.html">Build your itinerary</a> — plan a perfect Cape day or week</li></ul><p>📱 <a href="https://totallycapecod.com/app/" style="background:#4A90A4;color:white;padding:12px 24px;border-radius:10px;text-decoration:none;display:inline-block;">Open the free app</a></p><p>We'll send you the occasional update on what's happening around the Cape. See you on the beach!</p>`,
         }),
       });
     } catch {

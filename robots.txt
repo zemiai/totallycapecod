@@ -6,4 +6,4 @@ Allow: /
 Disallow: /data/
 Disallow: /netlify/
 
-Sitemap: https://totallycapecod.netlify.app/sitemap.xml
+Sitemap: https://totallycapecod.com/sitemap.xml

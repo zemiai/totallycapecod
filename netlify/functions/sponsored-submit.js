@@ -83,7 +83,7 @@ exports.handler = async (event, context) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          from: 'Totally Cape Cod <hello@totallycapecod.com>',
+          from: 'Totally Cape Cod <info@totallycapecod.com>',
           to: submission.email,
           subject: 'We received your listing submission! ☀️',
           html: `<p>Hi ${submission.name},</p><p>Thanks for submitting your business to Totally Cape Cod! We've received your ${submission.tier} listing and will review it within 24 hours.</p><p>Here's what's next:</p><ul><li>Our team reviews all submissions for quality and accuracy</li><li>Once approved, your listing goes live on the site</li><li>Paid featured listings get priority placement</li></ul><p>Questions? Just reply to this email.</p><p>— The Totally Cape Cod Team</p>`,
