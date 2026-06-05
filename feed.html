@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#7BBCD0" />
+<title>Near You — Live Cape Cod Feed | Totally Cape Cod</title>
+<meta name="description" content="A live, scrollable feed of the best restaurants, beaches, events, and conditions near you on Cape Cod — sorted by what's closest." />
+<meta name="robots" content="index, follow" />
+<meta property="og:title" content="Near You — Live Cape Cod Feed" />
+<meta property="og:description" content="Restaurants, beaches, events and live conditions near you on Cape Cod." />
+<meta property="og:url" content="https://totallycapecod.com/feed.html" />
+<meta property="og:image" content="https://totallycapecod.com/og-image.png" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0YM9WQLWK"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q0YM9WQLWK');</script>
+<link rel="stylesheet" href="css/tcc.css" />
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<style>
+  .feed-wrap{max-width:640px;margin:0 auto;padding:84px 14px 90px;}
+  .feed-intro{text-align:center;margin:6px 0 14px;}
+  .feed-intro h1{font-family:'Fraunces',serif;font-weight:900;font-size:30px;color:var(--warm-brown);margin:0 0 4px;letter-spacing:-0.02em;}
+  .feed-intro p{color:var(--text-secondary);font-size:14px;margin:0;}
+
+  /* Sticky location bar */
+  .loc-bar{position:sticky;top:62px;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:10px;
+    background:rgba(253,248,242,0.92);backdrop-filter:blur(12px);border:1px solid var(--divider);
+    border-radius:var(--radius-full);padding:9px 9px 9px 16px;margin:0 0 16px;box-shadow:var(--shadow-sm);}
+  .loc-bar .where{font-weight:700;color:var(--warm-brown);font-size:14px;display:flex;align-items:center;gap:7px;min-width:0;}
+  .loc-bar .where .town{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .loc-bar .where .dot{width:9px;height:9px;border-radius:50%;background:var(--status-open);box-shadow:0 0 0 4px rgba(107,196,166,0.2);flex:none;}
+  .loc-bar button{flex:none;background:var(--sand-cream);border:1px solid var(--divider);color:var(--warm-brown);
+    font-weight:700;font-size:12px;padding:8px 14px;border-radius:var(--radius-full);cursor:pointer;}
+  .loc-bar button:hover{border-color:var(--sea-soft);color:var(--sea-deep);}
+
+  /* Posts */
+  .post{background:var(--card);border:1px solid var(--divider);border-radius:var(--radius-lg);overflow:hidden;
+    box-shadow:var(--shadow-sm);margin-bottom:16px;animation:fadeUp .45s ease both;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+  .post-head{display:flex;align-items:center;gap:11px;padding:12px 14px 10px;}
+  .avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-size:20px;flex:none;background:linear-gradient(135deg,var(--sea-light),var(--mint-light));}
+  .avatar.food{background:linear-gradient(135deg,var(--peach-light),var(--coral-light));}
+  .avatar.beach{background:linear-gradient(135deg,var(--sea-mist),var(--sea-light));}
+  .avatar.event{background:linear-gradient(135deg,var(--lavender-light),var(--sea-mist));}
+  .avatar.road{background:linear-gradient(135deg,var(--sand-soft),var(--peach-light));}
+  .post-head .ph-main{min-width:0;flex:1;}
+  .post-head .name{font-weight:700;font-size:15px;color:var(--text);line-height:1.2;}
+  .post-head .sub{font-size:12.5px;color:var(--text-secondary);margin-top:2px;}
+  .kind-pill{font-size:10px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;
+    padding:4px 9px;border-radius:var(--radius-full);flex:none;}
+  .kp-food{background:var(--peach-light);color:#B5654A;}
+  .kp-beach{background:var(--sea-mist);color:var(--sea-deep);}
+  .kp-event{background:var(--lavender-light);color:#6B5E8A;}
+  .kp-road{background:var(--sand-light);color:var(--warm-brown);}
+
+  .post-photo{height:300px;background-size:cover;background-position:center;position:relative;background-color:var(--sea-mist);}
+  .post-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(74,64,56,0.28),transparent 45%);}
+  .dist-badge{position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.92);backdrop-filter:blur(4px);
+    color:var(--warm-brown);font-weight:800;font-size:12px;padding:6px 11px;border-radius:var(--radius-full);z-index:1;}
+  .price-badge{position:absolute;bottom:12px;left:12px;background:rgba(74,64,56,0.78);color:#fff;
+    font-weight:700;font-size:12px;padding:5px 11px;border-radius:var(--radius-full);z-index:1;}
+  .open-badge{position:absolute;top:12px;left:12px;font-weight:800;font-size:11.5px;padding:5px 10px;
+    border-radius:var(--radius-full);z-index:1;background:rgba(255,255,255,0.94);backdrop-filter:blur(4px);}
+  .open-badge.open{color:var(--status-open);}
+  .open-badge.closed{color:var(--status-full);}
+  .post-head .sub .rev{color:var(--text-secondary);font-weight:600;}
+
+  .post-body{padding:12px 14px 14px;}
+  .post-body p{margin:0;font-size:14.5px;line-height:1.55;color:var(--text);}
+  .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;}
+  .tag{font-size:11px;font-weight:600;background:var(--sand-cream);color:var(--warm-brown-soft);
+    padding:3px 9px;border-radius:6px;text-transform:capitalize;}
+  .actions{display:flex;gap:8px;margin-top:12px;}
+  .actions a{flex:1;text-align:center;padding:10px;border-radius:var(--radius-full);font-size:13px;font-weight:700;text-decoration:none;}
+  .a-view{background:linear-gradient(135deg,var(--sea-deep),var(--sea-soft));color:#fff;}
+  .a-book{background:var(--sand-cream);color:var(--warm-brown);border:1px solid var(--divider);}
+  .actions a:hover{text-decoration:none;opacity:.92;}
+
+  /* Live stat rows (beach / bridge) */
+  .stat-grid{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px;}
+  .stat{background:var(--sand-cream);border:1px solid var(--divider);border-radius:var(--radius-sm);
+    padding:8px 12px;font-size:13px;font-weight:600;color:var(--text);}
+  .stat b{display:block;font-size:11px;font-weight:700;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.04em;margin-bottom:2px;}
+  .pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;padding:5px 11px;border-radius:var(--radius-full);}
+  .pill.open{background:rgba(107,196,166,0.18);color:#3E9A7C;}
+  .pill.mid{background:rgba(232,184,122,0.22);color:#C28A3A;}
+  .pill.full{background:rgba(232,138,138,0.2);color:#C75C5C;}
+  .crowd-dots{display:inline-flex;gap:3px;vertical-align:middle;}
+  .crowd-dots i{width:7px;height:7px;border-radius:50%;background:var(--divider);display:inline-block;}
+  .crowd-dots i.on{background:var(--sand-warm);}
+
+  .updated{font-size:11.5px;color:var(--text-secondary);margin-top:10px;display:flex;align-items:center;gap:6px;}
+  .live-dot{width:7px;height:7px;border-radius:50%;background:var(--status-open);animation:pulse 1.8s infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+
+  /* Town divider */
+  .town-head{display:flex;align-items:center;gap:12px;margin:8px 2px 14px;}
+  .town-head .line{flex:1;height:1px;background:var(--divider);}
+  .town-head .label{font-family:'Fraunces',serif;font-weight:900;font-size:16px;color:var(--warm-brown);white-space:nowrap;}
+  .town-head .label .mi{font-family:'Inter',sans-serif;font-weight:700;font-size:12px;color:var(--text-secondary);margin-left:6px;}
+  .loop-divider{text-align:center;margin:22px 0;color:var(--text-secondary);font-size:13px;font-weight:600;}
+  .loop-divider span{background:var(--sand-cream);border:1px solid var(--divider);padding:8px 18px;border-radius:var(--radius-full);}
+
+  /* Skeleton */
+  .skz{height:120px;border-radius:var(--radius-lg);margin-bottom:16px;
+    background:linear-gradient(100deg,var(--divider) 30%,#fff 50%,var(--divider) 70%);
+    background-size:200% 100%;animation:shimmer 1.3s infinite;}
+  @keyframes shimmer{from{background-position:200% 0;}to{background-position:-200% 0;}}
+
+  /* Location modal */
+  .geo-modal{position:fixed;inset:0;z-index:200;background:rgba(74,64,56,0.4);backdrop-filter:blur(8px);
+    display:flex;align-items:center;justify-content:center;padding:20px;}
+  .geo-modal.hide{display:none;}
+  .geo-card{background:#fff;border-radius:var(--radius-xl);max-width:380px;width:100%;padding:30px 26px;
+    text-align:center;box-shadow:var(--shadow-lg);animation:fadeUp .4s ease both;}
+  .geo-card .pin{font-size:46px;margin-bottom:8px;}
+  .geo-card h2{font-family:'Fraunces',serif;font-weight:900;font-size:24px;color:var(--warm-brown);margin:0 0 8px;}
+  .geo-card p{font-size:14.5px;color:var(--text-secondary);line-height:1.55;margin:0 0 22px;}
+  .geo-card .btn{width:100%;margin-bottom:10px;}
+  .geo-card .fine{font-size:11.5px;color:var(--text-secondary);margin:6px 0 0;}
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="site-nav" id="siteNav"><div class="nav-inner">
+  <a href="/" class="nav-logo">Totally Cape Cod</a>
+  <div class="nav-links">
+    <a href="/feed.html">Near You</a>
+    <a href="/beaches.html">Beaches</a>
+    <a href="/eats.html">Eats</a>
+    <a href="/stays.html">Stays</a>
+    <a href="/experiences.html">Experiences</a>
+    <a href="/app/" class="nav-cta">📱 App</a>
+  </div>
+  <button class="nav-mobile-toggle" onclick="toggleMobileMenu()">☰</button>
+</div></nav>
+<div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()">
+  <a href="/">Home</a><a href="/feed.html">Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a>
+  <a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events.html">Events</a><a href="/app/">📱 Open the App</a>
+</div></div>
+
+<!-- Location prompt -->
+<div class="geo-modal" id="geoModal">
+  <div class="geo-card">
+    <div class="pin">📍</div>
+    <h2>What's happening near you?</h2>
+    <p>Share your location and we'll surface the closest eats, beaches, and events first — then scroll the whole Cape.</p>
+    <button class="btn btn-navy" onclick="useMyLocation()">Use my location</button>
+    <button class="btn btn-ghost" onclick="useMidCape()" style="border:1.5px solid var(--divider);color:var(--warm-brown);">Just browse the Cape</button>
+    <p class="fine">We never store your location — it stays on your device.</p>
+  </div>
+</div>
+
+<main class="feed-wrap">
+  <div class="feed-intro">
+    <h1>Near You</h1>
+    <p>The Cape, sorted by what's closest. Keep scrolling — it never ends.</p>
+  </div>
+
+  <div class="loc-bar" id="locBar" style="display:none;">
+    <div class="where"><span class="dot"></span><span class="town" id="locLabel">Locating…</span></div>
+    <button onclick="openGeo()">Change</button>
+  </div>
+
+  <div id="feed">
+    <div class="skz"></div><div class="skz"></div><div class="skz"></div>
+  </div>
+  <div id="sentinel" style="height:1px;"></div>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div><div class="footer-brand">Totally Cape Cod</div><p class="footer-desc">The unofficial guide to the best of Cape Cod.</p></div>
+    <div class="footer-links"><div class="footer-heading">Explore</div><a href="/feed.html">Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Restaurants</a><a href="/experiences.html">Experiences</a></div>
+    <div class="footer-links"><div class="footer-heading">Plan</div><a href="/itinerary.html">Itinerary Builder</a><a href="/app/">Get the App</a><a href="/submit.html">List Your Business</a></div>
+  </div>
+  <div class="footer-bottom">© 2026 Totally Cape Cod. Affiliate links help keep this guide free.</div>
+</footer>
+
+<script>
+function toggleMobileMenu(){document.getElementById('mobileMenu').classList.toggle('show');}
+
+/* ============================================================
+   TOTALLY CAPE COD — "NEAR YOU" FEED
+   - Distance-sorted, town-by-town, endless-loop feed
+   - Mixes restaurants with live beach / bridge / event cards
+   - Live cards refresh from /data/*.json when served over http;
+     inline snapshots keep it working on a local file:// preview.
+   ============================================================ */
+
+/* ---- Town reference (village-level) for the "nearest town" label ---- */
+const TOWNS=[
+  {n:"Provincetown",lat:42.0587,lng:-70.1787},{n:"Truro",lat:41.9979,lng:-70.0492},
+  {n:"Wellfleet",lat:41.9362,lng:-70.0331},{n:"Eastham",lat:41.8300,lng:-69.9740},
+  {n:"Orleans",lat:41.7901,lng:-69.9873},{n:"Brewster",lat:41.7601,lng:-70.0819},
+  {n:"Harwich Port",lat:41.6709,lng:-70.0772},{n:"Chatham",lat:41.6815,lng:-69.9597},
+  {n:"East Dennis",lat:41.7486,lng:-70.1597},{n:"Dennis",lat:41.7353,lng:-70.1936},
+  {n:"Dennisport",lat:41.6553,lng:-70.1331},{n:"West Dennis",lat:41.6620,lng:-70.1700},
+  {n:"Yarmouth Port",lat:41.7038,lng:-70.2419},{n:"South Yarmouth",lat:41.6680,lng:-70.1770},
+  {n:"West Yarmouth",lat:41.6510,lng:-70.2400},{n:"Hyannis",lat:41.6520,lng:-70.2828},
+  {n:"Barnstable",lat:41.7003,lng:-70.2995},{n:"Centerville",lat:41.6481,lng:-70.3447},
+  {n:"Osterville",lat:41.6281,lng:-70.3858},{n:"Cotuit",lat:41.6151,lng:-70.4361},
+  {n:"Mashpee",lat:41.6481,lng:-70.4822},{n:"Sandwich",lat:41.7590,lng:-70.4940},
+  {n:"Falmouth",lat:41.5515,lng:-70.6148},{n:"Woods Hole",lat:41.5246,lng:-70.6731},
+  {n:"Bourne",lat:41.7412,lng:-70.5990}
+];
+const MID_CAPE={lat:41.668,lng:-70.250,label:"Mid Cape"};
+
+/* ---- Restaurants: ~75 real spots across every town (editorial ratings) ---- */
+// Inline fallback so the feed works on file:// preview. On the live server
+// refreshLive() overrides this from data/eats.json (with live Google ratings/photos).
+let RESTAURANTS=[
+  // Provincetown
+  {name:"The Lobster Pot",town:"Provincetown",lat:42.0494,lng:-70.1853,cuisine:"Seafood",price:"$$$",rating:4.7,tags:["seafood","lobster","fine"],desc:"Iconic waterfront since 1979 — lobster rolls, clam chowder, harbor views."},
+  {name:"The Mews Restaurant & Cafe",town:"Provincetown",lat:42.0506,lng:-70.1808,cuisine:"Fine Dining",price:"$$$",rating:4.6,tags:["fine","seafood"],desc:"Oceanfront dining with a legendary martini list. A P-town institution."},
+  {name:"The Red Inn",town:"Provincetown",lat:42.0556,lng:-70.1972,cuisine:"Fine Dining",price:"$$$$",rating:4.5,tags:["fine"],desc:"Sunset dining right on the water. A splurge that earns it."},
+  {name:"The Canteen",town:"Provincetown",lat:42.0517,lng:-70.1828,cuisine:"Casual Seafood",price:"$$",rating:4.5,tags:["seafood","clam","casual"],desc:"Beachfront counter — go for the lobster roll and frozen rosé."},
+  {name:"Spiritus Pizza",town:"Provincetown",lat:42.0561,lng:-70.1808,cuisine:"Pizza",price:"$",rating:4.4,tags:["pizza","casual"],desc:"Late-night Commercial Street slice. The after-bar ritual."},
+  {name:"Strangers & Saints",town:"Provincetown",lat:42.0531,lng:-70.1814,cuisine:"Mediterranean",price:"$$",rating:4.6,tags:["fine"],desc:"Cozy taverna — Mediterranean small plates and a great wine list."},
+  {name:"Far Land Provisions",town:"Provincetown",lat:42.0556,lng:-70.1850,cuisine:"Deli",price:"$",rating:4.7,tags:["breakfast","casual"],desc:"Build a beach picnic with their famous sandwiches."},
+  // Truro
+  {name:"Truro Vineyards",town:"Truro",lat:41.9886,lng:-70.0517,cuisine:"Winery",price:"$$",rating:4.6,tags:["bar","fine"],desc:"Wine flights and live music under the trees. Food trucks on site."},
+  {name:"Blackfish",town:"Truro",lat:41.9942,lng:-70.0486,cuisine:"Modern American",price:"$$$",rating:4.6,tags:["fine","seafood"],desc:"A former blacksmith shop turned buzzy bistro. Famous fish tacos."},
+  {name:"Terra Luna",town:"Truro",lat:42.0244,lng:-70.0817,cuisine:"Italian",price:"$$$",rating:4.5,tags:["italian","fine"],desc:"Rustic, romantic North Truro spot — handmade pasta, tiny room."},
+  {name:"Montano's",town:"Truro",lat:41.9994,lng:-70.0556,cuisine:"Italian",price:"$$",rating:4.3,tags:["italian","casual"],desc:"Family Italian-American with a raw bar. Reliable Route 6 classic."},
+  // Wellfleet
+  {name:"Mac's Shack",town:"Wellfleet",lat:41.9303,lng:-70.0297,cuisine:"Seafood",price:"$$$",rating:4.5,tags:["seafood","fine"],desc:"Raw bar and sushi in a building topped by a boat. Oysters galore."},
+  {name:"Mac's Seafood",town:"Wellfleet",lat:41.9275,lng:-70.0264,cuisine:"Seafood",price:"$$",rating:4.4,tags:["seafood","clam","lobster"],desc:"Order at the counter, eat on the harbor as the fleet comes in."},
+  {name:"PB Boulangerie Bistro",town:"Wellfleet",lat:41.9128,lng:-69.9881,cuisine:"French Bakery",price:"$$",rating:4.8,tags:["bakery","breakfast"],desc:"French-trained pastry. Croissants that ruin all other croissants."},
+  {name:"The Bookstore & Restaurant",town:"Wellfleet",lat:41.9319,lng:-70.0331,cuisine:"Seafood",price:"$$",rating:4.3,tags:["seafood","casual"],desc:"Locals' joint over Duck Creek — oysters they pull themselves."},
+  {name:"The Beachcomber",town:"Wellfleet",lat:41.9314,lng:-69.9692,cuisine:"Beach Bar",price:"$$",rating:4.5,tags:["bar","seafood","casual"],desc:"Beach bar on the dunes at Cahoon Hollow. Live bands + raw bar."},
+  {name:"Winslow's Tavern",town:"Wellfleet",lat:41.9367,lng:-70.0331,cuisine:"American",price:"$$$",rating:4.4,tags:["fine"],desc:"Porch dining in a sea-captain's house downtown. Brunch + dinner."},
+  // Eastham
+  {name:"Arnold's Lobster & Clam Bar",town:"Eastham",lat:41.8479,lng:-69.9747,cuisine:"Seafood",price:"$$",rating:4.6,tags:["seafood","lobster","clam"],desc:"The standard for lobster rolls. Mini golf, ice cream, epic onion rings."},
+  {name:"The Friendly Fisherman",town:"Eastham",lat:41.8556,lng:-69.9742,cuisine:"Seafood",price:"$$",rating:4.5,tags:["seafood","lobster","clam"],desc:"Family fish market + shack. Locals' lobster-roll pick, no line."},
+  {name:"Hole in One Donuts",town:"Eastham",lat:41.8311,lng:-69.9719,cuisine:"Bakery",price:"$",rating:4.6,tags:["breakfast","bakery","coffee"],desc:"A Cape Sunday tradition — hand-cut donuts and a buzzing counter."},
+  {name:"Karoo Restaurant",town:"Eastham",lat:41.8261,lng:-69.9750,cuisine:"South African",price:"$$",rating:4.6,tags:["fine"],desc:"The Cape's only South African kitchen — bobotie, peri-peri, big flavor."},
+  {name:"Fairway Restaurant & Pizzeria",town:"Eastham",lat:41.8344,lng:-69.9728,cuisine:"Pizza / Diner",price:"$",rating:4.2,tags:["pizza","breakfast","casual"],desc:"Diner breakfasts and pizza by the rail trail. Cyclists' refuel stop."},
+  // Orleans
+  {name:"Lobster Claw",town:"Orleans",lat:41.7894,lng:-69.9889,cuisine:"Seafood",price:"$$",rating:4.5,tags:["seafood","lobster","clam"],desc:"No-frills shack with perfect cold lobster rolls and great clam plates."},
+  {name:"The Knack",town:"Orleans",lat:41.7897,lng:-69.9881,cuisine:"Burgers & Shakes",price:"$",rating:4.5,tags:["casual","icecream"],desc:"Modern clam-shack — smash burgers, lobster rolls, frappes."},
+  {name:"Hot Chocolate Sparrow",town:"Orleans",lat:41.7886,lng:-69.9908,cuisine:"Cafe",price:"$",rating:4.6,tags:["coffee","breakfast","icecream"],desc:"Coffee, cinnamon buns, and house chocolates. Orleans' morning HQ."},
+  {name:"Land Ho!",town:"Orleans",lat:41.7900,lng:-69.9892,cuisine:"Pub",price:"$$",rating:4.4,tags:["bar","casual"],desc:"Quintessential Cape tavern since 1969 — chowder, burgers, ceiling signs."},
+  {name:"Nauset Beach Club",town:"Orleans",lat:41.7906,lng:-69.9550,cuisine:"Italian",price:"$$$",rating:4.6,tags:["italian","fine"],desc:"Intimate Italian near the dunes. Date-night pasta and deep wine list."},
+  {name:"Mahoney's Atlantic Bar & Grill",town:"Orleans",lat:41.7897,lng:-69.9889,cuisine:"American",price:"$$$",rating:4.5,tags:["fine","seafood"],desc:"Downtown bistro — wood-grilled fish and a lively bar scene."},
+  // Brewster
+  {name:"Brewster Fish House",town:"Brewster",lat:41.7606,lng:-70.0606,cuisine:"Seafood",price:"$$$",rating:4.7,tags:["seafood","fine"],desc:"Tiny, beloved, no-reservations — some of the best seafood on the Cape."},
+  {name:"Cobie's Clam Shack",town:"Brewster",lat:41.7606,lng:-70.0456,cuisine:"Seafood",price:"$",rating:4.4,tags:["seafood","clam","icecream"],desc:"Roadside classic on 6A. Fried clams and soft serve since 1948."},
+  {name:"JT's Seafood",town:"Brewster",lat:41.7600,lng:-70.0533,cuisine:"Seafood",price:"$$",rating:4.3,tags:["seafood","clam","casual"],desc:"Order-at-the-window family spot — fried seafood and lobster dinners."},
+  {name:"Chillingsworth",town:"Brewster",lat:41.7619,lng:-70.0392,cuisine:"French",price:"$$$$",rating:4.6,tags:["fine"],desc:"Special-occasion French prix-fixe in a 1689 estate. The big splurge."},
+  {name:"Snowy Owl Coffee Roasters",town:"Brewster",lat:41.7556,lng:-70.0783,cuisine:"Coffee",price:"$",rating:4.7,tags:["coffee","breakfast"],desc:"Craft roaster with a sunlit cafe. Best pour-over on the Mid-Cape."},
+  // Harwich Port
+  {name:"Cape Sea Grille",town:"Harwich Port",lat:41.6700,lng:-70.0758,cuisine:"Seafood",price:"$$$",rating:4.7,tags:["fine","seafood"],desc:"Refined coastal dining in a sea-captain's house. Quietly excellent."},
+  {name:"Brax Landing",town:"Harwich Port",lat:41.6700,lng:-70.0700,cuisine:"Seafood",price:"$$",rating:4.3,tags:["seafood","bar"],desc:"Harbor-view deck — sunset cocktails and twin lobsters."},
+  {name:"Buca's Tuscan Roadhouse",town:"Harwich Port",lat:41.6831,lng:-70.0739,cuisine:"Italian",price:"$$$",rating:4.7,tags:["italian","fine"],desc:"Romantic, candle-lit Tuscan. Reservations a must in summer."},
+  {name:"Bonatt's Bakery & Restaurant",town:"Harwich Port",lat:41.6797,lng:-70.0758,cuisine:"Bakery",price:"$",rating:4.5,tags:["breakfast","bakery"],desc:"Home of the 'Meltaway.' Old-school breakfast counter."},
+  // Chatham
+  {name:"The Impudent Oyster",town:"Chatham",lat:41.6822,lng:-69.9597,cuisine:"Seafood",price:"$$$",rating:4.6,tags:["seafood","fine"],desc:"Tucked off Main Street — bouillabaisse and oysters in a buzzy room."},
+  {name:"Chatham Pier Fish Market",town:"Chatham",lat:41.6889,lng:-69.9508,cuisine:"Seafood",price:"$$",rating:4.6,tags:["seafood","lobster","clam"],desc:"Lobster rolls on the pier, watching seals and the fishing fleet."},
+  {name:"The Chatham Squire",town:"Chatham",lat:41.6822,lng:-69.9600,cuisine:"Pub",price:"$$",rating:4.4,tags:["bar","seafood","casual"],desc:"Townie tavern and raw bar. Loud, fun, and always packed."},
+  {name:"Del Mar Bar & Bistro",town:"Chatham",lat:41.6819,lng:-69.9606,cuisine:"Mediterranean",price:"$$$",rating:4.5,tags:["fine"],desc:"Wood-fired Mediterranean with a sleek bar. Brunch is a scene."},
+  {name:"Hangar B Eatery",town:"Chatham",lat:41.6883,lng:-69.9892,cuisine:"Breakfast",price:"$",rating:4.6,tags:["breakfast","brunch"],desc:"Breakfast on the airfield — watch small planes over your hash."},
+  // Dennis + villages
+  {name:"Sesuit Harbor Café",town:"East Dennis",lat:41.7561,lng:-70.1542,cuisine:"Seafood",price:"$$",rating:4.7,tags:["seafood","lobster","clam"],desc:"BYOB sleeper hit — picnic tables right on the harbor. Cash only."},
+  {name:"Marshside",town:"East Dennis",lat:41.7456,lng:-70.1592,cuisine:"Seafood",price:"$$",rating:4.4,tags:["seafood","breakfast","brunch"],desc:"Water-view booths — Sunday brunch and big seafood plates."},
+  {name:"Sundae School",town:"Dennisport",lat:41.6556,lng:-70.1342,cuisine:"Ice Cream",price:"$",rating:4.8,tags:["icecream"],desc:"Homemade ice cream in an old schoolhouse. Don't skip the frozen pudding."},
+  {name:"Captain Frosty's",town:"Dennis",lat:41.7269,lng:-70.1883,cuisine:"Seafood",price:"$",rating:4.5,tags:["seafood","clam","icecream"],desc:"Fried-clam shack with soft serve. A 6A summer rite of passage."},
+  {name:"Scargo Cafe",town:"Dennis",lat:41.7350,lng:-70.1944,cuisine:"American",price:"$$$",rating:4.5,tags:["fine"],desc:"Pre-theater dining across from the Cape Playhouse. Warm and reliable."},
+  {name:"Kream 'N Kone",town:"West Dennis",lat:41.6606,lng:-70.1697,cuisine:"Seafood",price:"$",rating:4.4,tags:["seafood","clam","icecream"],desc:"Since 1953 — whole-belly clams and onion rings by the bucket."},
+  // Yarmouth + villages
+  {name:"Captain Parker's Pub",town:"West Yarmouth",lat:41.6517,lng:-70.2467,cuisine:"Seafood Pub",price:"$$",rating:4.6,tags:["seafood","bar","casual"],desc:"Award-winning clam chowder. Marsh-view pub the locals swear by."},
+  {name:"The Optimist Cafe",town:"Yarmouth Port",lat:41.7039,lng:-70.2392,cuisine:"British Tearoom",price:"$$",rating:4.5,tags:["breakfast","brunch"],desc:"Gingerbread Victorian — English tea, scones, and full breakfast."},
+  {name:"Inaho",town:"Yarmouth Port",lat:41.7036,lng:-70.2419,cuisine:"Japanese / Sushi",price:"$$$",rating:4.7,tags:["fine"],desc:"Hidden-gem sushi behind a garden gate. Freshest fish on the Cape."},
+  {name:"Riverway Lobster House",town:"South Yarmouth",lat:41.6692,lng:-70.1853,cuisine:"Seafood",price:"$$",rating:4.3,tags:["seafood","lobster"],desc:"Old-school surf-n-turf with sizzling popovers. Family staple."},
+  {name:"Skipper Chowder House",town:"South Yarmouth",lat:41.6519,lng:-70.1869,cuisine:"Seafood",price:"$$",rating:4.3,tags:["seafood","clam","breakfast"],desc:"Sea-view deck over Nantucket Sound. Chowder and big breakfasts."},
+  // Barnstable / Hyannis / Centerville / Osterville / Cotuit
+  {name:"Four Seas Ice Cream",town:"Centerville",lat:41.6481,lng:-70.3447,cuisine:"Ice Cream",price:"$",rating:4.9,tags:["icecream"],desc:"Since 1934 — the Cape's most legendary scoop. Get the peanut butter cup."},
+  {name:"Spoon and Seed",town:"Hyannis",lat:41.6539,lng:-70.2867,cuisine:"Brunch",price:"$$",rating:4.6,tags:["breakfast","brunch"],desc:"Smoked-salmon hash and inventive brunch. Opens 7am, worth it."},
+  {name:"The Naked Oyster",town:"Hyannis",lat:41.6531,lng:-70.2825,cuisine:"Seafood",price:"$$$",rating:4.6,tags:["seafood","fine"],desc:"Raw bar with their own oyster farm. Main Street's classy pick."},
+  {name:"Pain D'Avignon",town:"Hyannis",lat:41.6644,lng:-70.2858,cuisine:"French Bistro",price:"$$$",rating:4.7,tags:["bakery","breakfast","fine"],desc:"Artisan bakery by day, candle-lit bistro by night. Worth the detour."},
+  {name:"Baxter's Boathouse",town:"Hyannis",lat:41.6486,lng:-70.2861,cuisine:"Seafood",price:"$$",rating:4.4,tags:["seafood","bar","clam"],desc:"Fried clams on a dock deck as the boats slide by. Summer-only."},
+  {name:"Tugboats",town:"Hyannis",lat:41.6453,lng:-70.2858,cuisine:"Seafood",price:"$$",rating:4.3,tags:["seafood","bar"],desc:"Marina sunset spot — frozen drinks and lobster over the harbor."},
+  {name:"The Black Cat Tavern",town:"Hyannis",lat:41.6519,lng:-70.2789,cuisine:"Seafood",price:"$$",rating:4.4,tags:["seafood","bar"],desc:"Across from the ferries — chowder, raw bar, easy harbor views."},
+  {name:"Five Bays Bistro",town:"Osterville",lat:41.6278,lng:-70.3856,cuisine:"American",price:"$$$",rating:4.6,tags:["fine"],desc:"Sleek village bistro — small plates and a buzzy bar crowd."},
+  {name:"The Regatta of Cotuit",town:"Cotuit",lat:41.6156,lng:-70.4361,cuisine:"Fine Dining",price:"$$$$",rating:4.6,tags:["fine"],desc:"Romantic 1790 house — refined New England plates and tasting menus."},
+  {name:"Mattakeese Wharf",town:"Barnstable",lat:41.7050,lng:-70.3017,cuisine:"Seafood",price:"$$$",rating:4.4,tags:["seafood","fine"],desc:"Harborside dining with live piano. Sunset over Barnstable Harbor."},
+  {name:"Barnstable Restaurant & Tavern",town:"Barnstable",lat:41.7006,lng:-70.2992,cuisine:"American",price:"$$",rating:4.3,tags:["casual","bar"],desc:"Village tavern in historic 6A — burgers, comfort food, and a patio."},
+  // Mashpee
+  {name:"Bleu",town:"Mashpee",lat:41.6206,lng:-70.4783,cuisine:"French",price:"$$$",rating:4.6,tags:["fine"],desc:"Mashpee Commons brasserie — escargot, steak frites, lively bar."},
+  {name:"Siena",town:"Mashpee",lat:41.6203,lng:-70.4789,cuisine:"Italian",price:"$$$",rating:4.5,tags:["italian","fine"],desc:"Tuscan trattoria at the Commons — handmade pasta, wood-grilled."},
+  {name:"Trevi Cafe & Wine Bar",town:"Mashpee",lat:41.6200,lng:-70.4792,cuisine:"Mediterranean",price:"$$",rating:4.4,tags:["fine","bar"],desc:"Mediterranean small plates and a generous wine-by-the-glass list."},
+  {name:"Polar Cave Ice Cream",town:"Mashpee",lat:41.6433,lng:-70.4900,cuisine:"Ice Cream",price:"$",rating:4.7,tags:["icecream"],desc:"Cave-themed parlor with wild flavors. A kid (and adult) favorite."},
+  // Sandwich
+  {name:"Aqua Grille",town:"Sandwich",lat:41.7611,lng:-70.4956,cuisine:"Seafood",price:"$$",rating:4.4,tags:["seafood","bar"],desc:"Marina-side deck — $5 cocktails, lobster club, sunset over the canal."},
+  {name:"The Belfry Inn & Bistro",town:"Sandwich",lat:41.7586,lng:-70.4942,cuisine:"Fine Dining",price:"$$$",rating:4.6,tags:["fine"],desc:"Dinner in a converted church — stained glass and refined plates."},
+  {name:"Seafood Sam's",town:"Sandwich",lat:41.7711,lng:-70.5028,cuisine:"Seafood",price:"$",rating:4.4,tags:["seafood","clam","casual"],desc:"Family fried-seafood institution by the canal. Order at the counter."},
+  {name:"The Dunbar Tea Room",town:"Sandwich",lat:41.7569,lng:-70.4953,cuisine:"Tearoom",price:"$",rating:4.6,tags:["breakfast","coffee"],desc:"Proper English tea and savory pies in a 1740s carriage house."},
+  {name:"Fishermen's View",town:"Sandwich",lat:41.7714,lng:-70.5036,cuisine:"Seafood",price:"$$$",rating:4.5,tags:["seafood","fine"],desc:"Floor-to-ceiling marina views and their own seafood market downstairs."},
+  // Falmouth / Woods Hole
+  {name:"La Cucina Sul Mare",town:"Falmouth",lat:41.5517,lng:-70.6147,cuisine:"Italian",price:"$$$",rating:4.7,tags:["italian","fine"],desc:"Main Street favorite — generous Italian, always a wait, always worth it."},
+  {name:"The Quarterdeck",town:"Falmouth",lat:41.5519,lng:-70.6139,cuisine:"American",price:"$$",rating:4.4,tags:["casual","bar"],desc:"Cozy Main Street standby — chowder, burgers, and a friendly bar."},
+  {name:"Añejo Mexican Bistro",town:"Falmouth",lat:41.5522,lng:-70.6153,cuisine:"Mexican",price:"$$",rating:4.5,tags:["mexican","bar"],desc:"Tequila bar and modern Mexican. Guac and margaritas on Main Street."},
+  {name:"The Captain Kidd",town:"Woods Hole",lat:41.5247,lng:-70.6736,cuisine:"Seafood Pub",price:"$$",rating:4.5,tags:["seafood","bar"],desc:"Waterfront tavern on Eel Pond — oysters and a historic back bar."},
+  {name:"Quicks Hole Taqueria",town:"Woods Hole",lat:41.5239,lng:-70.6739,cuisine:"Mexican",price:"$",rating:4.5,tags:["mexican","casual"],desc:"Fish tacos by the ferry dock. Quick, fresh, and fun."},
+  {name:"Maison Villatte",town:"Falmouth",lat:41.5511,lng:-70.6131,cuisine:"French Bakery",price:"$",rating:4.7,tags:["bakery","breakfast","coffee"],desc:"French bakers, line out the door — baguettes, tarts, croissants."},
+  // Bourne / Buzzards Bay
+  {name:"The Chart Room",town:"Bourne",lat:41.6394,lng:-70.6206,cuisine:"Seafood",price:"$$$",rating:4.6,tags:["seafood","bar","fine"],desc:"Summer-only harbor legend — mudslides and lobster on Red Brook Harbor."},
+  {name:"Lindsey's Family Restaurant",town:"Bourne",lat:41.7444,lng:-70.6175,cuisine:"Seafood",price:"$$",rating:4.3,tags:["seafood","clam","casual"],desc:"Buzzards Bay family seafood — fried platters and friendly service."},
+  {name:"Stir Crazy",town:"Bourne",lat:41.7050,lng:-70.6014,cuisine:"Cambodian",price:"$$",rating:4.5,tags:["fine"],desc:"Beloved Southeast-Asian kitchen — curries and pho near the bridge."},
+  {name:"Mezza Luna",town:"Bourne",lat:41.7456,lng:-70.6181,cuisine:"Italian",price:"$$",rating:4.3,tags:["italian","casual"],desc:"Buzzards Bay Italian-American since 1936. Sunday-gravy comfort."}
+];
+
+/* ---- Live data: inline snapshots (refreshed from /data/*.json over http) ---- */
+let BEACHES=[
+  {name:"Nauset Beach",town:"Orleans",lat:41.8014,lng:-69.9492,status:"open",spots_text:"23 spots open",crowd:2,water_temp:65,updated:"just now",notes:""},
+  {name:"Coast Guard Beach",town:"Eastham",lat:41.8403,lng:-69.9536,status:"full",spots_text:"Lot FULL · shuttle running",crowd:5,water_temp:63,updated:"just now",notes:"Use Salt Pond Visitor shuttle"},
+  {name:"Race Point Beach",town:"Provincetown",lat:42.0739,lng:-70.2436,status:"mid",spots_text:"8 spots open",crowd:3,water_temp:62,updated:"just now",notes:""},
+  {name:"Marconi Beach",town:"Wellfleet",lat:41.9111,lng:-69.9694,status:"open",spots_text:"41 spots open",crowd:2,water_temp:64,updated:"just now",notes:"NPS pass or fee"},
+  {name:"Mayflower Beach",town:"Dennis",lat:41.7494,lng:-70.1842,status:"mid",spots_text:"12 spots open",crowd:4,water_temp:67,updated:"just now",notes:"Tidal flats at low tide"},
+  {name:"Old Silver Beach",town:"Falmouth",lat:41.6019,lng:-70.6431,status:"full",spots_text:"Lot FULL · wait list",crowd:5,water_temp:68,updated:"just now",notes:"Calm bay water"},
+  {name:"Skaket Beach",town:"Orleans",lat:41.7886,lng:-70.0269,status:"open",spots_text:"Plenty of room",crowd:1,water_temp:66,updated:"just now",notes:"Bayside · low-tide flats stretch a half-mile"},
+  {name:"Craigville Beach",town:"Centerville",lat:41.6294,lng:-70.3508,status:"mid",spots_text:"15 spots open",crowd:3,water_temp:67,updated:"just now",notes:"Family-friendly, snack bar"},
+  {name:"Sandy Neck Beach",town:"Barnstable",lat:41.7372,lng:-70.3892,status:"open",spots_text:"Lots of space",crowd:1,water_temp:65,updated:"just now",notes:"6 miles of beach + dunes"},
+  {name:"Herring Cove",town:"Provincetown",lat:42.0489,lng:-70.2017,status:"open",spots_text:"Open",crowd:2,water_temp:64,updated:"just now",notes:"Famous P-Town sunset"},
+  {name:"Kalmus Beach",town:"Hyannis",lat:41.6328,lng:-70.2867,status:"mid",spots_text:"Some spots",crowd:3,water_temp:68,updated:"just now",notes:"Best for windsurfing"},
+  {name:"Sandwich Town Beach",town:"Sandwich",lat:41.7611,lng:-70.5022,status:"open",spots_text:"Open",crowd:1,water_temp:68,updated:"just now",notes:"Boardwalk + bay"},
+  {name:"Harding's Beach",town:"Chatham",lat:41.6611,lng:-69.9925,status:"mid",spots_text:"Some spots",crowd:3,water_temp:67,updated:"just now",notes:"Long beach, less crowded"},
+  {name:"Breakwater Beach",town:"Brewster",lat:41.7553,lng:-70.0817,status:"open",spots_text:"Open",crowd:2,water_temp:67,updated:"just now",notes:""},
+  {name:"South Cape Beach",town:"Mashpee",lat:41.5847,lng:-70.5067,status:"open",spots_text:"Open",crowd:2,water_temp:68,updated:"just now",notes:"State park, birding"}
+];
+let EVENTS=[
+  {tag:"🎵 LIVE MUSIC",title:"The Wailers at Beachcomber",venue:"The Beachcomber",town:"Wellfleet",time:"9:00 PM",price:"$25",info:"21+ · live reggae on the dunes",lat:41.9314,lng:-69.9692,img:"https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800&q=80"},
+  {tag:"🦪 HAPPY HOUR",title:"Half-Off Oysters · Sundancers",venue:"Sundancers",town:"Dennis",time:"Til 6 PM",price:"$1.50/oyster",info:"Deck open over the river",lat:41.6620,lng:-70.1700,img:"https://images.unsplash.com/photo-1606731270651-2cfa4d4d4a6e?w=800&q=80"},
+  {tag:"🎬 FREE EVENT",title:"Sunset Concert · Chatham Bandstand",venue:"Kate Gould Park",town:"Chatham",time:"7:30 PM",price:"Free",info:"Tom Yates Band · bring a chair",lat:41.6822,lng:-69.9594,img:"https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800&q=80"},
+  {tag:"🍷 LIVE JAZZ",title:"Wine + Jazz · Truro Vineyards",venue:"Truro Vineyards",town:"Truro",time:"6–9 PM",price:"$15 flight",info:"Live music in the vines",lat:41.9886,lng:-70.0517,img:"https://images.unsplash.com/photo-1510626176961-4b57d4fbad03?w=800&q=80"},
+  {tag:"🎬 DRIVE-IN",title:"Top Gun: Maverick · Wellfleet Drive-In",venue:"Wellfleet Drive-In",town:"Wellfleet",time:"8:30 PM",price:"$14/car",info:"Cash only · gates 7:30",lat:41.9072,lng:-70.0156,img:"https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800&q=80"},
+  {tag:"🎪 MARKET",title:"Farmers Market · Brewster",venue:"Brewster Town Hall",town:"Brewster",time:"10 AM – 2 PM",price:"Free",info:"Food trucks + live music",lat:41.7639,lng:-70.0719,img:"https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=800&q=80"},
+  {tag:"🎷 LIVE MUSIC",title:"Stone Highway · The Squire",venue:"The Chatham Squire",town:"Chatham",time:"8:30 PM",price:"$10 cover",info:"Classic rock · 21+",lat:41.6822,lng:-69.9600,img:"https://images.unsplash.com/photo-1546058256-47154de4046c?w=800&q=80"},
+  {tag:"🎨 ART",title:"Wellfleet Gallery Walk",venue:"Downtown Wellfleet",town:"Wellfleet",time:"5–8 PM",price:"Free",info:"15+ galleries open late",lat:41.9322,lng:-70.0297,img:"https://images.unsplash.com/photo-1577720580479-7d839d829c73?w=800&q=80"},
+  {tag:"👨‍👩‍👧 FAMILY",title:"Seal Feeding · P-Town Aquarium",venue:"Provincetown Pier",town:"Provincetown",time:"2:00 PM",price:"Free",info:"Daily at 2pm",lat:42.0494,lng:-70.1872,img:"https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=800&q=80"},
+  {tag:"🥃 HAPPY HOUR",title:"$5 Cocktails · Aqua Grille",venue:"Aqua Grille",town:"Sandwich",time:"4–6 PM",price:"$5",info:"Marina deck open",lat:41.7611,lng:-70.4956,img:"https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=800&q=80"},
+  {tag:"🎬 OUTDOOR",title:"Movie on the Lawn · Hyannis",venue:"Aselton Park",town:"Hyannis",time:"8:00 PM",price:"Free",info:"Bring blankets · family movie",lat:41.6517,lng:-70.2842,img:"https://images.unsplash.com/photo-1542204165-65bf26472b9b?w=800&q=80"}
+];
+let BRIDGES={sagamore:{name:"Sagamore Bridge",delay:1,status:"light",advice:"Sail through — no delays right now"},bourne:{name:"Bourne Bridge",delay:8,status:"moderate",advice:"Light backup — go now or wait an hour"}};
+
+/* ---- Imagery: appetizing stock by cuisine (swap for live Google Places photos later) ---- */
+const IMG={
+  lobster:["photo-1553163147-621957516919","photo-1625938144755-652e08e359b7"],
+  seafood:["photo-1559737558-2f5a35f4523b","photo-1535140728325-a4d3707eee61","photo-1565299507177-b0ac66763828"],
+  clam:["photo-1611599537845-1c7aca0091c0","photo-1606756790138-261d2b21cd75"],
+  fine:["photo-1559339352-11d035aa65de","photo-1414235077428-338989a2e8c0","photo-1517248135467-4c7edcad34c4"],
+  italian:["photo-1551183053-bf91a1d81141","photo-1595295333158-4742f28fbd85"],
+  mexican:["photo-1565299624946-b28f40a0ae38","photo-1599974579688-8dbdd335c77f"],
+  pizza:["photo-1513104890138-7c749659a591"],
+  bakery:["photo-1509440159596-0249088772ff","photo-1555507036-ab1f4038808a"],
+  breakfast:["photo-1504674900247-0877df9cc836","photo-1533089860892-a7c6f0a88666"],
+  coffee:["photo-1495474472287-4d71bcdd2085"],
+  icecream:["photo-1497034825429-c343d7c6a68f","photo-1576506295286-5cda18df43e7"],
+  bar:["photo-1514362545857-3bc16c4c7d1b","photo-1551024709-8f23befc6f87"],
+  casual:["photo-1466978913421-dad2ebd01d17","photo-1424847651672-bf20a4b0982b"],
+  default:["photo-1466978913421-dad2ebd01d17"]
+};
+const IMG_ORDER=["lobster","clam","icecream","bakery","pizza","mexican","italian","breakfast","coffee","fine","bar","seafood","casual"];
+function hash(s){let h=0;for(let i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))>>>0;return h;}
+function photoFor(r){
+  // Prefer the real Google Places photo (downloaded by scripts/update_eats.py).
+  if(r.photo) return r.photo;
+  // Fallback: cuisine-matched stock image (used on file:// preview + pre-enrichment).
+  let cat="default";
+  for(const c of IMG_ORDER){ if(r.tags.includes(c)){cat=c;break;} }
+  if(cat==="default" && r.tags.includes("seafood")) cat="seafood";
+  const pool=IMG[cat]||IMG.default;
+  const id=pool[hash(r.name)%pool.length];
+  return `https://images.unsplash.com/${id}?w=800&q=80&auto=format&fit=crop`;
+}
+
+/* ---- Geometry ---- */
+function dist(a,b){
+  const R=3959,dLat=(b.lat-a.lat)*Math.PI/180,dLng=(b.lng-a.lng)*Math.PI/180;
+  const s=Math.sin(dLat/2)**2+Math.cos(a.lat*Math.PI/180)*Math.cos(b.lat*Math.PI/180)*Math.sin(dLng/2)**2;
+  return R*2*Math.atan2(Math.sqrt(s),Math.sqrt(1-s));
+}
+function miLabel(mi){ if(mi<0.4)return "Right here"; if(mi<10)return mi.toFixed(1)+" mi"; return Math.round(mi)+" mi"; }
+function nearestTown(loc){ let best=TOWNS[0],bd=1e9; for(const t of TOWNS){const d=dist(loc,t); if(d<bd){bd=d;best=t;}} return best.n; }
+
+/* ---- State ---- */
+let USER=null, SEQ=[], ptr=0, loops=0, io=null;
+
+/* ---- Build the ordered, interleaved, town-by-town sequence ---- */
+function buildSequence(){
+  const items=[];
+  RESTAURANTS.forEach(r=>items.push({type:"food",town:r.town,lat:r.lat,lng:r.lng,data:r}));
+  BEACHES.forEach(b=>items.push({type:"beach",town:b.town,lat:b.lat,lng:b.lng,data:b}));
+  EVENTS.forEach(e=>items.push({type:"event",town:e.town,lat:e.lat,lng:e.lng,data:e}));
+  items.forEach(it=>it.mi=dist(USER,it));
+  items.sort((a,b)=>a.mi-b.mi);
+
+  // group consecutive by town (sorted order already clusters towns by distance)
+  const groups=[]; let cur=null;
+  for(const it of items){
+    if(!cur||cur.town!==it.town){ cur={town:it.town,mi:it.mi,food:[],live:[]}; groups.push(cur); }
+    (it.type==="food"?cur.food:cur.live).push(it);
+  }
+
+  const seq=[];
+  groups.forEach((g,gi)=>{
+    seq.push({type:"townhead",town:g.town,mi:g.mi});
+    if(gi===0) seq.push({type:"bridge"}); // bridges matter most when you first arrive
+    // zipper: lead with a live card, then 2 food, repeat
+    let fi=0, li=0;
+    while(fi<g.food.length||li<g.live.length){
+      if(li<g.live.length){ seq.push(g.live[li++]); }
+      if(fi<g.food.length){ seq.push(g.food[fi++]); }
+      if(fi<g.food.length){ seq.push(g.food[fi++]); }
+    }
+  });
+  return seq;
+}
+
+/* ---- Renderers ---- */
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+function crowdDots(n){let h='<span class="crowd-dots">';for(let i=1;i<=5;i++)h+=`<i class="${i<=n?'on':''}"></i>`;h+='</span>';return h;}
+const STATUS_LABEL={open:"Wide open",mid:"Filling up",full:"Lot full"};
+
+function renderItem(it){
+  if(it.type==="townhead"){
+    return `<div class="town-head"><div class="line"></div><div class="label">${esc(it.town)}<span class="mi">${miLabel(it.mi)} away</span></div><div class="line"></div></div>`;
+  }
+  if(it.type==="bridge"){
+    const s=BRIDGES.sagamore,b=BRIDGES.bourne;
+    return `<div class="post"><div class="post-head">
+      <div class="avatar road">🚗</div>
+      <div class="ph-main"><div class="name">Bridge traffic right now</div><div class="sub">Getting on or off the Cape</div></div>
+      <div class="kind-pill kp-road">Live</div></div>
+      <div class="post-body">
+        <div class="stat-grid">
+          <div class="stat"><b>${esc(s.name)}</b>${s.delay} min · ${esc(s.status)}</div>
+          <div class="stat"><b>${esc(b.name)}</b>${b.delay} min · ${esc(b.status)}</div>
+        </div>
+        <p style="margin-top:10px;">${esc(s.delay<=b.delay?s.advice:b.advice)}</p>
+        <div class="updated"><span class="live-dot"></span>Updated just now</div>
+      </div></div>`;
+  }
+  if(it.type==="beach"){
+    const b=it.data;
+    return `<div class="post"><div class="post-head">
+      <div class="avatar beach">🏖️</div>
+      <div class="ph-main"><div class="name">${esc(b.name)}</div><div class="sub">${esc(b.town)} · ${miLabel(it.mi)} away</div></div>
+      <div class="kind-pill kp-beach">Beach</div></div>
+      <div class="post-body">
+        <div class="stat-grid">
+          <span class="pill ${b.status}">${STATUS_LABEL[b.status]||b.status}</span>
+          <div class="stat"><b>Water</b>${b.water_temp}°F</div>
+          <div class="stat"><b>Parking</b>${esc(b.spots_text)}</div>
+          <div class="stat"><b>Crowd</b>${crowdDots(b.crowd)}</div>
+        </div>
+        ${b.notes?`<p style="margin-top:10px;">${esc(b.notes)}</p>`:""}
+        <div class="updated"><span class="live-dot"></span>Updated ${esc(b.updated)}</div>
+      </div></div>`;
+  }
+  if(it.type==="event"){
+    const e=it.data;
+    return `<div class="post">
+      <div class="post-photo" style="background-image:url('${e.img}')"><span class="dist-badge">${miLabel(it.mi)}</span><span class="price-badge">${esc(e.price)}</span></div>
+      <div class="post-head">
+        <div class="avatar event">🎟️</div>
+        <div class="ph-main"><div class="name">${esc(e.title)}</div><div class="sub">${esc(e.venue)} · ${esc(e.town)}</div></div>
+        <div class="kind-pill kp-event">${esc(e.tag)}</div></div>
+      <div class="post-body">
+        <p>${esc(e.info)}</p>
+        <div class="tags"><span class="tag">🕒 ${esc(e.time)}</span><span class="tag">${esc(e.price)}</span></div>
+      </div></div>`;
+  }
+  // food
+  const r=it.data;
+  const yelp=`https://www.yelp.com/search?find_desc=${encodeURIComponent(r.name)}&find_loc=${encodeURIComponent(r.town)}%2C+MA`;
+  const ot=`https://www.opentable.com/s?term=${encodeURIComponent(r.name)}&metroId=66`;
+  const reviews = (r.reviews!=null) ? ` <span class="rev">(${r.reviews.toLocaleString()})</span>` : "";
+  const openBadge = (r.open_now===true)
+    ? `<span class="open-badge open">● Open now</span>`
+    : (r.open_now===false ? `<span class="open-badge closed">● Closed</span>` : "");
+  const siteBtn = r.website
+    ? `<a class="a-view" href="${esc(r.website)}" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'website',item:'${esc(r.name)}',location:'feed'})">Website</a>`
+    : "";
+  return `<div class="post">
+    <div class="post-photo" style="background-image:url('${photoFor(r)}')"><span class="dist-badge">${miLabel(it.mi)}</span><span class="price-badge">${esc(r.price)}</span>${openBadge}</div>
+    <div class="post-head">
+      <div class="avatar food">🍴</div>
+      <div class="ph-main"><div class="name">${esc(r.name)}</div><div class="sub">${esc(r.town)} · ${esc(r.cuisine)} · ⭐ ${r.rating}${reviews}</div></div>
+      <div class="kind-pill kp-food">Eat</div></div>
+    <div class="post-body">
+      <p>${esc(r.desc)}</p>
+      <div class="tags">${r.tags.slice(0,3).map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div>
+      <div class="actions">
+        ${siteBtn}
+        <a class="a-view" href="${yelp}" target="_blank" rel="noopener" onclick="gtag('event','affiliate_click',{type:'yelp',item:'${esc(r.name)}',location:'feed'})">Reviews</a>
+        <a class="a-book" href="${ot}" target="_blank" rel="noopener" onclick="gtag('event','affiliate_click',{type:'opentable',item:'${esc(r.name)}',location:'feed'})">Reserve</a>
+      </div>
+    </div></div>`;
+}
+
+/* ---- Endless scroll ---- */
+function renderPage(){
+  if(!SEQ.length) return;
+  const out=[]; let n=0;
+  while(n<5){
+    if(ptr>=SEQ.length){
+      loops++;
+      out.push(`<div class="loop-divider"><span>🔄 That's the whole Cape — starting over near you</span></div>`);
+      ptr=0;
+    }
+    out.push(renderItem(SEQ[ptr++]));
+    n++;
+  }
+  document.getElementById('feed').insertAdjacentHTML('beforeend',out.join(''));
+}
+
+function startFeed(){
+  SEQ=buildSequence(); ptr=0; loops=0;
+  const feed=document.getElementById('feed');
+  feed.innerHTML="";
+  document.getElementById('locBar').style.display="flex";
+  document.getElementById('locLabel').textContent="Near "+(USER.label||nearestTown(USER));
+  renderPage(); renderPage();
+  if(io) io.disconnect();
+  io=new IntersectionObserver(es=>{ if(es[0].isIntersecting) renderPage(); },{rootMargin:"600px"});
+  io.observe(document.getElementById('sentinel'));
+  gtag('event','feed_start',{mode:USER.label==='Mid Cape'?'default':'geolocated'});
+}
+
+/* ---- Location handlers ---- */
+function closeGeo(){document.getElementById('geoModal').classList.add('hide');}
+function openGeo(){document.getElementById('geoModal').classList.remove('hide');}
+function useMidCape(){ USER={lat:MID_CAPE.lat,lng:MID_CAPE.lng,label:MID_CAPE.label}; closeGeo(); startFeed(); }
+function useMyLocation(){
+  if(!navigator.geolocation){ useMidCape(); return; }
+  document.getElementById('locLabel').textContent="Locating…";
+  navigator.geolocation.getCurrentPosition(
+    pos=>{ USER={lat:pos.coords.latitude,lng:pos.coords.longitude,label:nearestTown({lat:pos.coords.latitude,lng:pos.coords.longitude})}; closeGeo(); startFeed(); },
+    ()=>{ useMidCape(); },
+    {enableHighAccuracy:false,timeout:8000,maximumAge:600000}
+  );
+}
+
+/* ---- Optional: refresh live cards from the server, then (re)build ---- */
+async function refreshLive(){
+  try{
+    const [b,br,t,ea]=await Promise.all([
+      fetch('data/beaches.json').then(r=>r.ok?r.json():null).catch(()=>null),
+      fetch('data/bridges.json').then(r=>r.ok?r.json():null).catch(()=>null),
+      fetch('data/today.json').then(r=>r.ok?r.json():null).catch(()=>null),
+      fetch('data/eats.json').then(r=>r.ok?r.json():null).catch(()=>null)
+    ]);
+    if(b&&b.beaches) BEACHES=b.beaches.map(x=>({name:x.name,town:x.town,lat:x.lat,lng:x.lng,status:x.status,spots_text:x.spots_text,crowd:x.crowd,water_temp:x.water_temp,updated:x.updated,notes:x.notes}));
+    if(br&&br.current){ BRIDGES={sagamore:{name:br.current.sagamore.name,delay:br.current.sagamore.current_delay_min,status:br.current.sagamore.current_status,advice:br.current.sagamore.advice},bourne:{name:br.current.bourne.name,delay:br.current.bourne.current_delay_min,status:br.current.bourne.current_status,advice:br.current.bourne.advice}}; }
+    if(t&&t.events) EVENTS=t.events.map(e=>({tag:e.tag,title:e.title,venue:e.venue,town:e.town,time:e.time,price:e.price,info:e.info,lat:e.lat,lng:e.lng,img:e.img}));
+    if(ea&&ea.eats&&ea.eats.length) RESTAURANTS=ea.eats; // live Google ratings/photos/hours
+    if(USER) startFeed(); // rebuild with fresh data if a feed is already running
+  }catch(_){/* file:// or offline — inline snapshots stay in place */}
+}
+
+// Pre-render the Mid-Cape feed behind the location modal so the page looks alive
+// the moment it loads (the modal backdrop is blurred, so this shows through).
+// When the visitor picks "Use my location" or "Just browse," startFeed() rebuilds cleanly.
+USER={lat:MID_CAPE.lat,lng:MID_CAPE.lng,label:MID_CAPE.label};
+startFeed();
+refreshLive();
+</script>
+</body>
+</html>
