@@ -83,6 +83,10 @@ VENUES = [
     ("Cape Cod Beer",      "Hyannis",   "tribe",  "https://capecodbeer.com/wp-json/tribe/events/v1/events", (41.6650, -70.2860)),
     ("Highfield Hall",     "Falmouth",  "tribe",  "https://highfieldhallandgardens.org/wp-json/tribe/events/v1/events", (41.5560, -70.6230)),
     ("Heritage Museums",   "Sandwich",  "jsonld", "https://heritagemuseumsandgardens.org/events-calendar/all-events/", (41.7560, -70.4980)),
+    # aggregators + nightlife with clean structured feeds
+    ("Provincetown Events","Provincetown","jsonld","https://ptownie.com/provincetown-calendar/", (42.0587, -70.1787)),
+    ("Pier 37 Boathouse",  "Falmouth",  "jsonld", "https://www.falmouthpier37.com/events/category/live-music/", (41.5510, -70.6140)),
+    ("Sundancers",         "West Dennis","ics",   "https://sundancerscapecod.com/entertainment/", (41.6620, -70.1700)),
 ]
 
 # ---- Category / tag inference -----------------------------------------------
@@ -111,16 +115,33 @@ def categorize(text: str) -> tuple[str, str]:
 MONTHS = {m: i for i, m in enumerate(
     ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"], 1)}
 
-def parse_chambermaster_date(s: str):
-    """'Saturday Jun 6, 2026' (first date of a possible range)."""
-    m = re.search(r"(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+(\d{1,2}),?\s+(\d{4})", s)
-    if not m:
+def cm_build_date(mon_name: str, day: int, year=None):
+    mon = MONTHS.get((mon_name or "")[:3].lower())
+    if not mon:
         return None
-    mon = MONTHS[m.group(1)[:3].lower()]
+    now = datetime.now(timezone.utc)
+    if year is None:                       # infer: roll to next year if already well past
+        year = now.year
+        try:
+            cand = datetime(year, mon, day, tzinfo=timezone.utc)
+        except ValueError:
+            return None
+        if cand < now - timedelta(days=2):
+            year += 1
     try:
-        return datetime(int(m.group(3)), mon, int(m.group(2)), tzinfo=timezone.utc)
+        return datetime(year, mon, day, tzinfo=timezone.utc)
     except ValueError:
         return None
+
+_CM_DATE = re.compile(
+    r"(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+(\d{1,2})(?:,?\s*(\d{4}))?", re.I)
+
+def parse_chambermaster_date(s: str):
+    """Parse 'Saturday Jun 6, 2026' OR 'FRI June 5' (year inferred)."""
+    m = _CM_DATE.search(s or "")
+    if not m:
+        return None
+    return cm_build_date(m.group(1), int(m.group(2)), int(m.group(3)) if m.group(3) else None)
 
 def parse_iso(s: str):
     if not s:
@@ -158,39 +179,76 @@ def _cm_event(title, dt, town, url):
     return {"title": html.unescape(title), "start": dt, "has_time": False,
             "town": town, "venue": "", "price": "", "url": url, "img": None}
 
+JUNK_TITLES = {"read more", "details", "more info", "view details", "buy tickets", "register"}
+
 def parse_chambermaster(town: str, base: str) -> list[dict]:
+    """Handles all three GrowthZone/ChamberMaster layouts seen on the Cape:
+       A) .gz-events-card list   B) .gz-cards calendar grid   C) detail-link fallback."""
     out, seen = [], set()
-    candidates = [base, base.rstrip("/") + "/calendar"]
-    for url in candidates:
+
+    def add(title, dt, url):
+        title = re.sub(r"\s+", " ", title).strip()
+        if not title or len(title) < 4 or title.lower() in JUNK_TITLES or not dt:
+            return
+        key = (title.lower(), dt.date())
+        if key in seen:
+            return
+        seen.add(key)
+        out.append(_cm_event(title, dt, town, url))
+
+    for url in (base, base.rstrip("/") + "/calendar", base.rstrip("/") + "/events"):
         try:
             soup = BeautifulSoup(fetch(url).text, "html.parser")
         except Exception:
             continue
-        # Strategy A — modern GrowthZone theme (.gz-events-card)
-        cards = soup.select(".gz-events-card")
-        for c in cards:
-            title_el = c.select_one(".gz-events-card-title, .gz-card-title")
-            date_el = c.select_one(".gz-card-date")
-            link_el = c.select_one('a[href*="/events/details/"]')
-            if not title_el or not date_el:
-                continue
-            dt = parse_chambermaster_date(date_el.get_text(" ", strip=True))
-            if not dt:
-                continue
-            key = (title_el.get_text(strip=True), dt.date())
-            if key in seen:
-                continue
-            seen.add(key)
-            out.append(_cm_event(title_el.get_text(" ", strip=True), dt, town,
-                                  link_el.get("href") if link_el else url))
-        # Strategy B — older theme: pair each /events/details/ link with a nearby date
+
+        # Layout A — list view: .gz-events-card with .gz-card-date
+        for c in soup.select(".gz-events-card"):
+            t = c.select_one(".gz-events-card-title, .gz-card-title")
+            d = c.select_one(".gz-card-date")
+            link = c.select_one('a[href*="etails/"]')
+            if t and d:
+                add(t.get_text(" ", strip=True), parse_chambermaster_date(d.get_text(" ", strip=True)),
+                    link.get("href") if link else url)
+
+        # Layout B — calendar grid: .gz-cards with .gz-card-month/.gz-card-dday
         if not out:
-            for a in soup.select('a[href*="/events/details/"]'):
-                title = a.get_text(" ", strip=True)
-                if not title or len(title) < 4 or title.lower() in ("read more", "details", "more info"):
+            yr = None
+            hdr = soup.select_one(".gz-calendar-month-text")
+            if hdr:
+                ym = re.search(r"(\d{4})", hdr.get_text())
+                yr = int(ym.group(1)) if ym else None
+            for c in soup.select(".gz-cards .card, .gz-cards .gz-card"):
+                t = c.select_one(".gz-card-title")
+                mo = c.select_one(".gz-card-month")
+                dd = c.select_one(".gz-card-dday")
+                if not (t and mo and dd):
                     continue
-                anc = a
-                dt = None
+                try:
+                    day = int(re.sub(r"\D", "", dd.get_text()))
+                except ValueError:
+                    continue
+                dt = cm_build_date(mo.get_text(strip=True), day, yr)
+                link = c.select_one("a[href]")
+                add(t.get_text(" ", strip=True), dt, link.get("href") if link else url)
+
+        # Layout D — legacy "mn-" ChamberMaster theme (date lives inside each .mn-listing)
+        if not out:
+            for item in soup.select(".mn-listing"):
+                t = item.select_one(".mn-title")
+                if not t:
+                    continue
+                dt = parse_chambermaster_date(item.get_text(" ", strip=True))
+                link = item.select_one('a[href*="etails/"]') or item.select_one("a[href]")
+                add(t.get_text(" ", strip=True), dt, link.get("href") if link else url)
+
+        # Layout C — last-ditch fallback: detail links + nearest date (year optional)
+        if not out:
+            for a in soup.select('a[href*="etails/"]'):
+                title = a.get_text(" ", strip=True)
+                if not title or len(title) < 4 or title.lower() in JUNK_TITLES:
+                    continue
+                anc, dt = a, None
                 for _ in range(5):
                     if anc.parent:
                         anc = anc.parent
@@ -201,15 +259,10 @@ def parse_chambermaster(town: str, base: str) -> list[dict]:
                             break
                 if not dt:
                     dt = parse_chambermaster_date(re.sub(r"\s+", " ", anc.get_text(" ", strip=True)))
-                if not dt:
-                    continue
-                key = (title, dt.date())
-                if key in seen:
-                    continue
-                seen.add(key)
-                out.append(_cm_event(title, dt, town, a.get("href")))
+                add(title, dt, a.get("href"))
+
         if out:
-            break  # first view that yielded events wins
+            break
     return out
 
 def parse_tribe(name: str, town: str, api: str, coord) -> list[dict]:
@@ -278,6 +331,38 @@ def parse_jsonld(name: str, town: str, page: str, coord) -> list[dict]:
             })
     return out
 
+def parse_ics(name: str, town: str, url: str, coord) -> list[dict]:
+    """Parse an iCalendar feed (Squarespace ?format=ical / Tribe ?ical=1)."""
+    text = ""
+    for suf in ("?ical=1", "?format=ical", ""):
+        try:
+            r = fetch(url + suf)
+            if "BEGIN:VCALENDAR" in r.text[:400]:
+                text = r.text
+                break
+        except Exception:
+            continue
+    if "BEGIN:VEVENT" not in text:
+        return []
+    text = text.replace("\r\n ", "").replace("\n ", "")  # unfold wrapped lines
+    out = []
+    for block in text.split("BEGIN:VEVENT")[1:]:
+        sm = re.search(r"\nSUMMARY[^:]*:(.+)", block)
+        dm = re.search(r"\nDTSTART[^:]*:(\d{8})(?:T(\d{6}))?", block)
+        if not sm or not dm:
+            continue
+        d = dm.group(1)
+        tm = dm.group(2)
+        try:
+            dt = datetime(int(d[:4]), int(d[4:6]), int(d[6:8]),
+                          int(tm[:2]) if tm else 0, int(tm[2:4]) if tm else 0, tzinfo=timezone.utc)
+        except ValueError:
+            continue
+        title = sm.group(1).strip().replace("\\,", ",").replace("\\;", ";").replace("\\n", " ")
+        out.append({"title": html.unescape(title), "start": dt, "has_time": bool(tm),
+                    "town": town, "venue": name, "price": "", "url": url, "img": None})
+    return out
+
 def parse_custom_ptown(town: str, url: str, *_a) -> list[dict]:
     """Provincetown Chamber: events link to /events/<slug>; dates in nearby text."""
     out = []
@@ -344,6 +429,8 @@ def main() -> None:
                 evs = parse_tribe(name, town, url, coord)
             elif kind == "jsonld":
                 evs = parse_jsonld(name, town, url, coord)
+            elif kind == "ics":
+                evs = parse_ics(name, town, url, coord)
             elif kind == "custom_ptown":
                 evs = parse_custom_ptown(town, url)
             elif kind == "custom_canal":
