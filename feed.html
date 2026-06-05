@@ -211,6 +211,12 @@ const TOWNS=[
 ];
 const MID_CAPE={lat:41.668,lng:-70.250,label:"Mid Cape"};
 
+// On the live site, Hermes data + restaurant photos are read from GitHub raw:
+// data-only commits skip the Netlify build (see netlify.toml), so raw is always
+// the freshest copy. On a local file:// preview we fall back to relative paths.
+const ASSET_BASE = location.protocol.startsWith('http') ? 'https://raw.githubusercontent.com/zemiai/totallycapecod/main/' : '';
+const DATA_BASE = ASSET_BASE + 'data/';
+
 /* ---- Restaurants: ~75 real spots across every town (editorial ratings) ---- */
 // Inline fallback so the feed works on file:// preview. On the live server
 // refreshLive() overrides this from data/eats.json (with live Google ratings/photos).
@@ -369,7 +375,7 @@ const IMG_ORDER=["lobster","clam","icecream","bakery","pizza","mexican","italian
 function hash(s){let h=0;for(let i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))>>>0;return h;}
 function photoFor(r){
   // Prefer the real Google Places photo (downloaded by scripts/update_eats.py).
-  if(r.photo) return r.photo;
+  if(r.photo) return r.photo.startsWith('http') ? r.photo : ASSET_BASE + r.photo;
   // Fallback: cuisine-matched stock image (used on file:// preview + pre-enrichment).
   let cat="default";
   for(const c of IMG_ORDER){ if(r.tags.includes(c)){cat=c;break;} }
@@ -551,10 +557,10 @@ function useMyLocation(){
 async function refreshLive(){
   try{
     const [b,br,t,ea]=await Promise.all([
-      fetch('data/beaches.json').then(r=>r.ok?r.json():null).catch(()=>null),
-      fetch('data/bridges.json').then(r=>r.ok?r.json():null).catch(()=>null),
-      fetch('data/today.json').then(r=>r.ok?r.json():null).catch(()=>null),
-      fetch('data/eats.json').then(r=>r.ok?r.json():null).catch(()=>null)
+      fetch(DATA_BASE+'beaches.json',{cache:'no-cache'}).then(r=>r.ok?r.json():null).catch(()=>null),
+      fetch(DATA_BASE+'bridges.json',{cache:'no-cache'}).then(r=>r.ok?r.json():null).catch(()=>null),
+      fetch(DATA_BASE+'today.json',{cache:'no-cache'}).then(r=>r.ok?r.json():null).catch(()=>null),
+      fetch(DATA_BASE+'eats.json',{cache:'no-cache'}).then(r=>r.ok?r.json():null).catch(()=>null)
     ]);
     if(b&&b.beaches) BEACHES=b.beaches.map(x=>({name:x.name,town:x.town,lat:x.lat,lng:x.lng,status:x.status,spots_text:x.spots_text,crowd:x.crowd,water_temp:x.water_temp,updated:x.updated,notes:x.notes}));
     if(br&&br.current){ BRIDGES={sagamore:{name:br.current.sagamore.name,delay:br.current.sagamore.current_delay_min,status:br.current.sagamore.current_status,advice:br.current.sagamore.advice},bourne:{name:br.current.bourne.name,delay:br.current.bourne.current_delay_min,status:br.current.bourne.current_status,advice:br.current.bourne.advice}}; }
