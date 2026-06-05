@@ -233,6 +233,7 @@
   .nb-crowd i{ width:7px; height:7px; border-radius:50%; background:var(--ios-divider); display:inline-block; margin-right:2px; } .nb-crowd i.on{ background:var(--cape-brown); }
   .nb-tags{ display:flex; flex-wrap:wrap; gap:6px; margin-top:9px; }
   .nb-tag{ font-size:11px; font-weight:600; background:var(--cape-cream); color:var(--cape-brown); padding:3px 9px; border-radius:7px; }
+  .nb-deal{ margin-top:9px; background:#FFF3E0; color:#C77700; border:1px solid #FFE0B2; font-weight:700; font-size:12.5px; padding:8px 11px; border-radius:10px; }
   .nb-actions{ display:flex; gap:8px; margin-top:11px; }
   .nb-actions a{ flex:1; text-align:center; padding:9px; border-radius:10px; font-size:12px; font-weight:700; text-decoration:none; }
   .nb-btn-primary{ background:var(--cape-navy); color:#fff; }
@@ -293,7 +294,7 @@
       <div id="todayBridges"></div>
 
       <div class="ios-section-title">
-        <span>⚡ Happening Today</span>
+        <span>⚡ Upcoming on Cape Cod</span>
         <button onclick="switchTab('events')">See all →</button>
       </div>
       <div id="todayHappening"></div>
@@ -679,7 +680,7 @@ if (PREVIEW_BRANCH) {
   });
 }
 async function loadData() {
-  const files = ['stamps', 'beaches', 'today', 'conditions', 'bridges', 'whales', 'lighthouses', 'ai-knowledge', 'eats'];
+  const files = ['stamps', 'beaches', 'today', 'conditions', 'bridges', 'whales', 'lighthouses', 'ai-knowledge', 'eats', 'events'];
   const results = await Promise.allSettled(files.map(f => fetch(DATA_BASE + f + '.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).catch(() => null)));
   results.forEach((r, i) => {
     const key = files[i] === 'ai-knowledge' ? 'aiKnowledge' : files[i];
@@ -762,10 +763,10 @@ function renderToday() {
   }
 
   // Happening
-  const events = state.data.today?.events || [];
+  const events = state.data.events?.events || [];
   const shown = state.isPro ? events.slice(0,5) : events.slice(0, FREE_EVENT_LIMIT);
   document.getElementById('todayHappening').innerHTML = shown.map(e => renderEventCard(e)).join('') ||
-    '<div class="empty-state">No events yet today</div>';
+    '<div class="empty-state">Loading events…</div>';
 
   // Nearest beaches
   getUserLoc(loc => {
@@ -787,25 +788,28 @@ function renderToday() {
 }
 
 function renderEventCard(e) {
+  const loc = [e.venue, e.town].filter(Boolean).join(' · ');
+  const cover = e.img ? `style="background-image:url('${e.img}')"`
+                      : `style="background:linear-gradient(135deg,#EAE4F2,#DCEEF3)"`;
   return `<div class="happening-card">
-    <div class="cover" style="background-image:url('${e.img}')">
+    <div class="cover" ${cover}>
       <span class="tag">${e.tag}</span>
       <span class="time">${e.time}</span>
     </div>
     <div class="body">
       <div style="font-weight:700; font-size:15px;">${e.title}</div>
-      <div style="color:var(--ios-sub); font-size:12px; margin-top:2px;">${e.info}</div>
+      <div style="color:var(--ios-sub); font-size:12px; margin-top:2px;">${e.info || loc}</div>
     </div>
   </div>`;
 }
 
 // ============ RENDER: EVENTS ============
 function renderEvents() {
-  const events = state.data.today?.events || [];
-  document.getElementById('eventsSubhead').textContent = `${events.length} events today`;
+  const events = state.data.events?.events || [];
+  document.getElementById('eventsSubhead').textContent = `${events.length} upcoming events on Cape Cod`;
 
   // Filter chips
-  const cats = [{id:'all',label:'All'},{id:'music',label:'🎵 Music'},{id:'happy_hour',label:'🦪 Happy Hour'},{id:'free_event',label:'🎬 Free'},{id:'family',label:'👨‍👩‍👧 Family'},{id:'food_deal',label:'🦞 Food Deals'},{id:'farmers_market',label:'🥕 Markets'}];
+  const cats = [{id:'all',label:'All'},{id:'music',label:'🎵 Music'},{id:'theater',label:'🎭 Theater'},{id:'art',label:'🎨 Art'},{id:'food',label:'🍴 Food & Drink'},{id:'family',label:'👨‍👩‍👧 Family'},{id:'festival',label:'🎪 Festival'},{id:'talk',label:'🎙️ Talks'}];
   document.getElementById('eventFilters').innerHTML = cats.map(c => {
     const locked = !state.isPro && c.id !== 'all';
     return `<div class="chip ${state.eventFilter===c.id?'active':''} ${locked?'locked':''}" onclick="${locked?`switchTab('pro')`:`filterEvents('${c.id}')`}">${c.label}${locked?' 🔒':''}</div>`;
@@ -1373,7 +1377,7 @@ function nbPhoto(r){
 function nbBuildSequence(){
   const eats    = state.data.eats?.eats || [];
   const beaches = state.data.beaches?.beaches || [];
-  const events  = state.data.today?.events || [];
+  const events  = state.data.events?.events || [];
   const items=[];
   eats.forEach(r=>{ if(r.lat&&r.lng) items.push({type:"food",town:r.town,lat:r.lat,lng:r.lng,data:r}); });
   beaches.forEach(b=>{ if(b.lat&&b.lng) items.push({type:"beach",town:b.town,lat:b.lat,lng:b.lng,data:b}); });
@@ -1438,14 +1442,17 @@ function nbRenderItem(it){
   }
   if(it.type==="event"){
     const e=it.data;
+    const loc=[e.venue,e.town].filter(Boolean).join(' · ');
+    const cover = e.img ? `style="background-image:url('${nbEsc(e.img)}')"`
+                        : `style="background:linear-gradient(135deg,#EAE4F2,#DCEEF3)"`;
     return `<div class="nb-card">
-      <div class="nb-photo" style="background-image:url('${nbEsc(e.img)}')"><span class="nb-dist">${nbMiLabel(it.mi)}</span>${e.price?`<span class="nb-price">${nbEsc(e.price)}</span>`:""}</div>
+      <div class="nb-photo" ${cover}><span class="nb-dist">${nbMiLabel(it.mi)}</span>${e.price?`<span class="nb-price">${nbEsc(e.price)}</span>`:""}</div>
       <div class="nb-head">
         <div class="nb-avatar event">🎟️</div>
-        <div class="main"><div class="name">${nbEsc(e.title)}</div><div class="sub">${nbEsc(e.venue)} · ${nbEsc(e.town)}</div></div>
+        <div class="main"><div class="name">${nbEsc(e.title)}</div><div class="sub">${nbEsc(loc)}</div></div>
         <div class="nb-kind event">${nbEsc(e.tag)}</div></div>
       <div class="nb-body">
-        <p>${nbEsc(e.info)}</p>
+        ${e.info?`<p>${nbEsc(e.info)}</p>`:""}
         <div class="nb-tags"><span class="nb-tag">🕒 ${nbEsc(e.time)}</span>${e.price?`<span class="nb-tag">${nbEsc(e.price)}</span>`:""}</div>
       </div></div>`;
   }
@@ -1466,6 +1473,7 @@ function nbRenderItem(it){
       <div class="nb-kind food">Eat</div></div>
     <div class="nb-body">
       <p>${nbEsc(r.desc)}</p>
+      ${r.deal?`<div class="nb-deal">🔥 ${nbEsc(r.deal)}</div>`:""}
       ${tags.length?`<div class="nb-tags">${tags.map(t=>`<span class="nb-tag">${nbEsc(t)}</span>`).join("")}</div>`:""}
       <div class="nb-actions">
         ${siteBtn}
