@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-05T00:35:11Z",
-  "enriched": false,
+  "updated_at": "2026-06-05T12:08:24Z",
+  "enriched": true,
   "count": 83,
   "eats": [
     {
@@ -11,21 +11,21 @@
       "lat": 42.0494,
       "lng": -70.1853,
       "cuisine": "Seafood",
-      "price": "$$$",
-      "rating": 4.7,
+      "price": "$$",
+      "rating": 4.8,
       "tags": [
         "seafood",
         "lobster",
         "fine"
       ],
       "desc": "Iconic waterfront since 1979 \u2014 lobster rolls, clam chowder, harbor views.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJodQ3d3yn_IkRaL3U202uvJ0",
+      "photo": "data/eats-photos/the-lobster-pot.jpg",
+      "reviews": 8846,
+      "website": "http://www.ptownlobsterpot.com/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=2343733837063219921",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:06:47Z"
     },
     {
       "id": "the-mews-restaurant-cafe",
@@ -41,13 +41,13 @@
         "seafood"
       ],
       "desc": "Oceanfront dining with a legendary martini list. A P-town institution.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJW79HTmWn_IkRzPfkuTK9RLI",
+      "photo": "data/eats-photos/the-mews-restaurant-cafe.jpg",
+      "reviews": 756,
+      "website": "http://mewsptown.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:06:48Z"
     },
     {
       "id": "the-red-inn",
@@ -56,19 +56,19 @@
       "lat": 42.0556,
       "lng": -70.1972,
       "cuisine": "Fine Dining",
-      "price": "$$$$",
-      "rating": 4.5,
+      "price": "$$$",
+      "rating": 4.6,
       "tags": [
         "fine"
       ],
       "desc": "Sunset dining right on the water. A splurge that earns it.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJsQWvzmJY-4kRpvSkHnaWXYc",
+      "photo": "data/eats-photos/the-red-inn.jpg",
+      "reviews": 745,
+      "website": "http://theredinn.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:06:49Z"
     },
     {
       "id": "the-canteen",
@@ -85,13 +85,13 @@
         "casual"
       ],
       "desc": "Beachfront counter \u2014 go for the lobster roll and frozen ros\u00e9.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJy0gAcH6n_IkR2t0LvOv8TYE",
+      "photo": "data/eats-photos/the-canteen.jpg",
+      "reviews": 2338,
+      "website": "http://www.thecanteenptown.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:06:50Z"
     },
     {
       "id": "spiritus-pizza",
@@ -107,13 +107,13 @@
         "casual"
       ],
       "desc": "Late-night Commercial Street slice. The after-bar ritual.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJESmjOn6n_IkRqfSl9ckjvJI",
+      "photo": "data/eats-photos/spiritus-pizza.jpg",
+      "reviews": 1144,
+      "website": "http://spirituspizza.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:06:52Z"
     },
     {
       "id": "strangers-saints",
@@ -128,13 +128,13 @@
         "fine"
       ],
       "desc": "Cozy taverna \u2014 Mediterranean small plates and a great wine list.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
+      "place_id": "ChIJaV1qxHqn_IkRpzPMI4_3yY0",
+      "photo": "data/eats-photos/strangers-saints.jpg",
+      "reviews": 441,
+      "website": "https://strangersandsaints.com/",
       "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:06:53Z"
     },
     {
       "id": "far-land-provisions",
@@ -143,20 +143,20 @@
       "lat": 42.0556,
       "lng": -70.185,
       "cuisine": "Deli",
-      "price": "$",
+      "price": "$$",
       "rating": 4.7,
       "tags": [
         "breakfast",
         "casual"
       ],
       "desc": "Build a beach picnic with their famous sandwiches.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJuUiYUXqn_IkRZwCKh3bEfXw",
+      "photo": "data/eats-photos/far-land-provisions.jpg",
+      "reviews": 579,
+      "website": "http://www.farlandprovisions.com/",
+      "open_now": true,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:06:54Z"
     },
     {
       "id": "truro-vineyards",
@@ -166,19 +166,19 @@
       "lng": -70.0517,
       "cuisine": "Winery",
       "price": "$$",
-      "rating": 4.6,
+      "rating": 4.3,
       "tags": [
         "bar",
         "fine"
       ],
       "desc": "Wine flights and live music under the trees. Food trucks on site.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJ8RlHtHWg_IkRBxpMWI8Z82w",
+      "photo": "data/eats-photos/truro-vineyards.jpg",
+      "reviews": 567,
+      "website": "http://www.trurovineyardsofcapecod.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:06:55Z"
     },
     {
       "id": "blackfish",
@@ -188,19 +188,19 @@
       "lng": -70.0486,
       "cuisine": "Modern American",
       "price": "$$$",
-      "rating": 4.6,
+      "rating": 4.7,
       "tags": [
         "fine",
         "seafood"
       ],
       "desc": "A former blacksmith shop turned buzzy bistro. Famous fish tacos.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJU_F0ddhf-4kRUstz0hsHeCs",
+      "photo": "data/eats-photos/blackfish.jpg",
+      "reviews": 257,
+      "website": "https://www.blackfishtruro.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:06:56Z"
     },
     {
       "id": "terra-luna",
@@ -209,20 +209,20 @@
       "lat": 42.0244,
       "lng": -70.0817,
       "cuisine": "Italian",
-      "price": "$$$",
-      "rating": 4.5,
+      "price": "$$",
+      "rating": 4.4,
       "tags": [
         "italian",
         "fine"
       ],
       "desc": "Rustic, romantic North Truro spot \u2014 handmade pasta, tiny room.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
+      "place_id": "ChIJqzMF3Xyg_IkRiIX2nTn3rW4",
+      "photo": "data/eats-photos/terra-luna.jpg",
+      "reviews": 150,
       "website": null,
       "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:06:57Z"
     },
     {
       "id": "montanos",
@@ -232,19 +232,19 @@
       "lng": -70.0556,
       "cuisine": "Italian",
       "price": "$$",
-      "rating": 4.3,
+      "rating": 4.5,
       "tags": [
         "italian",
         "casual"
       ],
       "desc": "Family Italian-American with a raw bar. Reliable Route 6 classic.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJASNnJmKg_IkRhAUJwk7L1jU",
+      "photo": "data/eats-photos/montanos.jpg",
+      "reviews": 974,
+      "website": "http://www.montanos.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:06:59Z"
     },
     {
       "id": "macs-shack",
@@ -260,13 +260,13 @@
         "fine"
       ],
       "desc": "Raw bar and sushi in a building topped by a boat. Oysters galore.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJz9aI9Ehn-4kR5tpTPtkA_6g",
+      "photo": "data/eats-photos/macs-shack.jpg",
+      "reviews": 1225,
+      "website": "http://www.macsseafood.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:00Z"
     },
     {
       "id": "macs-seafood",
@@ -276,20 +276,20 @@
       "lng": -70.0264,
       "cuisine": "Seafood",
       "price": "$$",
-      "rating": 4.4,
+      "rating": 4.2,
       "tags": [
         "seafood",
         "clam",
         "lobster"
       ],
       "desc": "Order at the counter, eat on the harbor as the fleet comes in.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJ7xYExUZn-4kRjghulFODehE",
+      "photo": "data/eats-photos/macs-seafood.jpg",
+      "reviews": 924,
+      "website": "http://www.macsseafood.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:01Z"
     },
     {
       "id": "pb-boulangerie-bistro",
@@ -298,20 +298,20 @@
       "lat": 41.9128,
       "lng": -69.9881,
       "cuisine": "French Bakery",
-      "price": "$$",
-      "rating": 4.8,
+      "price": "$$$",
+      "rating": 4.6,
       "tags": [
         "bakery",
         "breakfast"
       ],
       "desc": "French-trained pastry. Croissants that ruin all other croissants.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
+      "place_id": "ChIJIUDvpsJm-4kR4v5PsqeD53c",
+      "photo": "data/eats-photos/pb-boulangerie-bistro.jpg",
+      "reviews": 1465,
+      "website": "https://pbboulangeriebistro.com/",
       "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:02Z"
     },
     {
       "id": "the-bookstore-restaurant",
@@ -321,19 +321,19 @@
       "lng": -70.0331,
       "cuisine": "Seafood",
       "price": "$$",
-      "rating": 4.3,
+      "rating": 4.4,
       "tags": [
         "seafood",
         "casual"
       ],
       "desc": "Locals' joint over Duck Creek \u2014 oysters they pull themselves.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJ8WaihEZn-4kRmrPqBtMsAuw",
+      "photo": "data/eats-photos/the-bookstore-restaurant.jpg",
+      "reviews": 1265,
+      "website": "http://www.wellfleetoyster.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:03Z"
     },
     {
       "id": "the-beachcomber",
@@ -343,20 +343,20 @@
       "lng": -69.9692,
       "cuisine": "Beach Bar",
       "price": "$$",
-      "rating": 4.5,
+      "rating": 4.4,
       "tags": [
         "bar",
         "seafood",
         "casual"
       ],
       "desc": "Beach bar on the dunes at Cahoon Hollow. Live bands + raw bar.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
+      "place_id": "ChIJsTPAsDBh-4kRTRNYmi0VutM",
+      "photo": "data/eats-photos/the-beachcomber.jpg",
+      "reviews": 1449,
+      "website": "http://www.thebeachcomber.com/",
       "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:04Z"
     },
     {
       "id": "winslows-tavern",
@@ -365,19 +365,19 @@
       "lat": 41.9367,
       "lng": -70.0331,
       "cuisine": "American",
-      "price": "$$$",
-      "rating": 4.4,
+      "price": "$$",
+      "rating": 4.6,
       "tags": [
         "fine"
       ],
       "desc": "Porch dining in a sea-captain's house downtown. Brunch + dinner.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJLRp6WEln-4kRE67FE3YNH5Q",
+      "photo": "data/eats-photos/winslows-tavern.jpg",
+      "reviews": 480,
+      "website": "http://www.winslowstavern.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:05Z"
     },
     {
       "id": "arnolds-lobster-clam-bar",
@@ -387,20 +387,20 @@
       "lng": -69.9747,
       "cuisine": "Seafood",
       "price": "$$",
-      "rating": 4.6,
+      "rating": 4.3,
       "tags": [
         "seafood",
         "lobster",
         "clam"
       ],
       "desc": "The standard for lobster rolls. Mini golf, ice cream, epic onion rings.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJF_rbJ5Ro-4kR42xAbKaKQf8",
+      "photo": "data/eats-photos/arnolds-lobster-clam-bar.jpg",
+      "reviews": 2119,
+      "website": "http://www.arnoldsrestaurant.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:07Z"
     },
     {
       "id": "the-friendly-fisherman",
@@ -410,20 +410,20 @@
       "lng": -69.9742,
       "cuisine": "Seafood",
       "price": "$$",
-      "rating": 4.5,
+      "rating": 4.3,
       "tags": [
         "seafood",
         "lobster",
         "clam"
       ],
       "desc": "Family fish market + shack. Locals' lobster-roll pick, no line.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
+      "place_id": "ChIJXw9RwZ1o-4kRHsfUAKHMjCc",
+      "photo": "data/eats-photos/the-friendly-fisherman.jpg",
+      "reviews": 355,
+      "website": "http://www.friendlyfishermaneastham.com/",
       "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:08Z"
     },
     {
       "id": "hole-in-one-donuts",
@@ -433,20 +433,20 @@
       "lng": -69.9719,
       "cuisine": "Bakery",
       "price": "$",
-      "rating": 4.6,
+      "rating": 4.5,
       "tags": [
         "breakfast",
         "bakery",
         "coffee"
       ],
       "desc": "A Cape Sunday tradition \u2014 hand-cut donuts and a buzzing counter.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJU8uagpto-4kR9tJNdnHbz3Y",
+      "photo": "data/eats-photos/hole-in-one-donuts.jpg",
+      "reviews": 679,
+      "website": "https://theholecapecod.com/eastham/?utm_source=gmb_eastham&utm_medium=organic&utm_campaign=listing",
+      "open_now": true,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:09Z"
     },
     {
       "id": "karoo-restaurant",
@@ -461,13 +461,13 @@
         "fine"
       ],
       "desc": "The Cape's only South African kitchen \u2014 bobotie, peri-peri, big flavor.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
+      "place_id": "ChIJ0XZEu5to-4kRWcoCI3k8rIg",
+      "photo": "data/eats-photos/karoo-restaurant.jpg",
+      "reviews": 285,
       "website": null,
       "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:10Z"
     },
     {
       "id": "fairway-restaurant-pizzeria",
@@ -476,21 +476,21 @@
       "lat": 41.8344,
       "lng": -69.9728,
       "cuisine": "Pizza / Diner",
-      "price": "$",
-      "rating": 4.2,
+      "price": "$$",
+      "rating": 4.4,
       "tags": [
         "pizza",
         "breakfast",
         "casual"
       ],
       "desc": "Diner breakfasts and pizza by the rail trail. Cyclists' refuel stop.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJyZ3QDpto-4kRcxu__Arx9X4",
+      "photo": "data/eats-photos/fairway-restaurant-pizzeria.jpg",
+      "reviews": 765,
+      "website": "https://www.fairwaycapecod.com/?utm_source=gmb&utm_medium=organic&utm_campaign=listing",
+      "open_now": true,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:12Z"
     },
     {
       "id": "lobster-claw",
@@ -500,20 +500,20 @@
       "lng": -69.9889,
       "cuisine": "Seafood",
       "price": "$$",
-      "rating": 4.5,
+      "rating": 4.7,
       "tags": [
         "seafood",
         "lobster",
         "clam"
       ],
       "desc": "No-frills shack with perfect cold lobster rolls and great clam plates.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJPdu3LW9p-4kRjSOjC-qeB2c",
+      "photo": "data/eats-photos/lobster-claw.jpg",
+      "reviews": 264,
+      "website": "http://www.nausetfishandlobsterpool.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:13Z"
     },
     {
       "id": "the-knack",
@@ -522,20 +522,20 @@
       "lat": 41.7897,
       "lng": -69.9881,
       "cuisine": "Burgers & Shakes",
-      "price": "$",
-      "rating": 4.5,
+      "price": "$$",
+      "rating": 4.6,
       "tags": [
         "casual",
         "icecream"
       ],
       "desc": "Modern clam-shack \u2014 smash burgers, lobster rolls, frappes.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJlTr32Wtp-4kRCvibwRfSGS0",
+      "photo": "data/eats-photos/the-knack.jpg",
+      "reviews": 1490,
+      "website": "https://www.theknackcapecod.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:14Z"
     },
     {
       "id": "hot-chocolate-sparrow",
@@ -544,7 +544,7 @@
       "lat": 41.7886,
       "lng": -69.9908,
       "cuisine": "Cafe",
-      "price": "$",
+      "price": "$$",
       "rating": 4.6,
       "tags": [
         "coffee",
@@ -552,13 +552,13 @@
         "icecream"
       ],
       "desc": "Coffee, cinnamon buns, and house chocolates. Orleans' morning HQ.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJK9c7g3xp-4kRDsUKuAzChYk",
+      "photo": "data/eats-photos/hot-chocolate-sparrow.jpg",
+      "reviews": 1776,
+      "website": "http://www.hotchocolatesparrow.com/",
+      "open_now": true,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:15Z"
     },
     {
       "id": "land-ho",
@@ -574,13 +574,13 @@
         "casual"
       ],
       "desc": "Quintessential Cape tavern since 1969 \u2014 chowder, burgers, ceiling signs.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJ36GSqHxp-4kR718dguVV9VA",
+      "photo": "data/eats-photos/land-ho.jpg",
+      "reviews": 1193,
+      "website": "http://www.land-ho.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:16Z"
     },
     {
       "id": "nauset-beach-club",
@@ -590,19 +590,19 @@
       "lng": -69.955,
       "cuisine": "Italian",
       "price": "$$$",
-      "rating": 4.6,
+      "rating": 4.3,
       "tags": [
         "italian",
         "fine"
       ],
       "desc": "Intimate Italian near the dunes. Date-night pasta and deep wine list.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
+      "place_id": "ChIJWe6o8lBp-4kRMcTOxdrYrOA",
+      "photo": "data/eats-photos/nauset-beach-club.jpg",
+      "reviews": 37,
+      "website": "http://nausetbeachclub.com/",
       "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:18Z"
     },
     {
       "id": "mahoneys-atlantic-bar-grill",
@@ -611,20 +611,20 @@
       "lat": 41.7897,
       "lng": -69.9889,
       "cuisine": "American",
-      "price": "$$$",
-      "rating": 4.5,
+      "price": "$$",
+      "rating": 4.4,
       "tags": [
         "fine",
         "seafood"
       ],
       "desc": "Downtown bistro \u2014 wood-grilled fish and a lively bar scene.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJjaBSXXtp-4kRuVTVS_9LV4o",
+      "photo": "data/eats-photos/mahoneys-atlantic-bar-grill.jpg",
+      "reviews": 455,
+      "website": "http://mahoneysatlantic.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:19Z"
     },
     {
       "id": "brewster-fish-house",
@@ -634,19 +634,19 @@
       "lng": -70.0606,
       "cuisine": "Seafood",
       "price": "$$$",
-      "rating": 4.7,
+      "rating": 4.4,
       "tags": [
         "seafood",
         "fine"
       ],
       "desc": "Tiny, beloved, no-reservations \u2014 some of the best seafood on the Cape.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJQTh4CspB-4kRBKxY6fqmNyA",
+      "photo": "data/eats-photos/brewster-fish-house.jpg",
+      "reviews": 485,
+      "website": "http://www.brewsterfishhousecapecod.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:20Z"
     },
     {
       "id": "cobies-clam-shack",
@@ -655,7 +655,7 @@
       "lat": 41.7606,
       "lng": -70.0456,
       "cuisine": "Seafood",
-      "price": "$",
+      "price": "$$",
       "rating": 4.4,
       "tags": [
         "seafood",
@@ -663,13 +663,13 @@
         "icecream"
       ],
       "desc": "Roadside classic on 6A. Fried clams and soft serve since 1948.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJUWftWw1q-4kRO3im9FLixlQ",
+      "photo": "data/eats-photos/cobies-clam-shack.jpg",
+      "reviews": 891,
+      "website": "https://cobies.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:21Z"
     },
     {
       "id": "jts-seafood",
@@ -686,13 +686,13 @@
         "casual"
       ],
       "desc": "Order-at-the-window family spot \u2014 fried seafood and lobster dinners.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJ1bgKN9pB-4kR91k6aRxf7hw",
+      "photo": "data/eats-photos/jts-seafood.jpg",
+      "reviews": 882,
+      "website": "http://www.jt-seafood.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:22Z"
     },
     {
       "id": "chillingsworth",
@@ -702,18 +702,18 @@
       "lng": -70.0392,
       "cuisine": "French",
       "price": "$$$$",
-      "rating": 4.6,
+      "rating": 4.4,
       "tags": [
         "fine"
       ],
       "desc": "Special-occasion French prix-fixe in a 1689 estate. The big splurge.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJFQ355c5B-4kRWW8WepUu9Kc",
+      "photo": "data/eats-photos/chillingsworth.jpg",
+      "reviews": 162,
+      "website": "http://www.chillingsworth.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:23Z"
     },
     {
       "id": "snowy-owl-coffee-roasters",
@@ -722,20 +722,20 @@
       "lat": 41.7556,
       "lng": -70.0783,
       "cuisine": "Coffee",
-      "price": "$",
+      "price": "$$",
       "rating": 4.7,
       "tags": [
         "coffee",
         "breakfast"
       ],
       "desc": "Craft roaster with a sunlit cafe. Best pour-over on the Mid-Cape.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJi4mIeNBB-4kRDjHIj-LlGfI",
+      "photo": "data/eats-photos/snowy-owl-coffee-roasters.jpg",
+      "reviews": 941,
+      "website": "https://socoffee.co/pages/coffee-house-in-brewster?utm_source=gmb_brewster&utm_medium=organic&utm_campaign=listing",
+      "open_now": true,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:25Z"
     },
     {
       "id": "cape-sea-grille",
@@ -745,19 +745,19 @@
       "lng": -70.0758,
       "cuisine": "Seafood",
       "price": "$$$",
-      "rating": 4.7,
+      "rating": 4.4,
       "tags": [
         "fine",
         "seafood"
       ],
       "desc": "Refined coastal dining in a sea-captain's house. Quietly excellent.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJMz21fEA--4kR8UwqnQMPtHY",
+      "photo": "data/eats-photos/cape-sea-grille.jpg",
+      "reviews": 305,
+      "website": "http://www.capeseagrille.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:26Z"
     },
     {
       "id": "brax-landing",
@@ -767,19 +767,19 @@
       "lng": -70.07,
       "cuisine": "Seafood",
       "price": "$$",
-      "rating": 4.3,
+      "rating": 4.4,
       "tags": [
         "seafood",
         "bar"
       ],
       "desc": "Harbor-view deck \u2014 sunset cocktails and twin lobsters.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJrYMydbU_-4kRVU3vQ6IURfk",
+      "photo": "data/eats-photos/brax-landing.jpg",
+      "reviews": 2295,
+      "website": "http://www.braxrestaurant.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:27Z"
     },
     {
       "id": "bucas-tuscan-roadhouse",
@@ -789,19 +789,19 @@
       "lng": -70.0739,
       "cuisine": "Italian",
       "price": "$$$",
-      "rating": 4.7,
+      "rating": 4.6,
       "tags": [
         "italian",
         "fine"
       ],
       "desc": "Romantic, candle-lit Tuscan. Reservations a must in summer.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJ7aRrLngV-4kRE50oMq39X_M",
+      "photo": "data/eats-photos/bucas-tuscan-roadhouse.jpg",
+      "reviews": 560,
+      "website": "http://www.bucastuscanroadhouse.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:28Z"
     },
     {
       "id": "bonatts-bakery-restaurant",
@@ -811,19 +811,19 @@
       "lng": -70.0758,
       "cuisine": "Bakery",
       "price": "$",
-      "rating": 4.5,
+      "rating": 4.2,
       "tags": [
         "breakfast",
         "bakery"
       ],
       "desc": "Home of the 'Meltaway.' Old-school breakfast counter.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
+      "place_id": "ChIJvflI8kA--4kREPgpyP1gYlI",
+      "photo": "data/eats-photos/bonatts-bakery-restaurant.jpg",
+      "reviews": 69,
       "website": null,
       "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:29Z"
     },
     {
       "id": "the-impudent-oyster",
@@ -833,19 +833,19 @@
       "lng": -69.9597,
       "cuisine": "Seafood",
       "price": "$$$",
-      "rating": 4.6,
+      "rating": 4.5,
       "tags": [
         "seafood",
         "fine"
       ],
       "desc": "Tucked off Main Street \u2014 bouillabaisse and oysters in a buzzy room.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJyRMiwJ8U-4kR1Q2QAT9XbbE",
+      "photo": "data/eats-photos/the-impudent-oyster.jpg",
+      "reviews": 788,
+      "website": "http://theimpudentoyster.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:30Z"
     },
     {
       "id": "chatham-pier-fish-market",
@@ -862,13 +862,13 @@
         "clam"
       ],
       "desc": "Lobster rolls on the pier, watching seals and the fishing fleet.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJESlJs1kT-4kRp-7l4_nJEpo",
+      "photo": "data/eats-photos/chatham-pier-fish-market.jpg",
+      "reviews": 2368,
+      "website": "https://www.chathampierfishmkt.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:31Z"
     },
     {
       "id": "the-chatham-squire",
@@ -878,20 +878,20 @@
       "lng": -69.96,
       "cuisine": "Pub",
       "price": "$$",
-      "rating": 4.4,
+      "rating": 4.2,
       "tags": [
         "bar",
         "seafood",
         "casual"
       ],
       "desc": "Townie tavern and raw bar. Loud, fun, and always packed.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJXQgSsJ8U-4kRwgW48kJcLUc",
+      "photo": "data/eats-photos/the-chatham-squire.jpg",
+      "reviews": 1837,
+      "website": "http://www.thesquire.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:32Z"
     },
     {
       "id": "del-mar-bar-bistro",
@@ -901,18 +901,18 @@
       "lng": -69.9606,
       "cuisine": "Mediterranean",
       "price": "$$$",
-      "rating": 4.5,
+      "rating": 4.7,
       "tags": [
         "fine"
       ],
       "desc": "Wood-fired Mediterranean with a sleek bar. Brunch is a scene.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJgWiEAb0U-4kREzJF1SX5viU",
+      "photo": "data/eats-photos/del-mar-bar-bistro.jpg",
+      "reviews": 475,
+      "website": "https://www.delmarbistro.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:34Z"
     },
     {
       "id": "hangar-b-eatery",
@@ -921,20 +921,20 @@
       "lat": 41.6883,
       "lng": -69.9892,
       "cuisine": "Breakfast",
-      "price": "$",
-      "rating": 4.6,
+      "price": "$$",
+      "rating": 4.5,
       "tags": [
         "breakfast",
         "brunch"
       ],
       "desc": "Breakfast on the airfield \u2014 watch small planes over your hash.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJITYtwcIU-4kRBV-9WAl6ohs",
+      "photo": "data/eats-photos/hangar-b-eatery.jpg",
+      "reviews": 545,
+      "website": "http://www.hangarbchatham.com/",
+      "open_now": true,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:35Z"
     },
     {
       "id": "sesuit-harbor-cafe",
@@ -944,20 +944,20 @@
       "lng": -70.1542,
       "cuisine": "Seafood",
       "price": "$$",
-      "rating": 4.7,
+      "rating": 4.5,
       "tags": [
         "seafood",
         "lobster",
         "clam"
       ],
       "desc": "BYOB sleeper hit \u2014 picnic tables right on the harbor. Cash only.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJXcNTwkhH-4kR2dPePD7qdbk",
+      "photo": "data/eats-photos/sesuit-harbor-cafe.jpg",
+      "reviews": 2492,
+      "website": "http://www.sesuit-harbor-cafe.com/",
+      "open_now": true,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:36Z"
     },
     {
       "id": "marshside",
@@ -967,20 +967,20 @@
       "lng": -70.1592,
       "cuisine": "Seafood",
       "price": "$$",
-      "rating": 4.4,
+      "rating": 4.3,
       "tags": [
         "seafood",
         "breakfast",
         "brunch"
       ],
       "desc": "Water-view booths \u2014 Sunday brunch and big seafood plates.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJRUdBwFtH-4kR3DPpwanHNVI",
+      "photo": "data/eats-photos/marshside.jpg",
+      "reviews": 1201,
+      "website": "http://www.themarshside.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:37Z"
     },
     {
       "id": "sundae-school",
@@ -989,19 +989,19 @@
       "lat": 41.6556,
       "lng": -70.1342,
       "cuisine": "Ice Cream",
-      "price": "$",
-      "rating": 4.8,
+      "price": "$$",
+      "rating": 4.6,
       "tags": [
         "icecream"
       ],
       "desc": "Homemade ice cream in an old schoolhouse. Don't skip the frozen pudding.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJp_W0-aM--4kR9A0AW7GJWjM",
+      "photo": "data/eats-photos/sundae-school.jpg",
+      "reviews": 1270,
+      "website": "https://www.sundaeschool.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:38Z"
     },
     {
       "id": "captain-frostys",
@@ -1010,7 +1010,7 @@
       "lat": 41.7269,
       "lng": -70.1883,
       "cuisine": "Seafood",
-      "price": "$",
+      "price": "$$",
       "rating": 4.5,
       "tags": [
         "seafood",
@@ -1018,13 +1018,13 @@
         "icecream"
       ],
       "desc": "Fried-clam shack with soft serve. A 6A summer rite of passage.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJnd9admA4-4kRjHekQDYEgGA",
+      "photo": "data/eats-photos/captain-frostys.jpg",
+      "reviews": 938,
+      "website": "http://www.captainfrosty.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:39Z"
     },
     {
       "id": "scargo-cafe",
@@ -1034,18 +1034,18 @@
       "lng": -70.1944,
       "cuisine": "American",
       "price": "$$$",
-      "rating": 4.5,
+      "rating": 4.7,
       "tags": [
         "fine"
       ],
       "desc": "Pre-theater dining across from the Cape Playhouse. Warm and reliable.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJmRGrxIA4-4kRpTy_Ms-Jc0c",
+      "photo": "data/eats-photos/scargo-cafe.jpg",
+      "reviews": 1360,
+      "website": "http://www.scargocafe.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:41Z"
     },
     {
       "id": "kream-n-kone",
@@ -1054,21 +1054,21 @@
       "lat": 41.6606,
       "lng": -70.1697,
       "cuisine": "Seafood",
-      "price": "$",
-      "rating": 4.4,
+      "price": "$$",
+      "rating": 4.5,
       "tags": [
         "seafood",
         "clam",
         "icecream"
       ],
       "desc": "Since 1953 \u2014 whole-belly clams and onion rings by the bucket.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJXQSoj1I5-4kRtvuo6aNpePw",
+      "photo": "data/eats-photos/kream-n-kone.jpg",
+      "reviews": 2087,
+      "website": "https://www.kreamnkone.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:42Z"
     },
     {
       "id": "captain-parkers-pub",
@@ -1078,20 +1078,20 @@
       "lng": -70.2467,
       "cuisine": "Seafood Pub",
       "price": "$$",
-      "rating": 4.6,
+      "rating": 4.5,
       "tags": [
         "seafood",
         "bar",
         "casual"
       ],
       "desc": "Award-winning clam chowder. Marsh-view pub the locals swear by.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJSYT6QGw6-4kRwrG7_q_Irko",
+      "photo": "data/eats-photos/captain-parkers-pub.jpg",
+      "reviews": 3679,
+      "website": "https://www.captainparkers.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:43Z"
     },
     {
       "id": "the-optimist-cafe",
@@ -1101,19 +1101,19 @@
       "lng": -70.2392,
       "cuisine": "British Tearoom",
       "price": "$$",
-      "rating": 4.5,
+      "rating": 4.4,
       "tags": [
         "breakfast",
         "brunch"
       ],
       "desc": "Gingerbread Victorian \u2014 English tea, scones, and full breakfast.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJm-ji0LY3-4kRgqfBrplm8uQ",
+      "photo": "data/eats-photos/the-optimist-cafe.jpg",
+      "reviews": 305,
+      "website": "https://lighthousekeeperspantry.com/",
+      "open_now": true,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:44Z"
     },
     {
       "id": "inaho",
@@ -1128,13 +1128,13 @@
         "fine"
       ],
       "desc": "Hidden-gem sushi behind a garden gate. Freshest fish on the Cape.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJDTUWB2U3-4kRi6wMdBwJq7E",
+      "photo": "data/eats-photos/inaho.jpg",
+      "reviews": 377,
+      "website": "http://www.inaho-sushi.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:45Z"
     },
     {
       "id": "riverway-lobster-house",
@@ -1144,19 +1144,19 @@
       "lng": -70.1853,
       "cuisine": "Seafood",
       "price": "$$",
-      "rating": 4.3,
+      "rating": 4.4,
       "tags": [
         "seafood",
         "lobster"
       ],
       "desc": "Old-school surf-n-turf with sizzling popovers. Family staple.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
+      "place_id": "ChIJcR09z305-4kRs0m7BsZA5Cg",
+      "photo": "data/eats-photos/riverway-lobster-house.jpg",
+      "reviews": 458,
       "website": null,
       "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:46Z"
     },
     {
       "id": "skipper-chowder-house",
@@ -1166,20 +1166,20 @@
       "lng": -70.1869,
       "cuisine": "Seafood",
       "price": "$$",
-      "rating": 4.3,
+      "rating": 4.6,
       "tags": [
         "seafood",
         "clam",
         "breakfast"
       ],
       "desc": "Sea-view deck over Nantucket Sound. Chowder and big breakfasts.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJL0XVN0M6-4kR7Bu3nfVP5tA",
+      "photo": "data/eats-photos/skipper-chowder-house.jpg",
+      "reviews": 3805,
+      "website": "http://skipperrestaurant.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:48Z"
     },
     {
       "id": "four-seas-ice-cream",
@@ -1189,18 +1189,18 @@
       "lng": -70.3447,
       "cuisine": "Ice Cream",
       "price": "$",
-      "rating": 4.9,
+      "rating": 4.4,
       "tags": [
         "icecream"
       ],
       "desc": "Since 1934 \u2014 the Cape's most legendary scoop. Get the peanut butter cup.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJH7OPbCUy-4kR4xtlrE38Ps0",
+      "photo": "data/eats-photos/four-seas-ice-cream.jpg",
+      "reviews": 822,
+      "website": "http://www.fourseasicecream.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:49Z"
     },
     {
       "id": "spoon-and-seed",
@@ -1216,13 +1216,13 @@
         "brunch"
       ],
       "desc": "Smoked-salmon hash and inventive brunch. Opens 7am, worth it.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
+      "place_id": "ChIJyQZvQC4x-4kRY-jKW_qcbfc",
+      "photo": "data/eats-photos/spoon-and-seed.jpg",
+      "reviews": 718,
       "website": null,
       "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:50Z"
     },
     {
       "id": "the-naked-oyster",
@@ -1238,13 +1238,13 @@
         "fine"
       ],
       "desc": "Raw bar with their own oyster farm. Main Street's classy pick.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
+      "place_id": "ChIJ7ZWToyQx-4kR3_MVJTygwOA",
+      "photo": "data/eats-photos/the-naked-oyster.jpg",
+      "reviews": 455,
+      "website": "http://nakedoyster.com/",
       "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:51Z"
     },
     {
       "id": "pain-davignon",
@@ -1253,21 +1253,21 @@
       "lat": 41.6644,
       "lng": -70.2858,
       "cuisine": "French Bistro",
-      "price": "$$$",
-      "rating": 4.7,
+      "price": "$$",
+      "rating": 4.4,
       "tags": [
         "bakery",
         "breakfast",
         "fine"
       ],
       "desc": "Artisan bakery by day, candle-lit bistro by night. Worth the detour.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJYV6ymyAx-4kRosnJ85uliGg",
+      "photo": "data/eats-photos/pain-davignon.jpg",
+      "reviews": 1324,
+      "website": "http://www.paindavignon.com/",
+      "open_now": true,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:52Z"
     },
     {
       "id": "baxters-boathouse",
@@ -1277,20 +1277,20 @@
       "lng": -70.2861,
       "cuisine": "Seafood",
       "price": "$$",
-      "rating": 4.4,
+      "rating": 4.3,
       "tags": [
         "seafood",
         "bar",
         "clam"
       ],
       "desc": "Fried clams on a dock deck as the boats slide by. Summer-only.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJ101rYPow-4kR0jA52E9LmgU",
+      "photo": "data/eats-photos/baxters-boathouse.jpg",
+      "reviews": 1299,
+      "website": "http://www.baxterscapecod.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:53Z"
     },
     {
       "id": "tugboats",
@@ -1300,19 +1300,19 @@
       "lng": -70.2858,
       "cuisine": "Seafood",
       "price": "$$",
-      "rating": 4.3,
+      "rating": 4.4,
       "tags": [
         "seafood",
         "bar"
       ],
       "desc": "Marina sunset spot \u2014 frozen drinks and lobster over the harbor.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJpa7OFG_X5IkRBqKlYp5W_to",
+      "photo": "data/eats-photos/tugboats.jpg",
+      "reviews": 1341,
+      "website": "https://www.tugboatscapecod.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:54Z"
     },
     {
       "id": "the-black-cat-tavern",
@@ -1328,13 +1328,13 @@
         "bar"
       ],
       "desc": "Across from the ferries \u2014 chowder, raw bar, easy harbor views.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJZbVzxPsw-4kR7HGC42e1Xbo",
+      "photo": "data/eats-photos/the-black-cat-tavern.jpg",
+      "reviews": 2575,
+      "website": "http://www.blackcattavern.com/?utm_source=googlemaps",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:56Z"
     },
     {
       "id": "five-bays-bistro",
@@ -1343,19 +1343,19 @@
       "lat": 41.6278,
       "lng": -70.3856,
       "cuisine": "American",
-      "price": "$$$",
-      "rating": 4.6,
+      "price": "$$",
+      "rating": 4.5,
       "tags": [
         "fine"
       ],
       "desc": "Sleek village bistro \u2014 small plates and a buzzy bar crowd.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJ80_axYAy-4kR5ZFGO8OjN-Y",
+      "photo": "data/eats-photos/five-bays-bistro.jpg",
+      "reviews": 163,
+      "website": "http://fivebaysbistro.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:58Z"
     },
     {
       "id": "the-regatta-of-cotuit",
@@ -1365,18 +1365,18 @@
       "lng": -70.4361,
       "cuisine": "Fine Dining",
       "price": "$$$$",
-      "rating": 4.6,
+      "rating": 5.0,
       "tags": [
         "fine"
       ],
       "desc": "Romantic 1790 house \u2014 refined New England plates and tasting menus.",
-      "place_id": null,
+      "place_id": "ChIJUaKu1F7N5IkRA1-9zEI2EpI",
       "photo": null,
-      "reviews": null,
+      "reviews": 2,
       "website": null,
       "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:58Z"
     },
     {
       "id": "mattakeese-wharf",
@@ -1386,19 +1386,19 @@
       "lng": -70.3017,
       "cuisine": "Seafood",
       "price": "$$$",
-      "rating": 4.4,
+      "rating": 4.3,
       "tags": [
         "seafood",
         "fine"
       ],
       "desc": "Harborside dining with live piano. Sunset over Barnstable Harbor.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJJbLuNuY2-4kRSYcxTtRdQfA",
+      "photo": "data/eats-photos/mattakeese-wharf.jpg",
+      "reviews": 911,
+      "website": "http://www.mattakeese.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:07:59Z"
     },
     {
       "id": "barnstable-restaurant-tavern",
@@ -1407,20 +1407,20 @@
       "lat": 41.7006,
       "lng": -70.2992,
       "cuisine": "American",
-      "price": "$$",
-      "rating": 4.3,
+      "price": "$$$$",
+      "rating": 4.1,
       "tags": [
         "casual",
         "bar"
       ],
       "desc": "Village tavern in historic 6A \u2014 burgers, comfort food, and a patio.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJmyyNDWs3-4kR55XrBovJ_F0",
+      "photo": "data/eats-photos/barnstable-restaurant-tavern.jpg",
+      "reviews": 260,
+      "website": "http://www.barnstabletuscancuisine.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:08:01Z"
     },
     {
       "id": "bleu",
@@ -1435,13 +1435,13 @@
         "fine"
       ],
       "desc": "Mashpee Commons brasserie \u2014 escargot, steak frites, lively bar.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJ2-jM1kTS5IkRZw3Nmpqs8Vs",
+      "photo": "data/eats-photos/bleu.jpg",
+      "reviews": 695,
+      "website": "http://www.bleurestaurant.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:08:02Z"
     },
     {
       "id": "siena",
@@ -1450,20 +1450,20 @@
       "lat": 41.6203,
       "lng": -70.4789,
       "cuisine": "Italian",
-      "price": "$$$",
-      "rating": 4.5,
+      "price": "$$",
+      "rating": 4.2,
       "tags": [
         "italian",
         "fine"
       ],
       "desc": "Tuscan trattoria at the Commons \u2014 handmade pasta, wood-grilled.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJpWAM00TS5IkRNvSMgOXjQ6M",
+      "photo": "data/eats-photos/siena.jpg",
+      "reviews": 517,
+      "website": "https://www.siena.us/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:08:03Z"
     },
     {
       "id": "trevi-cafe-wine-bar",
@@ -1479,13 +1479,13 @@
         "bar"
       ],
       "desc": "Mediterranean small plates and a generous wine-by-the-glass list.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJHWiTzUTS5IkR-Eejy9GpdeI",
+      "photo": "data/eats-photos/trevi-cafe-wine-bar.jpg",
+      "reviews": 253,
+      "website": "http://www.trevicafe.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:08:05Z"
     },
     {
       "id": "polar-cave-ice-cream",
@@ -1495,18 +1495,18 @@
       "lng": -70.49,
       "cuisine": "Ice Cream",
       "price": "$",
-      "rating": 4.7,
+      "rating": 4.8,
       "tags": [
         "icecream"
       ],
       "desc": "Cave-themed parlor with wild flavors. A kid (and adult) favorite.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJ7dM4-Z7S5IkRgbMe8eRzneQ",
+      "photo": "data/eats-photos/polar-cave-ice-cream.jpg",
+      "reviews": 558,
+      "website": "http://www.polarcave.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:08:06Z"
     },
     {
       "id": "aqua-grille",
@@ -1516,19 +1516,19 @@
       "lng": -70.4956,
       "cuisine": "Seafood",
       "price": "$$",
-      "rating": 4.4,
+      "rating": 4.2,
       "tags": [
         "seafood",
         "bar"
       ],
       "desc": "Marina-side deck \u2014 $5 cocktails, lobster club, sunset over the canal.",
-      "place_id": null,
+      "place_id": "ChIJf4qwdEfK5IkRSoOACkj7jUM",
       "photo": null,
-      "reviews": null,
+      "reviews": 6,
       "website": null,
       "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:08:07Z"
     },
     {
       "id": "the-belfry-inn-bistro",
@@ -1537,19 +1537,19 @@
       "lat": 41.7586,
       "lng": -70.4942,
       "cuisine": "Fine Dining",
-      "price": "$$$",
+      "price": "$$",
       "rating": 4.6,
       "tags": [
         "fine"
       ],
       "desc": "Dinner in a converted church \u2014 stained glass and refined plates.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
+      "place_id": "ChIJ6-j7NbPL5IkRoMtS3rDq8o4",
+      "photo": "data/eats-photos/the-belfry-inn-bistro.jpg",
+      "reviews": 286,
+      "website": "https://www.belfryinn.com/?utm_source=google&utm_medium+GBP",
       "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:08:08Z"
     },
     {
       "id": "seafood-sams",
@@ -1558,21 +1558,21 @@
       "lat": 41.7711,
       "lng": -70.5028,
       "cuisine": "Seafood",
-      "price": "$",
-      "rating": 4.4,
+      "price": "$$",
+      "rating": 4.5,
       "tags": [
         "seafood",
         "clam",
         "casual"
       ],
       "desc": "Family fried-seafood institution by the canal. Order at the counter.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJdSsM4UbK5IkRFmoQie9jh2Y",
+      "photo": "data/eats-photos/seafood-sams.jpg",
+      "reviews": 2249,
+      "website": "https://www.seafoodsams.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:08:09Z"
     },
     {
       "id": "the-dunbar-tea-room",
@@ -1581,20 +1581,20 @@
       "lat": 41.7569,
       "lng": -70.4953,
       "cuisine": "Tearoom",
-      "price": "$",
-      "rating": 4.6,
+      "price": "$$",
+      "rating": 4.5,
       "tags": [
         "breakfast",
         "coffee"
       ],
       "desc": "Proper English tea and savory pies in a 1740s carriage house.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJoSmV4rTL5IkREmNIFKY8wCg",
+      "photo": "data/eats-photos/the-dunbar-tea-room.jpg",
+      "reviews": 595,
+      "website": "http://www.thedunbarhouse.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:08:11Z"
     },
     {
       "id": "fishermens-view",
@@ -1603,20 +1603,20 @@
       "lat": 41.7714,
       "lng": -70.5036,
       "cuisine": "Seafood",
-      "price": "$$$",
-      "rating": 4.5,
+      "price": "$$",
+      "rating": 4.4,
       "tags": [
         "seafood",
         "fine"
       ],
       "desc": "Floor-to-ceiling marina views and their own seafood market downstairs.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJ_UjXijjK5IkRVuu5S6OysN4",
+      "photo": "data/eats-photos/fishermens-view.jpg",
+      "reviews": 1519,
+      "website": "http://www.fishermensview.com/",
+      "open_now": true,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:08:12Z"
     },
     {
       "id": "la-cucina-sul-mare",
@@ -1625,20 +1625,20 @@
       "lat": 41.5517,
       "lng": -70.6147,
       "cuisine": "Italian",
-      "price": "$$$",
-      "rating": 4.7,
+      "price": "$$",
+      "rating": 4.4,
       "tags": [
         "italian",
         "fine"
       ],
       "desc": "Main Street favorite \u2014 generous Italian, always a wait, always worth it.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJbew7M3nX5IkRaiEn4pmd-LY",
+      "photo": "data/eats-photos/la-cucina-sul-mare.jpg",
+      "reviews": 937,
+      "website": "http://www.lacucinasulmare.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:08:13Z"
     },
     {
       "id": "the-quarterdeck",
@@ -1654,13 +1654,13 @@
         "bar"
       ],
       "desc": "Cozy Main Street standby \u2014 chowder, burgers, and a friendly bar.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJray96n7X5IkRytdEb7lU_pM",
+      "photo": "data/eats-photos/the-quarterdeck.jpg",
+      "reviews": 1425,
+      "website": "http://www.qdfalmouth.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:08:14Z"
     },
     {
       "id": "anejo-mexican-bistro",
@@ -1676,13 +1676,13 @@
         "bar"
       ],
       "desc": "Tequila bar and modern Mexican. Guac and margaritas on Main Street.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJ97ZkuH7X5IkR7YV-F8cGkKg",
+      "photo": "data/eats-photos/anejo-mexican-bistro.jpg",
+      "reviews": 1879,
+      "website": "http://anejo.cc/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:08:15Z"
     },
     {
       "id": "the-captain-kidd",
@@ -1692,19 +1692,19 @@
       "lng": -70.6736,
       "cuisine": "Seafood Pub",
       "price": "$$",
-      "rating": 4.5,
+      "rating": 4.2,
       "tags": [
         "seafood",
         "bar"
       ],
       "desc": "Waterfront tavern on Eel Pond \u2014 oysters and a historic back bar.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJC48OtYDY5IkRvHRmHs9Hxrc",
+      "photo": "data/eats-photos/the-captain-kidd.jpg",
+      "reviews": 689,
+      "website": "http://www.thecaptainkidd.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:08:17Z"
     },
     {
       "id": "quicks-hole-taqueria",
@@ -1713,20 +1713,20 @@
       "lat": 41.5239,
       "lng": -70.6739,
       "cuisine": "Mexican",
-      "price": "$",
-      "rating": 4.5,
+      "price": "$$",
+      "rating": 4.3,
       "tags": [
         "mexican",
         "casual"
       ],
       "desc": "Fish tacos by the ferry dock. Quick, fresh, and fun.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJe_Qzp4DY5IkRI25HHoX5hIs",
+      "photo": "data/eats-photos/quicks-hole-taqueria.jpg",
+      "reviews": 298,
+      "website": "http://quicksholetaqueria.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:08:18Z"
     },
     {
       "id": "maison-villatte",
@@ -1735,21 +1735,21 @@
       "lat": 41.5511,
       "lng": -70.6131,
       "cuisine": "French Bakery",
-      "price": "$",
-      "rating": 4.7,
+      "price": "$$",
+      "rating": 4.8,
       "tags": [
         "bakery",
         "breakfast",
         "coffee"
       ],
       "desc": "French bakers, line out the door \u2014 baguettes, tarts, croissants.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJZ7-sMHnX5IkRgLmGtLoQQBE",
+      "photo": "data/eats-photos/maison-villatte.jpg",
+      "reviews": 1143,
+      "website": "https://www.facebook.com/profile.php?id=100057245816386&mibextid=ZbWKwL",
+      "open_now": true,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:08:19Z"
     },
     {
       "id": "the-chart-room",
@@ -1759,20 +1759,20 @@
       "lng": -70.6206,
       "cuisine": "Seafood",
       "price": "$$$",
-      "rating": 4.6,
+      "rating": 4.4,
       "tags": [
         "seafood",
         "bar",
         "fine"
       ],
       "desc": "Summer-only harbor legend \u2014 mudslides and lobster on Red Brook Harbor.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJO_JZ0fbP5IkR0UhnYQRBxb0",
+      "photo": "data/eats-photos/the-chart-room.jpg",
+      "reviews": 855,
+      "website": "https://chartroomcapecod.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:08:20Z"
     },
     {
       "id": "lindseys-family-restaurant",
@@ -1782,20 +1782,20 @@
       "lng": -70.6175,
       "cuisine": "Seafood",
       "price": "$$",
-      "rating": 4.3,
+      "rating": 4.5,
       "tags": [
         "seafood",
         "clam",
         "casual"
       ],
       "desc": "Buzzards Bay family seafood \u2014 fried platters and friendly service.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
+      "place_id": "ChIJQ1kUxg_G5IkR4HW305bCk2s",
+      "photo": "data/eats-photos/lindseys-family-restaurant.jpg",
+      "reviews": 1806,
       "website": null,
       "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:08:21Z"
     },
     {
       "id": "stir-crazy",
@@ -1805,18 +1805,18 @@
       "lng": -70.6014,
       "cuisine": "Cambodian",
       "price": "$$",
-      "rating": 4.5,
+      "rating": 4.7,
       "tags": [
         "fine"
       ],
       "desc": "Beloved Southeast-Asian kitchen \u2014 curries and pho near the bridge.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJY8306AXP5IkRjEtrlXdwfGM",
+      "photo": "data/eats-photos/stir-crazy.jpg",
+      "reviews": 448,
+      "website": "https://stircrazycapecod.com/?utm_source=google",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:08:22Z"
     },
     {
       "id": "mezza-luna",
@@ -1826,19 +1826,19 @@
       "lng": -70.6181,
       "cuisine": "Italian",
       "price": "$$",
-      "rating": 4.3,
+      "rating": 4.4,
       "tags": [
         "italian",
         "casual"
       ],
       "desc": "Buzzards Bay Italian-American since 1936. Sunday-gravy comfort.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": null,
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null
+      "place_id": "ChIJD_-pmLnI5IkR9FBcmV14fSs",
+      "photo": "data/eats-photos/mezza-luna.jpg",
+      "reviews": 1486,
+      "website": "http://www.mezzalunarestaurant.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-05T12:08:24Z"
     }
   ]
 }
