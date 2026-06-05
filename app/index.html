@@ -89,8 +89,8 @@
   .ios-content{ flex:1; overflow-y:auto; padding-bottom:100px; -webkit-overflow-scrolling:touch; }
   .ios-content::-webkit-scrollbar{ display:none; }
 
-  .tab-bar{ position:absolute; bottom:0; left:0; right:0; background:rgba(255,255,255,0.92); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border-top:1px solid var(--ios-divider); display:flex; padding:8px 4px max(8px,env(safe-area-inset-bottom)); z-index:50; }
-  .tab-btn{ flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; color:var(--ios-sub); font-size:10px; font-weight:500; background:none; border:none; cursor:pointer; padding:4px 0; transition:color 0.15s ease; }
+  .tab-bar{ position:absolute; bottom:0; left:0; right:0; background:rgba(255,255,255,0.92); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border-top:1px solid var(--ios-divider); display:flex; padding:8px 4px max(8px,env(safe-area-inset-bottom)); z-index:50; overflow:hidden; }
+  .tab-btn{ flex:1 1 0; min-width:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; color:var(--ios-sub); font-size:10px; font-weight:500; background:none; border:none; cursor:pointer; padding:4px 0; transition:color 0.15s ease; white-space:nowrap; }
   .tab-btn.active{ color:var(--cape-navy); }
   .tab-icon{ font-size:22px; line-height:1; }
 
@@ -466,9 +466,7 @@
   <div class="tab-bar">
     <button class="tab-btn" data-tab="nearby" onclick="switchTab('nearby')"><div class="tab-icon">📍</div><div>Nearby</div></button>
     <button class="tab-btn active" data-tab="today" onclick="switchTab('today')"><div class="tab-icon">⚡</div><div>Today</div></button>
-    <button class="tab-btn" data-tab="events" onclick="switchTab('events')"><div class="tab-icon">📅</div><div>Events</div></button>
     <button class="tab-btn" data-tab="beaches" onclick="switchTab('beaches')"><div class="tab-icon">🏖️</div><div>Beaches</div></button>
-    <button class="tab-btn" data-tab="passport" onclick="switchTab('passport')"><div class="tab-icon">🎫</div><div>Pass</div></button>
     <button class="tab-btn" data-tab="ai" onclick="switchTab('ai')"><div class="tab-icon">✨</div><div>Ask</div></button>
     <button class="tab-btn" data-tab="more" onclick="openModal('moreMenu')"><div class="tab-icon">···</div><div>More</div></button>
   </div>
@@ -489,6 +487,8 @@
   <div class="modal-sheet">
     <div class="modal-handle"></div>
     <div class="font-display" style="font-weight:900; font-size:22px; margin-bottom:12px;">More features</div>
+    <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('events')"><span style="font-size:24px;">📅</span><div style="flex:1;"><div class="item-title">What's Happening</div><div class="item-sub">Today's events, music & deals</div></div></div>
+    <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('passport')"><span style="font-size:24px;">🎫</span><div style="flex:1;"><div class="item-title">Passport</div><div class="item-sub">100-stamp summer challenge</div></div></div>
     <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('bridges')"><span style="font-size:24px;">🌉</span><div style="flex:1;"><div class="item-title">Bridge Oracle</div><div class="item-sub">Traffic + forecast</div></div></div>
     <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('conditions')"><span style="font-size:24px;">🌊</span><div style="flex:1;"><div class="item-title">Tides & Conditions</div><div class="item-sub">Today + 7-day</div></div></div>
     <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('whales')"><span style="font-size:24px;">🐋</span><div style="flex:1;"><div class="item-title">Whale Spotter</div><div class="item-sub">Live sightings</div></div></div>
