@@ -191,6 +191,57 @@
   .loading{ text-align:center; padding:40px 20px; color:var(--ios-sub); }
   .toast{ position:fixed; bottom:120px; left:50%; transform:translateX(-50%); background:rgba(0,0,0,0.85); color:white; padding:10px 18px; border-radius:999px; font-size:14px; z-index:300; opacity:0; transition:opacity 0.3s; pointer-events:none; }
   .toast.show{ opacity:1; }
+
+  /* ===== NEAR YOU FEED ===== */
+  .nb-locbar{ position:sticky; top:0; z-index:30; display:flex; align-items:center; justify-content:space-between; gap:10px; margin:0 16px 8px; padding:9px 12px; background:rgba(255,255,255,0.92); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border:1px solid var(--ios-divider); border-radius:12px; box-shadow:0 1px 3px rgba(0,0,0,0.04); }
+  .nb-where{ display:flex; align-items:center; gap:8px; font-weight:700; font-size:14px; color:var(--cape-brown-dark); min-width:0; }
+  .nb-where .nb-dot{ width:9px; height:9px; border-radius:50%; background:var(--status-open); box-shadow:0 0 0 4px rgba(52,199,89,0.18); flex:none; }
+  .nb-where span:last-child{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .nb-locbar button{ flex:none; background:var(--cape-navy); color:#fff; border:none; border-radius:999px; padding:7px 13px; font-size:12px; font-weight:700; cursor:pointer; font-family:inherit; }
+  .nb-locbar button:active{ transform:scale(0.97); }
+  .nb-locbar button.locating{ background:var(--ios-sub); }
+
+  .nb-townhead{ display:flex; align-items:center; gap:10px; padding:18px 20px 8px; }
+  .nb-townhead .line{ flex:1; height:1px; background:var(--ios-divider); }
+  .nb-townhead .label{ font-family:'Fraunces',serif; font-weight:900; font-size:16px; color:var(--cape-brown-dark); display:flex; align-items:baseline; gap:7px; }
+  .nb-townhead .label .mi{ font-family:'Inter',sans-serif; font-weight:600; font-size:11px; color:var(--ios-sub); }
+
+  .nb-card{ background:var(--ios-card); border-radius:16px; margin:0 16px 12px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.05); }
+  .nb-photo{ height:170px; background-size:cover; background-position:center; background-color:var(--cape-sand); position:relative; }
+  .nb-photo::after{ content:''; position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,0.28),transparent 45%); }
+  .nb-dist{ position:absolute; top:10px; right:10px; z-index:1; background:rgba(255,255,255,0.94); backdrop-filter:blur(4px); color:var(--ios-text); font-size:11px; font-weight:700; padding:4px 9px; border-radius:999px; }
+  .nb-price{ position:absolute; bottom:10px; left:10px; z-index:1; background:rgba(0,0,0,0.62); color:#fff; font-size:11px; font-weight:700; padding:4px 9px; border-radius:999px; }
+  .nb-open{ position:absolute; top:10px; left:10px; z-index:1; background:rgba(255,255,255,0.94); backdrop-filter:blur(4px); font-size:11px; font-weight:700; padding:4px 9px; border-radius:999px; }
+  .nb-open.open{ color:#1F9D63; } .nb-open.closed{ color:var(--status-full); }
+
+  .nb-head{ display:flex; align-items:center; gap:11px; padding:12px 14px 0; }
+  .nb-avatar{ width:38px; height:38px; border-radius:11px; display:flex; align-items:center; justify-content:center; font-size:19px; flex:none; }
+  .nb-avatar.food{ background:#FCEBE3; } .nb-avatar.beach{ background:#DCEEF3; } .nb-avatar.event{ background:#EAE4F2; } .nb-avatar.road{ background:#F2EAD9; }
+  .nb-head .main{ flex:1; min-width:0; }
+  .nb-head .name{ font-weight:700; font-size:15px; color:var(--ios-text); }
+  .nb-head .sub{ font-size:12px; color:var(--ios-sub); margin-top:1px; }
+  .nb-head .sub .rev{ color:var(--ios-sub); }
+  .nb-kind{ flex:none; font-size:10px; font-weight:800; letter-spacing:0.03em; padding:4px 9px; border-radius:999px; text-transform:uppercase; }
+  .nb-kind.food{ background:#FCEBE3; color:#B5654A; } .nb-kind.beach{ background:#DCEEF3; color:var(--cape-navy); } .nb-kind.event{ background:#EAE4F2; color:#6B5E8A; } .nb-kind.road{ background:#F2EAD9; color:var(--cape-brown); }
+  .nb-body{ padding:9px 14px 13px; }
+  .nb-body p{ margin:0; font-size:13px; line-height:1.5; color:#544A40; }
+  .nb-stats{ display:flex; flex-wrap:wrap; gap:7px; margin-bottom:4px; }
+  .nb-stat{ background:var(--ios-bg); border-radius:8px; padding:6px 10px; font-size:12px; color:var(--ios-text); }
+  .nb-stat b{ display:block; font-size:10px; color:var(--ios-sub); font-weight:700; text-transform:uppercase; letter-spacing:0.03em; margin-bottom:1px; }
+  .nb-statpill{ display:inline-flex; align-items:center; padding:6px 11px; border-radius:999px; font-size:12px; font-weight:700; }
+  .nb-statpill.open{ background:rgba(52,199,89,0.16); color:#1F9D63; } .nb-statpill.mid{ background:rgba(255,149,0,0.18); color:#C77700; } .nb-statpill.full{ background:rgba(255,59,48,0.15); color:#C9362C; }
+  .nb-crowd i{ width:7px; height:7px; border-radius:50%; background:var(--ios-divider); display:inline-block; margin-right:2px; } .nb-crowd i.on{ background:var(--cape-brown); }
+  .nb-tags{ display:flex; flex-wrap:wrap; gap:6px; margin-top:9px; }
+  .nb-tag{ font-size:11px; font-weight:600; background:var(--cape-cream); color:var(--cape-brown); padding:3px 9px; border-radius:7px; }
+  .nb-actions{ display:flex; gap:8px; margin-top:11px; }
+  .nb-actions a{ flex:1; text-align:center; padding:9px; border-radius:10px; font-size:12px; font-weight:700; text-decoration:none; }
+  .nb-btn-primary{ background:var(--cape-navy); color:#fff; }
+  .nb-btn-soft{ background:var(--ios-bg); color:var(--cape-navy); border:1px solid var(--ios-divider); }
+  .nb-updated{ display:flex; align-items:center; gap:6px; margin-top:10px; font-size:11px; color:var(--ios-sub); }
+  .nb-updated .live{ width:6px; height:6px; border-radius:50%; background:var(--status-open); animation:nbpulse 1.8s infinite; }
+  @keyframes nbpulse{ 0%,100%{opacity:1} 50%{opacity:0.35} }
+  .nb-loopdiv{ text-align:center; padding:18px 20px; }
+  .nb-loopdiv span{ display:inline-block; background:var(--ios-bg); border:1px solid var(--ios-divider); color:var(--ios-sub); font-size:12px; font-weight:600; padding:7px 16px; border-radius:999px; }
 </style>
 </head>
 <body>
@@ -201,6 +252,17 @@
 
 <div class="app-shell">
   <div class="ios-content" id="iosContent">
+
+    <!-- ===== NEAR YOU ===== -->
+    <div class="screen" id="screen-nearby">
+      <div class="ios-large-title">Near You</div>
+      <div class="nb-locbar" id="nbLocBar">
+        <div class="nb-where"><span class="nb-dot"></span><span id="nbLocLabel">Mid Cape</span></div>
+        <button id="nbLocBtn" onclick="nbUseMyLocation()">📍 Use my location</button>
+      </div>
+      <div id="nearbyFeed"></div>
+      <div id="nbSentinel" style="height:1px;"></div>
+    </div>
 
     <!-- ===== TODAY ===== -->
     <div class="screen active" id="screen-today">
@@ -402,6 +464,7 @@
 
   <!-- TAB BAR -->
   <div class="tab-bar">
+    <button class="tab-btn" data-tab="nearby" onclick="switchTab('nearby')"><div class="tab-icon">📍</div><div>Nearby</div></button>
     <button class="tab-btn active" data-tab="today" onclick="switchTab('today')"><div class="tab-icon">⚡</div><div>Today</div></button>
     <button class="tab-btn" data-tab="events" onclick="switchTab('events')"><div class="tab-icon">📅</div><div>Events</div></button>
     <button class="tab-btn" data-tab="beaches" onclick="switchTab('beaches')"><div class="tab-icon">🏖️</div><div>Beaches</div></button>
@@ -576,7 +639,7 @@ let state = {
   aiCount: parseInt(localStorage.getItem('tcc_ai_today') || '0'),
   aiDate: localStorage.getItem('tcc_ai_date') || '',
   userLoc: null,
-  data: { stamps:null, beaches:null, today:null, conditions:null, bridges:null, whales:null, lighthouses:null, aiKnowledge:null },
+  data: { stamps:null, beaches:null, today:null, conditions:null, bridges:null, whales:null, lighthouses:null, aiKnowledge:null, eats:null },
   eventFilter: 'all',
   speechUtterance: null,
   speechStartTime: null,
@@ -602,6 +665,9 @@ if (state.aiDate !== today) {
 const PREVIEW_BRANCH = new URLSearchParams(location.search).get('preview');
 const DATA_BRANCH = PREVIEW_BRANCH && /^[A-Za-z0-9._\/-]+$/.test(PREVIEW_BRANCH) ? PREVIEW_BRANCH : 'main';
 const DATA_BASE = `https://raw.githubusercontent.com/zemiai/totallycapecod/${DATA_BRANCH}/data/`;
+// Repo-root raw base — restaurant photos live at data/eats-photos/<id>.jpg (relative)
+// and are downloaded by scripts/update_eats.py. Prefix this to load them.
+const ASSET_BASE = `https://raw.githubusercontent.com/zemiai/totallycapecod/${DATA_BRANCH}/`;
 if (PREVIEW_BRANCH) {
   document.documentElement.dataset.preview = DATA_BRANCH;
   document.addEventListener('DOMContentLoaded', () => {
@@ -613,7 +679,7 @@ if (PREVIEW_BRANCH) {
   });
 }
 async function loadData() {
-  const files = ['stamps', 'beaches', 'today', 'conditions', 'bridges', 'whales', 'lighthouses', 'ai-knowledge'];
+  const files = ['stamps', 'beaches', 'today', 'conditions', 'bridges', 'whales', 'lighthouses', 'ai-knowledge', 'eats'];
   const results = await Promise.allSettled(files.map(f => fetch(DATA_BASE + f + '.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).catch(() => null)));
   results.forEach((r, i) => {
     const key = files[i] === 'ai-knowledge' ? 'aiKnowledge' : files[i];
@@ -1261,6 +1327,7 @@ function switchTab(tab) {
   document.getElementById('iosContent').scrollTop = 0;
 
   // Render the screen
+  if (tab === 'nearby') renderNearby();
   if (tab === 'today') renderToday();
   if (tab === 'events') renderEvents();
   if (tab === 'beaches') renderBeaches();
@@ -1271,6 +1338,189 @@ function switchTab(tab) {
   if (tab === 'whales') renderWhales();
   if (tab === 'lighthouses') renderLighthouses();
   if (tab === 'pro') renderPro();
+}
+
+// ============ RENDER: NEAR YOU ============
+// Distance-sorted, town-by-town endless feed mixing restaurants (live Google
+// ratings/photos from data/eats.json) with live beach, bridge and event cards.
+const NB_TOWNS = [
+  {n:"Provincetown",lat:42.0587,lng:-70.1787},{n:"Truro",lat:41.9979,lng:-70.0492},
+  {n:"Wellfleet",lat:41.9362,lng:-70.0331},{n:"Eastham",lat:41.8300,lng:-69.9740},
+  {n:"Orleans",lat:41.7901,lng:-69.9873},{n:"Brewster",lat:41.7601,lng:-70.0819},
+  {n:"Harwich Port",lat:41.6709,lng:-70.0772},{n:"Chatham",lat:41.6815,lng:-69.9597},
+  {n:"East Dennis",lat:41.7486,lng:-70.1597},{n:"Dennis",lat:41.7353,lng:-70.1936},
+  {n:"Dennisport",lat:41.6553,lng:-70.1331},{n:"West Dennis",lat:41.6620,lng:-70.1700},
+  {n:"Yarmouth Port",lat:41.7038,lng:-70.2419},{n:"South Yarmouth",lat:41.6680,lng:-70.1770},
+  {n:"West Yarmouth",lat:41.6510,lng:-70.2400},{n:"Hyannis",lat:41.6520,lng:-70.2828},
+  {n:"Barnstable",lat:41.7003,lng:-70.2995},{n:"Centerville",lat:41.6481,lng:-70.3447},
+  {n:"Osterville",lat:41.6281,lng:-70.3858},{n:"Cotuit",lat:41.6151,lng:-70.4361},
+  {n:"Mashpee",lat:41.6481,lng:-70.4822},{n:"Sandwich",lat:41.7590,lng:-70.4940},
+  {n:"Falmouth",lat:41.5515,lng:-70.6148},{n:"Woods Hole",lat:41.5246,lng:-70.6731},
+  {n:"Bourne",lat:41.7412,lng:-70.5990}
+];
+let nbUser = null, nbSeq = [], nbPtr = 0, nbIo = null, nbBuilt = false;
+
+function nbEsc(s){ return String(s==null?'':s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+function nbMiLabel(mi){ if(mi<0.4) return "Right here"; if(mi<10) return mi.toFixed(1)+" mi"; return Math.round(mi)+" mi"; }
+function nbAway(mi){ return mi<0.4 ? "Right here" : nbMiLabel(mi)+" away"; }
+function nbNearestTown(loc){ let best=NB_TOWNS[0], bd=1e9; for(const t of NB_TOWNS){ const d=distanceMiles(loc.lat,loc.lng,t.lat,t.lng); if(d<bd){bd=d;best=t;} } return best.n; }
+function nbCrowd(n){ let h='<span class="nb-crowd">'; for(let i=1;i<=5;i++) h+=`<i class="${i<=n?'on':''}"></i>`; return h+'</span>'; }
+function nbPhoto(r){
+  if(r.photo) return r.photo.startsWith('http') ? r.photo : ASSET_BASE + r.photo;
+  return `https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=800&q=80&auto=format&fit=crop`;
+}
+
+function nbBuildSequence(){
+  const eats    = state.data.eats?.eats || [];
+  const beaches = state.data.beaches?.beaches || [];
+  const events  = state.data.today?.events || [];
+  const items=[];
+  eats.forEach(r=>{ if(r.lat&&r.lng) items.push({type:"food",town:r.town,lat:r.lat,lng:r.lng,data:r}); });
+  beaches.forEach(b=>{ if(b.lat&&b.lng) items.push({type:"beach",town:b.town,lat:b.lat,lng:b.lng,data:b}); });
+  events.forEach(e=>{ if(e.lat&&e.lng) items.push({type:"event",town:e.town,lat:e.lat,lng:e.lng,data:e}); });
+  items.forEach(it=>it.mi=distanceMiles(nbUser.lat,nbUser.lng,it.lat,it.lng));
+  items.sort((a,b)=>a.mi-b.mi);
+  const groups=[]; let cur=null;
+  for(const it of items){
+    if(!cur||cur.town!==it.town){ cur={town:it.town,mi:it.mi,food:[],live:[]}; groups.push(cur); }
+    (it.type==="food"?cur.food:cur.live).push(it);
+  }
+  const seq=[];
+  groups.forEach((g,gi)=>{
+    seq.push({type:"townhead",town:g.town,mi:g.mi});
+    if(gi===0 && state.data.bridges?.current) seq.push({type:"bridge"});
+    let fi=0,li=0;
+    while(fi<g.food.length||li<g.live.length){
+      if(li<g.live.length) seq.push(g.live[li++]);
+      if(fi<g.food.length) seq.push(g.food[fi++]);
+      if(fi<g.food.length) seq.push(g.food[fi++]);
+    }
+  });
+  return seq;
+}
+
+function nbRenderItem(it){
+  if(it.type==="townhead"){
+    return `<div class="nb-townhead"><div class="line"></div><div class="label">${nbEsc(it.town)}<span class="mi">${nbAway(it.mi)}</span></div><div class="line"></div></div>`;
+  }
+  if(it.type==="bridge"){
+    const c=state.data.bridges.current, s=c.sagamore, b=c.bourne;
+    const adv = (s.current_delay_min<=b.current_delay_min) ? s.advice : b.advice;
+    return `<div class="nb-card"><div class="nb-head">
+      <div class="nb-avatar road">🚗</div>
+      <div class="main"><div class="name">Bridge traffic right now</div><div class="sub">Getting on or off the Cape</div></div>
+      <div class="nb-kind road">Live</div></div>
+      <div class="nb-body">
+        <div class="nb-stats">
+          <div class="nb-stat"><b>${nbEsc(s.name)}</b>${s.current_delay_min} min · ${nbEsc(s.current_status)}</div>
+          <div class="nb-stat"><b>${nbEsc(b.name)}</b>${b.current_delay_min} min · ${nbEsc(b.current_status)}</div>
+        </div>
+        <p style="margin-top:9px;">${nbEsc(adv)}</p>
+        <div class="nb-updated"><span class="live"></span>Updated just now</div>
+      </div></div>`;
+  }
+  if(it.type==="beach"){
+    const b=it.data, LBL={open:"Wide open",mid:"Filling up",full:"Lot full"};
+    return `<div class="nb-card"><div class="nb-head">
+      <div class="nb-avatar beach">🏖️</div>
+      <div class="main"><div class="name">${nbEsc(b.name)}</div><div class="sub">${nbEsc(b.town)} · ${nbAway(it.mi)}</div></div>
+      <div class="nb-kind beach">Beach</div></div>
+      <div class="nb-body">
+        <div class="nb-stats">
+          <span class="nb-statpill ${b.status}">${LBL[b.status]||b.status}</span>
+          <div class="nb-stat"><b>Water</b>${b.water_temp}°F</div>
+          <div class="nb-stat"><b>Parking</b>${nbEsc(b.spots_text)}</div>
+          <div class="nb-stat"><b>Crowd</b>${nbCrowd(b.crowd)}</div>
+        </div>
+        ${b.notes?`<p style="margin-top:9px;">${nbEsc(b.notes)}</p>`:""}
+        <div class="nb-updated"><span class="live"></span>Updated ${nbEsc(b.updated||"just now")}</div>
+      </div></div>`;
+  }
+  if(it.type==="event"){
+    const e=it.data;
+    return `<div class="nb-card">
+      <div class="nb-photo" style="background-image:url('${nbEsc(e.img)}')"><span class="nb-dist">${nbMiLabel(it.mi)}</span>${e.price?`<span class="nb-price">${nbEsc(e.price)}</span>`:""}</div>
+      <div class="nb-head">
+        <div class="nb-avatar event">🎟️</div>
+        <div class="main"><div class="name">${nbEsc(e.title)}</div><div class="sub">${nbEsc(e.venue)} · ${nbEsc(e.town)}</div></div>
+        <div class="nb-kind event">${nbEsc(e.tag)}</div></div>
+      <div class="nb-body">
+        <p>${nbEsc(e.info)}</p>
+        <div class="nb-tags"><span class="nb-tag">🕒 ${nbEsc(e.time)}</span>${e.price?`<span class="nb-tag">${nbEsc(e.price)}</span>`:""}</div>
+      </div></div>`;
+  }
+  // food
+  const r=it.data;
+  const yelp=`https://www.yelp.com/search?find_desc=${encodeURIComponent(r.name)}&find_loc=${encodeURIComponent(r.town)}%2C+MA`;
+  const ot=`https://www.opentable.com/s?term=${encodeURIComponent(r.name)}&metroId=66`;
+  const reviews = (r.reviews!=null) ? ` <span class="rev">(${Number(r.reviews).toLocaleString()})</span>` : "";
+  const openBadge = (r.open_now===true) ? `<span class="nb-open open">● Open now</span>`
+                  : (r.open_now===false ? `<span class="nb-open closed">● Closed</span>` : "");
+  const tags = Array.isArray(r.tags) ? r.tags.slice(0,3) : [];
+  const siteBtn = r.website ? `<a class="nb-btn-primary" href="${nbEsc(r.website)}" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'website',item:'${nbEsc(r.name)}',location:'app_nearby'})">Website</a>` : "";
+  return `<div class="nb-card">
+    <div class="nb-photo" style="background-image:url('${nbPhoto(r)}')"><span class="nb-dist">${nbMiLabel(it.mi)}</span>${r.price?`<span class="nb-price">${nbEsc(r.price)}</span>`:""}${openBadge}</div>
+    <div class="nb-head">
+      <div class="nb-avatar food">🍴</div>
+      <div class="main"><div class="name">${nbEsc(r.name)}</div><div class="sub">${nbEsc(r.town)} · ${nbEsc(r.cuisine)} · ⭐ ${r.rating}${reviews}</div></div>
+      <div class="nb-kind food">Eat</div></div>
+    <div class="nb-body">
+      <p>${nbEsc(r.desc)}</p>
+      ${tags.length?`<div class="nb-tags">${tags.map(t=>`<span class="nb-tag">${nbEsc(t)}</span>`).join("")}</div>`:""}
+      <div class="nb-actions">
+        ${siteBtn}
+        <a class="${siteBtn?'nb-btn-soft':'nb-btn-primary'}" href="${yelp}" target="_blank" rel="noopener" onclick="gtag('event','affiliate_click',{type:'yelp',item:'${nbEsc(r.name)}',location:'app_nearby'})">Reviews</a>
+        <a class="nb-btn-soft" href="${ot}" target="_blank" rel="noopener" onclick="gtag('event','affiliate_click',{type:'opentable',item:'${nbEsc(r.name)}',location:'app_nearby'})">Reserve</a>
+      </div>
+    </div></div>`;
+}
+
+function nbRenderPage(){
+  if(!nbSeq.length) return;
+  const out=[]; let n=0;
+  while(n<5){
+    if(nbPtr>=nbSeq.length){ out.push(`<div class="nb-loopdiv"><span>🔄 That's the whole Cape — starting over near you</span></div>`); nbPtr=0; }
+    out.push(nbRenderItem(nbSeq[nbPtr++]));
+    n++;
+  }
+  document.getElementById('nearbyFeed').insertAdjacentHTML('beforeend',out.join(''));
+}
+
+function nbStart(){
+  nbSeq = nbBuildSequence(); nbPtr=0;
+  const feed=document.getElementById('nearbyFeed');
+  feed.innerHTML="";
+  document.getElementById('nbLocLabel').textContent = "Near " + (nbUser.label||nbNearestTown(nbUser));
+  if(!nbSeq.length){ feed.innerHTML='<div class="empty-state">Loading nearby spots…</div>'; return; }
+  nbRenderPage(); nbRenderPage();
+  if(nbIo) nbIo.disconnect();
+  nbIo = new IntersectionObserver(es=>{ if(es[0].isIntersecting) nbRenderPage(); }, {root:document.getElementById('iosContent'), rootMargin:"600px"});
+  nbIo.observe(document.getElementById('nbSentinel'));
+}
+
+function renderNearby(){
+  if(nbBuilt) return;                 // build once; content persists across tab switches
+  if(!nbUser) nbUser = { lat: DEFAULT_LOC.lat, lng: DEFAULT_LOC.lng, label: nbNearestTown(DEFAULT_LOC) };
+  nbStart();
+  nbBuilt = nbSeq.length > 0;         // if data wasn't ready yet, retry on next open
+}
+
+function nbUseMyLocation(){
+  const btn=document.getElementById('nbLocBtn');
+  if(!navigator.geolocation){ toast('Location not available'); return; }
+  btn.textContent="Locating…"; btn.classList.add('locating');
+  navigator.geolocation.getCurrentPosition(
+    pos=>{
+      nbUser={lat:pos.coords.latitude,lng:pos.coords.longitude,label:nbNearestTown({lat:pos.coords.latitude,lng:pos.coords.longitude})};
+      state.userLoc={lat:nbUser.lat,lng:nbUser.lng};
+      btn.textContent="📍 Use my location"; btn.classList.remove('locating');
+      document.getElementById('iosContent').scrollTop=0;
+      nbStart(); nbBuilt = nbSeq.length > 0;
+      gtag('event','feed_locate',{location:'app_nearby'});
+    },
+    ()=>{ btn.textContent="📍 Use my location"; btn.classList.remove('locating'); toast('Couldn’t get your location'); },
+    {enableHighAccuracy:false,timeout:8000,maximumAge:600000}
+  );
 }
 
 // ============ MODALS ============
