@@ -243,6 +243,20 @@
   @keyframes nbpulse{ 0%,100%{opacity:1} 50%{opacity:0.35} }
   .nb-loopdiv{ text-align:center; padding:18px 20px; }
   .nb-loopdiv span{ display:inline-block; background:var(--ios-bg); border:1px solid var(--ios-divider); color:var(--ios-sub); font-size:12px; font-weight:600; padding:7px 16px; border-radius:999px; }
+
+  /* ===== Personalization / Avatar ===== */
+  .nb-personalize{ margin:0 16px 10px; padding:10px 14px; background:var(--ios-card); border:1px solid var(--ios-divider); border-radius:12px; font-size:13px; font-weight:700; color:var(--cape-navy); cursor:pointer; display:flex; align-items:center; gap:8px; box-shadow:0 1px 3px rgba(0,0,0,0.04); }
+  .nb-personalize:active{ transform:scale(0.99); }
+  .nb-personalize.on{ background:#FBF3DF; border-color:#EBD9A8; color:var(--cape-brown-dark); }
+  .nb-personalize .nb-pz-on{ font-weight:800; flex:none; }
+  .nb-personalize .nb-pz-sum{ flex:1; min-width:0; font-weight:600; color:var(--cape-brown); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .nb-personalize .nb-pz-edit{ flex:none; font-weight:700; color:var(--cape-navy); }
+  .nb-foryou{ display:inline-block; font-size:10px; font-weight:800; color:var(--gold-dark); background:#FBF3DF; border:1px solid #EBD9A8; padding:3px 8px; border-radius:999px; margin-bottom:8px; letter-spacing:0.02em; }
+  .av-q{ font-weight:700; font-size:14px; margin:16px 0 8px; }
+  .av-select{ width:100%; padding:11px 12px; border:1px solid var(--ios-divider); border-radius:12px; font-size:15px; background:var(--ios-bg); font-family:inherit; color:var(--ios-text); }
+  .av-chips{ display:flex; flex-wrap:wrap; gap:8px; }
+  .av-chip{ padding:9px 13px; border-radius:999px; border:1px solid var(--ios-divider); background:var(--ios-bg); font-size:13px; font-weight:600; cursor:pointer; }
+  .av-chip.active{ background:var(--cape-navy); color:#fff; border-color:var(--cape-navy); }
 </style>
 </head>
 <body>
@@ -261,6 +275,7 @@
         <div class="nb-where"><span class="nb-dot"></span><span id="nbLocLabel">Mid Cape</span></div>
         <button id="nbLocBtn" onclick="nbUseMyLocation()">📍 Use my location</button>
       </div>
+      <div class="nb-personalize" id="nbPersonalize" onclick="openAvatar()">✨ Personalize your feed</div>
       <div id="nearbyFeed"></div>
       <div id="nbSentinel" style="height:1px;"></div>
     </div>
@@ -482,6 +497,18 @@
 
 <!-- Toast -->
 <div class="toast" id="toast"></div>
+
+<!-- Personalize / Avatar Modal -->
+<div class="modal-bg" id="avatarModal">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <div class="font-display" style="font-weight:900; font-size:22px;">✨ Personalize your Cape</div>
+    <div style="color:var(--ios-sub); font-size:13px; margin:4px 0 4px;">Tune the feed to your trip. Saved on your phone — no account needed.</div>
+    <div id="avatarBody"></div>
+    <button onclick="saveAvatar()" style="width:100%; background:var(--cape-navy); color:#fff; border:none; padding:14px; border-radius:14px; font-weight:700; font-size:15px; margin-top:18px;">Save &amp; personalize</button>
+    <button onclick="clearAvatar()" style="width:100%; background:transparent; color:var(--ios-sub); border:none; padding:10px; font-size:13px;">Reset</button>
+  </div>
+</div>
 
 <!-- More Menu Modal -->
 <div class="modal-bg" id="moreMenuModal">
@@ -1364,6 +1391,85 @@ const NB_TOWNS = [
 ];
 let nbUser = null, nbSeq = [], nbPtr = 0, nbIo = null, nbBuilt = false;
 
+// ---- Avatar: on-device personalization profile (no account) ----
+let AVATAR = (() => { try { return JSON.parse(localStorage.getItem('tcc_avatar') || 'null'); } catch (e) { return null; } })();
+const NB_INTERESTS = [['beaches','🏖️ Beaches'],['food','🍴 Food'],['nightlife','🎶 Nightlife'],['arts','🎨 Arts'],['history','🏛️ History'],['family','👨‍👩‍👧 Family']];
+const NB_PARTIES = [['family','👨‍👩‍👧 Family'],['couple','💑 Couple'],['solo','🧍 Solo'],['friends','👯 Friends']];
+const NB_ILABEL = Object.fromEntries(NB_INTERESTS);
+
+function avatarMatch(it){
+  const I = AVATAR && AVATAR.interests; if(!I || !I.length) return false;
+  if(it.type==='beach') return I.includes('beaches') || I.includes('family');
+  if(it.type==='food'){
+    const t = it.data.tags || [];
+    if(I.includes('food')) return true;
+    if(I.includes('nightlife') && t.includes('bar')) return true;
+    if(I.includes('family') && (t.includes('casual')||t.includes('icecream'))) return true;
+    return false;
+  }
+  if(it.type==='event'){
+    const c = it.data.category;
+    if(I.includes('nightlife') && (c==='music'||c==='comedy')) return true;
+    if(I.includes('arts') && (c==='art'||c==='theater')) return true;
+    if(I.includes('history') && c==='talk') return true;
+    if(I.includes('family') && (c==='family'||c==='festival'||c==='film')) return true;
+    if(I.includes('food') && (c==='food'||c==='market')) return true;
+    return false;
+  }
+  return false;
+}
+function applyAvatarOrigin(){
+  if(AVATAR && AVATAR.base){
+    const t = NB_TOWNS.find(x=>x.n===AVATAR.base);
+    if(t){ nbUser = {lat:t.lat, lng:t.lng, label:AVATAR.base}; return true; }
+  }
+  return false;
+}
+function updatePersonalizeBar(){
+  const el = document.getElementById('nbPersonalize'); if(!el) return;
+  const has = AVATAR && ((AVATAR.interests && AVATAR.interests.length) || AVATAR.base || AVATAR.party);
+  if(has){
+    const parts = [];
+    if(AVATAR.base) parts.push(AVATAR.base);
+    (AVATAR.interests||[]).forEach(i=>parts.push(NB_ILABEL[i]||i));
+    el.innerHTML = `<span class="nb-pz-on">✨ For you</span><span class="nb-pz-sum">${parts.join(' · ')}</span><span class="nb-pz-edit">Edit</span>`;
+    el.classList.add('on');
+  } else {
+    el.innerHTML = '✨ Personalize your feed';
+    el.classList.remove('on');
+  }
+}
+let _avDraft = {base:null, party:null, interests:[]};
+function openAvatar(){
+  _avDraft = AVATAR ? {base:AVATAR.base||null, party:AVATAR.party||null, interests:[...(AVATAR.interests||[])]} : {base:null, party:null, interests:[]};
+  renderAvatarForm(); openModal('avatar');
+}
+function renderAvatarForm(){
+  const towns = NB_TOWNS.map(t=>`<option value="${t.n}" ${_avDraft.base===t.n?'selected':''}>${t.n}</option>`).join('');
+  const parties = NB_PARTIES.map(([k,l])=>`<div class="av-chip ${_avDraft.party===k?'active':''}" onclick="avParty('${k}')">${l}</div>`).join('');
+  const ints = NB_INTERESTS.map(([k,l])=>`<div class="av-chip ${_avDraft.interests.includes(k)?'active':''}" onclick="avInt('${k}')">${l}</div>`).join('');
+  document.getElementById('avatarBody').innerHTML =
+    `<div class="av-q">📍 Where are you staying?</div>
+     <select class="av-select" onchange="avBase(this.value)"><option value="">Anywhere on the Cape</option>${towns}</select>
+     <div class="av-q">👥 Who's with you?</div><div class="av-chips">${parties}</div>
+     <div class="av-q">✨ What are you into?</div><div class="av-chips">${ints}</div>`;
+}
+function avBase(v){ _avDraft.base = v || null; }
+function avParty(k){ _avDraft.party = (_avDraft.party===k ? null : k); renderAvatarForm(); }
+function avInt(k){ const i=_avDraft.interests.indexOf(k); if(i>=0) _avDraft.interests.splice(i,1); else _avDraft.interests.push(k); renderAvatarForm(); }
+function saveAvatar(){
+  AVATAR = {base:_avDraft.base||null, party:_avDraft.party||null, interests:_avDraft.interests};
+  localStorage.setItem('tcc_avatar', JSON.stringify(AVATAR));
+  closeModal('avatar'); updatePersonalizeBar(); applyAvatarOrigin();
+  document.getElementById('iosContent').scrollTop = 0; nbStart();
+  if(window.gtag) gtag('event','personalize_save',{interests:(AVATAR.interests||[]).join(',')});
+}
+function clearAvatar(){
+  AVATAR = null; localStorage.removeItem('tcc_avatar');
+  closeModal('avatar'); updatePersonalizeBar();
+  document.getElementById('iosContent').scrollTop = 0; nbStart();
+}
+
 function nbEsc(s){ return String(s==null?'':s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
 function nbMiLabel(mi){ if(mi<0.4) return "Right here"; if(mi<10) return mi.toFixed(1)+" mi"; return Math.round(mi)+" mi"; }
 function nbAway(mi){ return mi<0.4 ? "Right here" : nbMiLabel(mi)+" away"; }
@@ -1382,12 +1488,16 @@ function nbBuildSequence(){
   eats.forEach(r=>{ if(r.lat&&r.lng) items.push({type:"food",town:r.town,lat:r.lat,lng:r.lng,data:r}); });
   beaches.forEach(b=>{ if(b.lat&&b.lng) items.push({type:"beach",town:b.town,lat:b.lat,lng:b.lng,data:b}); });
   events.forEach(e=>{ if(e.lat&&e.lng) items.push({type:"event",town:e.town,lat:e.lat,lng:e.lng,data:e}); });
-  items.forEach(it=>it.mi=distanceMiles(nbUser.lat,nbUser.lng,it.lat,it.lng));
+  items.forEach(it=>{ it.mi=distanceMiles(nbUser.lat,nbUser.lng,it.lat,it.lng); it.forYou=avatarMatch(it); });
   items.sort((a,b)=>a.mi-b.mi);
   const groups=[]; let cur=null;
   for(const it of items){
     if(!cur||cur.town!==it.town){ cur={town:it.town,mi:it.mi,food:[],live:[]}; groups.push(cur); }
     (it.type==="food"?cur.food:cur.live).push(it);
+  }
+  // within each town, float "for you" matches to the front (keeps town-by-town, surfaces relevance)
+  if(AVATAR && AVATAR.interests && AVATAR.interests.length){
+    groups.forEach(g=>{ g.food.sort((a,b)=>(b.forYou?1:0)-(a.forYou?1:0)); g.live.sort((a,b)=>(b.forYou?1:0)-(a.forYou?1:0)); });
   }
   const seq=[];
   groups.forEach((g,gi)=>{
@@ -1430,6 +1540,7 @@ function nbRenderItem(it){
       <div class="main"><div class="name">${nbEsc(b.name)}</div><div class="sub">${nbEsc(b.town)} · ${nbAway(it.mi)}</div></div>
       <div class="nb-kind beach">Beach</div></div>
       <div class="nb-body">
+        ${it.forYou?'<div class="nb-foryou">✨ Picked for you</div>':""}
         <div class="nb-stats">
           <span class="nb-statpill ${b.status}">${LBL[b.status]||b.status}</span>
           <div class="nb-stat"><b>Water</b>${b.water_temp}°F</div>
@@ -1452,6 +1563,7 @@ function nbRenderItem(it){
         <div class="main"><div class="name">${nbEsc(e.title)}</div><div class="sub">${nbEsc(loc)}</div></div>
         <div class="nb-kind event">${nbEsc(e.tag)}</div></div>
       <div class="nb-body">
+        ${it.forYou?'<div class="nb-foryou">✨ Picked for you</div>':""}
         ${e.info?`<p>${nbEsc(e.info)}</p>`:""}
         <div class="nb-tags"><span class="nb-tag">🕒 ${nbEsc(e.time)}</span>${e.price?`<span class="nb-tag">${nbEsc(e.price)}</span>`:""}</div>
       </div></div>`;
@@ -1472,6 +1584,7 @@ function nbRenderItem(it){
       <div class="main"><div class="name">${nbEsc(r.name)}</div><div class="sub">${nbEsc(r.town)} · ${nbEsc(r.cuisine)} · ⭐ ${r.rating}${reviews}</div></div>
       <div class="nb-kind food">Eat</div></div>
     <div class="nb-body">
+      ${it.forYou?'<div class="nb-foryou">✨ Picked for you</div>':""}
       <p>${nbEsc(r.desc)}</p>
       ${r.deal?`<div class="nb-deal">🔥 ${nbEsc(r.deal)}</div>`:""}
       ${tags.length?`<div class="nb-tags">${tags.map(t=>`<span class="nb-tag">${nbEsc(t)}</span>`).join("")}</div>`:""}
@@ -1508,7 +1621,8 @@ function nbStart(){
 
 function renderNearby(){
   if(nbBuilt) return;                 // build once; content persists across tab switches
-  if(!nbUser) nbUser = { lat: DEFAULT_LOC.lat, lng: DEFAULT_LOC.lng, label: nbNearestTown(DEFAULT_LOC) };
+  if(!applyAvatarOrigin() && !nbUser) nbUser = { lat: DEFAULT_LOC.lat, lng: DEFAULT_LOC.lng, label: nbNearestTown(DEFAULT_LOC) };
+  updatePersonalizeBar();
   nbStart();
   nbBuilt = nbSeq.length > 0;         // if data wasn't ready yet, retry on next open
 }
