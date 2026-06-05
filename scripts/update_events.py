@@ -87,6 +87,9 @@ VENUES = [
     ("Provincetown Events","Provincetown","jsonld","https://ptownie.com/provincetown-calendar/", (42.0587, -70.1787)),
     ("Pier 37 Boathouse",  "Falmouth",  "jsonld", "https://www.falmouthpier37.com/events/category/live-music/", (41.5510, -70.6140)),
     ("Sundancers",         "West Dennis","ics",   "https://sundancerscapecod.com/entertainment/", (41.6620, -70.1700)),
+    # Squarespace event collections (clean JSON via ?format=json)
+    ("Devil's Purse",      "South Dennis","squarespace","https://www.devilspurse.com/events", (41.6900, -70.1500)),
+    ("Cape Cod Winery",    "Falmouth",  "squarespace","https://www.capecodwinery.com/events", (41.5760, -70.5530)),
 ]
 
 # ---- Category / tag inference -----------------------------------------------
@@ -363,6 +366,35 @@ def parse_ics(name: str, town: str, url: str, coord) -> list[dict]:
                     "town": town, "venue": name, "price": "", "url": url, "img": None})
     return out
 
+def parse_squarespace(name: str, town: str, url: str, coord) -> list[dict]:
+    """Squarespace event collections expose clean JSON at <url>?format=json."""
+    out = []
+    try:
+        r = requests.get(url + "?format=json",
+                         headers={**UA, "Accept": "application/json"}, timeout=TIMEOUT)
+        j = r.json()
+    except Exception:
+        return out
+    host = url.split("/")[0] + "//" + url.split("/")[2]
+    for it in (j.get("items") or []):
+        sd = it.get("startDate") or (it.get("structuredContent") or {}).get("startDate")
+        if not sd:
+            continue
+        try:
+            dt = datetime.fromtimestamp(int(sd) / 1000, tz=timezone.utc)
+        except Exception:
+            continue
+        title = html.unescape((it.get("title") or "").strip())
+        if not title:
+            continue
+        u = it.get("fullUrl") or it.get("url") or ""
+        if u.startswith("/"):
+            u = host + u
+        out.append({"title": title, "start": dt,
+                    "has_time": not (dt.hour == 0 and dt.minute == 0),
+                    "town": town, "venue": name, "price": "", "url": u, "img": None})
+    return out
+
 def parse_custom_ptown(town: str, url: str, *_a) -> list[dict]:
     """Provincetown Chamber: events link to /events/<slug>; dates in nearby text."""
     out = []
@@ -431,6 +463,8 @@ def main() -> None:
                 evs = parse_jsonld(name, town, url, coord)
             elif kind == "ics":
                 evs = parse_ics(name, town, url, coord)
+            elif kind == "squarespace":
+                evs = parse_squarespace(name, town, url, coord)
             elif kind == "custom_ptown":
                 evs = parse_custom_ptown(town, url)
             elif kind == "custom_canal":
