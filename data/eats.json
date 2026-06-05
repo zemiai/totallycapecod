@@ -2,7 +2,7 @@
   "version": "1.0",
   "updated_at": "2026-06-05T12:08:24Z",
   "enriched": true,
-  "count": 83,
+  "count": 84,
   "eats": [
     {
       "id": "the-lobster-pot",
@@ -1922,6 +1922,30 @@
       "rating_source": "google",
       "enriched_at": "2026-06-05T12:08:24Z",
       "deal": "Wed & Sat Prime Rib Special · weekday lunch specials"
+    },
+    {
+      "id": "the-brickhouse-restaurant",
+      "name": "The Brickhouse Restaurant",
+      "town": "Eastham",
+      "lat": 41.8311,
+      "lng": -69.974,
+      "cuisine": "Seafood & Steak",
+      "price": "$$$",
+      "rating": 4.5,
+      "tags": [
+        "seafood",
+        "fine",
+        "bar"
+      ],
+      "desc": "Fresh local seafood, Caribbean-inspired plates & hand-cut steaks on Route 6. Open 7 days.",
+      "place_id": null,
+      "photo": null,
+      "reviews": null,
+      "website": "https://www.brickhouseeastham.com",
+      "open_now": null,
+      "rating_source": "editorial",
+      "enriched_at": null,
+      "deal": "Early Bird daily · Wed Prime Rib Night · Half-Off App Night"
     }
   ]
 }
