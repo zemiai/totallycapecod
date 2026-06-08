@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-05T12:08:24Z",
+  "updated_at": "2026-06-08T14:16:02Z",
   "enriched": true,
   "count": 84,
   "eats": [
@@ -18,14 +18,14 @@
         "lobster",
         "fine"
       ],
-      "desc": "Iconic waterfront since 1979 — lobster rolls, clam chowder, harbor views.",
+      "desc": "Iconic waterfront since 1979 \u2014 lobster rolls, clam chowder, harbor views.",
       "place_id": "ChIJodQ3d3yn_IkRaL3U202uvJ0",
       "photo": "data/eats-photos/the-lobster-pot.jpg",
-      "reviews": 8846,
+      "reviews": 8924,
       "website": "http://www.ptownlobsterpot.com/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=2343733837063219921",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:06:47Z",
+      "enriched_at": "2026-06-08T14:15:05Z",
       "deal": null
     },
     {
@@ -48,7 +48,7 @@
       "website": "http://mewsptown.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:06:48Z",
+      "enriched_at": "2026-06-08T14:15:06Z",
       "deal": null
     },
     {
@@ -70,8 +70,8 @@
       "website": "http://theredinn.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:06:49Z",
-      "deal": "Raw Bar Happy Hour · Fri–Sun 2–4:30pm"
+      "enriched_at": "2026-06-08T14:15:07Z",
+      "deal": "Raw Bar Happy Hour \u00b7 Fri\u2013Sun 2\u20134:30pm"
     },
     {
       "id": "the-canteen",
@@ -87,14 +87,14 @@
         "clam",
         "casual"
       ],
-      "desc": "Beachfront counter — go for the lobster roll and frozen rosé.",
+      "desc": "Beachfront counter \u2014 go for the lobster roll and frozen ros\u00e9.",
       "place_id": "ChIJy0gAcH6n_IkR2t0LvOv8TYE",
       "photo": "data/eats-photos/the-canteen.jpg",
-      "reviews": 2338,
+      "reviews": 2340,
       "website": "http://www.thecanteenptown.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:06:50Z",
+      "enriched_at": "2026-06-08T14:15:07Z",
       "deal": null
     },
     {
@@ -113,11 +113,11 @@
       "desc": "Late-night Commercial Street slice. The after-bar ritual.",
       "place_id": "ChIJESmjOn6n_IkRqfSl9ckjvJI",
       "photo": "data/eats-photos/spiritus-pizza.jpg",
-      "reviews": 1144,
+      "reviews": 1146,
       "website": "http://spirituspizza.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:06:52Z",
+      "enriched_at": "2026-06-08T14:15:08Z",
       "deal": null
     },
     {
@@ -132,14 +132,14 @@
       "tags": [
         "fine"
       ],
-      "desc": "Cozy taverna — Mediterranean small plates and a great wine list.",
+      "desc": "Cozy taverna \u2014 Mediterranean small plates and a great wine list.",
       "place_id": "ChIJaV1qxHqn_IkRpzPMI4_3yY0",
       "photo": "data/eats-photos/strangers-saints.jpg",
       "reviews": 441,
       "website": "https://strangersandsaints.com/",
       "open_now": null,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:06:53Z",
+      "enriched_at": "2026-06-08T14:15:09Z",
       "deal": null
     },
     {
@@ -162,7 +162,7 @@
       "website": "http://www.farlandprovisions.com/",
       "open_now": true,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:06:54Z",
+      "enriched_at": "2026-06-08T14:15:09Z",
       "deal": null
     },
     {
@@ -181,11 +181,11 @@
       "desc": "Wine flights and live music under the trees. Food trucks on site.",
       "place_id": "ChIJ8RlHtHWg_IkRBxpMWI8Z82w",
       "photo": "data/eats-photos/truro-vineyards.jpg",
-      "reviews": 567,
+      "reviews": 570,
       "website": "http://www.trurovineyardsofcapecod.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:06:55Z",
+      "enriched_at": "2026-06-08T14:15:10Z",
       "deal": null
     },
     {
@@ -208,7 +208,7 @@
       "website": "https://www.blackfishtruro.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:06:56Z",
+      "enriched_at": "2026-06-08T14:15:11Z",
       "deal": null
     },
     {
@@ -224,14 +224,14 @@
         "italian",
         "fine"
       ],
-      "desc": "Rustic, romantic North Truro spot — handmade pasta, tiny room.",
+      "desc": "Rustic, romantic North Truro spot \u2014 handmade pasta, tiny room.",
       "place_id": "ChIJqzMF3Xyg_IkRiIX2nTn3rW4",
       "photo": "data/eats-photos/terra-luna.jpg",
       "reviews": 150,
       "website": null,
       "open_now": null,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:06:57Z",
+      "enriched_at": "2026-06-08T14:15:12Z",
       "deal": null
     },
     {
@@ -250,11 +250,11 @@
       "desc": "Family Italian-American with a raw bar. Reliable Route 6 classic.",
       "place_id": "ChIJASNnJmKg_IkRhAUJwk7L1jU",
       "photo": "data/eats-photos/montanos.jpg",
-      "reviews": 974,
+      "reviews": 975,
       "website": "http://www.montanos.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:06:59Z",
+      "enriched_at": "2026-06-08T14:15:12Z",
       "deal": null
     },
     {
@@ -273,11 +273,11 @@
       "desc": "Raw bar and sushi in a building topped by a boat. Oysters galore.",
       "place_id": "ChIJz9aI9Ehn-4kR5tpTPtkA_6g",
       "photo": "data/eats-photos/macs-shack.jpg",
-      "reviews": 1225,
+      "reviews": 1228,
       "website": "http://www.macsseafood.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:00Z",
+      "enriched_at": "2026-06-08T14:15:13Z",
       "deal": "Thursdays: All-You-Can-Eat Fish & Chips"
     },
     {
@@ -297,12 +297,12 @@
       "desc": "Order at the counter, eat on the harbor as the fleet comes in.",
       "place_id": "ChIJ7xYExUZn-4kRjghulFODehE",
       "photo": "data/eats-photos/macs-seafood.jpg",
-      "reviews": 924,
+      "reviews": 925,
       "website": "http://www.macsseafood.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:01Z",
-      "deal": "Thu: All-You-Can-Eat Fish & Chips · Daily Happy Hour"
+      "enriched_at": "2026-06-08T14:15:14Z",
+      "deal": "Thu: All-You-Can-Eat Fish & Chips \u00b7 Daily Happy Hour"
     },
     {
       "id": "pb-boulangerie-bistro",
@@ -324,7 +324,7 @@
       "website": "https://pbboulangeriebistro.com/",
       "open_now": null,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:02Z",
+      "enriched_at": "2026-06-08T14:15:14Z",
       "deal": null
     },
     {
@@ -340,14 +340,14 @@
         "seafood",
         "casual"
       ],
-      "desc": "Locals' joint over Duck Creek — oysters they pull themselves.",
+      "desc": "Locals' joint over Duck Creek \u2014 oysters they pull themselves.",
       "place_id": "ChIJ8WaihEZn-4kRmrPqBtMsAuw",
       "photo": "data/eats-photos/the-bookstore-restaurant.jpg",
       "reviews": 1265,
       "website": "http://www.wellfleetoyster.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:03Z",
+      "enriched_at": "2026-06-08T14:15:15Z",
       "deal": "Happy Hour & Small Plates daily"
     },
     {
@@ -367,11 +367,11 @@
       "desc": "Beach bar on the dunes at Cahoon Hollow. Live bands + raw bar.",
       "place_id": "ChIJsTPAsDBh-4kRTRNYmi0VutM",
       "photo": "data/eats-photos/the-beachcomber.jpg",
-      "reviews": 1449,
+      "reviews": 1451,
       "website": "http://www.thebeachcomber.com/",
       "open_now": null,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:04Z",
+      "enriched_at": "2026-06-08T14:15:16Z",
       "deal": null
     },
     {
@@ -393,7 +393,7 @@
       "website": "http://www.winslowstavern.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:05Z",
+      "enriched_at": "2026-06-08T14:15:16Z",
       "deal": null
     },
     {
@@ -413,11 +413,11 @@
       "desc": "The standard for lobster rolls. Mini golf, ice cream, epic onion rings.",
       "place_id": "ChIJF_rbJ5Ro-4kR42xAbKaKQf8",
       "photo": "data/eats-photos/arnolds-lobster-clam-bar.jpg",
-      "reviews": 2119,
+      "reviews": 2120,
       "website": "http://www.arnoldsrestaurant.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:07Z",
+      "enriched_at": "2026-06-08T14:15:17Z",
       "deal": null
     },
     {
@@ -441,7 +441,7 @@
       "website": "http://www.friendlyfishermaneastham.com/",
       "open_now": null,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:08Z",
+      "enriched_at": "2026-06-08T14:15:18Z",
       "deal": null
     },
     {
@@ -458,14 +458,14 @@
         "bakery",
         "coffee"
       ],
-      "desc": "A Cape Sunday tradition — hand-cut donuts and a buzzing counter.",
+      "desc": "A Cape Sunday tradition \u2014 hand-cut donuts and a buzzing counter.",
       "place_id": "ChIJU8uagpto-4kR9tJNdnHbz3Y",
       "photo": "data/eats-photos/hole-in-one-donuts.jpg",
       "reviews": 679,
       "website": "https://theholecapecod.com/eastham/?utm_source=gmb_eastham&utm_medium=organic&utm_campaign=listing",
       "open_now": true,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:09Z",
+      "enriched_at": "2026-06-08T14:15:18Z",
       "deal": null
     },
     {
@@ -480,14 +480,14 @@
       "tags": [
         "fine"
       ],
-      "desc": "The Cape's only South African kitchen — bobotie, peri-peri, big flavor.",
+      "desc": "The Cape's only South African kitchen \u2014 bobotie, peri-peri, big flavor.",
       "place_id": "ChIJ0XZEu5to-4kRWcoCI3k8rIg",
       "photo": "data/eats-photos/karoo-restaurant.jpg",
       "reviews": 285,
       "website": null,
       "open_now": null,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:10Z",
+      "enriched_at": "2026-06-08T14:15:19Z",
       "deal": null
     },
     {
@@ -511,7 +511,7 @@
       "website": "https://www.fairwaycapecod.com/?utm_source=gmb&utm_medium=organic&utm_campaign=listing",
       "open_now": true,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:12Z",
+      "enriched_at": "2026-06-08T14:15:20Z",
       "deal": "Weekly breakfast & dinner specials"
     },
     {
@@ -533,9 +533,9 @@
       "photo": "data/eats-photos/lobster-claw.jpg",
       "reviews": 264,
       "website": "http://www.nausetfishandlobsterpool.com/",
-      "open_now": false,
+      "open_now": true,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:13Z",
+      "enriched_at": "2026-06-08T14:15:20Z",
       "deal": null
     },
     {
@@ -551,14 +551,14 @@
         "casual",
         "icecream"
       ],
-      "desc": "Modern clam-shack — smash burgers, lobster rolls, frappes.",
+      "desc": "Modern clam-shack \u2014 smash burgers, lobster rolls, frappes.",
       "place_id": "ChIJlTr32Wtp-4kRCvibwRfSGS0",
       "photo": "data/eats-photos/the-knack.jpg",
       "reviews": 1490,
       "website": "https://www.theknackcapecod.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:14Z",
+      "enriched_at": "2026-06-08T14:15:21Z",
       "deal": null
     },
     {
@@ -578,11 +578,11 @@
       "desc": "Coffee, cinnamon buns, and house chocolates. Orleans' morning HQ.",
       "place_id": "ChIJK9c7g3xp-4kRDsUKuAzChYk",
       "photo": "data/eats-photos/hot-chocolate-sparrow.jpg",
-      "reviews": 1776,
+      "reviews": 1778,
       "website": "http://www.hotchocolatesparrow.com/",
       "open_now": true,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:15Z",
+      "enriched_at": "2026-06-08T14:15:22Z",
       "deal": null
     },
     {
@@ -598,14 +598,14 @@
         "bar",
         "casual"
       ],
-      "desc": "Quintessential Cape tavern since 1969 — chowder, burgers, ceiling signs.",
+      "desc": "Quintessential Cape tavern since 1969 \u2014 chowder, burgers, ceiling signs.",
       "place_id": "ChIJ36GSqHxp-4kR718dguVV9VA",
       "photo": "data/eats-photos/land-ho.jpg",
-      "reviews": 1193,
+      "reviews": 1194,
       "website": "http://www.land-ho.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:16Z",
+      "enriched_at": "2026-06-08T14:15:23Z",
       "deal": null
     },
     {
@@ -628,7 +628,7 @@
       "website": "http://nausetbeachclub.com/",
       "open_now": null,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:18Z",
+      "enriched_at": "2026-06-08T14:15:23Z",
       "deal": null
     },
     {
@@ -644,14 +644,14 @@
         "fine",
         "seafood"
       ],
-      "desc": "Downtown bistro — wood-grilled fish and a lively bar scene.",
+      "desc": "Downtown bistro \u2014 wood-grilled fish and a lively bar scene.",
       "place_id": "ChIJjaBSXXtp-4kRuVTVS_9LV4o",
       "photo": "data/eats-photos/mahoneys-atlantic-bar-grill.jpg",
-      "reviews": 455,
+      "reviews": 454,
       "website": "http://mahoneysatlantic.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:19Z",
+      "enriched_at": "2026-06-08T14:15:24Z",
       "deal": null
     },
     {
@@ -667,14 +667,14 @@
         "seafood",
         "fine"
       ],
-      "desc": "Tiny, beloved, no-reservations — some of the best seafood on the Cape.",
+      "desc": "Tiny, beloved, no-reservations \u2014 some of the best seafood on the Cape.",
       "place_id": "ChIJQTh4CspB-4kRBKxY6fqmNyA",
       "photo": "data/eats-photos/brewster-fish-house.jpg",
-      "reviews": 485,
+      "reviews": 486,
       "website": "http://www.brewsterfishhousecapecod.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:20Z",
+      "enriched_at": "2026-06-08T14:15:25Z",
       "deal": null
     },
     {
@@ -694,11 +694,11 @@
       "desc": "Roadside classic on 6A. Fried clams and soft serve since 1948.",
       "place_id": "ChIJUWftWw1q-4kRO3im9FLixlQ",
       "photo": "data/eats-photos/cobies-clam-shack.jpg",
-      "reviews": 891,
+      "reviews": 893,
       "website": "https://cobies.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:21Z",
+      "enriched_at": "2026-06-08T14:15:25Z",
       "deal": "Daily specials on the board"
     },
     {
@@ -715,15 +715,15 @@
         "clam",
         "casual"
       ],
-      "desc": "Order-at-the-window family spot — fried seafood and lobster dinners.",
+      "desc": "Order-at-the-window family spot \u2014 fried seafood and lobster dinners.",
       "place_id": "ChIJ1bgKN9pB-4kR91k6aRxf7hw",
       "photo": "data/eats-photos/jts-seafood.jpg",
-      "reviews": 882,
+      "reviews": 883,
       "website": "http://www.jt-seafood.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:22Z",
-      "deal": "Cash-discount pricing · Kids specials"
+      "enriched_at": "2026-06-08T14:15:26Z",
+      "deal": "Cash-discount pricing \u00b7 Kids specials"
     },
     {
       "id": "chillingsworth",
@@ -744,7 +744,7 @@
       "website": "http://www.chillingsworth.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:23Z",
+      "enriched_at": "2026-06-08T14:15:27Z",
       "deal": null
     },
     {
@@ -763,11 +763,11 @@
       "desc": "Craft roaster with a sunlit cafe. Best pour-over on the Mid-Cape.",
       "place_id": "ChIJi4mIeNBB-4kRDjHIj-LlGfI",
       "photo": "data/eats-photos/snowy-owl-coffee-roasters.jpg",
-      "reviews": 941,
+      "reviews": 942,
       "website": "https://socoffee.co/pages/coffee-house-in-brewster?utm_source=gmb_brewster&utm_medium=organic&utm_campaign=listing",
       "open_now": true,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:25Z",
+      "enriched_at": "2026-06-08T14:15:27Z",
       "deal": null
     },
     {
@@ -790,7 +790,7 @@
       "website": "http://www.capeseagrille.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:26Z",
+      "enriched_at": "2026-06-08T14:15:28Z",
       "deal": null
     },
     {
@@ -806,14 +806,14 @@
         "seafood",
         "bar"
       ],
-      "desc": "Harbor-view deck — sunset cocktails and twin lobsters.",
+      "desc": "Harbor-view deck \u2014 sunset cocktails and twin lobsters.",
       "place_id": "ChIJrYMydbU_-4kRVU3vQ6IURfk",
       "photo": "data/eats-photos/brax-landing.jpg",
-      "reviews": 2295,
+      "reviews": 2298,
       "website": "http://www.braxrestaurant.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:27Z",
+      "enriched_at": "2026-06-08T14:15:29Z",
       "deal": null
     },
     {
@@ -836,7 +836,7 @@
       "website": "http://www.bucastuscanroadhouse.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:28Z",
+      "enriched_at": "2026-06-08T14:15:29Z",
       "deal": null
     },
     {
@@ -859,7 +859,7 @@
       "website": null,
       "open_now": null,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:29Z",
+      "enriched_at": "2026-06-08T14:15:30Z",
       "deal": null
     },
     {
@@ -875,14 +875,14 @@
         "seafood",
         "fine"
       ],
-      "desc": "Tucked off Main Street — bouillabaisse and oysters in a buzzy room.",
+      "desc": "Tucked off Main Street \u2014 bouillabaisse and oysters in a buzzy room.",
       "place_id": "ChIJyRMiwJ8U-4kR1Q2QAT9XbbE",
       "photo": "data/eats-photos/the-impudent-oyster.jpg",
       "reviews": 788,
       "website": "http://theimpudentoyster.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:30Z",
+      "enriched_at": "2026-06-08T14:15:31Z",
       "deal": null
     },
     {
@@ -902,11 +902,11 @@
       "desc": "Lobster rolls on the pier, watching seals and the fishing fleet.",
       "place_id": "ChIJESlJs1kT-4kRp-7l4_nJEpo",
       "photo": "data/eats-photos/chatham-pier-fish-market.jpg",
-      "reviews": 2368,
+      "reviews": 2372,
       "website": "https://www.chathampierfishmkt.com/",
-      "open_now": false,
+      "open_now": true,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:31Z",
+      "enriched_at": "2026-06-08T14:15:31Z",
       "deal": null
     },
     {
@@ -926,11 +926,11 @@
       "desc": "Townie tavern and raw bar. Loud, fun, and always packed.",
       "place_id": "ChIJXQgSsJ8U-4kRwgW48kJcLUc",
       "photo": "data/eats-photos/the-chatham-squire.jpg",
-      "reviews": 1837,
+      "reviews": 1841,
       "website": "http://www.thesquire.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:32Z",
+      "enriched_at": "2026-06-08T14:15:32Z",
       "deal": null
     },
     {
@@ -952,7 +952,7 @@
       "website": "https://www.delmarbistro.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:34Z",
+      "enriched_at": "2026-06-08T14:15:33Z",
       "deal": null
     },
     {
@@ -968,19 +968,19 @@
         "breakfast",
         "brunch"
       ],
-      "desc": "Breakfast on the airfield — watch small planes over your hash.",
+      "desc": "Breakfast on the airfield \u2014 watch small planes over your hash.",
       "place_id": "ChIJITYtwcIU-4kRBV-9WAl6ohs",
       "photo": "data/eats-photos/hangar-b-eatery.jpg",
       "reviews": 545,
       "website": "http://www.hangarbchatham.com/",
       "open_now": true,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:35Z",
+      "enriched_at": "2026-06-08T14:15:33Z",
       "deal": null
     },
     {
       "id": "sesuit-harbor-cafe",
-      "name": "Sesuit Harbor Café",
+      "name": "Sesuit Harbor Caf\u00e9",
       "town": "East Dennis",
       "lat": 41.7561,
       "lng": -70.1542,
@@ -992,14 +992,14 @@
         "lobster",
         "clam"
       ],
-      "desc": "BYOB sleeper hit — picnic tables right on the harbor. Cash only.",
+      "desc": "BYOB sleeper hit \u2014 picnic tables right on the harbor. Cash only.",
       "place_id": "ChIJXcNTwkhH-4kR2dPePD7qdbk",
       "photo": "data/eats-photos/sesuit-harbor-cafe.jpg",
-      "reviews": 2492,
+      "reviews": 2499,
       "website": "http://www.sesuit-harbor-cafe.com/",
       "open_now": true,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:36Z",
+      "enriched_at": "2026-06-08T14:15:34Z",
       "deal": null
     },
     {
@@ -1016,14 +1016,14 @@
         "breakfast",
         "brunch"
       ],
-      "desc": "Water-view booths — Sunday brunch and big seafood plates.",
+      "desc": "Water-view booths \u2014 Sunday brunch and big seafood plates.",
       "place_id": "ChIJRUdBwFtH-4kR3DPpwanHNVI",
       "photo": "data/eats-photos/marshside.jpg",
-      "reviews": 1201,
+      "reviews": 1202,
       "website": "http://www.themarshside.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:37Z",
+      "enriched_at": "2026-06-08T14:15:34Z",
       "deal": null
     },
     {
@@ -1045,7 +1045,7 @@
       "website": "https://www.sundaeschool.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:38Z",
+      "enriched_at": "2026-06-08T14:15:35Z",
       "deal": null
     },
     {
@@ -1065,11 +1065,11 @@
       "desc": "Fried-clam shack with soft serve. A 6A summer rite of passage.",
       "place_id": "ChIJnd9admA4-4kRjHekQDYEgGA",
       "photo": "data/eats-photos/captain-frostys.jpg",
-      "reviews": 938,
+      "reviews": 940,
       "website": "http://www.captainfrosty.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:39Z",
+      "enriched_at": "2026-06-08T14:15:36Z",
       "deal": null
     },
     {
@@ -1087,11 +1087,11 @@
       "desc": "Pre-theater dining across from the Cape Playhouse. Warm and reliable.",
       "place_id": "ChIJmRGrxIA4-4kRpTy_Ms-Jc0c",
       "photo": "data/eats-photos/scargo-cafe.jpg",
-      "reviews": 1360,
+      "reviews": 1363,
       "website": "http://www.scargocafe.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:41Z",
+      "enriched_at": "2026-06-08T14:15:37Z",
       "deal": null
     },
     {
@@ -1108,14 +1108,14 @@
         "clam",
         "icecream"
       ],
-      "desc": "Since 1953 — whole-belly clams and onion rings by the bucket.",
+      "desc": "Since 1953 \u2014 whole-belly clams and onion rings by the bucket.",
       "place_id": "ChIJXQSoj1I5-4kRtvuo6aNpePw",
       "photo": "data/eats-photos/kream-n-kone.jpg",
-      "reviews": 2087,
+      "reviews": 2092,
       "website": "https://www.kreamnkone.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:42Z",
+      "enriched_at": "2026-06-08T14:15:37Z",
       "deal": null
     },
     {
@@ -1135,11 +1135,11 @@
       "desc": "Award-winning clam chowder. Marsh-view pub the locals swear by.",
       "place_id": "ChIJSYT6QGw6-4kRwrG7_q_Irko",
       "photo": "data/eats-photos/captain-parkers-pub.jpg",
-      "reviews": 3679,
+      "reviews": 3680,
       "website": "https://www.captainparkers.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:43Z",
+      "enriched_at": "2026-06-08T14:15:38Z",
       "deal": "Specials Fri/Sat after 4pm + all day Sun"
     },
     {
@@ -1155,14 +1155,14 @@
         "breakfast",
         "brunch"
       ],
-      "desc": "Gingerbread Victorian — English tea, scones, and full breakfast.",
+      "desc": "Gingerbread Victorian \u2014 English tea, scones, and full breakfast.",
       "place_id": "ChIJm-ji0LY3-4kRgqfBrplm8uQ",
       "photo": "data/eats-photos/the-optimist-cafe.jpg",
-      "reviews": 305,
+      "reviews": 307,
       "website": "https://lighthousekeeperspantry.com/",
       "open_now": true,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:44Z",
+      "enriched_at": "2026-06-08T14:15:38Z",
       "deal": null
     },
     {
@@ -1180,11 +1180,11 @@
       "desc": "Hidden-gem sushi behind a garden gate. Freshest fish on the Cape.",
       "place_id": "ChIJDTUWB2U3-4kRi6wMdBwJq7E",
       "photo": "data/eats-photos/inaho.jpg",
-      "reviews": 377,
+      "reviews": 378,
       "website": "http://www.inaho-sushi.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:45Z",
+      "enriched_at": "2026-06-08T14:15:39Z",
       "deal": null
     },
     {
@@ -1207,7 +1207,7 @@
       "website": null,
       "open_now": null,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:46Z",
+      "enriched_at": "2026-06-08T14:15:40Z",
       "deal": null
     },
     {
@@ -1227,11 +1227,11 @@
       "desc": "Sea-view deck over Nantucket Sound. Chowder and big breakfasts.",
       "place_id": "ChIJL0XVN0M6-4kR7Bu3nfVP5tA",
       "photo": "data/eats-photos/skipper-chowder-house.jpg",
-      "reviews": 3805,
+      "reviews": 3815,
       "website": "http://skipperrestaurant.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:48Z",
+      "enriched_at": "2026-06-08T14:15:41Z",
       "deal": null
     },
     {
@@ -1246,14 +1246,14 @@
       "tags": [
         "icecream"
       ],
-      "desc": "Since 1934 — the Cape's most legendary scoop. Get the peanut butter cup.",
+      "desc": "Since 1934 \u2014 the Cape's most legendary scoop. Get the peanut butter cup.",
       "place_id": "ChIJH7OPbCUy-4kR4xtlrE38Ps0",
       "photo": "data/eats-photos/four-seas-ice-cream.jpg",
-      "reviews": 822,
+      "reviews": 823,
       "website": "http://www.fourseasicecream.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:49Z",
+      "enriched_at": "2026-06-08T14:15:41Z",
       "deal": null
     },
     {
@@ -1276,7 +1276,7 @@
       "website": null,
       "open_now": null,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:50Z",
+      "enriched_at": "2026-06-08T14:15:42Z",
       "deal": null
     },
     {
@@ -1299,7 +1299,7 @@
       "website": "http://nakedoyster.com/",
       "open_now": null,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:51Z",
+      "enriched_at": "2026-06-08T14:15:43Z",
       "deal": null
     },
     {
@@ -1319,11 +1319,11 @@
       "desc": "Artisan bakery by day, candle-lit bistro by night. Worth the detour.",
       "place_id": "ChIJYV6ymyAx-4kRosnJ85uliGg",
       "photo": "data/eats-photos/pain-davignon.jpg",
-      "reviews": 1324,
+      "reviews": 1325,
       "website": "http://www.paindavignon.com/",
       "open_now": true,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:52Z",
+      "enriched_at": "2026-06-08T14:15:43Z",
       "deal": null
     },
     {
@@ -1343,11 +1343,11 @@
       "desc": "Fried clams on a dock deck as the boats slide by. Summer-only.",
       "place_id": "ChIJ101rYPow-4kR0jA52E9LmgU",
       "photo": "data/eats-photos/baxters-boathouse.jpg",
-      "reviews": 1299,
+      "reviews": 1300,
       "website": "http://www.baxterscapecod.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:53Z",
+      "enriched_at": "2026-06-08T14:15:44Z",
       "deal": null
     },
     {
@@ -1363,14 +1363,14 @@
         "seafood",
         "bar"
       ],
-      "desc": "Marina sunset spot — frozen drinks and lobster over the harbor.",
+      "desc": "Marina sunset spot \u2014 frozen drinks and lobster over the harbor.",
       "place_id": "ChIJpa7OFG_X5IkRBqKlYp5W_to",
       "photo": "data/eats-photos/tugboats.jpg",
-      "reviews": 1341,
+      "reviews": 1345,
       "website": "https://www.tugboatscapecod.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:54Z",
+      "enriched_at": "2026-06-08T14:15:45Z",
       "deal": null
     },
     {
@@ -1386,14 +1386,14 @@
         "seafood",
         "bar"
       ],
-      "desc": "Across from the ferries — chowder, raw bar, easy harbor views.",
+      "desc": "Across from the ferries \u2014 chowder, raw bar, easy harbor views.",
       "place_id": "ChIJZbVzxPsw-4kR7HGC42e1Xbo",
       "photo": "data/eats-photos/the-black-cat-tavern.jpg",
-      "reviews": 2575,
+      "reviews": 2578,
       "website": "http://www.blackcattavern.com/?utm_source=googlemaps",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:56Z",
+      "enriched_at": "2026-06-08T14:15:45Z",
       "deal": null
     },
     {
@@ -1408,14 +1408,14 @@
       "tags": [
         "fine"
       ],
-      "desc": "Sleek village bistro — small plates and a buzzy bar crowd.",
+      "desc": "Sleek village bistro \u2014 small plates and a buzzy bar crowd.",
       "place_id": "ChIJ80_axYAy-4kR5ZFGO8OjN-Y",
       "photo": "data/eats-photos/five-bays-bistro.jpg",
       "reviews": 163,
       "website": "http://fivebaysbistro.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:58Z",
+      "enriched_at": "2026-06-08T14:15:46Z",
       "deal": null
     },
     {
@@ -1430,14 +1430,14 @@
       "tags": [
         "fine"
       ],
-      "desc": "Romantic 1790 house — refined New England plates and tasting menus.",
+      "desc": "Romantic 1790 house \u2014 refined New England plates and tasting menus.",
       "place_id": "ChIJUaKu1F7N5IkRA1-9zEI2EpI",
       "photo": null,
       "reviews": 2,
       "website": null,
       "open_now": null,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:58Z",
+      "enriched_at": "2026-06-08T14:15:47Z",
       "deal": null
     },
     {
@@ -1456,11 +1456,11 @@
       "desc": "Harborside dining with live piano. Sunset over Barnstable Harbor.",
       "place_id": "ChIJJbLuNuY2-4kRSYcxTtRdQfA",
       "photo": "data/eats-photos/mattakeese-wharf.jpg",
-      "reviews": 911,
+      "reviews": 912,
       "website": "http://www.mattakeese.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:07:59Z",
+      "enriched_at": "2026-06-08T14:15:47Z",
       "deal": null
     },
     {
@@ -1476,14 +1476,14 @@
         "casual",
         "bar"
       ],
-      "desc": "Village tavern in historic 6A — burgers, comfort food, and a patio.",
+      "desc": "Village tavern in historic 6A \u2014 burgers, comfort food, and a patio.",
       "place_id": "ChIJmyyNDWs3-4kR55XrBovJ_F0",
       "photo": "data/eats-photos/barnstable-restaurant-tavern.jpg",
       "reviews": 260,
       "website": "http://www.barnstabletuscancuisine.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:08:01Z",
+      "enriched_at": "2026-06-08T14:15:48Z",
       "deal": null
     },
     {
@@ -1498,14 +1498,14 @@
       "tags": [
         "fine"
       ],
-      "desc": "Mashpee Commons brasserie — escargot, steak frites, lively bar.",
+      "desc": "Mashpee Commons brasserie \u2014 escargot, steak frites, lively bar.",
       "place_id": "ChIJ2-jM1kTS5IkRZw3Nmpqs8Vs",
       "photo": "data/eats-photos/bleu.jpg",
       "reviews": 695,
       "website": "http://www.bleurestaurant.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:08:02Z",
+      "enriched_at": "2026-06-08T14:15:49Z",
       "deal": null
     },
     {
@@ -1521,14 +1521,14 @@
         "italian",
         "fine"
       ],
-      "desc": "Tuscan trattoria at the Commons — handmade pasta, wood-grilled.",
+      "desc": "Tuscan trattoria at the Commons \u2014 handmade pasta, wood-grilled.",
       "place_id": "ChIJpWAM00TS5IkRNvSMgOXjQ6M",
       "photo": "data/eats-photos/siena.jpg",
       "reviews": 517,
       "website": "https://www.siena.us/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:08:03Z",
+      "enriched_at": "2026-06-08T14:15:49Z",
       "deal": null
     },
     {
@@ -1551,7 +1551,7 @@
       "website": "http://www.trevicafe.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:08:05Z",
+      "enriched_at": "2026-06-08T14:15:50Z",
       "deal": null
     },
     {
@@ -1573,7 +1573,7 @@
       "website": "http://www.polarcave.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:08:06Z",
+      "enriched_at": "2026-06-08T14:15:51Z",
       "deal": null
     },
     {
@@ -1589,14 +1589,14 @@
         "seafood",
         "bar"
       ],
-      "desc": "Marina-side deck — $5 cocktails, lobster club, sunset over the canal.",
+      "desc": "Marina-side deck \u2014 $5 cocktails, lobster club, sunset over the canal.",
       "place_id": "ChIJf4qwdEfK5IkRSoOACkj7jUM",
       "photo": null,
       "reviews": 6,
       "website": null,
       "open_now": null,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:08:07Z",
+      "enriched_at": "2026-06-08T14:15:51Z",
       "deal": null
     },
     {
@@ -1611,14 +1611,14 @@
       "tags": [
         "fine"
       ],
-      "desc": "Dinner in a converted church — stained glass and refined plates.",
+      "desc": "Dinner in a converted church \u2014 stained glass and refined plates.",
       "place_id": "ChIJ6-j7NbPL5IkRoMtS3rDq8o4",
       "photo": "data/eats-photos/the-belfry-inn-bistro.jpg",
       "reviews": 286,
       "website": "https://www.belfryinn.com/?utm_source=google&utm_medium+GBP",
       "open_now": null,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:08:08Z",
+      "enriched_at": "2026-06-08T14:15:52Z",
       "deal": "Prix-Fixe Menu available"
     },
     {
@@ -1638,11 +1638,11 @@
       "desc": "Family fried-seafood institution by the canal. Order at the counter.",
       "place_id": "ChIJdSsM4UbK5IkRFmoQie9jh2Y",
       "photo": "data/eats-photos/seafood-sams.jpg",
-      "reviews": 2249,
+      "reviews": 2252,
       "website": "https://www.seafoodsams.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:08:09Z",
+      "enriched_at": "2026-06-08T14:15:53Z",
       "deal": null
     },
     {
@@ -1665,7 +1665,7 @@
       "website": "http://www.thedunbarhouse.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:08:11Z",
+      "enriched_at": "2026-06-08T14:15:54Z",
       "deal": "Sunday brunch specials"
     },
     {
@@ -1684,11 +1684,11 @@
       "desc": "Floor-to-ceiling marina views and their own seafood market downstairs.",
       "place_id": "ChIJ_UjXijjK5IkRVuu5S6OysN4",
       "photo": "data/eats-photos/fishermens-view.jpg",
-      "reviews": 1519,
+      "reviews": 1520,
       "website": "http://www.fishermensview.com/",
       "open_now": true,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:08:12Z",
+      "enriched_at": "2026-06-08T14:15:54Z",
       "deal": null
     },
     {
@@ -1704,14 +1704,14 @@
         "italian",
         "fine"
       ],
-      "desc": "Main Street favorite — generous Italian, always a wait, always worth it.",
+      "desc": "Main Street favorite \u2014 generous Italian, always a wait, always worth it.",
       "place_id": "ChIJbew7M3nX5IkRaiEn4pmd-LY",
       "photo": "data/eats-photos/la-cucina-sul-mare.jpg",
-      "reviews": 937,
+      "reviews": 939,
       "website": "http://www.lacucinasulmare.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:08:13Z",
+      "enriched_at": "2026-06-08T14:15:55Z",
       "deal": null
     },
     {
@@ -1727,19 +1727,19 @@
         "casual",
         "bar"
       ],
-      "desc": "Cozy Main Street standby — chowder, burgers, and a friendly bar.",
+      "desc": "Cozy Main Street standby \u2014 chowder, burgers, and a friendly bar.",
       "place_id": "ChIJray96n7X5IkRytdEb7lU_pM",
       "photo": "data/eats-photos/the-quarterdeck.jpg",
-      "reviews": 1425,
+      "reviews": 1427,
       "website": "http://www.qdfalmouth.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:08:14Z",
+      "enriched_at": "2026-06-08T14:15:56Z",
       "deal": null
     },
     {
       "id": "anejo-mexican-bistro",
-      "name": "Añejo Mexican Bistro",
+      "name": "A\u00f1ejo Mexican Bistro",
       "town": "Falmouth",
       "lat": 41.5522,
       "lng": -70.6153,
@@ -1753,11 +1753,11 @@
       "desc": "Tequila bar and modern Mexican. Guac and margaritas on Main Street.",
       "place_id": "ChIJ97ZkuH7X5IkR7YV-F8cGkKg",
       "photo": "data/eats-photos/anejo-mexican-bistro.jpg",
-      "reviews": 1879,
+      "reviews": 1880,
       "website": "http://anejo.cc/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:08:15Z",
+      "enriched_at": "2026-06-08T14:15:56Z",
       "deal": "Sunday brunch specials & cocktails"
     },
     {
@@ -1773,14 +1773,14 @@
         "seafood",
         "bar"
       ],
-      "desc": "Waterfront tavern on Eel Pond — oysters and a historic back bar.",
+      "desc": "Waterfront tavern on Eel Pond \u2014 oysters and a historic back bar.",
       "place_id": "ChIJC48OtYDY5IkRvHRmHs9Hxrc",
       "photo": "data/eats-photos/the-captain-kidd.jpg",
-      "reviews": 689,
+      "reviews": 690,
       "website": "http://www.thecaptainkidd.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:08:17Z",
+      "enriched_at": "2026-06-08T14:15:57Z",
       "deal": null
     },
     {
@@ -1803,7 +1803,7 @@
       "website": "http://quicksholetaqueria.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:08:18Z",
+      "enriched_at": "2026-06-08T14:15:58Z",
       "deal": null
     },
     {
@@ -1820,14 +1820,14 @@
         "breakfast",
         "coffee"
       ],
-      "desc": "French bakers, line out the door — baguettes, tarts, croissants.",
+      "desc": "French bakers, line out the door \u2014 baguettes, tarts, croissants.",
       "place_id": "ChIJZ7-sMHnX5IkRgLmGtLoQQBE",
       "photo": "data/eats-photos/maison-villatte.jpg",
-      "reviews": 1143,
+      "reviews": 1145,
       "website": "https://www.facebook.com/profile.php?id=100057245816386&mibextid=ZbWKwL",
-      "open_now": true,
+      "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:08:19Z",
+      "enriched_at": "2026-06-08T14:15:58Z",
       "deal": null
     },
     {
@@ -1844,14 +1844,14 @@
         "bar",
         "fine"
       ],
-      "desc": "Summer-only harbor legend — mudslides and lobster on Red Brook Harbor.",
+      "desc": "Summer-only harbor legend \u2014 mudslides and lobster on Red Brook Harbor.",
       "place_id": "ChIJO_JZ0fbP5IkR0UhnYQRBxb0",
       "photo": "data/eats-photos/the-chart-room.jpg",
       "reviews": 855,
       "website": "https://chartroomcapecod.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:08:20Z",
+      "enriched_at": "2026-06-08T14:15:59Z",
       "deal": null
     },
     {
@@ -1868,14 +1868,14 @@
         "clam",
         "casual"
       ],
-      "desc": "Buzzards Bay family seafood — fried platters and friendly service.",
+      "desc": "Buzzards Bay family seafood \u2014 fried platters and friendly service.",
       "place_id": "ChIJQ1kUxg_G5IkR4HW305bCk2s",
       "photo": "data/eats-photos/lindseys-family-restaurant.jpg",
       "reviews": 1806,
       "website": null,
       "open_now": null,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:08:21Z",
+      "enriched_at": "2026-06-08T14:16:00Z",
       "deal": null
     },
     {
@@ -1890,14 +1890,14 @@
       "tags": [
         "fine"
       ],
-      "desc": "Beloved Southeast-Asian kitchen — curries and pho near the bridge.",
+      "desc": "Beloved Southeast-Asian kitchen \u2014 curries and pho near the bridge.",
       "place_id": "ChIJY8306AXP5IkRjEtrlXdwfGM",
       "photo": "data/eats-photos/stir-crazy.jpg",
-      "reviews": 448,
+      "reviews": 449,
       "website": "https://stircrazycapecod.com/?utm_source=google",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:08:22Z",
+      "enriched_at": "2026-06-08T14:16:00Z",
       "deal": null
     },
     {
@@ -1916,12 +1916,12 @@
       "desc": "Buzzards Bay Italian-American since 1936. Sunday-gravy comfort.",
       "place_id": "ChIJD_-pmLnI5IkR9FBcmV14fSs",
       "photo": "data/eats-photos/mezza-luna.jpg",
-      "reviews": 1486,
+      "reviews": 1491,
       "website": "http://www.mezzalunarestaurant.com/",
       "open_now": false,
       "rating_source": "google",
-      "enriched_at": "2026-06-05T12:08:24Z",
-      "deal": "Wed & Sat Prime Rib Special · weekday lunch specials"
+      "enriched_at": "2026-06-08T14:16:01Z",
+      "deal": "Wed & Sat Prime Rib Special \u00b7 weekday lunch specials"
     },
     {
       "id": "the-brickhouse-restaurant",
@@ -1930,22 +1930,22 @@
       "lat": 41.8311,
       "lng": -69.974,
       "cuisine": "Seafood & Steak",
-      "price": "$$$",
-      "rating": 4.5,
+      "price": "$$",
+      "rating": 4.4,
       "tags": [
         "seafood",
         "fine",
         "bar"
       ],
       "desc": "Fresh local seafood, Caribbean-inspired plates & hand-cut steaks on Route 6. Open 7 days.",
-      "place_id": null,
-      "photo": null,
-      "reviews": null,
-      "website": "https://www.brickhouseeastham.com",
-      "open_now": null,
-      "rating_source": "editorial",
-      "enriched_at": null,
-      "deal": "Early Bird daily · Wed Prime Rib Night · Half-Off App Night"
+      "place_id": "ChIJ_RZsU-lp-4kRMwx9d21wYAI",
+      "photo": "data/eats-photos/the-brickhouse-restaurant.jpg",
+      "reviews": 655,
+      "website": "https://brickhouseeastham.com/",
+      "open_now": false,
+      "rating_source": "google",
+      "enriched_at": "2026-06-08T14:16:02Z",
+      "deal": "Early Bird daily \u00b7 Wed Prime Rib Night \u00b7 Half-Off App Night"
     }
   ]
 }
