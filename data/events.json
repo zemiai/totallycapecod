@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-09T12:22:13Z",
+  "updated_at": "2026-06-09T17:53:27Z",
   "window_days": 21,
-  "count": 136,
+  "count": 142,
   "_hermes_note": "Real Cape Cod events scraped from chambers + venues. update_events.py",
   "events": [
     {
@@ -156,6 +156,23 @@
       "img": null,
       "source": "Hyannis",
       "source_url": "https://business.hyannis.com/events/details/webinar-generate-better-leads-with-seo-ai-search-geo-content-3949",
+      "start": "2026-06-10T00:00:00+00:00"
+    },
+    {
+      "id": "view-details-20260610",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Wed Jun 10",
+      "title": "View Details",
+      "venue": "",
+      "town": "Bourne",
+      "info": "",
+      "price": "",
+      "lat": 41.7412,
+      "lng": -70.599,
+      "img": null,
+      "source": "Bourne",
+      "source_url": "https://web.capecodcanalchamber.org/events/Ribbon-Cutting-Kind-Hearts-for-Kids-1685/details",
       "start": "2026-06-10T00:00:00+00:00"
     },
     {
@@ -411,6 +428,23 @@
       "img": null,
       "source": "Orleans",
       "source_url": "https://members.orleanscapecod.org/events/details/boards-in-the-gallery-06-12-2026-23447",
+      "start": "2026-06-12T00:00:00+00:00"
+    },
+    {
+      "id": "live-music-the-barley-neck-20260612",
+      "tag": "\ud83c\udfb5 LIVE MUSIC",
+      "category": "music",
+      "time": "Fri Jun 12",
+      "title": "Live Music | The Barley Neck",
+      "venue": "",
+      "town": "Orleans",
+      "info": "",
+      "price": "",
+      "lat": 41.7901,
+      "lng": -69.9873,
+      "img": null,
+      "source": "Orleans",
+      "source_url": "https://members.orleanscapecod.org/events/details/live-music-at-the-barley-neck-06-12-2026-7004",
       "start": "2026-06-12T00:00:00+00:00"
     },
     {
@@ -1230,6 +1264,23 @@
       "start": "2026-06-18T00:00:00+00:00"
     },
     {
+      "id": "view-details-20260618",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Thu Jun 18",
+      "title": "View Details",
+      "venue": "",
+      "town": "Bourne",
+      "info": "",
+      "price": "",
+      "lat": 41.7412,
+      "lng": -70.599,
+      "img": null,
+      "source": "Bourne",
+      "source_url": "https://web.capecodcanalchamber.org/events/Canal-Cruise-Business-Connections-1669/details",
+      "start": "2026-06-18T00:00:00+00:00"
+    },
+    {
       "id": "brewery-open-4-8pm-20260618",
       "tag": "\ud83c\udf74 FOOD & DRINK",
       "category": "food",
@@ -1638,6 +1689,23 @@
       "start": "2026-06-20T00:00:00+00:00"
     },
     {
+      "id": "hidden-hollow-drop-in-storytime-20260620",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Sat Jun 20",
+      "title": "Hidden Hollow Drop-In Storytime",
+      "venue": "Heritage Museums & Gardens",
+      "town": "Sandwich",
+      "info": "",
+      "price": "",
+      "lat": 41.759,
+      "lng": -70.494,
+      "img": "https://bunny-wp-pullzone-94pwz2rapx.b-cdn.net/wp-content/uploads/2021/03/hidden-hollow-log.jpg",
+      "source": "Heritage Museums",
+      "source_url": "https://heritagemuseumsandgardens.org/mecevents/story-time/?occurrence=2026-06-20",
+      "start": "2026-06-20T00:00:00+00:00"
+    },
+    {
       "id": "dj-pj-20260620",
       "tag": "\ud83c\udfb5 LIVE MUSIC",
       "category": "music",
@@ -1754,6 +1822,23 @@
       "img": null,
       "source": "Cape Cod Beer",
       "source_url": "https://capecodbeer.com/event/brewery-open-12-5pm/2026-06-21/",
+      "start": "2026-06-21T00:00:00+00:00"
+    },
+    {
+      "id": "father-s-day-20260621",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Sun Jun 21",
+      "title": "Father\u2019s Day",
+      "venue": "Heritage Museums & Gardens",
+      "town": "Sandwich",
+      "info": "",
+      "price": "",
+      "lat": 41.759,
+      "lng": -70.494,
+      "img": "https://bunny-wp-pullzone-94pwz2rapx.b-cdn.net/wp-content/uploads/2021/06/IMG_5947-1.jpg",
+      "source": "Heritage Museums",
+      "source_url": "https://heritagemuseumsandgardens.org/mecevents/fathers-day-2-482/?occurrence=2026-06-21",
       "start": "2026-06-21T00:00:00+00:00"
     },
     {
@@ -2316,6 +2401,23 @@
       "source": "Highfield Hall",
       "source_url": "https://highfieldhallandgardens.org/event/chair-yoga-6-29-26/",
       "start": "2026-06-29T10:30:00+00:00"
+    },
+    {
+      "id": "kids-in-the-kitchen-cupcake-decorating-with-chef-kate-ages-6",
+      "tag": "\ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc67 FAMILY",
+      "category": "family",
+      "time": "Tue Jun 30 \u00b7 2:00 PM",
+      "title": "Kids in the Kitchen: Cupcake Decorating with Chef Kate (Ages 6-12)",
+      "venue": "Highfield Hall",
+      "town": "Falmouth",
+      "info": "",
+      "price": "$75",
+      "lat": 41.5515,
+      "lng": -70.6148,
+      "img": "https://highfieldhallandgardens.org/wp-content/uploads/6-23-26-Kids-Kitchen-Cupcakes-frame.jpg",
+      "source": "Highfield Hall",
+      "source_url": "https://highfieldhallandgardens.org/event/kids-kitchen-6-30-26/",
+      "start": "2026-06-30T14:00:00+00:00"
     }
   ]
 }
