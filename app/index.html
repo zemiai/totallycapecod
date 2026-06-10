@@ -283,7 +283,7 @@
     <!-- ===== TODAY ===== -->
     <div class="screen active" id="screen-today">
       <div class="ios-large-title" id="todayDate">Today</div>
-      <div class="ios-subhead" id="todayConditions">Loading…</div>
+      <div class="ios-subhead" id="todayConditions"></div>
       <div id="proStatusBanner"></div>
       <!-- Email capture banner (shown once to free users) -->
       <div id="emailBanner" style="display:none; margin:10px 16px; background:linear-gradient(135deg, var(--cape-navy) 0%, var(--cape-navy-dark) 100%); color:white; padding:14px; border-radius:14px; box-shadow:0 4px 12px rgba(26,58,108,0.25);">
@@ -330,7 +330,7 @@
     <!-- ===== BEACHES ===== -->
     <div class="screen" id="screen-beaches">
       <div class="ios-large-title">Beaches</div>
-      <div class="ios-subhead">Live · <span id="beachCount">0</span> beaches · tap to update</div>
+      <div class="ios-subhead" id="beachSubhead">Loading beaches…</div>
       <div class="ios-section-title"><span>📍 Map</span></div>
       <div class="map-container"><div id="beachMap"></div></div>
       <div class="ios-section-title" id="beachFreeTitle"><span>Nearest you</span></div>
@@ -708,7 +708,14 @@ if (PREVIEW_BRANCH) {
 }
 async function loadData() {
   const files = ['stamps', 'beaches', 'today', 'conditions', 'bridges', 'whales', 'lighthouses', 'ai-knowledge', 'eats', 'events'];
-  const results = await Promise.allSettled(files.map(f => fetch(DATA_BASE + f + '.json', { cache: 'no-cache' }).then(r => r.ok ? r.json() : null).catch(() => null)));
+  const fetchWithTimeout = (url, ms) => {
+    const controller = new AbortController();
+    const tid = setTimeout(() => controller.abort(), ms);
+    return fetch(url, { cache: 'no-cache', signal: controller.signal })
+      .then(r => { clearTimeout(tid); return r.ok ? r.json() : null; })
+      .catch(() => { clearTimeout(tid); return null; });
+  };
+  const results = await Promise.allSettled(files.map(f => fetchWithTimeout(DATA_BASE + f + '.json', 8000)));
   results.forEach((r, i) => {
     const key = files[i] === 'ai-knowledge' ? 'aiKnowledge' : files[i];
     state.data[key] = r.status === 'fulfilled' ? r.value : null;
@@ -752,6 +759,8 @@ function renderToday() {
   if (c) {
     document.getElementById('todayConditions').innerHTML =
       `${c.weather.icon} ${c.weather.temp_high}° · 🌊 ${c.water_temp_f}°F · 🌅 ${c.sun.sunset}`;
+  } else {
+    document.getElementById('todayConditions').textContent = 'Tide & conditions data updating…';
   }
 
   // Pro banner
@@ -772,7 +781,7 @@ function renderToday() {
         <div class="item-sub">${t.height_ft} ft</div>
       </div>
     </div>
-  `).join('') || '<div class="ios-list-item"><div class="item-sub">No tide data</div></div>';
+  `).join('') || '<div class="ios-list-item"><div class="item-sub">Tide & conditions data updating…</div></div>';
 
   // Bridges
   const b = state.data.bridges?.current;
@@ -787,13 +796,22 @@ function renderToday() {
         <div class="bridge-delay ${b.sagamore.current_status==='light'?'light':b.sagamore.current_status==='heavy'?'heavy':'moderate'}">${b.sagamore.current_delay_min}<span style="font-size:14px;">m</span></div>
       </div>
     `;
+  } else {
+    document.getElementById('todayBridges').innerHTML = `
+      <div class="bridge-card">
+        <div style="font-size:32px;">🌉</div>
+        <div style="flex:1;">
+          <div class="item-title">Bridge data updating…</div>
+          <div class="item-sub">Check back in a moment</div>
+        </div>
+      </div>`;
   }
 
   // Happening
   const events = state.data.events?.events || [];
   const shown = state.isPro ? events.slice(0,5) : events.slice(0, FREE_EVENT_LIMIT);
   document.getElementById('todayHappening').innerHTML = shown.map(e => renderEventCard(e)).join('') ||
-    '<div class="empty-state">Loading events…</div>';
+    '<div class="empty-state">No events posted for today yet — check back this morning.</div>';
 
   // Nearest beaches
   getUserLoc(loc => {
@@ -810,7 +828,7 @@ function renderToday() {
         </div>
         <div class="crowd-bar">${Array.from({length:5}, (_,j) => `<span class="${j < b.crowd ? 'on' : ''}"></span>`).join('')}</div>
       </div>
-    `).join('');
+    `).join('') || '<div class="ios-list-item"><div class="item-sub">Beach reports start rolling in each morning — check back soon.</div></div>';
   });
 }
 
@@ -833,7 +851,9 @@ function renderEventCard(e) {
 // ============ RENDER: EVENTS ============
 function renderEvents() {
   const events = state.data.events?.events || [];
-  document.getElementById('eventsSubhead').textContent = `${events.length} upcoming events on Cape Cod`;
+  document.getElementById('eventsSubhead').textContent = events.length
+    ? `${events.length} upcoming events on Cape Cod`
+    : "Today's deals, music & free events";
 
   // Filter chips
   const cats = [{id:'all',label:'All'},{id:'music',label:'🎵 Music'},{id:'theater',label:'🎭 Theater'},{id:'art',label:'🎨 Art'},{id:'food',label:'🍴 Food & Drink'},{id:'family',label:'👨‍👩‍👧 Family'},{id:'festival',label:'🎪 Festival'},{id:'talk',label:'🎙️ Talks'}];
@@ -846,8 +866,12 @@ function renderEvents() {
   let filtered = events;
   if (state.eventFilter !== 'all') filtered = events.filter(e => e.category === state.eventFilter);
   const shown = state.isPro ? filtered : filtered.slice(0, FREE_EVENT_LIMIT);
-  document.getElementById('eventsList').innerHTML = shown.map(e => renderEventCard(e)).join('') ||
-    '<div class="empty-state">No events match this filter</div>';
+  const eventsEmpty = filtered.length === 0
+    ? (events.length === 0
+        ? '<div class="empty-state">No events posted for today yet — check back this morning.</div>'
+        : '<div class="empty-state">No events match this filter.</div>')
+    : '';
+  document.getElementById('eventsList').innerHTML = shown.map(e => renderEventCard(e)).join('') || eventsEmpty;
 
   document.getElementById('eventsUnlockCta').innerHTML = (!state.isPro && filtered.length > FREE_EVENT_LIMIT) ?
     `<button class="unlock-cta" onclick="switchTab('pro')">🔒 +${filtered.length - FREE_EVENT_LIMIT} more events · Unlock Pro $9.99</button>` : '';
@@ -858,42 +882,59 @@ function filterEvents(cat) { state.eventFilter = cat; renderEvents(); }
 let beachMapInstance = null;
 function renderBeaches() {
   const beaches = state.data.beaches?.beaches || [];
-  document.getElementById('beachCount').textContent = beaches.length;
 
-  // Map
-  setTimeout(() => {
-    if (!beachMapInstance && document.getElementById('beachMap').offsetParent) {
-      beachMapInstance = L.map('beachMap').setView([41.78, -70.05], 9);
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution:'© OSM', maxZoom:18 }).addTo(beachMapInstance);
-      beaches.forEach(b => {
-        const color = b.status === 'open' ? '#34C759' : b.status === 'mid' ? '#FF9500' : '#FF3B30';
-        L.circleMarker([b.lat, b.lng], { radius:8, fillColor:color, color:'#fff', weight:2, fillOpacity:1 })
-          .addTo(beachMapInstance)
-          .bindPopup(`<b>${b.name}</b><br>${b.town}<br>${b.spots_text}<br>🌊 ${b.water_temp}°F`);
-      });
-    }
-  }, 100);
+  // Subhead: hide count when 0; show friendly copy instead
+  const subEl = document.getElementById('beachSubhead');
+  if (beaches.length > 0) {
+    subEl.textContent = `Live · ${beaches.length} beaches · tap to update`;
+  } else {
+    subEl.textContent = 'Beach reports start rolling in each morning — check back soon.';
+  }
+
+  // Map: hide container when no beaches to avoid blank grey pane
+  const mapContainer = document.getElementById('beachMap').closest('.map-container');
+  const mapSection = mapContainer ? mapContainer.previousElementSibling : null;
+  if (beaches.length === 0) {
+    if (mapContainer) mapContainer.style.display = 'none';
+    if (mapSection && mapSection.classList.contains('ios-section-title')) mapSection.style.display = 'none';
+  } else {
+    if (mapContainer) mapContainer.style.display = '';
+    if (mapSection && mapSection.classList.contains('ios-section-title')) mapSection.style.display = '';
+    setTimeout(() => {
+      if (!beachMapInstance && document.getElementById('beachMap').offsetParent) {
+        beachMapInstance = L.map('beachMap').setView([41.78, -70.05], 9);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution:'© OSM', maxZoom:18 }).addTo(beachMapInstance);
+        beaches.forEach(b => {
+          const color = b.status === 'open' ? '#34C759' : b.status === 'mid' ? '#FF9500' : '#FF3B30';
+          L.circleMarker([b.lat, b.lng], { radius:8, fillColor:color, color:'#fff', weight:2, fillOpacity:1 })
+            .addTo(beachMapInstance)
+            .bindPopup(`<b>${b.name}</b><br>${b.town}<br>${b.spots_text}<br>🌊 ${b.water_temp}°F`);
+        });
+      }
+    }, 100);
+  }
 
   getUserLoc(loc => {
     const sorted = beaches.map(b => ({...b, dist: distanceMiles(loc.lat, loc.lng, b.lat, b.lng)})).sort((a,b) => a.dist - b.dist);
     const free = sorted.slice(0, FREE_BEACH_LIMIT);
-    document.getElementById('beachListFree').innerHTML = free.map(b => renderBeachRow(b)).join('');
+    document.getElementById('beachListFree').innerHTML = free.map(b => renderBeachRow(b)).join('') ||
+      '<div class="ios-list-item"><div class="item-sub">Beach reports start rolling in each morning — check back soon.</div></div>';
 
     if (!state.isPro) {
-      document.getElementById('beachLockedSection').innerHTML = `
+      document.getElementById('beachLockedSection').innerHTML = beaches.length > FREE_BEACH_LIMIT ? `
         <div class="ios-section-title"><span>🔒 + ${beaches.length - FREE_BEACH_LIMIT} more beaches · Pro</span></div>
         <div class="ios-list">${sorted.slice(FREE_BEACH_LIMIT, FREE_BEACH_LIMIT + 5).map(b => `
           <div class="locked-row">
             <span class="status-dot" style="background:var(--status-${b.status})"></span>
             <div style="flex:1;"><div class="item-title">${b.name}</div><div class="item-sub">${b.town}</div></div>
           </div>`).join('')}</div>
-        <button class="unlock-cta" onclick="switchTab('pro')">Unlock all ${beaches.length} beaches · $9.99</button>`;
+        <button class="unlock-cta" onclick="switchTab('pro')">Unlock all ${beaches.length} beaches · $9.99</button>` : '';
       document.getElementById('beachUnlockedSection').innerHTML = '';
     } else {
       document.getElementById('beachLockedSection').innerHTML = '';
-      document.getElementById('beachUnlockedSection').innerHTML = `
+      document.getElementById('beachUnlockedSection').innerHTML = sorted.length > FREE_BEACH_LIMIT ? `
         <div class="ios-section-title"><span>All Cape beaches</span></div>
-        <div class="ios-list">${sorted.slice(FREE_BEACH_LIMIT).map(b => renderBeachRow(b)).join('')}</div>`;
+        <div class="ios-list">${sorted.slice(FREE_BEACH_LIMIT).map(b => renderBeachRow(b)).join('')}</div>` : '';
     }
   });
 }
@@ -958,23 +999,30 @@ function renderPassport() {
     const earned = state.stamps.includes(s.slug);
     return `<div class="stamp ${earned ? 'earned' : ''}" onclick="openStamp('${s.slug}')">${earned ? s.icon : '?'}</div>`;
   };
-  document.getElementById('stampGridFree').innerHTML = free.map(stampHtml).join('');
+
+  if (free.length > 0) {
+    document.getElementById('stampGridFree').innerHTML = free.map(stampHtml).join('');
+  } else {
+    // Stamp data hasn't loaded yet — show placeholder grid so layout doesn't break
+    document.getElementById('stampGridFree').innerHTML =
+      Array.from({length: 25}, () => `<div class="stamp">?</div>`).join('');
+  }
 
   if (!state.isPro) {
     document.getElementById('passportLockedSection').innerHTML = `
       <div class="ios-section-title"><span>🔒 75 more · Pro</span></div>
       <div style="padding:0 16px;">
-        <div class="stamp-grid">${pro.slice(0,15).map(()=>`<div class="stamp locked-pro">?</div>`).join('')}</div>
+        <div class="stamp-grid">${(pro.length > 0 ? pro.slice(0,15) : Array.from({length:15})).map(()=>`<div class="stamp locked-pro">?</div>`).join('')}</div>
       </div>
       <button class="unlock-cta" onclick="switchTab('pro')">Unlock all 100 stamps + badges · $9.99</button>`;
     document.getElementById('passportUnlockedSection').innerHTML = '';
   } else {
     document.getElementById('passportLockedSection').innerHTML = '';
-    document.getElementById('passportUnlockedSection').innerHTML = `
+    document.getElementById('passportUnlockedSection').innerHTML = pro.length > 0 ? `
       <div class="ios-section-title"><span>Premium stamps</span></div>
       <div style="padding:0 16px;">
         <div class="stamp-grid">${pro.map(stampHtml).join('')}</div>
-      </div>`;
+      </div>` : '';
   }
 
   const c = state.stamps.length;
@@ -982,7 +1030,11 @@ function renderPassport() {
   const max = state.isPro ? 100 : FREE_STAMP_LIMIT;
   document.getElementById('stampProgress').style.width = (c / max * 100) + '%';
   document.getElementById('stampTierLabel').textContent = state.isPro ? 'Pro · All 100 unlocked' : `Free · max ${FREE_STAMP_LIMIT}`;
-  document.getElementById('stampNextBadge').textContent = c < 10 ? 'Next: 10 stamps' : c < 25 ? 'Next: 25 stamps' : c < 50 ? 'Next: 50 stamps' : c < 100 ? 'Next: 100 (Cape Native)' : '🏆 Cape Native!';
+  document.getElementById('stampNextBadge').textContent = c < 10 ? 'Next badge: 10 stamps' : c < 25 ? 'Next badge: 25 stamps' : c < 50 ? 'Next badge: 50 stamps' : c < 100 ? 'Next badge: 100 (Cape Native)' : '🏆 Cape Native!';
+  // First-time encouragement when no stamps yet collected
+  if (c === 0 && stamps.length > 0) {
+    document.getElementById('stampNextBadge').textContent = 'Start collecting — tap any stamp!';
+  }
 }
 
 function openStamp(slug) {
@@ -1091,7 +1143,20 @@ function appendAi(text) {
 // ============ RENDER: BRIDGES ============
 function renderBridges() {
   const b = state.data.bridges?.current;
-  if (!b) return;
+  if (!b) {
+    document.getElementById('bridgeCurrent').innerHTML = `
+      <div class="bridge-card">
+        <div style="font-size:36px;">🌉</div>
+        <div style="flex:1;">
+          <div class="item-title">Bridge data updating…</div>
+          <div class="item-sub">Live traffic info will appear here shortly</div>
+        </div>
+      </div>`;
+    document.getElementById('bridgeHourly').innerHTML = '<div class="ios-list-item"><div class="item-sub">Hourly forecast updating…</div></div>';
+    document.getElementById('bridge7Day').innerHTML = '';
+    document.getElementById('bridgeTips').innerHTML = '';
+    return;
+  }
   document.getElementById('bridgeCurrent').innerHTML = `
     <div class="bridge-card">
       <div style="font-size:36px;">🌉</div>
@@ -1113,7 +1178,9 @@ function renderBridges() {
     </div>`;
 
   const hourly = state.data.bridges?.forecast_24h || [];
-  document.getElementById('bridgeHourly').innerHTML = hourly.map(h => `
+  if (!hourly.length) {
+    document.getElementById('bridgeHourly').innerHTML = '<div class="ios-list-item"><div class="item-sub">Hourly forecast updating…</div></div>';
+  } else document.getElementById('bridgeHourly').innerHTML = hourly.map(h => `
     <div class="ios-list-item">
       <div style="width:48px; font-weight:700; font-size:14px;">${h.hour}</div>
       <div style="flex:1;">
@@ -1167,7 +1234,13 @@ function renderBridges() {
 // ============ RENDER: CONDITIONS ============
 function renderConditions() {
   const c = state.data.conditions?.today;
-  if (!c) return;
+  if (!c) {
+    document.getElementById('tideChart').innerHTML = '<div class="empty-state">Tide & conditions data updating…</div>';
+    document.getElementById('sunInfo').innerHTML = '<div class="ios-list-item"><div class="item-sub">Sun data updating…</div></div>';
+    document.getElementById('weatherInfo').innerHTML = '<div class="ios-list-item"><div class="item-sub">Weather data updating…</div></div>';
+    document.getElementById('conditions7Day').innerHTML = '';
+    return;
+  }
   document.getElementById('tideChart').innerHTML = c.tides.map(t => `
     <div class="tide-row">
       <span><span class="tide-type ${t.type}">${t.type.toUpperCase()}</span>${t.time}</span>
@@ -1208,17 +1281,27 @@ let whaleMapInstance = null;
 function renderWhales() {
   const sightings = (state.data.whales?.recent_sightings || []).concat(state.userSightings);
 
-  setTimeout(() => {
-    if (!whaleMapInstance && document.getElementById('whaleMap').offsetParent) {
-      whaleMapInstance = L.map('whaleMap').setView([42.05, -70.15], 9);
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution:'© OSM' }).addTo(whaleMapInstance);
-      sightings.forEach(s => {
-        const emoji = s.species === 'seal' ? '🦦' : s.species === 'dolphin' ? '🐬' : '🐋';
-        const icon = L.divIcon({ html:`<div style="font-size:24px;">${emoji}</div>`, className:'', iconSize:[28,28] });
-        L.marker([s.lat, s.lng], { icon }).addTo(whaleMapInstance).bindPopup(`<b>${s.species.toUpperCase()}</b> × ${s.count}<br>${s.location}<br><i>${s.time_ago}</i>`);
-      });
-    }
-  }, 100);
+  // Map: hide when no sightings to avoid blank grey pane
+  const whaleMapContainer = document.getElementById('whaleMap').closest('.map-container');
+  const whaleMapSection = whaleMapContainer ? whaleMapContainer.previousElementSibling : null;
+  if (sightings.length === 0) {
+    if (whaleMapContainer) whaleMapContainer.style.display = 'none';
+    if (whaleMapSection && whaleMapSection.classList.contains('ios-section-title')) whaleMapSection.style.display = 'none';
+  } else {
+    if (whaleMapContainer) whaleMapContainer.style.display = '';
+    if (whaleMapSection && whaleMapSection.classList.contains('ios-section-title')) whaleMapSection.style.display = '';
+    setTimeout(() => {
+      if (!whaleMapInstance && document.getElementById('whaleMap').offsetParent) {
+        whaleMapInstance = L.map('whaleMap').setView([42.05, -70.15], 9);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution:'© OSM' }).addTo(whaleMapInstance);
+        sightings.forEach(s => {
+          const emoji = s.species === 'seal' ? '🦦' : s.species === 'dolphin' ? '🐬' : '🐋';
+          const icon = L.divIcon({ html:`<div style="font-size:24px;">${emoji}</div>`, className:'', iconSize:[28,28] });
+          L.marker([s.lat, s.lng], { icon }).addTo(whaleMapInstance).bindPopup(`<b>${s.species.toUpperCase()}</b> × ${s.count}<br>${s.location}<br><i>${s.time_ago}</i>`);
+        });
+      }
+    }, 100);
+  }
 
   document.getElementById('whaleList').innerHTML = sightings.map(s => {
     const emoji = s.species === 'seal' ? '🦦' : s.species === 'dolphin' ? '🐬' : s.species === 'shark' ? '🦈' : '🐋';
@@ -1229,7 +1312,12 @@ function renderWhales() {
         <div class="item-sub">${s.time_ago} · ${s.reported_by}${s.notes ? ' · ' + s.notes : ''}</div>
       </div>
     </div>`;
-  }).join('') || '<div class="empty-state">No recent sightings</div>';
+  }).join('') || `<div class="empty-state" style="padding:24px 20px;">
+    <div style="font-size:40px; margin-bottom:10px;">🐋</div>
+    <div style="font-weight:700; font-size:15px; color:var(--ios-text); margin-bottom:6px;">No sightings yet today</div>
+    <div style="margin-bottom:16px;">Be the first to spot something! Humpbacks, dolphins, seals — all welcome.</div>
+    <button onclick="openModal('reportSighting')" style="background:var(--cape-navy); color:white; border:none; padding:11px 22px; border-radius:12px; font-weight:700; font-size:14px; cursor:pointer;">Report a sighting</button>
+  </div>`;
 
   document.getElementById('whaleProTease').innerHTML = state.isPro ? `
     <div class="pro-banner" style="margin:14px 16px;">
@@ -1269,16 +1357,27 @@ let lhMapInstance = null;
 let currentLighthouse = null;
 function renderLighthouses() {
   const lhs = state.data.lighthouses?.lighthouses || [];
-  setTimeout(() => {
-    if (!lhMapInstance && document.getElementById('lighthouseMap').offsetParent) {
-      lhMapInstance = L.map('lighthouseMap').setView([41.85, -70.05], 9);
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution:'© OSM' }).addTo(lhMapInstance);
-      lhs.forEach(l => {
-        const icon = L.divIcon({ html:'<div style="font-size:22px;">💡</div>', className:'', iconSize:[24,24] });
-        L.marker([l.lat, l.lng], { icon }).addTo(lhMapInstance).bindPopup(`<b>${l.name}</b><br>${l.town}<br>Built ${l.built}`);
-      });
-    }
-  }, 100);
+
+  // Map: hide when no lighthouses loaded to avoid blank grey pane
+  const lhMapContainer = document.getElementById('lighthouseMap').closest('.map-container');
+  const lhMapSection = lhMapContainer ? lhMapContainer.previousElementSibling : null;
+  if (lhs.length === 0) {
+    if (lhMapContainer) lhMapContainer.style.display = 'none';
+    if (lhMapSection && lhMapSection.classList.contains('ios-section-title')) lhMapSection.style.display = 'none';
+  } else {
+    if (lhMapContainer) lhMapContainer.style.display = '';
+    if (lhMapSection && lhMapSection.classList.contains('ios-section-title')) lhMapSection.style.display = '';
+    setTimeout(() => {
+      if (!lhMapInstance && document.getElementById('lighthouseMap').offsetParent) {
+        lhMapInstance = L.map('lighthouseMap').setView([41.85, -70.05], 9);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution:'© OSM' }).addTo(lhMapInstance);
+        lhs.forEach(l => {
+          const icon = L.divIcon({ html:'<div style="font-size:22px;">💡</div>', className:'', iconSize:[24,24] });
+          L.marker([l.lat, l.lng], { icon }).addTo(lhMapInstance).bindPopup(`<b>${l.name}</b><br>${l.town}<br>Built ${l.built}`);
+        });
+      }
+    }, 100);
+  }
 
   document.getElementById('lighthouseList').innerHTML = lhs.map(l => {
     const locked = !state.isPro && !l.is_free;
@@ -1289,7 +1388,7 @@ function renderLighthouses() {
         <div class="item-sub">${l.town} · Built ${l.built} · ${l.duration_min} min tour${locked ? ' · Pro' : ''}</div>
       </div>
     </div>`;
-  }).join('');
+  }).join('') || '<div class="ios-list-item"><div class="item-sub">Audio tour data loading…</div></div>';
 }
 
 function openLighthouse(slug) {
@@ -1612,7 +1711,7 @@ function nbStart(){
   const feed=document.getElementById('nearbyFeed');
   feed.innerHTML="";
   document.getElementById('nbLocLabel').textContent = "Near " + (nbUser.label||nbNearestTown(nbUser));
-  if(!nbSeq.length){ feed.innerHTML='<div class="empty-state">Loading nearby spots…</div>'; return; }
+  if(!nbSeq.length){ feed.innerHTML='<div class="empty-state" style="padding:40px 20px;">Local spots and events are loading — check back in a moment.</div>'; return; }
   nbRenderPage(); nbRenderPage();
   if(nbIo) nbIo.disconnect();
   nbIo = new IntersectionObserver(es=>{ if(es[0].isIntersecting) nbRenderPage(); }, {root:document.getElementById('iosContent'), rootMargin:"600px"});
