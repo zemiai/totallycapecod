@@ -471,9 +471,6 @@
           <div style="padding:5px 0;">✅ All 12 lighthouse audio tours</div>
           <div style="padding:5px 0;">✅ Ad-free forever</div>
         </div>
-        <div style="margin-top:16px; text-align:center;">
-          <button onclick="resetPro()" style="background:none; border:none; color:var(--ios-sub); text-decoration:underline; font-size:12px;">Reset Pro (demo)</button>
-        </div>
       </div>
     </div>
   </div>
@@ -645,7 +642,6 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <script>
 // ============ CONFIG ============
-// REPLACE WITH YOUR LIVE STRIPE PAYMENT LINK TO TAKE MONEY:
 const STRIPE_LINK = 'https://buy.stripe.com/6oU8wIfTVbmhdZveHQbo401';
 // OPTIONAL: Set this to a Claude API proxy (e.g., Cloudflare Worker) to enable live AI
 window.TCC_AI_ENDPOINT = null;
@@ -1016,10 +1012,10 @@ function openStamp(slug) {
 }
 function confirmStamp() {
   if (!state.pendingStamp) return;
-  // GPS validation (if available) — within 1 mile for demo
+  // GPS validation (if available) — must be within 1 mile of the location
   getUserLoc(loc => {
     const d = distanceMiles(loc.lat, loc.lng, state.pendingStamp.lat, state.pendingStamp.lng);
-    if (d > 1.0 && !confirm(`You're ${d.toFixed(1)} miles from this spot. Stamp anyway? (In production, GPS will be required.)`)) {
+    if (d > 1.0 && !confirm(`You're ${d.toFixed(1)} miles from this spot. Stamp anyway?`)) {
       return;
     }
     if (!state.stamps.includes(state.pendingStamp.slug)) {
@@ -1651,25 +1647,24 @@ function closeModal(id) { document.getElementById(id + 'Modal').classList.remove
 document.querySelectorAll('.modal-bg').forEach(m => m.addEventListener('click', e => { if (e.target === m) m.classList.remove('show'); }));
 
 // ============ PURCHASE ============
+const _isDev = new URLSearchParams(location.search).has('dev');
+
 function goToStripe() {
   closeModal('purchase');
-  if (STRIPE_LINK.includes('REPLACE')) {
-    unlockPro();
-    openModal('success');
-  } else {
-    window.location.href = STRIPE_LINK;
-  }
+  window.location.href = STRIPE_LINK;
 }
 function unlockPro() {
   state.isPro = true;
   localStorage.setItem('tcc_pro', 'true');
   renderAll();
 }
-function resetPro() {
-  if (!confirm('Reset Pro? Demo only.')) return;
-  state.isPro = false;
-  localStorage.setItem('tcc_pro', 'false');
-  renderAll();
+if (_isDev) {
+  window.resetPro = function() {
+    if (!confirm('Reset Pro? (Dev mode only.)')) return;
+    state.isPro = false;
+    localStorage.setItem('tcc_pro', 'false');
+    renderAll();
+  };
 }
 function renderPro() {
   if (state.isPro) {
