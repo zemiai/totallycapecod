@@ -647,8 +647,25 @@
 // ============ CONFIG ============
 // REPLACE WITH YOUR LIVE STRIPE PAYMENT LINK TO TAKE MONEY:
 const STRIPE_LINK = 'https://buy.stripe.com/6oU8wIfTVbmhdZveHQbo401';
-// OPTIONAL: Set this to a Claude API proxy (e.g., Cloudflare Worker) to enable live AI
-window.TCC_AI_ENDPOINT = null;
+// Concierge backend — proxies questions to Claude (Haiku) with guardrails.
+// Set to null to fall back to static keyword matching only.
+window.TCC_AI_ENDPOINT = '/.netlify/functions/concierge';
+
+// Stable device ID for server-side free-tier rate limiting.
+// Persisted in localStorage; combined with IP server-side so clearing
+// localStorage alone cannot reset the daily free limit.
+(function () {
+  if (!localStorage.getItem('tcc_did')) {
+    // RFC 4122 v4 UUID via crypto.getRandomValues
+    const bytes = new Uint8Array(16);
+    crypto.getRandomValues(bytes);
+    bytes[6] = (bytes[6] & 0x0f) | 0x40;
+    bytes[8] = (bytes[8] & 0x3f) | 0x80;
+    const hex = Array.from(bytes).map(b => b.toString(16).padStart(2, '0')).join('');
+    const uuid = `${hex.slice(0,8)}-${hex.slice(8,12)}-${hex.slice(12,16)}-${hex.slice(16,20)}-${hex.slice(20)}`;
+    localStorage.setItem('tcc_did', uuid);
+  }
+}());
 
 const FREE_BEACH_LIMIT = 3;
 const FREE_STAMP_LIMIT = 25;
@@ -1056,7 +1073,7 @@ function sendAi() {
   conv.innerHTML += `<div class="ai-bubble-user">${q}</div>`;
   conv.scrollTop = conv.scrollHeight;
 
-  // Find best match in knowledge base
+  // Find best match in knowledge base (used as fallback when endpoint unavailable)
   const patterns = state.data.aiKnowledge?.patterns || [];
   const lower = q.toLowerCase();
   let bestMatch = null, bestScore = 0;
@@ -1067,13 +1084,45 @@ function sendAi() {
   }
   if (!bestMatch) bestMatch = patterns.find(p => p.id === 'fallback');
 
-  // If a Claude API proxy is configured, prefer it
+  // If a Claude API backend is configured, prefer it; fall back to static keyword match on error
   if (window.TCC_AI_ENDPOINT) {
-    fetch(window.TCC_AI_ENDPOINT, { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({question:q}) })
-      .then(r => r.json()).then(d => appendAi(d.response || bestMatch.response))
-      .catch(() => appendAi(bestMatch.response));
+    const deviceId = localStorage.getItem('tcc_did') || 'unknown';
+    fetch(window.TCC_AI_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ question: q, deviceId, isPro: state.isPro }),
+    })
+      .then(async r => {
+        const d = await r.json().catch(() => ({}));
+        if (d.disabled) {
+          // Kill switch active — show the message, don't deduct quota
+          appendAi(d.response || 'The Concierge is resting — back soon!');
+          return;
+        }
+        if (d.limited) {
+          // Server confirmed free daily limit hit — show upgrade prompt
+          const conv = document.getElementById('aiConv');
+          conv.innerHTML += `<div class="ai-bubble-ai">⚠️ You've used your free question today. <strong onclick="switchTab('pro')" style="text-decoration:underline; cursor:pointer;">Unlock unlimited for $9.99</strong></div>`;
+          conv.scrollTop = conv.scrollHeight;
+          return;
+        }
+        if (r.status === 429 || d.error === 'rate_limited') {
+          appendAi(d.response || "You've been very curious today — try again in an hour! 🌊");
+          return;
+        }
+        if (d.response) {
+          appendAi(d.response);
+        } else if (bestMatch) {
+          // Upstream returned something unexpected — fall back silently
+          appendAi(bestMatch.response);
+        }
+      })
+      .catch(() => {
+        // Network failure — fall back to static knowledge base
+        if (bestMatch) appendAi(bestMatch.response);
+      });
   } else {
-    setTimeout(() => appendAi(bestMatch.response), 600);
+    setTimeout(() => { if (bestMatch) appendAi(bestMatch.response); }, 600);
   }
 
   if (!state.isPro) {
