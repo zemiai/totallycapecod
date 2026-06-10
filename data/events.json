@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-10T12:43:53Z",
+  "updated_at": "2026-06-10T18:24:55Z",
   "window_days": 21,
-  "count": 145,
+  "count": 149,
   "_hermes_note": "Real Cape Cod events scraped from chambers + venues. update_events.py",
   "events": [
     {
@@ -496,6 +496,23 @@
       "img": null,
       "source": "Orleans",
       "source_url": "https://members.orleanscapecod.org/events/details/boards-in-the-gallery-06-13-2026-23448",
+      "start": "2026-06-13T00:00:00+00:00"
+    },
+    {
+      "id": "art-getting-it-right-art-show-demonstration-art-and-music-re",
+      "tag": "\ud83c\udfa8 ART",
+      "category": "art",
+      "time": "Sat Jun 13",
+      "title": "Art Getting it Right: Art Show, Demonstration, Art and Music Reception Art Getting it Right: Art Show, Demonstration, Art and Music Reception",
+      "venue": "",
+      "town": "Orleans",
+      "info": "",
+      "price": "",
+      "lat": 41.7901,
+      "lng": -69.9873,
+      "img": null,
+      "source": "Orleans",
+      "source_url": "https://members.orleanscapecod.org/events/details/art-getting-it-right-art-show-demonstration-art-and-music-reception-23829",
       "start": "2026-06-13T00:00:00+00:00"
     },
     {
@@ -1244,6 +1261,23 @@
       "img": null,
       "source": "Mashpee",
       "source_url": "https://business.mashpeechamber.com/events/Details/open-house-ribbon-cutting-at-bloom-aesthetics-wellness-1710736?sourceTypeId=Website",
+      "start": "2026-06-18T00:00:00+00:00"
+    },
+    {
+      "id": "view-details-20260618",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Thu Jun 18",
+      "title": "View Details",
+      "venue": "",
+      "town": "Bourne",
+      "info": "",
+      "price": "",
+      "lat": 41.7412,
+      "lng": -70.599,
+      "img": null,
+      "source": "Bourne",
+      "source_url": "https://web.capecodcanalchamber.org/events/Canal-Cruise-Business-Connections-1669/details",
       "start": "2026-06-18T00:00:00+00:00"
     },
     {
@@ -2386,6 +2420,23 @@
       "start": "2026-06-29T00:00:00+00:00"
     },
     {
+      "id": "circus-camp-tiny-tent-for-ages-5-6-20260629",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Mon Jun 29 \u00b7 9:30 AM",
+      "title": "Circus Camp // Tiny Tent for Ages 5 & 6",
+      "venue": "Cirque by the Sea at WHAT",
+      "town": "Truro",
+      "info": "",
+      "price": "",
+      "lat": 41.9979,
+      "lng": -70.0492,
+      "img": "https://payomet.org/wp-content/uploads/2026/06/CircusCampTinyTent_860x562.webp",
+      "source": "Payomet",
+      "source_url": "https://payomet.org/calendar/circus-camp-tiny-tent-for-ages-5-6/",
+      "start": "2026-06-29T09:30:00+00:00"
+    },
+    {
       "id": "chair-yoga-with-melissa-goodwin-20260629",
       "tag": "\ud83d\udcc5 EVENT",
       "category": "event",
@@ -2469,6 +2520,23 @@
       "source": "Mashpee",
       "source_url": "https://business.mashpeechamber.com/events/Details/member-exclusive-monthly-class-at-train-full-send-1536708?sourceTypeId=Website",
       "start": "2026-07-01T00:00:00+00:00"
+    },
+    {
+      "id": "adult-aerial-silks-open-level-20260701",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Wed Jul 1 \u00b7 5:45 PM",
+      "title": "Adult Aerial Silks \u2013 Open Level",
+      "venue": "Cirque by the Sea at WHAT",
+      "town": "Truro",
+      "info": "",
+      "price": "",
+      "lat": 41.9979,
+      "lng": -70.0492,
+      "img": "https://payomet.org/wp-content/uploads/2024/07/AdultAerials2024-860x562-1.webp",
+      "source": "Payomet",
+      "source_url": "https://payomet.org/calendar/adult-aerial-silks-open-level-july-1/",
+      "start": "2026-07-01T17:45:00+00:00"
     }
   ]
 }
