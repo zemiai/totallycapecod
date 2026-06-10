@@ -1945,8 +1945,10 @@ function nbRenderItem(it){
   const yelp=`https://www.yelp.com/search?find_desc=${encodeURIComponent(r.name)}&find_loc=${encodeURIComponent(r.town)}%2C+MA`;
   const ot=`https://www.opentable.com/s?term=${encodeURIComponent(r.name)}&metroId=66`;
   const reviews = (r.reviews!=null) ? ` <span class="rev">(${Number(r.reviews).toLocaleString()})</span>` : "";
-  const openBadge = (r.open_now===true) ? `<span class="nb-open open">● Open now</span>`
-                  : (r.open_now===false ? `<span class="nb-open closed">● Closed</span>` : "");
+  // open_now is a stale weekly snapshot from Google Places enrichment — not live —
+  // so we don't show a definitive "Open now/Closed" badge (it was wrongly marking
+  // open spots as closed). Re-enable once a live hours schedule is available.
+  const openBadge = "";
   const tags = Array.isArray(r.tags) ? r.tags.slice(0,3) : [];
   const siteBtn = r.website ? `<a class="nb-btn-primary" href="${nbEsc(r.website)}" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'website',item:'${nbEsc(r.name)}',location:'app_nearby'})">Website</a>` : "";
   return `<div class="nb-card">
@@ -1993,7 +1995,23 @@ function nbStart(){
 
 function renderNearby(){
   if(nbBuilt) return;                 // build once; content persists across tab switches
-  if(!applyAvatarOrigin() && !nbUser) nbUser = { lat: DEFAULT_LOC.lat, lng: DEFAULT_LOC.lng, label: nbNearestTown(DEFAULT_LOC) };
+  // Distance origin priority: (1) an explicit avatar base town the user chose,
+  // (2) the visitor's REAL GPS location (same source the beaches list uses) so
+  // "X mi away" is accurate, (3) Orleans as a last-resort default.
+  if(!applyAvatarOrigin()){
+    if(state.userLoc){
+      nbUser = { lat: state.userLoc.lat, lng: state.userLoc.lng, label: nbNearestTown(state.userLoc) };
+    } else {
+      if(!nbUser) nbUser = { lat: DEFAULT_LOC.lat, lng: DEFAULT_LOC.lng, label: nbNearestTown(DEFAULT_LOC) };
+      // Ask for GPS in the background; once we have it, rebuild from the real location.
+      getUserLoc(loc => {
+        if(loc){
+          nbUser = { lat: loc.lat, lng: loc.lng, label: nbNearestTown(loc) };
+          nbBuilt = false; nbStart(); nbBuilt = nbSeq.length > 0;
+        }
+      });
+    }
+  }
   updatePersonalizeBar();
   nbStart();
   nbBuilt = nbSeq.length > 0;         // if data wasn't ready yet, retry on next open

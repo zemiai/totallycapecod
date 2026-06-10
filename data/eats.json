@@ -2,7 +2,7 @@
   "version": "1.0",
   "updated_at": "2026-06-08T14:16:02Z",
   "enriched": true,
-  "count": 84,
+  "count": 83,
   "eats": [
     {
       "id": "the-lobster-pot",
@@ -18,7 +18,7 @@
         "lobster",
         "fine"
       ],
-      "desc": "Iconic waterfront since 1979 \u2014 lobster rolls, clam chowder, harbor views.",
+      "desc": "Iconic waterfront since 1979 — lobster rolls, clam chowder, harbor views.",
       "place_id": "ChIJodQ3d3yn_IkRaL3U202uvJ0",
       "photo": "data/eats-photos/the-lobster-pot.jpg",
       "reviews": 8924,
@@ -71,7 +71,7 @@
       "open_now": false,
       "rating_source": "google",
       "enriched_at": "2026-06-08T14:15:07Z",
-      "deal": "Raw Bar Happy Hour \u00b7 Fri\u2013Sun 2\u20134:30pm"
+      "deal": "Raw Bar Happy Hour · Fri–Sun 2–4:30pm"
     },
     {
       "id": "the-canteen",
@@ -87,7 +87,7 @@
         "clam",
         "casual"
       ],
-      "desc": "Beachfront counter \u2014 go for the lobster roll and frozen ros\u00e9.",
+      "desc": "Beachfront counter — go for the lobster roll and frozen rosé.",
       "place_id": "ChIJy0gAcH6n_IkR2t0LvOv8TYE",
       "photo": "data/eats-photos/the-canteen.jpg",
       "reviews": 2340,
@@ -132,7 +132,7 @@
       "tags": [
         "fine"
       ],
-      "desc": "Cozy taverna \u2014 Mediterranean small plates and a great wine list.",
+      "desc": "Cozy taverna — Mediterranean small plates and a great wine list.",
       "place_id": "ChIJaV1qxHqn_IkRpzPMI4_3yY0",
       "photo": "data/eats-photos/strangers-saints.jpg",
       "reviews": 441,
@@ -224,7 +224,7 @@
         "italian",
         "fine"
       ],
-      "desc": "Rustic, romantic North Truro spot \u2014 handmade pasta, tiny room.",
+      "desc": "Rustic, romantic North Truro spot — handmade pasta, tiny room.",
       "place_id": "ChIJqzMF3Xyg_IkRiIX2nTn3rW4",
       "photo": "data/eats-photos/terra-luna.jpg",
       "reviews": 150,
@@ -302,7 +302,7 @@
       "open_now": false,
       "rating_source": "google",
       "enriched_at": "2026-06-08T14:15:14Z",
-      "deal": "Thu: All-You-Can-Eat Fish & Chips \u00b7 Daily Happy Hour"
+      "deal": "Thu: All-You-Can-Eat Fish & Chips · Daily Happy Hour"
     },
     {
       "id": "pb-boulangerie-bistro",
@@ -340,7 +340,7 @@
         "seafood",
         "casual"
       ],
-      "desc": "Locals' joint over Duck Creek \u2014 oysters they pull themselves.",
+      "desc": "Locals' joint over Duck Creek — oysters they pull themselves.",
       "place_id": "ChIJ8WaihEZn-4kRmrPqBtMsAuw",
       "photo": "data/eats-photos/the-bookstore-restaurant.jpg",
       "reviews": 1265,
@@ -458,7 +458,7 @@
         "bakery",
         "coffee"
       ],
-      "desc": "A Cape Sunday tradition \u2014 hand-cut donuts and a buzzing counter.",
+      "desc": "A Cape Sunday tradition — hand-cut donuts and a buzzing counter.",
       "place_id": "ChIJU8uagpto-4kR9tJNdnHbz3Y",
       "photo": "data/eats-photos/hole-in-one-donuts.jpg",
       "reviews": 679,
@@ -466,28 +466,6 @@
       "open_now": true,
       "rating_source": "google",
       "enriched_at": "2026-06-08T14:15:18Z",
-      "deal": null
-    },
-    {
-      "id": "karoo-restaurant",
-      "name": "Karoo Restaurant",
-      "town": "Eastham",
-      "lat": 41.8261,
-      "lng": -69.975,
-      "cuisine": "South African",
-      "price": "$$",
-      "rating": 4.6,
-      "tags": [
-        "fine"
-      ],
-      "desc": "The Cape's only South African kitchen \u2014 bobotie, peri-peri, big flavor.",
-      "place_id": "ChIJ0XZEu5to-4kRWcoCI3k8rIg",
-      "photo": "data/eats-photos/karoo-restaurant.jpg",
-      "reviews": 285,
-      "website": null,
-      "open_now": null,
-      "rating_source": "google",
-      "enriched_at": "2026-06-08T14:15:19Z",
       "deal": null
     },
     {
@@ -551,7 +529,7 @@
         "casual",
         "icecream"
       ],
-      "desc": "Modern clam-shack \u2014 smash burgers, lobster rolls, frappes.",
+      "desc": "Modern clam-shack — smash burgers, lobster rolls, frappes.",
       "place_id": "ChIJlTr32Wtp-4kRCvibwRfSGS0",
       "photo": "data/eats-photos/the-knack.jpg",
       "reviews": 1490,
@@ -598,7 +576,7 @@
         "bar",
         "casual"
       ],
-      "desc": "Quintessential Cape tavern since 1969 \u2014 chowder, burgers, ceiling signs.",
+      "desc": "Quintessential Cape tavern since 1969 — chowder, burgers, ceiling signs.",
       "place_id": "ChIJ36GSqHxp-4kR718dguVV9VA",
       "photo": "data/eats-photos/land-ho.jpg",
       "reviews": 1194,
@@ -644,7 +622,7 @@
         "fine",
         "seafood"
       ],
-      "desc": "Downtown bistro \u2014 wood-grilled fish and a lively bar scene.",
+      "desc": "Downtown bistro — wood-grilled fish and a lively bar scene.",
       "place_id": "ChIJjaBSXXtp-4kRuVTVS_9LV4o",
       "photo": "data/eats-photos/mahoneys-atlantic-bar-grill.jpg",
       "reviews": 454,
@@ -667,7 +645,7 @@
         "seafood",
         "fine"
       ],
-      "desc": "Tiny, beloved, no-reservations \u2014 some of the best seafood on the Cape.",
+      "desc": "Tiny, beloved, no-reservations — some of the best seafood on the Cape.",
       "place_id": "ChIJQTh4CspB-4kRBKxY6fqmNyA",
       "photo": "data/eats-photos/brewster-fish-house.jpg",
       "reviews": 486,
@@ -715,7 +693,7 @@
         "clam",
         "casual"
       ],
-      "desc": "Order-at-the-window family spot \u2014 fried seafood and lobster dinners.",
+      "desc": "Order-at-the-window family spot — fried seafood and lobster dinners.",
       "place_id": "ChIJ1bgKN9pB-4kR91k6aRxf7hw",
       "photo": "data/eats-photos/jts-seafood.jpg",
       "reviews": 883,
@@ -723,7 +701,7 @@
       "open_now": false,
       "rating_source": "google",
       "enriched_at": "2026-06-08T14:15:26Z",
-      "deal": "Cash-discount pricing \u00b7 Kids specials"
+      "deal": "Cash-discount pricing · Kids specials"
     },
     {
       "id": "chillingsworth",
@@ -806,7 +784,7 @@
         "seafood",
         "bar"
       ],
-      "desc": "Harbor-view deck \u2014 sunset cocktails and twin lobsters.",
+      "desc": "Harbor-view deck — sunset cocktails and twin lobsters.",
       "place_id": "ChIJrYMydbU_-4kRVU3vQ6IURfk",
       "photo": "data/eats-photos/brax-landing.jpg",
       "reviews": 2298,
@@ -875,7 +853,7 @@
         "seafood",
         "fine"
       ],
-      "desc": "Tucked off Main Street \u2014 bouillabaisse and oysters in a buzzy room.",
+      "desc": "Tucked off Main Street — bouillabaisse and oysters in a buzzy room.",
       "place_id": "ChIJyRMiwJ8U-4kR1Q2QAT9XbbE",
       "photo": "data/eats-photos/the-impudent-oyster.jpg",
       "reviews": 788,
@@ -968,7 +946,7 @@
         "breakfast",
         "brunch"
       ],
-      "desc": "Breakfast on the airfield \u2014 watch small planes over your hash.",
+      "desc": "Breakfast on the airfield — watch small planes over your hash.",
       "place_id": "ChIJITYtwcIU-4kRBV-9WAl6ohs",
       "photo": "data/eats-photos/hangar-b-eatery.jpg",
       "reviews": 545,
@@ -980,7 +958,7 @@
     },
     {
       "id": "sesuit-harbor-cafe",
-      "name": "Sesuit Harbor Caf\u00e9",
+      "name": "Sesuit Harbor Café",
       "town": "East Dennis",
       "lat": 41.7561,
       "lng": -70.1542,
@@ -992,7 +970,7 @@
         "lobster",
         "clam"
       ],
-      "desc": "BYOB sleeper hit \u2014 picnic tables right on the harbor. Cash only.",
+      "desc": "BYOB sleeper hit — picnic tables right on the harbor. Cash only.",
       "place_id": "ChIJXcNTwkhH-4kR2dPePD7qdbk",
       "photo": "data/eats-photos/sesuit-harbor-cafe.jpg",
       "reviews": 2499,
@@ -1016,7 +994,7 @@
         "breakfast",
         "brunch"
       ],
-      "desc": "Water-view booths \u2014 Sunday brunch and big seafood plates.",
+      "desc": "Water-view booths — Sunday brunch and big seafood plates.",
       "place_id": "ChIJRUdBwFtH-4kR3DPpwanHNVI",
       "photo": "data/eats-photos/marshside.jpg",
       "reviews": 1202,
@@ -1108,7 +1086,7 @@
         "clam",
         "icecream"
       ],
-      "desc": "Since 1953 \u2014 whole-belly clams and onion rings by the bucket.",
+      "desc": "Since 1953 — whole-belly clams and onion rings by the bucket.",
       "place_id": "ChIJXQSoj1I5-4kRtvuo6aNpePw",
       "photo": "data/eats-photos/kream-n-kone.jpg",
       "reviews": 2092,
@@ -1155,7 +1133,7 @@
         "breakfast",
         "brunch"
       ],
-      "desc": "Gingerbread Victorian \u2014 English tea, scones, and full breakfast.",
+      "desc": "Gingerbread Victorian — English tea, scones, and full breakfast.",
       "place_id": "ChIJm-ji0LY3-4kRgqfBrplm8uQ",
       "photo": "data/eats-photos/the-optimist-cafe.jpg",
       "reviews": 307,
@@ -1246,7 +1224,7 @@
       "tags": [
         "icecream"
       ],
-      "desc": "Since 1934 \u2014 the Cape's most legendary scoop. Get the peanut butter cup.",
+      "desc": "Since 1934 — the Cape's most legendary scoop. Get the peanut butter cup.",
       "place_id": "ChIJH7OPbCUy-4kR4xtlrE38Ps0",
       "photo": "data/eats-photos/four-seas-ice-cream.jpg",
       "reviews": 823,
@@ -1363,7 +1341,7 @@
         "seafood",
         "bar"
       ],
-      "desc": "Marina sunset spot \u2014 frozen drinks and lobster over the harbor.",
+      "desc": "Marina sunset spot — frozen drinks and lobster over the harbor.",
       "place_id": "ChIJpa7OFG_X5IkRBqKlYp5W_to",
       "photo": "data/eats-photos/tugboats.jpg",
       "reviews": 1345,
@@ -1386,7 +1364,7 @@
         "seafood",
         "bar"
       ],
-      "desc": "Across from the ferries \u2014 chowder, raw bar, easy harbor views.",
+      "desc": "Across from the ferries — chowder, raw bar, easy harbor views.",
       "place_id": "ChIJZbVzxPsw-4kR7HGC42e1Xbo",
       "photo": "data/eats-photos/the-black-cat-tavern.jpg",
       "reviews": 2578,
@@ -1408,7 +1386,7 @@
       "tags": [
         "fine"
       ],
-      "desc": "Sleek village bistro \u2014 small plates and a buzzy bar crowd.",
+      "desc": "Sleek village bistro — small plates and a buzzy bar crowd.",
       "place_id": "ChIJ80_axYAy-4kR5ZFGO8OjN-Y",
       "photo": "data/eats-photos/five-bays-bistro.jpg",
       "reviews": 163,
@@ -1430,7 +1408,7 @@
       "tags": [
         "fine"
       ],
-      "desc": "Romantic 1790 house \u2014 refined New England plates and tasting menus.",
+      "desc": "Romantic 1790 house — refined New England plates and tasting menus.",
       "place_id": "ChIJUaKu1F7N5IkRA1-9zEI2EpI",
       "photo": null,
       "reviews": 2,
@@ -1476,7 +1454,7 @@
         "casual",
         "bar"
       ],
-      "desc": "Village tavern in historic 6A \u2014 burgers, comfort food, and a patio.",
+      "desc": "Village tavern in historic 6A — burgers, comfort food, and a patio.",
       "place_id": "ChIJmyyNDWs3-4kR55XrBovJ_F0",
       "photo": "data/eats-photos/barnstable-restaurant-tavern.jpg",
       "reviews": 260,
@@ -1498,7 +1476,7 @@
       "tags": [
         "fine"
       ],
-      "desc": "Mashpee Commons brasserie \u2014 escargot, steak frites, lively bar.",
+      "desc": "Mashpee Commons brasserie — escargot, steak frites, lively bar.",
       "place_id": "ChIJ2-jM1kTS5IkRZw3Nmpqs8Vs",
       "photo": "data/eats-photos/bleu.jpg",
       "reviews": 695,
@@ -1521,7 +1499,7 @@
         "italian",
         "fine"
       ],
-      "desc": "Tuscan trattoria at the Commons \u2014 handmade pasta, wood-grilled.",
+      "desc": "Tuscan trattoria at the Commons — handmade pasta, wood-grilled.",
       "place_id": "ChIJpWAM00TS5IkRNvSMgOXjQ6M",
       "photo": "data/eats-photos/siena.jpg",
       "reviews": 517,
@@ -1589,7 +1567,7 @@
         "seafood",
         "bar"
       ],
-      "desc": "Marina-side deck \u2014 $5 cocktails, lobster club, sunset over the canal.",
+      "desc": "Marina-side deck — $5 cocktails, lobster club, sunset over the canal.",
       "place_id": "ChIJf4qwdEfK5IkRSoOACkj7jUM",
       "photo": null,
       "reviews": 6,
@@ -1611,7 +1589,7 @@
       "tags": [
         "fine"
       ],
-      "desc": "Dinner in a converted church \u2014 stained glass and refined plates.",
+      "desc": "Dinner in a converted church — stained glass and refined plates.",
       "place_id": "ChIJ6-j7NbPL5IkRoMtS3rDq8o4",
       "photo": "data/eats-photos/the-belfry-inn-bistro.jpg",
       "reviews": 286,
@@ -1704,7 +1682,7 @@
         "italian",
         "fine"
       ],
-      "desc": "Main Street favorite \u2014 generous Italian, always a wait, always worth it.",
+      "desc": "Main Street favorite — generous Italian, always a wait, always worth it.",
       "place_id": "ChIJbew7M3nX5IkRaiEn4pmd-LY",
       "photo": "data/eats-photos/la-cucina-sul-mare.jpg",
       "reviews": 939,
@@ -1727,7 +1705,7 @@
         "casual",
         "bar"
       ],
-      "desc": "Cozy Main Street standby \u2014 chowder, burgers, and a friendly bar.",
+      "desc": "Cozy Main Street standby — chowder, burgers, and a friendly bar.",
       "place_id": "ChIJray96n7X5IkRytdEb7lU_pM",
       "photo": "data/eats-photos/the-quarterdeck.jpg",
       "reviews": 1427,
@@ -1739,7 +1717,7 @@
     },
     {
       "id": "anejo-mexican-bistro",
-      "name": "A\u00f1ejo Mexican Bistro",
+      "name": "Añejo Mexican Bistro",
       "town": "Falmouth",
       "lat": 41.5522,
       "lng": -70.6153,
@@ -1773,7 +1751,7 @@
         "seafood",
         "bar"
       ],
-      "desc": "Waterfront tavern on Eel Pond \u2014 oysters and a historic back bar.",
+      "desc": "Waterfront tavern on Eel Pond — oysters and a historic back bar.",
       "place_id": "ChIJC48OtYDY5IkRvHRmHs9Hxrc",
       "photo": "data/eats-photos/the-captain-kidd.jpg",
       "reviews": 690,
@@ -1820,7 +1798,7 @@
         "breakfast",
         "coffee"
       ],
-      "desc": "French bakers, line out the door \u2014 baguettes, tarts, croissants.",
+      "desc": "French bakers, line out the door — baguettes, tarts, croissants.",
       "place_id": "ChIJZ7-sMHnX5IkRgLmGtLoQQBE",
       "photo": "data/eats-photos/maison-villatte.jpg",
       "reviews": 1145,
@@ -1844,7 +1822,7 @@
         "bar",
         "fine"
       ],
-      "desc": "Summer-only harbor legend \u2014 mudslides and lobster on Red Brook Harbor.",
+      "desc": "Summer-only harbor legend — mudslides and lobster on Red Brook Harbor.",
       "place_id": "ChIJO_JZ0fbP5IkR0UhnYQRBxb0",
       "photo": "data/eats-photos/the-chart-room.jpg",
       "reviews": 855,
@@ -1868,7 +1846,7 @@
         "clam",
         "casual"
       ],
-      "desc": "Buzzards Bay family seafood \u2014 fried platters and friendly service.",
+      "desc": "Buzzards Bay family seafood — fried platters and friendly service.",
       "place_id": "ChIJQ1kUxg_G5IkR4HW305bCk2s",
       "photo": "data/eats-photos/lindseys-family-restaurant.jpg",
       "reviews": 1806,
@@ -1890,7 +1868,7 @@
       "tags": [
         "fine"
       ],
-      "desc": "Beloved Southeast-Asian kitchen \u2014 curries and pho near the bridge.",
+      "desc": "Beloved Southeast-Asian kitchen — curries and pho near the bridge.",
       "place_id": "ChIJY8306AXP5IkRjEtrlXdwfGM",
       "photo": "data/eats-photos/stir-crazy.jpg",
       "reviews": 449,
@@ -1921,7 +1899,7 @@
       "open_now": false,
       "rating_source": "google",
       "enriched_at": "2026-06-08T14:16:01Z",
-      "deal": "Wed & Sat Prime Rib Special \u00b7 weekday lunch specials"
+      "deal": "Wed & Sat Prime Rib Special · weekday lunch specials"
     },
     {
       "id": "the-brickhouse-restaurant",
@@ -1945,7 +1923,7 @@
       "open_now": false,
       "rating_source": "google",
       "enriched_at": "2026-06-08T14:16:02Z",
-      "deal": "Early Bird daily \u00b7 Wed Prime Rib Night \u00b7 Half-Off App Night"
+      "deal": "Early Bird daily · Wed Prime Rib Night · Half-Off App Night"
     }
   ]
 }

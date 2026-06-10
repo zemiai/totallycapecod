@@ -487,9 +487,9 @@ function renderItem(it){
   const yelp=`https://www.yelp.com/search?find_desc=${encodeURIComponent(r.name)}&find_loc=${encodeURIComponent(r.town)}%2C+MA`;
   const ot=`https://www.opentable.com/s?term=${encodeURIComponent(r.name)}&metroId=66`;
   const reviews = (r.reviews!=null) ? ` <span class="rev">(${r.reviews.toLocaleString()})</span>` : "";
-  const openBadge = (r.open_now===true)
-    ? `<span class="open-badge open">● Open now</span>`
-    : (r.open_now===false ? `<span class="open-badge closed">● Closed</span>` : "");
+  // open_now is a stale weekly snapshot, not live — don't show a definitive
+  // Open/Closed badge (it wrongly marked open spots as closed).
+  const openBadge = "";
   const siteBtn = r.website
     ? `<a class="a-view" href="${esc(r.website)}" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'website',item:'${esc(r.name)}',location:'feed'})">Website</a>`
     : "";
