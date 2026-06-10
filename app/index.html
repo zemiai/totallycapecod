@@ -452,6 +452,9 @@
         <div style="padding:0 20px 20px;">
           <button onclick="openModal('purchase')" style="width:100%; background:linear-gradient(135deg,#C99A4A 0%,#A77C30 100%); color:white; border:none; padding:15px; border-radius:14px; font-weight:800; font-size:15px; box-shadow:0 6px 16px rgba(167,124,48,0.35); cursor:pointer;">Unlock Cape Cod Pro — $9.99</button>
           <div style="text-align:center; color:var(--ios-sub); font-size:11px; margin-top:10px;">🔒 Secure checkout via Stripe</div>
+          <div style="text-align:center; margin-top:14px;">
+            <button onclick="openModal('restorePurchase')" style="background:none; border:none; color:var(--cape-navy); font-size:13px; font-weight:600; text-decoration:underline; cursor:pointer; padding:4px 0;">Already purchased? Restore access</button>
+          </div>
         </div>
       </div>
       <div id="proSplashUnlocked" style="display:none; padding:30px 20px;">
@@ -628,6 +631,29 @@
     </div>
     <button onclick="goToStripe()" style="width:100%; background:var(--cape-navy); color:white; border:none; padding:14px; border-radius:14px; font-weight:700; font-size:15px; margin-top:18px;">Continue to checkout</button>
     <button onclick="closeModal('purchase')" style="width:100%; background:transparent; color:var(--cape-navy); border:none; padding:10px; font-weight:600; font-size:14px;">Maybe later</button>
+    <div style="text-align:center; margin-top:4px;">
+      <button onclick="closeModal('purchase'); openModal('restorePurchase');" style="background:none; border:none; color:var(--ios-sub); font-size:12px; text-decoration:underline; cursor:pointer; padding:4px 0;">Already purchased? Restore access</button>
+    </div>
+  </div>
+</div>
+
+<!-- Restore Purchase Modal -->
+<div class="modal-bg" id="restorePurchaseModal">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <div style="text-align:center;">
+      <div style="font-size:40px;">🔑</div>
+      <div class="font-display" style="font-weight:900; font-size:22px; margin-top:6px;">Restore Purchase</div>
+      <div style="color:var(--ios-sub); font-size:13px; margin-top:4px;">Enter the email you used at checkout</div>
+    </div>
+    <div style="margin-top:18px;">
+      <input id="restoreEmailInput" type="email" inputmode="email" autocomplete="email" placeholder="your@email.com"
+        style="width:100%; box-sizing:border-box; padding:13px 14px; border:1.5px solid var(--ios-divider); border-radius:12px; font-size:16px; outline:none; background:var(--ios-bg);"
+        onkeydown="if(event.key==='Enter') restorePurchase()" />
+    </div>
+    <div id="restoreMsg" style="display:none; margin-top:12px; padding:11px 14px; border-radius:10px; font-size:13px; text-align:center;"></div>
+    <button id="restoreBtn" onclick="restorePurchase()" style="width:100%; background:var(--cape-navy); color:white; border:none; padding:14px; border-radius:14px; font-weight:700; font-size:15px; margin-top:14px;">Restore Pro Access</button>
+    <button onclick="closeModal('restorePurchase')" style="width:100%; background:transparent; color:var(--ios-sub); border:none; padding:10px; font-weight:600; font-size:14px;">Cancel</button>
   </div>
 </div>
 
@@ -1680,6 +1706,66 @@ function renderPro() {
     document.getElementById('proSplashLocked').style.display = 'block';
     document.getElementById('proSplashUnlocked').style.display = 'none';
     document.getElementById('moreMenuProStatus').textContent = '$9.99 lifetime';
+  }
+}
+
+async function restorePurchase() {
+  const emailEl = document.getElementById('restoreEmailInput');
+  const msgEl = document.getElementById('restoreMsg');
+  const btn = document.getElementById('restoreBtn');
+
+  const email = (emailEl.value || '').trim();
+  if (!email || !email.includes('@')) {
+    msgEl.style.display = 'block';
+    msgEl.style.background = '#FFF3CD';
+    msgEl.style.color = '#856404';
+    msgEl.textContent = 'Please enter a valid email address.';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Checking…';
+  msgEl.style.display = 'none';
+
+  try {
+    const res = await fetch('/.netlify/functions/restore-purchase', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
+
+    const data = await res.json().catch(() => ({}));
+
+    if (res.status === 429) {
+      msgEl.style.display = 'block';
+      msgEl.style.background = '#FFF3CD';
+      msgEl.style.color = '#856404';
+      msgEl.textContent = data.error || 'Too many attempts. Please wait an hour and try again.';
+    } else if (!res.ok) {
+      msgEl.style.display = 'block';
+      msgEl.style.background = '#FFF3CD';
+      msgEl.style.color = '#856404';
+      msgEl.textContent = data.error || 'Unable to verify right now. Please try again in a moment.';
+    } else if (data.pro) {
+      // Success — unlock and celebrate
+      closeModal('restorePurchase');
+      unlockPro();
+      openModal('success');
+      gtag && gtag('event', 'purchase_restore', { method: 'email' });
+    } else {
+      msgEl.style.display = 'block';
+      msgEl.style.background = '#F8D7DA';
+      msgEl.style.color = '#721C24';
+      msgEl.textContent = data.message || 'No Pro purchase found for that email. Try the email you used at checkout.';
+    }
+  } catch {
+    msgEl.style.display = 'block';
+    msgEl.style.background = '#FFF3CD';
+    msgEl.style.color = '#856404';
+    msgEl.textContent = 'Network error. Please check your connection and try again.';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Restore Pro Access';
   }
 }
 
