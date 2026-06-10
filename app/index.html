@@ -1019,7 +1019,7 @@ function confirmStamp() {
   // GPS validation (if available) — within 1 mile for demo
   getUserLoc(loc => {
     const d = distanceMiles(loc.lat, loc.lng, state.pendingStamp.lat, state.pendingStamp.lng);
-    if (d > 1.0 && !confirm(`You're ${d.toFixed(1)} miles from this spot. Stamp anyway? (In production, GPS will be required.)`)) {
+    if (d > 1.0 && !confirm(`You're ${d.toFixed(1)} miles from this spot. Stamp anyway?`)) {
       return;
     }
     if (!state.stamps.includes(state.pendingStamp.slug)) {

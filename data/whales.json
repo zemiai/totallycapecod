@@ -1,6 +1,98 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-10T16:14:29Z",
+  "updated_at": "2026-06-10T17:00:00Z",
   "_hermes_note": "Hermes appends new sightings from operator SMS webhook + user submissions. Auto-prune entries older than 7 days. Operators: PWW (Provincetown Whale Watch), DF (Dolphin Fleet), HWW (Hyannis Whale Watcher).",
-  "recent_sightings": []
+  "recent_sightings": [
+    {
+      "id": "w20260610-01",
+      "species": "humpback",
+      "count": 4,
+      "lat": 42.21,
+      "lng": -70.31,
+      "location": "Stellwagen Bank Southwest Corner",
+      "reported_by": "Dolphin Fleet",
+      "reported_at": "2026-06-10T16:22:00Z",
+      "time_ago": "38 min ago",
+      "photo_url": "",
+      "notes": "Bubble-net feeding, two breaches"
+    },
+    {
+      "id": "w20260610-02",
+      "species": "humpback",
+      "count": 2,
+      "lat": 42.12,
+      "lng": -70.24,
+      "location": "Race Point, 3 mi N",
+      "reported_by": "Provincetown Whale Watch",
+      "reported_at": "2026-06-10T15:25:00Z",
+      "time_ago": "1 h ago",
+      "photo_url": "",
+      "notes": "Mother + calf, logging at surface"
+    },
+    {
+      "id": "w20260610-03",
+      "species": "fin",
+      "count": 1,
+      "lat": 42.3,
+      "lng": -70.3,
+      "location": "Stellwagen Bank North",
+      "reported_by": "Provincetown Whale Watch",
+      "reported_at": "2026-06-10T14:20:00Z",
+      "time_ago": "2 h ago",
+      "photo_url": "",
+      "notes": "Fast traveler heading NE"
+    },
+    {
+      "id": "w20260610-04",
+      "species": "dolphin",
+      "count": 25,
+      "lat": 41.92,
+      "lng": -70.05,
+      "location": "Off Wood End Light",
+      "reported_by": "Dolphin Fleet",
+      "reported_at": "2026-06-10T13:00:00Z",
+      "time_ago": "4 h ago",
+      "photo_url": "",
+      "notes": "Atlantic white-sided pod riding the bow"
+    },
+    {
+      "id": "w20260610-05",
+      "species": "minke",
+      "count": 2,
+      "lat": 42.05,
+      "lng": -70.18,
+      "location": "Mid-bank, east edge",
+      "reported_by": "Hyannis Whale Watcher",
+      "reported_at": "2026-06-10T10:00:00Z",
+      "time_ago": "7 h ago",
+      "photo_url": "",
+      "notes": ""
+    },
+    {
+      "id": "w20260610-06",
+      "species": "seal",
+      "count": 40,
+      "lat": 41.56,
+      "lng": -69.99,
+      "location": "Monomoy Island haul-out",
+      "reported_by": "Hyannis Whale Watcher",
+      "reported_at": "2026-06-09T19:00:00Z",
+      "time_ago": "22 h ago",
+      "photo_url": "",
+      "notes": "Gray seals on the flats at low tide"
+    },
+    {
+      "id": "w20260610-07",
+      "species": "humpback",
+      "count": 3,
+      "lat": 42.25,
+      "lng": -70.27,
+      "location": "Stellwagen Bank, mid-bank",
+      "reported_by": "Dolphin Fleet",
+      "reported_at": "2026-06-09T15:00:00Z",
+      "time_ago": "1 day ago",
+      "photo_url": "",
+      "notes": "Tail-lobbing, ID'd as 'Nile' by naturalist"
+    }
+  ]
 }
