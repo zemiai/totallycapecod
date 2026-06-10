@@ -84,7 +84,7 @@ def fetch_details(api_key: str, place_id: str) -> dict | None:
     headers = {
         "X-Goog-Api-Key": api_key,
         "X-Goog-FieldMask": (
-            "id,rating,userRatingCount,websiteUri,priceLevel,"
+            "id,businessStatus,rating,userRatingCount,websiteUri,priceLevel,"
             "currentOpeningHours.openNow,photos"
         ),
     }
@@ -121,6 +121,7 @@ def main() -> None:
         sys.exit(1)
 
     enriched_count = 0
+    closed = []  # permanently-closed restaurants to drop from the list
     for r in data["eats"]:
         # 1) Resolve place_id once, then cache it forever.
         if not r.get("place_id"):
@@ -133,6 +134,15 @@ def main() -> None:
         d = fetch_details(api_key, r["place_id"])
         time.sleep(REQUEST_PAUSE)
         if not d:
+            continue
+
+        # 2a) Drop permanently-closed places (Google is authoritative here).
+        status = d.get("businessStatus")
+        if status:
+            r["business_status"] = status
+        if status == "CLOSED_PERMANENTLY":
+            closed.append(r)
+            print(f"[hermes] PERMANENTLY CLOSED — dropping {r['name']} ({r['town']})")
             continue
 
         if d.get("rating") is not None:
@@ -159,9 +169,22 @@ def main() -> None:
         enriched_count += 1
         print(f"[hermes] enriched {r['name']} ({r.get('rating')}★ / {r.get('reviews')} reviews)")
 
+    # Remove permanently-closed listings (and their orphaned photos) before writing.
+    if closed:
+        closed_ids = {c["id"] for c in closed}
+        data["eats"] = [e for e in data["eats"] if e["id"] not in closed_ids]
+        for c in closed:
+            photo = PHOTO_DIR / f'{c["id"]}.jpg'
+            if photo.exists():
+                photo.unlink()
+        print(f"[hermes] removed {len(closed)} permanently-closed: "
+              + ", ".join(c["name"] for c in closed))
+
+    data["count"] = len(data["eats"])
     data["enriched"] = enriched_count > 0
     safe_write(OUT, data, count_key="eats", min_ratio=0.5)
-    print(f"[hermes] done — enriched {enriched_count}/{len(data['eats'])} restaurants")
+    print(f"[hermes] done — enriched {enriched_count}, dropped {len(closed)} closed, "
+          f"{len(data['eats'])} restaurants remain")
 
 
 if __name__ == "__main__":
