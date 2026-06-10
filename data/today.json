@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "date": "2026-06-10",
-  "updated_at": "2026-06-10T12:00:00Z",
+  "updated_at": "2026-06-10T14:30:00Z",
   "_hermes_note": "Hermes overwrites this daily at 5am ET. Categories: music, happy_hour, free_event, family, food_deal, drive_in, farmers_market, trivia, art.",
   "events": [
     {
@@ -37,6 +37,22 @@
       "source_url": "https://www.provincetownfilm.org/festival/"
     },
     {
+      "id": "capecodbeer-2026-06-10-music-bingo",
+      "tag": "🧠 TRIVIA",
+      "category": "trivia",
+      "date": "2026-06-10",
+      "time": "6:00 PM",
+      "title": "Music Bingo Night",
+      "venue": "Cape Cod Beer",
+      "town": "Barnstable",
+      "info": "Barnstable · Free entry · All ages · DJ plays song snippets, grab a bingo card · Every Wednesday 6–8 PM",
+      "price": "Free",
+      "lat": 41.6606,
+      "lng": -70.2725,
+      "img": "",
+      "source_url": "https://www.weneedavacation.com/events/taproom-trivia-night-at-cape-cod-beer/"
+    },
+    {
       "id": "falmouth-2026-06-11-poetry-fest",
       "tag": "🎨 ART",
       "category": "art",
@@ -61,12 +77,28 @@
       "title": "Taproom Trivia Night",
       "venue": "Cape Cod Beer",
       "town": "Barnstable",
-      "info": "Barnstable · Free entry · All ages · Hosted by Bri from Lemonadio",
+      "info": "Barnstable · Free entry · All ages · Hosted by Bri from Lemonadio · Every Thursday 6–8 PM",
       "price": "Free",
       "lat": 41.6606,
       "lng": -70.2725,
       "img": "",
       "source_url": "https://capecodbeer.com/events/"
+    },
+    {
+      "id": "piff-2026-06-11-ryan-murphy-talk",
+      "tag": "🎨 ART",
+      "category": "art",
+      "date": "2026-06-11",
+      "time": "7:00 PM",
+      "title": "PIFF: Ryan Murphy & John Waters in Conversation",
+      "venue": "Provincetown International Film Festival venues",
+      "town": "Provincetown",
+      "info": "Provincetown · $20 · All ages · TV mogul Ryan Murphy sits down with festival regular John Waters · Part of PIFF June 10–14",
+      "price": "$20",
+      "lat": 42.0494,
+      "lng": -70.1872,
+      "img": "",
+      "source_url": "https://www.provincetownfilm.org/festival/"
     },
     {
       "id": "osterville-2026-06-12-farmers-market",
@@ -85,12 +117,28 @@
       "source_url": "https://www.facebook.com/OstervilleFarmersMarket/"
     },
     {
+      "id": "piff-2026-06-12-tony-bourdain-preview",
+      "tag": "🎨 ART",
+      "category": "art",
+      "date": "2026-06-12",
+      "time": "2:00 PM",
+      "title": "PIFF: A24 'Tony' — Bourdain Film First Look",
+      "venue": "Provincetown International Film Festival venues",
+      "town": "Provincetown",
+      "info": "Provincetown · $20 · All ages · Director Matt Johnson & actor Dominic Sessa introduce A24's Anthony Bourdain film",
+      "price": "$20",
+      "lat": 42.0494,
+      "lng": -70.1872,
+      "img": "",
+      "source_url": "https://www.provincetownfilm.org/festival/"
+    },
+    {
       "id": "artsfalmouth-2026-06-12-arts-alive",
       "tag": "🎉 FREE EVENT",
       "category": "free_event",
       "date": "2026-06-12",
       "time": "5:00 PM",
-      "title": "Arts Alive Festival",
+      "title": "Arts Alive Festival — Opening Night",
       "venue": "Falmouth Library Lawn & Peg Noonan Park",
       "town": "Falmouth",
       "info": "Falmouth · Free · All ages · ~40 performances, 70+ vendors · Fri–Sun June 12–14",
@@ -115,6 +163,22 @@
       "lng": -70.1872,
       "img": "",
       "source_url": "https://ptownchamber.com/calendar-of-events/"
+    },
+    {
+      "id": "paam-2026-06-12-free-friday",
+      "tag": "🎉 FREE EVENT",
+      "category": "free_event",
+      "date": "2026-06-12",
+      "time": "5:00 PM",
+      "title": "Free Friday Night at PAAM",
+      "venue": "Provincetown Art Association and Museum",
+      "town": "Provincetown",
+      "info": "Provincetown · Free 5–8 PM · All ages · Free admission every Friday May–Oct",
+      "price": "Free",
+      "lat": 42.0474,
+      "lng": -70.1770,
+      "img": "",
+      "source_url": "https://paam.org/"
     },
     {
       "id": "beachcomber-2026-06-12-weei-road-show",
@@ -149,6 +213,22 @@
       "source_url": "https://www.capedays.com/cape-cod-events-june.html"
     },
     {
+      "id": "melodytent-2026-06-12-cooper-alan",
+      "tag": "🎵 LIVE MUSIC",
+      "category": "music",
+      "date": "2026-06-12",
+      "time": "8:00 PM",
+      "title": "Cooper Alan",
+      "venue": "Cape Cod Melody Tent",
+      "town": "Barnstable",
+      "info": "Barnstable · From $68 · All ages · Country music star, 18M+ followers",
+      "price": "$68",
+      "lat": 41.6524,
+      "lng": -70.2966,
+      "img": "",
+      "source_url": "https://www.melodytent.org/event/cooper-alan/cape-cod-melody-tent/hyannis-massachusetts/"
+    },
+    {
       "id": "wellfleetcinemas-2026-06-12-drive-in",
       "tag": "🎬 DRIVE-IN",
       "category": "drive_in",
@@ -163,6 +243,22 @@
       "lng": -70.0156,
       "img": "",
       "source_url": "https://www.wellfleetcinemas.com/drive-in-theatre/"
+    },
+    {
+      "id": "provincetown-2026-06-13-farmers-market",
+      "tag": "🌽 FARMERS MARKET",
+      "category": "farmers_market",
+      "date": "2026-06-13",
+      "time": "9:00 AM",
+      "title": "Provincetown Farmers Market",
+      "venue": "Ryder Street (next to Town Hall)",
+      "town": "Provincetown",
+      "info": "Provincetown · Free · All ages · Fresh produce, seafood, baked goods · Every Saturday May–Oct",
+      "price": "Free",
+      "lat": 42.0513,
+      "lng": -70.1865,
+      "img": "",
+      "source_url": "https://sustainablecape.org/programs/farmers-market-programs/provincetown-farmers-market/"
     },
     {
       "id": "orleans-2026-06-13-farmers-market",
@@ -189,7 +285,7 @@
       "title": "54th Annual Auto Show",
       "venue": "Heritage Museums & Gardens",
       "town": "Sandwich",
-      "info": "Sandwich · Included with admission · All ages · LEGO activities, parade at 2 PM",
+      "info": "Sandwich · Included with admission · All ages · LEGO activities, parade at 2 PM · Free for Sandwich residents, seniors & veterans",
       "price": "$18",
       "lat": 41.7711,
       "lng": -70.5033,
@@ -229,6 +325,38 @@
       "source_url": "https://www.capedays.com/cape-cod-events-june.html"
     },
     {
+      "id": "artsfalmouth-2026-06-13-arts-alive-sat",
+      "tag": "🎉 FREE EVENT",
+      "category": "free_event",
+      "date": "2026-06-13",
+      "time": "10:00 AM",
+      "title": "Arts Alive Festival — Saturday",
+      "venue": "Falmouth Library Lawn & Peg Noonan Park",
+      "town": "Falmouth",
+      "info": "Falmouth · Free · All ages · Full day of music, dance, artisan market · Town dance with Paradise Rock Band 7 PM",
+      "price": "Free",
+      "lat": 41.5512,
+      "lng": -70.6128,
+      "img": "",
+      "source_url": "https://artsfalmouth.org/arts-alive-2026/"
+    },
+    {
+      "id": "melodytent-2026-06-13-moe-umphreys",
+      "tag": "🎵 LIVE MUSIC",
+      "category": "music",
+      "date": "2026-06-13",
+      "time": "6:00 PM",
+      "title": "moe. with Umphrey's McGee",
+      "venue": "Cape Cod Melody Tent",
+      "town": "Barnstable",
+      "info": "Barnstable · From $79 · All ages · Jam band double-header",
+      "price": "$79",
+      "lat": 41.6524,
+      "lng": -70.2966,
+      "img": "",
+      "source_url": "https://www.songkick.com/concerts/43090716-moe-at-cape-cod-melody-tent"
+    },
+    {
       "id": "provincetowntheater-2026-06-13-musical",
       "tag": "🎨 ART",
       "category": "art",
@@ -259,6 +387,38 @@
       "lng": -69.9692,
       "img": "",
       "source_url": "https://www.songkick.com/venues/565771-wellfleet-beachcomber"
+    },
+    {
+      "id": "drummerboypark-2026-06-14-craft-fair-sun",
+      "tag": "🎨 ART",
+      "category": "art",
+      "date": "2026-06-14",
+      "time": "10:00 AM",
+      "title": "A Different Drummer Craft Fair — Sunday",
+      "venue": "Drummer Boy Park",
+      "town": "Brewster",
+      "info": "Brewster · Free · All ages · 40+ artists · Final day of June 13–14 fair",
+      "price": "Free",
+      "lat": 41.7705,
+      "lng": -70.0715,
+      "img": "",
+      "source_url": "https://www.capedays.com/cape-cod-events-june.html"
+    },
+    {
+      "id": "artsfalmouth-2026-06-14-arts-alive-sun",
+      "tag": "🎉 FREE EVENT",
+      "category": "free_event",
+      "date": "2026-06-14",
+      "time": "11:00 AM",
+      "title": "Arts Alive Festival — Sunday (Final Day)",
+      "venue": "Falmouth Library Lawn & Peg Noonan Park",
+      "town": "Falmouth",
+      "info": "Falmouth · Free · All ages · Musical theater, Falmouth Fiddlers, artisan market through 5 PM",
+      "price": "Free",
+      "lat": 41.5512,
+      "lng": -70.6128,
+      "img": "",
+      "source_url": "https://artsfalmouth.org/arts-alive-2026/"
     },
     {
       "id": "mashpee-2026-06-14-farmers-market",
@@ -325,6 +485,22 @@
       "source_url": "https://trurovineyardsofcapecod.com/events/"
     },
     {
+      "id": "barleyneck-2026-06-15-trivia",
+      "tag": "🧠 TRIVIA",
+      "category": "trivia",
+      "date": "2026-06-15",
+      "time": "6:30 PM",
+      "title": "Trivia Night with Nic Chad",
+      "venue": "The Barley Neck",
+      "town": "Orleans",
+      "info": "Orleans · Free · All ages · Gift cards for 1st & 2nd prize · Every Monday",
+      "price": "Free",
+      "lat": 41.8004,
+      "lng": -69.9880,
+      "img": "",
+      "source_url": "https://www.barleyneck.com/events-calendar"
+    },
+    {
       "id": "sandwich-2026-06-16-farmers-market",
       "tag": "🌽 FARMERS MARKET",
       "category": "farmers_market",
@@ -371,6 +547,22 @@
       "lng": -70.0297,
       "img": "",
       "source_url": "https://ediblecapecod.ediblecommunities.com/shop/shop-cape-cod-farmers-markets/"
+    },
+    {
+      "id": "capecodbeer-2026-06-17-music-bingo",
+      "tag": "🧠 TRIVIA",
+      "category": "trivia",
+      "date": "2026-06-17",
+      "time": "6:00 PM",
+      "title": "Music Bingo Night",
+      "venue": "Cape Cod Beer",
+      "town": "Barnstable",
+      "info": "Barnstable · Free entry · All ages · DJ plays song snippets, grab a bingo card · Every Wednesday 6–8 PM",
+      "price": "Free",
+      "lat": 41.6606,
+      "lng": -70.2725,
+      "img": "",
+      "source_url": "https://www.weneedavacation.com/events/taproom-trivia-night-at-cape-cod-beer/"
     }
   ]
 }
