@@ -1,6 +1,17 @@
 /**
  * Netlify Function: AI Concierge
- * Proxies questions to Claude (Haiku) with Cape Cod topic scoping and guardrails.
+ * Proxies questions to a cheap LLM with Cape Cod topic scoping and guardrails.
+ *
+ * PROVIDER-AGNOSTIC: the guardrails below wrap a single callModel() seam, so the
+ * backend is swappable by env var with NO change to any safety logic or the client.
+ *   LLM_PROVIDER=gemini    (DEFAULT) → Google Gemini Flash via its OpenAI-compatible
+ *                                      endpoint. Env: GEMINI_API_KEY, optional LLM_MODEL
+ *                                      (default "gemini-2.0-flash"), optional LLM_BASE_URL.
+ *   LLM_PROVIDER=openai              → any OpenAI-compatible API (Groq, DeepSeek,
+ *                                      OpenRouter, Together…). Env: LLM_BASE_URL,
+ *                                      LLM_API_KEY, LLM_MODEL.
+ *   LLM_PROVIDER=anthropic           → Claude via @anthropic-ai/sdk. Env: ANTHROPIC_API_KEY,
+ *                                      optional LLM_MODEL (default "claude-haiku-4-5").
  *
  * Usage: POST /.netlify/functions/concierge
  * Body: { question, deviceId, isPro }
@@ -8,10 +19,10 @@
  *           { response, limited: true } when free daily limit is hit
  *           { response, disabled: true } when kill switch is active
  *
- * Guardrails:
+ * Guardrails (provider-independent — they wrap callModel()):
  *   - KILL SWITCH:         CONCIERGE_ENABLED env var; set to "false" to disable without a deploy
- *   - INPUT CAP:           question max 1000 chars; rejected with 400 before calling Claude
- *   - OUTPUT CAP:          max_tokens: 500 on the Claude call
+ *   - INPUT CAP:           question max 1000 chars; rejected with 400 before any model call
+ *   - OUTPUT CAP:          max_tokens: 500 on the model call
  *   - FREE DAILY LIMIT:    1 message/day keyed on (deviceId + IP) per UTC date — enforced server-side
  *   - PER-IP RATE LIMIT:   30 requests/hour/IP (applies to everyone, including Pro users)
  *   - PRO BYPASS TRADEOFF: client passes isPro to skip the 1/day limit; since there is no server-side
@@ -20,7 +31,8 @@
  *                          cannot drive unbounded spend — worst-case 30 calls/hr/IP.
  */
 
-const Anthropic = require('@anthropic-ai/sdk');
+// @anthropic-ai/sdk is required lazily inside callModel() only when
+// LLM_PROVIDER=anthropic, so the Gemini/OpenAI default path needs nothing extra.
 
 // ---------- constants ----------
 const QUESTION_MAX_CHARS = 1000;
@@ -107,6 +119,72 @@ async function incrementCounter(store, key, ttlSeconds) {
   } catch {
     return 1; // Fail open; billing protection from IP hourly cap still applies at read time
   }
+}
+
+// ---------- model adapter (the only provider-specific code) ----------
+
+/**
+ * Send the scoped question to the configured LLM and return the answer text.
+ * All guardrails in the handler wrap this single seam, so swapping providers is
+ * purely an env-var change. Throws on failure (caught by the handler); thrown
+ * errors carry a `.status` so the handler maps client vs upstream errors.
+ */
+async function callModel(cleanQuestion) {
+  const provider = (process.env.LLM_PROVIDER || 'gemini').toLowerCase();
+
+  // Anthropic / Claude path (official SDK).
+  if (provider === 'anthropic') {
+    const Anthropic = require('@anthropic-ai/sdk');
+    const client = new Anthropic();
+    const resp = await client.messages.create({
+      model: process.env.LLM_MODEL || 'claude-haiku-4-5',
+      max_tokens: MAX_TOKENS_OUT,
+      system: SYSTEM_PROMPT,
+      messages: [{ role: 'user', content: cleanQuestion }],
+    });
+    return resp.content.find(b => b.type === 'text')?.text ?? '';
+  }
+
+  // OpenAI-compatible path — Gemini Flash (default) and any /chat/completions API
+  // (Groq, DeepSeek, OpenRouter, Together…). Raw fetch, no extra dependency.
+  let baseUrl, apiKey, model;
+  if (provider === 'gemini') {
+    baseUrl = process.env.LLM_BASE_URL || 'https://generativelanguage.googleapis.com/v1beta/openai';
+    apiKey = process.env.GEMINI_API_KEY || process.env.LLM_API_KEY;
+    model = process.env.LLM_MODEL || 'gemini-2.0-flash';
+  } else {
+    baseUrl = process.env.LLM_BASE_URL;
+    apiKey = process.env.LLM_API_KEY;
+    model = process.env.LLM_MODEL;
+  }
+
+  if (!baseUrl || !apiKey || !model) {
+    const e = new Error('LLM provider not configured (need base URL, API key, and model)');
+    e.status = 503;
+    throw e;
+  }
+
+  const r = await fetch(`${baseUrl.replace(/\/+$/, '')}/chat/completions`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
+    body: JSON.stringify({
+      model,
+      max_tokens: MAX_TOKENS_OUT,
+      messages: [
+        { role: 'system', content: SYSTEM_PROMPT },
+        { role: 'user', content: cleanQuestion },
+      ],
+    }),
+  });
+
+  if (!r.ok) {
+    const e = new Error(`LLM upstream error ${r.status}`);
+    e.status = r.status;
+    throw e;
+  }
+
+  const data = await r.json();
+  return data?.choices?.[0]?.message?.content ?? '';
 }
 
 // ---------- handler ----------
@@ -216,17 +294,10 @@ exports.handler = async (event) => {
     await incrementCounter(store, dailyKey, 172800);
   }
 
-  // ---- Call Claude ----
+  // ---- Call the configured LLM (Gemini Flash by default) ----
   let aiResponse;
   try {
-    const client = new Anthropic();
-    const resp = await client.messages.create({
-      model: 'claude-haiku-4-5',
-      max_tokens: MAX_TOKENS_OUT,
-      system: SYSTEM_PROMPT,
-      messages: [{ role: 'user', content: cleanQuestion }],
-    });
-    aiResponse = resp.content.find(b => b.type === 'text')?.text ?? '';
+    aiResponse = await callModel(cleanQuestion);
   } catch (err) {
     // Never leak API key or stack trace
     const status = err.status || 503;
