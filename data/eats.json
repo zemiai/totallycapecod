@@ -2,7 +2,7 @@
   "version": "1.0",
   "updated_at": "2026-06-08T14:16:02Z",
   "enriched": true,
-  "count": 83,
+  "count": 81,
   "eats": [
     {
       "id": "the-lobster-pot",
@@ -1258,29 +1258,6 @@
       "deal": null
     },
     {
-      "id": "the-naked-oyster",
-      "name": "The Naked Oyster",
-      "town": "Hyannis",
-      "lat": 41.6531,
-      "lng": -70.2825,
-      "cuisine": "Seafood",
-      "price": "$$$",
-      "rating": 4.6,
-      "tags": [
-        "seafood",
-        "fine"
-      ],
-      "desc": "Raw bar with their own oyster farm. Main Street's classy pick.",
-      "place_id": "ChIJ7ZWToyQx-4kR3_MVJTygwOA",
-      "photo": "data/eats-photos/the-naked-oyster.jpg",
-      "reviews": 455,
-      "website": "http://nakedoyster.com/",
-      "open_now": null,
-      "rating_source": "google",
-      "enriched_at": "2026-06-08T14:15:43Z",
-      "deal": null
-    },
-    {
       "id": "pain-davignon",
       "name": "Pain D'Avignon",
       "town": "Hyannis",
@@ -1830,30 +1807,6 @@
       "open_now": false,
       "rating_source": "google",
       "enriched_at": "2026-06-08T14:15:59Z",
-      "deal": null
-    },
-    {
-      "id": "lindseys-family-restaurant",
-      "name": "Lindsey's Family Restaurant",
-      "town": "Bourne",
-      "lat": 41.7444,
-      "lng": -70.6175,
-      "cuisine": "Seafood",
-      "price": "$$",
-      "rating": 4.5,
-      "tags": [
-        "seafood",
-        "clam",
-        "casual"
-      ],
-      "desc": "Buzzards Bay family seafood — fried platters and friendly service.",
-      "place_id": "ChIJQ1kUxg_G5IkR4HW305bCk2s",
-      "photo": "data/eats-photos/lindseys-family-restaurant.jpg",
-      "reviews": 1806,
-      "website": null,
-      "open_now": null,
-      "rating_source": "google",
-      "enriched_at": "2026-06-08T14:16:00Z",
       "deal": null
     },
     {
