@@ -257,6 +257,38 @@
   .av-chips{ display:flex; flex-wrap:wrap; gap:8px; }
   .av-chip{ padding:9px 13px; border-radius:999px; border:1px solid var(--ios-divider); background:var(--ios-bg); font-size:13px; font-weight:600; cursor:pointer; }
   .av-chip.active{ background:var(--cape-navy); color:#fff; border-color:var(--cape-navy); }
+
+  /* ===== TASK9: conversion + retention additions ===== */
+
+  /* Streak banner (Lever 4) */
+  .streak-banner{ margin:0 16px 10px; padding:11px 14px; background:linear-gradient(135deg,#FFF3E0,#FFE0B2); border:1px solid #FFD580; border-radius:12px; display:flex; align-items:center; gap:10px; font-size:13px; }
+  .streak-banner .streak-fire{ font-size:22px; flex:none; }
+  .streak-banner .streak-text{ flex:1; color:var(--cape-brown-dark); font-weight:600; line-height:1.35; }
+  .streak-banner .streak-days{ font-family:'Fraunces',serif; font-weight:900; font-size:24px; color:#C77700; flex:none; }
+
+  /* Freshness label (Lever 4) */
+  .freshness-label{ font-size:10px; font-weight:700; color:var(--status-open); display:inline-flex; align-items:center; gap:3px; }
+  .freshness-label::before{ content:''; width:5px; height:5px; border-radius:50%; background:currentColor; flex:none; }
+  .freshness-label.stale{ color:var(--ios-sub); }
+  .freshness-label.stale::before{ background:var(--ios-sub); }
+
+  /* Pro preview banner (Lever 5) */
+  .preview-taste-banner{ margin:10px 16px; padding:12px 14px; background:linear-gradient(135deg,#E8F5E9,#C8E6C9); border:1px solid #A5D6A7; border-radius:12px; font-size:13px; color:#2E7D32; font-weight:600; display:flex; align-items:center; gap:10px; }
+  .preview-taste-banner .preview-icon{ font-size:20px; flex:none; }
+
+  /* Loss-aversion CTA (Lever 5) */
+  .loss-aversion-cta{ margin:8px 16px; padding:13px 14px; background:linear-gradient(135deg,#FFF8E1,#FFF3CD); border:1.5px solid #FFD54F; border-radius:12px; font-size:13px; }
+  .loss-aversion-cta .la-headline{ font-weight:800; color:var(--cape-brown-dark); font-size:14px; margin-bottom:4px; }
+  .loss-aversion-cta .la-sub{ color:var(--cape-brown); margin-bottom:10px; }
+  .loss-aversion-cta button{ background:linear-gradient(135deg,#C99A4A 0%,#A77C30 100%); color:white; border:none; padding:10px 18px; border-radius:10px; font-weight:700; font-size:13px; cursor:pointer; width:100%; }
+  .loss-aversion-cta button:active{ transform:scale(0.98); }
+
+  /* First-run onboarding modal (Lever 3) */
+  #introModal .intro-bullet{ display:flex; align-items:flex-start; gap:12px; padding:10px 0; border-bottom:1px solid var(--ios-divider); }
+  #introModal .intro-bullet:last-of-type{ border-bottom:none; }
+  #introModal .intro-icon{ font-size:26px; flex:none; width:36px; text-align:center; }
+  #introModal .intro-copy strong{ display:block; font-size:14px; font-weight:700; color:var(--ios-text); }
+  #introModal .intro-copy span{ font-size:12px; color:var(--ios-sub); line-height:1.45; }
 </style>
 </head>
 <body>
@@ -343,6 +375,8 @@
     <div class="screen" id="screen-passport">
       <div class="ios-large-title">Passport</div>
       <div class="ios-subhead"><strong style="color:var(--cape-navy);" id="stampCounter">0</strong> of 100 stamps · Summer 2026</div>
+      <!-- TASK9 Lever 4: streak banner in passport (populated by renderPassport) -->
+      <div id="passportStreakBanner"></div>
       <div style="padding:0 20px 12px;">
         <div style="background:white; border-radius:14px; padding:12px; box-shadow:0 1px 3px rgba(0,0,0,0.04);">
           <div style="height:8px; background:var(--ios-bg); border-radius:999px; overflow:hidden;">
@@ -430,28 +464,38 @@
 
     <!-- ===== PRO ===== -->
     <div class="screen" id="screen-pro">
+      <!-- TASK9 Lever 2: Enhanced paywall persuasion copy -->
       <div id="proSplashLocked">
         <div style="background:linear-gradient(135deg,#1A3A6C 0%,#2C5599 100%); color:white; padding:30px 20px; text-align:center;">
           <div style="font-size:48px;">🦞</div>
           <div class="font-display" style="font-weight:900; font-size:30px; margin-top:8px;">Cape Cod Pro</div>
-          <div style="opacity:0.85; font-size:13px; margin-top:4px;">One-time · No subscription</div>
-          <div class="font-display" style="font-weight:900; font-size:52px; margin-top:18px; color:#E8B973;">$9.99</div>
-          <div style="opacity:0.7; font-size:11px;">Lifetime access · 30-day refund</div>
+          <!-- Trust line: one-time, lifetime, no subscription -->
+          <div style="opacity:0.9; font-size:12px; margin-top:6px; letter-spacing:0.02em;">One-time payment · yours forever · no subscription · restore anytime</div>
+          <div class="font-display" style="font-weight:900; font-size:52px; margin-top:16px; color:#E8B973;">$9.99</div>
+          <!-- Price anchor: relatability framing -->
+          <div style="opacity:0.85; font-size:12px; margin-top:2px;">Less than a single beach parking fee — once, forever.</div>
+          <div style="opacity:0.65; font-size:11px; margin-top:4px;">30-day money-back guarantee</div>
         </div>
-        <div style="padding:20px;">
-          <div class="benefit-row"><span class="icon">🏖️</span><strong>All 28 beaches live</strong></div>
-          <div class="benefit-row"><span class="icon">⚡</span><strong>Unlimited "Today" events</strong></div>
-          <div class="benefit-row"><span class="icon">🎫</span><strong>All 100 passport stamps + badges</strong></div>
-          <div class="benefit-row"><span class="icon">🌉</span><strong>7-day bridge traffic predictor</strong></div>
+        <div style="padding:20px 20px 14px;">
+          <!-- Lead with highest-value outcomes first -->
+          <div class="benefit-row"><span class="icon">🏖️</span><div><strong>All 28 beaches — live parking &amp; water temp</strong><div style="font-size:12px; color:var(--ios-sub); margin-top:1px;">Never drive to a full lot again</div></div></div>
+          <div class="benefit-row"><span class="icon">🌉</span><div><strong>7-day bridge traffic predictor</strong><div style="font-size:12px; color:var(--ios-sub); margin-top:1px;">Know the best time to cross — days ahead</div></div></div>
+          <div class="benefit-row"><span class="icon">⚡</span><div><strong>Unlimited events — music, food, art &amp; more</strong><div style="font-size:12px; color:var(--ios-sub); margin-top:1px;">Filter by category · nothing hidden</div></div></div>
+          <div class="benefit-row"><span class="icon">🎫</span><div><strong>All 100 passport stamps + milestone badges</strong><div style="font-size:12px; color:var(--ios-sub); margin-top:1px;">The full Cape summer challenge</div></div></div>
           <div class="benefit-row"><span class="icon">🤖</span><strong>Unlimited AI Concierge</strong></div>
-          <div class="benefit-row"><span class="icon">🐋</span><strong>Submit + alert on whale sightings</strong></div>
+          <div class="benefit-row"><span class="icon">🐋</span><strong>Whale alerts within 10 miles</strong></div>
           <div class="benefit-row"><span class="icon">💡</span><strong>All 12 lighthouse audio tours</strong></div>
-          <div class="benefit-row"><span class="icon">🌊</span><strong>7-day tide & sunset forecast</strong></div>
+          <div class="benefit-row"><span class="icon">🌊</span><strong>7-day tide &amp; sunset forecast</strong></div>
           <div class="benefit-row"><span class="icon">🚫</span><strong>No ads · ever</strong></div>
         </div>
+        <!-- Social proof — honest, local -->
+        <div style="margin:0 20px 16px; padding:12px 14px; background:var(--cape-cream); border-radius:12px; border:1px solid var(--cape-sand); font-size:12px; color:var(--cape-brown-dark); text-align:center; line-height:1.5;">
+          🌊 Built by locals for your whole Cape summer.<br/>
+          <span style="opacity:0.75;">Every purchase directly supports the team that keeps the live data fresh, all season long.</span>
+        </div>
         <div style="padding:0 20px 20px;">
-          <button onclick="openModal('purchase')" style="width:100%; background:linear-gradient(135deg,#C99A4A 0%,#A77C30 100%); color:white; border:none; padding:15px; border-radius:14px; font-weight:800; font-size:15px; box-shadow:0 6px 16px rgba(167,124,48,0.35); cursor:pointer;">Unlock Cape Cod Pro — $9.99</button>
-          <div style="text-align:center; color:var(--ios-sub); font-size:11px; margin-top:10px;">🔒 Secure checkout via Stripe</div>
+          <button onclick="openModal('purchase')" style="width:100%; background:linear-gradient(135deg,#C99A4A 0%,#A77C30 100%); color:white; border:none; padding:15px; border-radius:14px; font-weight:800; font-size:15px; box-shadow:0 6px 16px rgba(167,124,48,0.35); cursor:pointer; font-family:inherit;">Unlock Cape Cod Pro — $9.99</button>
+          <div style="text-align:center; color:var(--ios-sub); font-size:11px; margin-top:10px;">🔒 Secure checkout via Stripe · 30-day guarantee</div>
         </div>
       </div>
       <div id="proSplashUnlocked" style="display:none; padding:30px 20px;">
@@ -482,6 +526,42 @@
     <button class="tab-btn" data-tab="beaches" onclick="switchTab('beaches')"><div class="tab-icon">🏖️</div><div>Beaches</div></button>
     <button class="tab-btn" data-tab="ai" onclick="switchTab('ai')"><div class="tab-icon">✨</div><div>Ask</div></button>
     <button class="tab-btn" data-tab="more" onclick="openModal('moreMenu')"><div class="tab-icon">···</div><div>More</div></button>
+  </div>
+</div>
+
+<!-- ===== TASK9 Lever 3: First-Run Onboarding Modal ===== -->
+<!-- Shown once to first-time visitors (tcc_seen_intro not set). Skippable. -->
+<div class="modal-bg" id="introModal" style="align-items:flex-end;">
+  <div class="modal-sheet" style="border-radius:24px 24px 0 0;">
+    <div class="modal-handle"></div>
+    <div style="text-align:center; padding:4px 0 14px;">
+      <div style="font-size:40px;">🦞</div>
+      <div class="font-display" style="font-weight:900; font-size:24px; color:var(--cape-navy); margin-top:6px;">Welcome to Cape Cod</div>
+      <div style="color:var(--ios-sub); font-size:13px; margin-top:4px;">Here's what's live right now →</div>
+    </div>
+    <div class="intro-bullet">
+      <div class="intro-icon">🏖️</div>
+      <div class="intro-copy">
+        <strong>Live beach &amp; tide intel</strong>
+        <span>Real-time parking status, water temp, crowd levels, and today's tides — across all of Cape Cod.</span>
+      </div>
+    </div>
+    <div class="intro-bullet">
+      <div class="intro-icon">⚡</div>
+      <div class="intro-copy">
+        <strong>Today's events &amp; bridge delays</strong>
+        <span>Music, food, art, and festivals happening now — plus live bridge wait times so you never get stuck.</span>
+      </div>
+    </div>
+    <div class="intro-bullet">
+      <div class="intro-icon">🎫</div>
+      <div class="intro-copy">
+        <strong>100-stamp summer passport</strong>
+        <span>Collect stamps at beaches, lighthouses, and landmarks. Built by locals for your whole Cape summer.</span>
+      </div>
+    </div>
+    <button onclick="dismissIntro()" style="width:100%; background:var(--cape-navy); color:white; border:none; padding:15px; border-radius:14px; font-weight:800; font-size:15px; margin-top:18px; cursor:pointer; font-family:inherit;">Explore the Cape →</button>
+    <button onclick="dismissIntro()" style="width:100%; background:transparent; color:var(--ios-sub); border:none; padding:10px; font-size:12px; cursor:pointer;">Skip intro</button>
   </div>
 </div>
 
@@ -612,21 +692,23 @@
   </div>
 </div>
 
-<!-- Purchase Modal -->
+<!-- Purchase Modal — TASK9 Lever 2: improved persuasion copy -->
 <div class="modal-bg" id="purchaseModal">
   <div class="modal-sheet">
     <div class="modal-handle"></div>
     <div style="text-align:center;">
       <div style="font-size:44px;">🦞</div>
       <div class="font-display" style="font-weight:900; font-size:24px; margin-top:6px;">Cape Cod Pro</div>
-      <div style="color:var(--ios-sub); font-size:13px;">$9.99 · One-time · Lifetime</div>
+      <div style="color:var(--ios-sub); font-size:12px; margin-top:2px;">One-time payment · yours forever · no subscription</div>
     </div>
-    <div style="background:var(--ios-bg); border-radius:12px; padding:14px; margin-top:18px; font-size:13px;">
-      <div style="display:flex; justify-content:space-between;"><span>Cape Cod Pro (Lifetime)</span><span style="font-weight:700;">$9.99</span></div>
-      <div style="color:var(--ios-sub); font-size:11px; margin-top:4px;">30-day money-back guarantee</div>
+    <div style="background:var(--ios-bg); border-radius:12px; padding:14px; margin-top:16px; font-size:13px;">
+      <div style="display:flex; justify-content:space-between; align-items:center;"><span style="font-weight:600;">Cape Cod Pro (Lifetime)</span><span style="font-weight:800; font-size:16px;">$9.99</span></div>
+      <!-- Price anchor in modal -->
+      <div style="color:var(--cape-brown); font-size:11px; font-weight:600; margin-top:5px;">Less than a single beach parking fee — once, forever.</div>
+      <div style="color:var(--ios-sub); font-size:11px; margin-top:3px;">30-day money-back guarantee · restore anytime</div>
     </div>
-    <button onclick="goToStripe()" style="width:100%; background:var(--cape-navy); color:white; border:none; padding:14px; border-radius:14px; font-weight:700; font-size:15px; margin-top:18px;">Continue to checkout</button>
-    <button onclick="closeModal('purchase')" style="width:100%; background:transparent; color:var(--cape-navy); border:none; padding:10px; font-weight:600; font-size:14px;">Maybe later</button>
+    <button onclick="goToStripe()" style="width:100%; background:var(--cape-navy); color:white; border:none; padding:14px; border-radius:14px; font-weight:700; font-size:15px; margin-top:18px; font-family:inherit; cursor:pointer;">Continue to checkout →</button>
+    <button onclick="closeModal('purchase')" style="width:100%; background:transparent; color:var(--cape-navy); border:none; padding:10px; font-weight:600; font-size:14px; cursor:pointer;">Maybe later</button>
   </div>
 </div>
 
@@ -657,8 +739,17 @@ const FREE_LIGHTHOUSE_COUNT = 1;
 const DEFAULT_LOC = { lat: 41.7858, lng: -70.0269 }; // Orleans, MA
 
 // ============ STATE ============
+// TASK9: proPreview — first-session preview (Lever 5). NEVER sets isPro.
+const _previewUsed = localStorage.getItem('tcc_preview_used');
+const _isFirstSession = !_previewUsed;
+// Preview is active only on the very first session (tcc_preview_used not yet set).
+// After first session, if not Pro, show loss-aversion copy instead.
+const _proPreviewActive = _isFirstSession && localStorage.getItem('tcc_pro') !== 'true';
+
 let state = {
   isPro: localStorage.getItem('tcc_pro') === 'true',
+  // TASK9 Lever 5: proPreview — grants full beach/event access on first session only
+  proPreview: _proPreviewActive,
   stamps: JSON.parse(localStorage.getItem('tcc_stamps') || '[]'),
   beachReports: JSON.parse(localStorage.getItem('tcc_beach_reports') || '{}'),
   userSightings: JSON.parse(localStorage.getItem('tcc_sightings') || '[]'),
@@ -675,6 +766,12 @@ let state = {
   pendingBeach: null
 };
 
+// TASK9 Lever 5: Mark the preview as used (timestamp) so next session sees loss-aversion.
+// We set it now — at the start of the first session — so the flag is present on return.
+if (_proPreviewActive) {
+  localStorage.setItem('tcc_preview_used', new Date().toDateString());
+}
+
 // Reset AI count daily
 const today = new Date().toDateString();
 if (state.aiDate !== today) {
@@ -682,6 +779,35 @@ if (state.aiDate !== today) {
   localStorage.setItem('tcc_ai_today', '0');
   localStorage.setItem('tcc_ai_date', today);
 }
+
+// TASK9 Lever 4: Daily streak tracking.
+// tcc_last_visit = toDateString of last open; tcc_streak = consecutive days.
+// Logic: if yesterday matches last_visit, streak++; if today matches last_visit, no change;
+// if gap > 1 day, streak resets to 1.
+(function updateStreak() {
+  const lastVisitStr = localStorage.getItem('tcc_last_visit');
+  const streak = parseInt(localStorage.getItem('tcc_streak') || '0');
+  const todayStr = new Date().toDateString();
+  const yesterdayStr = new Date(Date.now() - 864e5).toDateString();
+
+  if (!lastVisitStr || lastVisitStr === todayStr) {
+    // First ever visit, or already counted today — just ensure streak ≥ 1
+    if (!lastVisitStr) {
+      localStorage.setItem('tcc_streak', '1');
+      localStorage.setItem('tcc_last_visit', todayStr);
+    }
+    // already visited today — do nothing
+  } else if (lastVisitStr === yesterdayStr) {
+    // Consecutive day — increment streak
+    const newStreak = streak + 1;
+    localStorage.setItem('tcc_streak', String(newStreak));
+    localStorage.setItem('tcc_last_visit', todayStr);
+  } else {
+    // Gap — reset streak to 1
+    localStorage.setItem('tcc_streak', '1');
+    localStorage.setItem('tcc_last_visit', todayStr);
+  }
+}());
 
 // ============ DATA LOADING ============
 // Data is fetched directly from GitHub raw so cron updates don't trigger
@@ -761,12 +887,46 @@ function renderToday() {
     document.getElementById('todayConditions').textContent = 'Tide & conditions data updating…';
   }
 
-  // Pro banner
+  // Pro banner (or Lever 4 streak + Lever 5 preview taste banners)
   const banner = document.getElementById('proStatusBanner');
   if (state.isPro) {
     banner.innerHTML = `<div class="pro-banner"><div style="display:flex; align-items:center; gap:10px;"><span style="font-size:22px;">👑</span><div style="flex:1;"><div style="font-weight:700; font-size:14px;">Cape Cod Pro</div><div style="font-size:11px; opacity:0.85;">All features unlocked</div></div></div></div>`;
   } else {
-    banner.innerHTML = '';
+    let bannerHtml = '';
+
+    // TASK9 Lever 4: streak banner (show if streak >= 2)
+    const streak = parseInt(localStorage.getItem('tcc_streak') || '0');
+    if (streak >= 2) {
+      const streakMsg = streak >= 7 ? `${streak}-day streak — you're a Cape Cod local! 🏆`
+                      : streak >= 3 ? `${streak}-day streak — open tomorrow to keep it going!`
+                      : `${streak}-day streak — you're on a roll!`;
+      bannerHtml += `<div class="streak-banner">
+        <div class="streak-fire">🔥</div>
+        <div class="streak-text">${streakMsg}</div>
+        <div class="streak-days">${streak}</div>
+      </div>`;
+    }
+
+    // TASK9 Lever 5: first-session preview taste banner
+    if (state.proPreview) {
+      const beachCount = (state.data.beaches?.beaches || []).length;
+      bannerHtml += `<div class="preview-taste-banner">
+        <div class="preview-icon">🎁</div>
+        <div style="flex:1;"><strong>All ${beachCount || 28} beaches unlocked — free preview</strong><br/><span style="font-size:11px; font-weight:400;">This is your first visit. Explore everything once — on us.</span></div>
+      </div>`;
+    }
+
+    // TASK9 Lever 5: loss-aversion CTA on second+ session if preview was used
+    if (!state.proPreview && _previewUsed && _previewUsed !== new Date().toDateString()) {
+      const beachCount = (state.data.beaches?.beaches || []).length;
+      bannerHtml += `<div class="loss-aversion-cta">
+        <div class="la-headline">You explored all ${beachCount || 28} beaches last time 🏖️</div>
+        <div class="la-sub">Keep them all unlocked — plus bridge forecasts, unlimited events, and more.</div>
+        <button onclick="openModal('purchase')">Keep everything unlocked — $9.99</button>
+      </div>`;
+    }
+
+    banner.innerHTML = bannerHtml;
   }
 
   // Tides
@@ -781,14 +941,15 @@ function renderToday() {
     </div>
   `).join('') || '<div class="ios-list-item"><div class="item-sub">Tide & conditions data updating…</div></div>';
 
-  // Bridges
+  // Bridges — TASK9 Lever 4: freshness cue on last_check
   const b = state.data.bridges?.current;
   if (b) {
+    const freshLabel = b.sagamore.last_check ? `<span class="freshness-label" style="margin-left:6px;">${b.sagamore.last_check}</span>` : '';
     document.getElementById('todayBridges').innerHTML = `
       <div class="bridge-card">
         <div style="font-size:32px;">🌉</div>
         <div style="flex:1;">
-          <div class="item-title">Sagamore</div>
+          <div class="item-title">Sagamore ${freshLabel}</div>
           <div class="item-sub">${b.sagamore.advice}</div>
         </div>
         <div class="bridge-delay ${b.sagamore.current_status==='light'?'light':b.sagamore.current_status==='heavy'?'heavy':'moderate'}">${b.sagamore.current_delay_min}<span style="font-size:14px;">m</span></div>
@@ -805,9 +966,9 @@ function renderToday() {
       </div>`;
   }
 
-  // Happening
+  // Happening — TASK9 Lever 5: proPreview also unlocks events on first session
   const events = state.data.events?.events || [];
-  const shown = state.isPro ? events.slice(0,5) : events.slice(0, FREE_EVENT_LIMIT);
+  const shown = (state.isPro || state.proPreview) ? events.slice(0,5) : events.slice(0, FREE_EVENT_LIMIT);
   document.getElementById('todayHappening').innerHTML = shown.map(e => renderEventCard(e)).join('') ||
     '<div class="empty-state">No events posted for today yet — check back this morning.</div>';
 
@@ -853,17 +1014,18 @@ function renderEvents() {
     ? `${events.length} upcoming events on Cape Cod`
     : "Today's deals, music & free events";
 
-  // Filter chips
+  // Filter chips — TASK9 Lever 5: proPreview unlocks category filters on first session
   const cats = [{id:'all',label:'All'},{id:'music',label:'🎵 Music'},{id:'theater',label:'🎭 Theater'},{id:'art',label:'🎨 Art'},{id:'food',label:'🍴 Food & Drink'},{id:'family',label:'👨‍👩‍👧 Family'},{id:'festival',label:'🎪 Festival'},{id:'talk',label:'🎙️ Talks'}];
   document.getElementById('eventFilters').innerHTML = cats.map(c => {
-    const locked = !state.isPro && c.id !== 'all';
+    const locked = !state.isPro && !state.proPreview && c.id !== 'all';
     return `<div class="chip ${state.eventFilter===c.id?'active':''} ${locked?'locked':''}" onclick="${locked?`switchTab('pro')`:`filterEvents('${c.id}')`}">${c.label}${locked?' 🔒':''}</div>`;
   }).join('');
 
   // List
   let filtered = events;
   if (state.eventFilter !== 'all') filtered = events.filter(e => e.category === state.eventFilter);
-  const shown = state.isPro ? filtered : filtered.slice(0, FREE_EVENT_LIMIT);
+  // TASK9 Lever 5: proPreview gets full event list on first session
+  const shown = (state.isPro || state.proPreview) ? filtered : filtered.slice(0, FREE_EVENT_LIMIT);
   const eventsEmpty = filtered.length === 0
     ? (events.length === 0
         ? '<div class="empty-state">No events posted for today yet — check back this morning.</div>'
@@ -871,8 +1033,16 @@ function renderEvents() {
     : '';
   document.getElementById('eventsList').innerHTML = shown.map(e => renderEventCard(e)).join('') || eventsEmpty;
 
-  document.getElementById('eventsUnlockCta').innerHTML = (!state.isPro && filtered.length > FREE_EVENT_LIMIT) ?
-    `<button class="unlock-cta" onclick="switchTab('pro')">🔒 +${filtered.length - FREE_EVENT_LIMIT} more events · Unlock Pro $9.99</button>` : '';
+  // TASK9 Lever 5: loss-aversion copy on events unlock CTA
+  if (!state.isPro && !state.proPreview && filtered.length > FREE_EVENT_LIMIT) {
+    const usedPreview = _previewUsed && _previewUsed !== new Date().toDateString();
+    const ctaMsg = usedPreview
+      ? `You saw all ${filtered.length} events last visit — unlock everything again · $9.99`
+      : `🔒 +${filtered.length - FREE_EVENT_LIMIT} more events · Unlock Pro $9.99`;
+    document.getElementById('eventsUnlockCta').innerHTML = `<button class="unlock-cta" onclick="switchTab('pro')">${ctaMsg}</button>`;
+  } else {
+    document.getElementById('eventsUnlockCta').innerHTML = '';
+  }
 }
 function filterEvents(cat) { state.eventFilter = cat; renderEvents(); }
 
@@ -918,29 +1088,37 @@ function renderBeaches() {
     document.getElementById('beachListFree').innerHTML = free.map(b => renderBeachRow(b)).join('') ||
       '<div class="ios-list-item"><div class="item-sub">Beach reports start rolling in each morning — check back soon.</div></div>';
 
-    if (!state.isPro) {
-      document.getElementById('beachLockedSection').innerHTML = beaches.length > FREE_BEACH_LIMIT ? `
-        <div class="ios-section-title"><span>🔒 + ${beaches.length - FREE_BEACH_LIMIT} more beaches · Pro</span></div>
+    // TASK9 Lever 5: proPreview also unlocks all beaches on first session
+    if (state.isPro || state.proPreview) {
+      document.getElementById('beachLockedSection').innerHTML = '';
+      document.getElementById('beachUnlockedSection').innerHTML = `
+        <div class="ios-section-title"><span>${state.proPreview && !state.isPro ? '🎁 All beaches — free preview' : 'All Cape beaches'}</span></div>
+        <div class="ios-list">${sorted.slice(FREE_BEACH_LIMIT).map(b => renderBeachRow(b)).join('')}</div>`;
+    } else {
+      // Second+ session, not Pro — show loss-aversion at the lock point (Lever 5)
+      const usedPreview = _previewUsed && _previewUsed !== new Date().toDateString();
+      const lockMsg = usedPreview
+        ? `You explored all ${beaches.length} beaches last visit 🏖️ — keep them all for $9.99`
+        : `🔒 + ${beaches.length - FREE_BEACH_LIMIT} more beaches · Pro`;
+      document.getElementById('beachLockedSection').innerHTML = `
+        <div class="ios-section-title"><span>${lockMsg}</span></div>
         <div class="ios-list">${sorted.slice(FREE_BEACH_LIMIT, FREE_BEACH_LIMIT + 5).map(b => `
           <div class="locked-row">
             <span class="status-dot" style="background:var(--status-${b.status})"></span>
             <div style="flex:1;"><div class="item-title">${b.name}</div><div class="item-sub">${b.town}</div></div>
           </div>`).join('')}</div>
-        <button class="unlock-cta" onclick="switchTab('pro')">Unlock all ${beaches.length} beaches · $9.99</button>` : '';
+        <button class="unlock-cta" onclick="switchTab('pro')">${usedPreview ? `Unlock all ${beaches.length} beaches again — $9.99` : `Unlock all ${beaches.length} beaches · $9.99`}</button>`;
       document.getElementById('beachUnlockedSection').innerHTML = '';
-    } else {
-      document.getElementById('beachLockedSection').innerHTML = '';
-      document.getElementById('beachUnlockedSection').innerHTML = sorted.length > FREE_BEACH_LIMIT ? `
-        <div class="ios-section-title"><span>All Cape beaches</span></div>
-        <div class="ios-list">${sorted.slice(FREE_BEACH_LIMIT).map(b => renderBeachRow(b)).join('')}</div>` : '';
     }
   });
 }
 function renderBeachRow(b) {
+  // TASK9 Lever 4: freshness cue on updated field
+  const freshHtml = b.updated ? `<span class="freshness-label" style="margin-left:4px;">${b.updated}</span>` : '';
   return `<div class="ios-list-item tappable" onclick="openBeach('${b.slug}')">
     <span class="status-dot" style="background:var(--status-${b.status})"></span>
     <div style="flex:1; min-width:0;">
-      <div class="item-title">${b.name}</div>
+      <div class="item-title">${b.name} ${freshHtml}</div>
       <div class="item-sub">${b.town} · ${b.spots_text} · 🌊 ${b.water_temp}°F${b.dist ? ' · ' + b.dist.toFixed(1) + 'mi' : ''}</div>
     </div>
     <div class="crowd-bar">${Array.from({length:5},(_,j) => `<span class="${j < b.crowd ? 'on' : ''}"></span>`).join('')}</div>
@@ -992,6 +1170,25 @@ function renderPassport() {
   const stamps = state.data.stamps?.stamps || [];
   const free = stamps.filter(s => !s.is_pro);
   const pro = stamps.filter(s => s.is_pro);
+
+  // TASK9 Lever 4: streak badge in passport header
+  const streak = parseInt(localStorage.getItem('tcc_streak') || '0');
+  const streakSection = document.getElementById('passportStreakBanner');
+  if (streakSection) {
+    if (streak >= 2) {
+      const msg = streak >= 7 ? `${streak}-day streak 🏆 You're a Cape Cod local!`
+                : streak >= 3 ? `${streak}-day streak 🔥 Open tomorrow to keep it going.`
+                : `${streak}-day streak 🔥 You're building a habit!`;
+      streakSection.innerHTML = `<div class="streak-banner" style="margin:0 16px 12px;">
+        <div class="streak-fire">🔥</div>
+        <div class="streak-text">${msg}</div>
+        <div class="streak-days">${streak}</div>
+      </div>`;
+      streakSection.style.display = '';
+    } else {
+      streakSection.innerHTML = '';
+    }
+  }
 
   const stampHtml = s => {
     const earned = state.stamps.includes(s.slug);
@@ -1155,22 +1352,23 @@ function renderBridges() {
     document.getElementById('bridgeTips').innerHTML = '';
     return;
   }
+  // TASK9 Lever 4: freshness cues on bridge cards
   document.getElementById('bridgeCurrent').innerHTML = `
     <div class="bridge-card">
       <div style="font-size:36px;">🌉</div>
       <div style="flex:1;">
-        <div class="item-title">Sagamore Bridge</div>
+        <div class="item-title">Sagamore Bridge <span class="freshness-label" style="margin-left:4px;">${b.sagamore.last_check || 'Live'}</span></div>
         <div class="item-sub">${b.sagamore.advice}</div>
-        <div style="font-size:11px; color:var(--ios-sub); margin-top:2px;">Speed: ${b.sagamore.live_speed_mph} mph · Updated ${b.sagamore.last_check}</div>
+        <div style="font-size:11px; color:var(--ios-sub); margin-top:2px;">Speed: ${b.sagamore.live_speed_mph} mph</div>
       </div>
       <div class="bridge-delay ${b.sagamore.current_status==='light'?'light':b.sagamore.current_status==='heavy'?'heavy':'moderate'}">${b.sagamore.current_delay_min}<span style="font-size:14px;">m</span></div>
     </div>
     <div class="bridge-card">
       <div style="font-size:36px;">🌉</div>
       <div style="flex:1;">
-        <div class="item-title">Bourne Bridge</div>
+        <div class="item-title">Bourne Bridge <span class="freshness-label" style="margin-left:4px;">${b.bourne.last_check || 'Live'}</span></div>
         <div class="item-sub">${b.bourne.advice}</div>
-        <div style="font-size:11px; color:var(--ios-sub); margin-top:2px;">Speed: ${b.bourne.live_speed_mph} mph · Updated ${b.bourne.last_check}</div>
+        <div style="font-size:11px; color:var(--ios-sub); margin-top:2px;">Speed: ${b.bourne.live_speed_mph} mph</div>
       </div>
       <div class="bridge-delay ${b.bourne.current_status==='light'?'light':b.bourne.current_status==='heavy'?'heavy':'moderate'}">${b.bourne.current_delay_min}<span style="font-size:14px;">m</span></div>
     </div>`;
@@ -1249,9 +1447,11 @@ function renderConditions() {
     <div class="ios-list-item"><span style="font-size:22px;">🌅</span><div style="flex:1;"><div class="item-title">Sunrise · ${c.sun.sunrise}</div></div></div>
     <div class="ios-list-item"><span style="font-size:22px;">🌇</span><div style="flex:1;"><div class="item-title">Sunset · ${c.sun.sunset}</div><div class="item-sub">Best at ${c.sun.best_sunset_spot.name}, ${c.sun.best_sunset_spot.town}</div></div></div>`;
 
+  // TASK9 Lever 4: freshness cue on weather/conditions
   const w = c.weather;
+  const condFresh = c.updated_at ? `<span class="freshness-label" style="margin-left:4px;">${c.updated_at}</span>` : '';
   document.getElementById('weatherInfo').innerHTML = `
-    <div class="ios-list-item"><span style="font-size:22px;">${w.icon}</span><div style="flex:1;"><div class="item-title">${w.condition} · ${w.temp_high}° / ${w.temp_low}°</div><div class="item-sub">Wind ${w.wind_mph}mph ${w.wind_dir} · Humidity ${w.humidity}% · UV ${w.uv_index}</div></div></div>
+    <div class="ios-list-item"><span style="font-size:22px;">${w.icon}</span><div style="flex:1;"><div class="item-title">${w.condition} · ${w.temp_high}° / ${w.temp_low}° ${condFresh}</div><div class="item-sub">Wind ${w.wind_mph}mph ${w.wind_dir} · Humidity ${w.humidity}% · UV ${w.uv_index}</div></div></div>
     <div class="ios-list-item"><span style="font-size:22px;">🌊</span><div style="flex:1;"><div class="item-title">Water ${c.water_temp_f}°F</div><div class="item-sub">Swell ${c.swell_height_ft}ft @ ${c.swell_period_sec}s</div></div></div>`;
 
   if (state.isPro) {
@@ -1779,12 +1979,24 @@ function renderPro() {
   }
 }
 
-// Detect Stripe success return
-if (new URLSearchParams(location.search).get('success') === 'true') {
-  unlockPro();
-  setTimeout(() => openModal('success'), 300);
-  history.replaceState({}, '', location.pathname);
-}
+// TASK9 Lever 1: Stripe auto-unlock on success return.
+// Stripe Payment Link must be configured with success URL:
+//   https://totallycapecod.com/app/?pro=1
+// (or /?pro=1 if the root rewrite is used)
+// Accepts ?pro=1 or ?pro=success (both handled).
+// Also retains the legacy ?success=true handler for backward compat.
+(function handleStripeReturn() {
+  const params = new URLSearchParams(location.search);
+  const proParam = params.get('pro');
+  const successParam = params.get('success');
+  if (proParam === '1' || proParam === 'success' || successParam === 'true') {
+    unlockPro();
+    // Defer modal until DOM is settled
+    setTimeout(() => openModal('success'), 300);
+    // Clean the URL so refreshing doesn't re-trigger
+    history.replaceState({}, '', location.pathname);
+  }
+}());
 
 // ── Email Banner ──
 document.addEventListener('DOMContentLoaded', () => {
@@ -1815,6 +2027,25 @@ async function submitAppEmail() {
   document.getElementById('emailBanner').style.display = 'none';
   toast('🎉 Guide sent! Check your inbox.');
   gtag && gtag('event','generate_lead',{method:'app_banner'});
+}
+
+// TASK9 Lever 3: First-run onboarding modal.
+// Shown once to first-time visitors (tcc_seen_intro not set in localStorage).
+// Returning visitors skip it entirely.
+function checkFirstRun() {
+  const seen = localStorage.getItem('tcc_seen_intro');
+  // Also skip if this is a Stripe return (user is already motivated)
+  const isStripeReturn = new URLSearchParams(location.search).get('pro') ||
+                         new URLSearchParams(location.search).get('success');
+  if (!seen && !isStripeReturn) {
+    // Slight delay so the app has painted first
+    setTimeout(() => openModal('intro'), 350);
+  }
+}
+function dismissIntro() {
+  closeModal('intro');
+  localStorage.setItem('tcc_seen_intro', 'true');
+  if (window.gtag) gtag('event', 'intro_dismissed', { session_type: _isFirstSession ? 'first' : 'return' });
 }
 
 // ── INSTALL ──
@@ -1900,6 +2131,8 @@ async function init() {
   await loadData();
   renderAll();
   checkInstall();
+  // TASK9 Lever 3: Show first-run onboarding intro to new visitors
+  checkFirstRun();
   // Pre-warm voices for TTS
   if ('speechSynthesis' in window) speechSynthesis.getVoices();
 }
