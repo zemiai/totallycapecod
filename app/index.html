@@ -316,6 +316,8 @@
   .nb-updated{ display:flex; align-items:center; gap:6px; margin-top:10px; font-size:11px; color:var(--ios-sub); }
   .nb-updated .live{ width:6px; height:6px; border-radius:50%; background:var(--status-open); animation:nbpulse 1.8s infinite; }
   @keyframes nbpulse{ 0%,100%{opacity:1} 50%{opacity:0.35} }
+  .nb-pull{ height:0; overflow:hidden; text-align:center; font-size:12px; font-weight:700; color:var(--ios-sub); line-height:44px; transition:height 0.18s ease; }
+  .nb-pull.spin{ color:var(--cape-navy); }
   .nb-loopdiv{ text-align:center; padding:18px 20px; }
   .nb-loopdiv span{ display:inline-block; background:var(--ios-bg); border:1px solid var(--ios-divider); color:var(--ios-sub); font-size:12px; font-weight:600; padding:7px 16px; border-radius:999px; }
 
@@ -402,19 +404,20 @@
   <div class="ios-content" id="iosContent">
 
     <!-- ===== NEAR YOU ===== -->
-    <div class="screen" id="screen-nearby">
+    <div class="screen active" id="screen-nearby">
       <div class="ios-large-title">Near You</div>
       <div class="nb-locbar" id="nbLocBar">
         <div class="nb-where"><span class="nb-dot"></span><span id="nbLocLabel">Mid Cape</span></div>
         <button id="nbLocBtn" onclick="nbUseMyLocation()">📍 Use my location</button>
       </div>
       <div class="nb-personalize" id="nbPersonalize" onclick="openAvatar()">✨ Personalize your feed</div>
+      <div id="nbPull" class="nb-pull"></div>
       <div id="nearbyFeed"></div>
       <div id="nbSentinel" style="height:1px;"></div>
     </div>
 
     <!-- ===== TODAY ===== -->
-    <div class="screen active" id="screen-today">
+    <div class="screen" id="screen-today">
       <div class="ios-large-title" id="todayDate">Today</div>
       <div class="ios-subhead" id="todayConditions"></div>
       <div id="proStatusBanner"></div>
@@ -637,8 +640,8 @@
 
   <!-- TAB BAR -->
   <div class="tab-bar">
-    <button class="tab-btn" data-tab="nearby" onclick="switchTab('nearby')"><div class="tab-icon">📍</div><div>Nearby</div></button>
-    <button class="tab-btn active" data-tab="today" onclick="switchTab('today')"><div class="tab-icon">⚡</div><div>Today</div></button>
+    <button class="tab-btn active" data-tab="nearby" onclick="switchTab('nearby')"><div class="tab-icon">📍</div><div>Nearby</div></button>
+    <button class="tab-btn" data-tab="today" onclick="switchTab('today')"><div class="tab-icon">⚡</div><div>Today</div></button>
     <button class="tab-btn" data-tab="beaches" onclick="switchTab('beaches')"><div class="tab-icon">🏖️</div><div>Beaches</div></button>
     <button class="tab-btn" data-tab="ai" onclick="switchTab('ai')"><div class="tab-icon">✨</div><div>Ask</div></button>
     <button class="tab-btn" data-tab="more" onclick="openModal('moreMenu')"><div class="tab-icon">···</div><div>More</div></button>
@@ -2342,13 +2345,17 @@ function renderNearby(){
       nbUser = { lat: state.userLoc.lat, lng: state.userLoc.lng, label: nbNearestTown(state.userLoc) };
     } else {
       if(!nbUser) nbUser = { lat: DEFAULT_LOC.lat, lng: DEFAULT_LOC.lng, label: nbNearestTown(DEFAULT_LOC) };
-      // Ask for GPS in the background; once we have it, rebuild from the real location.
-      getUserLoc(loc => {
-        if(loc){
-          nbUser = { lat: loc.lat, lng: loc.lng, label: nbNearestTown(loc) };
-          nbBuilt = false; nbStart(); nbBuilt = nbSeq.length > 0;
-        }
-      });
+      // Defer the GPS permission prompt until after first-run onboarding — Nearby is now
+      // the default screen, so prompting on first paint would collide with the intro sheet.
+      // (dismissIntro() re-renders Nearby once onboarding is done.)
+      if (localStorage.getItem('tcc_seen_intro') === 'true') {
+        getUserLoc(loc => {
+          if(loc){
+            nbUser = { lat: loc.lat, lng: loc.lng, label: nbNearestTown(loc) };
+            nbBuilt = false; nbStart(); nbBuilt = nbSeq.length > 0;
+          }
+        });
+      }
     }
   }
   updatePersonalizeBar();
@@ -2538,6 +2545,10 @@ function dismissIntro() {
   closeModal('intro');
   localStorage.setItem('tcc_seen_intro', 'true');
   if (window.gtag) gtag('event', 'intro_dismissed', { session_type: _isFirstSession ? 'first' : 'return' });
+  // Onboarding done — now locate them for the Nearby feed (deferred to avoid a double prompt).
+  if (!state.userLoc && !(AVATAR && AVATAR.base) && document.getElementById('screen-nearby')?.classList.contains('active')) {
+    nbBuilt = false; renderNearby();
+  }
 }
 
 // ── INSTALL ──
@@ -2692,6 +2703,41 @@ async function init() {
   // Pre-warm voices for TTS
   if ('speechSynthesis' in window) speechSynthesis.getVoices();
 }
+// ── Pull-to-refresh on the Nearby feed (the slot-machine gesture: fresh data on demand) ──
+(function setupPullToRefresh(){
+  const sc = document.getElementById('iosContent');
+  const ind = document.getElementById('nbPull');
+  if(!sc || !ind) return;
+  let startY = 0, pulling = false, dist = 0;
+  const THRESH = 66;
+  const nearbyActive = () => document.getElementById('screen-nearby')?.classList.contains('active');
+  sc.addEventListener('touchstart', e => {
+    if(!nearbyActive() || sc.scrollTop > 0){ pulling = false; return; }
+    startY = e.touches[0].clientY; pulling = true; dist = 0;
+  }, {passive:true});
+  sc.addEventListener('touchmove', e => {
+    if(!pulling) return;
+    dist = e.touches[0].clientY - startY;
+    if(dist > 0){
+      e.preventDefault();
+      ind.style.height = Math.min(dist * 0.5, 80) + 'px';
+      ind.textContent = dist > THRESH ? '↻ Release to refresh' : '↓ Pull to refresh';
+    }
+  }, {passive:false});
+  sc.addEventListener('touchend', async () => {
+    if(!pulling) return; pulling = false;
+    if(dist > THRESH){
+      ind.style.height = '44px'; ind.textContent = '↻ Refreshing…'; ind.classList.add('spin');
+      try { await loadData(); } catch(e){}
+      nbBuilt = false; renderNearby();
+      if(window.gtag) gtag('event', 'feed_refresh');
+      setTimeout(() => { ind.style.height = '0'; ind.classList.remove('spin'); }, 450);
+    } else {
+      ind.style.height = '0';
+    }
+  }, {passive:true});
+})();
+
 init();
 </script>
 </body>
