@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-11T18:52:01Z",
+  "updated_at": "2026-06-11T21:20:14Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -40,7 +40,7 @@
       "location": "Shore Rd, Chatham, MA, US",
       "reported_by": "iNaturalist \u00b7 rwbb04",
       "reported_at": "2026-06-09T19:38:45Z",
-      "time_ago": "1 day ago",
+      "time_ago": "2 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/676285839/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/370199158"
@@ -54,7 +54,7 @@
       "location": "Race Point Beach, Provincetown, MA 02657, USA",
       "reported_by": "iNaturalist \u00b7 srdsmkes",
       "reported_at": "2026-06-09T19:11:00Z",
-      "time_ago": "1 day ago",
+      "time_ago": "2 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/676529807/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/370328825"
@@ -68,7 +68,7 @@
       "location": "Plymouth, MA, USA",
       "reported_by": "iNaturalist \u00b7 robbieedun",
       "reported_at": "2026-06-08T21:11:00Z",
-      "time_ago": "2 days ago",
+      "time_ago": "3 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/675652980/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/369873560"
@@ -82,7 +82,7 @@
       "location": "Plymouth, MA, USA",
       "reported_by": "iNaturalist \u00b7 robbieedun",
       "reported_at": "2026-06-08T21:05:00Z",
-      "time_ago": "2 days ago",
+      "time_ago": "3 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/675650264/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/369873528"
