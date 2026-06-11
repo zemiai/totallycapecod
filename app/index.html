@@ -2088,7 +2088,7 @@ const NB_TOWNS = [
   {n:"Falmouth",lat:41.5515,lng:-70.6148},{n:"Woods Hole",lat:41.5246,lng:-70.6731},
   {n:"Bourne",lat:41.7412,lng:-70.5990}
 ];
-let nbUser = null, nbSeq = [], nbPtr = 0, nbIo = null, nbBuilt = false;
+let nbUser = null, nbSeq = [], nbPtr = 0, nbIo = null, nbBuilt = false, nbLastShown = null;
 
 // ---- Avatar: on-device personalization profile (no account) ----
 let AVATAR = (() => { try { return JSON.parse(localStorage.getItem('tcc_avatar') || 'null'); } catch (e) { return null; } })();
@@ -2300,12 +2300,21 @@ function nbRenderItem(it){
     </div></div>`;
 }
 
+function nbReshuffle(){
+  // Endless feed: re-shuffle the deck each loop so it never signals an end. The old
+  // "that's the whole Cape — starting over" message was a stop cue that told users
+  // they'd seen everything (the opposite of an infinite social scroll).
+  for(let i=nbSeq.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [nbSeq[i],nbSeq[j]]=[nbSeq[j],nbSeq[i]]; }
+  // Don't repeat the just-seen card across the loop seam.
+  if(nbSeq.length>1 && nbSeq[0]===nbLastShown){ const k=1+Math.floor(Math.random()*(nbSeq.length-1)); [nbSeq[0],nbSeq[k]]=[nbSeq[k],nbSeq[0]]; }
+}
 function nbRenderPage(){
   if(!nbSeq.length) return;
   const out=[]; let n=0;
   while(n<5){
-    if(nbPtr>=nbSeq.length){ out.push(`<div class="nb-loopdiv"><span>🔄 That's the whole Cape — starting over near you</span></div>`); nbPtr=0; }
-    out.push(nbRenderItem(nbSeq[nbPtr++]));
+    if(nbPtr>=nbSeq.length){ nbReshuffle(); nbPtr=0; }
+    const it=nbSeq[nbPtr++]; nbLastShown=it;
+    out.push(nbRenderItem(it));
     n++;
   }
   document.getElementById('nearbyFeed').insertAdjacentHTML('beforeend',out.join(''));
@@ -2674,6 +2683,9 @@ function renderAll() {
 async function init() {
   await loadData();
   renderAll();
+  // If the visitor is already sitting on the Nearby feed when data finishes loading
+  // (slow connection), build it now instead of leaving a stuck "loading…" state.
+  if (!nbBuilt && document.getElementById('screen-nearby')?.classList.contains('active')) renderNearby();
   checkInstall();
   // TASK9 Lever 3: Show first-run onboarding intro to new visitors
   checkFirstRun();
