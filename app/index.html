@@ -2563,7 +2563,10 @@ async function enableCapePush() {
 
 function checkInstall() {
   const ua = navigator.userAgent;
-  const isIos = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+  // iPadOS 13+ Safari reports a "Macintosh" UA — detect it via touch support so iPads
+  // get the iOS (Share → Add to Home Screen) flow instead of nothing.
+  const isIpadOS = /Macintosh/.test(ua) && navigator.maxTouchPoints > 1 && 'ontouchend' in document;
+  const isIos = (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) || isIpadOS;
   const isAndroid = /android/i.test(ua);
   // standalone = already installed (iOS: window.navigator.standalone; Android/Chrome: display-mode)
   const standalone = window.navigator.standalone === true
