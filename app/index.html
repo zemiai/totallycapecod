@@ -15,7 +15,7 @@
 <title>Totally Cape Cod — Live Beaches, Tides, Bridges & Events for Summer 2026</title>
 
 <!-- SEO: discovery + rich snippets -->
-<meta name="description" content="The Cape Cod app. Live beach parking + water temp, tides, bridge delays, lighthouse audio tours, daily events, and a 100-stamp passport. Free to use, $9.99 lifetime Pro." />
+<meta name="description" content="Never waste a day on Cape Cod. The real-time app: which beach isn't full, the water temp, bridge traffic before you cross, and what's happening tonight — live, in your pocket." />
 <meta name="keywords" content="Cape Cod, Cape Cod app, beaches, tides, things to do, restaurants, Provincetown, Wellfleet, Chatham, summer 2026, bridge traffic, Sagamore, Bourne" />
 <link rel="canonical" href="https://totallycapecod.com/" />
 
@@ -209,6 +209,20 @@
   .nb-card{ background:var(--ios-card); border-radius:16px; margin:0 16px 12px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.05); }
   .nb-photo{ height:170px; background-size:cover; background-position:center; background-color:var(--cape-sand); position:relative; }
   .cover-icon{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:58px; line-height:1; opacity:0.95; filter:drop-shadow(0 2px 8px rgba(0,0,0,0.28)); pointer-events:none; }
+  /* 🔥 Tonight specials rail */
+  .specials-rail{ display:flex; gap:10px; overflow-x:auto; padding:2px 16px 6px; margin-bottom:4px; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
+  .specials-rail::-webkit-scrollbar{ display:none; }
+  .special-card{ flex:0 0 auto; width:200px; border-radius:14px; padding:12px 13px; color:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.12); cursor:pointer; position:relative; overflow:hidden; }
+  .special-card .sc-kind{ font-size:10px; font-weight:800; letter-spacing:0.05em; text-transform:uppercase; opacity:0.9; }
+  .special-card .sc-name{ font-weight:800; font-size:14px; margin-top:3px; line-height:1.25; }
+  .special-card .sc-sub{ font-size:12px; opacity:0.92; margin-top:4px; }
+  .special-card .sc-deal{ font-size:12.5px; font-weight:700; margin-top:6px; }
+  /* passport tier badges */
+  .tier-track{ display:flex; gap:6px; margin-top:10px; }
+  .tier-pill{ flex:1; text-align:center; font-size:10px; font-weight:700; padding:6px 4px; border-radius:9px; background:var(--ios-bg); color:var(--ios-sub); }
+  .tier-pill.earned{ background:linear-gradient(135deg,#C99A4A,#A77C30); color:#fff; }
+  .tier-pill.current{ outline:2px solid var(--cape-navy); outline-offset:1px; }
+  .share-btn{ display:block; width:calc(100% - 32px); margin:12px 16px 0; background:var(--cape-navy); color:#fff; border:none; padding:13px; border-radius:14px; font-weight:800; font-size:14px; font-family:inherit; cursor:pointer; }
   .nb-photo::after{ content:''; position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,0.28),transparent 45%); }
   .nb-dist{ position:absolute; top:10px; right:10px; z-index:1; background:rgba(255,255,255,0.94); backdrop-filter:blur(4px); color:var(--ios-text); font-size:11px; font-weight:700; padding:4px 9px; border-radius:999px; }
   .nb-price{ position:absolute; bottom:10px; left:10px; z-index:1; background:rgba(0,0,0,0.62); color:#fff; font-size:11px; font-weight:700; padding:4px 9px; border-radius:999px; }
@@ -329,6 +343,13 @@
         <button onclick="dismissEmailBanner()" style="background:none; border:none; color:rgba(255,255,255,0.6); font-size:11px; margin-top:8px; cursor:pointer;">No thanks</button>
       </div>
 
+      <!-- 🔥 Tonight on the Cape — real-time restaurant specials + tonight's food/music (owner's edge) -->
+      <div class="ios-section-title" id="todaySpecialsTitle" style="display:none;">
+        <span>🔥 Tonight on the Cape</span>
+        <button onclick="switchTab('events')">More →</button>
+      </div>
+      <div class="specials-rail" id="todaySpecials"></div>
+
       <div class="ios-section-title">
         <span>🌊 Tide & Conditions</span>
         <button onclick="switchTab('conditions')">View all →</button>
@@ -387,8 +408,10 @@
             <span id="stampTierLabel">Free tier · max 25</span>
             <span id="stampNextBadge">Next badge: 10 stamps</span>
           </div>
+          <div class="tier-track" id="tierTrack"></div>
         </div>
       </div>
+      <button class="share-btn" id="passportShareBtn" onclick="sharePassport()">📣 Share my Cape progress</button>
       <div class="ios-section-title"><span>Free Tier · Tap to collect</span></div>
       <div style="padding:0 16px;"><div class="stamp-grid" id="stampGridFree"></div></div>
       <div id="passportLockedSection"></div>
@@ -540,8 +563,8 @@
     <div class="modal-handle"></div>
     <div style="text-align:center; padding:4px 0 14px;">
       <div style="font-size:40px;">🦞</div>
-      <div class="font-display" style="font-weight:900; font-size:24px; color:var(--cape-navy); margin-top:6px;">Welcome to Cape Cod</div>
-      <div style="color:var(--ios-sub); font-size:13px; margin-top:4px;">Here's what's live right now →</div>
+      <div class="font-display" style="font-weight:900; font-size:24px; color:var(--cape-navy); margin-top:6px;">Never waste a day on Cape Cod</div>
+      <div style="color:var(--ios-sub); font-size:13px; margin-top:4px;">Beat the crowds, beat the bridge, find what's on tonight →</div>
     </div>
     <div class="intro-bullet">
       <div class="intro-icon">🏖️</div>
@@ -916,8 +939,39 @@ function fmtMarkdown(text) {
   return text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
 }
 
+// 🔥 Tonight on the Cape — restaurant specials (owner's edge) + tonight's food/music, real data.
+function renderSpecials() {
+  const eats = (state.data.eats?.eats || []).filter(r => r.deal);
+  const events = (state.data.events?.events || []).filter(e => ['food','music','food_deal','happy_hour'].includes(e.category));
+  const cards = [];
+  eats.slice(0, 8).forEach(r => {
+    const grad = (COVER_STYLE.food || COVER_STYLE.default)[0];
+    cards.push(`<div class="special-card" style="background:${grad}" onclick="switchTab('nearby')">
+      <div class="sc-kind">🍴 Special</div>
+      <div class="sc-name">${nbEsc(r.name)}</div>
+      <div class="sc-sub">${nbEsc(r.town)}${r.cuisine ? ' · ' + nbEsc(r.cuisine) : ''}</div>
+      <div class="sc-deal">🔥 ${nbEsc(r.deal)}</div>
+    </div>`);
+  });
+  events.slice(0, 8).forEach(e => {
+    const [grad, icon] = COVER_STYLE[e.category] || COVER_STYLE.music;
+    cards.push(`<div class="special-card" style="background:${grad}" onclick="switchTab('events')">
+      <div class="sc-kind">${nbEsc(e.tag || (icon + ' Event'))}</div>
+      <div class="sc-name">${nbEsc(e.title)}</div>
+      <div class="sc-sub">${nbEsc([e.venue, e.town].filter(Boolean).join(' · '))}</div>
+      <div class="sc-deal">🕒 ${nbEsc(e.time || '')}${e.price ? ' · ' + nbEsc(e.price) : ''}</div>
+    </div>`);
+  });
+  const rail = document.getElementById('todaySpecials');
+  const title = document.getElementById('todaySpecialsTitle');
+  if (!rail || !title) return;
+  if (cards.length) { rail.innerHTML = cards.join(''); title.style.display = ''; }
+  else { rail.innerHTML = ''; title.style.display = 'none'; }
+}
+
 // ============ RENDER: TODAY ============
 function renderToday() {
+  renderSpecials();
   // Date
   const opts = { weekday:'long', month:'long', day:'numeric' };
   document.getElementById('todayDate').textContent = new Date().toLocaleDateString('en-US', opts);
@@ -1045,6 +1099,9 @@ const COVER_STYLE = {
   family:         ['linear-gradient(135deg,#E3A24E,#B97320)', '🎠'],
   food_deal:      ['linear-gradient(135deg,#D5644A,#9E3A26)', '🦞'],
   farmers_market: ['linear-gradient(135deg,#7BA05B,#496B32)', '🧺'],
+  market:         ['linear-gradient(135deg,#7BA05B,#496B32)', '🧺'],
+  festival:       ['linear-gradient(135deg,#C76B8E,#7E3F60)', '🎉'],
+  talk:           ['linear-gradient(135deg,#5E6E8C,#3A4A6B)', '🎤'],
   trivia:         ['linear-gradient(135deg,#5685A4,#33576F)', '🧠'],
   happy_hour:     ['linear-gradient(135deg,#C77F4A,#8C5222)', '🍻'],
   free_event:     ['linear-gradient(135deg,#6FB6CC,#2E7C90)', '🎉'],
@@ -1265,6 +1322,39 @@ function reportBeach(status) {
 }
 
 // ============ RENDER: PASSPORT ============
+// ── Passport tiers + social sharing (free growth loop) ──
+const TIERS = [
+  { at: 10,  name: 'Bronze Cape Explorer', icon: '🥉' },
+  { at: 25,  name: 'Cape Adventurer',      icon: '⛵' },
+  { at: 50,  name: 'Local Legend',         icon: '🏅' },
+  { at: 100, name: 'Cape Master',          icon: '👑' },
+];
+function currentTier(n) { let t = null; for (const x of TIERS) { if (n >= x.at) t = x; } return t; }
+function nextTier(n) { for (const x of TIERS) { if (n < x.at) return x; } return null; }
+function renderTierTrack(n) {
+  const track = document.getElementById('tierTrack'); if (!track) return;
+  const cur = currentTier(n);
+  track.innerHTML = TIERS.map(x =>
+    `<div class="tier-pill ${n >= x.at ? 'earned' : ''} ${cur && cur.at === x.at ? 'current' : ''}">${x.icon} ${x.at}</div>`
+  ).join('');
+}
+function sharePassport() {
+  const n = state.stamps.length;
+  const t = currentTier(n);
+  const text = t
+    ? `I've collected ${n} Cape Cod stamps on Totally Cape Cod — ${t.icon} ${t.name}! Start your Cape summer passport:`
+    : `I'm collecting Cape Cod stamps on Totally Cape Cod 🏖️ Start your free summer passport:`;
+  const url = 'https://totallycapecod.com/app/';
+  try { gtag('event', 'share', { method: 'passport', stamps: n }); } catch (e) {}
+  if (navigator.share) {
+    navigator.share({ title: 'Totally Cape Cod Passport', text, url }).catch(() => {});
+  } else if (navigator.clipboard) {
+    navigator.clipboard.writeText(`${text} ${url}`).then(() => toast('Copied — paste it anywhere!'), () => toast(url));
+  } else {
+    toast(url);
+  }
+}
+
 function renderPassport() {
   const stamps = state.data.stamps?.stamps || [];
   const free = stamps.filter(s => !s.is_pro);
@@ -1323,8 +1413,10 @@ function renderPassport() {
   document.getElementById('stampCounter').textContent = c;
   const max = state.isPro ? 100 : FREE_STAMP_LIMIT;
   document.getElementById('stampProgress').style.width = (c / max * 100) + '%';
-  document.getElementById('stampTierLabel').textContent = state.isPro ? 'Pro · All 100 unlocked' : `Free · max ${FREE_STAMP_LIMIT}`;
-  document.getElementById('stampNextBadge').textContent = c < 10 ? 'Next badge: 10 stamps' : c < 25 ? 'Next badge: 25 stamps' : c < 50 ? 'Next badge: 50 stamps' : c < 100 ? 'Next badge: 100 (Cape Native)' : '🏆 Cape Native!';
+  const _tier = currentTier(c), _next = nextTier(c);
+  document.getElementById('stampTierLabel').textContent = _tier ? `${_tier.icon} ${_tier.name}` : (state.isPro ? 'Pro · collecting' : `Free · max ${FREE_STAMP_LIMIT}`);
+  document.getElementById('stampNextBadge').textContent = _next ? `Next: ${_next.icon} ${_next.name} (${_next.at})` : '🏆 Cape Master!';
+  renderTierTrack(c);
   // First-time encouragement when no stamps yet collected
   if (c === 0 && stamps.length > 0) {
     document.getElementById('stampNextBadge').textContent = 'Start collecting — tap any stamp!';
