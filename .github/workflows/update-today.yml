@@ -36,4 +36,16 @@ jobs:
             exit 0
           fi
           git commit -m "[hermes] today.json update $(date -u +%F-%H%M)"
-          git push
+          # main is busy (other hermes jobs push every few minutes), so a plain push
+          # can lose the race with "fetch first". Rebase onto latest main and retry.
+          for i in 1 2 3 4 5; do
+            if git push; then
+              echo "pushed on attempt $i"
+              exit 0
+            fi
+            echo "push rejected (attempt $i) — rebasing onto origin/main"
+            git pull --rebase --autostash origin main || exit 1
+            sleep $((i * 3))
+          done
+          echo "push still failing after 5 attempts" >&2
+          exit 1
