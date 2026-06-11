@@ -96,4 +96,28 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <url>
+    <loc>https://totallycapecod.com/cape-cod-beach-conditions-today.html</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://totallycapecod.com/cape-cod-bridge-traffic.html</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://totallycapecod.com/cape-cod-live-music-tonight.html</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://totallycapecod.com/cape-cod-water-temperature-today.html</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>hourly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>

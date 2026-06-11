@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#4A90A4" />
+<title>Cape Cod Beach Conditions Today — Live Parking &amp; Crowds</title>
+<meta name="description" content="Live Cape Cod beach conditions right now: parking status, crowd levels, water temperature, and lifeguard info for 20+ beaches updated throughout the day." />
+<link rel="canonical" href="https://totallycapecod.com/cape-cod-beach-conditions-today.html" />
+<meta property="og:title" content="Cape Cod Beach Conditions Today — Live Parking &amp; Crowds" />
+<meta property="og:description" content="Live Cape Cod beach conditions right now: parking status, crowd levels, water temperature, and lifeguard info for 20+ beaches updated throughout the day." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://totallycapecod.com/cape-cod-beach-conditions-today.html" />
+<meta property="og:image" content="https://totallycapecod.com/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Cape Cod Beach Conditions Today — Live Parking &amp; Crowds" />
+<meta name="twitter:description" content="Live Cape Cod beach conditions right now: parking status, crowd levels, water temperature, and lifeguard info for 20+ beaches updated throughout the day." />
+<meta name="twitter:image" content="https://totallycapecod.com/og-image.png" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0YM9WQLWK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Q0YM9WQLWK');
+</script>
+<link rel="stylesheet" href="css/tcc.css" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<style>
+  .conditions-table { width:100%; border-collapse:collapse; font-size:14px; }
+  .conditions-table th { background:var(--sea-deep); color:white; padding:10px 12px; text-align:left; font-weight:700; font-size:13px; }
+  .conditions-table td { padding:10px 12px; border-bottom:1px solid var(--divider); vertical-align:middle; }
+  .conditions-table tr:last-child td { border-bottom:none; }
+  .conditions-table tr:hover td { background:var(--sand-cream); }
+  .status-badge { display:inline-block; padding:3px 10px; border-radius:var(--radius-full); font-size:11px; font-weight:700; }
+  .status-open { background:#d4f0e6; color:#1a7a52; }
+  .status-mid { background:#fdecd4; color:#a05a00; }
+  .status-full { background:#fde0e0; color:#a01a1a; }
+  .crowd-dots { display:inline-flex; gap:3px; }
+  .crowd-dot { width:10px; height:10px; border-radius:50%; }
+  .dot-filled { background:var(--sea-deep); }
+  .dot-empty { background:var(--divider); }
+  .temp-badge { background:var(--sea-mist); color:var(--sea-deep); padding:3px 8px; border-radius:8px; font-weight:700; font-size:13px; }
+  .loading-msg { text-align:center; padding:40px; color:var(--text-secondary); font-size:15px; }
+  .error-msg { text-align:center; padding:30px; background:#fde0e0; border-radius:var(--radius-md); color:#a01a1a; }
+  .table-wrap { overflow-x:auto; border-radius:var(--radius-md); box-shadow:var(--shadow-sm); background:white; }
+  .updated-line { font-size:12px; color:var(--text-secondary); text-align:right; margin-top:8px; }
+  .icon-bool { font-size:15px; }
+  @media(max-width:600px){
+    .conditions-table th:nth-child(5),
+    .conditions-table td:nth-child(5),
+    .conditions-table th:nth-child(6),
+    .conditions-table td:nth-child(6){ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" id="siteNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Totally Cape Cod</a>
+    <div class="nav-links">
+      <a href="/feed.html">📍 Near You</a>
+      <a href="/beaches.html">Beaches</a>
+      <a href="/eats.html">Eats</a>
+      <a href="/stays.html">Stays</a>
+      <a href="/experiences.html">Experiences</a>
+      <a href="/events.html">What's Happening</a>
+      <a href="/app/">📱 App</a>
+    </div>
+    <button class="nav-mobile-toggle" onclick="toggleMobileMenu()">☰</button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()">
+  <div class="mobile-menu-panel" onclick="event.stopPropagation()">
+    <a href="/">Home</a>
+    <a href="/feed.html">📍 Near You</a>
+    <a href="/eats.html">Eats</a>
+    <a href="/stays.html">Stays</a>
+    <a href="/experiences.html">Experiences</a>
+    <a href="/events.html">What's Happening</a>
+    <a href="/itinerary.html">Plan My Trip</a>
+    <a href="/app/">📱 Open the App</a>
+  </div>
+</div>
+
+<section class="hero" style="min-height:40vh;">
+  <div class="hero-overlay"></div>
+  <div class="hero-content" style="padding-top:80px;">
+    <div class="hero-badge">Live Conditions</div>
+    <h1 class="hero-title" style="font-size:clamp(28px,5vw,52px);">Cape Cod Beach <span class="script">Conditions</span> Today</h1>
+    <p class="hero-subtitle">Real-time parking, crowd levels &amp; water temps — updated all day</p>
+  </div>
+</section>
+
+<section class="section page-wrap">
+
+  <p style="font-size:15px; line-height:1.7; color:var(--text); margin:0 0 28px; max-width:760px;">
+    Parking fills fast on summer days — especially at National Seashore beaches like Coast Guard and Race Point.
+    This page shows live status for 20+ Cape Cod beaches pulled directly from our real-time data feed: whether the lot is open,
+    how crowded the sand is right now, and the current water temperature. Bookmark it before you head out.
+  </p>
+
+  <div id="beachData">
+    <div class="loading-msg">⏳ Loading live beach conditions…</div>
+  </div>
+
+  <div style="margin-top:40px; padding:24px; background:var(--sea-mist); border-radius:var(--radius-md); text-align:center;">
+    <p style="margin:0 0 8px; font-size:13px; color:var(--text-secondary); font-weight:600; text-transform:uppercase; letter-spacing:.06em;">More Live Cape Cod Data</p>
+    <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+      <a href="/cape-cod-water-temperature-today.html" style="background:white; padding:10px 18px; border-radius:var(--radius-full); font-size:13px; font-weight:700; color:var(--sea-deep); box-shadow:var(--shadow-sm);">🌡️ Water Temps Today</a>
+      <a href="/cape-cod-bridge-traffic.html" style="background:white; padding:10px 18px; border-radius:var(--radius-full); font-size:13px; font-weight:700; color:var(--sea-deep); box-shadow:var(--shadow-sm);">🌉 Bridge Traffic</a>
+      <a href="/cape-cod-live-music-tonight.html" style="background:white; padding:10px 18px; border-radius:var(--radius-full); font-size:13px; font-weight:700; color:var(--sea-deep); box-shadow:var(--shadow-sm);">🎵 Live Music Tonight</a>
+    </div>
+  </div>
+
+  <div style="margin-top:40px; background:var(--sand-light); border-radius:var(--radius-lg); padding:32px; text-align:center;">
+    <p style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--warm-brown-soft); margin:0 0 10px;">Get it live on your phone</p>
+    <h2 style="font-family:'Fraunces',serif; font-weight:900; font-size:26px; margin:0 0 8px; color:var(--warm-brown);">Open the Totally Cape Cod App</h2>
+    <p style="color:var(--text-secondary); font-size:14px; margin:0 0 20px;">Real-time beaches, bridge traffic, tides &amp; tonight's events — all in one place.</p>
+    <a href="/app/" class="btn btn-primary" onclick="gtag('event','cta_click',{page:'beach-conditions',location:'bottom'})">Open the App →</a>
+  </div>
+
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Totally Cape Cod</div>
+      <p class="footer-desc">The unofficial guide to the best of Cape Cod.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-heading">Explore</div>
+      <a href="/beaches.html">Beaches</a>
+      <a href="/eats.html">Restaurants</a>
+      <a href="/stays.html">Hotels</a>
+      <a href="/experiences.html">Experiences</a>
+    </div>
+    <div class="footer-links">
+      <div class="footer-heading">Live Data</div>
+      <a href="/cape-cod-beach-conditions-today.html">Beach Conditions Today</a>
+      <a href="/cape-cod-water-temperature-today.html">Water Temps Today</a>
+      <a href="/cape-cod-bridge-traffic.html">Bridge Traffic</a>
+      <a href="/cape-cod-live-music-tonight.html">Live Music Tonight</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Totally Cape Cod. Affiliate links help keep this guide free.</div>
+</footer>
+
+<script>
+function toggleMobileMenu(){document.getElementById('mobileMenu').classList.toggle('show');}
+
+const DATA_URL = 'https://raw.githubusercontent.com/zemiai/totallycapecod/main/data/beaches.json';
+
+function crowdDots(n) {
+  let html = '<span class="crowd-dots">';
+  for (let i = 1; i <= 5; i++) {
+    html += '<span class="crowd-dot ' + (i <= n ? 'dot-filled' : 'dot-empty') + '"></span>';
+  }
+  return html + '</span>';
+}
+
+function statusBadge(s) {
+  const map = { open: ['status-open','Open'], mid: ['status-mid','Filling'], full: ['status-full','Full'] };
+  const cfg = map[s] || ['status-open', s];
+  return '<span class="status-badge ' + cfg[0] + '">' + cfg[1] + '</span>';
+}
+
+async function loadData() {
+  const container = document.getElementById('beachData');
+  try {
+    const res = await fetch(DATA_URL);
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    const beaches = data.beaches || [];
+    if (!beaches.length) throw new Error('No beach data');
+
+    const rows = beaches.map(function(b) {
+      return '<tr>' +
+        '<td><strong>' + b.name + '</strong></td>' +
+        '<td>' + b.town + '</td>' +
+        '<td>' + statusBadge(b.status) + '<br><span style="font-size:11px;color:var(--text-secondary);">' + (b.spots_text || '') + '</span></td>' +
+        '<td>' + crowdDots(b.crowd || 0) + '</td>' +
+        '<td><span class="temp-badge">' + (b.water_temp ? b.water_temp + '°F' : '—') + '</span></td>' +
+        '<td>' +
+          (b.lifeguard ? '<span class="icon-bool" title="Lifeguard on duty">🏊</span> ' : '') +
+          (b.restrooms ? '<span class="icon-bool" title="Restrooms">🚻</span> ' : '') +
+          (b.sticker_required ? '<span class="icon-bool" title="Sticker required">🅿️</span>' : '') +
+        '</td>' +
+      '</tr>';
+    }).join('');
+
+    const updatedAt = data.updated_at ? new Date(data.updated_at).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}) : 'recently';
+
+    container.innerHTML =
+      '<div class="table-wrap">' +
+        '<table class="conditions-table">' +
+          '<thead><tr>' +
+            '<th>Beach</th>' +
+            '<th>Town</th>' +
+            '<th>Parking</th>' +
+            '<th>Crowd</th>' +
+            '<th>Water Temp</th>' +
+            '<th>Amenities</th>' +
+          '</tr></thead>' +
+          '<tbody>' + rows + '</tbody>' +
+        '</table>' +
+      '</div>' +
+      '<p class="updated-line">Last updated: ' + updatedAt + ' · <a href="/app/">Full conditions in the app →</a></p>';
+
+  } catch (e) {
+    console.error(e);
+    container.innerHTML = '<div class="error-msg">' +
+      '<strong>Unable to load live beach conditions right now.</strong><br>' +
+      'Please try refreshing the page or <a href="/app/">open the app</a> for live data.' +
+    '</div>';
+  }
+}
+
+loadData();
+</script>
+
+</body>
+</html>

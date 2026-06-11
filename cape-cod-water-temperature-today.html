@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#4A90A4" />
+<title>Cape Cod Water Temperature Today — Live by Beach</title>
+<meta name="description" content="Live Cape Cod ocean water temperature today for every beach — updated throughout the day. See which beaches are warmest right now on the Cape and Islands." />
+<link rel="canonical" href="https://totallycapecod.com/cape-cod-water-temperature-today.html" />
+<meta property="og:title" content="Cape Cod Water Temperature Today — Live by Beach" />
+<meta property="og:description" content="Live Cape Cod ocean water temperature today for every beach — updated throughout the day. See which beaches are warmest right now on the Cape and Islands." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://totallycapecod.com/cape-cod-water-temperature-today.html" />
+<meta property="og:image" content="https://totallycapecod.com/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Cape Cod Water Temperature Today — Live by Beach" />
+<meta name="twitter:description" content="Live Cape Cod ocean water temperature today for every beach — updated throughout the day. See which beaches are warmest right now on the Cape and Islands." />
+<meta name="twitter:image" content="https://totallycapecod.com/og-image.png" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0YM9WQLWK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Q0YM9WQLWK');
+</script>
+<link rel="stylesheet" href="css/tcc.css" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<style>
+  .temp-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(220px,1fr)); gap:16px; }
+  @media(max-width:480px){ .temp-grid{ grid-template-columns:1fr 1fr; gap:12px; } }
+  .temp-card { background:white; border-radius:var(--radius-md); padding:20px 18px; box-shadow:var(--shadow-sm); text-align:center; transition:transform var(--transition-fast), box-shadow var(--transition-fast); }
+  .temp-card:hover { transform:translateY(-2px); box-shadow:var(--shadow-md); }
+  .temp-display { font-size:48px; font-weight:800; line-height:1; margin:8px 0 4px; }
+  .temp-warm { color:#1a7a52; }
+  .temp-mild { color:#a05a00; }
+  .temp-cool { color:var(--sea-deep); }
+  .temp-cold { color:#5056a1; }
+  .temp-unit { font-size:22px; vertical-align:super; }
+  .beach-name-card { font-weight:700; font-size:15px; color:var(--warm-brown); margin-bottom:4px; }
+  .beach-town-card { font-size:12px; color:var(--text-secondary); }
+  .temp-label-feel { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; margin-top:8px; }
+  .feel-warm { color:#1a7a52; }
+  .feel-mild { color:#a05a00; }
+  .feel-cool { color:var(--sea-deep); }
+  .feel-cold { color:#5056a1; }
+  .sort-bar { display:flex; gap:10px; margin-bottom:20px; flex-wrap:wrap; }
+  .sort-btn { padding:8px 18px; border-radius:var(--radius-full); font-size:13px; font-weight:700; cursor:pointer; border:2px solid var(--divider); background:white; color:var(--text-secondary); transition:all var(--transition-fast); }
+  .sort-btn.active { background:var(--sea-deep); color:white; border-color:var(--sea-deep); }
+  .loading-msg { text-align:center; padding:40px; color:var(--text-secondary); font-size:15px; }
+  .error-msg { text-align:center; padding:30px; background:#fde0e0; border-radius:var(--radius-md); color:#a01a1a; }
+  .updated-line { font-size:12px; color:var(--text-secondary); margin-top:12px; text-align:right; }
+  .legend { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:20px; }
+  .legend-item { display:flex; align-items:center; gap:6px; font-size:12px; font-weight:600; }
+  .legend-dot { width:12px; height:12px; border-radius:50%; }
+</style>
+</head>
+<body>
+
+<nav class="site-nav" id="siteNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Totally Cape Cod</a>
+    <div class="nav-links">
+      <a href="/feed.html">📍 Near You</a>
+      <a href="/beaches.html">Beaches</a>
+      <a href="/eats.html">Eats</a>
+      <a href="/stays.html">Stays</a>
+      <a href="/experiences.html">Experiences</a>
+      <a href="/events.html">What's Happening</a>
+      <a href="/app/">📱 App</a>
+    </div>
+    <button class="nav-mobile-toggle" onclick="toggleMobileMenu()">☰</button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()">
+  <div class="mobile-menu-panel" onclick="event.stopPropagation()">
+    <a href="/">Home</a>
+    <a href="/feed.html">📍 Near You</a>
+    <a href="/eats.html">Eats</a>
+    <a href="/stays.html">Stays</a>
+    <a href="/experiences.html">Experiences</a>
+    <a href="/events.html">What's Happening</a>
+    <a href="/itinerary.html">Plan My Trip</a>
+    <a href="/app/">📱 Open the App</a>
+  </div>
+</div>
+
+<section class="hero" style="min-height:40vh;">
+  <div class="hero-overlay"></div>
+  <div class="hero-content" style="padding-top:80px;">
+    <div class="hero-badge">Live Water Temps</div>
+    <h1 class="hero-title" style="font-size:clamp(26px,5vw,50px);">Cape Cod Water <span class="script">Temperature</span> Today</h1>
+    <p class="hero-subtitle">Current ocean temp at every beach — updated all day long</p>
+  </div>
+</section>
+
+<section class="section page-wrap">
+
+  <p style="font-size:15px; line-height:1.7; color:var(--text); margin:0 0 28px; max-width:760px;">
+    Cape Cod ocean temperatures vary more than most visitors expect — Bay-side beaches in Barnstable and Dennis can run
+    5–10°F warmer than the ocean-facing National Seashore beaches in Eastham or Wellfleet, especially in summer.
+    This page shows the current water temperature at every beach in our live data feed, so you can find the warmest
+    swim of the day before you leave the house.
+  </p>
+
+  <div id="tempData">
+    <div class="loading-msg">⏳ Loading live water temperatures…</div>
+  </div>
+
+  <div style="margin-top:40px; padding:24px; background:var(--sea-mist); border-radius:var(--radius-md); text-align:center;">
+    <p style="margin:0 0 8px; font-size:13px; color:var(--text-secondary); font-weight:600; text-transform:uppercase; letter-spacing:.06em;">More Live Cape Cod Data</p>
+    <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+      <a href="/cape-cod-beach-conditions-today.html" style="background:white; padding:10px 18px; border-radius:var(--radius-full); font-size:13px; font-weight:700; color:var(--sea-deep); box-shadow:var(--shadow-sm);">🏖️ Beach Conditions</a>
+      <a href="/cape-cod-bridge-traffic.html" style="background:white; padding:10px 18px; border-radius:var(--radius-full); font-size:13px; font-weight:700; color:var(--sea-deep); box-shadow:var(--shadow-sm);">🌉 Bridge Traffic</a>
+      <a href="/cape-cod-live-music-tonight.html" style="background:white; padding:10px 18px; border-radius:var(--radius-full); font-size:13px; font-weight:700; color:var(--sea-deep); box-shadow:var(--shadow-sm);">🎵 Live Music Tonight</a>
+    </div>
+  </div>
+
+  <div style="margin-top:40px; background:var(--sand-light); border-radius:var(--radius-lg); padding:32px; text-align:center;">
+    <p style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--warm-brown-soft); margin:0 0 10px;">Get it live on your phone</p>
+    <h2 style="font-family:'Fraunces',serif; font-weight:900; font-size:26px; margin:0 0 8px; color:var(--warm-brown);">Open the Totally Cape Cod App</h2>
+    <p style="color:var(--text-secondary); font-size:14px; margin:0 0 20px;">Real-time beaches, bridge traffic, tides &amp; tonight's events — all in one place.</p>
+    <a href="/app/" class="btn btn-primary" onclick="gtag('event','cta_click',{page:'water-temp',location:'bottom'})">Open the App →</a>
+  </div>
+
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Totally Cape Cod</div>
+      <p class="footer-desc">The unofficial guide to the best of Cape Cod.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-heading">Explore</div>
+      <a href="/beaches.html">Beaches</a>
+      <a href="/eats.html">Restaurants</a>
+      <a href="/stays.html">Hotels</a>
+      <a href="/experiences.html">Experiences</a>
+    </div>
+    <div class="footer-links">
+      <div class="footer-heading">Live Data</div>
+      <a href="/cape-cod-beach-conditions-today.html">Beach Conditions Today</a>
+      <a href="/cape-cod-water-temperature-today.html">Water Temps Today</a>
+      <a href="/cape-cod-bridge-traffic.html">Bridge Traffic</a>
+      <a href="/cape-cod-live-music-tonight.html">Live Music Tonight</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Totally Cape Cod. Affiliate links help keep this guide free.</div>
+</footer>
+
+<script>
+function toggleMobileMenu(){document.getElementById('mobileMenu').classList.toggle('show');}
+
+var DATA_URL = 'https://raw.githubusercontent.com/zemiai/totallycapecod/main/data/beaches.json';
+var beachesAll = [];
+var sortMode = 'warmest';
+
+function tempClass(t) {
+  if (t >= 70) return 'warm';
+  if (t >= 65) return 'mild';
+  if (t >= 60) return 'cool';
+  return 'cold';
+}
+
+function feelLabel(t) {
+  if (t >= 70) return { cls:'feel-warm', label:'🏊 Perfect swimming' };
+  if (t >= 65) return { cls:'feel-mild', label:'😊 Good for most' };
+  if (t >= 60) return { cls:'feel-cool', label:'🥶 Refreshing' };
+  return { cls:'feel-cold', label:'❄️ Cold' };
+}
+
+function renderGrid(beaches) {
+  var sorted = beaches.slice();
+  if (sortMode === 'warmest') {
+    sorted.sort(function(a,b){ return (b.water_temp||0)-(a.water_temp||0); });
+  } else if (sortMode === 'az') {
+    sorted.sort(function(a,b){ return a.name.localeCompare(b.name); });
+  } else if (sortMode === 'town') {
+    sorted.sort(function(a,b){ return a.town.localeCompare(b.town); });
+  }
+
+  var cards = sorted.filter(function(b){ return b.water_temp; }).map(function(b) {
+    var cls = tempClass(b.water_temp);
+    var feel = feelLabel(b.water_temp);
+    return '<div class="temp-card">' +
+      '<div class="beach-name-card">' + b.name + '</div>' +
+      '<div class="beach-town-card">' + b.town + '</div>' +
+      '<div class="temp-display temp-' + cls + '">' + b.water_temp + '<span class="temp-unit">°F</span></div>' +
+      '<div class="temp-label-feel ' + feel.cls + '">' + feel.label + '</div>' +
+    '</div>';
+  }).join('');
+
+  return cards || '<div style="text-align:center;padding:20px;color:var(--text-secondary);">No temperature data available right now.</div>';
+}
+
+function setSort(mode, btn) {
+  sortMode = mode;
+  document.querySelectorAll('.sort-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  document.getElementById('tempGrid').innerHTML = renderGrid(beachesAll);
+  gtag('event','sort_click',{page:'water-temp',sort:mode});
+}
+
+async function loadData() {
+  var container = document.getElementById('tempData');
+  try {
+    var res = await fetch(DATA_URL);
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    var data = await res.json();
+    var beaches = data.beaches || [];
+    if (!beaches.length) throw new Error('No beach data');
+    beachesAll = beaches;
+    var updatedAt = data.updated_at ? new Date(data.updated_at).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}) : 'recently';
+
+    container.innerHTML =
+      '<div class="legend">' +
+        '<span class="legend-item"><span class="legend-dot" style="background:#1a7a52;"></span>70°F+ — Perfect</span>' +
+        '<span class="legend-item"><span class="legend-dot" style="background:#a05a00;"></span>65–69°F — Good</span>' +
+        '<span class="legend-item"><span class="legend-dot" style="background:var(--sea-deep);"></span>60–64°F — Refreshing</span>' +
+        '<span class="legend-item"><span class="legend-dot" style="background:#5056a1;"></span>Below 60°F — Cold</span>' +
+      '</div>' +
+      '<div class="sort-bar">' +
+        '<button class="sort-btn active" onclick="setSort(\'warmest\',this)">Warmest First</button>' +
+        '<button class="sort-btn" onclick="setSort(\'az\',this)">A–Z</button>' +
+        '<button class="sort-btn" onclick="setSort(\'town\',this)">By Town</button>' +
+      '</div>' +
+      '<div class="temp-grid" id="tempGrid">' + renderGrid(beaches) + '</div>' +
+      '<p class="updated-line">Last updated: ' + updatedAt + ' · <a href="/app/">Full data in the app →</a></p>';
+
+  } catch (e) {
+    console.error(e);
+    container.innerHTML = '<div class="error-msg">' +
+      '<strong>Unable to load live water temperature data right now.</strong><br>' +
+      'Please try refreshing or <a href="/app/">open the app</a> for live data.' +
+    '</div>';
+  }
+}
+
+loadData();
+</script>
+
+</body>
+</html>
