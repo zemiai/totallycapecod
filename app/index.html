@@ -166,6 +166,35 @@
   .a2hs-arrow{ position:absolute; bottom:-30px; left:50%; transform:translate(-50%,0); font-size:26px; color:#fff; animation:a2hsBounce 1.1s ease-in-out infinite; filter:drop-shadow(0 2px 5px rgba(0,0,0,0.35)); pointer-events:none; }
   .push-prompt{ display:flex; align-items:center; gap:10px; margin:0 16px 10px; background:var(--cape-cream); border:1px solid var(--cape-sand); border-radius:14px; padding:11px 13px; }
   .push-on-btn{ background:var(--cape-navy); color:#fff; border:none; border-radius:10px; padding:7px 14px; font-weight:800; font-size:13px; font-family:inherit; cursor:pointer; white-space:nowrap; }
+  /* ===== Add-to-Home-Screen animated tutorial ===== */
+  .a2hs-phone{ width:250px; margin:6px auto 0; background:#0e1116; border-radius:30px; padding:9px; box-shadow:0 14px 34px rgba(0,0,0,0.32); }
+  .a2hs-screen{ position:relative; height:310px; background:linear-gradient(180deg,#FDF8F2,#E7F0F4); border-radius:22px; overflow:hidden; }
+  .a2hs-scene{ position:absolute; inset:0; }
+  .a2hs-scene.s1{ animation:a2hsS1 8s ease-in-out infinite; }
+  .a2hs-scene.s2{ animation:a2hsS2 8s ease-in-out infinite; }
+  @keyframes a2hsS1{ 0%,44%{opacity:1} 50%,94%{opacity:0} 100%{opacity:1} }
+  @keyframes a2hsS2{ 0%,44%{opacity:0} 50%,94%{opacity:1} 100%{opacity:0} }
+  .a2hs-url{ position:absolute; left:14px; right:14px; top:13px; height:28px; background:#fff; border-radius:9px; display:flex; align-items:center; justify-content:center; font-size:11px; color:#9aa; box-shadow:0 1px 2px rgba(0,0,0,0.06); }
+  .a2hs-lines{ position:absolute; left:16px; right:16px; top:52px; }
+  .a2hs-lines i{ display:block; height:10px; border-radius:5px; background:rgba(26,58,108,0.10); margin-bottom:9px; }
+  .a2hs-lines i:nth-child(2){ width:80%; } .a2hs-lines i:nth-child(4){ width:62%; }
+  .a2hs-bar{ position:absolute; left:0; right:0; bottom:0; height:48px; background:#f4f4f6; border-top:1px solid #e2e2e6; display:flex; align-items:center; justify-content:space-around; font-size:19px; }
+  .a2hs-share{ position:relative; }
+  .a2hs-sheet{ position:absolute; left:8px; right:8px; bottom:8px; background:#fbfbfd; border-radius:16px; padding:6px 6px; box-shadow:0 -6px 20px rgba(0,0,0,0.12); }
+  .a2hs-row{ display:flex; align-items:center; gap:10px; padding:9px 8px; font-size:12.5px; color:#222; border-bottom:1px solid #ededf0; }
+  .a2hs-row:last-child{ border-bottom:none; }
+  .a2hs-row .ic{ width:24px; text-align:center; font-size:15px; }
+  .a2hs-row.target{ font-weight:800; background:rgba(226,83,59,0.06); border-radius:9px; }
+  .a2hs-mark{ position:absolute; pointer-events:none; }
+  .a2hs-mark .ring{ fill:none; stroke:#E2533B; stroke-width:3.6; stroke-linecap:round; stroke-dasharray:1; }
+  .a2hs-mark.m1 .ring{ animation:a2hsDraw1 8s ease-in-out infinite; }
+  .a2hs-mark.m2 .ring{ animation:a2hsDraw2 8s ease-in-out infinite; }
+  @keyframes a2hsDraw1{ 0%{stroke-dashoffset:1} 20%,44%{stroke-dashoffset:0} 50%,100%{stroke-dashoffset:1} }
+  @keyframes a2hsDraw2{ 0%,52%{stroke-dashoffset:1} 72%,94%{stroke-dashoffset:0} 100%{stroke-dashoffset:1} }
+  .a2hs-cap{ position:relative; text-align:center; font-weight:800; font-size:14px; color:var(--cape-navy); height:22px; margin-top:14px; }
+  .a2hs-cap span{ position:absolute; left:0; right:0; }
+  .a2hs-cap .c1{ animation:a2hsS1 8s ease-in-out infinite; }
+  .a2hs-cap .c2{ animation:a2hsS2 8s ease-in-out infinite; }
 
   .map-container{ height:240px; margin:0 16px; border-radius:14px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.04); }
   #leafletMap, #beachMap, #whaleMap, #lighthouseMap{ height:100%; width:100%; }
@@ -609,6 +638,52 @@
     <!-- content injected by checkInstall() -->
   </div>
   <button onclick="dismissInstall()" style="background:none; border:none; font-size:20px; color:var(--ios-sub);" aria-label="Dismiss install prompt">×</button>
+</div>
+
+<!-- Add-to-Home-Screen animated tutorial (circles Share, then Add to Home Screen) -->
+<div class="modal-bg" id="a2hsModal">
+  <div class="modal-sheet" style="text-align:center;">
+    <div class="modal-handle"></div>
+    <div class="font-display" style="font-weight:900; font-size:20px; color:var(--cape-navy);">Add to your Home Screen</div>
+    <div style="color:var(--ios-sub); font-size:12.5px; margin-top:3px;">Two taps — then it opens full-screen like a real app (and unlocks alerts).</div>
+    <div class="a2hs-phone">
+      <div class="a2hs-screen">
+        <!-- Scene 1: Safari — circle the Share button -->
+        <div class="a2hs-scene s1">
+          <div class="a2hs-url">totallycapecod.com</div>
+          <div class="a2hs-lines"><i></i><i></i><i></i><i></i></div>
+          <div class="a2hs-bar">
+            <span style="color:#b9bcc4;">‹</span><span style="color:#b9bcc4;">›</span>
+            <span class="a2hs-share" style="color:#3b6ea5;">⬆️
+              <span class="a2hs-mark m1" style="left:50%; top:50%; transform:translate(-50%,-50%);">
+                <svg width="60" height="50" viewBox="0 0 60 50"><ellipse class="ring" pathLength="1" cx="30" cy="25" rx="25" ry="19" transform="rotate(-8 30 25)"/></svg>
+              </span>
+            </span>
+            <span style="color:#b9bcc4;">📖</span><span style="color:#b9bcc4;">⧉</span>
+          </div>
+        </div>
+        <!-- Scene 2: Share sheet — circle Add to Home Screen -->
+        <div class="a2hs-scene s2">
+          <div class="a2hs-lines" style="top:14px;"><i></i><i></i></div>
+          <div class="a2hs-sheet">
+            <div class="a2hs-row"><span class="ic">📋</span>Copy</div>
+            <div class="a2hs-row"><span class="ic">🔖</span>Add Bookmark</div>
+            <div class="a2hs-row target"><span class="ic">➕</span>Add to Home Screen
+              <span class="a2hs-mark m2" style="left:2px; right:2px; top:50%; transform:translateY(-50%);">
+                <svg width="100%" height="44" viewBox="0 0 230 44" preserveAspectRatio="none"><ellipse class="ring" pathLength="1" cx="115" cy="22" rx="111" ry="18"/></svg>
+              </span>
+            </div>
+            <div class="a2hs-row"><span class="ic">⭐</span>Add to Favorites</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="a2hs-cap">
+      <span class="c1">1 · Tap <strong>Share</strong></span>
+      <span class="c2">2 · Tap <strong>Add to Home Screen</strong></span>
+    </div>
+    <button onclick="closeModal('a2hs')" style="width:100%; background:var(--cape-navy); color:#fff; border:none; padding:14px; border-radius:14px; font-weight:800; font-size:15px; margin-top:18px; font-family:inherit; cursor:pointer;">Got it 👍</button>
+  </div>
 </div>
 
 <!-- Toast -->
@@ -2456,7 +2531,7 @@ function checkInstall() {
   banner.dataset.ready = '1';
 
   if (isIos) {
-    textEl.innerHTML = '<strong>Add to your Home Screen</strong><br/><span style="color:var(--ios-sub);">Tap <span style="font-weight:700;">Share</span> <span class="a2hs-icon" style="display:inline-block;">⬆️</span> below, then “Add to Home Screen”</span>';
+    textEl.innerHTML = '<strong>Add to your Home Screen</strong><br/><span style="color:var(--ios-sub);">Full-screen + Cape alerts. <button onclick="openModal(\'a2hs\')" style="background:none; border:none; color:var(--cape-navy); font-weight:800; text-decoration:underline; padding:0; font-size:12px; cursor:pointer; font-family:inherit;">Show me how →</button></span>';
     // Bouncing arrow pointing down toward Safari's Share button
     if (!banner.querySelector('.a2hs-arrow')) {
       const arrow = document.createElement('div');
