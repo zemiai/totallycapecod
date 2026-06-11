@@ -85,6 +85,25 @@
   }
   .desktop-header{ display:none; position:fixed; top:14px; left:0; right:0; text-align:center; z-index:10; color:var(--cape-brown-dark); font-size:13px; }
   .desktop-header b{ font-family:'Fraunces',serif; font-size:18px; color:var(--cape-navy); }
+  /* Desktop showcase panel beside the phone (wide screens only; fixed so it never disturbs the app) */
+  .desktop-aside{ display:none; }
+  @media (min-width:1180px){
+    .desktop-aside{ display:block; position:fixed; top:50%; transform:translateY(-50%); right:calc(50% + 226px); width:330px; z-index:5; color:var(--cape-brown-dark); }
+    .da-logo{ font-family:'Fraunces',serif; font-weight:900; color:var(--cape-navy); font-size:18px; }
+    .da-head{ font-family:'Fraunces',serif; font-weight:900; font-size:34px; line-height:1.08; color:var(--cape-navy); margin:8px 0 0; }
+    .da-sub{ font-size:14px; line-height:1.5; color:var(--cape-brown); margin:12px 0 0; }
+    .da-list{ list-style:none; padding:0; margin:18px 0 0; }
+    .da-list li{ display:flex; gap:10px; align-items:flex-start; font-size:13.5px; color:var(--cape-brown-dark); padding:5px 0; }
+    .da-list li span{ font-size:17px; flex:none; }
+    .da-get{ display:flex; gap:14px; align-items:center; margin:20px 0 0; background:#fff; border:1px solid var(--cape-sand); border-radius:16px; padding:13px; box-shadow:0 6px 18px rgba(30,20,14,0.08); }
+    .da-qr{ border-radius:8px; flex:none; background:#fff; }
+    .da-get-h{ font-weight:800; color:var(--cape-navy); font-size:14px; }
+    .da-get-u{ font-size:12px; color:var(--cape-brown); margin-top:3px; }
+    .da-links{ display:flex; flex-wrap:wrap; gap:6px 14px; margin:18px 0 0; }
+    .da-links a{ color:var(--cape-navy); font-size:12.5px; font-weight:600; text-decoration:none; border-bottom:1px solid transparent; }
+    .da-links a:hover{ border-bottom-color:var(--cape-navy); }
+    .desktop-header{ display:none!important; } /* aside replaces the top caption on wide screens */
+  }
 
   .ios-content{ flex:1; overflow-y:auto; padding-bottom:100px; -webkit-overflow-scrolling:touch; }
   .ios-content::-webkit-scrollbar{ display:none; }
@@ -350,8 +369,34 @@
 <body>
 
 <div class="desktop-header">
-  <b>Totally Cape Cod</b><br/>Open this URL on your iPhone → Share → Add to Home Screen
+  <b>Totally Cape Cod</b> — the real-time Cape app · best on your phone
 </div>
+
+<aside class="desktop-aside">
+  <div class="da-logo">Totally Cape Cod</div>
+  <h1 class="da-head">Never waste a day on Cape Cod</h1>
+  <p class="da-sub">The real-time Cape app — which beach isn't full, the water temp, bridge traffic before you cross, and what's happening tonight.</p>
+  <ul class="da-list">
+    <li><span>🏖️</span> Live beach parking, crowds &amp; water temps</li>
+    <li><span>🚗</span> Sagamore &amp; Bourne bridge traffic, before you leave</li>
+    <li><span>🎵</span> What's happening tonight — music, food &amp; events</li>
+    <li><span>🎫</span> A 100-stamp summer passport</li>
+  </ul>
+  <div class="da-get">
+    <img class="da-qr" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&margin=0&data=https%3A%2F%2Ftotallycapecod.com%2Fapp%2F" alt="Scan to open Totally Cape Cod on your phone" width="112" height="112" loading="lazy" />
+    <div>
+      <div class="da-get-h">Get it on your phone →</div>
+      <div class="da-get-u">Scan the code, or visit <b>totallycapecod.com</b> on mobile and tap Share → Add to Home Screen.</div>
+    </div>
+  </div>
+  <nav class="da-links">
+    <a href="/beaches.html">Beaches</a>
+    <a href="/eats.html">Eats</a>
+    <a href="/stays.html">Stays</a>
+    <a href="/experiences.html">Experiences</a>
+    <a href="/events.html">What's Happening</a>
+  </nav>
+</aside>
 
 <div class="app-shell">
   <div class="ios-content" id="iosContent">
