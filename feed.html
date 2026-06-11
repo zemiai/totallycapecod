@@ -394,6 +394,27 @@ function eventCover(e){
   return {style:`background:linear-gradient(135deg,${m[0]},${m[1]})`, icon:`<span class="cover-icon">${m[2]}</span>`};
 }
 
+// Live "open now" from a Google Places weekly schedule (r.hours), evaluated in Eastern time.
+function tccNowET(){
+  const parts=new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',weekday:'short',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+  const WD={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6}; let day=0,h=0,m=0;
+  for(const p of parts){ if(p.type==='weekday') day=WD[p.value]??0; else if(p.type==='hour') h=(+p.value)%24; else if(p.type==='minute') m=+p.value; }
+  return day*1440+h*60+m;
+}
+function isOpenNow(periods){
+  if(!Array.isArray(periods)||!periods.length) return null;
+  const now=tccNowET();
+  for(const p of periods){
+    const o=p.open; if(!o) continue;
+    if(!p.close){ if((o.hour||0)===0&&(o.minute||0)===0) return true; continue; }
+    const oW=(o.day||0)*1440+(o.hour||0)*60+(o.minute||0);
+    let cW=(p.close.day||0)*1440+(p.close.hour||0)*60+(p.close.minute||0);
+    if(cW<=oW) cW+=10080;
+    for(const n of [now, now+10080]){ if(n>=oW&&n<cW) return true; }
+  }
+  return false;
+}
+
 /* ---- Geometry ---- */
 function dist(a,b){
   const R=3959,dLat=(b.lat-a.lat)*Math.PI/180,dLng=(b.lng-a.lng)*Math.PI/180;
@@ -495,11 +516,16 @@ function renderItem(it){
   // food
   const r=it.data;
   const yelp=`https://www.yelp.com/search?find_desc=${encodeURIComponent(r.name)}&find_loc=${encodeURIComponent(r.town)}%2C+MA`;
-  const ot=`https://www.opentable.com/s?term=${encodeURIComponent(r.name)}&metroId=66`;
   const reviews = (r.reviews!=null) ? ` <span class="rev">(${r.reviews.toLocaleString()})</span>` : "";
-  // open_now is a stale weekly snapshot, not live — don't show a definitive
-  // Open/Closed badge (it wrongly marked open spots as closed).
-  const openBadge = "";
+  // Live open/closed computed on-device from the Google Places weekly schedule (r.hours).
+  const open = isOpenNow(r.hours);
+  const openBadge = open===true ? `<span class="open-badge open">● Open now</span>`
+                  : open===false ? `<span class="open-badge closed">● Closed</span>` : "";
+  // "Call" when we have a number; else Google Maps so the button is never broken.
+  const phoneDigits = r.phone ? String(r.phone).replace(/[^0-9+]/g,'') : '';
+  const callBtn = phoneDigits
+    ? `<a class="a-book" href="tel:${phoneDigits}" onclick="gtag('event','call_click',{item:'${esc(r.name)}',location:'feed'})">📞 Call</a>`
+    : `<a class="a-book" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(r.name+' '+r.town+' MA')}${r.place_id?`&query_place_id=${encodeURIComponent(r.place_id)}`:''}" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'maps',item:'${esc(r.name)}',location:'feed'})">📍 Directions</a>`;
   const siteBtn = r.website
     ? `<a class="a-view" href="${esc(r.website)}" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'website',item:'${esc(r.name)}',location:'feed'})">Website</a>`
     : "";
@@ -515,7 +541,7 @@ function renderItem(it){
       <div class="actions">
         ${siteBtn}
         <a class="a-view" href="${yelp}" target="_blank" rel="noopener" onclick="gtag('event','affiliate_click',{type:'yelp',item:'${esc(r.name)}',location:'feed'})">Reviews</a>
-        <a class="a-book" href="${ot}" target="_blank" rel="noopener" onclick="gtag('event','affiliate_click',{type:'opentable',item:'${esc(r.name)}',location:'feed'})">Reserve</a>
+        ${callBtn}
       </div>
     </div></div>`;
 }

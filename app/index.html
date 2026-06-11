@@ -1057,6 +1057,39 @@ function cardCover(realPhoto, key) {
   return { style: `background:${grad}`, icon: `<span class="cover-icon">${emoji}</span>` };
 }
 
+// ── Live "open now" computed on-device from a Google Places weekly schedule ──
+// (r.hours = regularOpeningHours.periods). Evaluated in Eastern time so it's
+// always current, unlike the old frozen open_now snapshot.
+function tccNowET() {
+  const parts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date());
+  const WD = { Sun:0, Mon:1, Tue:2, Wed:3, Thu:4, Fri:5, Sat:6 };
+  let day = 0, h = 0, m = 0;
+  for (const p of parts) {
+    if (p.type === 'weekday') day = WD[p.value] ?? 0;
+    else if (p.type === 'hour') h = (+p.value) % 24;
+    else if (p.type === 'minute') m = +p.value;
+  }
+  return day * 1440 + h * 60 + m; // minute of week, 0 = Sunday 00:00
+}
+function isOpenNow(periods) {
+  if (!Array.isArray(periods) || !periods.length) return null; // unknown → no badge
+  const now = tccNowET();
+  for (const p of periods) {
+    const o = p.open; if (!o) continue;
+    if (!p.close) { if ((o.hour || 0) === 0 && (o.minute || 0) === 0) return true; continue; } // open 24h
+    const oW = (o.day || 0) * 1440 + (o.hour || 0) * 60 + (o.minute || 0);
+    let cW = (p.close.day || 0) * 1440 + (p.close.hour || 0) * 60 + (p.close.minute || 0);
+    if (cW <= oW) cW += 10080; // closes after midnight / wraps past Saturday
+    for (const n of [now, now + 10080]) { if (n >= oW && n < cW) return true; }
+  }
+  return false;
+}
+function openNowBadge(r) {
+  const open = isOpenNow(r.hours);
+  return open === true ? `<span class="nb-open open">● Open now</span>`
+       : open === false ? `<span class="nb-open closed">● Closed</span>` : "";
+}
+
 function renderEventCard(e) {
   const loc = [e.venue, e.town].filter(Boolean).join(' · ');
   const cov = cardCover(e.img || '', e.category);
@@ -1965,12 +1998,14 @@ function nbRenderItem(it){
   // food
   const r=it.data;
   const yelp=`https://www.yelp.com/search?find_desc=${encodeURIComponent(r.name)}&find_loc=${encodeURIComponent(r.town)}%2C+MA`;
-  const ot=`https://www.opentable.com/s?term=${encodeURIComponent(r.name)}&metroId=66`;
   const reviews = (r.reviews!=null) ? ` <span class="rev">(${Number(r.reviews).toLocaleString()})</span>` : "";
-  // open_now is a stale weekly snapshot from Google Places enrichment — not live —
-  // so we don't show a definitive "Open now/Closed" badge (it was wrongly marking
-  // open spots as closed). Re-enable once a live hours schedule is available.
-  const openBadge = "";
+  // Live open/closed computed on-device from the Google Places weekly schedule (r.hours).
+  const openBadge = openNowBadge(r);
+  // "Call" when we have a number; otherwise Google Maps (call/hours/directions) so it's never broken.
+  const phoneDigits = r.phone ? String(r.phone).replace(/[^0-9+]/g,'') : '';
+  const callBtn = phoneDigits
+    ? `<a class="nb-btn-soft" href="tel:${phoneDigits}" onclick="gtag('event','call_click',{item:'${nbEsc(r.name)}',location:'app_nearby'})">📞 Call</a>`
+    : `<a class="nb-btn-soft" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(r.name+' '+r.town+' MA')}${r.place_id?`&query_place_id=${encodeURIComponent(r.place_id)}`:''}" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'maps',item:'${nbEsc(r.name)}',location:'app_nearby'})">📍 Directions</a>`;
   const tags = Array.isArray(r.tags) ? r.tags.slice(0,3) : [];
   const siteBtn = r.website ? `<a class="nb-btn-primary" href="${nbEsc(r.website)}" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'website',item:'${nbEsc(r.name)}',location:'app_nearby'})">Website</a>` : "";
   const realPhoto = r.photo ? (r.photo.startsWith('http') ? r.photo : ASSET_BASE + r.photo) : '';
@@ -1989,7 +2024,7 @@ function nbRenderItem(it){
       <div class="nb-actions">
         ${siteBtn}
         <a class="${siteBtn?'nb-btn-soft':'nb-btn-primary'}" href="${yelp}" target="_blank" rel="noopener" onclick="gtag('event','affiliate_click',{type:'yelp',item:'${nbEsc(r.name)}',location:'app_nearby'})">Reviews</a>
-        <a class="nb-btn-soft" href="${ot}" target="_blank" rel="noopener" onclick="gtag('event','affiliate_click',{type:'opentable',item:'${nbEsc(r.name)}',location:'app_nearby'})">Reserve</a>
+        ${callBtn}
       </div>
     </div></div>`;
 }

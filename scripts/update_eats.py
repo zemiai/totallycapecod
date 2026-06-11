@@ -85,7 +85,7 @@ def fetch_details(api_key: str, place_id: str) -> dict | None:
         "X-Goog-Api-Key": api_key,
         "X-Goog-FieldMask": (
             "id,businessStatus,rating,userRatingCount,websiteUri,priceLevel,"
-            "currentOpeningHours.openNow,photos"
+            "nationalPhoneNumber,regularOpeningHours,photos"
         ),
     }
     try:
@@ -154,8 +154,14 @@ def main() -> None:
             r["website"] = d["websiteUri"]
         if d.get("priceLevel") in PRICE_MAP:
             r["price"] = PRICE_MAP[d["priceLevel"]]
-        co = d.get("currentOpeningHours") or {}
-        r["open_now"] = co.get("openNow")  # True / False / None
+        if d.get("nationalPhoneNumber"):
+            r["phone"] = d["nationalPhoneNumber"]          # powers the "Call" button
+        roh = d.get("regularOpeningHours") or {}
+        if roh.get("periods"):
+            r["hours"] = roh["periods"]                    # app computes "open now" live on-device
+        if roh.get("weekdayDescriptions"):
+            r["hours_text"] = roh["weekdayDescriptions"]   # human-readable schedule
+        r.pop("open_now", None)  # stale weekly snapshot — replaced by live computation from r.hours
 
         # 3) Top photo -> local file (no API key ever lands in eats.json).
         photos = d.get("photos") or []
