@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "date": "2026-06-11",
-  "updated_at": "2026-06-11T16:14:00Z",
+  "updated_at": "2026-06-11T22:11:42Z",
   "_hermes_note": "Hermes overwrites this daily at 5am ET. Categories: music, happy_hour, free_event, family, food_deal, drive_in, farmers_market, trivia, art.",
   "events": [
     {
@@ -229,6 +229,22 @@
       "source_url": "https://www.wellfleetcinemas.com/drive-in-theatre/"
     },
     {
+      "id": "piff-2026-06-13-ryan-murphy",
+      "tag": "🎨 ART",
+      "category": "art",
+      "date": "2026-06-13",
+      "time": "All day",
+      "title": "PIFF: Ryan Murphy 'Filmmaker on the Edge' — in Conversation with John Waters",
+      "venue": "Various Venues, 229 Commercial St (box office)",
+      "town": "Provincetown",
+      "info": "Provincetown · $20/ticket · All ages · Marquee event of the 28th annual festival",
+      "price": "$20",
+      "lat": 42.0494,
+      "lng": -70.1872,
+      "img": "",
+      "source_url": "https://www.provincetownfilm.org/festival/"
+    },
+    {
       "id": "orleans-2026-06-13-farmers-market",
       "tag": "🌽 FARMERS MARKET",
       "category": "farmers_market",
@@ -453,11 +469,27 @@
       "source_url": "https://www.songkick.com/venues/565771-wellfleet-beachcomber"
     },
     {
+      "id": "drummerboypark-2026-06-14-craft-fair",
+      "tag": "🎨 ART",
+      "category": "art",
+      "date": "2026-06-14",
+      "time": "10:00 AM",
+      "title": "A Different Drummer Craft Fair — Day 2",
+      "venue": "Drummer Boy Park",
+      "town": "Brewster",
+      "info": "Brewster · Free · All ages · 40+ artists · Final day",
+      "price": "Free",
+      "lat": 41.7705,
+      "lng": -70.0715,
+      "img": "",
+      "source_url": "https://www.capedays.com/cape-cod-events-june.html"
+    },
+    {
       "id": "yarmouth-2026-06-14-taylor-bray-farmers-market",
       "tag": "🌽 FARMERS MARKET",
       "category": "farmers_market",
       "date": "2026-06-14",
-      "time": "9:00 AM",
+      "time": "11:00 AM",
       "title": "Taylor-Bray Farm Farmers' Market",
       "venue": "Taylor-Bray Farm",
       "town": "Yarmouth",
@@ -563,6 +595,22 @@
       "lng": -69.9649,
       "img": "",
       "source_url": "https://www.capecodleague.com/schedule"
+    },
+    {
+      "id": "piff-2026-06-14-closing-night",
+      "tag": "🎨 ART",
+      "category": "art",
+      "date": "2026-06-14",
+      "time": "7:00 PM",
+      "title": "PIFF Closing Night: 'Family Movie' with Kevin Bacon & Kyra Sedgwick",
+      "venue": "Waters Edge Cinema",
+      "town": "Provincetown",
+      "info": "Provincetown · $20/ticket · All ages · Closing night of the 28th annual festival",
+      "price": "$20",
+      "lat": 42.0494,
+      "lng": -70.1872,
+      "img": "",
+      "source_url": "https://www.provincetownfilm.org/festival/"
     },
     {
       "id": "wellfleetcinemas-2026-06-14-drive-in",
