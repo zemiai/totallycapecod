@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-11T13:01:39Z",
+  "updated_at": "2026-06-11T18:40:59Z",
   "window_days": 21,
-  "count": 148,
+  "count": 151,
   "_hermes_note": "Real Cape Cod events scraped from chambers + venues. update_events.py",
   "events": [
     {
@@ -992,6 +992,23 @@
       "start": "2026-06-15T10:30:00+00:00"
     },
     {
+      "id": "boards-in-the-store-gallery-20260616",
+      "tag": "\ud83c\udfa8 ART",
+      "category": "art",
+      "time": "Tue Jun 16",
+      "title": "Boards in the Store Gallery",
+      "venue": "",
+      "town": "Orleans",
+      "info": "",
+      "price": "",
+      "lat": 41.7901,
+      "lng": -69.9873,
+      "img": null,
+      "source": "Orleans",
+      "source_url": "https://members.orleanscapecod.org/events/details/boards-in-the-gallery-06-16-2026-23449",
+      "start": "2026-06-16T00:00:00+00:00"
+    },
+    {
       "id": "brewster-ladies-library-hosts-cape-cod-genealogical-society-",
       "tag": "\ud83d\udcc5 EVENT",
       "category": "event",
@@ -1142,6 +1159,23 @@
       "img": null,
       "source": "Mashpee",
       "source_url": "https://business.mashpeechamber.com/events/Details/open-house-ribbon-cutting-at-bloom-aesthetics-wellness-1710736?sourceTypeId=Website",
+      "start": "2026-06-18T00:00:00+00:00"
+    },
+    {
+      "id": "view-details-20260618",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Thu Jun 18",
+      "title": "View Details",
+      "venue": "",
+      "town": "Bourne",
+      "info": "",
+      "price": "",
+      "lat": 41.7412,
+      "lng": -70.599,
+      "img": null,
+      "source": "Bourne",
+      "source_url": "https://web.capecodcanalchamber.org/events/Canal-Cruise-Business-Connections-1669/details",
       "start": "2026-06-18T00:00:00+00:00"
     },
     {
@@ -2520,6 +2554,23 @@
       "source": "Highfield Hall",
       "source_url": "https://highfieldhallandgardens.org/event/kids-kitchen-7-2-26/",
       "start": "2026-07-02T10:00:00+00:00"
+    },
+    {
+      "id": "summer-in-the-city-the-circus-that-never-sleeps-20260702",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Thu Jul 2 \u00b7 6:00 PM",
+      "title": "Summer in the City: the Circus that Never Sleeps",
+      "venue": "Cirque by the Sea at WHAT",
+      "town": "Truro",
+      "info": "",
+      "price": "",
+      "lat": 41.9979,
+      "lng": -70.0492,
+      "img": "https://payomet.org/wp-content/uploads/2026/05/Summer-in-the-City-860x562-1.webp",
+      "source": "Payomet",
+      "source_url": "https://payomet.org/calendar/summer-in-the-city-the-circus-that-never-sleeps-3/",
+      "start": "2026-07-02T18:00:00+00:00"
     }
   ]
 }
