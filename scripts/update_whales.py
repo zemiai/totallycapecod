@@ -30,13 +30,15 @@ from lib.io import read_existing, safe_write, now_iso
 OUT = Path(__file__).parent.parent / "data" / "whales.json"
 MAX_AGE_DAYS = 14
 MAX_SIGHTINGS = 30
+SEAL_CAP = 5  # seals are abundant off the Cape; cap them so whales/dolphins feature
 
 API = "https://api.inaturalist.org/v1"
 HEADERS = {"User-Agent": "totallycapecod/1.0 (whale + shark sightings updater)"}
 
-# Cape Cod waters bounding box: Cape Cod Bay, Stellwagen Bank, the Outer Cape,
-# Monomoy, and Nantucket Sound, plus a margin offshore where sharks/whales feed.
-BBOX = {"nelat": 42.42, "nelng": -69.55, "swlat": 41.30, "swlng": -70.95}
+# Cape Cod waters bounding box — tightened to read "off the Cape": Cape Cod Bay,
+# the southern half of Stellwagen Bank, the Outer Cape, Monomoy, and Nantucket
+# Sound. Trims the deep Gulf of Maine to the north and mainland to the west.
+BBOX = {"nelat": 42.28, "nelng": -69.60, "swlat": 41.35, "swlng": -70.78}
 
 # scientific name -> app schema species label (drives the card emoji:
 # seal->🦦, dolphin->🐬, shark->🦈, anything else->🐋)
@@ -171,7 +173,17 @@ def main() -> None:
 
     sightings = list(by_id.values())
     sightings.sort(key=lambda s: s.get("reported_at", ""), reverse=True)
-    sightings = sightings[:MAX_SIGHTINGS]
+
+    # Keep the feed balanced — retain only the most recent SEAL_CAP seals so the
+    # rarer whales and dolphins stay visible instead of a wall of seals.
+    balanced, seals = [], 0
+    for s in sightings:
+        if s["species"] == "seal":
+            if seals >= SEAL_CAP:
+                continue
+            seals += 1
+        balanced.append(s)
+    sightings = balanced[:MAX_SIGHTINGS]
 
     existing["version"] = existing.get("version", "1.0")
     existing["recent_sightings"] = sightings
