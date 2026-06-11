@@ -40,8 +40,8 @@ function ensureDeps() {
   if (!url) { console.error('usage: node scripts/dev/shot.js <url> [out.png] [w] [h] [waitMs]'); process.exit(1); }
   const width = +w, height = +h, mobile = width < 700;
   const browser = await puppeteer.launch({
-    args: [...chromium.args, '--no-sandbox', '--disable-setuid-sandbox'],
-    executablePath: await chromium.executablePath(), headless: 'shell',
+    args: [...chromium.args, '--no-sandbox', '--disable-setuid-sandbox', '--ignore-certificate-errors'],
+    executablePath: await chromium.executablePath(), headless: 'shell', ignoreHTTPSErrors: true, acceptInsecureCerts: true,
   });
   const page = await browser.newPage();
   await page.setViewport({ width, height, deviceScaleFactor: 1, isMobile: mobile, hasTouch: mobile });
