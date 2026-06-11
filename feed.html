@@ -57,6 +57,7 @@
   .kp-road{background:var(--sand-light);color:var(--warm-brown);}
 
   .post-photo{height:300px;background-size:cover;background-position:center;position:relative;background-color:var(--sea-mist);}
+  .cover-icon{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:88px;line-height:1;opacity:0.95;filter:drop-shadow(0 2px 10px rgba(0,0,0,0.28));pointer-events:none;z-index:1;}
   .post-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(74,64,56,0.28),transparent 45%);}
   .dist-badge{position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.92);backdrop-filter:blur(4px);
     color:var(--warm-brown);font-weight:800;font-size:12px;padding:6px 11px;border-radius:var(--radius-full);z-index:1;}
@@ -385,6 +386,14 @@ function photoFor(r){
   return `https://images.unsplash.com/${id}?w=800&q=80&auto=format&fit=crop`;
 }
 
+// Branded cover fallback (gradient + icon) for events with no real photo.
+function eventCover(e){
+  if(e.img) return {style:`background-image:url('${e.img}')`, icon:''};
+  const map={music:['#6E5BA6','#3C2E66','🎵'],art:['#C2698E','#7E3F60','🎨'],film:['#37496B','#161F3C','🎬'],drive_in:['#37496B','#161F3C','🎬'],family:['#E3A24E','#B97320','🎠'],food_deal:['#D5644A','#9E3A26','🦞'],farmers_market:['#7BA05B','#496B32','🧺'],trivia:['#5685A4','#33576F','🧠'],happy_hour:['#C77F4A','#8C5222','🍻'],free_event:['#6FB6CC','#2E7C90','🎉']};
+  const m=map[e.category]||['#7BBCD0','#1A3A6C','📅'];
+  return {style:`background:linear-gradient(135deg,${m[0]},${m[1]})`, icon:`<span class="cover-icon">${m[2]}</span>`};
+}
+
 /* ---- Geometry ---- */
 function dist(a,b){
   const R=3959,dLat=(b.lat-a.lat)*Math.PI/180,dLng=(b.lng-a.lng)*Math.PI/180;
@@ -471,8 +480,9 @@ function renderItem(it){
   }
   if(it.type==="event"){
     const e=it.data;
+    const cov=eventCover(e);
     return `<div class="post">
-      <div class="post-photo" style="background-image:url('${e.img}')"><span class="dist-badge">${miLabel(it.mi)}</span><span class="price-badge">${esc(e.price)}</span></div>
+      <div class="post-photo" style="${cov.style}">${cov.icon}<span class="dist-badge">${miLabel(it.mi)}</span><span class="price-badge">${esc(e.price)}</span></div>
       <div class="post-head">
         <div class="avatar event">🎟️</div>
         <div class="ph-main"><div class="name">${esc(e.title)}</div><div class="sub">${esc(e.venue)} · ${esc(e.town)}</div></div>

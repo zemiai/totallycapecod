@@ -208,6 +208,7 @@
 
   .nb-card{ background:var(--ios-card); border-radius:16px; margin:0 16px 12px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.05); }
   .nb-photo{ height:170px; background-size:cover; background-position:center; background-color:var(--cape-sand); position:relative; }
+  .cover-icon{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:58px; line-height:1; opacity:0.95; filter:drop-shadow(0 2px 8px rgba(0,0,0,0.28)); pointer-events:none; }
   .nb-photo::after{ content:''; position:absolute; inset:0; background:linear-gradient(to top,rgba(0,0,0,0.28),transparent 45%); }
   .nb-dist{ position:absolute; top:10px; right:10px; z-index:1; background:rgba(255,255,255,0.94); backdrop-filter:blur(4px); color:var(--ios-text); font-size:11px; font-weight:700; padding:4px 9px; border-radius:999px; }
   .nb-price{ position:absolute; bottom:10px; left:10px; z-index:1; background:rgba(0,0,0,0.62); color:#fff; font-size:11px; font-weight:700; padding:4px 9px; border-radius:999px; }
@@ -1034,12 +1035,34 @@ function renderToday() {
   });
 }
 
+// ── Branded cover fallback (gradient + icon) for cards with no real photo ──
+const COVER_STYLE = {
+  food:           ['linear-gradient(135deg,#C99A4A,#8C6224)', '🍴'],
+  music:          ['linear-gradient(135deg,#6E5BA6,#3C2E66)', '🎵'],
+  art:            ['linear-gradient(135deg,#C2698E,#7E3F60)', '🎨'],
+  film:           ['linear-gradient(135deg,#37496B,#161F3C)', '🎬'],
+  drive_in:       ['linear-gradient(135deg,#37496B,#161F3C)', '🎬'],
+  family:         ['linear-gradient(135deg,#E3A24E,#B97320)', '🎠'],
+  food_deal:      ['linear-gradient(135deg,#D5644A,#9E3A26)', '🦞'],
+  farmers_market: ['linear-gradient(135deg,#7BA05B,#496B32)', '🧺'],
+  trivia:         ['linear-gradient(135deg,#5685A4,#33576F)', '🧠'],
+  happy_hour:     ['linear-gradient(135deg,#C77F4A,#8C5222)', '🍻'],
+  free_event:     ['linear-gradient(135deg,#6FB6CC,#2E7C90)', '🎉'],
+  default:        ['linear-gradient(135deg,#7BBCD0,#1A3A6C)', '📅'],
+};
+// realPhoto wins; otherwise a branded gradient + category icon so no card is ever blank.
+function cardCover(realPhoto, key) {
+  if (realPhoto) return { style: `background-image:url('${realPhoto}')`, icon: '' };
+  const [grad, emoji] = COVER_STYLE[key] || COVER_STYLE.default;
+  return { style: `background:${grad}`, icon: `<span class="cover-icon">${emoji}</span>` };
+}
+
 function renderEventCard(e) {
   const loc = [e.venue, e.town].filter(Boolean).join(' · ');
-  const cover = e.img ? `style="background-image:url('${e.img}')"`
-                      : `style="background:linear-gradient(135deg,#EAE4F2,#DCEEF3)"`;
+  const cov = cardCover(e.img || '', e.category);
   return `<div class="happening-card">
-    <div class="cover" ${cover}>
+    <div class="cover" style="${cov.style}">
+      ${cov.icon}
       <span class="tag">${e.tag}</span>
       <span class="time">${e.time}</span>
     </div>
@@ -1926,10 +1949,9 @@ function nbRenderItem(it){
   if(it.type==="event"){
     const e=it.data;
     const loc=[e.venue,e.town].filter(Boolean).join(' · ');
-    const cover = e.img ? `style="background-image:url('${nbEsc(e.img)}')"`
-                        : `style="background:linear-gradient(135deg,#EAE4F2,#DCEEF3)"`;
+    const cov = cardCover(e.img ? nbEsc(e.img) : '', e.category);
     return `<div class="nb-card">
-      <div class="nb-photo" ${cover}><span class="nb-dist">${nbMiLabel(it.mi)}</span>${e.price?`<span class="nb-price">${nbEsc(e.price)}</span>`:""}</div>
+      <div class="nb-photo" style="${cov.style}">${cov.icon}<span class="nb-dist">${nbMiLabel(it.mi)}</span>${e.price?`<span class="nb-price">${nbEsc(e.price)}</span>`:""}</div>
       <div class="nb-head">
         <div class="nb-avatar event">🎟️</div>
         <div class="main"><div class="name">${nbEsc(e.title)}</div><div class="sub">${nbEsc(loc)}</div></div>
@@ -1951,8 +1973,10 @@ function nbRenderItem(it){
   const openBadge = "";
   const tags = Array.isArray(r.tags) ? r.tags.slice(0,3) : [];
   const siteBtn = r.website ? `<a class="nb-btn-primary" href="${nbEsc(r.website)}" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'website',item:'${nbEsc(r.name)}',location:'app_nearby'})">Website</a>` : "";
+  const realPhoto = r.photo ? (r.photo.startsWith('http') ? r.photo : ASSET_BASE + r.photo) : '';
+  const cov = cardCover(realPhoto, 'food');
   return `<div class="nb-card">
-    <div class="nb-photo" style="background-image:url('${nbPhoto(r)}')"><span class="nb-dist">${nbMiLabel(it.mi)}</span>${r.price?`<span class="nb-price">${nbEsc(r.price)}</span>`:""}${openBadge}</div>
+    <div class="nb-photo" style="${cov.style}">${cov.icon}<span class="nb-dist">${nbMiLabel(it.mi)}</span>${r.price?`<span class="nb-price">${nbEsc(r.price)}</span>`:""}${openBadge}</div>
     <div class="nb-head">
       <div class="nb-avatar food">🍴</div>
       <div class="main"><div class="name">${nbEsc(r.name)}</div><div class="sub">${nbEsc(r.town)} · ${nbEsc(r.cuisine)} · ⭐ ${r.rating}${reviews}</div></div>
