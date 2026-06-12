@@ -6,7 +6,7 @@
       "current_status": "moderate",
       "direction": "off_cape",
       "advice": "Light backup \u2014 go now or wait 1 hour",
-      "live_speed_mph": 17,
+      "live_speed_mph": 15,
       "free_flow_mph": 55,
       "last_check": "just now"
     },
@@ -141,5 +141,5 @@
     "on_cape_saturday": "Before 8 AM"
   },
   "version": "1.0",
-  "updated_at": "2026-06-12T18:58:19Z"
+  "updated_at": "2026-06-12T21:02:06Z"
 }
