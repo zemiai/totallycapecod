@@ -1,12 +1,12 @@
 {
   "today": {
-    "date": "2026-06-11",
+    "date": "2026-06-12",
     "weather": {
-      "temp_high": 79,
-      "temp_low": 70,
+      "temp_high": 80,
+      "temp_low": 68,
       "condition": "Fog",
       "icon": "\ud83c\udf2b\ufe0f",
-      "wind_mph": 8,
+      "wind_mph": 3,
       "wind_dir": "SW",
       "humidity": 65,
       "uv_index": 7
@@ -14,7 +14,7 @@
     "sun": {
       "sunrise": "5:03 AM",
       "sunset": "8:16 PM",
-      "civil_twilight_end": "8:48 PM",
+      "civil_twilight_end": "8:49 PM",
       "best_sunset_spot": {
         "name": "Skaket Beach",
         "town": "Orleans",
@@ -23,24 +23,24 @@
     },
     "tides": [
       {
-        "time": "3:21 AM",
+        "time": "4:23 AM",
         "type": "low",
-        "height_ft": 0.0
+        "height_ft": -0.2
       },
       {
-        "time": "9:00 AM",
+        "time": "9:59 AM",
         "type": "high",
-        "height_ft": 4.5
+        "height_ft": 4.6
       },
       {
-        "time": "3:19 PM",
+        "time": "4:14 PM",
         "type": "low",
         "height_ft": 0.1
       },
       {
-        "time": "9:19 PM",
+        "time": "10:13 PM",
         "type": "high",
-        "height_ft": 5.7
+        "height_ft": 6.0
       }
     ],
     "water_temp_f": 64,
@@ -49,25 +49,12 @@
   },
   "forecast_7day": [
     {
-      "date": "2026-06-11",
-      "day": "Thu",
-      "temp_high": 79,
-      "condition": "Fog",
-      "icon": "\ud83c\udf2b\ufe0f",
-      "temp_low": 70,
-      "sunrise": "5:03 AM",
-      "sunset": "8:16 PM",
-      "low_tide": "3:21 AM",
-      "high_tide": "9:00 AM",
-      "water_temp": 64
-    },
-    {
       "date": "2026-06-12",
       "day": "Fri",
       "temp_high": 80,
       "condition": "Fog",
       "icon": "\ud83c\udf2b\ufe0f",
-      "temp_low": 67,
+      "temp_low": 68,
       "sunrise": "5:03 AM",
       "sunset": "8:16 PM",
       "low_tide": "4:23 AM",
@@ -77,10 +64,10 @@
     {
       "date": "2026-06-13",
       "day": "Sat",
-      "temp_high": 86,
-      "condition": "Rain",
-      "icon": "\ud83c\udf27\ufe0f",
-      "temp_low": 68,
+      "temp_high": 89,
+      "condition": "Fog",
+      "icon": "\ud83c\udf2b\ufe0f",
+      "temp_low": 69,
       "sunrise": "5:03 AM",
       "sunset": "8:17 PM",
       "low_tide": "5:24 AM",
@@ -90,10 +77,10 @@
     {
       "date": "2026-06-14",
       "day": "Sun",
-      "temp_high": 88,
+      "temp_high": 90,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "temp_low": 66,
+      "temp_low": 68,
       "sunrise": "5:03 AM",
       "sunset": "8:17 PM",
       "low_tide": "6:23 AM",
@@ -103,10 +90,10 @@
     {
       "date": "2026-06-15",
       "day": "Mon",
-      "temp_high": 81,
+      "temp_high": 88,
       "condition": "Storms",
       "icon": "\u26c8\ufe0f",
-      "temp_low": 65,
+      "temp_low": 66,
       "sunrise": "5:03 AM",
       "sunset": "8:18 PM",
       "low_tide": "7:19 AM",
@@ -116,10 +103,10 @@
     {
       "date": "2026-06-16",
       "day": "Tue",
-      "temp_high": 81,
-      "condition": "Rain",
-      "icon": "\ud83c\udf27\ufe0f",
-      "temp_low": 64,
+      "temp_high": 82,
+      "condition": "Sunny",
+      "icon": "\u2600\ufe0f",
+      "temp_low": 65,
       "sunrise": "5:03 AM",
       "sunset": "8:18 PM",
       "low_tide": "8:14 AM",
@@ -129,17 +116,30 @@
     {
       "date": "2026-06-17",
       "day": "Wed",
-      "temp_high": 82,
-      "condition": "Rain",
-      "icon": "\ud83c\udf27\ufe0f",
-      "temp_low": 65,
+      "temp_high": 83,
+      "condition": "Sunny",
+      "icon": "\u2600\ufe0f",
+      "temp_low": 66,
       "sunrise": "5:03 AM",
       "sunset": "8:19 PM",
       "low_tide": "9:07 AM",
       "high_tide": "1:51 AM",
       "water_temp": 64
+    },
+    {
+      "date": "2026-06-18",
+      "day": "Thu",
+      "temp_high": 84,
+      "condition": "Rain",
+      "icon": "\ud83c\udf27\ufe0f",
+      "temp_low": 68,
+      "sunrise": "5:03 AM",
+      "sunset": "8:19 PM",
+      "low_tide": "9:59 AM",
+      "high_tide": "2:48 AM",
+      "water_temp": 64
     }
   ],
   "version": "1.0",
-  "updated_at": "2026-06-11T12:13:42Z"
+  "updated_at": "2026-06-12T11:47:52Z"
 }
