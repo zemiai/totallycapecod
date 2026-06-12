@@ -1680,6 +1680,7 @@ function renderQuizStep() {
     ${_quizStep > 0 ? '<button class="quiz-back" onclick="quizBack()">← Back</button>' : ''}`;
 }
 function answerQuiz(id, v) {
+  tccEngage();
   _quizAns[id] = v;
   if (_quizStep < QUIZ_Q.length - 1) { _quizStep++; renderQuizStep(); }
   else renderQuizResults();
@@ -1772,6 +1773,7 @@ function finishQuizRender(a, beaches, loc) {
 }
 
 function openBeach(slug) {
+  tccEngage();
   const b = (state.data.beaches?.beaches || []).find(b => b.slug === slug);
   if (!b) return;
   state.pendingBeach = b;
@@ -2379,6 +2381,7 @@ function stopLighthouseAudio() {
 
 // ============ TAB SWITCHING ============
 function switchTab(tab) {
+  tccEngage();
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   const screen = document.getElementById('screen-' + tab);
@@ -2848,15 +2851,30 @@ async function restorePurchase() {
   }
 }
 
-// ── Email Banner ──
-document.addEventListener('DOMContentLoaded', () => {
-  if (!localStorage.getItem('tcc_email_captured') && !localStorage.getItem('tcc_email_banner_dismissed')) {
-    setTimeout(() => {
-      const banner = document.getElementById('emailBanner');
-      if (banner) banner.style.display = 'block';
-    }, 3000);
-  }
-});
+// ── First-run: value before asks ──
+// Don't fire the email or install prompts until the visitor has actually engaged
+// (2 meaningful interactions), so the first thing a newcomer sees is live Cape data,
+// not a wall of asks. Returning visitors (who've already gotten value) are prompted
+// promptly from init(). tccEngage() is called from switchTab / openBeach / the quiz
+// and a one-time feed-scroll listener.
+let _engageCount = 0, _engaged = false;
+function tccEngage() {
+  if (_engaged) return;
+  if (++_engageCount >= 2) { _engaged = true; afterEngaged(); }
+}
+function afterEngaged() {
+  maybeShowEmailBanner();
+  checkInstall();
+}
+function maybeShowEmailBanner() {
+  if (localStorage.getItem('tcc_email_captured') || localStorage.getItem('tcc_email_banner_dismissed')) return;
+  const banner = document.getElementById('emailBanner');
+  if (banner) banner.style.display = 'block';
+}
+// One-time: count a deep feed scroll as engagement (newcomers who just scroll Nearby).
+window.addEventListener('scroll', function _eng() {
+  if (tccScrollTop() > 500) { window.removeEventListener('scroll', _eng); tccEngage(); }
+}, { passive: true });
 
 function dismissEmailBanner() {
   document.getElementById('emailBanner').style.display = 'none';
@@ -2978,6 +2996,9 @@ async function enableCapePush() {
 }
 
 function checkInstall() {
+  // Value before asks: hold the install banner until the visitor has engaged.
+  // (beforeinstallprompt still stashes the prompt; afterEngaged() re-runs this.)
+  if (!_engaged) return;
   const ua = navigator.userAgent;
   // iPadOS 13+ Safari reports a "Macintosh" UA — detect it via touch support so iPads
   // get the iOS (Share → Add to Home Screen) flow instead of nothing.
@@ -3041,9 +3062,14 @@ async function init() {
   // If the visitor is already sitting on the Nearby feed when data finishes loading
   // (slow connection), build it now instead of leaving a stuck "loading…" state.
   if (!nbBuilt && document.getElementById('screen-nearby')?.classList.contains('active')) renderNearby();
-  checkInstall();
   // TASK9 Lever 3: Show first-run onboarding intro to new visitors
   checkFirstRun();
+  // Value before asks: returning visitors (already saw onboarding = already got value)
+  // are eligible for prompts promptly; brand-new visitors must engage first.
+  if (localStorage.getItem('tcc_seen_intro') === 'true') {
+    _engaged = true;
+    setTimeout(afterEngaged, 2500);
+  }
   // Pre-warm voices for TTS
   if ('speechSynthesis' in window) speechSynthesis.getVoices();
 }
