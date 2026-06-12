@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-12T09:12:47Z",
+  "updated_at": "2026-06-12T12:24:45Z",
   "_hermes_note": "Hermes should update this file with current parking/crowd data. Status: 'open' | 'mid' | 'full'. Crowd: 1-5. Reset daily.",
   "beaches": [
     {
@@ -13,12 +13,14 @@
       "status": "open",
       "spots_text": "23 spots open",
       "crowd": 2,
-      "water_temp": 65,
+      "water_temp": 62,
       "sticker_required": true,
       "restrooms": true,
       "lifeguard": true,
       "updated": "just now",
-      "notes": ""
+      "notes": "",
+      "water_temp_at": "2026-06-12T12:24:45Z",
+      "water_temp_src": "Cape Cod Bay buoy"
     },
     {
       "slug": "coast-guard",
@@ -30,12 +32,14 @@
       "status": "full",
       "spots_text": "Lot FULL \u00b7 shuttle running",
       "crowd": 5,
-      "water_temp": 63,
+      "water_temp": 62,
       "sticker_required": false,
       "restrooms": true,
       "lifeguard": true,
       "updated": "just now",
-      "notes": "Use Salt Pond Visitor shuttle"
+      "notes": "Use Salt Pond Visitor shuttle",
+      "water_temp_at": "2026-06-12T12:24:45Z",
+      "water_temp_src": "Cape Cod Bay buoy"
     },
     {
       "slug": "race-point",
@@ -52,7 +56,9 @@
       "restrooms": true,
       "lifeguard": true,
       "updated": "just now",
-      "notes": ""
+      "notes": "",
+      "water_temp_at": "2026-06-12T12:24:45Z",
+      "water_temp_src": "Cape Cod Bay buoy"
     },
     {
       "slug": "marconi",
@@ -64,12 +70,14 @@
       "status": "open",
       "spots_text": "41 spots open",
       "crowd": 2,
-      "water_temp": 64,
+      "water_temp": 62,
       "sticker_required": false,
       "restrooms": true,
       "lifeguard": true,
       "updated": "just now",
-      "notes": "NPS pass or fee"
+      "notes": "NPS pass or fee",
+      "water_temp_at": "2026-06-12T12:24:45Z",
+      "water_temp_src": "Cape Cod Bay buoy"
     },
     {
       "slug": "mayflower",
@@ -81,12 +89,14 @@
       "status": "mid",
       "spots_text": "12 spots open",
       "crowd": 4,
-      "water_temp": 67,
+      "water_temp": 62,
       "sticker_required": true,
       "restrooms": true,
       "lifeguard": true,
       "updated": "just now",
-      "notes": "Tidal flats at low tide"
+      "notes": "Tidal flats at low tide",
+      "water_temp_at": "2026-06-12T12:24:45Z",
+      "water_temp_src": "Cape Cod Bay buoy"
     },
     {
       "slug": "old-silver",
@@ -98,12 +108,14 @@
       "status": "full",
       "spots_text": "Lot FULL \u00b7 wait list",
       "crowd": 5,
-      "water_temp": 68,
+      "water_temp": 66,
       "sticker_required": true,
       "restrooms": true,
       "lifeguard": true,
       "updated": "just now",
-      "notes": "Calm bay water"
+      "notes": "Calm bay water",
+      "water_temp_at": "2026-06-12T12:24:45Z",
+      "water_temp_src": "Woods Hole"
     },
     {
       "slug": "skaket",
@@ -115,12 +127,14 @@
       "status": "open",
       "spots_text": "Plenty of room",
       "crowd": 1,
-      "water_temp": 66,
+      "water_temp": 62,
       "sticker_required": true,
       "restrooms": true,
       "lifeguard": true,
       "updated": "just now",
-      "notes": "Bayside \u00b7 low-tide flats stretch a half-mile"
+      "notes": "Bayside \u00b7 low-tide flats stretch a half-mile",
+      "water_temp_at": "2026-06-12T12:24:45Z",
+      "water_temp_src": "Cape Cod Bay buoy"
     },
     {
       "slug": "craigville",
@@ -132,12 +146,14 @@
       "status": "mid",
       "spots_text": "15 spots open",
       "crowd": 3,
-      "water_temp": 67,
+      "water_temp": 65,
       "sticker_required": false,
       "restrooms": true,
       "lifeguard": true,
       "updated": "just now",
-      "notes": "Family-friendly, snack bar"
+      "notes": "Family-friendly, snack bar",
+      "water_temp_at": "2026-06-12T12:24:45Z",
+      "water_temp_src": "Nantucket Sound buoy"
     },
     {
       "slug": "cahoon-hollow",
@@ -154,7 +170,9 @@
       "restrooms": true,
       "lifeguard": true,
       "updated": "just now",
-      "notes": "The Beachcomber is here"
+      "notes": "The Beachcomber is here",
+      "water_temp_at": "2026-06-12T12:24:45Z",
+      "water_temp_src": "Cape Cod Bay buoy"
     },
     {
       "slug": "sandy-neck",
@@ -166,12 +184,14 @@
       "status": "open",
       "spots_text": "Lots of space",
       "crowd": 1,
-      "water_temp": 65,
+      "water_temp": 62,
       "sticker_required": true,
       "restrooms": true,
       "lifeguard": true,
       "updated": "just now",
-      "notes": "6 miles of beach + dunes"
+      "notes": "6 miles of beach + dunes",
+      "water_temp_at": "2026-06-12T12:24:45Z",
+      "water_temp_src": "Cape Cod Bay buoy"
     },
     {
       "slug": "newcomb-hollow",
@@ -183,12 +203,14 @@
       "status": "mid",
       "spots_text": "10 spots open",
       "crowd": 3,
-      "water_temp": 63,
+      "water_temp": 62,
       "sticker_required": true,
       "restrooms": true,
       "lifeguard": true,
       "updated": "just now",
-      "notes": "Less crowded outer cape gem"
+      "notes": "Less crowded outer cape gem",
+      "water_temp_at": "2026-06-12T12:24:45Z",
+      "water_temp_src": "Cape Cod Bay buoy"
     },
     {
       "slug": "lecount-hollow",
@@ -205,7 +227,9 @@
       "restrooms": true,
       "lifeguard": true,
       "updated": "just now",
-      "notes": ""
+      "notes": "",
+      "water_temp_at": "2026-06-12T12:24:45Z",
+      "water_temp_src": "Cape Cod Bay buoy"
     },
     {
       "slug": "herring-cove",
@@ -217,12 +241,14 @@
       "status": "open",
       "spots_text": "Open",
       "crowd": 2,
-      "water_temp": 64,
+      "water_temp": 62,
       "sticker_required": false,
       "restrooms": true,
       "lifeguard": true,
       "updated": "just now",
-      "notes": "Famous P-Town sunset"
+      "notes": "Famous P-Town sunset",
+      "water_temp_at": "2026-06-12T12:24:45Z",
+      "water_temp_src": "Cape Cod Bay buoy"
     },
     {
       "slug": "long-nook",
@@ -239,7 +265,9 @@
       "restrooms": false,
       "lifeguard": false,
       "updated": "just now",
-      "notes": "Tiny lot, locals only most days"
+      "notes": "Tiny lot, locals only most days",
+      "water_temp_at": "2026-06-12T12:24:45Z",
+      "water_temp_src": "Cape Cod Bay buoy"
     },
     {
       "slug": "sandwich-town",
@@ -251,12 +279,14 @@
       "status": "open",
       "spots_text": "Open",
       "crowd": 1,
-      "water_temp": 68,
+      "water_temp": 62,
       "sticker_required": true,
       "restrooms": true,
       "lifeguard": true,
       "updated": "just now",
-      "notes": "Boardwalk + bay"
+      "notes": "Boardwalk + bay",
+      "water_temp_at": "2026-06-12T12:24:45Z",
+      "water_temp_src": "Cape Cod Bay buoy"
     },
     {
       "slug": "chapin",
@@ -268,12 +298,14 @@
       "status": "open",
       "spots_text": "Spots available",
       "crowd": 2,
-      "water_temp": 66,
+      "water_temp": 62,
       "sticker_required": true,
       "restrooms": true,
       "lifeguard": false,
       "updated": "just now",
-      "notes": "4WD beach access"
+      "notes": "4WD beach access",
+      "water_temp_at": "2026-06-12T12:24:45Z",
+      "water_temp_src": "Cape Cod Bay buoy"
     },
     {
       "slug": "corporation",
@@ -285,12 +317,14 @@
       "status": "open",
       "spots_text": "Plenty",
       "crowd": 1,
-      "water_temp": 67,
+      "water_temp": 62,
       "sticker_required": true,
       "restrooms": true,
       "lifeguard": true,
       "updated": "just now",
-      "notes": "Bayside, family-friendly"
+      "notes": "Bayside, family-friendly",
+      "water_temp_at": "2026-06-12T12:24:45Z",
+      "water_temp_src": "Cape Cod Bay buoy"
     },
     {
       "slug": "first-encounter",
@@ -302,12 +336,14 @@
       "status": "open",
       "spots_text": "Plenty",
       "crowd": 2,
-      "water_temp": 66,
+      "water_temp": 62,
       "sticker_required": true,
       "restrooms": true,
       "lifeguard": false,
       "updated": "just now",
-      "notes": "Where the Pilgrims first landed"
+      "notes": "Where the Pilgrims first landed",
+      "water_temp_at": "2026-06-12T12:24:45Z",
+      "water_temp_src": "Cape Cod Bay buoy"
     },
     {
       "slug": "ridgevale",
@@ -319,12 +355,14 @@
       "status": "mid",
       "spots_text": "Filling",
       "crowd": 3,
-      "water_temp": 68,
+      "water_temp": 65,
       "sticker_required": true,
       "restrooms": true,
       "lifeguard": true,
       "updated": "just now",
-      "notes": "Calm, family-perfect"
+      "notes": "Calm, family-perfect",
+      "water_temp_at": "2026-06-12T12:24:45Z",
+      "water_temp_src": "Nantucket Sound buoy"
     },
     {
       "slug": "hardings",
@@ -336,12 +374,14 @@
       "status": "mid",
       "spots_text": "Some spots",
       "crowd": 3,
-      "water_temp": 67,
+      "water_temp": 65,
       "sticker_required": true,
       "restrooms": true,
       "lifeguard": true,
       "updated": "just now",
-      "notes": "Long beach, less crowded"
+      "notes": "Long beach, less crowded",
+      "water_temp_at": "2026-06-12T12:24:45Z",
+      "water_temp_src": "Nantucket Sound buoy"
     },
     {
       "slug": "paines-creek",
@@ -353,12 +393,14 @@
       "status": "open",
       "spots_text": "Plenty",
       "crowd": 1,
-      "water_temp": 67,
+      "water_temp": 62,
       "sticker_required": true,
       "restrooms": true,
       "lifeguard": false,
       "updated": "just now",
-      "notes": "Creek + paddle, calm bay"
+      "notes": "Creek + paddle, calm bay",
+      "water_temp_at": "2026-06-12T12:24:45Z",
+      "water_temp_src": "Cape Cod Bay buoy"
     },
     {
       "slug": "breakwater",
@@ -370,12 +412,14 @@
       "status": "open",
       "spots_text": "Open",
       "crowd": 2,
-      "water_temp": 67,
+      "water_temp": 62,
       "sticker_required": true,
       "restrooms": true,
       "lifeguard": true,
       "updated": "just now",
-      "notes": ""
+      "notes": "",
+      "water_temp_at": "2026-06-12T12:24:45Z",
+      "water_temp_src": "Cape Cod Bay buoy"
     },
     {
       "slug": "falmouth-heights",
@@ -387,12 +431,14 @@
       "status": "mid",
       "spots_text": "Filling",
       "crowd": 3,
-      "water_temp": 68,
+      "water_temp": 66,
       "sticker_required": true,
       "restrooms": true,
       "lifeguard": true,
       "updated": "just now",
-      "notes": "Walking distance to bars"
+      "notes": "Walking distance to bars",
+      "water_temp_at": "2026-06-12T12:24:45Z",
+      "water_temp_src": "Woods Hole"
     },
     {
       "slug": "south-cape",
@@ -404,12 +450,14 @@
       "status": "open",
       "spots_text": "Open",
       "crowd": 2,
-      "water_temp": 68,
+      "water_temp": 66,
       "sticker_required": false,
       "restrooms": true,
       "lifeguard": true,
       "updated": "just now",
-      "notes": "State park, birding"
+      "notes": "State park, birding",
+      "water_temp_at": "2026-06-12T12:24:45Z",
+      "water_temp_src": "Woods Hole"
     },
     {
       "slug": "kalmus",
@@ -421,12 +469,14 @@
       "status": "mid",
       "spots_text": "Some",
       "crowd": 3,
-      "water_temp": 68,
+      "water_temp": 65,
       "sticker_required": true,
       "restrooms": true,
       "lifeguard": true,
       "updated": "just now",
-      "notes": "Best for windsurfing"
+      "notes": "Best for windsurfing",
+      "water_temp_at": "2026-06-12T12:24:45Z",
+      "water_temp_src": "Nantucket Sound buoy"
     },
     {
       "slug": "veterans-park",
@@ -438,12 +488,14 @@
       "status": "open",
       "spots_text": "Open",
       "crowd": 2,
-      "water_temp": 68,
+      "water_temp": 65,
       "sticker_required": false,
       "restrooms": true,
       "lifeguard": true,
       "updated": "just now",
-      "notes": "Walk to Main St"
+      "notes": "Walk to Main St",
+      "water_temp_at": "2026-06-12T12:24:45Z",
+      "water_temp_src": "Nantucket Sound buoy"
     },
     {
       "slug": "bayview",
@@ -455,12 +507,14 @@
       "status": "open",
       "spots_text": "Plenty",
       "crowd": 1,
-      "water_temp": 68,
+      "water_temp": 62,
       "sticker_required": true,
       "restrooms": false,
       "lifeguard": false,
       "updated": "just now",
-      "notes": "Quiet, locals-favorite"
+      "notes": "Quiet, locals-favorite",
+      "water_temp_at": "2026-06-12T12:24:45Z",
+      "water_temp_src": "Cape Cod Bay buoy"
     },
     {
       "slug": "head-of-meadow",
@@ -477,7 +531,9 @@
       "restrooms": true,
       "lifeguard": true,
       "updated": "just now",
-      "notes": "NPS beach, big surf"
+      "notes": "NPS beach, big surf",
+      "water_temp_at": "2026-06-12T12:24:45Z",
+      "water_temp_src": "Cape Cod Bay buoy"
     }
   ]
 }
