@@ -1096,6 +1096,10 @@ async function loadData() {
     const key = files[i] === 'ai-knowledge' ? 'aiKnowledge' : files[i];
     state.data[key] = r.status === 'fulfilled' ? r.value : null;
   });
+  // Crowdsourced live beach reports — a Netlify function, not GitHub raw. Empty {} until
+  // beachgoers report (and on local/preview where the function isn't running).
+  state.data.beachLive = await fetch('/.netlify/functions/beach-report', { cache: 'no-cache' })
+    .then(r => r.ok ? r.json() : {}).catch(() => ({}));
 }
 
 // ============ UTIL ============
@@ -1263,10 +1267,10 @@ function renderToday() {
       .slice(0, 3);
     document.getElementById('todayBeaches').innerHTML = beaches.map(b => `
       <div class="ios-list-item tappable" onclick="openBeach('${b.slug}')">
-        <span class="status-dot" style="background:var(--status-${b.status})"></span>
+        <span class="status-dot" style="background:var(--status-${beachStatus(b).code})"></span>
         <div style="flex:1; min-width:0;">
           <div class="item-title">${b.name}</div>
-          <div class="item-sub">${b.town} · ${b.spots_text} · 🌊 ${b.water_temp}°F · ${b.dist.toFixed(1)}mi</div>
+          <div class="item-sub">${beachStatus(b).live?'<span style="color:#1F9D63;">●</span> ':''}${beachStatus(b).label} · 🌊 ${b.water_temp}°F · ${b.dist.toFixed(1)}mi</div>
         </div>
         <div class="crowd-bar">${Array.from({length:5}, (_,j) => `<span class="${j < b.crowd ? 'on' : ''}"></span>`).join('')}</div>
       </div>
@@ -1392,10 +1396,14 @@ let beachMapInstance = null;
 function renderBeaches() {
   const beaches = state.data.beaches?.beaches || [];
 
-  // Subhead: hide count when 0; show friendly copy instead
+  // Subhead: only claim "Live" when beachgoers are actually reporting right now.
   const subEl = document.getElementById('beachSubhead');
   if (beaches.length > 0) {
-    subEl.textContent = `Live · ${beaches.length} beaches · tap to update`;
+    const liveCount = Object.keys(state.data.beachLive || {}).length;
+    const tempLive = beaches.some(b => b.water_temp_at);
+    subEl.textContent = liveCount > 0
+      ? `🟢 ${liveCount} reporting live now · ${beaches.length} beaches`
+      : `${beaches.length} beaches${tempLive ? ' · live water temp' : ''} · tap any to report parking`;
   } else {
     subEl.textContent = 'Beach reports start rolling in each morning — check back soon.';
   }
@@ -1453,16 +1461,34 @@ function renderBeaches() {
     }
   });
 }
+// Merge the crowdsourced live layer (beachLive) over the static baseline, honestly.
+// A real recent report → live status + "🟢 Live · Xm ago". No report → labeled "Typical",
+// so we never present static seed data as a live reading.
+function beachStatus(b){
+  const live = state.data.beachLive && state.data.beachLive[b.slug];
+  const now = Date.now();
+  if(live && (now - live.at) < 3*60*60*1000){
+    const m = Math.max(1, Math.round((now - live.at)/60000));
+    const ago = m < 60 ? m+'m ago' : Math.round(m/60)+'h ago';
+    const T={open:'Spots open',mid:'Filling up',full:'Lot full'}, C={open:2,mid:4,full:5};
+    return { code:live.status, label:T[live.status]||live.status, crowd:(C[live.status]??b.crowd),
+             live:true, fresh:`🟢 Live · ${ago}${live.count>1?` · ${live.count} reports`:''}` };
+  }
+  const T={open:'Usually has parking',mid:'Often busy midday',full:'Often full midday'};
+  return { code:b.status, label:(T[b.status]||'Check before you go'), crowd:b.crowd,
+           live:false, fresh:'Typical for now — tap to report' };
+}
 function renderBeachRow(b) {
-  // TASK9 Lever 4: freshness cue on updated field
-  const freshHtml = b.updated ? `<span class="freshness-label" style="margin-left:4px;">${b.updated}</span>` : '';
+  const st = beachStatus(b);
+  const tempTxt = b.water_temp ? ` · 🌊 ${b.water_temp}°F` : '';
+  const liveDot = st.live ? '<span style="color:#1F9D63;">●</span> ' : '';
   return `<div class="ios-list-item tappable" onclick="openBeach('${b.slug}')">
-    <span class="status-dot" style="background:var(--status-${b.status})"></span>
+    <span class="status-dot" style="background:var(--status-${st.code})"></span>
     <div style="flex:1; min-width:0;">
-      <div class="item-title">${b.name} ${freshHtml}</div>
-      <div class="item-sub">${b.town} · ${b.spots_text} · 🌊 ${b.water_temp}°F${b.dist ? ' · ' + b.dist.toFixed(1) + 'mi' : ''}</div>
+      <div class="item-title">${b.name}</div>
+      <div class="item-sub">${liveDot}${st.label}${tempTxt}${b.dist ? ' · ' + b.dist.toFixed(1) + 'mi' : ''}</div>
     </div>
-    <div class="crowd-bar">${Array.from({length:5},(_,j) => `<span class="${j < b.crowd ? 'on' : ''}"></span>`).join('')}</div>
+    <div class="crowd-bar">${Array.from({length:5},(_,j) => `<span class="${j < st.crowd ? 'on' : ''}"></span>`).join('')}</div>
   </div>`;
 }
 
@@ -1473,7 +1499,7 @@ function openBeach(slug) {
   document.getElementById('beachModalName').textContent = b.name;
   document.getElementById('beachModalTown').textContent = `${b.town} · ${b.region}`;
   document.getElementById('beachModalDetails').innerHTML = `
-    <div class="ios-list-item"><span class="status-dot" style="background:var(--status-${b.status})"></span><div style="flex:1;"><div class="item-title">${b.spots_text}</div><div class="item-sub">Crowd ${b.crowd}/5 · 🌊 ${b.water_temp}°F · Updated ${b.updated}</div></div></div>
+    <div class="ios-list-item"><span class="status-dot" style="background:var(--status-${beachStatus(b).code})"></span><div style="flex:1;"><div class="item-title">${beachStatus(b).label}</div><div class="item-sub">${b.water_temp?`🌊 ${b.water_temp}°F · `:''}${beachStatus(b).fresh}</div></div></div>
     <div style="font-size:12px; color:var(--ios-sub); padding:8px 0; line-height:1.5;">
       ${b.sticker_required ? '🏷️ Sticker required' : '✅ No sticker needed'}<br/>
       ${b.restrooms ? '🚻 Restrooms' : '— No restrooms'}<br/>
@@ -1495,13 +1521,20 @@ function openBeach(slug) {
 }
 function reportBeach(status) {
   if (!state.pendingBeach) return;
-  state.beachReports[state.pendingBeach.slug] = { status, at: Date.now() };
+  const slug = state.pendingBeach.slug;
+  state.beachReports[slug] = { status, at: Date.now() };
   localStorage.setItem('tcc_beach_reports', JSON.stringify(state.beachReports));
-  // Update local data optimistically
-  state.pendingBeach.status = status;
-  state.pendingBeach.updated = 'just now';
+  // Reflect our own report in the live layer immediately…
+  state.data.beachLive = state.data.beachLive || {};
+  state.data.beachLive[slug] = { status, count: (state.data.beachLive[slug]?.count || 0) + 1, at: Date.now() };
+  // …and actually SHARE it with other beachgoers (crowdsourced backend).
+  fetch('/.netlify/functions/beach-report', {
+    method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ slug, status, deviceId: localStorage.getItem('tcc_did') || '' }),
+  }).catch(() => {});
+  if (window.gtag) gtag('event', 'beach_report', { slug, status });
   closeModal('beach');
-  toast('✅ Thanks! Update sent.');
+  toast('✅ Thanks — shared with other beachgoers!');
   renderBeaches();
   renderToday();
 }
@@ -2265,18 +2298,17 @@ function nbRenderItem(it){
       <div class="nb-avatar beach">🏖️</div>
       <div class="main"><div class="name">${nbEsc(b.name)}</div><div class="sub">${nbEsc(b.town)} · ${nbAway(it.mi)}</div></div>
       <div class="nb-kind beach">Beach</div></div>
-      <div class="nb-body">
+      ${(()=>{ const st=beachStatus(b); return `<div class="nb-body">
         ${it.forYou?'<div class="nb-foryou">✨ Picked for you</div>':""}
         <div class="nb-stats">
-          <span class="nb-statpill ${b.status}">${LBL[b.status]||b.status}</span>
+          <span class="nb-statpill ${st.code}">${st.label}</span>
           <div class="nb-stat"><b>Water</b>${b.water_temp}°F</div>
-          <div class="nb-stat"><b>Parking</b>${nbEsc(b.spots_text)}</div>
-          <div class="nb-stat"><b>Crowd</b>${nbCrowd(b.crowd)}</div>
+          <div class="nb-stat"><b>Crowd</b>${nbCrowd(st.crowd)}</div>
         </div>
         ${b.notes?`<p style="margin-top:9px;">${nbEsc(b.notes)}</p>`:""}
         ${nbStampPill(b.lat,b.lng,b.slug)}
-        <div class="nb-updated"><span class="live"></span>Updated ${nbEsc(b.updated||"just now")}</div>
-      </div></div>`;
+        <div class="nb-updated">${st.live?'<span class="live"></span>':''}${nbEsc(st.fresh)}</div>
+      </div>`; })()}</div>`;
   }
   if(it.type==="event"){
     const e=it.data;
