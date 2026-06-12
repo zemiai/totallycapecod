@@ -241,6 +241,31 @@
   .local-ask-chips::-webkit-scrollbar{ display:none; }
   .local-ask-chip{ flex:0 0 auto; background:rgba(255,255,255,0.15); color:#fff; border:1px solid rgba(255,255,255,0.25); border-radius:999px; padding:7px 13px; font-size:12px; font-weight:600; cursor:pointer; white-space:nowrap; }
   .local-ask-chip:active{ background:rgba(255,255,255,0.3); }
+  /* Beach Finder Quiz */
+  .quiz-cta{ margin:0 16px 14px; border-radius:16px; padding:16px; color:#fff; background:linear-gradient(135deg,#1F9D63,#0E7A6B); box-shadow:0 4px 14px rgba(14,122,107,0.28); cursor:pointer; display:flex; align-items:center; gap:14px; }
+  .quiz-cta-emoji{ font-size:32px; line-height:1; }
+  .quiz-cta-title{ font-weight:800; font-size:16px; }
+  .quiz-cta-sub{ font-size:12px; opacity:0.9; margin-top:2px; }
+  .quiz-cta-arrow{ font-size:22px; opacity:0.9; }
+  .quiz-progress{ display:flex; gap:6px; justify-content:center; margin:2px 0 16px; }
+  .quiz-progress span{ width:24px; height:5px; border-radius:999px; background:var(--ios-bg,#E9EDF0); transition:background .2s; }
+  .quiz-progress span.done{ background:#1F9D63; }
+  .quiz-q{ font-family:'Fraunces',serif; font-weight:900; font-size:21px; text-align:center; margin:4px 16px 18px; color:var(--ios-text,#1a1a1a); }
+  .quiz-opts{ display:flex; flex-direction:column; gap:10px; }
+  .quiz-opt{ width:100%; text-align:left; background:#fff; border:1.5px solid var(--ios-divider,#E3E8EC); border-radius:14px; padding:15px 16px; font-size:15px; font-weight:600; color:var(--ios-text,#1a1a1a); cursor:pointer; font-family:inherit; display:flex; align-items:center; gap:12px; transition:transform .08s, border-color .15s; }
+  .quiz-opt:active{ transform:scale(0.98); border-color:#1F9D63; }
+  .quiz-opt-emoji{ font-size:22px; }
+  .quiz-back{ background:none; border:none; color:var(--ios-sub); font-size:13px; font-weight:600; cursor:pointer; padding:8px 0; font-family:inherit; }
+  .quiz-result{ background:#fff; border-radius:16px; padding:14px; margin-bottom:12px; box-shadow:0 2px 8px rgba(0,0,0,0.05); border:1.5px solid var(--ios-divider,#E3E8EC); }
+  .quiz-result.top{ border-color:#1F9D63; box-shadow:0 6px 18px rgba(31,157,99,0.18); }
+  .quiz-result-rank{ font-size:11px; font-weight:800; text-transform:uppercase; letter-spacing:0.06em; color:#1F9D63; }
+  .quiz-result-name{ font-family:'Fraunces',serif; font-weight:900; font-size:19px; margin:2px 0; }
+  .quiz-result-town{ font-size:12px; color:var(--ios-sub); }
+  .quiz-result-blurb{ font-size:13px; line-height:1.5; color:var(--ios-text,#333); margin:8px 0; }
+  .quiz-why{ display:flex; flex-wrap:wrap; gap:6px; margin:8px 0; }
+  .quiz-why span{ background:#E7F5EE; color:#0E7A6B; font-size:11px; font-weight:700; padding:4px 9px; border-radius:999px; }
+  .quiz-result-btns{ display:flex; gap:8px; margin-top:10px; }
+  .quiz-result-btns button{ flex:1; border:none; border-radius:10px; padding:10px; font-weight:700; font-size:13px; cursor:pointer; font-family:inherit; }
   .bridge-delay{ font-family:'Fraunces',serif; font-weight:900; font-size:28px; }
   .bridge-delay.light{ color:var(--status-open); }
   .bridge-delay.moderate{ color:var(--status-mid); }
@@ -451,6 +476,14 @@
       <!-- Lead with the "is today ruined?" decisions: parking + bridge before everything else -->
       <div class="ios-section-title"><span>🏖️ Nearest Beaches</span><button onclick="switchTab('beaches')">All →</button></div>
       <div class="ios-list" id="todayBeaches"></div>
+      <div class="quiz-cta" onclick="startBeachQuiz()">
+        <span class="quiz-cta-emoji">🏖️</span>
+        <div style="flex:1;">
+          <div class="quiz-cta-title">Not sure where to go?</div>
+          <div class="quiz-cta-sub">Take the 30-sec quiz — find your perfect beach</div>
+        </div>
+        <span class="quiz-cta-arrow">→</span>
+      </div>
 
       <div class="ios-section-title">
         <span>🌉 Bridge Now</span>
@@ -494,6 +527,14 @@
     <div class="screen" id="screen-beaches">
       <div class="ios-large-title">Beaches</div>
       <div class="ios-subhead" id="beachSubhead">Loading beaches…</div>
+      <div class="quiz-cta" onclick="startBeachQuiz()">
+        <span class="quiz-cta-emoji">🏖️</span>
+        <div style="flex:1;">
+          <div class="quiz-cta-title">Find your perfect beach</div>
+          <div class="quiz-cta-sub">Answer 4 quick questions — matched from live conditions + real reviews</div>
+        </div>
+        <span class="quiz-cta-arrow">→</span>
+      </div>
       <div class="ios-section-title"><span>📍 Map</span></div>
       <div class="map-container"><div id="beachMap"></div></div>
       <div class="ios-section-title" id="beachFreeTitle"><span>Nearest you</span></div>
@@ -862,6 +903,16 @@
       <button onclick="reportBeach('mid')" style="background:#fef3c7; color:#92400e; border:none; padding:12px; border-radius:10px; font-weight:700; font-size:13px;">👥 Crowded</button>
     </div>
     <button onclick="closeModal('beach')" style="width:100%; background:transparent; color:var(--cape-navy); border:none; padding:14px; font-weight:600; font-size:14px; margin-top:6px;">Close</button>
+  </div>
+</div>
+
+<!-- Beach Finder Quiz Modal -->
+<div class="modal-bg" id="quizModal">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <div id="quizProgress" class="quiz-progress"></div>
+    <div id="quizBody"></div>
+    <button onclick="closeModal('quiz')" style="width:100%; background:transparent; color:var(--ios-sub); border:none; padding:12px; font-weight:600; font-size:13px; margin-top:8px;">Close</button>
   </div>
 </div>
 
@@ -1521,6 +1572,203 @@ function renderBeachRow(b) {
     </div>
     <div class="crowd-bar">${Array.from({length:5},(_,j) => `<span class="${j < st.crowd ? 'on' : ''}"></span>`).join('')}</div>
   </div>`;
+}
+
+// ─────────────────────────────────────────────────────────────────────────
+// Beach Finder Quiz — match attributes + review-grounded personality blurbs.
+// Profiles built from cross-checked facts (NOAA/NPS/town sites) + real visitor
+// reviews (Tripadvisor/Yelp/Google) mined per beach. side/surf/temp/kids/flats/
+// vibe/park drive the match; blurb is what real beachgoers actually say.
+// ─────────────────────────────────────────────────────────────────────────
+const BEACH_DNA = {
+  'nauset-beach':   { side:'ocean', surf:'big', temp:'cold', kids:'ok',   flats:false, vibe:'surf',    park:'paid',    traits:['surf','seals','sharks'],
+    blurb:"The Cape's biggest, baddest surf — a 10-mile wall of waves people come for with boogie boards. Lifeguarded and lively, but cold water, rip currents and white sharks offshore make it one for confident swimmers, not toddlers." },
+  'coast-guard':    { side:'ocean', surf:'big', temp:'cold', kids:'ok',   flats:true,  vibe:'natural',  park:'nps',     traits:['surf','seals','sunrise','sandbar'],
+    blurb:"Routinely ranked one of America's best beaches — wild Atlantic surf, a beloved marsh boardwalk approach, and low-tide sandbars kids build castles on. In summer you park inland and shuttle in. Seals patrol; swim near the guards." },
+  'race-point':     { side:'ocean', surf:'moderate', temp:'cold', kids:'ok', flats:false, vibe:'natural', park:'nps',  traits:['seals','whales','sunset','wild'],
+    blurb:"Land's end. Reviewers watch whales breach and seals bob right from the sand, with sunsets behind a 200-year-old lighthouse. Wild, undeveloped, unforgettable — cold rough water and real shark presence, so it's for wandering more than swimming." },
+  'marconi':        { side:'ocean', surf:'big', temp:'cold', kids:'tough',flats:false, vibe:'natural',  park:'nps',     traits:['dunes','surf','seals','sharks','wild'],
+    blurb:"The tallest dunes on the Seashore and a steep staircase down to empty, dramatic Atlantic — 'a serene, untouched paradise' with the best surf of the National Seashore beaches. Icy, rocky entry and the strongest shark signage on the Cape." },
+  'cahoon-hollow':  { side:'ocean', surf:'big', temp:'cold', kids:'ok',   flats:false, vibe:'lively',   park:'paid',    traits:['bar','surf','lively','food'],
+    blurb:"Home of The Beachcomber — the legendary bar on the dune with live bands and a raw bar over the Atlantic. 'It's loud, there are crowds, this is party time.' Young, surf-and-a-beer energy; the $30 lot fills by mid-morning and it's a brutal climb back up." },
+  'newcomb-hollow': { side:'ocean', surf:'big', temp:'cold', kids:'ok',   flats:false, vibe:'natural',  park:'sticker', traits:['surf','seals','sharks','wild','quiet'],
+    blurb:"Wild, dune-backed and the easiest Wellfleet descent — surprisingly gentle surf and a sandbar. It's also the Cape's most shark-conscious beach (site of the 2018 fatality); reviewers rave about the beauty, then heed the 'Be Shark Smart' signs. Resident-sticker parking keeps it local." },
+  'lecount-hollow': { side:'ocean', surf:'big', temp:'cold', kids:'tough',flats:false, vibe:'surf',     park:'sticker', traits:['surf','dunes','quiet','wild'],
+    blurb:"Wellfleet locals' quiet pick — uncommercial, unspoiled dunes and a consistent surf break, 'the spot to avoid the Cahoon crowds.' Steep dune walkway, small resident-sticker lot, cold Atlantic water. For surfers and solitude-seekers." },
+  'long-nook':      { side:'ocean', surf:'big', temp:'cold', kids:'tough',flats:false, vibe:'natural',  park:'sticker', traits:['dunes','surf','quiet','wild'],
+    blurb:"Towering 100-ft dunes, a steep path down and 'the feeling you're on your own private beach.' No lifeguard, a near-unobtainable Truro sticker, cold powerful surf — the difficulty is the point. For rugged solitude-seekers and surfers." },
+  'head-of-meadow': { side:'ocean', surf:'moderate', temp:'cold', kids:'ok', flats:true, vibe:'natural', park:'nps',   traits:['seals','sandbar','quiet','family'],
+    blurb:"The mellow, accessible Outer Cape beach — no punishing dune climb, and low-tide sandbars make calm, kid-friendly shallows with waves 'big enough to boogie-board but not overwhelming.' Famous for seals hauled out by the hundreds. The least-crowded Seashore beach." },
+  'herring-cove':   { side:'bay',   surf:'calm', temp:'warm', kids:'great',flats:false, vibe:'lively',   park:'nps',     traits:['sunset','lgbtq','warm','food'],
+    blurb:"The Seashore's mellow exception — west-facing, calm, warm water and what reviewers call 'the best sunset on the East Coast.' Beloved as Provincetown's iconic LGBTQ+ beach, with a snack-bar pavilion. Rocky entry (bring water shoes), but the gentlest swim of the Outer Cape." },
+  'skaket':         { side:'bay',   surf:'calm', temp:'warm', kids:'great',flats:true,  vibe:'family',   park:'paid',    traits:['sunset','flats','family'],
+    blurb:"The family-and-sunset favorite: walk-a-mile warm flats, tide pools full of hermit crabs, and 'a nightly sunset treat' people clap for. Tiny at high tide and the lot fills by 10:30 — but parking's free after 5, prime sunset time." },
+  'mayflower':      { side:'bay',   surf:'calm', temp:'warm', kids:'great',flats:true,  vibe:'family',   park:'paid',    traits:['sunset','flats','family'],
+    blurb:"The marquee bayside beach — powder-soft sand, the Cape's most famous sunset (people clap), and flats you can walk for miles with the kids. Wildly popular, so the lot's full by 9 and you'll share the sand." },
+  'chapin':         { side:'bay',   surf:'calm', temp:'warm', kids:'ok',   flats:true,  vibe:'natural',  park:'paid',    traits:['flats','sunset','wild','quiet'],
+    blurb:"Mayflower's wild, quieter cousin — undeveloped dunes, endless flats and sunset walks reviewers call 'absolutely spectacular.' No lifeguard, tiny lot, and a tide that races in over the sandbar, so watch kids and dogs closely. A local secret for peace." },
+  'corporation':    { side:'bay',   surf:'calm', temp:'moderate', kids:'great', flats:true, vibe:'family', park:'paid',  traits:['family','food','sunset'],
+    blurb:"The dependable family all-rounder reviewers vote 'best bay beach' — lifeguards, a beloved snack bar, a playground and a protected cove full of hermit crabs. Time low tide for the tide pools; water runs ~10° cooler than the south side and it's wall-to-wall at high tide." },
+  'first-encounter':{ side:'bay',   surf:'calm', temp:'warm', kids:'great',flats:true,  vibe:'natural',  park:'paid',    traits:['sunset','flats','quiet'],
+    blurb:"THE sunset pilgrimage — 'apparently the place to watch a sunset,' where the tide pulls back a mile and the sky 'explodes in pink and purple.' Calm, warm shallow flats and deep history (Pilgrims met the Wampanoag here). Go to walk the flats at golden hour, not really to swim." },
+  'breakwater':     { side:'bay',   surf:'calm', temp:'warm', kids:'great',flats:true,  vibe:'family',   park:'paid',    traits:['flats','family'],
+    blurb:"Small, easy and right off 6A — the gateway to the famous Brewster Flats, where the water recedes nearly a mile. Warm, shallow, wave-free swimming when the tide's in; tide-pool walking when it's out. 'Mind the tide chart' is the universal advice." },
+  'paines-creek':   { side:'bay',   surf:'calm', temp:'warm', kids:'great',flats:true,  vibe:'natural',  park:'paid',    traits:['sunset','flats','quiet'],
+    blurb:"The quiet local secret — a tidal creek that turns into a kids' 'lazy river' at high tide, crabbing and kayaking, and 'awesome' sunsets with three reflections of the sun. The gatekeeper: only ~15 parking spots, so arrive by 9:30 or you're out." },
+  'sandy-neck':     { side:'bay',   surf:'calm', temp:'warm', kids:'great',flats:true,  vibe:'natural',  park:'paid',    traits:['dunes','flats','wild'],
+    blurb:"A 6-mile barrier beach of giant dunes, marsh trails and bonfire permits, with warm walk-out flats and tide pools at low tide. Reviewers split: magic at low tide ('your own little world'), but rocky at high and greenhead flies bite in July. Wild and family-friendly at once." },
+  'sandwich-town':  { side:'bay',   surf:'calm', temp:'moderate', kids:'ok', flats:true, vibe:'family',  park:'paid',    traits:['boardwalk','sunset'],
+    blurb:"Home of the famous 1,300-ft Sandwich Boardwalk over the marsh — kids leap off it into the creek at high tide, and it's 'the best sunset spot' for photographers. More rocky-and-seaweedy than sandy (water shoes help), no lifeguard — but the boardwalk charm is pure Cape." },
+  'old-silver':     { side:'sound', surf:'calm', temp:'warm', kids:'great',flats:true,  vibe:'family',   park:'paid',    traits:['warm','family','sunset','food'],
+    blurb:"Reviewers call it 'the safest and warmest swimming on the Cape' — a gentle sandbar makes a toddler-perfect wading pool, with golden sunsets. The catch: get in line before 9am or you won't park, and on a nice day you're shoulder-to-shoulder." },
+  'craigville':     { side:'sound', surf:'calm', temp:'warm', kids:'ok',   flats:false, vibe:'lively',   park:'paid',    traits:['lively','warm','food'],
+    blurb:"The big, buzzy 'see-and-be-seen' beach — locals nickname it Muscle Beach. Warm water, snack bars, a young social crowd plus plenty of families. Loud and packed in summer, but that's the fun; ~450 spaces still fill mid-morning." },
+  'ridgevale':      { side:'sound', surf:'calm', temp:'warm', kids:'great',flats:true,  vibe:'family',   park:'paid',    traits:['warm','family','flats'],
+    blurb:"A toddler's paradise and reviewers' 'best family beach in Chatham' — a warm, shallow tidal creek with hermit crabs on one side, open Sound on the other, plus kayak rentals. Two beaches in one; small lot fills early." },
+  'hardings':       { side:'sound', surf:'calm', temp:'warm', kids:'great',flats:true,  vibe:'family',   park:'paid',    traits:['warm','family','sunset'],
+    blurb:"Chatham's easy, spacious pick — two big lots mean you'll almost always get a spot, with warm water, room to spread out and 'maybe the best sunset on the Cape.' The knock: seaweed can pile up on the wrong day. Food trucks in the lot, lifeguards." },
+  'falmouth-heights':{ side:'sound',surf:'calm', temp:'warm', kids:'ok',   flats:false, vibe:'lively',   park:'sticker', traits:['lively','warm','food'],
+    blurb:"A lively town beach with bars and restaurants right across the street (and the Falmouth Road Race finish line). Warm water, Martha's Vineyard views, young-adult energy. The catch reviewers flag: it's sticker-only parking with no day lot, right on a busy road." },
+  'south-cape':     { side:'sound', surf:'calm', temp:'warm', kids:'ok',   flats:false, vibe:'natural',  park:'paid',    traits:['wild','quiet','warm'],
+    blurb:"Wild, undeveloped state-park sand backed by marsh and dunes — over a mile of warm, calm water and blissful quiet, 'a hidden gem used mostly by residents.' Bring everything: little to no food, likely no lifeguard. The anti-crowd beach for nature lovers." },
+  'kalmus':         { side:'sound', surf:'moderate', temp:'warm', kids:'great', flats:false, vibe:'lively', park:'paid', traits:['windsurf','warm','family','food'],
+    blurb:"New England's windsurfing capital — steady wind, boards everywhere and the Nantucket ferries gliding past. The roped-off Lewis Bay side is calm, soft and warm for little kids, with a snack shack reviewers love. Active and breezy; weekdays are quiet." },
+  'veterans-park':  { side:'sound', surf:'calm', temp:'warm', kids:'great',flats:false, vibe:'family',   park:'paid',    traits:['warm','family'],
+    blurb:"Tiny, calm, shallow harbor water with a playground, picnic grills and the JFK Memorial next door — a full-day family park beach in the heart of Hyannis. Reviewers love it for the little ones; bring your own food and come early, the small lot fills fast." },
+};
+
+const QUIZ_Q = [
+  { id:'water', q:"What's your ideal water?", opts:[
+    { e:'🏊', t:'Warm & calm for swimming', v:'swim' },
+    { e:'🏄', t:'Big Atlantic waves', v:'surf' },
+    { e:'🦀', t:'Walk-out flats & tide pools', v:'flats' },
+    { e:'😌', t:'Just somewhere beautiful', v:'pretty' } ] },
+  { id:'who', q:"Who's with you?", opts:[
+    { e:'👶', t:'Little kids', v:'kids' },
+    { e:'🎉', t:'Friends — want a scene', v:'scene' },
+    { e:'🧘', t:'Just want it quiet & natural', v:'quiet' },
+    { e:'👨‍👩‍👧‍👦', t:'The whole family', v:'family' } ] },
+  { id:'park', q:'Parking — what works for you?', opts:[
+    { e:'💳', t:"Happy to pay for a day lot", v:'pay' },
+    { e:'📍', t:"Whatever's closest to me", v:'close' },
+    { e:'🚫', t:'No resident-sticker-only spots', v:'nosticker' } ] },
+  { id:'extra', q:'Last one — what would make your day?', opts:[
+    { e:'🌅', t:'An epic sunset', v:'sunset' },
+    { e:'🦭', t:'Seals & wildlife', v:'wildlife' },
+    { e:'🍺', t:'A beach bar / good food', v:'food' },
+    { e:'🌾', t:'Wild dunes & solitude', v:'wild' } ] },
+];
+
+let _quizStep = 0, _quizAns = {};
+
+function startBeachQuiz() {
+  _quizStep = 0; _quizAns = {};
+  gtag && gtag('event', 'beach_quiz_start');
+  renderQuizStep();
+  openModal('quiz');
+}
+function renderQuizStep() {
+  const prog = document.getElementById('quizProgress');
+  prog.style.display = 'flex';
+  prog.innerHTML = QUIZ_Q.map((_, i) => `<span class="${i < _quizStep ? 'done' : ''}"></span>`).join('');
+  const step = QUIZ_Q[_quizStep];
+  document.getElementById('quizBody').innerHTML = `
+    <div class="quiz-q">${step.q}</div>
+    <div class="quiz-opts">
+      ${step.opts.map(o => `<button class="quiz-opt" onclick="answerQuiz('${step.id}','${o.v}')"><span class="quiz-opt-emoji">${o.e}</span><span>${o.t}</span></button>`).join('')}
+    </div>
+    ${_quizStep > 0 ? '<button class="quiz-back" onclick="quizBack()">← Back</button>' : ''}`;
+}
+function answerQuiz(id, v) {
+  _quizAns[id] = v;
+  if (_quizStep < QUIZ_Q.length - 1) { _quizStep++; renderQuizStep(); }
+  else renderQuizResults();
+}
+function quizBack() { if (_quizStep > 0) { _quizStep--; renderQuizStep(); } }
+
+function scoreBeach(b, a) {
+  let s = 0;
+  // Q1 — water
+  if (a.water === 'swim')  { if(b.temp==='warm')s+=3; if(b.surf==='calm')s+=2; if(b.side==='sound')s+=2; else if(b.side==='bay')s+=1; if(b.surf==='big')s-=3; if(b.temp==='cold')s-=1; }
+  if (a.water === 'surf')  { if(b.surf==='big')s+=4; else if(b.surf==='moderate')s+=2; if(b.side==='ocean')s+=2; if(b.surf==='calm')s-=3; }
+  if (a.water === 'flats') { if(b.flats)s+=5; else s-=2; if(b.side==='bay')s+=1; }
+  if (a.water === 'pretty'){ if(b.traits.includes('sunset'))s+=2; if(b.vibe==='natural')s+=1; }
+  // Q2 — company
+  if (a.who === 'kids')   { if(b.kids==='great')s+=4; else if(b.kids==='ok')s+=1; else s-=4; if(b.surf==='big')s-=2; }
+  if (a.who === 'scene')  { if(b.vibe==='lively')s+=4; if(b.traits.includes('bar'))s+=2; if(b.vibe==='natural')s-=2; }
+  if (a.who === 'quiet')  { if(b.vibe==='natural')s+=4; if(b.vibe==='lively')s-=3; if(b.traits.includes('quiet')||b.traits.includes('wild'))s+=1; }
+  if (a.who === 'family') { if(b.kids==='great')s+=3; if(b.vibe==='family')s+=2; if(b.kids==='tough')s-=3; }
+  // Q3 — parking
+  if (a.park === 'pay')       { if(b.park==='paid'||b.park==='nps')s+=2; }
+  if (a.park === 'nosticker') { if(b.park==='sticker')s-=6; else s+=1; }
+  // Q4 — sealer
+  if (a.extra === 'sunset')   { if(b.traits.includes('sunset'))s+=4; }
+  if (a.extra === 'wildlife') { if(b.traits.includes('seals')||b.traits.includes('whales'))s+=4; }
+  if (a.extra === 'food')     { if(b.traits.includes('bar')||b.traits.includes('food'))s+=4; }
+  if (a.extra === 'wild')     { if(b.traits.includes('wild')||b.traits.includes('dunes')||b.vibe==='natural')s+=3; }
+  return s;
+}
+function quizWhyChips(b, a) {
+  const why = [];
+  if (a.water==='swim'  && b.temp==='warm' && b.surf==='calm') why.push('Warm & calm ✓');
+  if (a.water==='surf'  && (b.surf==='big'||b.surf==='moderate')) why.push('Real surf ✓');
+  if (a.water==='flats' && b.flats) why.push('Walk-out flats ✓');
+  if ((a.who==='kids'||a.who==='family') && b.kids==='great') why.push('Great for kids ✓');
+  if (a.who==='scene'   && b.vibe==='lively') why.push('Lively scene ✓');
+  if (a.who==='quiet'   && b.vibe==='natural') why.push('Quiet & natural ✓');
+  if (a.extra==='sunset'   && b.traits.includes('sunset')) why.push('Epic sunsets ✓');
+  if (a.extra==='wildlife' && (b.traits.includes('seals')||b.traits.includes('whales'))) why.push('Seals & wildlife ✓');
+  if (a.extra==='food'     && (b.traits.includes('bar')||b.traits.includes('food'))) why.push('Beach bar / food ✓');
+  if (a.extra==='wild'     && (b.traits.includes('wild')||b.traits.includes('dunes'))) why.push('Wild & dunes ✓');
+  if (a.park==='nosticker' && b.park!=='sticker') why.push('Easy parking ✓');
+  if (b.traits.includes('windsurf')) why.push('Windsurfing 🏄');
+  if (b.traits.includes('lgbtq')) why.push('LGBTQ+ beloved 🏳️‍🌈');
+  return why.slice(0, 4);
+}
+function renderQuizResults() {
+  gtag && gtag('event', 'beach_quiz_complete', _quizAns);
+  document.getElementById('quizProgress').style.display = 'none';
+  const beaches = (state.data.beaches?.beaches || []);
+  const a = _quizAns;
+  finishQuizRender(a, beaches, null);
+  // If "closest" mattered or to show distance, fold in geo (non-blocking)
+  getUserLoc(loc => finishQuizRender(a, beaches, loc));
+}
+function finishQuizRender(a, beaches, loc) {
+  const ranked = beaches.map(b => {
+    const dna = BEACH_DNA[b.slug];
+    if (!dna) return null;
+    let sc = scoreBeach(dna, a);
+    let dist = null;
+    if (loc) {
+      dist = distanceMiles(loc.lat, loc.lng, b.lat, b.lng);
+      const closeW = a.park === 'close' ? 6 : 2;
+      sc += closeW * (1 - Math.min(dist / 40, 1));
+    }
+    return { b, dna, sc, dist };
+  }).filter(Boolean).sort((x, y) => y.sc - x.sc).slice(0, 3);
+
+  const body = document.getElementById('quizBody');
+  body.innerHTML = `
+    <div class="quiz-q" style="margin-bottom:6px;">Your beach matches 🏖️</div>
+    <div style="text-align:center; font-size:12px; color:var(--ios-sub); margin:-8px 16px 16px;">Picked for you from real conditions + visitor reviews</div>
+    ${ranked.map((r, i) => {
+      const why = quizWhyChips(r.dna, a);
+      const temp = r.b.water_temp ? `🌊 ${r.b.water_temp}°F` : '';
+      const distTxt = r.dist != null ? `${r.dist.toFixed(1)} mi away` : '';
+      const meta = [temp, distTxt].filter(Boolean).join(' · ');
+      return `<div class="quiz-result ${i===0?'top':''}">
+        <div class="quiz-result-rank">${i===0?'★ Top match':'Match #'+(i+1)}</div>
+        <div class="quiz-result-name">${r.b.name}</div>
+        <div class="quiz-result-town">${r.b.town}${meta?' · '+meta:''}</div>
+        ${why.length?`<div class="quiz-why">${why.map(w=>`<span>${w}</span>`).join('')}</div>`:''}
+        <div class="quiz-result-blurb">${r.dna.blurb}</div>
+        <div class="quiz-result-btns">
+          <button onclick="closeModal('quiz'); openBeach('${r.b.slug}')" style="background:var(--cape-navy); color:#fff;">View details & live status</button>
+        </div>
+      </div>`;
+    }).join('')}
+    <button class="quiz-back" style="display:block; margin:4px auto 0; text-align:center;" onclick="startBeachQuiz()">↻ Retake quiz</button>`;
 }
 
 function openBeach(slug) {
