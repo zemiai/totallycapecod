@@ -231,6 +231,16 @@
   .tide-row .low{ background:#ffe5cc; color:#8f4d10; }
 
   .bridge-card{ background:white; margin:0 16px 10px; border-radius:14px; padding:14px; box-shadow:0 1px 3px rgba(0,0,0,0.04); display:flex; align-items:center; gap:12px; }
+  /* Ask a Cape Local (Concierge surfaced on Today) */
+  .local-ask{ background:linear-gradient(135deg,#0E2A47,#1C4E80); color:#fff; margin:0 16px 12px; border-radius:16px; padding:14px; box-shadow:0 4px 14px rgba(14,42,71,0.25); cursor:pointer; }
+  .local-ask-row{ display:flex; align-items:center; gap:12px; }
+  .local-ask-avatar{ font-size:30px; line-height:1; }
+  .local-ask-title{ font-weight:800; font-size:15px; }
+  .local-ask-sub{ font-size:12px; opacity:0.85; margin-top:2px; line-height:1.35; }
+  .local-ask-chips{ display:flex; gap:8px; overflow-x:auto; margin-top:12px; padding-bottom:2px; scrollbar-width:none; }
+  .local-ask-chips::-webkit-scrollbar{ display:none; }
+  .local-ask-chip{ flex:0 0 auto; background:rgba(255,255,255,0.15); color:#fff; border:1px solid rgba(255,255,255,0.25); border-radius:999px; padding:7px 13px; font-size:12px; font-weight:600; cursor:pointer; white-space:nowrap; }
+  .local-ask-chip:active{ background:rgba(255,255,255,0.3); }
   .bridge-delay{ font-family:'Fraunces',serif; font-weight:900; font-size:28px; }
   .bridge-delay.light{ color:var(--status-open); }
   .bridge-delay.moderate{ color:var(--status-mid); }
@@ -435,15 +445,28 @@
         <button onclick="dismissEmailBanner()" style="background:none; border:none; color:rgba(255,255,255,0.6); font-size:11px; margin-top:8px; cursor:pointer;">No thanks</button>
       </div>
 
+      <!-- Web-push opt-in (hidden until VAPID keys are configured server-side) -->
+      <div id="pushPrompt"></div>
+
+      <!-- Lead with the "is today ruined?" decisions: parking + bridge before everything else -->
+      <div class="ios-section-title"><span>🏖️ Nearest Beaches</span><button onclick="switchTab('beaches')">All →</button></div>
+      <div class="ios-list" id="todayBeaches"></div>
+
+      <div class="ios-section-title">
+        <span>🌉 Bridge Now</span>
+        <button onclick="switchTab('bridges')">Forecast →</button>
+      </div>
+      <div id="todayBridges"></div>
+
+      <!-- Ask a Cape Local — surface the Concierge where intent is highest -->
+      <div id="todayConcierge"></div>
+
       <!-- 🔥 Tonight on the Cape — real-time restaurant specials + tonight's food/music (owner's edge) -->
       <div class="ios-section-title" id="todaySpecialsTitle" style="display:none;">
         <span>🔥 Tonight on the Cape</span>
         <button onclick="switchTab('events')">More →</button>
       </div>
       <div class="specials-rail" id="todaySpecials"></div>
-
-      <!-- Web-push opt-in (hidden until VAPID keys are configured server-side) -->
-      <div id="pushPrompt"></div>
 
       <div class="ios-section-title">
         <span>🌊 Tide & Conditions</span>
@@ -452,19 +475,10 @@
       <div class="ios-list" id="todayTides"></div>
 
       <div class="ios-section-title">
-        <span>🌉 Bridge Now</span>
-        <button onclick="switchTab('bridges')">Forecast →</button>
-      </div>
-      <div id="todayBridges"></div>
-
-      <div class="ios-section-title">
         <span>⚡ Upcoming on Cape Cod</span>
         <button onclick="switchTab('events')">See all →</button>
       </div>
       <div id="todayHappening"></div>
-
-      <div class="ios-section-title"><span>🏖️ Nearest Beaches</span></div>
-      <div class="ios-list" id="todayBeaches"></div>
     </div>
 
     <!-- ===== EVENTS ===== -->
@@ -1253,6 +1267,23 @@ function renderToday() {
       </div>`;
   }
 
+  // Ask a Cape Local — surface the Concierge at peak intent, with tappable starter questions
+  const cq = ['Best beach right now?', "Where's parking open?", 'Lobster roll near me', 'Rainy day with kids'];
+  document.getElementById('todayConcierge').innerHTML = `
+    <div class="ios-section-title"><span>💬 Ask a Cape Local</span><button onclick="switchTab('ai')">Open →</button></div>
+    <div class="local-ask" onclick="switchTab('ai')">
+      <div class="local-ask-row">
+        <span class="local-ask-avatar">🦞</span>
+        <div style="flex:1;">
+          <div class="local-ask-title">Your Cape Cod local guide</div>
+          <div class="local-ask-sub">Real-time answers on beaches, food, bridges & tonight — free question every day.</div>
+        </div>
+      </div>
+      <div class="local-ask-chips">
+        ${cq.map(q => `<button class="local-ask-chip" onclick="event.stopPropagation(); quickAi('${q.replace(/'/g,"\\'")}')">${q}</button>`).join('')}
+      </div>
+    </div>`;
+
   // Happening — TASK9 Lever 5: proPreview also unlocks events on first session
   const events = state.data.events?.events || [];
   const shown = (state.isPro || state.proPreview) ? events.slice(0,5) : events.slice(0, FREE_EVENT_LIMIT);
@@ -1698,6 +1729,9 @@ function renderAi() {
   document.getElementById('aiQuestionsLeft').textContent = state.isPro ? 'Unlimited' : `${left} free question${left===1?'':'s'} left today`;
 }
 function quickAi(q) {
+  // May be invoked from the Today tab's "Ask a Cape Local" block — make sure the
+  // Concierge screen is actually showing before we send.
+  if (!document.getElementById('screen-ai').classList.contains('active')) switchTab('ai');
   document.getElementById('aiInput').value = q;
   sendAi();
 }
