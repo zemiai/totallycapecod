@@ -93,7 +93,7 @@
     {"slug":"paines-creek","name":"Paines Creek Beach","icon":"🌊","town":"Brewster","lat":41.7686,"lng":-70.1086,"desc":"Bay creek + paddle.","is_pro":true},
     {"slug":"sandy-neck-lighthouse","name":"Sandy Neck Lighthouse Trek","icon":"🐚","town":"Barnstable","lat":41.7372,"lng":-70.3892,"desc":"4-mile sand walk.","is_pro":true},
     {"slug":"hy-line","name":"Hy-Line Cruises","icon":"🛥️","town":"Hyannis","lat":41.6519,"lng":-70.2856,"desc":"Sunset cruise + cocktails.","is_pro":true},
-    {"slug":"friendly-fisherman","name":"The Friendly Fisherman","icon":"🦞","town":"Eastham","lat":41.8456,"lng":-69.9819,"desc":"Fish market sandwiches.","is_pro":true},
+    {"slug":"pjs-eastham","name":"PJ's (Eastham)","icon":"🦞","town":"Eastham","lat":41.8556,"lng":-69.9742,"desc":"Fried seafood & lobster rolls.","is_pro":true},
     {"slug":"lowell-holly","name":"Lowell Holly Reservation","icon":"🌳","town":"Mashpee","lat":41.6597,"lng":-70.4533,"desc":"Holly forest hike.","is_pro":true},
     {"slug":"mahoneys","name":"Mahoney's Garden","icon":"🌽","town":"Falmouth","lat":41.5511,"lng":-70.6206,"desc":"Garden + ice cream.","is_pro":true},
     {"slug":"bells-neck","name":"Bell's Neck Conservation","icon":"🦌","town":"Harwich","lat":41.6814,"lng":-70.0758,"desc":"Marsh + ponds.","is_pro":true},

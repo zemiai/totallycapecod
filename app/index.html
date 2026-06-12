@@ -2641,7 +2641,7 @@ function nbRenderItem(it){
     <div class="nb-photo" style="${cov.style}">${cov.icon}<span class="nb-dist">${nbMiLabel(it.mi)}</span>${r.price?`<span class="nb-price">${nbEsc(r.price)}</span>`:""}${openBadge}</div>
     <div class="nb-head">
       <div class="nb-avatar food">🍴</div>
-      <div class="main"><div class="name">${nbEsc(r.name)}</div><div class="sub">${nbEsc(r.town)} · ${nbEsc(r.cuisine)} · ⭐ ${r.rating}${reviews}</div></div>
+      <div class="main"><div class="name">${nbEsc(r.name)}</div><div class="sub">${nbEsc(r.town)} · ${nbEsc(r.cuisine)}${r.rating!=null?` · ⭐ ${r.rating}${reviews}`:''}</div></div>
       <div class="nb-kind food">Eat</div></div>
     <div class="nb-body">
       ${it.forYou?'<div class="nb-foryou">✨ Picked for you</div>':""}
