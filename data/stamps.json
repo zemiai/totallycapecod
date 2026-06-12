@@ -63,7 +63,7 @@
     {"slug":"lavender","name":"Cape Cod Lavender Farm","icon":"🌽","town":"Harwich","lat":41.7008,"lng":-70.0917,"desc":"Photos + lavender lemonade.","is_pro":true},
     {"slug":"bass-river","name":"Bass River Cruise","icon":"🐟","town":"South Yarmouth","lat":41.6831,"lng":-70.1881,"desc":"Sunset booze cruise.","is_pro":true},
     {"slug":"cc-natural-history","name":"CC Museum of Natural History","icon":"🌲","town":"Brewster","lat":41.7681,"lng":-70.1006,"desc":"Trails to beach.","is_pro":true},
-    {"slug":"bayview","name":"Bayview Beach Sandwich","icon":"⛱️","town":"Sandwich","lat":41.7611,"lng":-70.5022,"desc":"Family + quiet bay.","is_pro":true},
+    {"slug":"sandwich-town","name":"Sandwich Town Beach","icon":"⛱️","town":"Sandwich","lat":41.7611,"lng":-70.5022,"desc":"Boardwalk, marsh sunsets & canal views.","is_pro":true},
     {"slug":"sundae-school","name":"Sundae School","icon":"🍦","town":"Dennis","lat":41.7397,"lng":-70.1989,"desc":"Homemade since 1976.","is_pro":true},
     {"slug":"ptown-monument","name":"Provincetown Monument","icon":"🏛️","town":"Provincetown","lat":42.0506,"lng":-70.1825,"desc":"Climb 252 feet for the view.","is_pro":true},
     {"slug":"salt-pond","name":"Salt Pond Visitor Center","icon":"🦌","town":"Eastham","lat":41.8367,"lng":-69.9728,"desc":"National Seashore intro.","is_pro":true},
