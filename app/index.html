@@ -2009,7 +2009,18 @@ function sendAi() {
   }
   if (!bestMatch) bestMatch = patterns.find(p => p.id === 'fallback');
 
-  // If a Claude API backend is configured, prefer it; fall back to static keyword match on error
+  // Charge the free-question quota only when a real answer was actually given —
+  // never for kill-switch, not-yet-configured, rate-limit, or already-limited cases.
+  const chargeQuestion = () => {
+    if (!state.isPro) {
+      state.aiCount++;
+      localStorage.setItem('tcc_ai_today', String(state.aiCount));
+      renderAi();
+    }
+  };
+
+  // If a backend is configured, prefer it; fall back to the static knowledge base on
+  // any error OR before the API key is set, so the Concierge always answers usefully.
   if (window.TCC_AI_ENDPOINT) {
     const deviceId = localStorage.getItem('tcc_did') || 'unknown';
     fetch(window.TCC_AI_ENDPOINT, {
@@ -2019,13 +2030,18 @@ function sendAi() {
     })
       .then(async r => {
         const d = await r.json().catch(() => ({}));
+        if (d.notConfigured) {
+          // Backend not set up yet — answer from the static guide for free (no charge)
+          appendAi(bestMatch ? bestMatch.response : d.response);
+          return;
+        }
         if (d.disabled) {
           // Kill switch active — show the message, don't deduct quota
           appendAi(d.response || 'The Concierge is resting — back soon!');
           return;
         }
         if (d.limited) {
-          // Server confirmed free daily limit hit — show upgrade prompt
+          // Server confirmed free daily limit hit — show upgrade prompt (no charge)
           const conv = document.getElementById('aiConv');
           conv.innerHTML += `<div class="ai-bubble-ai">⚠️ You've used your free question today. <strong onclick="switchTab('pro')" style="text-decoration:underline; cursor:pointer;">Unlock unlimited for $9.99</strong></div>`;
           conv.scrollTop = conv.scrollHeight;
@@ -2036,24 +2052,18 @@ function sendAi() {
           return;
         }
         if (d.response) {
-          appendAi(d.response);
+          appendAi(d.response); chargeQuestion();
         } else if (bestMatch) {
           // Upstream returned something unexpected — fall back silently
-          appendAi(bestMatch.response);
+          appendAi(bestMatch.response); chargeQuestion();
         }
       })
       .catch(() => {
         // Network failure — fall back to static knowledge base
-        if (bestMatch) appendAi(bestMatch.response);
+        if (bestMatch) { appendAi(bestMatch.response); chargeQuestion(); }
       });
   } else {
-    setTimeout(() => { if (bestMatch) appendAi(bestMatch.response); }, 600);
-  }
-
-  if (!state.isPro) {
-    state.aiCount++;
-    localStorage.setItem('tcc_ai_today', String(state.aiCount));
-    renderAi();
+    setTimeout(() => { if (bestMatch) { appendAi(bestMatch.response); chargeQuestion(); } }, 600);
   }
 }
 function appendAi(text) {

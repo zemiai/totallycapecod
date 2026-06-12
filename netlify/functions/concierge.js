@@ -187,6 +187,15 @@ async function callModel(cleanQuestion) {
   return data?.choices?.[0]?.message?.content ?? '';
 }
 
+// True only when the configured provider actually has its API key/config present.
+// Lets us degrade gracefully (and NOT burn a user's free question) before setup.
+function isConfigured() {
+  const provider = (process.env.LLM_PROVIDER || 'gemini').toLowerCase();
+  if (provider === 'anthropic') return !!process.env.ANTHROPIC_API_KEY;
+  if (provider === 'gemini') return !!(process.env.GEMINI_API_KEY || process.env.LLM_API_KEY);
+  return !!(process.env.LLM_BASE_URL && process.env.LLM_API_KEY && process.env.LLM_MODEL);
+}
+
 // ---------- handler ----------
 
 exports.handler = async (event) => {
@@ -213,6 +222,19 @@ exports.handler = async (event) => {
       body: JSON.stringify({
         response: "The Concierge is taking a quick nap — check back soon! In the meantime, explore the app for beaches, events, and more. 🌊",
         disabled: true,
+      }),
+    };
+  }
+
+  // ---- Not set up yet: degrade gracefully BEFORE touching any rate counter,
+  // so a user never burns their one free question on a feature that can't answer. ----
+  if (!isConfigured()) {
+    return {
+      statusCode: 200,
+      headers,
+      body: JSON.stringify({
+        response: "🦞 Your Cape Cod local guide is just getting set up — it'll be answering questions here very soon! For now: tap Beaches for live water temps & parking, try the Beach Finder quiz, or check Bridge Now before you drive.",
+        notConfigured: true,
       }),
     };
   }
