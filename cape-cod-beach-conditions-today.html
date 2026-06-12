@@ -4,17 +4,17 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#4A90A4" />
-<title>Cape Cod Beach Conditions Today — Live Parking &amp; Crowds</title>
-<meta name="description" content="Live Cape Cod beach conditions right now: parking status, crowd levels, water temperature, and lifeguard info for 20+ beaches updated throughout the day." />
+<title>Cape Cod Beach Conditions Today — Live Water Temps &amp; Parking Guide</title>
+<meta name="description" content="Live Cape Cod water temperatures by beach, plus typical summer parking and crowd patterns, lifeguard and sticker info for 20+ beaches. Live, crowdsourced parking reports in the app." />
 <link rel="canonical" href="https://totallycapecod.com/cape-cod-beach-conditions-today.html" />
-<meta property="og:title" content="Cape Cod Beach Conditions Today — Live Parking &amp; Crowds" />
-<meta property="og:description" content="Live Cape Cod beach conditions right now: parking status, crowd levels, water temperature, and lifeguard info for 20+ beaches updated throughout the day." />
+<meta property="og:title" content="Cape Cod Beach Conditions Today — Live Water Temps &amp; Parking Guide" />
+<meta property="og:description" content="Live Cape Cod water temperatures by beach, plus typical summer parking and crowd patterns, lifeguard and sticker info for 20+ beaches. Live, crowdsourced parking reports in the app." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://totallycapecod.com/cape-cod-beach-conditions-today.html" />
 <meta property="og:image" content="https://totallycapecod.com/og-image.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Cape Cod Beach Conditions Today — Live Parking &amp; Crowds" />
-<meta name="twitter:description" content="Live Cape Cod beach conditions right now: parking status, crowd levels, water temperature, and lifeguard info for 20+ beaches updated throughout the day." />
+<meta name="twitter:title" content="Cape Cod Beach Conditions Today — Live Water Temps &amp; Parking Guide" />
+<meta name="twitter:description" content="Live Cape Cod water temperatures by beach, plus typical summer parking and crowd patterns, lifeguard and sticker info for 20+ beaches. Live, crowdsourced parking reports in the app." />
 <meta name="twitter:image" content="https://totallycapecod.com/og-image.png" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0YM9WQLWK"></script>
 <script>
@@ -89,9 +89,9 @@
 <section class="hero" style="min-height:40vh;">
   <div class="hero-overlay"></div>
   <div class="hero-content" style="padding-top:80px;">
-    <div class="hero-badge">Live Conditions</div>
+    <div class="hero-badge">Live Water Temps</div>
     <h1 class="hero-title" style="font-size:clamp(28px,5vw,52px);">Cape Cod Beach <span class="script">Conditions</span> Today</h1>
-    <p class="hero-subtitle">Real-time parking, crowd levels &amp; water temps — updated all day</p>
+    <p class="hero-subtitle">Live water temps by beach · typical parking &amp; crowds · report live in the app</p>
   </div>
 </section>
 
@@ -99,12 +99,13 @@
 
   <p style="font-size:15px; line-height:1.7; color:var(--text); margin:0 0 28px; max-width:760px;">
     Parking fills fast on summer days — especially at National Seashore beaches like Coast Guard and Race Point.
-    This page shows live status for 20+ Cape Cod beaches pulled directly from our real-time data feed: whether the lot is open,
-    how crowded the sand is right now, and the current water temperature. Bookmark it before you head out.
+    This page shows the <strong>live water temperature</strong> at 20+ Cape Cod beaches (from NOAA and Cape buoys), plus the
+    <strong>typical</strong> parking and crowd pattern for each. For real-time, crowdsourced parking — updated as beachgoers
+    report from the sand — open the app. Bookmark this before you head out.
   </p>
 
   <div id="beachData">
-    <div class="loading-msg">⏳ Loading live beach conditions…</div>
+    <div class="loading-msg">⏳ Loading beach conditions…</div>
   </div>
 
   <div style="margin-top:40px; padding:24px; background:var(--sea-mist); border-radius:var(--radius-md); text-align:center;">
@@ -200,9 +201,9 @@ async function loadData() {
           '<thead><tr>' +
             '<th>Beach</th>' +
             '<th>Town</th>' +
-            '<th>Parking</th>' +
-            '<th>Crowd</th>' +
-            '<th>Water Temp</th>' +
+            '<th>Typical Parking</th>' +
+            '<th>Usual Crowd</th>' +
+            '<th>🌊 Water Temp</th>' +
             '<th>Amenities</th>' +
           '</tr></thead>' +
           '<tbody>' + rows + '</tbody>' +
