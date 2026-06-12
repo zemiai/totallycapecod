@@ -1988,6 +1988,45 @@ function quickAi(q) {
   document.getElementById('aiInput').value = q;
   sendAi();
 }
+// Compact live-data context sent with each Concierge question so the model answers
+// specifics (temps, tides, bridge delays, today's events, real restaurants) from
+// facts instead of guessing. The server caps this at 2200 chars and instructs the
+// model to use ONLY this for time-sensitive facts.
+function buildAiContext() {
+  try {
+    const d = state.data || {}, out = [];
+    const c = d.conditions?.today;
+    if (c) {
+      const tides = (c.tides || []).map(t => `${t.type === 'high' ? 'High' : 'Low'} ${t.time}`).join(', ');
+      out.push(`CONDITIONS today: air ${c.weather?.temp_high ?? '?'}°F ${c.weather?.desc || ''}, water ${c.water_temp_f ?? '?'}°F, sunset ${c.sun?.sunset || '?'}${tides ? `; tides ${tides}` : ''}.`);
+    }
+    const b = d.bridges?.current;
+    if (b?.sagamore) out.push(`BRIDGES now: Sagamore ${b.sagamore.current_delay_min}min (${b.sagamore.current_status})${b.bourne ? `, Bourne ${b.bourne.current_delay_min}min (${b.bourne.current_status})` : ''}. ${b.sagamore.advice || ''}`.trim());
+    // Restaurants & events before the long beach list so they're never the part that gets trimmed.
+    // Sort restaurants nearest-first (when we know the user's location) so location-specific
+    // food questions are grounded in real places actually near them.
+    let eatsList = (d.eats?.eats || []).slice();
+    const loc = (typeof nbUser !== 'undefined' && nbUser && nbUser.lat) ? nbUser : null;
+    if (loc && typeof distanceMiles === 'function') {
+      eatsList.sort((a, b) => distanceMiles(loc.lat, loc.lng, a.lat, a.lng) - distanceMiles(loc.lat, loc.lng, b.lat, b.lng));
+    }
+    const eats = eatsList.slice(0, 16).map(r => `${r.name} (${r.town}${r.cuisine ? ', ' + r.cuisine : ''}${r.rating ? ', ' + r.rating + '★' : ''}${r.deal ? ', deal: ' + r.deal : ''})`).join('; ');
+    if (eats) out.push(`RESTAURANTS in app${loc ? ' (nearest you first)' : ''}: ${eats}.`);
+    const SHORT = { 'Usually has parking': 'usu. open', 'Often busy midday': 'busy midday', 'Often full midday': 'full midday', 'Spots open': 'open NOW', 'Filling up': 'filling NOW', 'Lot full': 'FULL now' };
+    const beaches = d.beaches?.beaches || [];
+    if (beaches.length) {
+      const list = beaches.slice(0, 27).map(x => {
+        const st = (typeof beachStatus === 'function') ? beachStatus(x) : { label: '' };
+        const nm = x.name.replace(/ Beach$/, '');
+        return `${nm} (${x.town})${x.water_temp ? ' ' + x.water_temp + '°F' : ''}${st.label ? ' ' + (SHORT[st.label] || st.label) : ''}`;
+      }).join('; ');
+      out.push(`BEACHES (water temp + parking; "NOW"=live report): ${list}.`);
+    }
+    const events = (d.events?.events || []).slice(0, 8).map(e => `${String(e.title || '').slice(0, 55)} (${e.town || ''}${e.time ? ', ' + e.time : ''})`).join('; ');
+    if (events) out.push(`UPCOMING EVENTS: ${events}.`);
+    return out.join('\n').slice(0, 2600);
+  } catch (e) { return ''; }
+}
 function sendAi() {
   if (!state.isPro && state.aiCount >= 1) {
     const conv = document.getElementById('aiConv');
@@ -2031,7 +2070,7 @@ function sendAi() {
     fetch(window.TCC_AI_ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ question: q, deviceId, isPro: state.isPro }),
+      body: JSON.stringify({ question: q, deviceId, isPro: state.isPro, context: buildAiContext() }),
     })
       .then(async r => {
         const d = await r.json().catch(() => ({}));
