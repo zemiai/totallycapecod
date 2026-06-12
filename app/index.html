@@ -318,6 +318,8 @@
   @keyframes nbpulse{ 0%,100%{opacity:1} 50%{opacity:0.35} }
   .nb-pull{ height:0; overflow:hidden; text-align:center; font-size:12px; font-weight:700; color:var(--ios-sub); line-height:44px; transition:height 0.18s ease; }
   .nb-pull.spin{ color:var(--cape-navy); }
+  .nb-stamp-pill{ display:inline-flex; align-items:center; gap:5px; margin-top:9px; background:linear-gradient(135deg,#C99A4A,#A77C30); color:#fff; border:none; border-radius:999px; padding:7px 14px; font-weight:800; font-size:12px; font-family:inherit; cursor:pointer; box-shadow:0 2px 6px rgba(167,124,48,0.3); }
+  .nb-stamp-pill.earned{ background:var(--ios-bg); color:var(--cape-navy); border:1px solid var(--ios-divider); cursor:default; box-shadow:none; }
   .nb-loopdiv{ text-align:center; padding:18px 20px; }
   .nb-loopdiv span{ display:inline-block; background:var(--ios-bg); border:1px solid var(--ios-divider); color:var(--ios-sub); font-size:12px; font-weight:600; padding:7px 16px; border-radius:999px; }
 
@@ -1645,7 +1647,11 @@ function confirmStamp() {
     if (!state.stamps.includes(state.pendingStamp.slug)) {
       state.stamps.push(state.pendingStamp.slug);
       localStorage.setItem('tcc_stamps', JSON.stringify(state.stamps));
-      toast(`🎉 ${state.pendingStamp.name} stamped!`);
+      toast(`🎉 ${state.pendingStamp.name} stamped! ${state.stamps.length}/110`);
+      // Flip any matching feed pills to "collected" without re-rendering (keeps scroll position).
+      document.querySelectorAll(`.nb-stamp-pill[data-slug="${state.pendingStamp.slug}"]`).forEach(el => {
+        el.outerHTML = '<div class="nb-stamp-pill earned">✓ In your passport</div>';
+      });
     }
     closeModal('stamp');
     renderPassport();
@@ -2181,6 +2187,21 @@ function nbPhoto(r){
   if(r.photo) return r.photo.startsWith('http') ? r.photo : ASSET_BASE + r.photo;
   return `https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=800&q=80&auto=format&fit=crop`;
 }
+// Tap-to-collect from the scroll: match a feed item to a passport stamp (exact slug,
+// else nearest within 0.3 mi) and surface a collect pill. Ties the feed to the viral passport.
+function nbStampFor(lat,lng,slug){
+  const stamps=state.data.stamps?.stamps||[];
+  if(!stamps.length||lat==null) return null;
+  if(slug){ const ex=stamps.find(s=>s.slug===slug); if(ex) return ex; }
+  let best=null,bd=0.3;
+  for(const s of stamps){ const d=distanceMiles(lat,lng,s.lat,s.lng); if(d<bd){bd=d;best=s;} }
+  return best;
+}
+function nbStampPill(lat,lng,slug){
+  const s=nbStampFor(lat,lng,slug); if(!s) return '';
+  if(state.stamps.includes(s.slug)) return `<div class="nb-stamp-pill earned">✓ In your passport</div>`;
+  return `<button class="nb-stamp-pill" data-slug="${s.slug}" onclick="event.stopPropagation(); openStamp('${s.slug}')">🎫 Collect this stamp</button>`;
+}
 
 function nbBuildSequence(){
   const eats    = state.data.eats?.eats || [];
@@ -2250,6 +2271,7 @@ function nbRenderItem(it){
           <div class="nb-stat"><b>Crowd</b>${nbCrowd(b.crowd)}</div>
         </div>
         ${b.notes?`<p style="margin-top:9px;">${nbEsc(b.notes)}</p>`:""}
+        ${nbStampPill(b.lat,b.lng,b.slug)}
         <div class="nb-updated"><span class="live"></span>Updated ${nbEsc(b.updated||"just now")}</div>
       </div></div>`;
   }
@@ -2267,6 +2289,7 @@ function nbRenderItem(it){
         ${it.forYou?'<div class="nb-foryou">✨ Picked for you</div>':""}
         ${e.info?`<p>${nbEsc(e.info)}</p>`:""}
         <div class="nb-tags"><span class="nb-tag">🕒 ${nbEsc(e.time)}</span>${e.price?`<span class="nb-tag">${nbEsc(e.price)}</span>`:""}</div>
+        ${nbStampPill(e.lat,e.lng,null)}
       </div></div>`;
   }
   // food
@@ -2300,6 +2323,7 @@ function nbRenderItem(it){
         <a class="${siteBtn?'nb-btn-soft':'nb-btn-primary'}" href="${yelp}" target="_blank" rel="noopener" onclick="gtag('event','affiliate_click',{type:'yelp',item:'${nbEsc(r.name)}',location:'app_nearby'})">Reviews</a>
         ${callBtn}
       </div>
+      ${nbStampPill(r.lat,r.lng,r.id)}
     </div></div>`;
 }
 
