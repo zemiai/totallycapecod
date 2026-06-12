@@ -421,27 +421,28 @@
       "deal": null
     },
     {
-      "id": "the-friendly-fisherman",
-      "name": "The Friendly Fisherman",
+      "id": "pjs-eastham",
+      "name": "PJ's",
       "town": "Eastham",
       "lat": 41.8556,
       "lng": -69.9742,
       "cuisine": "Seafood",
       "price": "$$",
-      "rating": 4.3,
+      "rating": null,
       "tags": [
         "seafood",
         "lobster",
-        "clam"
+        "fried",
+        "ice cream"
       ],
-      "desc": "Family fish market + shack. Locals' lobster-roll pick, no line.",
-      "place_id": "ChIJXw9RwZ1o-4kRHsfUAKHMjCc",
-      "photo": "data/eats-photos/the-friendly-fisherman.jpg",
-      "reviews": 355,
-      "website": "http://www.friendlyfishermaneastham.com/",
+      "desc": "Fried seafood, lobster rolls & soft-serve — the Wellfleet favorite's new Eastham spot (former Friendly Fisherman).",
+      "place_id": "",
+      "photo": "",
+      "reviews": null,
+      "website": "",
       "open_now": null,
       "rating_source": "google",
-      "enriched_at": "2026-06-08T14:15:18Z",
+      "enriched_at": null,
       "deal": null
     },
     {

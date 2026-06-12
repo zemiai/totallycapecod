@@ -10,7 +10,7 @@
     {
       "id": "lobster_roll",
       "keywords": ["lobster", "lobster roll", "best lobster", "where lobster"],
-      "response": "**Locals' lobster roll pick:** Skip Arnold's on Route 6 (1hr wait right now). Drive 12 min to **The Friendly Fisherman in Eastham** — same family, $4 cheaper, no line. Order it cold with mayo, not hot with butter. If you're up Cape, **Sesuit Harbor Café in Dennis** is the sleeper hit — BYOB, outdoor harbor seating, $24 roll."
+      "response": "**Locals' lobster roll pick:** If Arnold's on Route 6 has an hour-long line, head to **PJ's** instead — the Wellfleet favorite now has a second spot in Eastham (it took over the old Friendly Fisherman). Solid roll, way shorter wait — order it cold with mayo, not hot with butter. Up Cape, **Sesuit Harbor Café in Dennis** is the sleeper hit — BYOB, outdoor harbor seating, $24 roll."
     },
     {
       "id": "rainy_day",
@@ -50,7 +50,7 @@
     {
       "id": "where_eat_dinner",
       "keywords": ["dinner", "eat tonight", "where eat", "restaurant tonight", "where dinner"],
-      "response": "**Dinner picks tonight by vibe:**\n\n• **Splurge:** Mac's Shack in Wellfleet — fresh oysters, raw bar, $$$\n• **Local:** The Bookstore & Restaurant in Wellfleet — locals' joint\n• **Bay views:** Sesuit Harbor Café in Dennis — BYOB outdoor harbor\n• **Quick:** Friendly Fisherman in Eastham — fish market sandwiches\n• **Romantic:** The Lobster Pot in P-Town — sunset water views\n• **Family:** Cobie's Clam Shack in Brewster — roadside classic"
+      "response": "**Dinner picks tonight by vibe:**\n\n• **Splurge:** Mac's Shack in Wellfleet — fresh oysters, raw bar, $$$\n• **Local:** The Bookstore & Restaurant in Wellfleet — locals' joint\n• **Bay views:** Sesuit Harbor Café in Dennis — BYOB outdoor harbor\n• **Quick:** PJ's in Eastham — fried seafood & lobster rolls\n• **Romantic:** The Lobster Pot in P-Town — sunset water views\n• **Family:** Cobie's Clam Shack in Brewster — roadside classic"
     },
     {
       "id": "bridge_traffic",

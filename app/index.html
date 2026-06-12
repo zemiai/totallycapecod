@@ -81,6 +81,9 @@
   @media (min-width:768px){
     body{ background:linear-gradient(135deg,#f8f3e6 0%,#e8dcc4 100%); }
     .app-shell{ max-width:400px; height:840px; min-height:840px; margin:30px auto; border-radius:44px; box-shadow:0 30px 80px rgba(30,20,14,0.35); border:12px solid #0a0a0a; overflow:hidden; }
+    /* Inside the desktop phone-frame the shell is height-capped & scrolls internally,
+       so the bar pins to the FRAME bottom (absolute), not the browser viewport. */
+    .tab-bar{ position:absolute; max-width:none; margin:0; }
     .desktop-header{ display:block!important; }
   }
   .desktop-header{ display:none; position:fixed; top:14px; left:0; right:0; text-align:center; z-index:10; color:var(--cape-brown-dark); font-size:13px; }
@@ -108,7 +111,7 @@
   .ios-content{ flex:1; overflow-y:auto; padding-bottom:100px; -webkit-overflow-scrolling:touch; }
   .ios-content::-webkit-scrollbar{ display:none; }
 
-  .tab-bar{ position:absolute; bottom:0; left:0; right:0; background:rgba(255,255,255,0.92); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border-top:1px solid var(--ios-divider); display:flex; padding:8px 4px max(8px,env(safe-area-inset-bottom)); z-index:50; overflow:hidden; transition:transform 0.25s ease; }
+  .tab-bar{ position:fixed; bottom:0; left:0; right:0; max-width:480px; margin:0 auto; background:rgba(255,255,255,0.92); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border-top:1px solid var(--ios-divider); display:flex; padding:8px 4px max(8px,env(safe-area-inset-bottom)); z-index:50; overflow:hidden; transition:transform 0.25s ease; }
   .tab-bar.tab-hidden{ transform:translateY(110%); }
   .tab-btn{ flex:1 1 0; min-width:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; color:var(--ios-sub); font-size:10px; font-weight:500; background:none; border:none; cursor:pointer; padding:4px 0; transition:color 0.15s ease; white-space:nowrap; }
   .tab-btn.active{ color:var(--cape-navy); }
@@ -1680,6 +1683,7 @@ function renderQuizStep() {
     ${_quizStep > 0 ? '<button class="quiz-back" onclick="quizBack()">← Back</button>' : ''}`;
 }
 function answerQuiz(id, v) {
+  tccEngage();
   _quizAns[id] = v;
   if (_quizStep < QUIZ_Q.length - 1) { _quizStep++; renderQuizStep(); }
   else renderQuizResults();
@@ -1772,6 +1776,7 @@ function finishQuizRender(a, beaches, loc) {
 }
 
 function openBeach(slug) {
+  tccEngage();
   const b = (state.data.beaches?.beaches || []).find(b => b.slug === slug);
   if (!b) return;
   state.pendingBeach = b;
@@ -1983,6 +1988,45 @@ function quickAi(q) {
   document.getElementById('aiInput').value = q;
   sendAi();
 }
+// Compact live-data context sent with each Concierge question so the model answers
+// specifics (temps, tides, bridge delays, today's events, real restaurants) from
+// facts instead of guessing. The server caps this at 2200 chars and instructs the
+// model to use ONLY this for time-sensitive facts.
+function buildAiContext() {
+  try {
+    const d = state.data || {}, out = [];
+    const c = d.conditions?.today;
+    if (c) {
+      const tides = (c.tides || []).map(t => `${t.type === 'high' ? 'High' : 'Low'} ${t.time}`).join(', ');
+      out.push(`CONDITIONS today: air ${c.weather?.temp_high ?? '?'}°F ${c.weather?.desc || ''}, water ${c.water_temp_f ?? '?'}°F, sunset ${c.sun?.sunset || '?'}${tides ? `; tides ${tides}` : ''}.`);
+    }
+    const b = d.bridges?.current;
+    if (b?.sagamore) out.push(`BRIDGES now: Sagamore ${b.sagamore.current_delay_min}min (${b.sagamore.current_status})${b.bourne ? `, Bourne ${b.bourne.current_delay_min}min (${b.bourne.current_status})` : ''}. ${b.sagamore.advice || ''}`.trim());
+    // Restaurants & events before the long beach list so they're never the part that gets trimmed.
+    // Sort restaurants nearest-first (when we know the user's location) so location-specific
+    // food questions are grounded in real places actually near them.
+    let eatsList = (d.eats?.eats || []).slice();
+    const loc = (typeof nbUser !== 'undefined' && nbUser && nbUser.lat) ? nbUser : null;
+    if (loc && typeof distanceMiles === 'function') {
+      eatsList.sort((a, b) => distanceMiles(loc.lat, loc.lng, a.lat, a.lng) - distanceMiles(loc.lat, loc.lng, b.lat, b.lng));
+    }
+    const eats = eatsList.slice(0, 16).map(r => `${r.name} (${r.town}${r.cuisine ? ', ' + r.cuisine : ''}${r.rating ? ', ' + r.rating + '★' : ''}${r.deal ? ', deal: ' + r.deal : ''})`).join('; ');
+    if (eats) out.push(`RESTAURANTS in app${loc ? ' (nearest you first)' : ''}: ${eats}.`);
+    const SHORT = { 'Usually has parking': 'usu. open', 'Often busy midday': 'busy midday', 'Often full midday': 'full midday', 'Spots open': 'open NOW', 'Filling up': 'filling NOW', 'Lot full': 'FULL now' };
+    const beaches = d.beaches?.beaches || [];
+    if (beaches.length) {
+      const list = beaches.slice(0, 27).map(x => {
+        const st = (typeof beachStatus === 'function') ? beachStatus(x) : { label: '' };
+        const nm = x.name.replace(/ Beach$/, '');
+        return `${nm} (${x.town})${x.water_temp ? ' ' + x.water_temp + '°F' : ''}${st.label ? ' ' + (SHORT[st.label] || st.label) : ''}`;
+      }).join('; ');
+      out.push(`BEACHES (water temp + parking; "NOW"=live report): ${list}.`);
+    }
+    const events = (d.events?.events || []).slice(0, 8).map(e => `${String(e.title || '').slice(0, 55)} (${e.town || ''}${e.time ? ', ' + e.time : ''})`).join('; ');
+    if (events) out.push(`UPCOMING EVENTS: ${events}.`);
+    return out.join('\n').slice(0, 2600);
+  } catch (e) { return ''; }
+}
 function sendAi() {
   if (!state.isPro && state.aiCount >= 1) {
     const conv = document.getElementById('aiConv');
@@ -2009,23 +2053,39 @@ function sendAi() {
   }
   if (!bestMatch) bestMatch = patterns.find(p => p.id === 'fallback');
 
-  // If a Claude API backend is configured, prefer it; fall back to static keyword match on error
+  // Charge the free-question quota only when a real answer was actually given —
+  // never for kill-switch, not-yet-configured, rate-limit, or already-limited cases.
+  const chargeQuestion = () => {
+    if (!state.isPro) {
+      state.aiCount++;
+      localStorage.setItem('tcc_ai_today', String(state.aiCount));
+      renderAi();
+    }
+  };
+
+  // If a backend is configured, prefer it; fall back to the static knowledge base on
+  // any error OR before the API key is set, so the Concierge always answers usefully.
   if (window.TCC_AI_ENDPOINT) {
     const deviceId = localStorage.getItem('tcc_did') || 'unknown';
     fetch(window.TCC_AI_ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ question: q, deviceId, isPro: state.isPro }),
+      body: JSON.stringify({ question: q, deviceId, isPro: state.isPro, context: buildAiContext() }),
     })
       .then(async r => {
         const d = await r.json().catch(() => ({}));
+        if (d.notConfigured) {
+          // Backend not set up yet — answer from the static guide for free (no charge)
+          appendAi(bestMatch ? bestMatch.response : d.response);
+          return;
+        }
         if (d.disabled) {
           // Kill switch active — show the message, don't deduct quota
           appendAi(d.response || 'The Concierge is resting — back soon!');
           return;
         }
         if (d.limited) {
-          // Server confirmed free daily limit hit — show upgrade prompt
+          // Server confirmed free daily limit hit — show upgrade prompt (no charge)
           const conv = document.getElementById('aiConv');
           conv.innerHTML += `<div class="ai-bubble-ai">⚠️ You've used your free question today. <strong onclick="switchTab('pro')" style="text-decoration:underline; cursor:pointer;">Unlock unlimited for $9.99</strong></div>`;
           conv.scrollTop = conv.scrollHeight;
@@ -2036,24 +2096,18 @@ function sendAi() {
           return;
         }
         if (d.response) {
-          appendAi(d.response);
+          appendAi(d.response); chargeQuestion();
         } else if (bestMatch) {
           // Upstream returned something unexpected — fall back silently
-          appendAi(bestMatch.response);
+          appendAi(bestMatch.response); chargeQuestion();
         }
       })
       .catch(() => {
         // Network failure — fall back to static knowledge base
-        if (bestMatch) appendAi(bestMatch.response);
+        if (bestMatch) { appendAi(bestMatch.response); chargeQuestion(); }
       });
   } else {
-    setTimeout(() => { if (bestMatch) appendAi(bestMatch.response); }, 600);
-  }
-
-  if (!state.isPro) {
-    state.aiCount++;
-    localStorage.setItem('tcc_ai_today', String(state.aiCount));
-    renderAi();
+    setTimeout(() => { if (bestMatch) { appendAi(bestMatch.response); chargeQuestion(); } }, 600);
   }
 }
 function appendAi(text) {
@@ -2369,6 +2423,7 @@ function stopLighthouseAudio() {
 
 // ============ TAB SWITCHING ============
 function switchTab(tab) {
+  tccEngage();
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   const screen = document.getElementById('screen-' + tab);
@@ -2628,7 +2683,7 @@ function nbRenderItem(it){
     <div class="nb-photo" style="${cov.style}">${cov.icon}<span class="nb-dist">${nbMiLabel(it.mi)}</span>${r.price?`<span class="nb-price">${nbEsc(r.price)}</span>`:""}${openBadge}</div>
     <div class="nb-head">
       <div class="nb-avatar food">🍴</div>
-      <div class="main"><div class="name">${nbEsc(r.name)}</div><div class="sub">${nbEsc(r.town)} · ${nbEsc(r.cuisine)} · ⭐ ${r.rating}${reviews}</div></div>
+      <div class="main"><div class="name">${nbEsc(r.name)}</div><div class="sub">${nbEsc(r.town)} · ${nbEsc(r.cuisine)}${r.rating!=null?` · ⭐ ${r.rating}${reviews}`:''}</div></div>
       <div class="nb-kind food">Eat</div></div>
     <div class="nb-body">
       ${it.forYou?'<div class="nb-foryou">✨ Picked for you</div>':""}
@@ -2672,7 +2727,10 @@ function nbStart(){
   if(!nbSeq.length){ feed.innerHTML='<div class="empty-state" style="padding:40px 20px;">Local spots and events are loading — check back in a moment.</div>'; return; }
   nbRenderPage(); nbRenderPage();
   if(nbIo) nbIo.disconnect();
-  nbIo = new IntersectionObserver(es=>{ if(es[0].isIntersecting) nbRenderPage(); }, {root:document.getElementById('iosContent'), rootMargin:"600px"});
+  // Desktop phone-frame scrolls #iosContent; mobile scrolls the window. The observer
+  // root must match the actual scroller or the sentinel never re-fires (feed stops).
+  const framed = window.matchMedia('(min-width:768px)').matches;
+  nbIo = new IntersectionObserver(es=>{ if(es[0].isIntersecting) nbRenderPage(); }, {root: framed ? document.getElementById('iosContent') : null, rootMargin:"600px"});
   nbIo.observe(document.getElementById('nbSentinel'));
 }
 
@@ -2838,15 +2896,30 @@ async function restorePurchase() {
   }
 }
 
-// ── Email Banner ──
-document.addEventListener('DOMContentLoaded', () => {
-  if (!localStorage.getItem('tcc_email_captured') && !localStorage.getItem('tcc_email_banner_dismissed')) {
-    setTimeout(() => {
-      const banner = document.getElementById('emailBanner');
-      if (banner) banner.style.display = 'block';
-    }, 3000);
-  }
-});
+// ── First-run: value before asks ──
+// Don't fire the email or install prompts until the visitor has actually engaged
+// (2 meaningful interactions), so the first thing a newcomer sees is live Cape data,
+// not a wall of asks. Returning visitors (who've already gotten value) are prompted
+// promptly from init(). tccEngage() is called from switchTab / openBeach / the quiz
+// and a one-time feed-scroll listener.
+let _engageCount = 0, _engaged = false;
+function tccEngage() {
+  if (_engaged) return;
+  if (++_engageCount >= 2) { _engaged = true; afterEngaged(); }
+}
+function afterEngaged() {
+  maybeShowEmailBanner();
+  checkInstall();
+}
+function maybeShowEmailBanner() {
+  if (localStorage.getItem('tcc_email_captured') || localStorage.getItem('tcc_email_banner_dismissed')) return;
+  const banner = document.getElementById('emailBanner');
+  if (banner) banner.style.display = 'block';
+}
+// One-time: count a deep feed scroll as engagement (newcomers who just scroll Nearby).
+window.addEventListener('scroll', function _eng() {
+  if (tccScrollTop() > 500) { window.removeEventListener('scroll', _eng); tccEngage(); }
+}, { passive: true });
 
 function dismissEmailBanner() {
   document.getElementById('emailBanner').style.display = 'none';
@@ -2968,6 +3041,9 @@ async function enableCapePush() {
 }
 
 function checkInstall() {
+  // Value before asks: hold the install banner until the visitor has engaged.
+  // (beforeinstallprompt still stashes the prompt; afterEngaged() re-runs this.)
+  if (!_engaged) return;
   const ua = navigator.userAgent;
   // iPadOS 13+ Safari reports a "Macintosh" UA — detect it via touch support so iPads
   // get the iOS (Share → Add to Home Screen) flow instead of nothing.
@@ -3031,9 +3107,14 @@ async function init() {
   // If the visitor is already sitting on the Nearby feed when data finishes loading
   // (slow connection), build it now instead of leaving a stuck "loading…" state.
   if (!nbBuilt && document.getElementById('screen-nearby')?.classList.contains('active')) renderNearby();
-  checkInstall();
   // TASK9 Lever 3: Show first-run onboarding intro to new visitors
   checkFirstRun();
+  // Value before asks: returning visitors (already saw onboarding = already got value)
+  // are eligible for prompts promptly; brand-new visitors must engage first.
+  if (localStorage.getItem('tcc_seen_intro') === 'true') {
+    _engaged = true;
+    setTimeout(afterEngaged, 2500);
+  }
   // Pre-warm voices for TTS
   if ('speechSynthesis' in window) speechSynthesis.getVoices();
 }

@@ -2,6 +2,11 @@
 # This makes the first-touch experience the live tide/beach data, not marketing.
 /                  /app/index.html    200!
 
+# Shareable marketing front door (ads, social bios, partner links). The app stays
+# the homepage; this gives the pitch-first page its own public URL.
+/welcome           /index.html        200
+/welcome/          /index.html        200
+
 # Keep /app and /app/ working too — for anyone who bookmarked or shared the old URL.
 /app               /app/index.html    200!
 /app/              /app/index.html    200!
