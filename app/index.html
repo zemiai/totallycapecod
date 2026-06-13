@@ -162,7 +162,15 @@
   .ai-bubble-user{ background:var(--cape-navy); color:white; align-self:flex-end; max-width:85%; padding:9px 14px; border-radius:18px 18px 4px 18px; font-size:14px; line-height:1.4; word-wrap:break-word; }
   .ai-bubble-ai{ background:white; color:var(--ios-text); align-self:flex-start; max-width:90%; padding:12px 14px; border-radius:18px 18px 18px 4px; font-size:14px; line-height:1.5; box-shadow:0 1px 3px rgba(0,0,0,0.05); word-wrap:break-word; white-space:pre-wrap; }
   .ai-bubble-ai strong{ color:var(--cape-navy); }
-  .ai-input{ position:sticky; bottom:0; background:white; padding:10px 14px; border-top:1px solid var(--ios-divider); display:flex; gap:8px; }
+  /* Mobile: the Concierge flows in the normal document (the window scrolls), so it
+     can't jitter/resize like the old height:100% + internal-scroll pane did. */
+  .ai-input{ background:white; padding:10px 14px; border-top:1px solid var(--ios-divider); display:flex; gap:8px; }
+  /* Desktop phone-frame: restore the fixed chat pane (header + scrolling log + pinned input). */
+  @media (min-width:768px){
+    #screen-ai.active{ display:flex; flex-direction:column; height:100%; }
+    #aiConv{ flex:1; overflow-y:auto; }
+    .ai-input{ position:sticky; bottom:0; }
+  }
   .ai-input input{ flex:1; border:1px solid var(--ios-divider); border-radius:20px; padding:8px 14px; font-size:14px; outline:none; }
   .ai-input button{ background:var(--cape-navy); color:white; border:none; border-radius:20px; padding:8px 16px; font-weight:600; font-size:14px; cursor:pointer; }
 
@@ -572,7 +580,7 @@
     </div>
 
     <!-- ===== AI ===== -->
-    <div class="screen" id="screen-ai" style="display:none; flex-direction:column; height:100%;">
+    <div class="screen" id="screen-ai" style="display:none;">
       <div class="ios-large-title">Concierge</div>
       <div class="ios-subhead">Your Cape Cod local guide · <strong style="color:var(--status-mid);" id="aiQuestionsLeft">1 free/day</strong></div>
       <div class="filter-chips">
@@ -582,7 +590,7 @@
         <div class="chip" onclick="quickAi('sunset tonight')">Sunset</div>
         <div class="chip" onclick="quickAi('live music tonight')">Music</div>
       </div>
-      <div class="ai-conv" id="aiConv" style="flex:1; overflow-y:auto;">
+      <div class="ai-conv" id="aiConv">
         <div class="ai-bubble-ai">👋 Hi! I'm your Cape Cod local guide. Ask me anything about today on the Cape.</div>
       </div>
       <div class="ai-input">
@@ -2113,7 +2121,8 @@ function sendAi() {
 function appendAi(text) {
   const conv = document.getElementById('aiConv');
   conv.innerHTML += `<div class="ai-bubble-ai">${fmtMarkdown(text)}</div>`;
-  conv.scrollTop = conv.scrollHeight;
+  conv.scrollTop = conv.scrollHeight;                       // desktop: the conv is the scroller
+  conv.lastElementChild?.scrollIntoView({ block: 'nearest' }); // mobile: the window scrolls
 }
 
 // ============ RENDER: BRIDGES ============
@@ -2428,8 +2437,8 @@ function switchTab(tab) {
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   const screen = document.getElementById('screen-' + tab);
   if (screen) {
-    if (tab === 'ai') { screen.style.display = 'flex'; }
-    else { screen.style.display = ''; }
+    // Let CSS decide layout: block on mobile (natural scroll), flex pane on desktop.
+    screen.style.display = '';
     screen.classList.add('active');
   }
   const btn = document.querySelector(`.tab-btn[data-tab="${tab}"]`);
