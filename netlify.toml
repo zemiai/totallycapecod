@@ -14,6 +14,14 @@
   # Exit 0 = skip build. Exit non-zero = run build.
   ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- . ':(exclude)data/'"
 
+[build.environment]
+  # These env vars are NON-SECRET config, not credentials. Their values legitimately
+  # appear in code (e.g. the provider name "gemini", the boolean "true", the PUBLIC
+  # VAPID key, the mailto subject), which trips Netlify's secret scanner. Exclude
+  # them from scanning. The real secrets (VAPID_PRIVATE_KEY, PUSH_SEND_SECRET,
+  # GEMINI_API_KEY, GH_DISPATCH_TOKEN, STRIPE_SECRET_KEY, RESEND_API_KEY) stay scanned.
+  SECRETS_SCAN_OMIT_KEYS = "LLM_PROVIDER,CONCIERGE_ENABLED,VAPID_PUBLIC_KEY,VAPID_SUBJECT"
+
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
