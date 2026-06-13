@@ -785,8 +785,12 @@
         <span>Collect stamps at beaches, lighthouses, and landmarks. Built by locals for your whole Cape summer.</span>
       </div>
     </div>
-    <button onclick="dismissIntro(true)" style="width:100%; background:var(--cape-navy); color:white; border:none; padding:15px; border-radius:14px; font-weight:800; font-size:15px; margin-top:18px; cursor:pointer; font-family:inherit;">Take the quick tour →</button>
-    <button onclick="dismissIntro(false)" style="width:100%; background:transparent; color:var(--ios-sub); border:none; padding:10px; font-size:12px; cursor:pointer;">Skip</button>
+    <div style="text-align:center; font-weight:800; font-size:14px; color:var(--cape-navy); margin-top:18px;">First — are you visiting or a local?</div>
+    <div style="display:flex; gap:10px; margin-top:10px;">
+      <button onclick="chooseVisitorType('visitor')" style="flex:1; background:var(--cape-navy); color:white; border:none; padding:14px 10px; border-radius:14px; font-weight:800; font-size:14px; cursor:pointer; font-family:inherit;">🏖️ I'm visiting</button>
+      <button onclick="chooseVisitorType('local')" style="flex:1; background:#1F9D63; color:white; border:none; padding:14px 10px; border-radius:14px; font-weight:800; font-size:14px; cursor:pointer; font-family:inherit;">🏡 I live here</button>
+    </div>
+    <button onclick="dismissIntro(false)" style="width:100%; background:transparent; color:var(--ios-sub); border:none; padding:10px; font-size:12px; cursor:pointer; margin-top:6px;">Skip</button>
   </div>
 </div>
 
@@ -2075,6 +2079,9 @@ function quickAi(q) {
 function buildAiContext() {
   try {
     const d = state.data || {}, out = [];
+    const vt = localStorage.getItem('tcc_visitor_type');
+    if (vt === 'local') out.push("USER PROFILE: a Cape Cod local — skip the obvious tourist spots; favor less-crowded local picks, off-season notes, and practical specifics.");
+    else if (vt === 'visitor') out.push("USER PROFILE: visiting the Cape — orient them, highlight the iconic must-dos, and call out parking/timing they wouldn't know.");
     const c = d.conditions?.today;
     if (c) {
       const tides = (c.tides || []).map(t => `${t.type === 'high' ? 'High' : 'Low'} ${t.time}`).join(', ');
@@ -3061,6 +3068,14 @@ function checkFirstRun() {
     setTimeout(() => openModal('intro'), 350);
   }
 }
+// Onboarding segmentation — capture visiting vs local once, up front. Drives the
+// Concierge's tone now and becomes a targeting axis (push, Pro, ads) later.
+function chooseVisitorType(type) {
+  localStorage.setItem('tcc_visitor_type', type);   // 'visitor' | 'local'
+  if (window.gtag) gtag('event', 'visitor_type_set', { type });
+  dismissIntro(true);   // proceed into the quick tour
+}
+
 function dismissIntro(startTourAfter) {
   closeModal('intro');
   localStorage.setItem('tcc_seen_intro', 'true');
