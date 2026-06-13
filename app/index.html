@@ -74,6 +74,10 @@
   }
   *{ -webkit-tap-highlight-color:transparent; box-sizing:border-box; }
   html,body{ margin:0; padding:0; min-height:100vh; background:var(--ios-bg); overscroll-behavior:none; }
+  /* Single-column app: never allow horizontal page scroll/jitter. On body only so it
+     propagates to the viewport without making body a scroll container (which would
+     break window.scrollY used by the tab-bar auto-hide + pull-to-refresh). */
+  body{ overflow-x:hidden; }
   body{ font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; color:var(--ios-text); padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
   .font-display{ font-family:'Fraunces',serif; }
 
