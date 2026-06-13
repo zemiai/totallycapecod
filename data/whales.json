@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-13T21:44:52Z",
+  "updated_at": "2026-06-13T23:03:47Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -12,7 +12,7 @@
       "location": "Canal Service Rd, Buzzards Bay, MA, US",
       "reported_by": "iNaturalist \u00b7 ecoastaldesign",
       "reported_at": "2026-06-13T13:48:30Z",
-      "time_ago": "7 h ago",
+      "time_ago": "9 h ago",
       "photo_url": "",
       "notes": "Atlantic Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/371351122"
@@ -26,7 +26,7 @@
       "location": "Chatham, MA, US",
       "reported_by": "iNaturalist \u00b7 saanvit",
       "reported_at": "2026-06-13T13:29:39Z",
-      "time_ago": "8 h ago",
+      "time_ago": "9 h ago",
       "photo_url": "",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/371263324"
