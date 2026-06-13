@@ -181,6 +181,12 @@
   }
   .ai-input input{ flex:1; border:1px solid var(--ios-divider); border-radius:20px; padding:8px 14px; font-size:14px; outline:none; }
   .ai-input button{ background:var(--cape-navy); color:white; border:none; border-radius:20px; padding:8px 16px; font-weight:600; font-size:14px; cursor:pointer; }
+  /* Concierge empty-state starters (fill the space + invite the first question) */
+  .ai-starters{ display:flex; flex-direction:column; gap:8px; margin-top:4px; }
+  .ai-starters-label{ font-size:11px; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; color:var(--ios-sub); margin:8px 2px 0; }
+  .ai-starter{ display:flex; align-items:center; gap:10px; width:100%; text-align:left; background:#fff; border:1px solid var(--ios-divider); border-radius:14px; padding:13px 14px; font-size:14px; font-weight:600; color:var(--ios-text); cursor:pointer; font-family:inherit; box-shadow:0 1px 3px rgba(0,0,0,0.04); }
+  .ai-starter span{ font-size:18px; flex:none; }
+  .ai-starter:active{ background:var(--ios-bg); }
 
   .screen{ display:none; }
   .screen.active{ display:block; animation:fadeIn 0.2s ease; }
@@ -616,6 +622,13 @@
       </div>
       <div class="ai-conv" id="aiConv">
         <div class="ai-bubble-ai">👋 Hi! I'm your Cape Cod local guide. Ask me anything about today on the Cape.</div>
+        <div id="aiStarters" class="ai-starters">
+          <div class="ai-starters-label">Popular right now</div>
+          <button class="ai-starter" onclick="quickAi('What is the best beach today?')"><span>🏖️</span> What's the best beach today?</button>
+          <button class="ai-starter" onclick="quickAi('Where is the best lobster roll near me?')"><span>🦞</span> Best lobster roll near me?</button>
+          <button class="ai-starter" onclick="quickAi('What is happening on the Cape tonight?')"><span>🎶</span> What's happening tonight?</button>
+          <button class="ai-starter" onclick="quickAi('Rainy day with kids — what should we do?')"><span>☔</span> Rainy day with kids?</button>
+        </div>
       </div>
       <div class="ai-input">
         <input type="text" id="aiInput" placeholder="Ask anything..." onkeypress="if(event.key==='Enter') sendAi()" />
@@ -687,7 +700,7 @@
         </div>
         <div style="padding:20px 20px 14px;">
           <!-- Lead with highest-value outcomes first -->
-          <div class="benefit-row"><span class="icon">🏖️</span><div><strong>All 28 beaches — live parking &amp; water temp</strong><div style="font-size:12px; color:var(--ios-sub); margin-top:1px;">Never drive to a full lot again</div></div></div>
+          <div class="benefit-row"><span class="icon">🏖️</span><div><strong>All 27 beaches — live parking &amp; water temp</strong><div style="font-size:12px; color:var(--ios-sub); margin-top:1px;">Never drive to a full lot again</div></div></div>
           <div class="benefit-row"><span class="icon">🌉</span><div><strong>7-day bridge traffic predictor</strong><div style="font-size:12px; color:var(--ios-sub); margin-top:1px;">Know the best time to cross — days ahead</div></div></div>
           <div class="benefit-row"><span class="icon">⚡</span><div><strong>Unlimited events — music, food, art &amp; more</strong><div style="font-size:12px; color:var(--ios-sub); margin-top:1px;">Filter by category · nothing hidden</div></div></div>
           <div class="benefit-row"><span class="icon">🎫</span><div><strong>All 100 passport stamps + milestone badges</strong><div style="font-size:12px; color:var(--ios-sub); margin-top:1px;">The full Cape summer challenge</div></div></div>
@@ -718,7 +731,7 @@
         </div>
         <div class="ios-section-title" style="padding-left:0;"><span>Your perks</span></div>
         <div style="background:white; border-radius:14px; padding:16px; box-shadow:0 1px 3px rgba(0,0,0,0.04);">
-          <div style="padding:5px 0;">✅ All 28 beaches live</div>
+          <div style="padding:5px 0;">✅ All 27 beaches live</div>
           <div style="padding:5px 0;">✅ Unlimited Today events</div>
           <div style="padding:5px 0;">✅ All 100 stamps + badges</div>
           <div style="padding:5px 0;">✅ Unlimited AI</div>
@@ -2091,6 +2104,7 @@ function sendAi() {
   const q = input.value.trim();
   if (!q) return;
   input.value = '';
+  document.getElementById('aiStarters')?.remove();   // clear the empty-state suggestions
   const conv = document.getElementById('aiConv');
   conv.innerHTML += `<div class="ai-bubble-user">${q}</div>`;
   conv.scrollTop = conv.scrollHeight;
