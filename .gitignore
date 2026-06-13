@@ -5,3 +5,7 @@ node_modules/
 .netlify/
 .claude/worktrees/
 scripts/dev/.cache/
+# Secrets — never commit. Upload to Netlify env vars instead.
+.env
+.env.*
+*.env
