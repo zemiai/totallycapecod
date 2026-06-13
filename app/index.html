@@ -281,6 +281,22 @@
   .quiz-why span{ background:#E7F5EE; color:#0E7A6B; font-size:11px; font-weight:700; padding:4px 9px; border-radius:999px; }
   .quiz-result-btns{ display:flex; gap:8px; margin-top:10px; }
   .quiz-result-btns button{ flex:1; border:none; border-radius:10px; padding:10px; font-weight:700; font-size:13px; cursor:pointer; font-family:inherit; }
+  /* Coach-mark guided tour */
+  #tourOverlay{ position:fixed; inset:0; z-index:310; display:none; }
+  #tourOverlay.show{ display:block; }
+  #tourSpot{ position:absolute; border-radius:16px; box-shadow:0 0 0 9999px rgba(10,16,30,0.74); transition:left .3s, top .3s, width .3s, height .3s; pointer-events:none; }
+  #tourArrow{ position:absolute; width:0; height:0; border-left:10px solid transparent; border-right:10px solid transparent; border-top:12px solid #fff; transform:translateX(-50%); filter:drop-shadow(0 4px 3px rgba(0,0,0,0.15)); }
+  #tourTip{ position:absolute; left:16px; right:16px; max-width:440px; margin:0 auto; background:#fff; border-radius:18px; padding:16px 16px 12px; box-shadow:0 14px 44px rgba(0,0,0,0.35); pointer-events:auto; }
+  .tour-tip-row{ display:flex; gap:12px; align-items:flex-start; }
+  .tour-mascot{ font-size:30px; line-height:1; flex:none; }
+  .tour-tip-title{ font-family:'Fraunces',serif; font-weight:900; font-size:17px; color:var(--cape-navy); }
+  .tour-tip-text{ font-size:13.5px; color:var(--ios-text); line-height:1.45; margin-top:3px; }
+  .tour-tip-foot{ display:flex; align-items:center; justify-content:space-between; margin-top:14px; }
+  .tour-skip{ background:none; border:none; color:var(--ios-sub); font-size:13px; font-weight:600; cursor:pointer; font-family:inherit; }
+  .tour-next{ background:var(--cape-navy); color:#fff; border:none; border-radius:11px; padding:9px 18px; font-weight:700; font-size:14px; cursor:pointer; font-family:inherit; }
+  .tour-dots{ display:flex; gap:5px; }
+  .tour-dots span{ width:6px; height:6px; border-radius:50%; background:var(--ios-divider); }
+  .tour-dots span.on{ background:var(--cape-coral); width:16px; border-radius:3px; transition:width .2s; }
   .bridge-delay{ font-family:'Fraunces',serif; font-weight:900; font-size:28px; }
   .bridge-delay.light{ color:var(--status-open); }
   .bridge-delay.moderate{ color:var(--status-mid); }
@@ -752,8 +768,28 @@
         <span>Collect stamps at beaches, lighthouses, and landmarks. Built by locals for your whole Cape summer.</span>
       </div>
     </div>
-    <button onclick="dismissIntro()" style="width:100%; background:var(--cape-navy); color:white; border:none; padding:15px; border-radius:14px; font-weight:800; font-size:15px; margin-top:18px; cursor:pointer; font-family:inherit;">Explore the Cape →</button>
-    <button onclick="dismissIntro()" style="width:100%; background:transparent; color:var(--ios-sub); border:none; padding:10px; font-size:12px; cursor:pointer;">Skip intro</button>
+    <button onclick="dismissIntro(true)" style="width:100%; background:var(--cape-navy); color:white; border:none; padding:15px; border-radius:14px; font-weight:800; font-size:15px; margin-top:18px; cursor:pointer; font-family:inherit;">Take the quick tour →</button>
+    <button onclick="dismissIntro(false)" style="width:100%; background:transparent; color:var(--ios-sub); border:none; padding:10px; font-size:12px; cursor:pointer;">Skip</button>
+  </div>
+</div>
+
+<!-- Coach-mark guided tour (spotlight + tooltip, like the Think Dirty walkthrough) -->
+<div id="tourOverlay">
+  <div id="tourSpot"></div>
+  <div id="tourArrow"></div>
+  <div id="tourTip">
+    <div class="tour-tip-row">
+      <span class="tour-mascot">🦞</span>
+      <div style="flex:1; min-width:0;">
+        <div class="tour-tip-title" id="tourTitle"></div>
+        <div class="tour-tip-text" id="tourText"></div>
+      </div>
+    </div>
+    <div class="tour-tip-foot">
+      <button class="tour-skip" onclick="endTour()">Skip</button>
+      <div class="tour-dots" id="tourDots"></div>
+      <button class="tour-next" id="tourNext" onclick="tourNext()">Next →</button>
+    </div>
   </div>
 </div>
 
@@ -883,6 +919,7 @@
     <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('whales')"><span style="font-size:24px;">🐋</span><div style="flex:1;"><div class="item-title">Whale Spotter</div><div class="item-sub">Live sightings</div></div></div>
     <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('lighthouses')"><span style="font-size:24px;">💡</span><div style="flex:1;"><div class="item-title">Lighthouse Audio Tours</div><div class="item-sub">12 self-guided tours</div></div></div>
     <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('pro')"><span style="font-size:24px;">👑</span><div style="flex:1;"><div class="item-title">Cape Cod Pro</div><div class="item-sub" id="moreMenuProStatus">$9.99 lifetime</div></div></div>
+    <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); replayTour()"><span style="font-size:24px;">🧭</span><div style="flex:1;"><div class="item-title">Quick tour</div><div class="item-sub">How the app works</div></div></div>
     <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); window.open('/','_blank')"><span style="font-size:24px;">🌐</span><div style="flex:1;"><div class="item-title">Totally Cape Cod Website</div><div class="item-sub">Guides, directories & more</div></div></div>
     <button onclick="closeModal('moreMenu')" style="width:100%; background:transparent; color:var(--cape-navy); border:none; padding:14px; font-weight:600; font-size:15px; margin-top:6px;">Close</button>
   </div>
@@ -2968,15 +3005,80 @@ function checkFirstRun() {
     setTimeout(() => openModal('intro'), 350);
   }
 }
-function dismissIntro() {
+function dismissIntro(startTourAfter) {
   closeModal('intro');
   localStorage.setItem('tcc_seen_intro', 'true');
   if (window.gtag) gtag('event', 'intro_dismissed', { session_type: _isFirstSession ? 'first' : 'return' });
-  // Onboarding done — now locate them for the Nearby feed (deferred to avoid a double prompt).
-  if (!state.userLoc && !(AVATAR && AVATAR.base) && document.getElementById('screen-nearby')?.classList.contains('active')) {
-    nbBuilt = false; renderNearby();
+  if (startTourAfter) {
+    setTimeout(startTour, 280);   // let the modal finish closing first
+  } else {
+    localStorage.setItem('tcc_tour_done', 'true');   // skipped intro = skip the tour too
+    // Onboarding done — locate them for the Nearby feed (deferred to avoid a double prompt).
+    if (!state.userLoc && !(AVATAR && AVATAR.base) && document.getElementById('screen-nearby')?.classList.contains('active')) {
+      nbBuilt = false; renderNearby();
+    }
   }
 }
+
+// ── Coach-mark guided tour (spotlight the bottom tabs, one tip at a time) ──
+let _tourIdx = 0;
+const TOUR_STEPS = [
+  { tab: 'nearby',  title: '📍 Nearby',      text: 'Your live feed — beaches, eats and events near you right now, closest first. Just scroll.' },
+  { tab: 'today',   title: '⚡ Today',       text: "Your daily Cape briefing: nearest beaches, live bridge delays, tonight's specials and tides." },
+  { tab: 'beaches', title: '🏖️ Beaches',     text: 'Live water temps, real-time parking, and a 30-second quiz that finds your perfect beach.' },
+  { tab: 'ai',      title: '✨ Ask a Local', text: 'Your Cape Cod guide — ask anything: best beach today, lobster rolls, sunset spots.' },
+];
+function replayTour() {            // from the More menu — let anyone re-watch it
+  localStorage.removeItem('tcc_tour_done');
+  setTimeout(startTour, 200);
+}
+function startTour() {
+  if (localStorage.getItem('tcc_tour_done')) return;
+  _tourIdx = 0;
+  document.querySelector('.tab-bar')?.classList.remove('tab-hidden'); // make sure tabs are visible
+  document.getElementById('tourOverlay').classList.add('show');
+  renderTourStep();
+  if (window.gtag) gtag('event', 'tour_start');
+}
+function renderTourStep() {
+  const step = TOUR_STEPS[_tourIdx];
+  const target = document.querySelector(`.tab-btn[data-tab="${step.tab}"]`);
+  if (!target) return endTour();
+  document.getElementById('tourTitle').textContent = step.title;
+  document.getElementById('tourText').textContent = step.text;
+  document.getElementById('tourDots').innerHTML = TOUR_STEPS.map((_, i) => `<span class="${i === _tourIdx ? 'on' : ''}"></span>`).join('');
+  document.getElementById('tourNext').textContent = _tourIdx === TOUR_STEPS.length - 1 ? 'Got it 🦞' : 'Next →';
+  positionTour(target);
+}
+function positionTour(target) {
+  const r = target.getBoundingClientRect(), pad = 6;
+  const spot = document.getElementById('tourSpot');
+  spot.style.left = (r.left - pad) + 'px'; spot.style.top = (r.top - pad) + 'px';
+  spot.style.width = (r.width + pad * 2) + 'px'; spot.style.height = (r.height + pad * 2) + 'px';
+  const tip = document.getElementById('tourTip');
+  tip.style.top = 'auto';
+  tip.style.bottom = (window.innerHeight - r.top + 16) + 'px';
+  // Arrow points down from the tip to the highlighted tab (reading rect forces layout).
+  const tr = tip.getBoundingClientRect();
+  const arrow = document.getElementById('tourArrow');
+  arrow.style.left = (r.left + r.width / 2) + 'px';
+  arrow.style.top = (tr.bottom - 1) + 'px';
+}
+function tourNext() {
+  if (_tourIdx < TOUR_STEPS.length - 1) { _tourIdx++; renderTourStep(); }
+  else endTour();
+}
+function endTour() {
+  document.getElementById('tourOverlay').classList.remove('show');
+  localStorage.setItem('tcc_tour_done', 'true');
+  if (window.gtag) gtag('event', 'tour_done', { step: _tourIdx });
+}
+window.addEventListener('resize', () => {
+  if (document.getElementById('tourOverlay')?.classList.contains('show')) {
+    const t = document.querySelector(`.tab-btn[data-tab="${TOUR_STEPS[_tourIdx].tab}"]`);
+    if (t) positionTour(t);
+  }
+}, { passive: true });
 
 // ── INSTALL ──
 let _deferredInstallPrompt = null;
