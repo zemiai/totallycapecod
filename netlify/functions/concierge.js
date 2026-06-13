@@ -166,7 +166,7 @@ async function callModel(cleanQuestion, context) {
   if (provider === 'gemini') {
     baseUrl = process.env.LLM_BASE_URL || 'https://generativelanguage.googleapis.com/v1beta/openai';
     apiKey = process.env.GEMINI_API_KEY || process.env.LLM_API_KEY;
-    model = process.env.LLM_MODEL || 'gemini-2.0-flash';
+    model = process.env.LLM_MODEL || 'gemini-2.5-flash';  // gemini-2.0-flash was shut down 2026-06-01
   } else {
     baseUrl = process.env.LLM_BASE_URL;
     apiKey = process.env.LLM_API_KEY;
