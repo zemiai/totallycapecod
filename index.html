@@ -35,6 +35,15 @@
   /* Homepage-specific pastel styles */
   .hero-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
+  /* Outcome-first value band — what the app DOES for you, one dominant CTA */
+  .outcomes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin-top: 8px; }
+  .outcome { display: flex; gap: 13px; align-items: flex-start; background: white; border: 1px solid var(--divider); border-radius: var(--radius-md); padding: 18px; box-shadow: var(--shadow-sm); }
+  .outcome .ic { font-size: 28px; line-height: 1; flex: none; }
+  .outcome strong { display: block; font-family: 'Fraunces', serif; font-weight: 700; font-size: 16px; color: var(--warm-brown); }
+  .outcome p { margin: 4px 0 0; font-size: 13px; color: var(--text-secondary); line-height: 1.45; }
+  .btn-lg { font-size: 17px; padding: 16px 34px; }
+  .cta-reassure { font-size: 13px; color: var(--text-secondary); margin-top: 10px; }
+
   .directory-preview {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -259,9 +268,33 @@
     <h1 class="hero-title">Never waste a day on <span class="script">Cape Cod</span></h1>
     <p class="hero-subtitle">Live beach parking, bridge delays, water temps and tonight's specials — updated every few minutes. Know before you drive.</p>
     <div class="hero-buttons">
-      <a href="/app/" class="btn btn-primary" onclick="gtag('event','click',{event_category:'hero',event_label:'open_app'})">Open the Live App →</a>
+      <a href="/app/" class="btn btn-primary btn-lg" onclick="gtag('event','click',{event_category:'hero',event_label:'open_app'})">Open the Free App →</a>
       <a href="/beaches.html" class="btn btn-ghost" onclick="gtag('event','click',{event_category:'hero',event_label:'explore_beaches'})">Explore Beaches 🏝️</a>
     </div>
+    <div class="cta-reassure">Free · No app store needed · Works on any phone</div>
+  </div>
+</section>
+
+<div class="wave-divider"></div>
+
+<!-- Outcome-first value band: understand the value in 5 seconds, then one clear action -->
+<section class="section page-wrap" style="padding-top: 16px;">
+  <div class="section-header">
+    <div class="section-label">Your local friend on Cape Cod</div>
+    <h2 class="section-title">Everything you need for the perfect Cape day</h2>
+    <p class="section-subtitle">One free app. Real-time. Built by locals.</p>
+  </div>
+  <div class="outcomes-grid">
+    <div class="outcome"><span class="ic">🏖️</span><div><strong>Find open beach parking</strong><p>See which lots have spots before you drive — never circle for an hour.</p></div></div>
+    <div class="outcome"><span class="ic">🌉</span><div><strong>Beat the bridge</strong><p>Live Sagamore &amp; Bourne delays, so you cross at the right time.</p></div></div>
+    <div class="outcome"><span class="ic">🦞</span><div><strong>Find tonight's dinner</strong><p>What's open near you right now — lobster rolls, shacks &amp; specials.</p></div></div>
+    <div class="outcome"><span class="ic">👧</span><div><strong>Keep the kids busy</strong><p>Today's events, tide-pool beaches &amp; a 100-stamp summer passport.</p></div></div>
+    <div class="outcome"><span class="ic">💬</span><div><strong>Ask a local anything</strong><p>An AI Cape guide that answers from live, on-the-ground conditions.</p></div></div>
+    <div class="outcome"><span class="ic">☀️</span><div><strong>Never waste a vacation day</strong><p>Real-time water temps, weather &amp; conditions across the whole Cape.</p></div></div>
+  </div>
+  <div style="text-align:center; margin-top:30px;">
+    <a href="/app/" class="btn btn-primary btn-lg" onclick="gtag('event','click',{event_category:'outcomes',event_label:'open_app'})">Open the Free App →</a>
+    <div class="cta-reassure">Free · No app store needed · Works on any phone</div>
   </div>
 </section>
 
@@ -271,8 +304,8 @@
 <section class="section page-wrap" style="padding-top: 20px;">
   <div class="section-header">
     <div class="section-label">Explore</div>
-    <h2 class="section-title">What's your vibe today?</h2>
-    <p class="section-subtitle">Pick a category and find your next favorite spot on the Cape.</p>
+    <h2 class="section-title">Or dive into a guide</h2>
+    <p class="section-subtitle">Prefer to browse first? Pick a category and find your next favorite spot.</p>
   </div>
 
   <div class="directory-preview">
@@ -281,7 +314,7 @@
       <div class="overlay"></div>
       <div class="content">
         <h3>Beaches</h3>
-        <p>28 mapped with live conditions</p>
+        <p>27 mapped with live conditions</p>
       </div>
     </a>
     <a href="/eats.html" class="directory-tile" onclick="gtag('event','click',{event_category:'directory',event_label:'eats'})">
