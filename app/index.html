@@ -78,6 +78,10 @@
      propagates to the viewport without making body a scroll container (which would
      break window.scrollY used by the tab-bar auto-hide + pull-to-refresh). */
   body{ overflow-x:hidden; }
+  /* iOS/WebKit auto-zooms the whole page when a focused field is <16px, and the
+     zoomed page then pans around ("dancing") and persists across navigation.
+     Forcing every form field to 16px stops the auto-zoom at the source. */
+  input, select, textarea { font-size: 16px !important; }
   body{ font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif; color:var(--ios-text); padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
   .font-display{ font-family:'Fraunces',serif; }
 
