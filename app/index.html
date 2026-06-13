@@ -937,8 +937,22 @@
     <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('lighthouses')"><span style="font-size:24px;">💡</span><div style="flex:1;"><div class="item-title">Lighthouse Audio Tours</div><div class="item-sub">12 self-guided tours</div></div></div>
     <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('pro')"><span style="font-size:24px;">👑</span><div style="flex:1;"><div class="item-title">Cape Cod Pro</div><div class="item-sub" id="moreMenuProStatus">$9.99 lifetime</div></div></div>
     <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); replayTour()"><span style="font-size:24px;">🧭</span><div style="flex:1;"><div class="item-title">Quick tour</div><div class="item-sub">How the app works</div></div></div>
+    <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); openModal('feedback')"><span style="font-size:24px;">💬</span><div style="flex:1;"><div class="item-title">What's missing?</div><div class="item-sub">Tell us what would make your trip better</div></div></div>
     <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); window.open('/','_blank')"><span style="font-size:24px;">🌐</span><div style="flex:1;"><div class="item-title">Totally Cape Cod Website</div><div class="item-sub">Guides, directories & more</div></div></div>
     <button onclick="closeModal('moreMenu')" style="width:100%; background:transparent; color:var(--cape-navy); border:none; padding:14px; font-weight:600; font-size:15px; margin-top:6px;">Close</button>
+  </div>
+</div>
+
+<!-- Feedback Modal -->
+<div class="modal-bg" id="feedbackModal">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <div class="font-display" style="font-weight:900; font-size:22px;">What's missing for your trip? 🦞</div>
+    <div style="color:var(--ios-sub); font-size:13px; margin:4px 0 14px;">A beach we don't have? A feature you wish existed? Tell us — we read every note.</div>
+    <textarea id="feedbackMsg" rows="4" placeholder="I wish the app had…" style="width:100%; padding:12px; border:1px solid var(--ios-divider); border-radius:12px; resize:vertical; box-sizing:border-box; font-family:inherit;"></textarea>
+    <input type="email" id="feedbackEmail" placeholder="Email (optional — if you'd like a reply)" style="width:100%; padding:11px 12px; border:1px solid var(--ios-divider); border-radius:12px; box-sizing:border-box; margin-top:8px; font-family:inherit;" />
+    <button onclick="submitFeedback()" id="feedbackSend" style="width:100%; background:var(--cape-navy); color:#fff; border:none; padding:14px; border-radius:14px; font-weight:800; font-size:15px; margin-top:14px; cursor:pointer; font-family:inherit;">Send feedback</button>
+    <button onclick="closeModal('feedback')" style="width:100%; background:transparent; color:var(--ios-sub); border:none; padding:10px; font-size:13px; cursor:pointer;">Cancel</button>
   </div>
 </div>
 
@@ -2992,6 +3006,30 @@ window.addEventListener('scroll', function _eng() {
 function dismissEmailBanner() {
   document.getElementById('emailBanner').style.display = 'none';
   localStorage.setItem('tcc_email_banner_dismissed', 'true');
+}
+
+async function submitFeedback() {
+  const msg = document.getElementById('feedbackMsg').value.trim();
+  if (!msg) { toast('Tell us a bit first 🙂'); return; }
+  const email = document.getElementById('feedbackEmail').value.trim();
+  const btn = document.getElementById('feedbackSend');
+  btn.disabled = true; btn.textContent = 'Sending…';
+  try {
+    await fetch('/.netlify/functions/feedback', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        message: msg, email,
+        context: (document.querySelector('.screen.active')?.id || 'app').replace('screen-', ''),
+        deviceId: localStorage.getItem('tcc_did') || '',
+      }),
+    });
+  } catch (e) { /* non-blocking — feedback still felt sent */ }
+  if (window.gtag) gtag('event', 'feedback_submit');
+  document.getElementById('feedbackMsg').value = '';
+  document.getElementById('feedbackEmail').value = '';
+  btn.disabled = false; btn.textContent = 'Send feedback';
+  closeModal('feedback');
+  toast('🙏 Thank you — we read every note!');
 }
 
 async function submitAppEmail() {
