@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-13T16:55:24Z",
+  "updated_at": "2026-06-13T18:08:00Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -12,7 +12,7 @@
       "location": "Chatham, MA, US",
       "reported_by": "iNaturalist \u00b7 saanvit",
       "reported_at": "2026-06-13T13:29:39Z",
-      "time_ago": "3 h ago",
+      "time_ago": "4 h ago",
       "photo_url": "",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/371263324"
