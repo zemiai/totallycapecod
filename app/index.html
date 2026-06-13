@@ -3137,12 +3137,16 @@ function tccScrollTop(){
 (function tabBarAutoHide(){
   const bar = document.querySelector('.tab-bar');
   if(!bar) return;
-  let last = 0;
+  let last = 0, idleTimer = null;
+  const show = () => bar.classList.remove('tab-hidden');
   const onScroll = () => {
     const y = tccScrollTop();
     if(y > 90 && y > last + 6) bar.classList.add('tab-hidden');          // scrolling down → hide
-    else if(y < last - 6 || y < 70) bar.classList.remove('tab-hidden');   // scrolling up / near top → show
+    else if(y < last - 6 || y < 70) show();                              // scrolling up / near top → show
     last = y;
+    // …and always bring it back shortly after scrolling stops, any direction.
+    if(idleTimer) clearTimeout(idleTimer);
+    idleTimer = setTimeout(show, 300);
   };
   window.addEventListener('scroll', onScroll, {passive:true});
   document.getElementById('iosContent')?.addEventListener('scroll', onScroll, {passive:true});
