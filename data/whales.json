@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-15T12:12:11Z",
+  "updated_at": "2026-06-15T17:30:20Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -12,7 +12,7 @@
       "location": "MA, US",
       "reported_by": "iNaturalist \u00b7 lentz12",
       "reported_at": "2026-06-15T06:10:25Z",
-      "time_ago": "6 h ago",
+      "time_ago": "11 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/679487219/medium.jpg",
       "notes": "Harbor Seal",
       "source_url": "https://www.inaturalist.org/observations/371876392"
@@ -26,7 +26,7 @@
       "location": "US",
       "reported_by": "iNaturalist \u00b7 afonso7687",
       "reported_at": "2026-06-14T15:45:40Z",
-      "time_ago": "20 h ago",
+      "time_ago": "1 day ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/679092659/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/371673771"
@@ -54,7 +54,7 @@
       "location": "Off Cape Cod",
       "reported_by": "iNaturalist \u00b7 joeg99",
       "reported_at": "2026-06-13T16:11:00Z",
-      "time_ago": "1 day ago",
+      "time_ago": "2 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/679198919/medium.jpg",
       "notes": "North Atlantic Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/371730725"
@@ -68,7 +68,7 @@
       "location": "Plymouth County, US-MA, US",
       "reported_by": "iNaturalist \u00b7 twendall",
       "reported_at": "2026-06-13T16:05:41Z",
-      "time_ago": "1 day ago",
+      "time_ago": "2 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/678939868/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/371591637"
@@ -82,7 +82,7 @@
       "location": "Canal Service Rd, Buzzards Bay, MA, US",
       "reported_by": "iNaturalist \u00b7 ecoastaldesign",
       "reported_at": "2026-06-13T13:48:30Z",
-      "time_ago": "1 day ago",
+      "time_ago": "2 days ago",
       "photo_url": "",
       "notes": "Atlantic Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/371351122"
@@ -96,24 +96,38 @@
       "location": "Chatham, MA, US",
       "reported_by": "iNaturalist \u00b7 saanvit",
       "reported_at": "2026-06-13T13:29:39Z",
-      "time_ago": "1 day ago",
+      "time_ago": "2 days ago",
       "photo_url": "",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/371263324"
     },
     {
-      "id": "inat-370815996",
+      "id": "inat-372008202",
       "species": "seal",
       "count": 1,
-      "lat": 41.6882,
-      "lng": -69.9509,
-      "location": "Barcliff Avenue Ext, Chatham, MA, US",
-      "reported_by": "iNaturalist \u00b7 aisling_duggs",
-      "reported_at": "2026-06-11T23:19:34Z",
-      "time_ago": "3 days ago",
-      "photo_url": "https://static.inaturalist.org/photos/677466745/medium.jpg",
+      "lat": 42.0198,
+      "lng": -70.0357,
+      "location": "MA, US",
+      "reported_by": "iNaturalist \u00b7 bannabennett",
+      "reported_at": "2026-06-13T04:02:14Z",
+      "time_ago": "2 days ago",
+      "photo_url": "https://static.inaturalist.org/photos/679736601/medium.jpg",
       "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/370815996"
+      "source_url": "https://www.inaturalist.org/observations/372008202"
+    },
+    {
+      "id": "inat-372013887",
+      "species": "shark",
+      "count": 1,
+      "lat": 41.8448,
+      "lng": -69.9478,
+      "location": "Ocean View Dr, Eastham, MA, US",
+      "reported_by": "iNaturalist \u00b7 joeyo116",
+      "reported_at": "2026-06-12T15:07:05Z",
+      "time_ago": "3 days ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/679746998/medium.jpg",
+      "notes": "Great White Shark",
+      "source_url": "https://www.inaturalist.org/observations/372013887"
     },
     {
       "id": "inat-370440944",
@@ -138,7 +152,7 @@
       "location": "Gulf of Maine, US",
       "reported_by": "iNaturalist \u00b7 dinoagano",
       "reported_at": "2026-06-07T16:21:43Z",
-      "time_ago": "7 days ago",
+      "time_ago": "8 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/674884779/medium.jpg",
       "notes": "North Atlantic Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/369469605"
@@ -152,7 +166,7 @@
       "location": "Gulf of Maine, US",
       "reported_by": "iNaturalist \u00b7 dinoagano",
       "reported_at": "2026-06-07T16:04:22Z",
-      "time_ago": "7 days ago",
+      "time_ago": "8 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/674992262/medium.jpg",
       "notes": "Common Minke Whale",
       "source_url": "https://www.inaturalist.org/observations/369467507"
@@ -166,7 +180,7 @@
       "location": "Gulf of Maine, US",
       "reported_by": "iNaturalist \u00b7 dinoagano",
       "reported_at": "2026-06-07T16:03:02Z",
-      "time_ago": "7 days ago",
+      "time_ago": "8 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/674879389/medium.jpg",
       "notes": "North Atlantic Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/369466932"
@@ -180,7 +194,7 @@
       "location": "Gulf of Maine, US",
       "reported_by": "iNaturalist \u00b7 sparrowmech",
       "reported_at": "2026-06-06T16:13:00Z",
-      "time_ago": "8 days ago",
+      "time_ago": "9 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/675058813/medium.jpg",
       "notes": "North Atlantic Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/369168209"
