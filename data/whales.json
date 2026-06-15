@@ -1,8 +1,22 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-15T20:38:50Z",
+  "updated_at": "2026-06-15T23:02:23Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
+    {
+      "id": "inat-372110568",
+      "species": "seal",
+      "count": 1,
+      "lat": 41.6724,
+      "lng": -69.9488,
+      "location": "Main St, Chatham, MA, US",
+      "reported_by": "iNaturalist \u00b7 fisherja",
+      "reported_at": "2026-06-15T16:58:55Z",
+      "time_ago": "6 h ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/679936744/medium.jpg",
+      "notes": "Grey Seal",
+      "source_url": "https://www.inaturalist.org/observations/372110568"
+    },
     {
       "id": "inat-371876392",
       "species": "seal",
@@ -12,10 +26,24 @@
       "location": "MA, US",
       "reported_by": "iNaturalist \u00b7 lentz12",
       "reported_at": "2026-06-15T06:10:25Z",
-      "time_ago": "14 h ago",
+      "time_ago": "16 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/679487219/medium.jpg",
       "notes": "Harbor Seal",
       "source_url": "https://www.inaturalist.org/observations/371876392"
+    },
+    {
+      "id": "inat-372110161",
+      "species": "humpback",
+      "count": 1,
+      "lat": 42.2508,
+      "lng": -70.1876,
+      "location": "Gulf of Maine, US",
+      "reported_by": "iNaturalist \u00b7 fisherja",
+      "reported_at": "2026-06-14T18:30:33Z",
+      "time_ago": "1 day ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/679935784/medium.jpg",
+      "notes": "Humpback Whale",
+      "source_url": "https://www.inaturalist.org/observations/372110161"
     },
     {
       "id": "inat-371673771",
@@ -40,7 +68,7 @@
       "location": "MA, US",
       "reported_by": "iNaturalist \u00b7 lentz12",
       "reported_at": "2026-06-13T22:05:42Z",
-      "time_ago": "1 day ago",
+      "time_ago": "2 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/678766339/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/371500526"
@@ -100,20 +128,6 @@
       "photo_url": "",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/371263324"
-    },
-    {
-      "id": "inat-372008202",
-      "species": "seal",
-      "count": 1,
-      "lat": 42.0198,
-      "lng": -70.0357,
-      "location": "MA, US",
-      "reported_by": "iNaturalist \u00b7 bannabennett",
-      "reported_at": "2026-06-13T04:02:14Z",
-      "time_ago": "2 days ago",
-      "photo_url": "https://static.inaturalist.org/photos/679736601/medium.jpg",
-      "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/372008202"
     },
     {
       "id": "inat-372013887",
