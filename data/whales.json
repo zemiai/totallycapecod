@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-16T08:26:41Z",
+  "updated_at": "2026-06-16T13:12:50Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -12,7 +12,7 @@
       "location": "Main St, Chatham, MA, US",
       "reported_by": "iNaturalist \u00b7 fisherja",
       "reported_at": "2026-06-15T16:58:55Z",
-      "time_ago": "15 h ago",
+      "time_ago": "20 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/679936744/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/372110568"
@@ -26,7 +26,7 @@
       "location": "North Atlantic Ocean, Gosnold, MA, US",
       "reported_by": "iNaturalist \u00b7 markinmd",
       "reported_at": "2026-06-15T12:53:00Z",
-      "time_ago": "19 h ago",
+      "time_ago": "1 day ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/680006205/medium.jpg",
       "notes": "Atlantic Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/372145345"
@@ -128,20 +128,6 @@
       "photo_url": "",
       "notes": "Atlantic Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/371351122"
-    },
-    {
-      "id": "inat-372013887",
-      "species": "shark",
-      "count": 1,
-      "lat": 41.8448,
-      "lng": -69.9478,
-      "location": "Ocean View Dr, Eastham, MA, US",
-      "reported_by": "iNaturalist \u00b7 joeyo116",
-      "reported_at": "2026-06-12T15:07:05Z",
-      "time_ago": "3 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/679746998/medium.jpg",
-      "notes": "Great White Shark",
-      "source_url": "https://www.inaturalist.org/observations/372013887"
     },
     {
       "id": "inat-370440944",
