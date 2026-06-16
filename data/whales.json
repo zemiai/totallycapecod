@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-16T02:07:03Z",
+  "updated_at": "2026-06-16T08:26:41Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -12,7 +12,7 @@
       "location": "Main St, Chatham, MA, US",
       "reported_by": "iNaturalist \u00b7 fisherja",
       "reported_at": "2026-06-15T16:58:55Z",
-      "time_ago": "9 h ago",
+      "time_ago": "15 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/679936744/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/372110568"
@@ -26,7 +26,7 @@
       "location": "North Atlantic Ocean, Gosnold, MA, US",
       "reported_by": "iNaturalist \u00b7 markinmd",
       "reported_at": "2026-06-15T12:53:00Z",
-      "time_ago": "13 h ago",
+      "time_ago": "19 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/680006205/medium.jpg",
       "notes": "Atlantic Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/372145345"
@@ -40,7 +40,7 @@
       "location": "MA, US",
       "reported_by": "iNaturalist \u00b7 lentz12",
       "reported_at": "2026-06-15T06:10:25Z",
-      "time_ago": "19 h ago",
+      "time_ago": "1 day ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/679487219/medium.jpg",
       "notes": "Harbor Seal",
       "source_url": "https://www.inaturalist.org/observations/371876392"
@@ -56,7 +56,7 @@
       "reported_at": "2026-06-14T18:30:33Z",
       "time_ago": "1 day ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/679935784/medium.jpg",
-      "notes": "Humpback Whale",
+      "notes": "North Atlantic Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/372110161"
     },
     {
