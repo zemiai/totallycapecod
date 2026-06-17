@@ -1252,6 +1252,23 @@ async function loadData() {
   // beachgoers report (and on local/preview where the function isn't running).
   state.data.beachLive = await fetch('/.netlify/functions/beach-report', { cache: 'no-cache' })
     .then(r => r.ok ? r.json() : {}).catch(() => ({}));
+
+  // Curated layer — hand-added items (e.g. pulled from Facebook) that the events cron
+  // never overwrites. Merged into the events feed, de-duped, future-only, newest-first.
+  try {
+    const curated = await fetchWithTimeout(DATA_BASE + 'curated.json', 8000);
+    const cEvents = (curated && Array.isArray(curated.events)) ? curated.events : [];
+    if (cEvents.length) {
+      state.data.events = state.data.events || { events: [] };
+      const base = Array.isArray(state.data.events.events) ? state.data.events.events : [];
+      const cutoff = Date.now() - 12 * 3600 * 1000;   // drop curated items >12h past their start
+      const keep = cEvents.filter(e => !e.start || new Date(e.start).getTime() > cutoff);
+      const seen = new Set(base.map(e => e.id));
+      const merged = keep.filter(e => !seen.has(e.id)).concat(base);
+      merged.sort((a, b) => new Date(a.start || 0) - new Date(b.start || 0));
+      state.data.events.events = merged;
+    }
+  } catch (e) { /* no curated layer yet — fine */ }
 }
 
 // ============ UTIL ============

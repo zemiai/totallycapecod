@@ -1,0 +1,5 @@
+{
+  "version": "1.0",
+  "_note": "MANUAL/CURATED layer — hand-added items (e.g. pulled from Facebook posts) that the auto-update crons NEVER overwrite. The app merges these into the events feed (What's Happening + Today + Nearby), de-duped against scraped events, future-only, sorted by start. Per-item schema mirrors data/events.json: { id, category(music|food|food_deal|art|family|farmers_market|happy_hour|festival), title, venue, town, lat, lng, time(display e.g. 'Fri Jun 20 · 7:00 PM'), start(ISO with -04:00), tag(e.g. '🎵 LIVE MUSIC'), info, price, img(optional), source:'Facebook (curated)', source_url(optional FB link) }.",
+  "events": []
+}
