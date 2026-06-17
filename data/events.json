@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-17T13:01:08Z",
+  "updated_at": "2026-06-17T18:09:32Z",
   "window_days": 21,
-  "count": 121,
+  "count": 126,
   "_hermes_note": "Real Cape Cod events scraped from chambers + venues. update_events.py",
   "events": [
     {
@@ -207,6 +207,23 @@
       "img": null,
       "source": "Mashpee",
       "source_url": "https://business.mashpeechamber.com/events/Details/open-house-ribbon-cutting-at-bloom-aesthetics-wellness-1710736?sourceTypeId=Website",
+      "start": "2026-06-18T00:00:00+00:00"
+    },
+    {
+      "id": "view-details-20260618",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Thu Jun 18",
+      "title": "View Details",
+      "venue": "",
+      "town": "Bourne",
+      "info": "",
+      "price": "",
+      "lat": 41.7412,
+      "lng": -70.599,
+      "img": null,
+      "source": "Bourne",
+      "source_url": "https://web.capecodcanalchamber.org/events/Canal-Cruise-Business-Connections-1669/details",
       "start": "2026-06-18T00:00:00+00:00"
     },
     {
@@ -615,6 +632,23 @@
       "img": null,
       "source": "Orleans",
       "source_url": "https://members.orleanscapecod.org/events/details/nauset-model-railroad-club-train-sale-25160",
+      "start": "2026-06-20T00:00:00+00:00"
+    },
+    {
+      "id": "nauset-ringers-bell-choir-50th-anniversary-concert-concert-2",
+      "tag": "\ud83c\udfb5 LIVE MUSIC",
+      "category": "music",
+      "time": "Sat Jun 20",
+      "title": "Nauset Ringers Bell Choir 50th Anniversary concert concert",
+      "venue": "",
+      "town": "Orleans",
+      "info": "",
+      "price": "",
+      "lat": 41.7901,
+      "lng": -69.9873,
+      "img": null,
+      "source": "Orleans",
+      "source_url": "https://members.orleanscapecod.org/events/details/nauset-ringers-bell-choir-50th-anniversary-concert-25259",
       "start": "2026-06-20T00:00:00+00:00"
     },
     {
@@ -1485,6 +1519,23 @@
       "start": "2026-06-27T20:00:00+00:00"
     },
     {
+      "id": "bits-and-bobs-theater-company-presents-red-20260628",
+      "tag": "\ud83c\udfad THEATER",
+      "category": "theater",
+      "time": "Sun Jun 28",
+      "title": "Bits and Bobs Theater Company presents RED",
+      "venue": "",
+      "town": "Eastham",
+      "info": "",
+      "price": "",
+      "lat": 41.83,
+      "lng": -69.974,
+      "img": null,
+      "source": "Eastham",
+      "source_url": "https://members.easthamchamber.com/events/details/bits-and-bobs-theater-company-presents-red-5748",
+      "start": "2026-06-28T00:00:00+00:00"
+    },
+    {
       "id": "surf-s-up-an-evening-to-benefit-payomet-20260628",
       "tag": "\ud83d\udcc5 EVENT",
       "category": "event",
@@ -2061,6 +2112,40 @@
       "source": "Mashpee",
       "source_url": "https://business.mashpeechamber.com/events/Details/evening-networking-at-bosun-s-1754061?sourceTypeId=Website",
       "start": "2026-07-08T00:00:00+00:00"
+    },
+    {
+      "id": "booming-blues-bbq-with-alexis-p-suter-20260708",
+      "tag": "\ud83c\udfb5 LIVE MUSIC",
+      "category": "music",
+      "time": "Wed Jul 8 \u00b7 5:00 PM",
+      "title": "Booming Blues & BBQ with Alexis P. Suter",
+      "venue": "Payomet",
+      "town": "Truro",
+      "info": "",
+      "price": "",
+      "lat": 41.9979,
+      "lng": -70.0492,
+      "img": "https://payomet.org/wp-content/uploads/2026/06/AlexisPSuter-2026-860x562-1.webp",
+      "source": "Payomet",
+      "source_url": "https://payomet.org/calendar/booming-blues-bbq-with-alexis-p-suter/",
+      "start": "2026-07-08T17:00:00+00:00"
+    },
+    {
+      "id": "adult-aerial-silks-open-level-20260708",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Wed Jul 8 \u00b7 5:45 PM",
+      "title": "Adult Aerial Silks \u2013 Open Level",
+      "venue": "Cirque by the Sea at WHAT",
+      "town": "Truro",
+      "info": "",
+      "price": "",
+      "lat": 41.9979,
+      "lng": -70.0492,
+      "img": "https://payomet.org/wp-content/uploads/2024/07/AdultAerials2024-860x562-1.webp",
+      "source": "Payomet",
+      "source_url": "https://payomet.org/calendar/adult-aerial-silks-open-level-2/",
+      "start": "2026-07-08T17:45:00+00:00"
     }
   ]
 }
