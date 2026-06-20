@@ -1,8 +1,22 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-20T00:12:42Z",
+  "updated_at": "2026-06-20T04:51:01Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
+    {
+      "id": "inat-373423111",
+      "species": "seal",
+      "count": 1,
+      "lat": 41.6842,
+      "lng": -69.9627,
+      "location": "United States",
+      "reported_by": "iNaturalist \u00b7 thewildlifebrothers",
+      "reported_at": "2026-06-19T17:23:24Z",
+      "time_ago": "11 h ago",
+      "photo_url": "https://static.inaturalist.org/photos/682445484/medium.jpg",
+      "notes": "Grey Seal",
+      "source_url": "https://www.inaturalist.org/observations/373423111"
+    },
     {
       "id": "inat-373068997",
       "species": "seal",
@@ -86,20 +100,6 @@
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/679936744/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/372110568"
-    },
-    {
-      "id": "inat-372145345",
-      "species": "seal",
-      "count": 1,
-      "lat": 41.5031,
-      "lng": -70.7004,
-      "location": "North Atlantic Ocean, Gosnold, MA, US",
-      "reported_by": "iNaturalist \u00b7 markinmd",
-      "reported_at": "2026-06-15T12:53:00Z",
-      "time_ago": "4 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/680006205/medium.jpg",
-      "notes": "Atlantic Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/372145345"
     },
     {
       "id": "inat-372521360",
