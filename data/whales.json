@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-21T20:43:31Z",
+  "updated_at": "2026-06-21T22:14:26Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -12,7 +12,7 @@
       "location": "US",
       "reported_by": "iNaturalist \u00b7 wombat06",
       "reported_at": "2026-06-21T15:22:08Z",
-      "time_ago": "5 h ago",
+      "time_ago": "6 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/683513909/medium.jpg",
       "notes": "Common Minke Whale",
       "source_url": "https://www.inaturalist.org/observations/373980325"
@@ -26,10 +26,24 @@
       "location": "US",
       "reported_by": "iNaturalist \u00b7 wombat06",
       "reported_at": "2026-06-21T14:59:31Z",
-      "time_ago": "5 h ago",
+      "time_ago": "7 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/683515130/medium.jpg",
       "notes": "North Atlantic Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/373980889"
+    },
+    {
+      "id": "inat-374077370",
+      "species": "humpback",
+      "count": 1,
+      "lat": 42.2264,
+      "lng": -69.974,
+      "location": "US",
+      "reported_by": "iNaturalist \u00b7 sleepytoad",
+      "reported_at": "2026-06-20T23:00:00Z",
+      "time_ago": "23 h ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/683698466/medium.jpg",
+      "notes": "Humpback Whale",
+      "source_url": "https://www.inaturalist.org/observations/374077370"
     },
     {
       "id": "inat-373734785",
@@ -264,7 +278,7 @@
       "location": "MA, US",
       "reported_by": "iNaturalist \u00b7 lentz12",
       "reported_at": "2026-06-13T22:05:42Z",
-      "time_ago": "7 days ago",
+      "time_ago": "8 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/678766339/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/371500526"
@@ -282,20 +296,6 @@
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/679198919/medium.jpg",
       "notes": "North Atlantic Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/371730725"
-    },
-    {
-      "id": "inat-370440944",
-      "species": "humpback",
-      "count": 1,
-      "lat": 42.1194,
-      "lng": -70.3052,
-      "location": "Gulf of Maine, US",
-      "reported_by": "iNaturalist \u00b7 tajmahogany",
-      "reported_at": "2026-06-10T18:24:26Z",
-      "time_ago": "11 days ago",
-      "photo_url": "https://static.inaturalist.org/photos/676726110/medium.jpg",
-      "notes": "North Atlantic Humpback Whale",
-      "source_url": "https://www.inaturalist.org/observations/370440944"
     },
     {
       "id": "inat-369467507",
