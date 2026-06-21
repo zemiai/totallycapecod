@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-20T23:08:08Z",
+  "updated_at": "2026-06-21T01:57:57Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -12,7 +12,7 @@
       "location": "Provincetown, MA, USA",
       "reported_by": "iNaturalist \u00b7 batfalcon2",
       "reported_at": "2026-06-20T11:28:00Z",
-      "time_ago": "11 h ago",
+      "time_ago": "14 h ago",
       "photo_url": "https://static.inaturalist.org/photos/683039305/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/373734785"
@@ -26,7 +26,7 @@
       "location": "Provincetown, MA, USA",
       "reported_by": "iNaturalist \u00b7 batfalcon2",
       "reported_at": "2026-06-20T11:15:00Z",
-      "time_ago": "11 h ago",
+      "time_ago": "14 h ago",
       "photo_url": "https://static.inaturalist.org/photos/683039310/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/373734784"
