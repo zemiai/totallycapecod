@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-22T21:38:11Z",
+  "updated_at": "2026-06-22T23:19:05Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -12,7 +12,7 @@
       "location": "US",
       "reported_by": "iNaturalist \u00b7 dvkremk",
       "reported_at": "2026-06-22T15:58:24Z",
-      "time_ago": "5 h ago",
+      "time_ago": "7 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/684303895/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/374388401"
@@ -68,10 +68,24 @@
       "location": "US",
       "reported_by": "iNaturalist \u00b7 sleepytoad",
       "reported_at": "2026-06-20T23:00:00Z",
-      "time_ago": "1 day ago",
+      "time_ago": "2 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/683698466/medium.jpg",
       "notes": "North Atlantic Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/374077370"
+    },
+    {
+      "id": "inat-374438567",
+      "species": "seal",
+      "count": 1,
+      "lat": 41.774,
+      "lng": -70.5209,
+      "location": "Sagamore, Bourne, MA, USA",
+      "reported_by": "iNaturalist \u00b7 johnkoontz79",
+      "reported_at": "2026-06-20T14:06:00Z",
+      "time_ago": "2 days ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/684402194/medium.jpg",
+      "notes": "Grey Seal",
+      "source_url": "https://www.inaturalist.org/observations/374438567"
     },
     {
       "id": "inat-373734785",
@@ -114,20 +128,6 @@
       "photo_url": "https://static.inaturalist.org/photos/682445484/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/373423111"
-    },
-    {
-      "id": "inat-373068997",
-      "species": "seal",
-      "count": 1,
-      "lat": 41.39,
-      "lng": -70.0505,
-      "location": "Nantucket Island, Nantucket, MA, US",
-      "reported_by": "iNaturalist \u00b7 colbee1",
-      "reported_at": "2026-06-18T17:45:43Z",
-      "time_ago": "4 days ago",
-      "photo_url": "https://static.inaturalist.org/photos/681767148/medium.jpg",
-      "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/373068997"
     },
     {
       "id": "inat-372746008",
@@ -292,7 +292,7 @@
       "location": "MA, US",
       "reported_by": "iNaturalist \u00b7 lentz12",
       "reported_at": "2026-06-13T22:05:42Z",
-      "time_ago": "8 days ago",
+      "time_ago": "9 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/678766339/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/371500526"
