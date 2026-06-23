@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-23T12:20:49Z",
+  "updated_at": "2026-06-23T17:48:06Z",
   "window_days": 21,
-  "count": 161,
+  "count": 162,
   "_hermes_note": "Real Cape Cod events scraped from chambers + venues. update_events.py",
   "events": [
     {
@@ -377,40 +377,6 @@
       "img": null,
       "source": "Hyannis",
       "source_url": "https://business.hyannis.com/events/details/rolling-together-revue-tour-g-love-donavon-frankenreiter-moon-taxi-hyannis-3950",
-      "start": "2026-06-25T00:00:00+00:00"
-    },
-    {
-      "id": "canal-cruise-business-connections-20260625",
-      "tag": "\ud83d\udcc5 EVENT",
-      "category": "event",
-      "time": "Thu Jun 25",
-      "title": "Canal Cruise Business Connections",
-      "venue": "",
-      "town": "Bourne",
-      "info": "",
-      "price": "",
-      "lat": 41.7412,
-      "lng": -70.599,
-      "img": null,
-      "source": "Bourne",
-      "source_url": "https://web.capecodcanalchamber.org/events/Canal-Cruise-Business-Connections-New-Date-the-previous-date-was-rescheduled-due-to-high-winds-and-rain-1669/details",
-      "start": "2026-06-25T00:00:00+00:00"
-    },
-    {
-      "id": "view-details-20260625",
-      "tag": "\ud83d\udcc5 EVENT",
-      "category": "event",
-      "time": "Thu Jun 25",
-      "title": "View Details",
-      "venue": "",
-      "town": "Bourne",
-      "info": "",
-      "price": "",
-      "lat": 41.7412,
-      "lng": -70.599,
-      "img": null,
-      "source": "Bourne",
-      "source_url": "https://web.capecodcanalchamber.org/events/Canal-Cruise-Business-Connections-New-Date-the-previous-date-was-rescheduled-due-to-high-winds-and-rain-1669/details",
       "start": "2026-06-25T00:00:00+00:00"
     },
     {
@@ -975,11 +941,11 @@
       "start": "2026-06-28T00:00:00+00:00"
     },
     {
-      "id": "dj-sprino-20260628",
+      "id": "dj-blakedashake-20260628",
       "tag": "\ud83c\udfb5 LIVE MUSIC",
       "category": "music",
       "time": "Sun Jun 28 \u00b7 1:00 AM",
-      "title": "DJ Sprino",
+      "title": "DJ BlakeDaShake",
       "venue": "Pier 37 Boathouse",
       "town": "Falmouth",
       "info": "",
@@ -992,11 +958,11 @@
       "start": "2026-06-28T01:00:00+00:00"
     },
     {
-      "id": "dj-blakedashake-20260628",
+      "id": "dj-sprino-20260628",
       "tag": "\ud83c\udfb5 LIVE MUSIC",
       "category": "music",
       "time": "Sun Jun 28 \u00b7 1:00 AM",
-      "title": "DJ BlakeDaShake",
+      "title": "DJ Sprino",
       "venue": "Pier 37 Boathouse",
       "town": "Falmouth",
       "info": "",
@@ -1670,6 +1636,23 @@
       "source": "Sundancers",
       "source_url": "https://sundancerscapecod.com/entertainment/",
       "start": "2026-07-05T21:00:00+00:00"
+    },
+    {
+      "id": "yarmouth-summer-concert-series-fred-clayton-blues-band-20260",
+      "tag": "\ud83c\udfb5 LIVE MUSIC",
+      "category": "music",
+      "time": "Mon Jul 6",
+      "title": "Yarmouth Summer Concert Series: Fred Clayton Blues Band",
+      "venue": "",
+      "town": "Eastham",
+      "info": "",
+      "price": "",
+      "lat": 41.83,
+      "lng": -69.974,
+      "img": null,
+      "source": "Eastham",
+      "source_url": "https://members.easthamchamber.com/events/details/yarmouth-summer-concert-series-fred-clayton-blues-band-5750",
+      "start": "2026-07-06T00:00:00+00:00"
     },
     {
       "id": "concerts-on-windmill-green-cape-cod-moonlighters-big-band-20",
@@ -2539,6 +2522,23 @@
       "start": "2026-07-13T00:00:00+00:00"
     },
     {
+      "id": "yarmouth-summer-concert-series-renee-the-renegades-20260713",
+      "tag": "\ud83c\udfb5 LIVE MUSIC",
+      "category": "music",
+      "time": "Mon Jul 13",
+      "title": "Yarmouth Summer Concert Series: Renee & the Renegades",
+      "venue": "",
+      "town": "Eastham",
+      "info": "",
+      "price": "",
+      "lat": 41.83,
+      "lng": -69.974,
+      "img": null,
+      "source": "Eastham",
+      "source_url": "https://members.easthamchamber.com/events/details/yarmouth-summer-concert-series-renee-the-renegades-5751",
+      "start": "2026-07-13T00:00:00+00:00"
+    },
+    {
       "id": "concerts-on-windmill-green-front-street-jazz-ensemble-202607",
       "tag": "\ud83c\udfb5 LIVE MUSIC",
       "category": "music",
@@ -2741,6 +2741,23 @@
       "source": "Highfield Hall",
       "source_url": "https://highfieldhallandgardens.org/event/fish-printing-7-14-26/",
       "start": "2026-07-14T09:00:00+00:00"
+    },
+    {
+      "id": "beebe-woods-walk-talk-with-the-300-committee-land-trust-2026",
+      "tag": "\ud83c\udf99\ufe0f TALK",
+      "category": "talk",
+      "time": "Tue Jul 14 \u00b7 1:00 PM",
+      "title": "Beebe Woods Walk & Talk with the 300 Committee Land Trust",
+      "venue": "Highfield Hall",
+      "town": "Falmouth",
+      "info": "",
+      "price": "Free",
+      "lat": 41.5515,
+      "lng": -70.6148,
+      "img": "https://highfieldhallandgardens.org/wp-content/uploads/7.15.25-Beebe-Woods-Walk-Talk.jpg",
+      "source": "Highfield Hall",
+      "source_url": "https://highfieldhallandgardens.org/event/beebe-woods-walk-talk-7-14-26/",
+      "start": "2026-07-14T13:00:00+00:00"
     }
   ]
 }
