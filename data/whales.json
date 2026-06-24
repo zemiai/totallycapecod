@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-24T12:06:23Z",
+  "updated_at": "2026-06-24T15:18:09Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -40,7 +40,7 @@
       "location": "US",
       "reported_by": "iNaturalist \u00b7 wombat06",
       "reported_at": "2026-06-21T14:59:31Z",
-      "time_ago": "2 days ago",
+      "time_ago": "3 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/683515130/medium.jpg",
       "notes": "North Atlantic Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/373980889"
@@ -54,7 +54,7 @@
       "location": "Eastham, MA 02642, USA",
       "reported_by": "iNaturalist \u00b7 tk-9",
       "reported_at": "2026-06-21T12:27:28Z",
-      "time_ago": "2 days ago",
+      "time_ago": "3 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/684236942/medium.jpg",
       "notes": "Atlantic Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/374354015"
@@ -82,7 +82,7 @@
       "location": "Sagamore, Bourne, MA, USA",
       "reported_by": "iNaturalist \u00b7 johnkoontz79",
       "reported_at": "2026-06-20T14:06:00Z",
-      "time_ago": "3 days ago",
+      "time_ago": "4 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/684402194/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/374438567"
@@ -152,7 +152,7 @@
       "location": "United States",
       "reported_by": "iNaturalist \u00b7 mayres",
       "reported_at": "2026-06-16T15:04:28Z",
-      "time_ago": "7 days ago",
+      "time_ago": "8 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/680532440/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/372422497"
