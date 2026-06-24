@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-24T12:05:31Z",
+  "updated_at": "2026-06-24T17:47:39Z",
   "window_days": 21,
-  "count": 170,
+  "count": 172,
   "_hermes_note": "Real Cape Cod events scraped from chambers + venues. update_events.py",
   "events": [
     {
@@ -37,6 +37,23 @@
       "img": null,
       "source": "Orleans",
       "source_url": "https://members.orleanscapecod.org/events/details/boards-in-the-gallery-06-25-2026-23456",
+      "start": "2026-06-25T00:00:00+00:00"
+    },
+    {
+      "id": "the-american-journey-an-america-250-outdoor-exhibit-20260625",
+      "tag": "\ud83c\udfa8 ART",
+      "category": "art",
+      "time": "Thu Jun 25",
+      "title": "The American Journey: An America 250 Outdoor Exhibit",
+      "venue": "",
+      "town": "Orleans",
+      "info": "",
+      "price": "",
+      "lat": 41.7901,
+      "lng": -69.9873,
+      "img": null,
+      "source": "Orleans",
+      "source_url": "https://members.orleanscapecod.org/events/details/the-american-journey-an-america-250-outdoor-exhibit-06-25-2026-25320",
       "start": "2026-06-25T00:00:00+00:00"
     },
     {
@@ -193,6 +210,40 @@
       "start": "2026-06-25T00:00:00+00:00"
     },
     {
+      "id": "canal-cruise-business-connections-20260625",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Thu Jun 25",
+      "title": "Canal Cruise Business Connections",
+      "venue": "",
+      "town": "Bourne",
+      "info": "",
+      "price": "",
+      "lat": 41.7412,
+      "lng": -70.599,
+      "img": null,
+      "source": "Bourne",
+      "source_url": "https://web.capecodcanalchamber.org/events/Canal-Cruise-Business-Connections-New-Date-the-previous-date-was-rescheduled-due-to-high-winds-and-rain-1669/details",
+      "start": "2026-06-25T00:00:00+00:00"
+    },
+    {
+      "id": "view-details-20260625",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Thu Jun 25",
+      "title": "View Details",
+      "venue": "",
+      "town": "Bourne",
+      "info": "",
+      "price": "",
+      "lat": 41.7412,
+      "lng": -70.599,
+      "img": null,
+      "source": "Bourne",
+      "source_url": "https://web.capecodcanalchamber.org/events/Canal-Cruise-Business-Connections-New-Date-the-previous-date-was-rescheduled-due-to-high-winds-and-rain-1669/details",
+      "start": "2026-06-25T00:00:00+00:00"
+    },
+    {
       "id": "brewery-open-4-8pm-20260625",
       "tag": "\ud83c\udf74 FOOD & DRINK",
       "category": "food",
@@ -259,40 +310,6 @@
       "source": "Sundancers",
       "source_url": "https://sundancerscapecod.com/entertainment/",
       "start": "2026-06-25T18:00:00+00:00"
-    },
-    {
-      "id": "free-family-friendly-morning-matinees-every-day-all-summer-a",
-      "tag": "\ud83c\udfad THEATER",
-      "category": "theater",
-      "time": "Fri Jun 26",
-      "title": "FREE Family-Friendly Morning Matinees - EVERY DAY - ALL SUMMER - at the Chatham Orpheum Theater! FREE Family-Friendly Morning Matinees - EVERY DAY - ALL SUMMER - at the Chatham Orpheum Theater!",
-      "venue": "",
-      "town": "Orleans",
-      "info": "",
-      "price": "",
-      "lat": 41.7901,
-      "lng": -69.9873,
-      "img": null,
-      "source": "Orleans",
-      "source_url": "https://members.orleanscapecod.org/events/details/free-family-friendly-morning-matinees-every-day-all-summer-at-the-chatham-orpheum-theater-06-26-2026-25226",
-      "start": "2026-06-26T00:00:00+00:00"
-    },
-    {
-      "id": "boards-in-the-store-gallery-20260626",
-      "tag": "\ud83c\udfa8 ART",
-      "category": "art",
-      "time": "Fri Jun 26",
-      "title": "Boards in the Store Gallery",
-      "venue": "",
-      "town": "Orleans",
-      "info": "",
-      "price": "",
-      "lat": 41.7901,
-      "lng": -69.9873,
-      "img": null,
-      "source": "Orleans",
-      "source_url": "https://members.orleanscapecod.org/events/details/boards-in-the-gallery-06-26-2026-23457",
-      "start": "2026-06-26T00:00:00+00:00"
     },
     {
       "id": "chatham-orpheum-theater-free-family-friendly-morning-matinee",
@@ -856,11 +873,11 @@
       "start": "2026-06-28T00:00:00+00:00"
     },
     {
-      "id": "dj-blakedashake-20260628",
+      "id": "dj-sprino-20260628",
       "tag": "\ud83c\udfb5 LIVE MUSIC",
       "category": "music",
       "time": "Sun Jun 28 \u00b7 1:00 AM",
-      "title": "DJ BlakeDaShake",
+      "title": "DJ Sprino",
       "venue": "Pier 37 Boathouse",
       "town": "Falmouth",
       "info": "",
@@ -873,11 +890,11 @@
       "start": "2026-06-28T01:00:00+00:00"
     },
     {
-      "id": "dj-sprino-20260628",
+      "id": "dj-blakedashake-20260628",
       "tag": "\ud83c\udfb5 LIVE MUSIC",
       "category": "music",
       "time": "Sun Jun 28 \u00b7 1:00 AM",
-      "title": "DJ Sprino",
+      "title": "DJ BlakeDaShake",
       "venue": "Pier 37 Boathouse",
       "town": "Falmouth",
       "info": "",
@@ -1109,6 +1126,23 @@
       "source": "Payomet",
       "source_url": "https://payomet.org/calendar/summer-in-the-city-the-circus-that-never-sleeps-2/",
       "start": "2026-06-30T18:00:00+00:00"
+    },
+    {
+      "id": "orleans-eastham-elks-lodge-summer-cookouts-20260701",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Wed Jul 1",
+      "title": "Orleans Eastham Elks Lodge Summer Cookouts",
+      "venue": "",
+      "town": "Eastham",
+      "info": "",
+      "price": "",
+      "lat": 41.83,
+      "lng": -69.974,
+      "img": null,
+      "source": "Eastham",
+      "source_url": "https://members.easthamchamber.com/events/details/orleans-eastham-elks-lodge-summer-cookouts-5769",
+      "start": "2026-07-01T00:00:00+00:00"
     },
     {
       "id": "port-summer-nights-wednesday-night-music-the-harwich-chamber",
@@ -2743,23 +2777,6 @@
       "start": "2026-07-14T00:00:00+00:00"
     },
     {
-      "id": "photographing-flowers-at-afternoon-workshop-with-fine-art-ph",
-      "tag": "\ud83c\udfa8 ART",
-      "category": "art",
-      "time": "Tue Jul 14",
-      "title": "Photographing Flowers at AFTERNOON Workshop with Fine-Art Photographer Maryellen Stone",
-      "venue": "",
-      "town": "Eastham",
-      "info": "",
-      "price": "",
-      "lat": 41.83,
-      "lng": -69.974,
-      "img": null,
-      "source": "Eastham",
-      "source_url": "https://members.easthamchamber.com/events/details/photographing-flowers-at-afternoon-workshop-with-fine-art-photographer-maryellen-stone-5679",
-      "start": "2026-07-14T00:00:00+00:00"
-    },
-    {
       "id": "free-outdoor-concert-in-dennis-port-20260714",
       "tag": "\ud83c\udfb5 LIVE MUSIC",
       "category": "music",
@@ -2894,6 +2911,23 @@
       "source": "Highfield Hall",
       "source_url": "https://highfieldhallandgardens.org/event/natures-palette-printing/",
       "start": "2026-07-15T10:00:00+00:00"
+    },
+    {
+      "id": "hydrangea-how-to-facts-fallacies-and-fabulous-blooms-with-na",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Wed Jul 15 \u00b7 4:30 PM",
+      "title": "Hydrangea How-To: Facts, Fallacies, and Fabulous Blooms with Natalie Carmolli",
+      "venue": "Highfield Hall",
+      "town": "Falmouth",
+      "info": "",
+      "price": "$10 \u2013 $15",
+      "lat": 41.5515,
+      "lng": -70.6148,
+      "img": "https://highfieldhallandgardens.org/wp-content/uploads/7-15-26-Hydrangea-How-To-frame.jpg",
+      "source": "Highfield Hall",
+      "source_url": "https://highfieldhallandgardens.org/event/hydrangea-how-to-natalie-carmolli/",
+      "start": "2026-07-15T16:30:00+00:00"
     }
   ]
 }
