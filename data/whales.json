@@ -1,8 +1,22 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-25T08:22:23Z",
+  "updated_at": "2026-06-25T11:15:13Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
+    {
+      "id": "inat-375122070",
+      "species": "seal",
+      "count": 1,
+      "lat": 41.9252,
+      "lng": -69.9751,
+      "location": "Wellfleet, MA, US",
+      "reported_by": "iNaturalist \u00b7 unconsolidatedregolith",
+      "reported_at": "2026-06-24T22:47:38Z",
+      "time_ago": "12 h ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/685724248/medium.jpg",
+      "notes": "Grey Seal",
+      "source_url": "https://www.inaturalist.org/observations/375122070"
+    },
     {
       "id": "inat-374388401",
       "species": "humpback",
@@ -110,24 +124,10 @@
       "location": "Provincetown, MA, USA",
       "reported_by": "iNaturalist \u00b7 batfalcon2",
       "reported_at": "2026-06-20T11:15:00Z",
-      "time_ago": "4 days ago",
+      "time_ago": "5 days ago",
       "photo_url": "https://static.inaturalist.org/photos/683039310/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/373734784"
-    },
-    {
-      "id": "inat-373423111",
-      "species": "seal",
-      "count": 1,
-      "lat": 41.6842,
-      "lng": -69.9627,
-      "location": "United States",
-      "reported_by": "iNaturalist \u00b7 thewildlifebrothers",
-      "reported_at": "2026-06-19T17:23:24Z",
-      "time_ago": "5 days ago",
-      "photo_url": "https://static.inaturalist.org/photos/682445484/medium.jpg",
-      "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/373423111"
     },
     {
       "id": "inat-372746008",
