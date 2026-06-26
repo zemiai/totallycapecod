@@ -6,7 +6,7 @@
       "current_status": "light",
       "direction": "off_cape",
       "advice": "Sail through \u2014 no delays right now",
-      "live_speed_mph": 29,
+      "live_speed_mph": 28,
       "free_flow_mph": 55,
       "last_check": "just now"
     },
@@ -16,7 +16,7 @@
       "current_status": "light",
       "direction": "off_cape",
       "advice": "Sail through \u2014 no delays right now",
-      "live_speed_mph": 21,
+      "live_speed_mph": 24,
       "free_flow_mph": 55,
       "last_check": "just now"
     }
@@ -141,5 +141,5 @@
     "on_cape_saturday": "Before 8 AM"
   },
   "version": "1.0",
-  "updated_at": "2026-06-26T15:19:39Z"
+  "updated_at": "2026-06-26T17:29:24Z"
 }
