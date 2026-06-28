@@ -136,15 +136,20 @@ async function checkViaCustomerSearch(email, key) {
  * Returns true if any succeeded/paid charge has amount == PRO_AMOUNT_CENTS.
  */
 async function checkViaCharges(email, key) {
-  // Stripe doesn't expose receipt_email in search; use list + filter.
-  // We limit to 100 most-recent charges to avoid excessive API calls.
-  const query = encodeURIComponent(`receipt_email:'${email}'`);
-  // Use Charges Search API (available in newer Stripe API versions)
-  const data = await stripeGet(`/charges/search?query=${query}&limit=10`, key);
+  // Stripe Charges Search does not support email fields (receipt_email is
+  // rejected as an unsupported search field), so list the most-recent charges
+  // and filter by email in code. Covers guest / no-customer checkouts.
+  const data = await stripeGet(`/charges?limit=100`, key);
   const charges = data.data || [];
 
   for (const ch of charges) {
+    const chEmail = (
+      ch.receipt_email ||
+      (ch.billing_details && ch.billing_details.email) ||
+      ''
+    ).toLowerCase();
     if (
+      chEmail === email &&
       (ch.status === 'succeeded' || ch.paid === true) &&
       ch.amount === PRO_AMOUNT_CENTS
     ) {
