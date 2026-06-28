@@ -578,13 +578,18 @@ function startFeed(){
 /* ---- Location handlers ---- */
 function closeGeo(){document.getElementById('geoModal').classList.add('hide');}
 function openGeo(){document.getElementById('geoModal').classList.remove('hide');}
-function useMidCape(){ USER={lat:MID_CAPE.lat,lng:MID_CAPE.lng,label:MID_CAPE.label}; closeGeo(); startFeed(); }
+function useMidCape(fallback){
+  USER={lat:MID_CAPE.lat,lng:MID_CAPE.lng,label:MID_CAPE.label}; closeGeo(); startFeed();
+  // If we landed here because location was denied/failed (not an explicit "just browse"),
+  // say so — don't let people think they're seeing near-them results when they aren't.
+  if(fallback){ const el=document.getElementById('locLabel'); if(el) el.textContent="Showing Mid-Cape · turn on location for near-you results"; }
+}
 function useMyLocation(){
-  if(!navigator.geolocation){ useMidCape(); return; }
+  if(!navigator.geolocation){ useMidCape(true); return; }
   document.getElementById('locLabel').textContent="Locating…";
   navigator.geolocation.getCurrentPosition(
     pos=>{ USER={lat:pos.coords.latitude,lng:pos.coords.longitude,label:nearestTown({lat:pos.coords.latitude,lng:pos.coords.longitude})}; closeGeo(); startFeed(); },
-    ()=>{ useMidCape(); },
+    ()=>{ useMidCape(true); },
     {enableHighAccuracy:false,timeout:8000,maximumAge:600000}
   );
 }
@@ -595,7 +600,7 @@ async function refreshLive(){
     const [b,br,t,ea]=await Promise.all([
       fetch(DATA_BASE+'beaches.json',{cache:'no-cache'}).then(r=>r.ok?r.json():null).catch(()=>null),
       fetch(DATA_BASE+'bridges.json',{cache:'no-cache'}).then(r=>r.ok?r.json():null).catch(()=>null),
-      fetch(DATA_BASE+'today.json',{cache:'no-cache'}).then(r=>r.ok?r.json():null).catch(()=>null),
+      fetch(DATA_BASE+'events.json',{cache:'no-cache'}).then(r=>r.ok?r.json():null).catch(()=>null),
       fetch(DATA_BASE+'eats.json',{cache:'no-cache'}).then(r=>r.ok?r.json():null).catch(()=>null)
     ]);
     if(b&&b.beaches) BEACHES=b.beaches.map(x=>({name:x.name,town:x.town,lat:x.lat,lng:x.lng,status:x.status,spots_text:x.spots_text,crowd:x.crowd,water_temp:x.water_temp,updated:x.updated,notes:x.notes}));

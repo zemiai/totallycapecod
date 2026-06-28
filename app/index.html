@@ -23,7 +23,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://totallycapecod.com/" />
 <meta property="og:title" content="Totally Cape Cod — Live Beaches, Tides & Events" />
-<meta property="og:description" content="Live Cape Cod intel: beach parking, water temp, tides, bridge delays, lighthouse audio tours, 100-stamp passport." />
+<meta property="og:description" content="Live Cape Cod intel: beach parking, water temp, tides, bridge delays, lighthouse audio tours, 100+ stamp passport." />
 <meta property="og:site_name" content="Totally Cape Cod" />
 <meta property="og:image" content="https://totallycapecod.com/og-image.png" />
 
@@ -48,7 +48,7 @@
     "priceCurrency": "USD",
     "description": "Free with optional $9.99 lifetime Pro upgrade"
   },
-  "description": "Cape Cod travel app with live beach intel, tides, bridge traffic forecasts, lighthouse audio tours, daily events, and a 100-stamp summer passport."
+  "description": "Cape Cod travel app with live beach intel, tides, bridge traffic forecasts, lighthouse audio tours, daily events, and a 100+ stamp summer passport."
 }
 </script>
 
@@ -467,7 +467,7 @@
     <li><span>🏖️</span> Live beach parking, crowds &amp; water temps</li>
     <li><span>🚗</span> Sagamore &amp; Bourne bridge traffic, before you leave</li>
     <li><span>🎵</span> What's happening tonight — music, food &amp; events</li>
-    <li><span>🎫</span> A 100-stamp summer passport</li>
+    <li><span>🎫</span> A 100+ stamp summer passport</li>
   </ul>
   <div class="da-get">
     <img class="da-qr" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&margin=0&data=https%3A%2F%2Ftotallycapecod.com%2Fapp%2F" alt="Scan to open Totally Cape Cod on your phone" width="112" height="112" loading="lazy" />
@@ -596,7 +596,7 @@
     <!-- ===== PASSPORT ===== -->
     <div class="screen" id="screen-passport">
       <div class="ios-large-title">Passport</div>
-      <div class="ios-subhead"><strong style="color:var(--cape-navy);" id="stampCounter">0</strong> of 100 stamps · Summer 2026</div>
+      <div class="ios-subhead"><strong style="color:var(--cape-navy);" id="stampCounter">0</strong> of <span id="stampTotal">100</span> stamps · Summer 2026</div>
       <!-- TASK9 Lever 4: streak banner in passport (populated by renderPassport) -->
       <div id="passportStreakBanner"></div>
       <div style="padding:0 20px 12px;">
@@ -790,7 +790,7 @@
     <div class="intro-bullet">
       <div class="intro-icon">🎫</div>
       <div class="intro-copy">
-        <strong>100-stamp summer passport</strong>
+        <strong>100+ stamp summer passport</strong>
         <span>Collect stamps at beaches, lighthouses, and landmarks. Built by locals for your whole Cape summer.</span>
       </div>
     </div>
@@ -943,7 +943,7 @@
     <div class="modal-handle"></div>
     <div class="font-display" style="font-weight:900; font-size:22px; margin-bottom:12px;">More features</div>
     <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('events')"><span style="font-size:24px;">📅</span><div style="flex:1;"><div class="item-title">What's Happening</div><div class="item-sub">Today's events, music & deals</div></div></div>
-    <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('passport')"><span style="font-size:24px;">🎫</span><div style="flex:1;"><div class="item-title">Passport</div><div class="item-sub">100-stamp summer challenge</div></div></div>
+    <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('passport')"><span style="font-size:24px;">🎫</span><div style="flex:1;"><div class="item-title">Passport</div><div class="item-sub">100+ stamp summer challenge</div></div></div>
     <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('bridges')"><span style="font-size:24px;">🌉</span><div style="flex:1;"><div class="item-title">Bridge Oracle</div><div class="item-sub">Traffic + forecast</div></div></div>
     <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('conditions')"><span style="font-size:24px;">🌊</span><div style="flex:1;"><div class="item-title">Tides & Conditions</div><div class="item-sub">Today + 7-day</div></div></div>
     <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('whales')"><span style="font-size:24px;">🐋</span><div style="flex:1;"><div class="item-title">Whale Spotter</div><div class="item-sub">Live sightings</div></div></div>
@@ -1060,7 +1060,7 @@
       <textarea id="sightingNotes" rows="3" placeholder="Breaching, traveling, surface feeding..." style="width:100%; padding:10px; border:1px solid var(--ios-divider); border-radius:10px; font-size:14px; margin-top:4px; font-family:inherit;"></textarea>
     </div>
     <div style="margin-top:8px; font-size:11px; color:var(--ios-sub);" id="sightingLocStatus">📍 Will use your current location</div>
-    <button onclick="submitSighting()" style="width:100%; background:var(--cape-navy); color:white; border:none; padding:13px; border-radius:14px; font-weight:700; font-size:15px; margin-top:14px;">Submit</button>
+    <button id="sightingSubmitBtn" onclick="submitSighting()" style="width:100%; background:var(--cape-navy); color:white; border:none; padding:13px; border-radius:14px; font-weight:700; font-size:15px; margin-top:14px;">Submit sighting</button>
     <button onclick="closeModal('reportSighting')" style="width:100%; background:transparent; color:var(--ios-sub); border:none; padding:8px; font-size:13px;">Cancel</button>
   </div>
 </div>
@@ -2024,7 +2024,9 @@ function renderPassport() {
 
   const c = state.stamps.length;
   document.getElementById('stampCounter').textContent = c;
-  const max = state.isPro ? 100 : FREE_STAMP_LIMIT;
+  const total = stamps.length || 100;                 // real collection size (data-driven, not hardcoded)
+  const totalEl = document.getElementById('stampTotal'); if (totalEl) totalEl.textContent = total;
+  const max = state.isPro ? total : FREE_STAMP_LIMIT;
   document.getElementById('stampProgress').style.width = (c / max * 100) + '%';
   const _tier = currentTier(c), _next = nextTier(c);
   document.getElementById('stampTierLabel').textContent = _tier ? `${_tier.icon} ${_tier.name}` : (state.isPro ? 'Pro · collecting' : `Free · max ${FREE_STAMP_LIMIT}`);
@@ -2076,7 +2078,7 @@ function confirmStamp() {
     if (!state.stamps.includes(state.pendingStamp.slug)) {
       state.stamps.push(state.pendingStamp.slug);
       localStorage.setItem('tcc_stamps', JSON.stringify(state.stamps));
-      toast(`🎉 ${state.pendingStamp.name} stamped! ${state.stamps.length}/110`);
+      toast(`🎉 ${state.pendingStamp.name} stamped! ${state.stamps.length}/${(state.data.stamps?.stamps||[]).length||100}`);
       // Flip any matching feed pills to "collected" without re-rendering (keeps scroll position).
       document.querySelectorAll(`.nb-stamp-pill[data-slug="${state.pendingStamp.slug}"]`).forEach(el => {
         el.outerHTML = '<div class="nb-stamp-pill earned">✓ In your passport</div>';
@@ -2428,24 +2430,40 @@ function submitSighting() {
   const species = document.getElementById('sightingSpecies').value;
   const count = parseInt(document.getElementById('sightingCount').value) || 1;
   const notes = document.getElementById('sightingNotes').value.trim();
-  getUserLoc(loc => {
-    const sighting = {
-      id: 'u' + Date.now(),
-      species, count,
-      lat: loc.lat, lng: loc.lng,
-      location: 'Your location',
-      reported_by: 'You',
-      reported_at: new Date().toISOString(),
-      time_ago: 'Just now',
-      notes
-    };
-    state.userSightings.unshift(sighting);
-    localStorage.setItem('tcc_sightings', JSON.stringify(state.userSightings));
-    closeModal('reportSighting');
-    toast('🎉 Sighting submitted!');
-    if (whaleMapInstance) { whaleMapInstance.remove(); whaleMapInstance = null; }
-    renderWhales();
-  });
+  // A sighting is only useful with a REAL location — never plot fallback coords
+  // as if they were "Your location" (that would put false pins on the map).
+  if (!navigator.geolocation) {
+    toast('📍 Turn on location to report where you saw it.');
+    return;
+  }
+  const saveBtn = document.getElementById('sightingSubmitBtn');
+  if (saveBtn) { saveBtn.disabled = true; saveBtn.textContent = 'Getting location…'; }
+  navigator.geolocation.getCurrentPosition(
+    pos => {
+      const sighting = {
+        id: 'u' + Date.now(),
+        species, count,
+        lat: pos.coords.latitude, lng: pos.coords.longitude,
+        location: 'Your location',
+        reported_by: 'You',
+        reported_at: new Date().toISOString(),
+        time_ago: 'Just now',
+        notes
+      };
+      state.userSightings.unshift(sighting);
+      localStorage.setItem('tcc_sightings', JSON.stringify(state.userSightings));
+      if (saveBtn) { saveBtn.disabled = false; saveBtn.textContent = 'Submit sighting'; }
+      closeModal('reportSighting');
+      toast('🎉 Sighting submitted!');
+      if (whaleMapInstance) { whaleMapInstance.remove(); whaleMapInstance = null; }
+      renderWhales();
+    },
+    () => {
+      if (saveBtn) { saveBtn.disabled = false; saveBtn.textContent = 'Submit sighting'; }
+      toast('📍 Location needed — enable it so others see where you spotted them.');
+    },
+    { enableHighAccuracy: true, timeout: 8000 }
+  );
 }
 
 // ============ RENDER: LIGHTHOUSES ============
@@ -3050,8 +3068,9 @@ async function submitFeedback() {
   const email = document.getElementById('feedbackEmail').value.trim();
   const btn = document.getElementById('feedbackSend');
   btn.disabled = true; btn.textContent = 'Sending…';
+  let ok = false;
   try {
-    await fetch('/.netlify/functions/feedback', {
+    const res = await fetch('/.netlify/functions/feedback', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         message: msg, email,
@@ -3059,13 +3078,19 @@ async function submitFeedback() {
         deviceId: localStorage.getItem('tcc_did') || '',
       }),
     });
-  } catch (e) { /* non-blocking — feedback still felt sent */ }
-  if (window.gtag) gtag('event', 'feedback_submit');
-  document.getElementById('feedbackMsg').value = '';
-  document.getElementById('feedbackEmail').value = '';
+    ok = res.ok;
+  } catch (e) { ok = false; }
   btn.disabled = false; btn.textContent = 'Send feedback';
-  closeModal('feedback');
-  toast('🙏 Thank you — we read every note!');
+  if (ok) {
+    if (window.gtag) gtag('event', 'feedback_submit');
+    document.getElementById('feedbackMsg').value = '';
+    document.getElementById('feedbackEmail').value = '';
+    closeModal('feedback');
+    toast('🙏 Thank you — we read every note!');
+  } else {
+    // Don't claim success we didn't get — keep their text so they can retry.
+    toast("Couldn't send just now — please try again in a moment.");
+  }
 }
 
 async function submitAppEmail() {

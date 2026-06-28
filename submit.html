@@ -343,17 +343,46 @@ function selectTier(el, tier) {
   gtag('event','select_content',{content_type:'sponsored_tier',item:tier});
 }
 
-async function handleSpotSubmit(e) {
-  e.preventDefault();
-  alert('🎉 Thanks for submitting! We\'ll review your spot and feature it soon.');
-  gtag('event','submit_form',{type:'spot',success:true});
+// Read a form's fields as {Label: value} (inputs have no ids, so map by their label).
+function gatherForm(form) {
+  const out = {};
+  form.querySelectorAll('.form-group').forEach(g => {
+    const label = g.querySelector('.form-label')?.textContent.trim().replace(/\s*\(optional\)/i, '');
+    const field = g.querySelector('input, select, textarea');
+    if (label && field && field.value.trim()) out[label] = field.value.trim();
+  });
+  return out;
 }
-
-async function handlePhotoSubmit(e) {
+// Real submission → stored + emailed via the feedback function. Only claims success if it worked.
+async function postSubmission(e, kind, contextLabel) {
   e.preventDefault();
-  alert('📸 Photo submitted! If we feature it, we\'ll email you with credit details.');
-  gtag('event','submit_form',{type:'photo',success:true});
+  const form = e.target;
+  const f = gatherForm(form);
+  const btn = form.querySelector('button[type=submit]');
+  const orig = btn ? btn.textContent : '';
+  if (btn) { btn.disabled = true; btn.textContent = 'Submitting…'; }
+  const message = `${kind}\n` + Object.entries(f).map(([k, v]) => `${k}: ${v}`).join('\n');
+  const email = f['Your Email'] || f['Email'] || '';
+  let ok = false;
+  try {
+    const res = await fetch('/.netlify/functions/feedback', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message, email, context: contextLabel }),
+    });
+    ok = res.ok;
+  } catch (_) { ok = false; }
+  if (btn) { btn.disabled = false; btn.textContent = orig; }
+  if (ok) {
+    form.reset();
+    alert('🎉 Thank you! Your submission came through — we review every one. To include a photo, email it to info@totallycapecod.com.');
+    gtag('event', 'submit_form', { type: contextLabel, success: true });
+  } else {
+    alert('Sorry — that didn\'t go through. Please try again in a moment, or email us at info@totallycapecod.com.');
+    gtag('event', 'submit_form', { type: contextLabel, success: false });
+  }
 }
+function handleSpotSubmit(e) { return postSubmission(e, 'HIDDEN SPOT SUBMISSION', 'spot'); }
+function handlePhotoSubmit(e) { return postSubmission(e, 'PHOTO SUBMISSION', 'photo'); }
 
 async function handleSponsoredSubmit(e) {
   e.preventDefault();
@@ -369,32 +398,31 @@ async function handleSponsoredSubmit(e) {
     tier: tier,
   };
 
+  const stripeLinks = {
+    basic: 'https://buy.stripe.com/14AeV6bDF8a53kR43cbo402',
+    featured: 'https://buy.stripe.com/6oUdR29vx61Xg7D9nwbo403',
+    premium: 'https://buy.stripe.com/5kQ4gs379cql4oVbvEbo404',
+  };
+  const btn = e.target.querySelector('button[type=submit]');
+  const orig = btn ? btn.textContent : '';
+  if (btn) { btn.disabled = true; btn.textContent = 'Submitting…'; }
+  let ok = false;
   try {
     const res = await fetch('/.netlify/functions/sponsored-submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
     });
-    if (res.ok) {
-      gtag('event','purchase',{transaction_id:data.email, value: tier==='basic'?99:tier==='featured'?299:799, currency:'USD'});
-      // Redirect to Stripe payment link based on tier
-      const stripeLinks = {
-        basic: 'https://buy.stripe.com/14AeV6bDF8a53kR43cbo402',
-        featured: 'https://buy.stripe.com/6oUdR29vx61Xg7D9nwbo403',
-        premium: 'https://buy.stripe.com/5kQ4gs379cql4oVbvEbo404',
-      };
-      window.location.href = stripeLinks[tier] || '/';
-    } else {
-      throw new Error('Server error');
-    }
-  } catch (err) {
-    // Fallback: just redirect to Stripe
-    const stripeLinks = {
-      basic: 'https://buy.stripe.com/14AeV6bDF8a53kR43cbo402',
-      featured: 'https://buy.stripe.com/6oUdR29vx61Xg7D9nwbo403',
-      premium: 'https://buy.stripe.com/5kQ4gs379cql4oVbvEbo404',
-    };
+    ok = res.ok;
+  } catch (err) { ok = false; }
+  if (btn) { btn.disabled = false; btn.textContent = orig; }
+  // Only send them to payment once their details are safely captured — never take
+  // money without the lead, and never lose a paying business's info.
+  if (ok) {
+    gtag('event','purchase',{transaction_id:data.email, value: tier==='basic'?99:tier==='featured'?299:799, currency:'USD'});
     window.location.href = stripeLinks[tier] || '/';
+  } else {
+    alert('We couldn\'t save your details just now, so we didn\'t send you to payment. Please try again in a moment, or email info@totallycapecod.com and we\'ll set you up.');
   }
 }
 
