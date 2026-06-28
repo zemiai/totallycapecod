@@ -118,7 +118,11 @@
 
   .ios-content{ flex:1; overflow-y:auto; padding-bottom:100px; -webkit-overflow-scrolling:touch; }
   .app-topbar{ flex:none; display:flex; align-items:center; justify-content:center; height:58px; background:rgba(255,255,255,0.95); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-bottom:1px solid var(--ios-divider); position:relative; z-index:40; }
-  .app-topbar img{ height:46px; width:auto; display:block; }
+  .app-topbar img{ height:46px; width:auto; display:block; animation:tccPop 0.7s cubic-bezier(.34,1.56,.64,1) both; }
+  @keyframes tccPop{ 0%{ transform:scale(0.5) translateY(-6px); opacity:0; } 60%{ transform:scale(1.12) translateY(0); } 100%{ transform:scale(1); opacity:1; } }
+  @keyframes tccFloat{ 0%,100%{ transform:translateY(0) rotate(-1.5deg); } 50%{ transform:translateY(-8px) rotate(1.5deg); } }
+  .tcc-logo-float{ animation:tccFloat 3.4s ease-in-out infinite; transform-origin:center bottom; }
+  @media (prefers-reduced-motion: reduce){ .app-topbar img, .tcc-logo-float{ animation:none !important; } }
   .ios-content::-webkit-scrollbar{ display:none; }
 
   .tab-bar{ position:fixed; bottom:0; left:0; right:0; max-width:480px; margin:0 auto; background:rgba(255,255,255,0.92); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border-top:1px solid var(--ios-divider); display:flex; padding:8px 4px max(8px,env(safe-area-inset-bottom)); z-index:50; overflow:hidden; transition:transform 0.25s ease; }
@@ -694,7 +698,7 @@
       <!-- TASK9 Lever 2: Enhanced paywall persuasion copy -->
       <div id="proSplashLocked">
         <div style="background:linear-gradient(135deg,#1A3A6C 0%,#2C5599 100%); color:white; padding:30px 20px; text-align:center;">
-          <img src="/icon-512.png" alt="Totally Cape Cod" style="height:84px; width:auto; display:block; margin:0 auto; filter:drop-shadow(0 2px 8px rgba(0,0,0,0.25));" />
+          <img src="/icon-512.png" alt="Totally Cape Cod" class="tcc-logo-float" style="height:84px; width:auto; display:block; margin:0 auto; filter:drop-shadow(0 2px 8px rgba(0,0,0,0.25));" />
           <div class="font-display" style="font-weight:900; font-size:30px; margin-top:8px;">Cape Cod Pro</div>
           <!-- Trust line: one-time, lifetime, no subscription -->
           <div style="opacity:0.9; font-size:12px; margin-top:6px; letter-spacing:0.02em;">One-time payment · yours forever · no subscription · restore anytime</div>
