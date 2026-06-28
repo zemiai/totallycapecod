@@ -3124,6 +3124,7 @@ const TOUR_STEPS = [
   { tab: 'today',   title: '⚡ Today',       text: "Your daily Cape briefing: nearest beaches, live bridge delays, tonight's specials and tides." },
   { tab: 'beaches', title: '🏖️ Beaches',     text: 'Live water temps, real-time parking, and a 30-second quiz that finds your perfect beach.' },
   { tab: 'ai',      title: '✨ Ask a Local', text: 'Your Cape Cod guide — ask anything: best beach today, lobster rolls, sunset spots.' },
+  { tab: 'more',    title: '··· More',       text: 'Everything else lives here — events, your passport, the Bridge Oracle, tides, whale sightings, lighthouse tours, and Cape Cod Pro.' },
 ];
 function replayTour() {            // from the More menu — let anyone re-watch it
   localStorage.removeItem('tcc_tour_done');
@@ -3163,7 +3164,12 @@ function positionTour(target) {
 }
 function tourNext() {
   if (_tourIdx < TOUR_STEPS.length - 1) { _tourIdx++; renderTourStep(); }
-  else endTour();
+  else {
+    const last = TOUR_STEPS[_tourIdx];
+    endTour();
+    // Finishing on the More step opens the More menu so users see what's inside.
+    if (last && last.tab === 'more') setTimeout(() => openModal('moreMenu'), 200);
+  }
 }
 function endTour() {
   document.getElementById('tourOverlay').classList.remove('show');
