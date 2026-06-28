@@ -1613,6 +1613,7 @@ function renderBeaches() {
     if (mapContainer) mapContainer.style.display = '';
     if (mapSection && mapSection.classList.contains('ios-section-title')) mapSection.style.display = '';
     setTimeout(() => {
+      if (typeof L === 'undefined') return;   // Leaflet CDN unavailable — skip map; list still renders
       if (!beachMapInstance && document.getElementById('beachMap').offsetParent) {
         beachMapInstance = L.map('beachMap').setView([41.78, -70.05], 9);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution:'© OSM', maxZoom:18 }).addTo(beachMapInstance);
@@ -2385,6 +2386,7 @@ function renderWhales() {
     if (whaleMapContainer) whaleMapContainer.style.display = '';
     if (whaleMapSection && whaleMapSection.classList.contains('ios-section-title')) whaleMapSection.style.display = '';
     setTimeout(() => {
+      if (typeof L === 'undefined') return;   // Leaflet CDN unavailable — skip map gracefully
       if (!whaleMapInstance && document.getElementById('whaleMap').offsetParent) {
         whaleMapInstance = L.map('whaleMap').setView([42.05, -70.15], 9);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution:'© OSM' }).addTo(whaleMapInstance);
@@ -2462,6 +2464,7 @@ function renderLighthouses() {
     if (lhMapContainer) lhMapContainer.style.display = '';
     if (lhMapSection && lhMapSection.classList.contains('ios-section-title')) lhMapSection.style.display = '';
     setTimeout(() => {
+      if (typeof L === 'undefined') return;   // Leaflet CDN unavailable — skip map gracefully
       if (!lhMapInstance && document.getElementById('lighthouseMap').offsetParent) {
         lhMapInstance = L.map('lighthouseMap').setView([41.85, -70.05], 9);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution:'© OSM' }).addTo(lhMapInstance);
