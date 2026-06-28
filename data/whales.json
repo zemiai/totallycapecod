@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-28T18:44:15Z",
+  "updated_at": "2026-06-28T20:13:11Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -12,7 +12,7 @@
       "location": "W Falmouth Hwy, Falmouth, MA, US",
       "reported_by": "iNaturalist \u00b7 crowgrady",
       "reported_at": "2026-06-27T21:12:12Z",
-      "time_ago": "21 h ago",
+      "time_ago": "23 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/687736831/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/376156149"
@@ -26,7 +26,7 @@
       "location": "US",
       "reported_by": "iNaturalist \u00b7 crowgrady",
       "reported_at": "2026-06-27T21:05:08Z",
-      "time_ago": "21 h ago",
+      "time_ago": "23 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/687736900/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/376156180"
@@ -60,6 +60,90 @@
       "source_url": "https://www.inaturalist.org/observations/375599724"
     },
     {
+      "id": "inat-376312444",
+      "species": "seal",
+      "count": 1,
+      "lat": 42.0682,
+      "lng": -70.2205,
+      "location": "RP (Race Point), Provincetown, MA, USA",
+      "reported_by": "iNaturalist \u00b7 vburdette",
+      "reported_at": "2026-06-26T16:10:00Z",
+      "time_ago": "2 days ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/688026455/medium.jpg",
+      "notes": "Grey Seal",
+      "source_url": "https://www.inaturalist.org/observations/376312444"
+    },
+    {
+      "id": "inat-376312429",
+      "species": "humpback",
+      "count": 1,
+      "lat": 42.0682,
+      "lng": -70.2205,
+      "location": "RP (Race Point), Provincetown, MA, USA",
+      "reported_by": "iNaturalist \u00b7 vburdette",
+      "reported_at": "2026-06-26T12:43:00Z",
+      "time_ago": "2 days ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/688026343/medium.jpg",
+      "notes": "Humpback Whale",
+      "source_url": "https://www.inaturalist.org/observations/376312429"
+    },
+    {
+      "id": "inat-376312427",
+      "species": "humpback",
+      "count": 1,
+      "lat": 42.0682,
+      "lng": -70.2205,
+      "location": "RP (Race Point), Provincetown, MA, USA",
+      "reported_by": "iNaturalist \u00b7 vburdette",
+      "reported_at": "2026-06-26T12:40:00Z",
+      "time_ago": "2 days ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/688026319/medium.jpg",
+      "notes": "Humpback Whale",
+      "source_url": "https://www.inaturalist.org/observations/376312427"
+    },
+    {
+      "id": "inat-376312420",
+      "species": "fin",
+      "count": 1,
+      "lat": 42.1556,
+      "lng": -70.3531,
+      "location": "Massachusetts, US",
+      "reported_by": "iNaturalist \u00b7 vburdette",
+      "reported_at": "2026-06-26T12:08:00Z",
+      "time_ago": "2 days ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/688026318/medium.jpg",
+      "notes": "Fin Whale",
+      "source_url": "https://www.inaturalist.org/observations/376312420"
+    },
+    {
+      "id": "inat-376312407",
+      "species": "seal",
+      "count": 1,
+      "lat": 42.0682,
+      "lng": -70.2205,
+      "location": "RP (Race Point), Provincetown, MA, USA",
+      "reported_by": "iNaturalist \u00b7 vburdette",
+      "reported_at": "2026-06-26T11:05:00Z",
+      "time_ago": "2 days ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/688026153/medium.jpg",
+      "notes": "Grey Seal",
+      "source_url": "https://www.inaturalist.org/observations/376312407"
+    },
+    {
+      "id": "inat-376312406",
+      "species": "seal",
+      "count": 1,
+      "lat": 42.0682,
+      "lng": -70.2205,
+      "location": "RP (Race Point), Provincetown, MA, USA",
+      "reported_by": "iNaturalist \u00b7 vburdette",
+      "reported_at": "2026-06-26T11:04:00Z",
+      "time_ago": "2 days ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/688026131/medium.jpg",
+      "notes": "Grey Seal",
+      "source_url": "https://www.inaturalist.org/observations/376312406"
+    },
+    {
       "id": "inat-375725284",
       "species": "humpback",
       "count": 1,
@@ -72,48 +156,6 @@
       "photo_url": "https://static.inaturalist.org/photos/686909223/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/375725284"
-    },
-    {
-      "id": "inat-375725344",
-      "species": "seal",
-      "count": 1,
-      "lat": 42.2335,
-      "lng": -70.2925,
-      "location": "United States",
-      "reported_by": "iNaturalist \u00b7 redpidoptera",
-      "reported_at": "2026-06-25T18:32:00Z",
-      "time_ago": "3 days ago",
-      "photo_url": "https://static.inaturalist.org/photos/686909391/medium.jpg",
-      "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/375725344"
-    },
-    {
-      "id": "inat-375361587",
-      "species": "seal",
-      "count": 1,
-      "lat": 41.6881,
-      "lng": -69.9509,
-      "location": "Barcliff Avenue Ext, Chatham, MA, US",
-      "reported_by": "iNaturalist \u00b7 lauren_carneal",
-      "reported_at": "2026-06-25T17:01:17Z",
-      "time_ago": "3 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/686192392/medium.jpg",
-      "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/375361587"
-    },
-    {
-      "id": "inat-375122070",
-      "species": "seal",
-      "count": 1,
-      "lat": 41.9252,
-      "lng": -69.9751,
-      "location": "Wellfleet, MA, US",
-      "reported_by": "iNaturalist \u00b7 unconsolidatedregolith",
-      "reported_at": "2026-06-24T22:47:38Z",
-      "time_ago": "3 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/685724248/medium.jpg",
-      "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/375122070"
     },
     {
       "id": "inat-375682937",
@@ -268,34 +310,6 @@
       "photo_url": "https://static.inaturalist.org/photos/680724125/medium.jpg",
       "notes": "North Atlantic Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/372521358"
-    },
-    {
-      "id": "inat-372521356",
-      "species": "humpback",
-      "count": 1,
-      "lat": 42.149,
-      "lng": -70.3059,
-      "location": "Off Cape Cod",
-      "reported_by": "iNaturalist \u00b7 tianshuo",
-      "reported_at": "2026-06-14T20:12:00Z",
-      "time_ago": "13 days ago",
-      "photo_url": "https://static.inaturalist.org/photos/680723950/medium.jpg",
-      "notes": "North Atlantic Humpback Whale",
-      "source_url": "https://www.inaturalist.org/observations/372521356"
-    },
-    {
-      "id": "inat-372521351",
-      "species": "humpback",
-      "count": 1,
-      "lat": 42.1513,
-      "lng": -70.3061,
-      "location": "Off Cape Cod",
-      "reported_by": "iNaturalist \u00b7 tianshuo",
-      "reported_at": "2026-06-14T20:05:00Z",
-      "time_ago": "13 days ago",
-      "photo_url": "https://static.inaturalist.org/photos/680723918/medium.jpg",
-      "notes": "North Atlantic Humpback Whale",
-      "source_url": "https://www.inaturalist.org/observations/372521351"
     }
   ]
 }
