@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-22T15:28:24Z",
+  "updated_at": "2026-06-29T14:12:17Z",
   "enriched": true,
-  "count": 73,
+  "count": 72,
   "eats": [
     {
       "id": "the-lobster-pot",
@@ -18,13 +18,13 @@
         "lobster",
         "fine"
       ],
-      "desc": "Iconic waterfront since 1979 — lobster rolls, clam chowder, harbor views.",
+      "desc": "Iconic waterfront since 1979 \u2014 lobster rolls, clam chowder, harbor views.",
       "place_id": "ChIJodQ3d3yn_IkRaL3U202uvJ0",
       "photo": "data/eats-photos/the-lobster-pot.jpg",
-      "reviews": 9164,
+      "reviews": 9295,
       "website": "http://www.ptownlobsterpot.com/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=2343733837063219921",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:23Z",
+      "enriched_at": "2026-06-29T14:11:27Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 487-0842",
@@ -115,13 +115,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30 AM – 9:00 PM",
-        "Tuesday: 11:30 AM – 9:00 PM",
-        "Wednesday: 11:30 AM – 9:00 PM",
-        "Thursday: 11:30 AM – 9:00 PM",
-        "Friday: 11:30 AM – 9:00 PM",
-        "Saturday: 11:30 AM – 9:00 PM",
-        "Sunday: 11:30 AM – 9:00 PM"
+        "Monday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Tuesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Wednesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Thursday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Friday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Sunday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM"
       ]
     },
     {
@@ -140,10 +140,10 @@
       "desc": "Oceanfront dining with a legendary martini list. A P-town institution.",
       "place_id": "ChIJW79HTmWn_IkRzPfkuTK9RLI",
       "photo": "data/eats-photos/the-mews-restaurant-cafe.jpg",
-      "reviews": 759,
+      "reviews": 760,
       "website": "http://mewsptown.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:24Z",
+      "enriched_at": "2026-06-29T14:11:28Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 487-1500",
@@ -211,11 +211,11 @@
       ],
       "hours_text": [
         "Monday: Closed",
-        "Tuesday: 5:00 – 9:00 PM",
-        "Wednesday: 5:00 – 9:00 PM",
-        "Thursday: 5:00 – 9:00 PM",
-        "Friday: 5:00 – 9:00 PM",
-        "Saturday: 5:00 – 9:00 PM",
+        "Tuesday: 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Wednesday: 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Thursday: 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Friday: 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 5:00\u2009\u2013\u20099:00\u202fPM",
         "Sunday: Closed"
       ]
     },
@@ -234,11 +234,11 @@
       "desc": "Sunset dining right on the water. A splurge that earns it.",
       "place_id": "ChIJsQWvzmJY-4kRpvSkHnaWXYc",
       "photo": "data/eats-photos/the-red-inn.jpg",
-      "reviews": 746,
+      "reviews": 751,
       "website": "http://theredinn.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:25Z",
-      "deal": "Raw Bar Happy Hour · Fri–Sun 2–4:30pm",
+      "enriched_at": "2026-06-29T14:11:29Z",
+      "deal": "Raw Bar Happy Hour \u00b7 Fri\u2013Sun 2\u20134:30pm",
       "business_status": "OPERATIONAL",
       "phone": "(508) 487-7334",
       "hours": [
@@ -328,13 +328,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 2:00 – 9:30 PM",
-        "Tuesday: 2:00 – 9:30 PM",
-        "Wednesday: 2:00 – 9:30 PM",
-        "Thursday: 2:00 – 9:30 PM",
-        "Friday: 2:00 – 10:00 PM",
-        "Saturday: 2:00 – 10:00 PM",
-        "Sunday: 11:00 AM – 10:00 PM"
+        "Monday: 2:00\u2009\u2013\u20099:30\u202fPM",
+        "Tuesday: 2:00\u2009\u2013\u20099:30\u202fPM",
+        "Wednesday: 2:00\u2009\u2013\u20099:30\u202fPM",
+        "Thursday: 2:00\u2009\u2013\u20099:30\u202fPM",
+        "Friday: 2:00\u2009\u2013\u200910:00\u202fPM",
+        "Saturday: 2:00\u2009\u2013\u200910:00\u202fPM",
+        "Sunday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM"
       ]
     },
     {
@@ -351,13 +351,13 @@
         "clam",
         "casual"
       ],
-      "desc": "Beachfront counter — go for the lobster roll and frozen rosé.",
+      "desc": "Beachfront counter \u2014 go for the lobster roll and frozen ros\u00e9.",
       "place_id": "ChIJy0gAcH6n_IkR2t0LvOv8TYE",
       "photo": "data/eats-photos/the-canteen.jpg",
-      "reviews": 2347,
+      "reviews": 2350,
       "website": "http://www.thecanteenptown.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:26Z",
+      "enriched_at": "2026-06-29T14:11:29Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 487-3800",
@@ -448,13 +448,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00 AM – 8:00 PM",
-        "Tuesday: 11:00 AM – 8:00 PM",
-        "Wednesday: 11:00 AM – 8:00 PM",
-        "Thursday: 11:00 AM – 8:00 PM",
-        "Friday: 11:00 AM – 9:00 PM",
-        "Saturday: 11:00 AM – 9:00 PM",
-        "Sunday: 11:00 AM – 8:00 PM"
+        "Monday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
+        "Tuesday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
+        "Wednesday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
+        "Thursday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
+        "Friday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Sunday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM"
       ]
     },
     {
@@ -473,10 +473,10 @@
       "desc": "Late-night Commercial Street slice. The after-bar ritual.",
       "place_id": "ChIJESmjOn6n_IkRqfSl9ckjvJI",
       "photo": "data/eats-photos/spiritus-pizza.jpg",
-      "reviews": 1151,
+      "reviews": 1153,
       "website": "http://spirituspizza.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:27Z",
+      "enriched_at": "2026-06-29T14:11:30Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 487-2808",
@@ -567,13 +567,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30 AM – 2:00 AM",
-        "Tuesday: 11:30 AM – 2:00 AM",
-        "Wednesday: 11:30 AM – 2:00 AM",
-        "Thursday: 11:30 AM – 2:00 AM",
-        "Friday: 11:30 AM – 2:00 AM",
-        "Saturday: 11:30 AM – 2:00 AM",
-        "Sunday: 11:30 AM – 2:00 AM"
+        "Monday: 11:30\u202fAM\u2009\u2013\u20092:00\u202fAM",
+        "Tuesday: 11:30\u202fAM\u2009\u2013\u20092:00\u202fAM",
+        "Wednesday: 11:30\u202fAM\u2009\u2013\u20092:00\u202fAM",
+        "Thursday: 11:30\u202fAM\u2009\u2013\u20092:00\u202fAM",
+        "Friday: 11:30\u202fAM\u2009\u2013\u20092:00\u202fAM",
+        "Saturday: 11:30\u202fAM\u2009\u2013\u20092:00\u202fAM",
+        "Sunday: 11:30\u202fAM\u2009\u2013\u20092:00\u202fAM"
       ]
     },
     {
@@ -592,10 +592,10 @@
       "desc": "Build a beach picnic with their famous sandwiches.",
       "place_id": "ChIJuUiYUXqn_IkRZwCKh3bEfXw",
       "photo": "data/eats-photos/far-land-provisions.jpg",
-      "reviews": 580,
+      "reviews": 586,
       "website": "http://www.farlandprovisions.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:28Z",
+      "enriched_at": "2026-06-29T14:11:31Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 487-0045",
@@ -686,13 +686,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 8:00 AM – 5:00 PM",
-        "Tuesday: 8:00 AM – 5:00 PM",
-        "Wednesday: 8:00 AM – 5:00 PM",
-        "Thursday: 8:00 AM – 5:00 PM",
-        "Friday: 8:00 AM – 5:00 PM",
-        "Saturday: 8:00 AM – 5:00 PM",
-        "Sunday: 8:00 AM – 4:00 PM"
+        "Monday: 8:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
+        "Tuesday: 8:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
+        "Wednesday: 8:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
+        "Thursday: 8:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
+        "Friday: 8:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
+        "Saturday: 8:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
+        "Sunday: 8:00\u202fAM\u2009\u2013\u20094:00\u202fPM"
       ]
     },
     {
@@ -711,10 +711,10 @@
       "desc": "Wine flights and live music under the trees. Food trucks on site.",
       "place_id": "ChIJ8RlHtHWg_IkRBxpMWI8Z82w",
       "photo": "data/eats-photos/truro-vineyards.jpg",
-      "reviews": 573,
+      "reviews": 574,
       "website": "http://www.trurovineyardsofcapecod.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:29Z",
+      "enriched_at": "2026-06-29T14:11:31Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 487-6200",
@@ -727,7 +727,7 @@
           },
           "close": {
             "day": 0,
-            "hour": 17,
+            "hour": 19,
             "minute": 0
           }
         },
@@ -799,19 +799,19 @@
           },
           "close": {
             "day": 6,
-            "hour": 17,
+            "hour": 19,
             "minute": 0
           }
         }
       ],
       "hours_text": [
-        "Monday: 11:00 AM – 5:00 PM",
-        "Tuesday: 11:00 AM – 5:00 PM",
-        "Wednesday: 11:00 AM – 5:00 PM",
-        "Thursday: 11:00 AM – 5:00 PM",
-        "Friday: 11:00 AM – 5:00 PM",
-        "Saturday: 11:00 AM – 5:00 PM",
-        "Sunday: 12:00 – 5:00 PM"
+        "Monday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
+        "Tuesday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
+        "Wednesday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
+        "Thursday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
+        "Friday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
+        "Saturday: 11:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
+        "Sunday: 12:00\u2009\u2013\u20097:00\u202fPM"
       ]
     },
     {
@@ -833,7 +833,7 @@
       "reviews": 258,
       "website": "https://www.blackfishtruro.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:30Z",
+      "enriched_at": "2026-06-29T14:11:32Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 349-3399",
@@ -901,11 +901,11 @@
       ],
       "hours_text": [
         "Monday: Closed",
-        "Tuesday: 5:00 – 10:00 PM",
-        "Wednesday: 5:00 – 10:00 PM",
-        "Thursday: 5:00 – 10:00 PM",
-        "Friday: 5:00 – 10:00 PM",
-        "Saturday: 5:00 – 10:00 PM",
+        "Tuesday: 5:00\u2009\u2013\u200910:00\u202fPM",
+        "Wednesday: 5:00\u2009\u2013\u200910:00\u202fPM",
+        "Thursday: 5:00\u2009\u2013\u200910:00\u202fPM",
+        "Friday: 5:00\u2009\u2013\u200910:00\u202fPM",
+        "Saturday: 5:00\u2009\u2013\u200910:00\u202fPM",
         "Sunday: Closed"
       ]
     },
@@ -925,10 +925,10 @@
       "desc": "Family Italian-American with a raw bar. Reliable Route 6 classic.",
       "place_id": "ChIJASNnJmKg_IkRhAUJwk7L1jU",
       "photo": "data/eats-photos/montanos.jpg",
-      "reviews": 982,
+      "reviews": 986,
       "website": "http://www.montanos.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:31Z",
+      "enriched_at": "2026-06-29T14:11:33Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 487-2026",
@@ -1019,13 +1019,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 3:30 – 9:00 PM",
-        "Tuesday: 3:30 – 9:00 PM",
-        "Wednesday: 3:30 – 9:00 PM",
-        "Thursday: 3:30 – 9:00 PM",
-        "Friday: 3:30 – 9:00 PM",
-        "Saturday: 3:30 – 9:00 PM",
-        "Sunday: 3:30 – 9:00 PM"
+        "Monday: 3:30\u2009\u2013\u20099:00\u202fPM",
+        "Tuesday: 3:30\u2009\u2013\u20099:00\u202fPM",
+        "Wednesday: 3:30\u2009\u2013\u20099:00\u202fPM",
+        "Thursday: 3:30\u2009\u2013\u20099:00\u202fPM",
+        "Friday: 3:30\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 3:30\u2009\u2013\u20099:00\u202fPM",
+        "Sunday: 3:30\u2009\u2013\u20099:00\u202fPM"
       ]
     },
     {
@@ -1044,10 +1044,10 @@
       "desc": "Raw bar and sushi in a building topped by a boat. Oysters galore.",
       "place_id": "ChIJz9aI9Ehn-4kR5tpTPtkA_6g",
       "photo": "data/eats-photos/macs-shack.jpg",
-      "reviews": 1239,
+      "reviews": 1244,
       "website": "http://www.macsseafood.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:32Z",
+      "enriched_at": "2026-06-29T14:11:33Z",
       "deal": "Thursdays: All-You-Can-Eat Fish & Chips",
       "business_status": "OPERATIONAL",
       "phone": "(508) 349-6333",
@@ -1138,13 +1138,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30 AM – 10:00 PM",
-        "Tuesday: 11:30 AM – 10:00 PM",
-        "Wednesday: 11:30 AM – 10:00 PM",
-        "Thursday: 11:30 AM – 10:00 PM",
-        "Friday: 11:30 AM – 10:00 PM",
-        "Saturday: 11:30 AM – 10:00 PM",
-        "Sunday: 11:30 AM – 10:00 PM"
+        "Monday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Tuesday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Wednesday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Thursday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Friday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Saturday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Sunday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM"
       ]
     },
     {
@@ -1167,8 +1167,8 @@
       "reviews": 929,
       "website": "http://www.macsseafood.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:33Z",
-      "deal": "Thu: All-You-Can-Eat Fish & Chips · Daily Happy Hour",
+      "enriched_at": "2026-06-29T14:11:34Z",
+      "deal": "Thu: All-You-Can-Eat Fish & Chips \u00b7 Daily Happy Hour",
       "business_status": "OPERATIONAL",
       "phone": "(508) 349-9611",
       "hours": [
@@ -1258,13 +1258,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00 AM – 7:30 PM",
-        "Tuesday: 11:00 AM – 7:30 PM",
-        "Wednesday: 11:00 AM – 7:30 PM",
-        "Thursday: 11:00 AM – 7:30 PM",
-        "Friday: 11:00 AM – 7:30 PM",
-        "Saturday: 11:00 AM – 7:30 PM",
-        "Sunday: 11:00 AM – 7:30 PM"
+        "Monday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
+        "Tuesday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
+        "Wednesday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
+        "Thursday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
+        "Friday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
+        "Saturday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
+        "Sunday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM"
       ]
     },
     {
@@ -1283,10 +1283,10 @@
       "desc": "French-trained pastry. Croissants that ruin all other croissants.",
       "place_id": "ChIJIUDvpsJm-4kR4v5PsqeD53c",
       "photo": "data/eats-photos/pb-boulangerie-bistro.jpg",
-      "reviews": 1465,
+      "reviews": 1466,
       "website": "https://pbboulangeriebistro.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:33Z",
+      "enriched_at": "2026-06-29T14:11:35Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 349-1600",
@@ -1355,11 +1355,11 @@
       "hours_text": [
         "Monday: Closed",
         "Tuesday: Closed",
-        "Wednesday: 5:00 – 8:30 PM",
-        "Thursday: 5:00 – 8:30 PM",
-        "Friday: 5:00 – 8:30 PM",
-        "Saturday: 5:00 – 8:30 PM",
-        "Sunday: 5:00 – 8:30 PM"
+        "Wednesday: 5:00\u2009\u2013\u20098:30\u202fPM",
+        "Thursday: 5:00\u2009\u2013\u20098:30\u202fPM",
+        "Friday: 5:00\u2009\u2013\u20098:30\u202fPM",
+        "Saturday: 5:00\u2009\u2013\u20098:30\u202fPM",
+        "Sunday: 5:00\u2009\u2013\u20098:30\u202fPM"
       ]
     },
     {
@@ -1375,13 +1375,13 @@
         "seafood",
         "casual"
       ],
-      "desc": "Locals' joint over Duck Creek — oysters they pull themselves.",
+      "desc": "Locals' joint over Duck Creek \u2014 oysters they pull themselves.",
       "place_id": "ChIJ8WaihEZn-4kRmrPqBtMsAuw",
       "photo": "data/eats-photos/the-bookstore-restaurant.jpg",
-      "reviews": 1271,
+      "reviews": 1275,
       "website": "http://www.wellfleetoyster.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:34Z",
+      "enriched_at": "2026-06-29T14:11:35Z",
       "deal": "Happy Hour & Small Plates daily",
       "business_status": "OPERATIONAL",
       "phone": "(508) 349-3154",
@@ -1472,13 +1472,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30 AM – 9:00 PM",
-        "Tuesday: 11:30 AM – 9:00 PM",
-        "Wednesday: 11:30 AM – 9:00 PM",
-        "Thursday: 11:30 AM – 9:00 PM",
-        "Friday: 11:30 AM – 9:00 PM",
-        "Saturday: 11:30 AM – 9:00 PM",
-        "Sunday: 11:30 AM – 9:00 PM"
+        "Monday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Tuesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Wednesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Thursday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Friday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Sunday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM"
       ]
     },
     {
@@ -1498,10 +1498,10 @@
       "desc": "Beach bar on the dunes at Cahoon Hollow. Live bands + raw bar.",
       "place_id": "ChIJsTPAsDBh-4kRTRNYmi0VutM",
       "photo": "data/eats-photos/the-beachcomber.jpg",
-      "reviews": 1457,
+      "reviews": 1466,
       "website": "http://www.thebeachcomber.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:35Z",
+      "enriched_at": "2026-06-29T14:11:36Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 349-6055"
@@ -1514,17 +1514,17 @@
       "lng": -70.0331,
       "cuisine": "American",
       "price": "$$",
-      "rating": 4.6,
+      "rating": 4.5,
       "tags": [
         "fine"
       ],
       "desc": "Porch dining in a sea-captain's house downtown. Brunch + dinner.",
       "place_id": "ChIJLRp6WEln-4kRE67FE3YNH5Q",
       "photo": "data/eats-photos/winslows-tavern.jpg",
-      "reviews": 482,
+      "reviews": 484,
       "website": "http://www.winslowstavern.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:36Z",
+      "enriched_at": "2026-06-29T14:11:37Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 349-6450",
@@ -1699,13 +1699,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 12:00 – 3:00 PM, 5:30 – 9:00 PM",
-        "Tuesday: 12:00 – 3:00 PM, 5:30 – 9:00 PM",
-        "Wednesday: 12:00 – 3:00 PM, 5:30 – 9:00 PM",
-        "Thursday: 12:00 – 3:00 PM, 5:30 – 9:00 PM",
-        "Friday: 12:00 – 3:00 PM, 5:30 – 9:00 PM",
-        "Saturday: 12:00 – 3:00 PM, 5:30 – 9:00 PM",
-        "Sunday: 12:00 – 3:00 PM, 5:30 – 9:00 PM"
+        "Monday: 12:00\u2009\u2013\u20093:00\u202fPM, 5:30\u2009\u2013\u20099:00\u202fPM",
+        "Tuesday: 12:00\u2009\u2013\u20093:00\u202fPM, 5:30\u2009\u2013\u20099:00\u202fPM",
+        "Wednesday: 12:00\u2009\u2013\u20093:00\u202fPM, 5:30\u2009\u2013\u20099:00\u202fPM",
+        "Thursday: 12:00\u2009\u2013\u20093:00\u202fPM, 5:30\u2009\u2013\u20099:00\u202fPM",
+        "Friday: 12:00\u2009\u2013\u20093:00\u202fPM, 5:30\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 12:00\u2009\u2013\u20093:00\u202fPM, 5:30\u2009\u2013\u20099:00\u202fPM",
+        "Sunday: 12:00\u2009\u2013\u20093:00\u202fPM, 5:30\u2009\u2013\u20099:00\u202fPM"
       ]
     },
     {
@@ -1725,10 +1725,10 @@
       "desc": "The standard for lobster rolls. Mini golf, ice cream, epic onion rings.",
       "place_id": "ChIJF_rbJ5Ro-4kR42xAbKaKQf8",
       "photo": "data/eats-photos/arnolds-lobster-clam-bar.jpg",
-      "reviews": 2121,
+      "reviews": 2127,
       "website": "http://www.arnoldsrestaurant.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:37Z",
+      "enriched_at": "2026-06-29T14:11:37Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 255-2575",
@@ -1753,6 +1753,18 @@
           },
           "close": {
             "day": 1,
+            "hour": 20,
+            "minute": 0
+          }
+        },
+        {
+          "open": {
+            "day": 2,
+            "hour": 16,
+            "minute": 0
+          },
+          "close": {
+            "day": 2,
             "hour": 20,
             "minute": 0
           }
@@ -1795,13 +1807,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 4:00 – 8:00 PM",
-        "Tuesday: Closed",
+        "Monday: 4:00\u2009\u2013\u20098:00\u202fPM",
+        "Tuesday: 4:00\u2009\u2013\u20098:00\u202fPM",
         "Wednesday: Closed",
-        "Thursday: 4:00 – 8:00 PM",
-        "Friday: 4:00 – 8:00 PM",
-        "Saturday: 4:00 – 8:00 PM",
-        "Sunday: 4:00 – 8:00 PM"
+        "Thursday: 4:00\u2009\u2013\u20098:00\u202fPM",
+        "Friday: 4:00\u2009\u2013\u20098:00\u202fPM",
+        "Saturday: 4:00\u2009\u2013\u20098:00\u202fPM",
+        "Sunday: 4:00\u2009\u2013\u20098:00\u202fPM"
       ]
     },
     {
@@ -1819,13 +1831,13 @@
         "fried",
         "ice cream"
       ],
-      "desc": "Fried seafood, lobster rolls & soft-serve — the Wellfleet favorite's new Eastham spot (former Friendly Fisherman).",
+      "desc": "Fried seafood, lobster rolls & soft-serve \u2014 the Wellfleet favorite's new Eastham spot (former Friendly Fisherman).",
       "place_id": "ChIJP5POe0Vp-4kRImkfiiia3pg",
       "photo": "data/eats-photos/pjs-eastham.jpg",
       "reviews": 2,
       "website": "https://pjscapecod.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:38Z",
+      "enriched_at": "2026-06-29T14:11:38Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 255-6770",
@@ -1904,13 +1916,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00 AM – 8:00 PM",
-        "Tuesday: 11:00 AM – 8:00 PM",
+        "Monday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
+        "Tuesday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
         "Wednesday: Closed",
-        "Thursday: 11:00 AM – 8:00 PM",
-        "Friday: 11:00 AM – 8:00 PM",
-        "Saturday: 11:00 AM – 8:00 PM",
-        "Sunday: 11:00 AM – 8:00 PM"
+        "Thursday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
+        "Friday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
+        "Saturday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
+        "Sunday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM"
       ]
     },
     {
@@ -1927,13 +1939,13 @@
         "bakery",
         "coffee"
       ],
-      "desc": "A Cape Sunday tradition — hand-cut donuts and a buzzing counter.",
+      "desc": "A Cape Sunday tradition \u2014 hand-cut donuts and a buzzing counter.",
       "place_id": "ChIJU8uagpto-4kR9tJNdnHbz3Y",
       "photo": "data/eats-photos/hole-in-one-donuts.jpg",
-      "reviews": 681,
+      "reviews": 683,
       "website": "https://theholecapecod.com/eastham/?utm_source=gmb_eastham&utm_medium=organic&utm_campaign=listing",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:39Z",
+      "enriched_at": "2026-06-29T14:11:39Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 255-9446",
@@ -2024,13 +2036,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 6:00 AM – 2:00 PM",
-        "Tuesday: 6:00 AM – 2:00 PM",
-        "Wednesday: 6:00 AM – 2:00 PM",
-        "Thursday: 6:00 AM – 2:00 PM",
-        "Friday: 6:00 AM – 2:00 PM",
-        "Saturday: 6:00 AM – 2:00 PM",
-        "Sunday: 6:00 AM – 2:00 PM"
+        "Monday: 6:00\u202fAM\u2009\u2013\u20092:00\u202fPM",
+        "Tuesday: 6:00\u202fAM\u2009\u2013\u20092:00\u202fPM",
+        "Wednesday: 6:00\u202fAM\u2009\u2013\u20092:00\u202fPM",
+        "Thursday: 6:00\u202fAM\u2009\u2013\u20092:00\u202fPM",
+        "Friday: 6:00\u202fAM\u2009\u2013\u20092:00\u202fPM",
+        "Saturday: 6:00\u202fAM\u2009\u2013\u20092:00\u202fPM",
+        "Sunday: 6:00\u202fAM\u2009\u2013\u20092:00\u202fPM"
       ]
     },
     {
@@ -2050,10 +2062,10 @@
       "desc": "Diner breakfasts and pizza by the rail trail. Cyclists' refuel stop.",
       "place_id": "ChIJyZ3QDpto-4kRcxu__Arx9X4",
       "photo": "data/eats-photos/fairway-restaurant-pizzeria.jpg",
-      "reviews": 765,
+      "reviews": 768,
       "website": "https://www.fairwaycapecod.com/?utm_source=gmb&utm_medium=organic&utm_campaign=listing",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:39Z",
+      "enriched_at": "2026-06-29T14:11:40Z",
       "deal": "Weekly breakfast & dinner specials",
       "business_status": "OPERATIONAL",
       "phone": "(508) 255-3893",
@@ -2228,13 +2240,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 6:30 AM – 12:00 PM, 4:00 – 8:00 PM",
-        "Tuesday: 6:30 AM – 12:00 PM, 4:00 – 8:00 PM",
-        "Wednesday: 6:30 AM – 12:00 PM, 4:00 – 8:00 PM",
-        "Thursday: 6:30 AM – 12:00 PM, 4:00 – 8:00 PM",
-        "Friday: 6:30 AM – 12:00 PM, 4:00 – 8:00 PM",
-        "Saturday: 6:30 AM – 12:00 PM, 4:00 – 8:00 PM",
-        "Sunday: 6:30 AM – 12:00 PM, 4:00 – 8:00 PM"
+        "Monday: 6:30\u202fAM\u2009\u2013\u200912:00\u202fPM, 4:00\u2009\u2013\u20098:00\u202fPM",
+        "Tuesday: 6:30\u202fAM\u2009\u2013\u200912:00\u202fPM, 4:00\u2009\u2013\u20098:00\u202fPM",
+        "Wednesday: 6:30\u202fAM\u2009\u2013\u200912:00\u202fPM, 4:00\u2009\u2013\u20098:00\u202fPM",
+        "Thursday: 6:30\u202fAM\u2009\u2013\u200912:00\u202fPM, 4:00\u2009\u2013\u20098:00\u202fPM",
+        "Friday: 6:30\u202fAM\u2009\u2013\u200912:00\u202fPM, 4:00\u2009\u2013\u20098:00\u202fPM",
+        "Saturday: 6:30\u202fAM\u2009\u2013\u200912:00\u202fPM, 4:00\u2009\u2013\u20098:00\u202fPM",
+        "Sunday: 6:30\u202fAM\u2009\u2013\u200912:00\u202fPM, 4:00\u2009\u2013\u20098:00\u202fPM"
       ]
     },
     {
@@ -2250,13 +2262,13 @@
         "casual",
         "icecream"
       ],
-      "desc": "Modern clam-shack — smash burgers, lobster rolls, frappes.",
+      "desc": "Modern clam-shack \u2014 smash burgers, lobster rolls, frappes.",
       "place_id": "ChIJlTr32Wtp-4kRCvibwRfSGS0",
       "photo": "data/eats-photos/the-knack.jpg",
-      "reviews": 1496,
+      "reviews": 1505,
       "website": "https://www.theknackcapecod.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:41Z",
+      "enriched_at": "2026-06-29T14:11:40Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(774) 316-4595",
@@ -2347,13 +2359,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00 AM – 9:00 PM",
-        "Tuesday: 11:00 AM – 9:00 PM",
-        "Wednesday: 11:00 AM – 9:00 PM",
-        "Thursday: 11:00 AM – 9:00 PM",
-        "Friday: 11:00 AM – 9:00 PM",
-        "Saturday: 11:00 AM – 9:00 PM",
-        "Sunday: 11:00 AM – 9:00 PM"
+        "Monday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Tuesday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Wednesday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Thursday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Friday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Sunday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM"
       ]
     },
     {
@@ -2373,10 +2385,10 @@
       "desc": "Coffee, cinnamon buns, and house chocolates. Orleans' morning HQ.",
       "place_id": "ChIJK9c7g3xp-4kRDsUKuAzChYk",
       "photo": "data/eats-photos/hot-chocolate-sparrow.jpg",
-      "reviews": 1781,
+      "reviews": 1786,
       "website": "http://www.hotchocolatesparrow.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:42Z",
+      "enriched_at": "2026-06-29T14:11:41Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 240-6970",
@@ -2467,13 +2479,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 6:30 AM – 8:00 PM",
-        "Tuesday: 6:30 AM – 8:00 PM",
-        "Wednesday: 6:30 AM – 8:00 PM",
-        "Thursday: 6:30 AM – 8:00 PM",
-        "Friday: 6:30 AM – 9:00 PM",
-        "Saturday: 6:30 AM – 9:00 PM",
-        "Sunday: 6:30 AM – 8:00 PM"
+        "Monday: 6:30\u202fAM\u2009\u2013\u20098:00\u202fPM",
+        "Tuesday: 6:30\u202fAM\u2009\u2013\u20098:00\u202fPM",
+        "Wednesday: 6:30\u202fAM\u2009\u2013\u20098:00\u202fPM",
+        "Thursday: 6:30\u202fAM\u2009\u2013\u20098:00\u202fPM",
+        "Friday: 6:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 6:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Sunday: 6:30\u202fAM\u2009\u2013\u20098:00\u202fPM"
       ]
     },
     {
@@ -2489,13 +2501,13 @@
         "bar",
         "casual"
       ],
-      "desc": "Quintessential Cape tavern since 1969 — chowder, burgers, ceiling signs.",
+      "desc": "Quintessential Cape tavern since 1969 \u2014 chowder, burgers, ceiling signs.",
       "place_id": "ChIJ36GSqHxp-4kR718dguVV9VA",
       "photo": "data/eats-photos/land-ho.jpg",
-      "reviews": 1199,
+      "reviews": 1201,
       "website": "http://www.land-ho.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:43Z",
+      "enriched_at": "2026-06-29T14:11:42Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 255-5165",
@@ -2574,13 +2586,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30 AM – 11:00 PM",
+        "Monday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
         "Tuesday: Closed",
-        "Wednesday: 11:30 AM – 11:00 PM",
-        "Thursday: 11:30 AM – 11:00 PM",
-        "Friday: 11:30 AM – 11:00 PM",
-        "Saturday: 11:30 AM – 11:00 PM",
-        "Sunday: 11:30 AM – 11:00 PM"
+        "Wednesday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
+        "Thursday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
+        "Friday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
+        "Saturday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
+        "Sunday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM"
       ]
     },
     {
@@ -2596,13 +2608,13 @@
         "fine",
         "seafood"
       ],
-      "desc": "Downtown bistro — wood-grilled fish and a lively bar scene.",
+      "desc": "Downtown bistro \u2014 wood-grilled fish and a lively bar scene.",
       "place_id": "ChIJjaBSXXtp-4kRuVTVS_9LV4o",
       "photo": "data/eats-photos/mahoneys-atlantic-bar-grill.jpg",
-      "reviews": 454,
+      "reviews": 455,
       "website": "http://mahoneysatlantic.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:44Z",
+      "enriched_at": "2026-06-29T14:11:43Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(774) 207-7921",
@@ -2681,12 +2693,12 @@
         }
       ],
       "hours_text": [
-        "Monday: 5:00 – 9:00 PM",
-        "Tuesday: 5:00 – 9:00 PM",
-        "Wednesday: 5:00 – 9:00 PM",
-        "Thursday: 5:00 – 9:00 PM",
-        "Friday: 5:00 – 9:00 PM",
-        "Saturday: 5:00 – 9:00 PM",
+        "Monday: 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Tuesday: 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Wednesday: 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Thursday: 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Friday: 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 5:00\u2009\u2013\u20099:00\u202fPM",
         "Sunday: Closed"
       ]
     },
@@ -2703,13 +2715,13 @@
         "seafood",
         "fine"
       ],
-      "desc": "Tiny, beloved, no-reservations — some of the best seafood on the Cape.",
+      "desc": "Tiny, beloved, no-reservations \u2014 some of the best seafood on the Cape.",
       "place_id": "ChIJQTh4CspB-4kRBKxY6fqmNyA",
       "photo": "data/eats-photos/brewster-fish-house.jpg",
       "reviews": 486,
       "website": "http://www.brewsterfishhousecapecod.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:44Z",
+      "enriched_at": "2026-06-29T14:11:43Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 896-7867",
@@ -2789,12 +2801,12 @@
       ],
       "hours_text": [
         "Monday: Closed",
-        "Tuesday: 12:00 – 9:00 PM",
-        "Wednesday: 12:00 – 9:00 PM",
-        "Thursday: 12:00 – 9:00 PM",
-        "Friday: 12:00 – 9:00 PM",
-        "Saturday: 12:00 – 9:00 PM",
-        "Sunday: 12:00 – 9:00 PM"
+        "Tuesday: 12:00\u2009\u2013\u20099:00\u202fPM",
+        "Wednesday: 12:00\u2009\u2013\u20099:00\u202fPM",
+        "Thursday: 12:00\u2009\u2013\u20099:00\u202fPM",
+        "Friday: 12:00\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 12:00\u2009\u2013\u20099:00\u202fPM",
+        "Sunday: 12:00\u2009\u2013\u20099:00\u202fPM"
       ]
     },
     {
@@ -2814,10 +2826,10 @@
       "desc": "Roadside classic on 6A. Fried clams and soft serve since 1948.",
       "place_id": "ChIJUWftWw1q-4kRO3im9FLixlQ",
       "photo": "data/eats-photos/cobies-clam-shack.jpg",
-      "reviews": 900,
+      "reviews": 902,
       "website": "https://cobies.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:45Z",
+      "enriched_at": "2026-06-29T14:11:44Z",
       "deal": "Daily specials on the board",
       "business_status": "OPERATIONAL",
       "phone": "(508) 896-7021",
@@ -2908,13 +2920,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00 AM – 7:30 PM",
-        "Tuesday: 11:00 AM – 7:30 PM",
-        "Wednesday: 11:00 AM – 7:30 PM",
-        "Thursday: 11:00 AM – 7:30 PM",
-        "Friday: 11:00 AM – 7:30 PM",
-        "Saturday: 11:00 AM – 7:30 PM",
-        "Sunday: 11:00 AM – 7:30 PM"
+        "Monday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
+        "Tuesday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
+        "Wednesday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
+        "Thursday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
+        "Friday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
+        "Saturday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
+        "Sunday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM"
       ]
     },
     {
@@ -2931,14 +2943,14 @@
         "clam",
         "casual"
       ],
-      "desc": "Order-at-the-window family spot — fried seafood and lobster dinners.",
+      "desc": "Order-at-the-window family spot \u2014 fried seafood and lobster dinners.",
       "place_id": "ChIJ1bgKN9pB-4kR91k6aRxf7hw",
       "photo": "data/eats-photos/jts-seafood.jpg",
-      "reviews": 885,
+      "reviews": 887,
       "website": "http://www.jt-seafood.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:46Z",
-      "deal": "Cash-discount pricing · Kids specials",
+      "enriched_at": "2026-06-29T14:11:45Z",
+      "deal": "Cash-discount pricing \u00b7 Kids specials",
       "business_status": "OPERATIONAL",
       "phone": "(508) 896-3355",
       "hours": [
@@ -3028,13 +3040,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00 AM – 7:30 PM",
-        "Tuesday: 11:00 AM – 7:30 PM",
-        "Wednesday: 11:00 AM – 7:30 PM",
-        "Thursday: 11:00 AM – 7:30 PM",
-        "Friday: 11:00 AM – 7:30 PM",
-        "Saturday: 11:00 AM – 7:30 PM",
-        "Sunday: 11:00 AM – 7:30 PM"
+        "Monday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
+        "Tuesday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
+        "Wednesday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
+        "Thursday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
+        "Friday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
+        "Saturday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
+        "Sunday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM"
       ]
     },
     {
@@ -3055,7 +3067,7 @@
       "reviews": 162,
       "website": "http://www.chillingsworth.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:47Z",
+      "enriched_at": "2026-06-29T14:11:45Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 896-3640",
@@ -3135,12 +3147,12 @@
       ],
       "hours_text": [
         "Monday: Closed",
-        "Tuesday: 5:00 – 8:00 PM",
-        "Wednesday: 5:00 – 8:00 PM",
-        "Thursday: 5:00 – 8:00 PM",
-        "Friday: 5:00 – 8:00 PM",
-        "Saturday: 5:00 – 8:00 PM",
-        "Sunday: 5:00 – 8:00 PM"
+        "Tuesday: 5:00\u2009\u2013\u20098:00\u202fPM",
+        "Wednesday: 5:00\u2009\u2013\u20098:00\u202fPM",
+        "Thursday: 5:00\u2009\u2013\u20098:00\u202fPM",
+        "Friday: 5:00\u2009\u2013\u20098:00\u202fPM",
+        "Saturday: 5:00\u2009\u2013\u20098:00\u202fPM",
+        "Sunday: 5:00\u2009\u2013\u20098:00\u202fPM"
       ]
     },
     {
@@ -3159,10 +3171,10 @@
       "desc": "Craft roaster with a sunlit cafe. Best pour-over on the Mid-Cape.",
       "place_id": "ChIJi4mIeNBB-4kRDjHIj-LlGfI",
       "photo": "data/eats-photos/snowy-owl-coffee-roasters.jpg",
-      "reviews": 949,
+      "reviews": 955,
       "website": "https://socoffee.co/pages/coffee-house-in-brewster?utm_source=gmb_brewster&utm_medium=organic&utm_campaign=listing",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:48Z",
+      "enriched_at": "2026-06-29T14:11:46Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(774) 323-0605",
@@ -3313,13 +3325,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 6:30 AM – 5:00 PM",
-        "Tuesday: 6:30 AM – 5:00 PM, 6:00 – 10:00 PM",
-        "Wednesday: 6:30 AM – 5:00 PM, 6:00 – 10:00 PM",
-        "Thursday: 6:30 AM – 5:00 PM, 6:00 – 10:00 PM",
-        "Friday: 6:30 AM – 5:00 PM, 6:00 – 10:00 PM",
-        "Saturday: 7:30 AM – 5:00 PM, 6:00 – 10:00 PM",
-        "Sunday: 7:30 AM – 5:00 PM"
+        "Monday: 6:30\u202fAM\u2009\u2013\u20095:00\u202fPM",
+        "Tuesday: 6:30\u202fAM\u2009\u2013\u20095:00\u202fPM, 6:00\u2009\u2013\u200910:00\u202fPM",
+        "Wednesday: 6:30\u202fAM\u2009\u2013\u20095:00\u202fPM, 6:00\u2009\u2013\u200910:00\u202fPM",
+        "Thursday: 6:30\u202fAM\u2009\u2013\u20095:00\u202fPM, 6:00\u2009\u2013\u200910:00\u202fPM",
+        "Friday: 6:30\u202fAM\u2009\u2013\u20095:00\u202fPM, 6:00\u2009\u2013\u200910:00\u202fPM",
+        "Saturday: 7:30\u202fAM\u2009\u2013\u20095:00\u202fPM, 6:00\u2009\u2013\u200910:00\u202fPM",
+        "Sunday: 7:30\u202fAM\u2009\u2013\u20095:00\u202fPM"
       ]
     },
     {
@@ -3338,10 +3350,10 @@
       "desc": "Refined coastal dining in a sea-captain's house. Quietly excellent.",
       "place_id": "ChIJMz21fEA--4kR8UwqnQMPtHY",
       "photo": "data/eats-photos/cape-sea-grille.jpg",
-      "reviews": 306,
+      "reviews": 309,
       "website": "http://www.capeseagrille.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:48Z",
+      "enriched_at": "2026-06-29T14:11:47Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 432-4745",
@@ -3410,11 +3422,11 @@
       "hours_text": [
         "Monday: Closed",
         "Tuesday: Closed",
-        "Wednesday: 5:00 – 9:00 PM",
-        "Thursday: 5:00 – 9:00 PM",
-        "Friday: 5:00 – 9:00 PM",
-        "Saturday: 5:00 – 9:00 PM",
-        "Sunday: 5:00 – 9:00 PM"
+        "Wednesday: 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Thursday: 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Friday: 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Sunday: 5:00\u2009\u2013\u20099:00\u202fPM"
       ]
     },
     {
@@ -3430,13 +3442,13 @@
         "seafood",
         "bar"
       ],
-      "desc": "Harbor-view deck — sunset cocktails and twin lobsters.",
+      "desc": "Harbor-view deck \u2014 sunset cocktails and twin lobsters.",
       "place_id": "ChIJrYMydbU_-4kRVU3vQ6IURfk",
       "photo": "data/eats-photos/brax-landing.jpg",
-      "reviews": 2311,
+      "reviews": 2319,
       "website": "http://www.braxrestaurant.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:49Z",
+      "enriched_at": "2026-06-29T14:11:47Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 432-5515",
@@ -3527,13 +3539,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30 AM – 9:00 PM",
-        "Tuesday: 11:30 AM – 9:00 PM",
-        "Wednesday: 11:30 AM – 9:00 PM",
-        "Thursday: 11:30 AM – 9:00 PM",
-        "Friday: 11:30 AM – 9:00 PM",
-        "Saturday: 11:30 AM – 9:00 PM",
-        "Sunday: 11:30 AM – 9:00 PM"
+        "Monday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Tuesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Wednesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Thursday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Friday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Sunday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM"
       ]
     },
     {
@@ -3552,10 +3564,10 @@
       "desc": "Romantic, candle-lit Tuscan. Reservations a must in summer.",
       "place_id": "ChIJ7aRrLngV-4kRE50oMq39X_M",
       "photo": "data/eats-photos/bucas-tuscan-roadhouse.jpg",
-      "reviews": 564,
+      "reviews": 568,
       "website": "http://www.bucastuscanroadhouse.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:50Z",
+      "enriched_at": "2026-06-29T14:11:48Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 432-6900",
@@ -3646,13 +3658,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 4:30 – 9:00 PM",
-        "Tuesday: 4:30 – 9:00 PM",
-        "Wednesday: 4:30 – 9:00 PM",
-        "Thursday: 4:30 – 9:00 PM",
-        "Friday: 4:30 – 9:00 PM",
-        "Saturday: 4:30 – 9:00 PM",
-        "Sunday: 4:30 – 9:00 PM"
+        "Monday: 4:30\u2009\u2013\u20099:00\u202fPM",
+        "Tuesday: 4:30\u2009\u2013\u20099:00\u202fPM",
+        "Wednesday: 4:30\u2009\u2013\u20099:00\u202fPM",
+        "Thursday: 4:30\u2009\u2013\u20099:00\u202fPM",
+        "Friday: 4:30\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 4:30\u2009\u2013\u20099:00\u202fPM",
+        "Sunday: 4:30\u2009\u2013\u20099:00\u202fPM"
       ]
     },
     {
@@ -3668,13 +3680,13 @@
         "seafood",
         "fine"
       ],
-      "desc": "Tucked off Main Street — bouillabaisse and oysters in a buzzy room.",
+      "desc": "Tucked off Main Street \u2014 bouillabaisse and oysters in a buzzy room.",
       "place_id": "ChIJyRMiwJ8U-4kR1Q2QAT9XbbE",
       "photo": "data/eats-photos/the-impudent-oyster.jpg",
-      "reviews": 792,
+      "reviews": 795,
       "website": "http://theimpudentoyster.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:51Z",
+      "enriched_at": "2026-06-29T14:11:49Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 945-3545",
@@ -3849,13 +3861,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30 AM – 2:45 PM, 5:00 – 9:00 PM",
-        "Tuesday: 11:30 AM – 2:45 PM, 5:00 – 9:00 PM",
-        "Wednesday: 11:30 AM – 2:45 PM, 5:00 – 9:00 PM",
-        "Thursday: 11:30 AM – 2:45 PM, 5:00 – 9:00 PM",
-        "Friday: 11:30 AM – 2:45 PM, 5:00 – 9:00 PM",
-        "Saturday: 11:30 AM – 2:45 PM, 5:00 – 9:00 PM",
-        "Sunday: 11:30 AM – 2:45 PM, 5:00 – 9:00 PM"
+        "Monday: 11:30\u202fAM\u2009\u2013\u20092:45\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Tuesday: 11:30\u202fAM\u2009\u2013\u20092:45\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Wednesday: 11:30\u202fAM\u2009\u2013\u20092:45\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Thursday: 11:30\u202fAM\u2009\u2013\u20092:45\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Friday: 11:30\u202fAM\u2009\u2013\u20092:45\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 11:30\u202fAM\u2009\u2013\u20092:45\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Sunday: 11:30\u202fAM\u2009\u2013\u20092:45\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM"
       ]
     },
     {
@@ -3875,10 +3887,10 @@
       "desc": "Lobster rolls on the pier, watching seals and the fishing fleet.",
       "place_id": "ChIJESlJs1kT-4kRp-7l4_nJEpo",
       "photo": "data/eats-photos/chatham-pier-fish-market.jpg",
-      "reviews": 2395,
+      "reviews": 2409,
       "website": "https://www.chathampierfishmkt.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:52Z",
+      "enriched_at": "2026-06-29T14:11:50Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 945-3474",
@@ -3969,13 +3981,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 10:00 AM – 7:00 PM",
-        "Tuesday: 10:00 AM – 7:00 PM",
-        "Wednesday: 10:00 AM – 7:00 PM",
-        "Thursday: 10:00 AM – 7:00 PM",
-        "Friday: 10:00 AM – 7:00 PM",
-        "Saturday: 10:00 AM – 7:00 PM",
-        "Sunday: 10:00 AM – 7:00 PM"
+        "Monday: 10:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
+        "Tuesday: 10:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
+        "Wednesday: 10:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
+        "Thursday: 10:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
+        "Friday: 10:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
+        "Saturday: 10:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
+        "Sunday: 10:00\u202fAM\u2009\u2013\u20097:00\u202fPM"
       ]
     },
     {
@@ -3995,10 +4007,10 @@
       "desc": "Townie tavern and raw bar. Loud, fun, and always packed.",
       "place_id": "ChIJXQgSsJ8U-4kRwgW48kJcLUc",
       "photo": "data/eats-photos/the-chatham-squire.jpg",
-      "reviews": 1850,
+      "reviews": 1853,
       "website": "http://www.thesquire.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:52Z",
+      "enriched_at": "2026-06-29T14:11:50Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 945-0945",
@@ -4089,13 +4101,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30 AM – 1:00 AM",
-        "Tuesday: 11:30 AM – 1:00 AM",
-        "Wednesday: 11:30 AM – 1:00 AM",
-        "Thursday: 11:30 AM – 1:00 AM",
-        "Friday: 11:30 AM – 1:00 AM",
-        "Saturday: 11:30 AM – 1:00 AM",
-        "Sunday: 11:30 AM – 1:00 AM"
+        "Monday: 11:30\u202fAM\u2009\u2013\u20091:00\u202fAM",
+        "Tuesday: 11:30\u202fAM\u2009\u2013\u20091:00\u202fAM",
+        "Wednesday: 11:30\u202fAM\u2009\u2013\u20091:00\u202fAM",
+        "Thursday: 11:30\u202fAM\u2009\u2013\u20091:00\u202fAM",
+        "Friday: 11:30\u202fAM\u2009\u2013\u20091:00\u202fAM",
+        "Saturday: 11:30\u202fAM\u2009\u2013\u20091:00\u202fAM",
+        "Sunday: 11:30\u202fAM\u2009\u2013\u20091:00\u202fAM"
       ]
     },
     {
@@ -4113,10 +4125,10 @@
       "desc": "Wood-fired Mediterranean with a sleek bar. Brunch is a scene.",
       "place_id": "ChIJgWiEAb0U-4kREzJF1SX5viU",
       "photo": "data/eats-photos/del-mar-bar-bistro.jpg",
-      "reviews": 477,
+      "reviews": 478,
       "website": "https://www.delmarbistro.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:53Z",
+      "enriched_at": "2026-06-29T14:11:51Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 945-9988",
@@ -4124,83 +4136,83 @@
         {
           "open": {
             "day": 1,
-            "hour": 17,
-            "minute": 0
+            "hour": 16,
+            "minute": 45
           },
           "close": {
             "day": 1,
-            "hour": 20,
-            "minute": 30
+            "hour": 21,
+            "minute": 0
           }
         },
         {
           "open": {
             "day": 2,
-            "hour": 17,
-            "minute": 0
+            "hour": 16,
+            "minute": 45
           },
           "close": {
             "day": 2,
-            "hour": 20,
-            "minute": 30
+            "hour": 21,
+            "minute": 0
           }
         },
         {
           "open": {
             "day": 3,
-            "hour": 17,
-            "minute": 0
+            "hour": 16,
+            "minute": 45
           },
           "close": {
             "day": 3,
-            "hour": 20,
-            "minute": 30
+            "hour": 21,
+            "minute": 0
           }
         },
         {
           "open": {
             "day": 4,
-            "hour": 17,
-            "minute": 0
+            "hour": 16,
+            "minute": 45
           },
           "close": {
             "day": 4,
-            "hour": 20,
-            "minute": 30
+            "hour": 21,
+            "minute": 0
           }
         },
         {
           "open": {
             "day": 5,
-            "hour": 17,
-            "minute": 0
+            "hour": 16,
+            "minute": 45
           },
           "close": {
             "day": 5,
-            "hour": 20,
-            "minute": 30
+            "hour": 21,
+            "minute": 0
           }
         },
         {
           "open": {
             "day": 6,
-            "hour": 17,
-            "minute": 0
+            "hour": 16,
+            "minute": 45
           },
           "close": {
             "day": 6,
-            "hour": 20,
-            "minute": 30
+            "hour": 21,
+            "minute": 0
           }
         }
       ],
       "hours_text": [
-        "Monday: 5:00 – 8:30 PM",
-        "Tuesday: 5:00 – 8:30 PM",
-        "Wednesday: 5:00 – 8:30 PM",
-        "Thursday: 5:00 – 8:30 PM",
-        "Friday: 5:00 – 8:30 PM",
-        "Saturday: 5:00 – 8:30 PM",
+        "Monday: 4:45\u2009\u2013\u20099:00\u202fPM",
+        "Tuesday: 4:45\u2009\u2013\u20099:00\u202fPM",
+        "Wednesday: 4:45\u2009\u2013\u20099:00\u202fPM",
+        "Thursday: 4:45\u2009\u2013\u20099:00\u202fPM",
+        "Friday: 4:45\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 4:45\u2009\u2013\u20099:00\u202fPM",
         "Sunday: Closed"
       ]
     },
@@ -4217,13 +4229,13 @@
         "breakfast",
         "brunch"
       ],
-      "desc": "Breakfast on the airfield — watch small planes over your hash.",
+      "desc": "Breakfast on the airfield \u2014 watch small planes over your hash.",
       "place_id": "ChIJITYtwcIU-4kRBV-9WAl6ohs",
       "photo": "data/eats-photos/hangar-b-eatery.jpg",
-      "reviews": 548,
+      "reviews": 549,
       "website": "http://www.hangarbchatham.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:54Z",
+      "enriched_at": "2026-06-29T14:11:52Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 593-3655",
@@ -4302,18 +4314,18 @@
         }
       ],
       "hours_text": [
-        "Monday: 7:00 AM – 2:00 PM",
+        "Monday: 7:00\u202fAM\u2009\u2013\u20092:00\u202fPM",
         "Tuesday: Closed",
-        "Wednesday: 7:00 AM – 2:00 PM",
-        "Thursday: 7:00 AM – 2:00 PM",
-        "Friday: 7:00 AM – 2:00 PM",
-        "Saturday: 7:00 AM – 2:00 PM",
-        "Sunday: 7:00 AM – 2:00 PM"
+        "Wednesday: 7:00\u202fAM\u2009\u2013\u20092:00\u202fPM",
+        "Thursday: 7:00\u202fAM\u2009\u2013\u20092:00\u202fPM",
+        "Friday: 7:00\u202fAM\u2009\u2013\u20092:00\u202fPM",
+        "Saturday: 7:00\u202fAM\u2009\u2013\u20092:00\u202fPM",
+        "Sunday: 7:00\u202fAM\u2009\u2013\u20092:00\u202fPM"
       ]
     },
     {
       "id": "sesuit-harbor-cafe",
-      "name": "Sesuit Harbor Café",
+      "name": "Sesuit Harbor Caf\u00e9",
       "town": "East Dennis",
       "lat": 41.7561,
       "lng": -70.1542,
@@ -4325,13 +4337,13 @@
         "lobster",
         "clam"
       ],
-      "desc": "BYOB sleeper hit — picnic tables right on the harbor. Cash only.",
+      "desc": "BYOB sleeper hit \u2014 picnic tables right on the harbor. Cash only.",
       "place_id": "ChIJXcNTwkhH-4kR2dPePD7qdbk",
       "photo": "data/eats-photos/sesuit-harbor-cafe.jpg",
-      "reviews": 2517,
+      "reviews": 2534,
       "website": "http://www.sesuit-harbor-cafe.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:55Z",
+      "enriched_at": "2026-06-29T14:11:52Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 385-6134",
@@ -4345,7 +4357,7 @@
           "close": {
             "day": 0,
             "hour": 20,
-            "minute": 0
+            "minute": 30
           }
         },
         {
@@ -4357,7 +4369,7 @@
           "close": {
             "day": 1,
             "hour": 20,
-            "minute": 0
+            "minute": 30
           }
         },
         {
@@ -4369,7 +4381,7 @@
           "close": {
             "day": 2,
             "hour": 20,
-            "minute": 0
+            "minute": 30
           }
         },
         {
@@ -4381,7 +4393,7 @@
           "close": {
             "day": 3,
             "hour": 20,
-            "minute": 0
+            "minute": 30
           }
         },
         {
@@ -4393,7 +4405,7 @@
           "close": {
             "day": 4,
             "hour": 20,
-            "minute": 0
+            "minute": 30
           }
         },
         {
@@ -4405,7 +4417,7 @@
           "close": {
             "day": 5,
             "hour": 20,
-            "minute": 0
+            "minute": 30
           }
         },
         {
@@ -4417,18 +4429,18 @@
           "close": {
             "day": 6,
             "hour": 20,
-            "minute": 0
+            "minute": 30
           }
         }
       ],
       "hours_text": [
-        "Monday: 7:00 AM – 8:00 PM",
-        "Tuesday: 7:00 AM – 8:00 PM",
-        "Wednesday: 7:00 AM – 8:00 PM",
-        "Thursday: 7:00 AM – 8:00 PM",
-        "Friday: 7:00 AM – 8:00 PM",
-        "Saturday: 7:00 AM – 8:00 PM",
-        "Sunday: 7:00 AM – 8:00 PM"
+        "Monday: 7:00\u202fAM\u2009\u2013\u20098:30\u202fPM",
+        "Tuesday: 7:00\u202fAM\u2009\u2013\u20098:30\u202fPM",
+        "Wednesday: 7:00\u202fAM\u2009\u2013\u20098:30\u202fPM",
+        "Thursday: 7:00\u202fAM\u2009\u2013\u20098:30\u202fPM",
+        "Friday: 7:00\u202fAM\u2009\u2013\u20098:30\u202fPM",
+        "Saturday: 7:00\u202fAM\u2009\u2013\u20098:30\u202fPM",
+        "Sunday: 7:00\u202fAM\u2009\u2013\u20098:30\u202fPM"
       ]
     },
     {
@@ -4445,13 +4457,13 @@
         "breakfast",
         "brunch"
       ],
-      "desc": "Water-view booths — Sunday brunch and big seafood plates.",
+      "desc": "Water-view booths \u2014 Sunday brunch and big seafood plates.",
       "place_id": "ChIJRUdBwFtH-4kR3DPpwanHNVI",
       "photo": "data/eats-photos/marshside.jpg",
-      "reviews": 1206,
+      "reviews": 1210,
       "website": "http://www.themarshside.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:56Z",
+      "enriched_at": "2026-06-29T14:11:53Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 385-4010",
@@ -4542,13 +4554,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30 AM – 9:00 PM",
-        "Tuesday: 11:30 AM – 9:00 PM",
-        "Wednesday: 11:30 AM – 9:00 PM",
-        "Thursday: 11:30 AM – 9:00 PM",
-        "Friday: 11:30 AM – 9:00 PM",
-        "Saturday: 11:30 AM – 9:00 PM",
-        "Sunday: 11:30 AM – 9:00 PM"
+        "Monday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Tuesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Wednesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Thursday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Friday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Sunday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM"
       ]
     },
     {
@@ -4566,10 +4578,10 @@
       "desc": "Homemade ice cream in an old schoolhouse. Don't skip the frozen pudding.",
       "place_id": "ChIJp_W0-aM--4kR9A0AW7GJWjM",
       "photo": "data/eats-photos/sundae-school.jpg",
-      "reviews": 1275,
+      "reviews": 1281,
       "website": "https://www.sundaeschool.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:56Z",
+      "enriched_at": "2026-06-29T14:11:54Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 394-9122",
@@ -4660,13 +4672,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 12:00 – 8:00 PM",
-        "Tuesday: 12:00 – 8:00 PM",
-        "Wednesday: 12:00 – 8:00 PM",
-        "Thursday: 12:00 – 8:00 PM",
-        "Friday: 12:00 – 9:00 PM",
-        "Saturday: 12:00 – 9:00 PM",
-        "Sunday: 12:00 – 8:00 PM"
+        "Monday: 12:00\u2009\u2013\u20098:00\u202fPM",
+        "Tuesday: 12:00\u2009\u2013\u20098:00\u202fPM",
+        "Wednesday: 12:00\u2009\u2013\u20098:00\u202fPM",
+        "Thursday: 12:00\u2009\u2013\u20098:00\u202fPM",
+        "Friday: 12:00\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 12:00\u2009\u2013\u20099:00\u202fPM",
+        "Sunday: 12:00\u2009\u2013\u20098:00\u202fPM"
       ]
     },
     {
@@ -4686,10 +4698,10 @@
       "desc": "Fried-clam shack with soft serve. A 6A summer rite of passage.",
       "place_id": "ChIJnd9admA4-4kRjHekQDYEgGA",
       "photo": "data/eats-photos/captain-frostys.jpg",
-      "reviews": 943,
+      "reviews": 950,
       "website": "http://www.captainfrosty.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:57Z",
+      "enriched_at": "2026-06-29T14:11:54Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 385-8548",
@@ -4768,13 +4780,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30 AM – 8:30 PM",
+        "Monday: 11:30\u202fAM\u2009\u2013\u20098:30\u202fPM",
         "Tuesday: Closed",
-        "Wednesday: 11:30 AM – 8:30 PM",
-        "Thursday: 11:30 AM – 8:30 PM",
-        "Friday: 11:30 AM – 8:30 PM",
-        "Saturday: 11:30 AM – 8:30 PM",
-        "Sunday: 11:30 AM – 8:30 PM"
+        "Wednesday: 11:30\u202fAM\u2009\u2013\u20098:30\u202fPM",
+        "Thursday: 11:30\u202fAM\u2009\u2013\u20098:30\u202fPM",
+        "Friday: 11:30\u202fAM\u2009\u2013\u20098:30\u202fPM",
+        "Saturday: 11:30\u202fAM\u2009\u2013\u20098:30\u202fPM",
+        "Sunday: 11:30\u202fAM\u2009\u2013\u20098:30\u202fPM"
       ]
     },
     {
@@ -4792,10 +4804,10 @@
       "desc": "Pre-theater dining across from the Cape Playhouse. Warm and reliable.",
       "place_id": "ChIJmRGrxIA4-4kRpTy_Ms-Jc0c",
       "photo": "data/eats-photos/scargo-cafe.jpg",
-      "reviews": 1366,
+      "reviews": 1368,
       "website": "http://www.scargocafe.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:58Z",
+      "enriched_at": "2026-06-29T14:11:55Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 385-8200",
@@ -4886,13 +4898,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00 AM – 9:00 PM",
-        "Tuesday: 11:00 AM – 9:00 PM",
-        "Wednesday: 11:00 AM – 9:00 PM",
-        "Thursday: 11:00 AM – 9:00 PM",
-        "Friday: 11:00 AM – 9:00 PM",
-        "Saturday: 11:00 AM – 9:00 PM",
-        "Sunday: 11:00 AM – 9:00 PM"
+        "Monday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Tuesday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Wednesday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Thursday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Friday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Sunday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM"
       ]
     },
     {
@@ -4909,13 +4921,13 @@
         "clam",
         "icecream"
       ],
-      "desc": "Since 1953 — whole-belly clams and onion rings by the bucket.",
+      "desc": "Since 1953 \u2014 whole-belly clams and onion rings by the bucket.",
       "place_id": "ChIJXQSoj1I5-4kRtvuo6aNpePw",
       "photo": "data/eats-photos/kream-n-kone.jpg",
-      "reviews": 2104,
+      "reviews": 2106,
       "website": "https://www.kreamnkone.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:59Z",
+      "enriched_at": "2026-06-29T14:11:55Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 394-0808",
@@ -5006,13 +5018,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00 AM – 8:30 PM",
-        "Tuesday: 11:00 AM – 8:30 PM",
-        "Wednesday: 11:00 AM – 8:30 PM",
-        "Thursday: 11:00 AM – 8:30 PM",
-        "Friday: 11:00 AM – 9:00 PM",
-        "Saturday: 11:00 AM – 9:00 PM",
-        "Sunday: 11:00 AM – 8:30 PM"
+        "Monday: 11:00\u202fAM\u2009\u2013\u20098:30\u202fPM",
+        "Tuesday: 11:00\u202fAM\u2009\u2013\u20098:30\u202fPM",
+        "Wednesday: 11:00\u202fAM\u2009\u2013\u20098:30\u202fPM",
+        "Thursday: 11:00\u202fAM\u2009\u2013\u20098:30\u202fPM",
+        "Friday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Sunday: 11:00\u202fAM\u2009\u2013\u20098:30\u202fPM"
       ]
     },
     {
@@ -5032,10 +5044,10 @@
       "desc": "Award-winning clam chowder. Marsh-view pub the locals swear by.",
       "place_id": "ChIJSYT6QGw6-4kRwrG7_q_Irko",
       "photo": "data/eats-photos/captain-parkers-pub.jpg",
-      "reviews": 3691,
+      "reviews": 3703,
       "website": "https://www.captainparkers.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:59Z",
+      "enriched_at": "2026-06-29T14:11:56Z",
       "deal": "Specials Fri/Sat after 4pm + all day Sun",
       "business_status": "OPERATIONAL",
       "phone": "(508) 771-4266",
@@ -5126,13 +5138,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30 AM – 10:00 PM",
-        "Tuesday: 11:30 AM – 10:00 PM",
-        "Wednesday: 11:30 AM – 10:00 PM",
-        "Thursday: 11:30 AM – 10:00 PM",
-        "Friday: 11:30 AM – 10:00 PM",
-        "Saturday: 11:30 AM – 10:00 PM",
-        "Sunday: 11:30 AM – 10:00 PM"
+        "Monday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Tuesday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Wednesday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Thursday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Friday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Saturday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Sunday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM"
       ]
     },
     {
@@ -5148,13 +5160,13 @@
         "breakfast",
         "brunch"
       ],
-      "desc": "Gingerbread Victorian — English tea, scones, and full breakfast.",
+      "desc": "Gingerbread Victorian \u2014 English tea, scones, and full breakfast.",
       "place_id": "ChIJm-ji0LY3-4kRgqfBrplm8uQ",
       "photo": "data/eats-photos/the-optimist-cafe.jpg",
-      "reviews": 313,
+      "reviews": 318,
       "website": "https://lighthousekeeperspantry.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:28:00Z",
+      "enriched_at": "2026-06-29T14:11:57Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(774) 994-8295",
@@ -5245,13 +5257,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 7:00 AM – 5:00 PM",
-        "Tuesday: 7:00 AM – 5:00 PM",
-        "Wednesday: 7:00 AM – 5:00 PM",
-        "Thursday: 7:00 AM – 5:00 PM",
-        "Friday: 7:00 AM – 5:00 PM",
-        "Saturday: 7:00 AM – 5:00 PM",
-        "Sunday: 7:00 AM – 5:00 PM"
+        "Monday: 7:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
+        "Tuesday: 7:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
+        "Wednesday: 7:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
+        "Thursday: 7:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
+        "Friday: 7:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
+        "Saturday: 7:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
+        "Sunday: 7:00\u202fAM\u2009\u2013\u20095:00\u202fPM"
       ]
     },
     {
@@ -5269,10 +5281,10 @@
       "desc": "Hidden-gem sushi behind a garden gate. Freshest fish on the Cape.",
       "place_id": "ChIJDTUWB2U3-4kRi6wMdBwJq7E",
       "photo": "data/eats-photos/inaho.jpg",
-      "reviews": 380,
+      "reviews": 381,
       "website": "http://www.inaho-sushi.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:28:01Z",
+      "enriched_at": "2026-06-29T14:11:57Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 362-5522",
@@ -5340,11 +5352,11 @@
       ],
       "hours_text": [
         "Monday: Closed",
-        "Tuesday: 4:30 – 9:30 PM",
-        "Wednesday: 4:30 – 9:30 PM",
-        "Thursday: 4:30 – 9:30 PM",
-        "Friday: 4:30 – 10:00 PM",
-        "Saturday: 4:30 – 10:00 PM",
+        "Tuesday: 4:30\u2009\u2013\u20099:30\u202fPM",
+        "Wednesday: 4:30\u2009\u2013\u20099:30\u202fPM",
+        "Thursday: 4:30\u2009\u2013\u20099:30\u202fPM",
+        "Friday: 4:30\u2009\u2013\u200910:00\u202fPM",
+        "Saturday: 4:30\u2009\u2013\u200910:00\u202fPM",
         "Sunday: Closed"
       ]
     },
@@ -5365,10 +5377,10 @@
       "desc": "Sea-view deck over Nantucket Sound. Chowder and big breakfasts.",
       "place_id": "ChIJL0XVN0M6-4kR7Bu3nfVP5tA",
       "photo": "data/eats-photos/skipper-chowder-house.jpg",
-      "reviews": 3853,
+      "reviews": 3871,
       "website": "http://skipperrestaurant.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:28:02Z",
+      "enriched_at": "2026-06-29T14:11:58Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 394-7406",
@@ -5459,13 +5471,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00 AM – 10:00 PM",
-        "Tuesday: 11:00 AM – 10:00 PM",
-        "Wednesday: 11:00 AM – 10:00 PM",
-        "Thursday: 11:00 AM – 10:00 PM",
-        "Friday: 11:00 AM – 11:00 PM",
-        "Saturday: 11:00 AM – 11:00 PM",
-        "Sunday: 11:00 AM – 11:00 PM"
+        "Monday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Tuesday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Wednesday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Thursday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Friday: 11:00\u202fAM\u2009\u2013\u200911:00\u202fPM",
+        "Saturday: 11:00\u202fAM\u2009\u2013\u200911:00\u202fPM",
+        "Sunday: 11:00\u202fAM\u2009\u2013\u200911:00\u202fPM"
       ]
     },
     {
@@ -5480,13 +5492,13 @@
       "tags": [
         "icecream"
       ],
-      "desc": "Since 1934 — the Cape's most legendary scoop. Get the peanut butter cup.",
+      "desc": "Since 1934 \u2014 the Cape's most legendary scoop. Get the peanut butter cup.",
       "place_id": "ChIJH7OPbCUy-4kR4xtlrE38Ps0",
       "photo": "data/eats-photos/four-seas-ice-cream.jpg",
-      "reviews": 829,
+      "reviews": 831,
       "website": "http://www.fourseasicecream.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:28:03Z",
+      "enriched_at": "2026-06-29T14:11:59Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 775-1394",
@@ -5577,13 +5589,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00 AM – 10:00 PM",
-        "Tuesday: 11:00 AM – 10:00 PM",
-        "Wednesday: 11:00 AM – 10:00 PM",
-        "Thursday: 11:00 AM – 10:00 PM",
-        "Friday: 11:00 AM – 10:00 PM",
-        "Saturday: 11:00 AM – 10:00 PM",
-        "Sunday: 11:00 AM – 10:00 PM"
+        "Monday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Tuesday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Wednesday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Thursday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Friday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Saturday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Sunday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM"
       ]
     },
     {
@@ -5603,10 +5615,10 @@
       "desc": "Artisan bakery by day, candle-lit bistro by night. Worth the detour.",
       "place_id": "ChIJYV6ymyAx-4kRosnJ85uliGg",
       "photo": "data/eats-photos/pain-davignon.jpg",
-      "reviews": 1329,
+      "reviews": 1331,
       "website": "http://www.paindavignon.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:28:03Z",
+      "enriched_at": "2026-06-29T14:11:59Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 778-8588",
@@ -5697,13 +5709,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 7:00 AM – 4:00 PM",
-        "Tuesday: 7:00 AM – 4:00 PM",
-        "Wednesday: 7:00 AM – 10:00 PM",
-        "Thursday: 7:00 AM – 10:00 PM",
-        "Friday: 7:00 AM – 10:00 PM",
-        "Saturday: 7:00 AM – 10:00 PM",
-        "Sunday: 7:00 AM – 4:00 PM"
+        "Monday: 7:00\u202fAM\u2009\u2013\u20094:00\u202fPM",
+        "Tuesday: 7:00\u202fAM\u2009\u2013\u20094:00\u202fPM",
+        "Wednesday: 7:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Thursday: 7:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Friday: 7:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Saturday: 7:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Sunday: 7:00\u202fAM\u2009\u2013\u20094:00\u202fPM"
       ]
     },
     {
@@ -5723,10 +5735,10 @@
       "desc": "Fried clams on a dock deck as the boats slide by. Summer-only.",
       "place_id": "ChIJ101rYPow-4kR0jA52E9LmgU",
       "photo": "data/eats-photos/baxters-boathouse.jpg",
-      "reviews": 1318,
+      "reviews": 1324,
       "website": "http://www.baxterscapecod.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:28:04Z",
+      "enriched_at": "2026-06-29T14:12:00Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 775-4490",
@@ -5817,13 +5829,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00 AM – 9:00 PM",
-        "Tuesday: 11:00 AM – 9:00 PM",
-        "Wednesday: 11:00 AM – 9:00 PM",
-        "Thursday: 11:00 AM – 9:00 PM",
-        "Friday: 11:00 AM – 9:00 PM",
-        "Saturday: 11:00 AM – 9:00 PM",
-        "Sunday: 11:00 AM – 8:30 PM"
+        "Monday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Tuesday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Wednesday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Thursday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Friday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Sunday: 11:00\u202fAM\u2009\u2013\u20098:30\u202fPM"
       ]
     },
     {
@@ -5839,13 +5851,13 @@
         "seafood",
         "bar"
       ],
-      "desc": "Marina sunset spot — frozen drinks and lobster over the harbor.",
+      "desc": "Marina sunset spot \u2014 frozen drinks and lobster over the harbor.",
       "place_id": "ChIJpa7OFG_X5IkRBqKlYp5W_to",
       "photo": "data/eats-photos/tugboats.jpg",
-      "reviews": 1360,
+      "reviews": 1368,
       "website": "https://www.tugboatscapecod.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:28:05Z",
+      "enriched_at": "2026-06-29T14:12:01Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 775-6433",
@@ -5936,13 +5948,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30 AM – 11:00 PM",
-        "Tuesday: 11:30 AM – 11:00 PM",
-        "Wednesday: 11:30 AM – 11:00 PM",
-        "Thursday: 11:30 AM – 11:30 PM",
-        "Friday: 11:30 AM – 11:30 PM",
-        "Saturday: 11:30 AM – 11:30 PM",
-        "Sunday: 11:30 AM – 11:00 PM"
+        "Monday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
+        "Tuesday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
+        "Wednesday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
+        "Thursday: 11:30\u202fAM\u2009\u2013\u200911:30\u202fPM",
+        "Friday: 11:30\u202fAM\u2009\u2013\u200911:30\u202fPM",
+        "Saturday: 11:30\u202fAM\u2009\u2013\u200911:30\u202fPM",
+        "Sunday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM"
       ]
     },
     {
@@ -5958,13 +5970,13 @@
         "seafood",
         "bar"
       ],
-      "desc": "Across from the ferries — chowder, raw bar, easy harbor views.",
+      "desc": "Across from the ferries \u2014 chowder, raw bar, easy harbor views.",
       "place_id": "ChIJZbVzxPsw-4kR7HGC42e1Xbo",
       "photo": "data/eats-photos/the-black-cat-tavern.jpg",
-      "reviews": 2587,
+      "reviews": 2592,
       "website": "http://www.blackcattavern.com/?utm_source=googlemaps",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:28:06Z",
+      "enriched_at": "2026-06-29T14:12:01Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 778-1233",
@@ -6055,13 +6067,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30 AM – 9:00 PM",
-        "Tuesday: 11:30 AM – 9:00 PM",
-        "Wednesday: 11:30 AM – 9:00 PM",
-        "Thursday: 11:30 AM – 9:00 PM",
-        "Friday: 11:30 AM – 9:30 PM",
-        "Saturday: 11:30 AM – 9:30 PM",
-        "Sunday: 11:30 AM – 9:00 PM"
+        "Monday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Tuesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Wednesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Thursday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Friday: 11:30\u202fAM\u2009\u2013\u20099:30\u202fPM",
+        "Saturday: 11:30\u202fAM\u2009\u2013\u20099:30\u202fPM",
+        "Sunday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM"
       ]
     },
     {
@@ -6076,13 +6088,13 @@
       "tags": [
         "fine"
       ],
-      "desc": "Sleek village bistro — small plates and a buzzy bar crowd.",
+      "desc": "Sleek village bistro \u2014 small plates and a buzzy bar crowd.",
       "place_id": "ChIJ80_axYAy-4kR5ZFGO8OjN-Y",
       "photo": "data/eats-photos/five-bays-bistro.jpg",
       "reviews": 163,
       "website": "http://fivebaysbistro.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:28:07Z",
+      "enriched_at": "2026-06-29T14:12:02Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 420-5559",
@@ -6173,13 +6185,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 4:30 – 9:30 PM",
-        "Tuesday: 4:30 – 9:30 PM",
-        "Wednesday: 4:30 – 9:30 PM",
-        "Thursday: 4:30 – 9:30 PM",
-        "Friday: 4:00 – 10:00 PM",
-        "Saturday: 4:30 – 10:00 PM",
-        "Sunday: 4:30 – 9:30 PM"
+        "Monday: 4:30\u2009\u2013\u20099:30\u202fPM",
+        "Tuesday: 4:30\u2009\u2013\u20099:30\u202fPM",
+        "Wednesday: 4:30\u2009\u2013\u20099:30\u202fPM",
+        "Thursday: 4:30\u2009\u2013\u20099:30\u202fPM",
+        "Friday: 4:00\u2009\u2013\u200910:00\u202fPM",
+        "Saturday: 4:30\u2009\u2013\u200910:00\u202fPM",
+        "Sunday: 4:30\u2009\u2013\u20099:30\u202fPM"
       ]
     },
     {
@@ -6198,10 +6210,10 @@
       "desc": "Harborside dining with live piano. Sunset over Barnstable Harbor.",
       "place_id": "ChIJJbLuNuY2-4kRSYcxTtRdQfA",
       "photo": "data/eats-photos/mattakeese-wharf.jpg",
-      "reviews": 918,
+      "reviews": 922,
       "website": "http://www.mattakeese.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:28:08Z",
+      "enriched_at": "2026-06-29T14:12:03Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 362-4511",
@@ -6292,13 +6304,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30 AM – 9:00 PM",
-        "Tuesday: 11:30 AM – 9:00 PM",
-        "Wednesday: 11:30 AM – 9:00 PM",
-        "Thursday: 11:30 AM – 9:00 PM",
-        "Friday: 11:30 AM – 9:00 PM",
-        "Saturday: 11:30 AM – 9:00 PM",
-        "Sunday: 11:30 AM – 9:00 PM"
+        "Monday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Tuesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Wednesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Thursday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Friday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Sunday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM"
       ]
     },
     {
@@ -6314,13 +6326,13 @@
         "casual",
         "bar"
       ],
-      "desc": "Village tavern in historic 6A — burgers, comfort food, and a patio.",
+      "desc": "Village tavern in historic 6A \u2014 burgers, comfort food, and a patio.",
       "place_id": "ChIJmyyNDWs3-4kR55XrBovJ_F0",
       "photo": "data/eats-photos/barnstable-restaurant-tavern.jpg",
-      "reviews": 260,
+      "reviews": 261,
       "website": "http://www.barnstabletuscancuisine.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:28:09Z",
+      "enriched_at": "2026-06-29T14:12:03Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 362-2355",
@@ -6400,12 +6412,12 @@
       ],
       "hours_text": [
         "Monday: Closed",
-        "Tuesday: 4:00 – 9:00 PM",
-        "Wednesday: 4:00 – 9:00 PM",
-        "Thursday: 4:00 – 9:00 PM",
-        "Friday: 4:00 – 9:00 PM",
-        "Saturday: 4:00 – 9:00 PM",
-        "Sunday: 4:00 – 9:00 PM"
+        "Tuesday: 4:00\u2009\u2013\u20099:00\u202fPM",
+        "Wednesday: 4:00\u2009\u2013\u20099:00\u202fPM",
+        "Thursday: 4:00\u2009\u2013\u20099:00\u202fPM",
+        "Friday: 4:00\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 4:00\u2009\u2013\u20099:00\u202fPM",
+        "Sunday: 4:00\u2009\u2013\u20099:00\u202fPM"
       ]
     },
     {
@@ -6420,13 +6432,13 @@
       "tags": [
         "fine"
       ],
-      "desc": "Mashpee Commons brasserie — escargot, steak frites, lively bar.",
+      "desc": "Mashpee Commons brasserie \u2014 escargot, steak frites, lively bar.",
       "place_id": "ChIJ2-jM1kTS5IkRZw3Nmpqs8Vs",
       "photo": "data/eats-photos/bleu.jpg",
       "reviews": 699,
       "website": "http://www.bleurestaurant.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:28:09Z",
+      "enriched_at": "2026-06-29T14:12:04Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 539-7907",
@@ -6601,13 +6613,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30 AM – 3:30 PM, 5:00 – 9:00 PM",
-        "Tuesday: 11:30 AM – 3:30 PM, 5:00 – 9:00 PM",
-        "Wednesday: 11:30 AM – 3:30 PM, 5:00 – 9:00 PM",
-        "Thursday: 11:30 AM – 3:30 PM, 5:00 – 9:00 PM",
-        "Friday: 11:30 AM – 3:30 PM, 5:00 – 9:00 PM",
-        "Saturday: 11:30 AM – 3:30 PM, 5:00 – 9:00 PM",
-        "Sunday: 11:30 AM – 3:00 PM, 5:00 – 9:00 PM"
+        "Monday: 11:30\u202fAM\u2009\u2013\u20093:30\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Tuesday: 11:30\u202fAM\u2009\u2013\u20093:30\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Wednesday: 11:30\u202fAM\u2009\u2013\u20093:30\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Thursday: 11:30\u202fAM\u2009\u2013\u20093:30\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Friday: 11:30\u202fAM\u2009\u2013\u20093:30\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 11:30\u202fAM\u2009\u2013\u20093:30\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Sunday: 11:30\u202fAM\u2009\u2013\u20093:00\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM"
       ]
     },
     {
@@ -6623,13 +6635,13 @@
         "italian",
         "fine"
       ],
-      "desc": "Tuscan trattoria at the Commons — handmade pasta, wood-grilled.",
+      "desc": "Tuscan trattoria at the Commons \u2014 handmade pasta, wood-grilled.",
       "place_id": "ChIJpWAM00TS5IkRNvSMgOXjQ6M",
       "photo": "data/eats-photos/siena.jpg",
-      "reviews": 519,
+      "reviews": 521,
       "website": "https://www.siena.us/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:28:10Z",
+      "enriched_at": "2026-06-29T14:12:05Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 477-5929",
@@ -6720,13 +6732,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 12:00 – 8:00 PM",
-        "Tuesday: 12:00 – 8:00 PM",
-        "Wednesday: 12:00 – 8:00 PM",
-        "Thursday: 12:00 – 8:00 PM",
-        "Friday: 12:00 – 9:00 PM",
-        "Saturday: 12:00 – 9:00 PM",
-        "Sunday: 12:00 – 8:00 PM"
+        "Monday: 12:00\u2009\u2013\u20098:00\u202fPM",
+        "Tuesday: 12:00\u2009\u2013\u20098:00\u202fPM",
+        "Wednesday: 12:00\u2009\u2013\u20098:00\u202fPM",
+        "Thursday: 12:00\u2009\u2013\u20098:00\u202fPM",
+        "Friday: 12:00\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 12:00\u2009\u2013\u20099:00\u202fPM",
+        "Sunday: 12:00\u2009\u2013\u20098:00\u202fPM"
       ]
     },
     {
@@ -6748,7 +6760,7 @@
       "reviews": 254,
       "website": "http://www.trevicafe.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:28:11Z",
+      "enriched_at": "2026-06-29T14:12:06Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 477-0055",
@@ -6839,13 +6851,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 4:00 – 9:00 PM",
-        "Tuesday: 11:30 AM – 9:00 PM",
-        "Wednesday: 11:30 AM – 9:00 PM",
-        "Thursday: 11:30 AM – 9:00 PM",
-        "Friday: 11:30 AM – 9:00 PM",
-        "Saturday: 11:30 AM – 9:00 PM",
-        "Sunday: 11:30 AM – 9:00 PM"
+        "Monday: 4:00\u2009\u2013\u20099:00\u202fPM",
+        "Tuesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Wednesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Thursday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Friday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Sunday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM"
       ]
     },
     {
@@ -6863,10 +6875,10 @@
       "desc": "Cave-themed parlor with wild flavors. A kid (and adult) favorite.",
       "place_id": "ChIJ7dM4-Z7S5IkRgbMe8eRzneQ",
       "photo": "data/eats-photos/polar-cave-ice-cream.jpg",
-      "reviews": 563,
+      "reviews": 567,
       "website": "http://www.polarcave.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:28:12Z",
+      "enriched_at": "2026-06-29T14:12:07Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 477-5553",
@@ -6880,7 +6892,7 @@
           "close": {
             "day": 0,
             "hour": 21,
-            "minute": 1
+            "minute": 31
           }
         },
         {
@@ -6892,7 +6904,7 @@
           "close": {
             "day": 1,
             "hour": 21,
-            "minute": 1
+            "minute": 32
           }
         },
         {
@@ -6904,42 +6916,42 @@
           "close": {
             "day": 4,
             "hour": 21,
+            "minute": 32
+          }
+        },
+        {
+          "open": {
+            "day": 5,
+            "hour": 14,
+            "minute": 0
+          },
+          "close": {
+            "day": 5,
+            "hour": 22,
             "minute": 2
           }
         },
         {
           "open": {
-            "day": 5,
-            "hour": 14,
-            "minute": 0
-          },
-          "close": {
-            "day": 5,
-            "hour": 21,
-            "minute": 32
-          }
-        },
-        {
-          "open": {
             "day": 6,
             "hour": 14,
             "minute": 0
           },
           "close": {
             "day": 6,
-            "hour": 21,
-            "minute": 32
+            "hour": 22,
+            "minute": 2
           }
         }
       ],
       "hours_text": [
-        "Monday: 2:01 – 9:01 PM",
+        "Monday: 2:01\u2009\u2013\u20099:32\u202fPM",
         "Tuesday: Closed",
         "Wednesday: Closed",
-        "Thursday: 2:01 – 9:02 PM",
-        "Friday: 2:00 – 9:32 PM",
-        "Saturday: 2:00 – 9:32 PM",
-        "Sunday: 2:00 – 9:01 PM"
+        "Thursday: 2:01\u2009\u2013\u20099:32\u202fPM",
+        "Friday: 2:00\u2009\u2013\u200910:02\u202fPM",
+        "Saturday: 2:00\u2009\u2013\u200910:02\u202fPM",
+        "Sunday: 2:00\u2009\u2013\u20099:31\u202fPM"
       ]
     },
     {
@@ -6954,13 +6966,13 @@
       "tags": [
         "fine"
       ],
-      "desc": "Dinner in a converted church — stained glass and refined plates.",
+      "desc": "Dinner in a converted church \u2014 stained glass and refined plates.",
       "place_id": "ChIJ6-j7NbPL5IkRoMtS3rDq8o4",
       "photo": "data/eats-photos/the-belfry-inn-bistro.jpg",
       "reviews": 289,
       "website": "https://www.belfryinn.com/?utm_source=google&utm_medium+GBP",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:28:13Z",
+      "enriched_at": "2026-06-29T14:12:07Z",
       "deal": "Prix-Fixe Menu available",
       "business_status": "OPERATIONAL",
       "phone": "(508) 888-8550"
@@ -6982,10 +6994,10 @@
       "desc": "Family fried-seafood institution by the canal. Order at the counter.",
       "place_id": "ChIJdSsM4UbK5IkRFmoQie9jh2Y",
       "photo": "data/eats-photos/seafood-sams.jpg",
-      "reviews": 2260,
+      "reviews": 2272,
       "website": "https://www.seafoodsams.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:28:14Z",
+      "enriched_at": "2026-06-29T14:12:08Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 888-4629",
@@ -7076,13 +7088,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00 AM – 9:00 PM",
-        "Tuesday: 11:00 AM – 9:00 PM",
-        "Wednesday: 11:00 AM – 9:00 PM",
-        "Thursday: 11:00 AM – 9:00 PM",
-        "Friday: 11:00 AM – 9:00 PM",
-        "Saturday: 11:00 AM – 9:00 PM",
-        "Sunday: 11:00 AM – 9:00 PM"
+        "Monday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Tuesday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Wednesday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Thursday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Friday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Sunday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM"
       ]
     },
     {
@@ -7101,10 +7113,10 @@
       "desc": "Proper English tea and savory pies in a 1740s carriage house.",
       "place_id": "ChIJoSmV4rTL5IkREmNIFKY8wCg",
       "photo": "data/eats-photos/the-dunbar-tea-room.jpg",
-      "reviews": 597,
+      "reviews": 601,
       "website": "http://www.thedunbarhouse.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:28:15Z",
+      "enriched_at": "2026-06-29T14:12:09Z",
       "deal": "Sunday brunch specials",
       "business_status": "OPERATIONAL",
       "phone": "(508) 833-2485",
@@ -7171,13 +7183,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00 AM – 4:00 PM",
+        "Monday: 11:00\u202fAM\u2009\u2013\u20094:00\u202fPM",
         "Tuesday: Closed",
         "Wednesday: Closed",
-        "Thursday: 11:00 AM – 4:00 PM",
-        "Friday: 11:00 AM – 4:00 PM",
-        "Saturday: 11:00 AM – 4:00 PM",
-        "Sunday: 10:00 AM – 2:00 PM"
+        "Thursday: 11:00\u202fAM\u2009\u2013\u20094:00\u202fPM",
+        "Friday: 11:00\u202fAM\u2009\u2013\u20094:00\u202fPM",
+        "Saturday: 11:00\u202fAM\u2009\u2013\u20094:00\u202fPM",
+        "Sunday: 10:00\u202fAM\u2009\u2013\u20092:00\u202fPM"
       ]
     },
     {
@@ -7196,10 +7208,10 @@
       "desc": "Floor-to-ceiling marina views and their own seafood market downstairs.",
       "place_id": "ChIJ_UjXijjK5IkRVuu5S6OysN4",
       "photo": "data/eats-photos/fishermens-view.jpg",
-      "reviews": 1534,
+      "reviews": 1544,
       "website": "http://www.fishermensview.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:28:16Z",
+      "enriched_at": "2026-06-29T14:12:10Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 591-0088",
@@ -7290,13 +7302,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 8:00 AM – 10:00 PM",
-        "Tuesday: 8:00 AM – 10:00 PM",
-        "Wednesday: 8:00 AM – 10:00 PM",
-        "Thursday: 8:00 AM – 10:00 PM",
-        "Friday: 8:00 AM – 10:00 PM",
-        "Saturday: 8:00 AM – 10:00 PM",
-        "Sunday: 8:00 AM – 10:00 PM"
+        "Monday: 8:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Tuesday: 8:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Wednesday: 8:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Thursday: 8:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Friday: 8:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Saturday: 8:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Sunday: 8:00\u202fAM\u2009\u2013\u200910:00\u202fPM"
       ]
     },
     {
@@ -7312,13 +7324,13 @@
         "italian",
         "fine"
       ],
-      "desc": "Main Street favorite — generous Italian, always a wait, always worth it.",
+      "desc": "Main Street favorite \u2014 generous Italian, always a wait, always worth it.",
       "place_id": "ChIJbew7M3nX5IkRaiEn4pmd-LY",
       "photo": "data/eats-photos/la-cucina-sul-mare.jpg",
       "reviews": 943,
       "website": "http://www.lacucinasulmare.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:28:16Z",
+      "enriched_at": "2026-06-29T14:12:11Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 548-5600",
@@ -7409,13 +7421,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 4:00 – 9:00 PM",
-        "Tuesday: 11:30 AM – 9:00 PM",
-        "Wednesday: 11:30 AM – 9:00 PM",
-        "Thursday: 11:30 AM – 9:00 PM",
-        "Friday: 11:30 AM – 10:00 PM",
-        "Saturday: 11:30 AM – 10:00 PM",
-        "Sunday: 10:30 AM – 9:00 PM"
+        "Monday: 4:00\u2009\u2013\u20099:00\u202fPM",
+        "Tuesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Wednesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Thursday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Friday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Saturday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Sunday: 10:30\u202fAM\u2009\u2013\u20099:00\u202fPM"
       ]
     },
     {
@@ -7431,13 +7443,13 @@
         "casual",
         "bar"
       ],
-      "desc": "Cozy Main Street standby — chowder, burgers, and a friendly bar.",
+      "desc": "Cozy Main Street standby \u2014 chowder, burgers, and a friendly bar.",
       "place_id": "ChIJray96n7X5IkRytdEb7lU_pM",
       "photo": "data/eats-photos/the-quarterdeck.jpg",
-      "reviews": 1433,
+      "reviews": 1441,
       "website": "http://www.qdfalmouth.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:28:17Z",
+      "enriched_at": "2026-06-29T14:12:11Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 548-9900",
@@ -7528,18 +7540,18 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30 AM – 9:00 PM",
-        "Tuesday: 11:30 AM – 9:00 PM",
-        "Wednesday: 11:30 AM – 9:00 PM",
-        "Thursday: 11:30 AM – 9:00 PM",
-        "Friday: 11:30 AM – 9:00 PM",
-        "Saturday: 11:30 AM – 9:00 PM",
-        "Sunday: 11:30 AM – 9:00 PM"
+        "Monday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Tuesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Wednesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Thursday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Friday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Sunday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM"
       ]
     },
     {
       "id": "anejo-mexican-bistro",
-      "name": "Añejo Mexican Bistro",
+      "name": "A\u00f1ejo Mexican Bistro",
       "town": "Falmouth",
       "lat": 41.5522,
       "lng": -70.6153,
@@ -7553,10 +7565,10 @@
       "desc": "Tequila bar and modern Mexican. Guac and margaritas on Main Street.",
       "place_id": "ChIJ97ZkuH7X5IkR7YV-F8cGkKg",
       "photo": "data/eats-photos/anejo-mexican-bistro.jpg",
-      "reviews": 1885,
+      "reviews": 1893,
       "website": "http://anejo.cc/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:28:18Z",
+      "enriched_at": "2026-06-29T14:12:12Z",
       "deal": "Sunday brunch specials & cocktails",
       "business_status": "OPERATIONAL",
       "phone": "(508) 388-7631",
@@ -7647,13 +7659,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30 AM – 11:00 PM",
-        "Tuesday: 11:30 AM – 11:00 PM",
-        "Wednesday: 11:30 AM – 11:00 PM",
-        "Thursday: 11:30 AM – 11:00 PM",
-        "Friday: 11:30 AM – 11:00 PM",
-        "Saturday: 11:30 AM – 11:00 PM",
-        "Sunday: 10:30 AM – 11:00 PM"
+        "Monday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
+        "Tuesday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
+        "Wednesday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
+        "Thursday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
+        "Friday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
+        "Saturday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
+        "Sunday: 10:30\u202fAM\u2009\u2013\u200911:00\u202fPM"
       ]
     },
     {
@@ -7669,13 +7681,13 @@
         "seafood",
         "bar"
       ],
-      "desc": "Waterfront tavern on Eel Pond — oysters and a historic back bar.",
+      "desc": "Waterfront tavern on Eel Pond \u2014 oysters and a historic back bar.",
       "place_id": "ChIJC48OtYDY5IkRvHRmHs9Hxrc",
       "photo": "data/eats-photos/the-captain-kidd.jpg",
-      "reviews": 693,
+      "reviews": 698,
       "website": "http://www.thecaptainkidd.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:28:19Z",
+      "enriched_at": "2026-06-29T14:12:13Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 548-8563",
@@ -7766,13 +7778,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30 AM – 11:00 PM",
-        "Tuesday: 11:30 AM – 11:00 PM",
-        "Wednesday: 11:30 AM – 11:00 PM",
-        "Thursday: 11:30 AM – 11:00 PM",
-        "Friday: 11:30 AM – 12:30 AM",
-        "Saturday: 11:30 AM – 12:30 AM",
-        "Sunday: 11:30 AM – 11:00 PM"
+        "Monday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
+        "Tuesday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
+        "Wednesday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
+        "Thursday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
+        "Friday: 11:30\u202fAM\u2009\u2013\u200912:30\u202fAM",
+        "Saturday: 11:30\u202fAM\u2009\u2013\u200912:30\u202fAM",
+        "Sunday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM"
       ]
     },
     {
@@ -7794,7 +7806,7 @@
       "reviews": 301,
       "website": "http://quicksholetaqueria.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:28:20Z",
+      "enriched_at": "2026-06-29T14:12:13Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 495-0792",
@@ -7885,13 +7897,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00 AM – 9:00 PM",
-        "Tuesday: 11:00 AM – 9:00 PM",
-        "Wednesday: 11:00 AM – 9:00 PM",
-        "Thursday: 11:00 AM – 9:00 PM",
-        "Friday: 11:00 AM – 9:00 PM",
-        "Saturday: 11:00 AM – 9:00 PM",
-        "Sunday: 11:00 AM – 9:00 PM"
+        "Monday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Tuesday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Wednesday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Thursday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Friday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Sunday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM"
       ]
     },
     {
@@ -7908,13 +7920,13 @@
         "breakfast",
         "coffee"
       ],
-      "desc": "French bakers, line out the door — baguettes, tarts, croissants.",
+      "desc": "French bakers, line out the door \u2014 baguettes, tarts, croissants.",
       "place_id": "ChIJZ7-sMHnX5IkRgLmGtLoQQBE",
       "photo": "data/eats-photos/maison-villatte.jpg",
-      "reviews": 1148,
+      "reviews": 1150,
       "website": "https://www.facebook.com/profile.php?id=100057245816386&mibextid=ZbWKwL",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:28:21Z",
+      "enriched_at": "2026-06-29T14:12:14Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(774) 255-1855",
@@ -7983,11 +7995,11 @@
       "hours_text": [
         "Monday: Closed",
         "Tuesday: Closed",
-        "Wednesday: 7:00 AM – 6:00 PM",
-        "Thursday: 7:00 AM – 6:00 PM",
-        "Friday: 7:00 AM – 6:00 PM",
-        "Saturday: 7:00 AM – 6:00 PM",
-        "Sunday: 7:00 AM – 6:00 PM"
+        "Wednesday: 7:00\u202fAM\u2009\u2013\u20096:00\u202fPM",
+        "Thursday: 7:00\u202fAM\u2009\u2013\u20096:00\u202fPM",
+        "Friday: 7:00\u202fAM\u2009\u2013\u20096:00\u202fPM",
+        "Saturday: 7:00\u202fAM\u2009\u2013\u20096:00\u202fPM",
+        "Sunday: 7:00\u202fAM\u2009\u2013\u20096:00\u202fPM"
       ]
     },
     {
@@ -8004,13 +8016,13 @@
         "bar",
         "fine"
       ],
-      "desc": "Summer-only harbor legend — mudslides and lobster on Red Brook Harbor.",
+      "desc": "Summer-only harbor legend \u2014 mudslides and lobster on Red Brook Harbor.",
       "place_id": "ChIJO_JZ0fbP5IkR0UhnYQRBxb0",
       "photo": "data/eats-photos/the-chart-room.jpg",
-      "reviews": 859,
+      "reviews": 860,
       "website": "https://chartroomcapecod.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:28:21Z",
+      "enriched_at": "2026-06-29T14:12:15Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 563-5350",
@@ -8101,13 +8113,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30 AM – 10:00 PM",
-        "Tuesday: 11:30 AM – 10:00 PM",
-        "Wednesday: 11:30 AM – 10:00 PM",
-        "Thursday: 11:30 AM – 10:00 PM",
-        "Friday: 11:30 AM – 10:00 PM",
-        "Saturday: 11:30 AM – 10:00 PM",
-        "Sunday: 11:30 AM – 10:00 PM"
+        "Monday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Tuesday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Wednesday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Thursday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Friday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Saturday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
+        "Sunday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM"
       ]
     },
     {
@@ -8122,13 +8134,13 @@
       "tags": [
         "fine"
       ],
-      "desc": "Beloved Southeast-Asian kitchen — curries and pho near the bridge.",
+      "desc": "Beloved Southeast-Asian kitchen \u2014 curries and pho near the bridge.",
       "place_id": "ChIJY8306AXP5IkRjEtrlXdwfGM",
       "photo": "data/eats-photos/stir-crazy.jpg",
       "reviews": 456,
       "website": "https://stircrazycapecod.com/?utm_source=google",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:28:22Z",
+      "enriched_at": "2026-06-29T14:12:15Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 564-6464",
@@ -8219,13 +8231,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 3:00 – 8:30 PM",
-        "Tuesday: 3:00 – 8:30 PM",
-        "Wednesday: 3:00 – 8:30 PM",
-        "Thursday: 3:00 – 8:30 PM",
-        "Friday: 3:00 – 9:00 PM",
-        "Saturday: 3:00 – 9:00 PM",
-        "Sunday: 3:00 – 8:30 PM"
+        "Monday: 3:00\u2009\u2013\u20098:30\u202fPM",
+        "Tuesday: 3:00\u2009\u2013\u20098:30\u202fPM",
+        "Wednesday: 3:00\u2009\u2013\u20098:30\u202fPM",
+        "Thursday: 3:00\u2009\u2013\u20098:30\u202fPM",
+        "Friday: 3:00\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 3:00\u2009\u2013\u20099:00\u202fPM",
+        "Sunday: 3:00\u2009\u2013\u20098:30\u202fPM"
       ]
     },
     {
@@ -8244,11 +8256,11 @@
       "desc": "Buzzards Bay Italian-American since 1936. Sunday-gravy comfort.",
       "place_id": "ChIJD_-pmLnI5IkR9FBcmV14fSs",
       "photo": "data/eats-photos/mezza-luna.jpg",
-      "reviews": 1494,
+      "reviews": 1496,
       "website": "http://www.mezzalunarestaurant.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:28:23Z",
-      "deal": "Wed & Sat Prime Rib Special · weekday lunch specials",
+      "enriched_at": "2026-06-29T14:12:16Z",
+      "deal": "Wed & Sat Prime Rib Special \u00b7 weekday lunch specials",
       "business_status": "OPERATIONAL",
       "phone": "(508) 759-4667",
       "hours": [
@@ -8338,13 +8350,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00 AM – 9:00 PM",
-        "Tuesday: 11:00 AM – 9:00 PM",
-        "Wednesday: 11:00 AM – 9:00 PM",
-        "Thursday: 11:00 AM – 9:00 PM",
-        "Friday: 11:00 AM – 9:30 PM",
-        "Saturday: 11:00 AM – 9:30 PM",
-        "Sunday: 11:00 AM – 9:00 PM"
+        "Monday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Tuesday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Wednesday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Thursday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
+        "Friday: 11:00\u202fAM\u2009\u2013\u20099:30\u202fPM",
+        "Saturday: 11:00\u202fAM\u2009\u2013\u20099:30\u202fPM",
+        "Sunday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM"
       ]
     },
     {
@@ -8364,11 +8376,11 @@
       "desc": "Fresh local seafood, Caribbean-inspired plates & hand-cut steaks on Route 6. Open 7 days.",
       "place_id": "ChIJ_RZsU-lp-4kRMwx9d21wYAI",
       "photo": "data/eats-photos/the-brickhouse-restaurant.jpg",
-      "reviews": 660,
+      "reviews": 663,
       "website": "https://brickhouseeastham.com/",
       "rating_source": "google",
-      "enriched_at": "2026-06-22T15:28:24Z",
-      "deal": "Early Bird daily · Wed Prime Rib Night · Half-Off App Night",
+      "enriched_at": "2026-06-29T14:12:17Z",
+      "deal": "Early Bird daily \u00b7 Wed Prime Rib Night \u00b7 Half-Off App Night",
       "business_status": "OPERATIONAL",
       "phone": "(774) 801-2475",
       "hours": [
@@ -8458,13 +8470,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 4:00 – 8:30 PM",
-        "Tuesday: 4:00 – 8:30 PM",
-        "Wednesday: 4:00 – 8:30 PM",
-        "Thursday: 4:00 – 8:30 PM",
-        "Friday: 4:00 – 9:00 PM",
-        "Saturday: 4:00 – 9:00 PM",
-        "Sunday: 4:00 – 8:30 PM"
+        "Monday: 4:00\u2009\u2013\u20098:30\u202fPM",
+        "Tuesday: 4:00\u2009\u2013\u20098:30\u202fPM",
+        "Wednesday: 4:00\u2009\u2013\u20098:30\u202fPM",
+        "Thursday: 4:00\u2009\u2013\u20098:30\u202fPM",
+        "Friday: 4:00\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 4:00\u2009\u2013\u20099:00\u202fPM",
+        "Sunday: 4:00\u2009\u2013\u20098:30\u202fPM"
       ]
     }
   ]
