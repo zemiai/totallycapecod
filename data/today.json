@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "date": "2026-06-29",
-  "updated_at": "2026-06-29T04:09:41Z",
+  "updated_at": "2026-06-29T16:10:44Z",
   "_hermes_note": "Hermes overwrites this daily at 5am ET. Categories: music, happy_hour, free_event, family, food_deal, drive_in, farmers_market, trivia, art.",
   "events": [
     {
@@ -133,6 +133,22 @@
       "source_url": "https://ediblecapecod.ediblecommunities.com/shop/shop-cape-cod-farmers-markets/"
     },
     {
+      "id": "boatslip-2026-07-01-tea-dance",
+      "tag": "🍻 HAPPY HOUR",
+      "category": "happy_hour",
+      "date": "2026-07-01",
+      "time": "4:00 PM",
+      "title": "Boatslip Tea Dance — Independence Week",
+      "venue": "The Boatslip Resort",
+      "town": "Provincetown",
+      "info": "Provincetown · $10 · 21+ · DJ Maryalice poolside 4–7 PM · July 1–5",
+      "price": "$10",
+      "lat": 42.0472,
+      "lng": -70.1912,
+      "img": "",
+      "source_url": "https://theboatslip.com/pages/tea-dance"
+    },
+    {
       "id": "harwich-2026-07-01-port-summer-nights",
       "tag": "🎵 LIVE MUSIC",
       "category": "music",
@@ -261,6 +277,22 @@
       "source_url": "https://ediblecapecod.ediblecommunities.com/shop/shop-cape-cod-farmers-markets/"
     },
     {
+      "id": "boatslip-2026-07-02-tea-dance",
+      "tag": "🍻 HAPPY HOUR",
+      "category": "happy_hour",
+      "date": "2026-07-02",
+      "time": "4:00 PM",
+      "title": "Boatslip Tea Dance — Independence Week",
+      "venue": "The Boatslip Resort",
+      "town": "Provincetown",
+      "info": "Provincetown · $10 · 21+ · DJ Maryalice poolside 4–7 PM",
+      "price": "$10",
+      "lat": 42.0472,
+      "lng": -70.1912,
+      "img": "",
+      "source_url": "https://theboatslip.com/pages/tea-dance"
+    },
+    {
       "id": "bourne-2026-07-02-canal-region-farmers-market",
       "tag": "🌽 FARMERS MARKET",
       "category": "farmers_market",
@@ -307,6 +339,22 @@
       "lng": -69.9630,
       "img": "",
       "source_url": "https://chathamparade.com/"
+    },
+    {
+      "id": "fawc-2026-07-02-making-space-opening",
+      "tag": "🎨 ART",
+      "category": "art",
+      "date": "2026-07-02",
+      "time": "6:00 PM",
+      "title": "FAWC Opening: \"Making Space, Painting Place\"",
+      "venue": "Fine Arts Work Center",
+      "town": "Provincetown",
+      "info": "Provincetown · Free · All ages · Summer exhibition opening reception, runs through Sept 12",
+      "price": "Free",
+      "lat": 42.0533,
+      "lng": -70.1850,
+      "img": "",
+      "source_url": "https://fawc.org/"
     },
     {
       "id": "wellfleetcinemas-2026-07-02-drive-in",
@@ -387,6 +435,22 @@
       "lng": -70.4810,
       "img": "",
       "source_url": "https://mashpeewampanoagtribe-nsn.gov/powwow-info"
+    },
+    {
+      "id": "boatslip-2026-07-03-tea-dance",
+      "tag": "🍻 HAPPY HOUR",
+      "category": "happy_hour",
+      "date": "2026-07-03",
+      "time": "4:00 PM",
+      "title": "Boatslip Tea Dance — Independence Week",
+      "venue": "The Boatslip Resort",
+      "town": "Provincetown",
+      "info": "Provincetown · $10 · 21+ · DJ Maryalice poolside 4–7 PM",
+      "price": "$10",
+      "lat": 42.0472,
+      "lng": -70.1912,
+      "img": "",
+      "source_url": "https://theboatslip.com/pages/tea-dance"
     },
     {
       "id": "hyannis-2026-07-03-harbor-summer-sounds",
@@ -645,6 +709,22 @@
       "source_url": "https://artsbarnstable.com/event/downtown-hyannis-4th-of-july-celebration/"
     },
     {
+      "id": "boatslip-2026-07-04-tea-dance",
+      "tag": "🍻 HAPPY HOUR",
+      "category": "happy_hour",
+      "date": "2026-07-04",
+      "time": "4:00 PM",
+      "title": "Boatslip Tea Dance — Independence Day Party",
+      "venue": "The Boatslip Resort",
+      "town": "Provincetown",
+      "info": "Provincetown · $10 · 21+ · Special Independence Day Tea Dance poolside 4–7 PM",
+      "price": "$10",
+      "lat": 42.0472,
+      "lng": -70.1912,
+      "img": "",
+      "source_url": "https://theboatslip.com/pages/tea-dance"
+    },
+    {
       "id": "ccbl-2026-07-04-hyannis-vs-yd",
       "tag": "👨‍👩‍👧 FAMILY",
       "category": "family",
@@ -867,6 +947,38 @@
       "lng": -70.0719,
       "img": "",
       "source_url": "https://www.capedays.com/cape-cod-events-july.html"
+    },
+    {
+      "id": "boatslip-2026-07-05-tea-dance",
+      "tag": "🍻 HAPPY HOUR",
+      "category": "happy_hour",
+      "date": "2026-07-05",
+      "time": "4:00 PM",
+      "title": "Boatslip Tea Dance — Independence Week",
+      "venue": "The Boatslip Resort",
+      "town": "Provincetown",
+      "info": "Provincetown · $10 · 21+ · DJ Maryalice poolside 4–7 PM",
+      "price": "$10",
+      "lat": 42.0472,
+      "lng": -70.1912,
+      "img": "",
+      "source_url": "https://theboatslip.com/pages/tea-dance"
+    },
+    {
+      "id": "trurovineyards-2026-07-05-sunday-funday",
+      "tag": "🎵 LIVE MUSIC",
+      "category": "music",
+      "date": "2026-07-05",
+      "time": "6:00 PM",
+      "title": "Sunday Funday at Truro Vineyards",
+      "venue": "Truro Vineyards",
+      "town": "Truro",
+      "info": "Truro · Free entry · All ages · DJ Emerson · Crush Pad Food Truck · 6–8 PM",
+      "price": "Free",
+      "lat": 41.9886,
+      "lng": -70.0517,
+      "img": "",
+      "source_url": "https://trurovineyardsofcapecod.com/events/"
     },
     {
       "id": "wellfleetcinemas-2026-07-05-drive-in",
