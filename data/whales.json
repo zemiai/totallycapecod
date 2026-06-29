@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-29T21:53:25Z",
+  "updated_at": "2026-06-29T22:56:40Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -68,7 +68,7 @@
       "location": "Barnstable County, MA, USA",
       "reported_by": "iNaturalist \u00b7 jmacaulay",
       "reported_at": "2026-06-26T22:53:00Z",
-      "time_ago": "2 days ago",
+      "time_ago": "3 days ago",
       "photo_url": "https://static.inaturalist.org/photos/687239033/medium.jpg",
       "notes": "North Atlantic Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/375883482"
@@ -180,7 +180,7 @@
       "location": "US",
       "reported_by": "iNaturalist \u00b7 fullmoondeer",
       "reported_at": "2026-06-22T22:36:25Z",
-      "time_ago": "6 days ago",
+      "time_ago": "7 days ago",
       "photo_url": "https://static.inaturalist.org/photos/686822948/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/375682937"
