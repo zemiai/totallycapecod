@@ -2121,13 +2121,20 @@ function buildAiContext() {
     // Restaurants & events before the long beach list so they're never the part that gets trimmed.
     // Sort restaurants nearest-first (when we know the user's location) so location-specific
     // food questions are grounded in real places actually near them.
-    let eatsList = (d.eats?.eats || []).slice();
+    // Only feed the model places that are operational; tag each with live open/closed so
+    // it never recommends a spot that's closed right now (or permanently).
+    let eatsList = (d.eats?.eats || []).slice()
+      .filter(r => r.business_status == null || r.business_status === 'OPERATIONAL');
     const loc = (typeof nbUser !== 'undefined' && nbUser && nbUser.lat) ? nbUser : null;
     if (loc && typeof distanceMiles === 'function') {
       eatsList.sort((a, b) => distanceMiles(loc.lat, loc.lng, a.lat, a.lng) - distanceMiles(loc.lat, loc.lng, b.lat, b.lng));
     }
-    const eats = eatsList.slice(0, 16).map(r => `${r.name} (${r.town}${r.cuisine ? ', ' + r.cuisine : ''}${r.rating ? ', ' + r.rating + '★' : ''}${r.deal ? ', deal: ' + r.deal : ''})`).join('; ');
-    if (eats) out.push(`RESTAURANTS in app${loc ? ' (nearest you first)' : ''}: ${eats}.`);
+    const eats = eatsList.slice(0, 18).map(r => {
+      const o = (typeof isOpenNow === 'function') ? isOpenNow(r.hours) : null;
+      const st = o === true ? ', OPEN now' : o === false ? ', CLOSED now' : '';
+      return `${r.name} (${r.town}${r.cuisine ? ', ' + r.cuisine : ''}${r.rating ? ', ' + r.rating + '★' : ''}${st}${r.deal ? ', deal: ' + r.deal : ''})`;
+    }).join('; ');
+    if (eats) out.push(`RESTAURANTS in app${loc ? ' (nearest first)' : ''} — recommend ones marked "OPEN now"; do NOT recommend any marked "CLOSED now": ${eats}.`);
     const SHORT = { 'Usually has parking': 'usu. open', 'Often busy midday': 'busy midday', 'Often full midday': 'full midday', 'Spots open': 'open NOW', 'Filling up': 'filling NOW', 'Lot full': 'FULL now' };
     const beaches = d.beaches?.beaches || [];
     if (beaches.length) {

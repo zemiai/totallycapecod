@@ -18,7 +18,7 @@
         "lobster",
         "fine"
       ],
-      "desc": "Iconic waterfront since 1979 \u2014 lobster rolls, clam chowder, harbor views.",
+      "desc": "Iconic waterfront since 1979 — lobster rolls, clam chowder, harbor views.",
       "place_id": "ChIJodQ3d3yn_IkRaL3U202uvJ0",
       "photo": "data/eats-photos/the-lobster-pot.jpg",
       "reviews": 9164,
@@ -115,13 +115,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 11:30 AM – 9:00 PM",
+        "Tuesday: 11:30 AM – 9:00 PM",
+        "Wednesday: 11:30 AM – 9:00 PM",
+        "Thursday: 11:30 AM – 9:00 PM",
+        "Friday: 11:30 AM – 9:00 PM",
+        "Saturday: 11:30 AM – 9:00 PM",
+        "Sunday: 11:30 AM – 9:00 PM"
       ]
     },
     {
@@ -211,11 +211,11 @@
       ],
       "hours_text": [
         "Monday: Closed",
-        "Tuesday: 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Tuesday: 5:00 – 9:00 PM",
+        "Wednesday: 5:00 – 9:00 PM",
+        "Thursday: 5:00 – 9:00 PM",
+        "Friday: 5:00 – 9:00 PM",
+        "Saturday: 5:00 – 9:00 PM",
         "Sunday: Closed"
       ]
     },
@@ -238,7 +238,7 @@
       "website": "http://theredinn.com/",
       "rating_source": "google",
       "enriched_at": "2026-06-22T15:27:25Z",
-      "deal": "Raw Bar Happy Hour \u00b7 Fri\u2013Sun 2\u20134:30pm",
+      "deal": "Raw Bar Happy Hour · Fri–Sun 2–4:30pm",
       "business_status": "OPERATIONAL",
       "phone": "(508) 487-7334",
       "hours": [
@@ -328,13 +328,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 2:00\u2009\u2013\u20099:30\u202fPM",
-        "Tuesday: 2:00\u2009\u2013\u20099:30\u202fPM",
-        "Wednesday: 2:00\u2009\u2013\u20099:30\u202fPM",
-        "Thursday: 2:00\u2009\u2013\u20099:30\u202fPM",
-        "Friday: 2:00\u2009\u2013\u200910:00\u202fPM",
-        "Saturday: 2:00\u2009\u2013\u200910:00\u202fPM",
-        "Sunday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM"
+        "Monday: 2:00 – 9:30 PM",
+        "Tuesday: 2:00 – 9:30 PM",
+        "Wednesday: 2:00 – 9:30 PM",
+        "Thursday: 2:00 – 9:30 PM",
+        "Friday: 2:00 – 10:00 PM",
+        "Saturday: 2:00 – 10:00 PM",
+        "Sunday: 11:00 AM – 10:00 PM"
       ]
     },
     {
@@ -351,7 +351,7 @@
         "clam",
         "casual"
       ],
-      "desc": "Beachfront counter \u2014 go for the lobster roll and frozen ros\u00e9.",
+      "desc": "Beachfront counter — go for the lobster roll and frozen rosé.",
       "place_id": "ChIJy0gAcH6n_IkR2t0LvOv8TYE",
       "photo": "data/eats-photos/the-canteen.jpg",
       "reviews": 2347,
@@ -448,13 +448,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Tuesday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Wednesday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Thursday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Friday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM"
+        "Monday: 11:00 AM – 8:00 PM",
+        "Tuesday: 11:00 AM – 8:00 PM",
+        "Wednesday: 11:00 AM – 8:00 PM",
+        "Thursday: 11:00 AM – 8:00 PM",
+        "Friday: 11:00 AM – 9:00 PM",
+        "Saturday: 11:00 AM – 9:00 PM",
+        "Sunday: 11:00 AM – 8:00 PM"
       ]
     },
     {
@@ -567,13 +567,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u20092:00\u202fAM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u20092:00\u202fAM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u20092:00\u202fAM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u20092:00\u202fAM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u20092:00\u202fAM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u20092:00\u202fAM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u20092:00\u202fAM"
+        "Monday: 11:30 AM – 2:00 AM",
+        "Tuesday: 11:30 AM – 2:00 AM",
+        "Wednesday: 11:30 AM – 2:00 AM",
+        "Thursday: 11:30 AM – 2:00 AM",
+        "Friday: 11:30 AM – 2:00 AM",
+        "Saturday: 11:30 AM – 2:00 AM",
+        "Sunday: 11:30 AM – 2:00 AM"
       ]
     },
     {
@@ -686,13 +686,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 8:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Tuesday: 8:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Wednesday: 8:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Thursday: 8:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Friday: 8:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Saturday: 8:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Sunday: 8:00\u202fAM\u2009\u2013\u20094:00\u202fPM"
+        "Monday: 8:00 AM – 5:00 PM",
+        "Tuesday: 8:00 AM – 5:00 PM",
+        "Wednesday: 8:00 AM – 5:00 PM",
+        "Thursday: 8:00 AM – 5:00 PM",
+        "Friday: 8:00 AM – 5:00 PM",
+        "Saturday: 8:00 AM – 5:00 PM",
+        "Sunday: 8:00 AM – 4:00 PM"
       ]
     },
     {
@@ -805,13 +805,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Tuesday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Wednesday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Thursday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Friday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Saturday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Sunday: 12:00\u2009\u2013\u20095:00\u202fPM"
+        "Monday: 11:00 AM – 5:00 PM",
+        "Tuesday: 11:00 AM – 5:00 PM",
+        "Wednesday: 11:00 AM – 5:00 PM",
+        "Thursday: 11:00 AM – 5:00 PM",
+        "Friday: 11:00 AM – 5:00 PM",
+        "Saturday: 11:00 AM – 5:00 PM",
+        "Sunday: 12:00 – 5:00 PM"
       ]
     },
     {
@@ -901,11 +901,11 @@
       ],
       "hours_text": [
         "Monday: Closed",
-        "Tuesday: 5:00\u2009\u2013\u200910:00\u202fPM",
-        "Wednesday: 5:00\u2009\u2013\u200910:00\u202fPM",
-        "Thursday: 5:00\u2009\u2013\u200910:00\u202fPM",
-        "Friday: 5:00\u2009\u2013\u200910:00\u202fPM",
-        "Saturday: 5:00\u2009\u2013\u200910:00\u202fPM",
+        "Tuesday: 5:00 – 10:00 PM",
+        "Wednesday: 5:00 – 10:00 PM",
+        "Thursday: 5:00 – 10:00 PM",
+        "Friday: 5:00 – 10:00 PM",
+        "Saturday: 5:00 – 10:00 PM",
         "Sunday: Closed"
       ]
     },
@@ -1019,13 +1019,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 3:30\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 3:30\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 3:30\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 3:30\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 3:30\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 3:30\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 3:30\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 3:30 – 9:00 PM",
+        "Tuesday: 3:30 – 9:00 PM",
+        "Wednesday: 3:30 – 9:00 PM",
+        "Thursday: 3:30 – 9:00 PM",
+        "Friday: 3:30 – 9:00 PM",
+        "Saturday: 3:30 – 9:00 PM",
+        "Sunday: 3:30 – 9:00 PM"
       ]
     },
     {
@@ -1138,13 +1138,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM"
+        "Monday: 11:30 AM – 10:00 PM",
+        "Tuesday: 11:30 AM – 10:00 PM",
+        "Wednesday: 11:30 AM – 10:00 PM",
+        "Thursday: 11:30 AM – 10:00 PM",
+        "Friday: 11:30 AM – 10:00 PM",
+        "Saturday: 11:30 AM – 10:00 PM",
+        "Sunday: 11:30 AM – 10:00 PM"
       ]
     },
     {
@@ -1168,7 +1168,7 @@
       "website": "http://www.macsseafood.com/",
       "rating_source": "google",
       "enriched_at": "2026-06-22T15:27:33Z",
-      "deal": "Thu: All-You-Can-Eat Fish & Chips \u00b7 Daily Happy Hour",
+      "deal": "Thu: All-You-Can-Eat Fish & Chips · Daily Happy Hour",
       "business_status": "OPERATIONAL",
       "phone": "(508) 349-9611",
       "hours": [
@@ -1258,13 +1258,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-        "Tuesday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-        "Wednesday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-        "Thursday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-        "Friday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-        "Saturday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-        "Sunday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM"
+        "Monday: 11:00 AM – 7:30 PM",
+        "Tuesday: 11:00 AM – 7:30 PM",
+        "Wednesday: 11:00 AM – 7:30 PM",
+        "Thursday: 11:00 AM – 7:30 PM",
+        "Friday: 11:00 AM – 7:30 PM",
+        "Saturday: 11:00 AM – 7:30 PM",
+        "Sunday: 11:00 AM – 7:30 PM"
       ]
     },
     {
@@ -1355,11 +1355,11 @@
       "hours_text": [
         "Monday: Closed",
         "Tuesday: Closed",
-        "Wednesday: 5:00\u2009\u2013\u20098:30\u202fPM",
-        "Thursday: 5:00\u2009\u2013\u20098:30\u202fPM",
-        "Friday: 5:00\u2009\u2013\u20098:30\u202fPM",
-        "Saturday: 5:00\u2009\u2013\u20098:30\u202fPM",
-        "Sunday: 5:00\u2009\u2013\u20098:30\u202fPM"
+        "Wednesday: 5:00 – 8:30 PM",
+        "Thursday: 5:00 – 8:30 PM",
+        "Friday: 5:00 – 8:30 PM",
+        "Saturday: 5:00 – 8:30 PM",
+        "Sunday: 5:00 – 8:30 PM"
       ]
     },
     {
@@ -1375,7 +1375,7 @@
         "seafood",
         "casual"
       ],
-      "desc": "Locals' joint over Duck Creek \u2014 oysters they pull themselves.",
+      "desc": "Locals' joint over Duck Creek — oysters they pull themselves.",
       "place_id": "ChIJ8WaihEZn-4kRmrPqBtMsAuw",
       "photo": "data/eats-photos/the-bookstore-restaurant.jpg",
       "reviews": 1271,
@@ -1472,13 +1472,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 11:30 AM – 9:00 PM",
+        "Tuesday: 11:30 AM – 9:00 PM",
+        "Wednesday: 11:30 AM – 9:00 PM",
+        "Thursday: 11:30 AM – 9:00 PM",
+        "Friday: 11:30 AM – 9:00 PM",
+        "Saturday: 11:30 AM – 9:00 PM",
+        "Sunday: 11:30 AM – 9:00 PM"
       ]
     },
     {
@@ -1699,13 +1699,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 12:00\u2009\u2013\u20093:00\u202fPM, 5:30\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 12:00\u2009\u2013\u20093:00\u202fPM, 5:30\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 12:00\u2009\u2013\u20093:00\u202fPM, 5:30\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 12:00\u2009\u2013\u20093:00\u202fPM, 5:30\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 12:00\u2009\u2013\u20093:00\u202fPM, 5:30\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 12:00\u2009\u2013\u20093:00\u202fPM, 5:30\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 12:00\u2009\u2013\u20093:00\u202fPM, 5:30\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 12:00 – 3:00 PM, 5:30 – 9:00 PM",
+        "Tuesday: 12:00 – 3:00 PM, 5:30 – 9:00 PM",
+        "Wednesday: 12:00 – 3:00 PM, 5:30 – 9:00 PM",
+        "Thursday: 12:00 – 3:00 PM, 5:30 – 9:00 PM",
+        "Friday: 12:00 – 3:00 PM, 5:30 – 9:00 PM",
+        "Saturday: 12:00 – 3:00 PM, 5:30 – 9:00 PM",
+        "Sunday: 12:00 – 3:00 PM, 5:30 – 9:00 PM"
       ]
     },
     {
@@ -1795,13 +1795,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 4:00\u2009\u2013\u20098:00\u202fPM",
+        "Monday: 4:00 – 8:00 PM",
         "Tuesday: Closed",
         "Wednesday: Closed",
-        "Thursday: 4:00\u2009\u2013\u20098:00\u202fPM",
-        "Friday: 4:00\u2009\u2013\u20098:00\u202fPM",
-        "Saturday: 4:00\u2009\u2013\u20098:00\u202fPM",
-        "Sunday: 4:00\u2009\u2013\u20098:00\u202fPM"
+        "Thursday: 4:00 – 8:00 PM",
+        "Friday: 4:00 – 8:00 PM",
+        "Saturday: 4:00 – 8:00 PM",
+        "Sunday: 4:00 – 8:00 PM"
       ]
     },
     {
@@ -1819,7 +1819,7 @@
         "fried",
         "ice cream"
       ],
-      "desc": "Fried seafood, lobster rolls & soft-serve \u2014 the Wellfleet favorite's new Eastham spot (former Friendly Fisherman).",
+      "desc": "Fried seafood, lobster rolls & soft-serve — the Wellfleet favorite's new Eastham spot (former Friendly Fisherman).",
       "place_id": "ChIJP5POe0Vp-4kRImkfiiia3pg",
       "photo": "data/eats-photos/pjs-eastham.jpg",
       "reviews": 2,
@@ -1904,13 +1904,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Tuesday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
+        "Monday: 11:00 AM – 8:00 PM",
+        "Tuesday: 11:00 AM – 8:00 PM",
         "Wednesday: Closed",
-        "Thursday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Friday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Saturday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Sunday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM"
+        "Thursday: 11:00 AM – 8:00 PM",
+        "Friday: 11:00 AM – 8:00 PM",
+        "Saturday: 11:00 AM – 8:00 PM",
+        "Sunday: 11:00 AM – 8:00 PM"
       ]
     },
     {
@@ -1927,7 +1927,7 @@
         "bakery",
         "coffee"
       ],
-      "desc": "A Cape Sunday tradition \u2014 hand-cut donuts and a buzzing counter.",
+      "desc": "A Cape Sunday tradition — hand-cut donuts and a buzzing counter.",
       "place_id": "ChIJU8uagpto-4kR9tJNdnHbz3Y",
       "photo": "data/eats-photos/hole-in-one-donuts.jpg",
       "reviews": 681,
@@ -2024,13 +2024,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 6:00\u202fAM\u2009\u2013\u20092:00\u202fPM",
-        "Tuesday: 6:00\u202fAM\u2009\u2013\u20092:00\u202fPM",
-        "Wednesday: 6:00\u202fAM\u2009\u2013\u20092:00\u202fPM",
-        "Thursday: 6:00\u202fAM\u2009\u2013\u20092:00\u202fPM",
-        "Friday: 6:00\u202fAM\u2009\u2013\u20092:00\u202fPM",
-        "Saturday: 6:00\u202fAM\u2009\u2013\u20092:00\u202fPM",
-        "Sunday: 6:00\u202fAM\u2009\u2013\u20092:00\u202fPM"
+        "Monday: 6:00 AM – 2:00 PM",
+        "Tuesday: 6:00 AM – 2:00 PM",
+        "Wednesday: 6:00 AM – 2:00 PM",
+        "Thursday: 6:00 AM – 2:00 PM",
+        "Friday: 6:00 AM – 2:00 PM",
+        "Saturday: 6:00 AM – 2:00 PM",
+        "Sunday: 6:00 AM – 2:00 PM"
       ]
     },
     {
@@ -2228,133 +2228,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 6:30\u202fAM\u2009\u2013\u200912:00\u202fPM, 4:00\u2009\u2013\u20098:00\u202fPM",
-        "Tuesday: 6:30\u202fAM\u2009\u2013\u200912:00\u202fPM, 4:00\u2009\u2013\u20098:00\u202fPM",
-        "Wednesday: 6:30\u202fAM\u2009\u2013\u200912:00\u202fPM, 4:00\u2009\u2013\u20098:00\u202fPM",
-        "Thursday: 6:30\u202fAM\u2009\u2013\u200912:00\u202fPM, 4:00\u2009\u2013\u20098:00\u202fPM",
-        "Friday: 6:30\u202fAM\u2009\u2013\u200912:00\u202fPM, 4:00\u2009\u2013\u20098:00\u202fPM",
-        "Saturday: 6:30\u202fAM\u2009\u2013\u200912:00\u202fPM, 4:00\u2009\u2013\u20098:00\u202fPM",
-        "Sunday: 6:30\u202fAM\u2009\u2013\u200912:00\u202fPM, 4:00\u2009\u2013\u20098:00\u202fPM"
-      ]
-    },
-    {
-      "id": "lobster-claw",
-      "name": "Lobster Claw",
-      "town": "Orleans",
-      "lat": 41.7894,
-      "lng": -69.9889,
-      "cuisine": "Seafood",
-      "price": "$$",
-      "rating": 4.7,
-      "tags": [
-        "seafood",
-        "lobster",
-        "clam"
-      ],
-      "desc": "No-frills shack with perfect cold lobster rolls and great clam plates.",
-      "place_id": "ChIJPdu3LW9p-4kRjSOjC-qeB2c",
-      "photo": "data/eats-photos/lobster-claw.jpg",
-      "reviews": 268,
-      "website": "http://www.nausetfishandlobsterpool.com/",
-      "rating_source": "google",
-      "enriched_at": "2026-06-22T15:27:40Z",
-      "deal": null,
-      "business_status": "OPERATIONAL",
-      "phone": "(508) 255-1019",
-      "hours": [
-        {
-          "open": {
-            "day": 0,
-            "hour": 9,
-            "minute": 0
-          },
-          "close": {
-            "day": 0,
-            "hour": 18,
-            "minute": 0
-          }
-        },
-        {
-          "open": {
-            "day": 1,
-            "hour": 9,
-            "minute": 0
-          },
-          "close": {
-            "day": 1,
-            "hour": 18,
-            "minute": 0
-          }
-        },
-        {
-          "open": {
-            "day": 2,
-            "hour": 9,
-            "minute": 0
-          },
-          "close": {
-            "day": 2,
-            "hour": 18,
-            "minute": 0
-          }
-        },
-        {
-          "open": {
-            "day": 3,
-            "hour": 9,
-            "minute": 0
-          },
-          "close": {
-            "day": 3,
-            "hour": 18,
-            "minute": 0
-          }
-        },
-        {
-          "open": {
-            "day": 4,
-            "hour": 9,
-            "minute": 0
-          },
-          "close": {
-            "day": 4,
-            "hour": 18,
-            "minute": 0
-          }
-        },
-        {
-          "open": {
-            "day": 5,
-            "hour": 9,
-            "minute": 0
-          },
-          "close": {
-            "day": 5,
-            "hour": 18,
-            "minute": 0
-          }
-        },
-        {
-          "open": {
-            "day": 6,
-            "hour": 9,
-            "minute": 0
-          },
-          "close": {
-            "day": 6,
-            "hour": 18,
-            "minute": 0
-          }
-        }
-      ],
-      "hours_text": [
-        "Monday: 9:00\u202fAM\u2009\u2013\u20096:00\u202fPM",
-        "Tuesday: 9:00\u202fAM\u2009\u2013\u20096:00\u202fPM",
-        "Wednesday: 9:00\u202fAM\u2009\u2013\u20096:00\u202fPM",
-        "Thursday: 9:00\u202fAM\u2009\u2013\u20096:00\u202fPM",
-        "Friday: 9:00\u202fAM\u2009\u2013\u20096:00\u202fPM",
-        "Saturday: 9:00\u202fAM\u2009\u2013\u20096:00\u202fPM",
-        "Sunday: 9:00\u202fAM\u2009\u2013\u20096:00\u202fPM"
+        "Monday: 6:30 AM – 12:00 PM, 4:00 – 8:00 PM",
+        "Tuesday: 6:30 AM – 12:00 PM, 4:00 – 8:00 PM",
+        "Wednesday: 6:30 AM – 12:00 PM, 4:00 – 8:00 PM",
+        "Thursday: 6:30 AM – 12:00 PM, 4:00 – 8:00 PM",
+        "Friday: 6:30 AM – 12:00 PM, 4:00 – 8:00 PM",
+        "Saturday: 6:30 AM – 12:00 PM, 4:00 – 8:00 PM",
+        "Sunday: 6:30 AM – 12:00 PM, 4:00 – 8:00 PM"
       ]
     },
     {
@@ -2370,7 +2250,7 @@
         "casual",
         "icecream"
       ],
-      "desc": "Modern clam-shack \u2014 smash burgers, lobster rolls, frappes.",
+      "desc": "Modern clam-shack — smash burgers, lobster rolls, frappes.",
       "place_id": "ChIJlTr32Wtp-4kRCvibwRfSGS0",
       "photo": "data/eats-photos/the-knack.jpg",
       "reviews": 1496,
@@ -2467,13 +2347,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 11:00 AM – 9:00 PM",
+        "Tuesday: 11:00 AM – 9:00 PM",
+        "Wednesday: 11:00 AM – 9:00 PM",
+        "Thursday: 11:00 AM – 9:00 PM",
+        "Friday: 11:00 AM – 9:00 PM",
+        "Saturday: 11:00 AM – 9:00 PM",
+        "Sunday: 11:00 AM – 9:00 PM"
       ]
     },
     {
@@ -2587,13 +2467,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 6:30\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Tuesday: 6:30\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Wednesday: 6:30\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Thursday: 6:30\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Friday: 6:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 6:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 6:30\u202fAM\u2009\u2013\u20098:00\u202fPM"
+        "Monday: 6:30 AM – 8:00 PM",
+        "Tuesday: 6:30 AM – 8:00 PM",
+        "Wednesday: 6:30 AM – 8:00 PM",
+        "Thursday: 6:30 AM – 8:00 PM",
+        "Friday: 6:30 AM – 9:00 PM",
+        "Saturday: 6:30 AM – 9:00 PM",
+        "Sunday: 6:30 AM – 8:00 PM"
       ]
     },
     {
@@ -2609,7 +2489,7 @@
         "bar",
         "casual"
       ],
-      "desc": "Quintessential Cape tavern since 1969 \u2014 chowder, burgers, ceiling signs.",
+      "desc": "Quintessential Cape tavern since 1969 — chowder, burgers, ceiling signs.",
       "place_id": "ChIJ36GSqHxp-4kR718dguVV9VA",
       "photo": "data/eats-photos/land-ho.jpg",
       "reviews": 1199,
@@ -2694,13 +2574,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
+        "Monday: 11:30 AM – 11:00 PM",
         "Tuesday: Closed",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM"
+        "Wednesday: 11:30 AM – 11:00 PM",
+        "Thursday: 11:30 AM – 11:00 PM",
+        "Friday: 11:30 AM – 11:00 PM",
+        "Saturday: 11:30 AM – 11:00 PM",
+        "Sunday: 11:30 AM – 11:00 PM"
       ]
     },
     {
@@ -2716,7 +2596,7 @@
         "fine",
         "seafood"
       ],
-      "desc": "Downtown bistro \u2014 wood-grilled fish and a lively bar scene.",
+      "desc": "Downtown bistro — wood-grilled fish and a lively bar scene.",
       "place_id": "ChIJjaBSXXtp-4kRuVTVS_9LV4o",
       "photo": "data/eats-photos/mahoneys-atlantic-bar-grill.jpg",
       "reviews": 454,
@@ -2801,12 +2681,12 @@
         }
       ],
       "hours_text": [
-        "Monday: 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Monday: 5:00 – 9:00 PM",
+        "Tuesday: 5:00 – 9:00 PM",
+        "Wednesday: 5:00 – 9:00 PM",
+        "Thursday: 5:00 – 9:00 PM",
+        "Friday: 5:00 – 9:00 PM",
+        "Saturday: 5:00 – 9:00 PM",
         "Sunday: Closed"
       ]
     },
@@ -2823,7 +2703,7 @@
         "seafood",
         "fine"
       ],
-      "desc": "Tiny, beloved, no-reservations \u2014 some of the best seafood on the Cape.",
+      "desc": "Tiny, beloved, no-reservations — some of the best seafood on the Cape.",
       "place_id": "ChIJQTh4CspB-4kRBKxY6fqmNyA",
       "photo": "data/eats-photos/brewster-fish-house.jpg",
       "reviews": 486,
@@ -2909,12 +2789,12 @@
       ],
       "hours_text": [
         "Monday: Closed",
-        "Tuesday: 12:00\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 12:00\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 12:00\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 12:00\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 12:00\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 12:00\u2009\u2013\u20099:00\u202fPM"
+        "Tuesday: 12:00 – 9:00 PM",
+        "Wednesday: 12:00 – 9:00 PM",
+        "Thursday: 12:00 – 9:00 PM",
+        "Friday: 12:00 – 9:00 PM",
+        "Saturday: 12:00 – 9:00 PM",
+        "Sunday: 12:00 – 9:00 PM"
       ]
     },
     {
@@ -3028,13 +2908,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-        "Tuesday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-        "Wednesday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-        "Thursday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-        "Friday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-        "Saturday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-        "Sunday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM"
+        "Monday: 11:00 AM – 7:30 PM",
+        "Tuesday: 11:00 AM – 7:30 PM",
+        "Wednesday: 11:00 AM – 7:30 PM",
+        "Thursday: 11:00 AM – 7:30 PM",
+        "Friday: 11:00 AM – 7:30 PM",
+        "Saturday: 11:00 AM – 7:30 PM",
+        "Sunday: 11:00 AM – 7:30 PM"
       ]
     },
     {
@@ -3051,14 +2931,14 @@
         "clam",
         "casual"
       ],
-      "desc": "Order-at-the-window family spot \u2014 fried seafood and lobster dinners.",
+      "desc": "Order-at-the-window family spot — fried seafood and lobster dinners.",
       "place_id": "ChIJ1bgKN9pB-4kR91k6aRxf7hw",
       "photo": "data/eats-photos/jts-seafood.jpg",
       "reviews": 885,
       "website": "http://www.jt-seafood.com/",
       "rating_source": "google",
       "enriched_at": "2026-06-22T15:27:46Z",
-      "deal": "Cash-discount pricing \u00b7 Kids specials",
+      "deal": "Cash-discount pricing · Kids specials",
       "business_status": "OPERATIONAL",
       "phone": "(508) 896-3355",
       "hours": [
@@ -3148,13 +3028,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-        "Tuesday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-        "Wednesday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-        "Thursday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-        "Friday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-        "Saturday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-        "Sunday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM"
+        "Monday: 11:00 AM – 7:30 PM",
+        "Tuesday: 11:00 AM – 7:30 PM",
+        "Wednesday: 11:00 AM – 7:30 PM",
+        "Thursday: 11:00 AM – 7:30 PM",
+        "Friday: 11:00 AM – 7:30 PM",
+        "Saturday: 11:00 AM – 7:30 PM",
+        "Sunday: 11:00 AM – 7:30 PM"
       ]
     },
     {
@@ -3255,12 +3135,12 @@
       ],
       "hours_text": [
         "Monday: Closed",
-        "Tuesday: 5:00\u2009\u2013\u20098:00\u202fPM",
-        "Wednesday: 5:00\u2009\u2013\u20098:00\u202fPM",
-        "Thursday: 5:00\u2009\u2013\u20098:00\u202fPM",
-        "Friday: 5:00\u2009\u2013\u20098:00\u202fPM",
-        "Saturday: 5:00\u2009\u2013\u20098:00\u202fPM",
-        "Sunday: 5:00\u2009\u2013\u20098:00\u202fPM"
+        "Tuesday: 5:00 – 8:00 PM",
+        "Wednesday: 5:00 – 8:00 PM",
+        "Thursday: 5:00 – 8:00 PM",
+        "Friday: 5:00 – 8:00 PM",
+        "Saturday: 5:00 – 8:00 PM",
+        "Sunday: 5:00 – 8:00 PM"
       ]
     },
     {
@@ -3433,13 +3313,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 6:30\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Tuesday: 6:30\u202fAM\u2009\u2013\u20095:00\u202fPM, 6:00\u2009\u2013\u200910:00\u202fPM",
-        "Wednesday: 6:30\u202fAM\u2009\u2013\u20095:00\u202fPM, 6:00\u2009\u2013\u200910:00\u202fPM",
-        "Thursday: 6:30\u202fAM\u2009\u2013\u20095:00\u202fPM, 6:00\u2009\u2013\u200910:00\u202fPM",
-        "Friday: 6:30\u202fAM\u2009\u2013\u20095:00\u202fPM, 6:00\u2009\u2013\u200910:00\u202fPM",
-        "Saturday: 7:30\u202fAM\u2009\u2013\u20095:00\u202fPM, 6:00\u2009\u2013\u200910:00\u202fPM",
-        "Sunday: 7:30\u202fAM\u2009\u2013\u20095:00\u202fPM"
+        "Monday: 6:30 AM – 5:00 PM",
+        "Tuesday: 6:30 AM – 5:00 PM, 6:00 – 10:00 PM",
+        "Wednesday: 6:30 AM – 5:00 PM, 6:00 – 10:00 PM",
+        "Thursday: 6:30 AM – 5:00 PM, 6:00 – 10:00 PM",
+        "Friday: 6:30 AM – 5:00 PM, 6:00 – 10:00 PM",
+        "Saturday: 7:30 AM – 5:00 PM, 6:00 – 10:00 PM",
+        "Sunday: 7:30 AM – 5:00 PM"
       ]
     },
     {
@@ -3530,11 +3410,11 @@
       "hours_text": [
         "Monday: Closed",
         "Tuesday: Closed",
-        "Wednesday: 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 5:00\u2009\u2013\u20099:00\u202fPM"
+        "Wednesday: 5:00 – 9:00 PM",
+        "Thursday: 5:00 – 9:00 PM",
+        "Friday: 5:00 – 9:00 PM",
+        "Saturday: 5:00 – 9:00 PM",
+        "Sunday: 5:00 – 9:00 PM"
       ]
     },
     {
@@ -3550,7 +3430,7 @@
         "seafood",
         "bar"
       ],
-      "desc": "Harbor-view deck \u2014 sunset cocktails and twin lobsters.",
+      "desc": "Harbor-view deck — sunset cocktails and twin lobsters.",
       "place_id": "ChIJrYMydbU_-4kRVU3vQ6IURfk",
       "photo": "data/eats-photos/brax-landing.jpg",
       "reviews": 2311,
@@ -3647,13 +3527,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 11:30 AM – 9:00 PM",
+        "Tuesday: 11:30 AM – 9:00 PM",
+        "Wednesday: 11:30 AM – 9:00 PM",
+        "Thursday: 11:30 AM – 9:00 PM",
+        "Friday: 11:30 AM – 9:00 PM",
+        "Saturday: 11:30 AM – 9:00 PM",
+        "Sunday: 11:30 AM – 9:00 PM"
       ]
     },
     {
@@ -3766,13 +3646,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 4:30\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 4:30\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 4:30\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 4:30\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 4:30\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 4:30\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 4:30\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 4:30 – 9:00 PM",
+        "Tuesday: 4:30 – 9:00 PM",
+        "Wednesday: 4:30 – 9:00 PM",
+        "Thursday: 4:30 – 9:00 PM",
+        "Friday: 4:30 – 9:00 PM",
+        "Saturday: 4:30 – 9:00 PM",
+        "Sunday: 4:30 – 9:00 PM"
       ]
     },
     {
@@ -3788,7 +3668,7 @@
         "seafood",
         "fine"
       ],
-      "desc": "Tucked off Main Street \u2014 bouillabaisse and oysters in a buzzy room.",
+      "desc": "Tucked off Main Street — bouillabaisse and oysters in a buzzy room.",
       "place_id": "ChIJyRMiwJ8U-4kR1Q2QAT9XbbE",
       "photo": "data/eats-photos/the-impudent-oyster.jpg",
       "reviews": 792,
@@ -3969,13 +3849,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u20092:45\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u20092:45\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u20092:45\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u20092:45\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u20092:45\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u20092:45\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u20092:45\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 11:30 AM – 2:45 PM, 5:00 – 9:00 PM",
+        "Tuesday: 11:30 AM – 2:45 PM, 5:00 – 9:00 PM",
+        "Wednesday: 11:30 AM – 2:45 PM, 5:00 – 9:00 PM",
+        "Thursday: 11:30 AM – 2:45 PM, 5:00 – 9:00 PM",
+        "Friday: 11:30 AM – 2:45 PM, 5:00 – 9:00 PM",
+        "Saturday: 11:30 AM – 2:45 PM, 5:00 – 9:00 PM",
+        "Sunday: 11:30 AM – 2:45 PM, 5:00 – 9:00 PM"
       ]
     },
     {
@@ -4089,13 +3969,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 10:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
-        "Tuesday: 10:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
-        "Wednesday: 10:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
-        "Thursday: 10:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
-        "Friday: 10:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
-        "Saturday: 10:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
-        "Sunday: 10:00\u202fAM\u2009\u2013\u20097:00\u202fPM"
+        "Monday: 10:00 AM – 7:00 PM",
+        "Tuesday: 10:00 AM – 7:00 PM",
+        "Wednesday: 10:00 AM – 7:00 PM",
+        "Thursday: 10:00 AM – 7:00 PM",
+        "Friday: 10:00 AM – 7:00 PM",
+        "Saturday: 10:00 AM – 7:00 PM",
+        "Sunday: 10:00 AM – 7:00 PM"
       ]
     },
     {
@@ -4209,13 +4089,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u20091:00\u202fAM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u20091:00\u202fAM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u20091:00\u202fAM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u20091:00\u202fAM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u20091:00\u202fAM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u20091:00\u202fAM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u20091:00\u202fAM"
+        "Monday: 11:30 AM – 1:00 AM",
+        "Tuesday: 11:30 AM – 1:00 AM",
+        "Wednesday: 11:30 AM – 1:00 AM",
+        "Thursday: 11:30 AM – 1:00 AM",
+        "Friday: 11:30 AM – 1:00 AM",
+        "Saturday: 11:30 AM – 1:00 AM",
+        "Sunday: 11:30 AM – 1:00 AM"
       ]
     },
     {
@@ -4315,12 +4195,12 @@
         }
       ],
       "hours_text": [
-        "Monday: 5:00\u2009\u2013\u20098:30\u202fPM",
-        "Tuesday: 5:00\u2009\u2013\u20098:30\u202fPM",
-        "Wednesday: 5:00\u2009\u2013\u20098:30\u202fPM",
-        "Thursday: 5:00\u2009\u2013\u20098:30\u202fPM",
-        "Friday: 5:00\u2009\u2013\u20098:30\u202fPM",
-        "Saturday: 5:00\u2009\u2013\u20098:30\u202fPM",
+        "Monday: 5:00 – 8:30 PM",
+        "Tuesday: 5:00 – 8:30 PM",
+        "Wednesday: 5:00 – 8:30 PM",
+        "Thursday: 5:00 – 8:30 PM",
+        "Friday: 5:00 – 8:30 PM",
+        "Saturday: 5:00 – 8:30 PM",
         "Sunday: Closed"
       ]
     },
@@ -4337,7 +4217,7 @@
         "breakfast",
         "brunch"
       ],
-      "desc": "Breakfast on the airfield \u2014 watch small planes over your hash.",
+      "desc": "Breakfast on the airfield — watch small planes over your hash.",
       "place_id": "ChIJITYtwcIU-4kRBV-9WAl6ohs",
       "photo": "data/eats-photos/hangar-b-eatery.jpg",
       "reviews": 548,
@@ -4422,18 +4302,18 @@
         }
       ],
       "hours_text": [
-        "Monday: 7:00\u202fAM\u2009\u2013\u20092:00\u202fPM",
+        "Monday: 7:00 AM – 2:00 PM",
         "Tuesday: Closed",
-        "Wednesday: 7:00\u202fAM\u2009\u2013\u20092:00\u202fPM",
-        "Thursday: 7:00\u202fAM\u2009\u2013\u20092:00\u202fPM",
-        "Friday: 7:00\u202fAM\u2009\u2013\u20092:00\u202fPM",
-        "Saturday: 7:00\u202fAM\u2009\u2013\u20092:00\u202fPM",
-        "Sunday: 7:00\u202fAM\u2009\u2013\u20092:00\u202fPM"
+        "Wednesday: 7:00 AM – 2:00 PM",
+        "Thursday: 7:00 AM – 2:00 PM",
+        "Friday: 7:00 AM – 2:00 PM",
+        "Saturday: 7:00 AM – 2:00 PM",
+        "Sunday: 7:00 AM – 2:00 PM"
       ]
     },
     {
       "id": "sesuit-harbor-cafe",
-      "name": "Sesuit Harbor Caf\u00e9",
+      "name": "Sesuit Harbor Café",
       "town": "East Dennis",
       "lat": 41.7561,
       "lng": -70.1542,
@@ -4445,7 +4325,7 @@
         "lobster",
         "clam"
       ],
-      "desc": "BYOB sleeper hit \u2014 picnic tables right on the harbor. Cash only.",
+      "desc": "BYOB sleeper hit — picnic tables right on the harbor. Cash only.",
       "place_id": "ChIJXcNTwkhH-4kR2dPePD7qdbk",
       "photo": "data/eats-photos/sesuit-harbor-cafe.jpg",
       "reviews": 2517,
@@ -4542,13 +4422,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 7:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Tuesday: 7:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Wednesday: 7:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Thursday: 7:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Friday: 7:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Saturday: 7:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Sunday: 7:00\u202fAM\u2009\u2013\u20098:00\u202fPM"
+        "Monday: 7:00 AM – 8:00 PM",
+        "Tuesday: 7:00 AM – 8:00 PM",
+        "Wednesday: 7:00 AM – 8:00 PM",
+        "Thursday: 7:00 AM – 8:00 PM",
+        "Friday: 7:00 AM – 8:00 PM",
+        "Saturday: 7:00 AM – 8:00 PM",
+        "Sunday: 7:00 AM – 8:00 PM"
       ]
     },
     {
@@ -4565,7 +4445,7 @@
         "breakfast",
         "brunch"
       ],
-      "desc": "Water-view booths \u2014 Sunday brunch and big seafood plates.",
+      "desc": "Water-view booths — Sunday brunch and big seafood plates.",
       "place_id": "ChIJRUdBwFtH-4kR3DPpwanHNVI",
       "photo": "data/eats-photos/marshside.jpg",
       "reviews": 1206,
@@ -4662,13 +4542,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 11:30 AM – 9:00 PM",
+        "Tuesday: 11:30 AM – 9:00 PM",
+        "Wednesday: 11:30 AM – 9:00 PM",
+        "Thursday: 11:30 AM – 9:00 PM",
+        "Friday: 11:30 AM – 9:00 PM",
+        "Saturday: 11:30 AM – 9:00 PM",
+        "Sunday: 11:30 AM – 9:00 PM"
       ]
     },
     {
@@ -4780,13 +4660,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 12:00\u2009\u2013\u20098:00\u202fPM",
-        "Tuesday: 12:00\u2009\u2013\u20098:00\u202fPM",
-        "Wednesday: 12:00\u2009\u2013\u20098:00\u202fPM",
-        "Thursday: 12:00\u2009\u2013\u20098:00\u202fPM",
-        "Friday: 12:00\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 12:00\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 12:00\u2009\u2013\u20098:00\u202fPM"
+        "Monday: 12:00 – 8:00 PM",
+        "Tuesday: 12:00 – 8:00 PM",
+        "Wednesday: 12:00 – 8:00 PM",
+        "Thursday: 12:00 – 8:00 PM",
+        "Friday: 12:00 – 9:00 PM",
+        "Saturday: 12:00 – 9:00 PM",
+        "Sunday: 12:00 – 8:00 PM"
       ]
     },
     {
@@ -4888,13 +4768,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u20098:30\u202fPM",
+        "Monday: 11:30 AM – 8:30 PM",
         "Tuesday: Closed",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u20098:30\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u20098:30\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u20098:30\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u20098:30\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u20098:30\u202fPM"
+        "Wednesday: 11:30 AM – 8:30 PM",
+        "Thursday: 11:30 AM – 8:30 PM",
+        "Friday: 11:30 AM – 8:30 PM",
+        "Saturday: 11:30 AM – 8:30 PM",
+        "Sunday: 11:30 AM – 8:30 PM"
       ]
     },
     {
@@ -5006,13 +4886,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 11:00 AM – 9:00 PM",
+        "Tuesday: 11:00 AM – 9:00 PM",
+        "Wednesday: 11:00 AM – 9:00 PM",
+        "Thursday: 11:00 AM – 9:00 PM",
+        "Friday: 11:00 AM – 9:00 PM",
+        "Saturday: 11:00 AM – 9:00 PM",
+        "Sunday: 11:00 AM – 9:00 PM"
       ]
     },
     {
@@ -5029,7 +4909,7 @@
         "clam",
         "icecream"
       ],
-      "desc": "Since 1953 \u2014 whole-belly clams and onion rings by the bucket.",
+      "desc": "Since 1953 — whole-belly clams and onion rings by the bucket.",
       "place_id": "ChIJXQSoj1I5-4kRtvuo6aNpePw",
       "photo": "data/eats-photos/kream-n-kone.jpg",
       "reviews": 2104,
@@ -5126,13 +5006,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00\u202fAM\u2009\u2013\u20098:30\u202fPM",
-        "Tuesday: 11:00\u202fAM\u2009\u2013\u20098:30\u202fPM",
-        "Wednesday: 11:00\u202fAM\u2009\u2013\u20098:30\u202fPM",
-        "Thursday: 11:00\u202fAM\u2009\u2013\u20098:30\u202fPM",
-        "Friday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 11:00\u202fAM\u2009\u2013\u20098:30\u202fPM"
+        "Monday: 11:00 AM – 8:30 PM",
+        "Tuesday: 11:00 AM – 8:30 PM",
+        "Wednesday: 11:00 AM – 8:30 PM",
+        "Thursday: 11:00 AM – 8:30 PM",
+        "Friday: 11:00 AM – 9:00 PM",
+        "Saturday: 11:00 AM – 9:00 PM",
+        "Sunday: 11:00 AM – 8:30 PM"
       ]
     },
     {
@@ -5246,13 +5126,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM"
+        "Monday: 11:30 AM – 10:00 PM",
+        "Tuesday: 11:30 AM – 10:00 PM",
+        "Wednesday: 11:30 AM – 10:00 PM",
+        "Thursday: 11:30 AM – 10:00 PM",
+        "Friday: 11:30 AM – 10:00 PM",
+        "Saturday: 11:30 AM – 10:00 PM",
+        "Sunday: 11:30 AM – 10:00 PM"
       ]
     },
     {
@@ -5268,7 +5148,7 @@
         "breakfast",
         "brunch"
       ],
-      "desc": "Gingerbread Victorian \u2014 English tea, scones, and full breakfast.",
+      "desc": "Gingerbread Victorian — English tea, scones, and full breakfast.",
       "place_id": "ChIJm-ji0LY3-4kRgqfBrplm8uQ",
       "photo": "data/eats-photos/the-optimist-cafe.jpg",
       "reviews": 313,
@@ -5365,13 +5245,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 7:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Tuesday: 7:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Wednesday: 7:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Thursday: 7:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Friday: 7:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Saturday: 7:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Sunday: 7:00\u202fAM\u2009\u2013\u20095:00\u202fPM"
+        "Monday: 7:00 AM – 5:00 PM",
+        "Tuesday: 7:00 AM – 5:00 PM",
+        "Wednesday: 7:00 AM – 5:00 PM",
+        "Thursday: 7:00 AM – 5:00 PM",
+        "Friday: 7:00 AM – 5:00 PM",
+        "Saturday: 7:00 AM – 5:00 PM",
+        "Sunday: 7:00 AM – 5:00 PM"
       ]
     },
     {
@@ -5460,11 +5340,11 @@
       ],
       "hours_text": [
         "Monday: Closed",
-        "Tuesday: 4:30\u2009\u2013\u20099:30\u202fPM",
-        "Wednesday: 4:30\u2009\u2013\u20099:30\u202fPM",
-        "Thursday: 4:30\u2009\u2013\u20099:30\u202fPM",
-        "Friday: 4:30\u2009\u2013\u200910:00\u202fPM",
-        "Saturday: 4:30\u2009\u2013\u200910:00\u202fPM",
+        "Tuesday: 4:30 – 9:30 PM",
+        "Wednesday: 4:30 – 9:30 PM",
+        "Thursday: 4:30 – 9:30 PM",
+        "Friday: 4:30 – 10:00 PM",
+        "Saturday: 4:30 – 10:00 PM",
         "Sunday: Closed"
       ]
     },
@@ -5579,13 +5459,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Tuesday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Wednesday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Thursday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Friday: 11:00\u202fAM\u2009\u2013\u200911:00\u202fPM",
-        "Saturday: 11:00\u202fAM\u2009\u2013\u200911:00\u202fPM",
-        "Sunday: 11:00\u202fAM\u2009\u2013\u200911:00\u202fPM"
+        "Monday: 11:00 AM – 10:00 PM",
+        "Tuesday: 11:00 AM – 10:00 PM",
+        "Wednesday: 11:00 AM – 10:00 PM",
+        "Thursday: 11:00 AM – 10:00 PM",
+        "Friday: 11:00 AM – 11:00 PM",
+        "Saturday: 11:00 AM – 11:00 PM",
+        "Sunday: 11:00 AM – 11:00 PM"
       ]
     },
     {
@@ -5600,7 +5480,7 @@
       "tags": [
         "icecream"
       ],
-      "desc": "Since 1934 \u2014 the Cape's most legendary scoop. Get the peanut butter cup.",
+      "desc": "Since 1934 — the Cape's most legendary scoop. Get the peanut butter cup.",
       "place_id": "ChIJH7OPbCUy-4kR4xtlrE38Ps0",
       "photo": "data/eats-photos/four-seas-ice-cream.jpg",
       "reviews": 829,
@@ -5697,13 +5577,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Tuesday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Wednesday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Thursday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Friday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Saturday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Sunday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM"
+        "Monday: 11:00 AM – 10:00 PM",
+        "Tuesday: 11:00 AM – 10:00 PM",
+        "Wednesday: 11:00 AM – 10:00 PM",
+        "Thursday: 11:00 AM – 10:00 PM",
+        "Friday: 11:00 AM – 10:00 PM",
+        "Saturday: 11:00 AM – 10:00 PM",
+        "Sunday: 11:00 AM – 10:00 PM"
       ]
     },
     {
@@ -5817,13 +5697,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 7:00\u202fAM\u2009\u2013\u20094:00\u202fPM",
-        "Tuesday: 7:00\u202fAM\u2009\u2013\u20094:00\u202fPM",
-        "Wednesday: 7:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Thursday: 7:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Friday: 7:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Saturday: 7:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Sunday: 7:00\u202fAM\u2009\u2013\u20094:00\u202fPM"
+        "Monday: 7:00 AM – 4:00 PM",
+        "Tuesday: 7:00 AM – 4:00 PM",
+        "Wednesday: 7:00 AM – 10:00 PM",
+        "Thursday: 7:00 AM – 10:00 PM",
+        "Friday: 7:00 AM – 10:00 PM",
+        "Saturday: 7:00 AM – 10:00 PM",
+        "Sunday: 7:00 AM – 4:00 PM"
       ]
     },
     {
@@ -5937,13 +5817,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 11:00\u202fAM\u2009\u2013\u20098:30\u202fPM"
+        "Monday: 11:00 AM – 9:00 PM",
+        "Tuesday: 11:00 AM – 9:00 PM",
+        "Wednesday: 11:00 AM – 9:00 PM",
+        "Thursday: 11:00 AM – 9:00 PM",
+        "Friday: 11:00 AM – 9:00 PM",
+        "Saturday: 11:00 AM – 9:00 PM",
+        "Sunday: 11:00 AM – 8:30 PM"
       ]
     },
     {
@@ -5959,7 +5839,7 @@
         "seafood",
         "bar"
       ],
-      "desc": "Marina sunset spot \u2014 frozen drinks and lobster over the harbor.",
+      "desc": "Marina sunset spot — frozen drinks and lobster over the harbor.",
       "place_id": "ChIJpa7OFG_X5IkRBqKlYp5W_to",
       "photo": "data/eats-photos/tugboats.jpg",
       "reviews": 1360,
@@ -6056,13 +5936,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u200911:30\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u200911:30\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u200911:30\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM"
+        "Monday: 11:30 AM – 11:00 PM",
+        "Tuesday: 11:30 AM – 11:00 PM",
+        "Wednesday: 11:30 AM – 11:00 PM",
+        "Thursday: 11:30 AM – 11:30 PM",
+        "Friday: 11:30 AM – 11:30 PM",
+        "Saturday: 11:30 AM – 11:30 PM",
+        "Sunday: 11:30 AM – 11:00 PM"
       ]
     },
     {
@@ -6078,7 +5958,7 @@
         "seafood",
         "bar"
       ],
-      "desc": "Across from the ferries \u2014 chowder, raw bar, easy harbor views.",
+      "desc": "Across from the ferries — chowder, raw bar, easy harbor views.",
       "place_id": "ChIJZbVzxPsw-4kR7HGC42e1Xbo",
       "photo": "data/eats-photos/the-black-cat-tavern.jpg",
       "reviews": 2587,
@@ -6175,13 +6055,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u20099:30\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u20099:30\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 11:30 AM – 9:00 PM",
+        "Tuesday: 11:30 AM – 9:00 PM",
+        "Wednesday: 11:30 AM – 9:00 PM",
+        "Thursday: 11:30 AM – 9:00 PM",
+        "Friday: 11:30 AM – 9:30 PM",
+        "Saturday: 11:30 AM – 9:30 PM",
+        "Sunday: 11:30 AM – 9:00 PM"
       ]
     },
     {
@@ -6196,7 +6076,7 @@
       "tags": [
         "fine"
       ],
-      "desc": "Sleek village bistro \u2014 small plates and a buzzy bar crowd.",
+      "desc": "Sleek village bistro — small plates and a buzzy bar crowd.",
       "place_id": "ChIJ80_axYAy-4kR5ZFGO8OjN-Y",
       "photo": "data/eats-photos/five-bays-bistro.jpg",
       "reviews": 163,
@@ -6293,13 +6173,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 4:30\u2009\u2013\u20099:30\u202fPM",
-        "Tuesday: 4:30\u2009\u2013\u20099:30\u202fPM",
-        "Wednesday: 4:30\u2009\u2013\u20099:30\u202fPM",
-        "Thursday: 4:30\u2009\u2013\u20099:30\u202fPM",
-        "Friday: 4:00\u2009\u2013\u200910:00\u202fPM",
-        "Saturday: 4:30\u2009\u2013\u200910:00\u202fPM",
-        "Sunday: 4:30\u2009\u2013\u20099:30\u202fPM"
+        "Monday: 4:30 – 9:30 PM",
+        "Tuesday: 4:30 – 9:30 PM",
+        "Wednesday: 4:30 – 9:30 PM",
+        "Thursday: 4:30 – 9:30 PM",
+        "Friday: 4:00 – 10:00 PM",
+        "Saturday: 4:30 – 10:00 PM",
+        "Sunday: 4:30 – 9:30 PM"
       ]
     },
     {
@@ -6412,13 +6292,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 11:30 AM – 9:00 PM",
+        "Tuesday: 11:30 AM – 9:00 PM",
+        "Wednesday: 11:30 AM – 9:00 PM",
+        "Thursday: 11:30 AM – 9:00 PM",
+        "Friday: 11:30 AM – 9:00 PM",
+        "Saturday: 11:30 AM – 9:00 PM",
+        "Sunday: 11:30 AM – 9:00 PM"
       ]
     },
     {
@@ -6434,7 +6314,7 @@
         "casual",
         "bar"
       ],
-      "desc": "Village tavern in historic 6A \u2014 burgers, comfort food, and a patio.",
+      "desc": "Village tavern in historic 6A — burgers, comfort food, and a patio.",
       "place_id": "ChIJmyyNDWs3-4kR55XrBovJ_F0",
       "photo": "data/eats-photos/barnstable-restaurant-tavern.jpg",
       "reviews": 260,
@@ -6520,12 +6400,12 @@
       ],
       "hours_text": [
         "Monday: Closed",
-        "Tuesday: 4:00\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 4:00\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 4:00\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 4:00\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 4:00\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 4:00\u2009\u2013\u20099:00\u202fPM"
+        "Tuesday: 4:00 – 9:00 PM",
+        "Wednesday: 4:00 – 9:00 PM",
+        "Thursday: 4:00 – 9:00 PM",
+        "Friday: 4:00 – 9:00 PM",
+        "Saturday: 4:00 – 9:00 PM",
+        "Sunday: 4:00 – 9:00 PM"
       ]
     },
     {
@@ -6540,7 +6420,7 @@
       "tags": [
         "fine"
       ],
-      "desc": "Mashpee Commons brasserie \u2014 escargot, steak frites, lively bar.",
+      "desc": "Mashpee Commons brasserie — escargot, steak frites, lively bar.",
       "place_id": "ChIJ2-jM1kTS5IkRZw3Nmpqs8Vs",
       "photo": "data/eats-photos/bleu.jpg",
       "reviews": 699,
@@ -6721,13 +6601,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u20093:30\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u20093:30\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u20093:30\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u20093:30\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u20093:30\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u20093:30\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u20093:00\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 11:30 AM – 3:30 PM, 5:00 – 9:00 PM",
+        "Tuesday: 11:30 AM – 3:30 PM, 5:00 – 9:00 PM",
+        "Wednesday: 11:30 AM – 3:30 PM, 5:00 – 9:00 PM",
+        "Thursday: 11:30 AM – 3:30 PM, 5:00 – 9:00 PM",
+        "Friday: 11:30 AM – 3:30 PM, 5:00 – 9:00 PM",
+        "Saturday: 11:30 AM – 3:30 PM, 5:00 – 9:00 PM",
+        "Sunday: 11:30 AM – 3:00 PM, 5:00 – 9:00 PM"
       ]
     },
     {
@@ -6743,7 +6623,7 @@
         "italian",
         "fine"
       ],
-      "desc": "Tuscan trattoria at the Commons \u2014 handmade pasta, wood-grilled.",
+      "desc": "Tuscan trattoria at the Commons — handmade pasta, wood-grilled.",
       "place_id": "ChIJpWAM00TS5IkRNvSMgOXjQ6M",
       "photo": "data/eats-photos/siena.jpg",
       "reviews": 519,
@@ -6840,13 +6720,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 12:00\u2009\u2013\u20098:00\u202fPM",
-        "Tuesday: 12:00\u2009\u2013\u20098:00\u202fPM",
-        "Wednesday: 12:00\u2009\u2013\u20098:00\u202fPM",
-        "Thursday: 12:00\u2009\u2013\u20098:00\u202fPM",
-        "Friday: 12:00\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 12:00\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 12:00\u2009\u2013\u20098:00\u202fPM"
+        "Monday: 12:00 – 8:00 PM",
+        "Tuesday: 12:00 – 8:00 PM",
+        "Wednesday: 12:00 – 8:00 PM",
+        "Thursday: 12:00 – 8:00 PM",
+        "Friday: 12:00 – 9:00 PM",
+        "Saturday: 12:00 – 9:00 PM",
+        "Sunday: 12:00 – 8:00 PM"
       ]
     },
     {
@@ -6959,13 +6839,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 4:00\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 4:00 – 9:00 PM",
+        "Tuesday: 11:30 AM – 9:00 PM",
+        "Wednesday: 11:30 AM – 9:00 PM",
+        "Thursday: 11:30 AM – 9:00 PM",
+        "Friday: 11:30 AM – 9:00 PM",
+        "Saturday: 11:30 AM – 9:00 PM",
+        "Sunday: 11:30 AM – 9:00 PM"
       ]
     },
     {
@@ -7053,13 +6933,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 2:01\u2009\u2013\u20099:01\u202fPM",
+        "Monday: 2:01 – 9:01 PM",
         "Tuesday: Closed",
         "Wednesday: Closed",
-        "Thursday: 2:01\u2009\u2013\u20099:02\u202fPM",
-        "Friday: 2:00\u2009\u2013\u20099:32\u202fPM",
-        "Saturday: 2:00\u2009\u2013\u20099:32\u202fPM",
-        "Sunday: 2:00\u2009\u2013\u20099:01\u202fPM"
+        "Thursday: 2:01 – 9:02 PM",
+        "Friday: 2:00 – 9:32 PM",
+        "Saturday: 2:00 – 9:32 PM",
+        "Sunday: 2:00 – 9:01 PM"
       ]
     },
     {
@@ -7074,7 +6954,7 @@
       "tags": [
         "fine"
       ],
-      "desc": "Dinner in a converted church \u2014 stained glass and refined plates.",
+      "desc": "Dinner in a converted church — stained glass and refined plates.",
       "place_id": "ChIJ6-j7NbPL5IkRoMtS3rDq8o4",
       "photo": "data/eats-photos/the-belfry-inn-bistro.jpg",
       "reviews": 289,
@@ -7196,13 +7076,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 11:00 AM – 9:00 PM",
+        "Tuesday: 11:00 AM – 9:00 PM",
+        "Wednesday: 11:00 AM – 9:00 PM",
+        "Thursday: 11:00 AM – 9:00 PM",
+        "Friday: 11:00 AM – 9:00 PM",
+        "Saturday: 11:00 AM – 9:00 PM",
+        "Sunday: 11:00 AM – 9:00 PM"
       ]
     },
     {
@@ -7291,13 +7171,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00\u202fAM\u2009\u2013\u20094:00\u202fPM",
+        "Monday: 11:00 AM – 4:00 PM",
         "Tuesday: Closed",
         "Wednesday: Closed",
-        "Thursday: 11:00\u202fAM\u2009\u2013\u20094:00\u202fPM",
-        "Friday: 11:00\u202fAM\u2009\u2013\u20094:00\u202fPM",
-        "Saturday: 11:00\u202fAM\u2009\u2013\u20094:00\u202fPM",
-        "Sunday: 10:00\u202fAM\u2009\u2013\u20092:00\u202fPM"
+        "Thursday: 11:00 AM – 4:00 PM",
+        "Friday: 11:00 AM – 4:00 PM",
+        "Saturday: 11:00 AM – 4:00 PM",
+        "Sunday: 10:00 AM – 2:00 PM"
       ]
     },
     {
@@ -7410,13 +7290,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 8:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Tuesday: 8:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Wednesday: 8:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Thursday: 8:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Friday: 8:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Saturday: 8:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Sunday: 8:00\u202fAM\u2009\u2013\u200910:00\u202fPM"
+        "Monday: 8:00 AM – 10:00 PM",
+        "Tuesday: 8:00 AM – 10:00 PM",
+        "Wednesday: 8:00 AM – 10:00 PM",
+        "Thursday: 8:00 AM – 10:00 PM",
+        "Friday: 8:00 AM – 10:00 PM",
+        "Saturday: 8:00 AM – 10:00 PM",
+        "Sunday: 8:00 AM – 10:00 PM"
       ]
     },
     {
@@ -7432,7 +7312,7 @@
         "italian",
         "fine"
       ],
-      "desc": "Main Street favorite \u2014 generous Italian, always a wait, always worth it.",
+      "desc": "Main Street favorite — generous Italian, always a wait, always worth it.",
       "place_id": "ChIJbew7M3nX5IkRaiEn4pmd-LY",
       "photo": "data/eats-photos/la-cucina-sul-mare.jpg",
       "reviews": 943,
@@ -7529,13 +7409,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 4:00\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Sunday: 10:30\u202fAM\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 4:00 – 9:00 PM",
+        "Tuesday: 11:30 AM – 9:00 PM",
+        "Wednesday: 11:30 AM – 9:00 PM",
+        "Thursday: 11:30 AM – 9:00 PM",
+        "Friday: 11:30 AM – 10:00 PM",
+        "Saturday: 11:30 AM – 10:00 PM",
+        "Sunday: 10:30 AM – 9:00 PM"
       ]
     },
     {
@@ -7551,7 +7431,7 @@
         "casual",
         "bar"
       ],
-      "desc": "Cozy Main Street standby \u2014 chowder, burgers, and a friendly bar.",
+      "desc": "Cozy Main Street standby — chowder, burgers, and a friendly bar.",
       "place_id": "ChIJray96n7X5IkRytdEb7lU_pM",
       "photo": "data/eats-photos/the-quarterdeck.jpg",
       "reviews": 1433,
@@ -7648,18 +7528,18 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 11:30 AM – 9:00 PM",
+        "Tuesday: 11:30 AM – 9:00 PM",
+        "Wednesday: 11:30 AM – 9:00 PM",
+        "Thursday: 11:30 AM – 9:00 PM",
+        "Friday: 11:30 AM – 9:00 PM",
+        "Saturday: 11:30 AM – 9:00 PM",
+        "Sunday: 11:30 AM – 9:00 PM"
       ]
     },
     {
       "id": "anejo-mexican-bistro",
-      "name": "A\u00f1ejo Mexican Bistro",
+      "name": "Añejo Mexican Bistro",
       "town": "Falmouth",
       "lat": 41.5522,
       "lng": -70.6153,
@@ -7767,13 +7647,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
-        "Sunday: 10:30\u202fAM\u2009\u2013\u200911:00\u202fPM"
+        "Monday: 11:30 AM – 11:00 PM",
+        "Tuesday: 11:30 AM – 11:00 PM",
+        "Wednesday: 11:30 AM – 11:00 PM",
+        "Thursday: 11:30 AM – 11:00 PM",
+        "Friday: 11:30 AM – 11:00 PM",
+        "Saturday: 11:30 AM – 11:00 PM",
+        "Sunday: 10:30 AM – 11:00 PM"
       ]
     },
     {
@@ -7789,7 +7669,7 @@
         "seafood",
         "bar"
       ],
-      "desc": "Waterfront tavern on Eel Pond \u2014 oysters and a historic back bar.",
+      "desc": "Waterfront tavern on Eel Pond — oysters and a historic back bar.",
       "place_id": "ChIJC48OtYDY5IkRvHRmHs9Hxrc",
       "photo": "data/eats-photos/the-captain-kidd.jpg",
       "reviews": 693,
@@ -7886,13 +7766,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u200912:30\u202fAM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u200912:30\u202fAM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM"
+        "Monday: 11:30 AM – 11:00 PM",
+        "Tuesday: 11:30 AM – 11:00 PM",
+        "Wednesday: 11:30 AM – 11:00 PM",
+        "Thursday: 11:30 AM – 11:00 PM",
+        "Friday: 11:30 AM – 12:30 AM",
+        "Saturday: 11:30 AM – 12:30 AM",
+        "Sunday: 11:30 AM – 11:00 PM"
       ]
     },
     {
@@ -8005,13 +7885,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 11:00 AM – 9:00 PM",
+        "Tuesday: 11:00 AM – 9:00 PM",
+        "Wednesday: 11:00 AM – 9:00 PM",
+        "Thursday: 11:00 AM – 9:00 PM",
+        "Friday: 11:00 AM – 9:00 PM",
+        "Saturday: 11:00 AM – 9:00 PM",
+        "Sunday: 11:00 AM – 9:00 PM"
       ]
     },
     {
@@ -8028,7 +7908,7 @@
         "breakfast",
         "coffee"
       ],
-      "desc": "French bakers, line out the door \u2014 baguettes, tarts, croissants.",
+      "desc": "French bakers, line out the door — baguettes, tarts, croissants.",
       "place_id": "ChIJZ7-sMHnX5IkRgLmGtLoQQBE",
       "photo": "data/eats-photos/maison-villatte.jpg",
       "reviews": 1148,
@@ -8103,11 +7983,11 @@
       "hours_text": [
         "Monday: Closed",
         "Tuesday: Closed",
-        "Wednesday: 7:00\u202fAM\u2009\u2013\u20096:00\u202fPM",
-        "Thursday: 7:00\u202fAM\u2009\u2013\u20096:00\u202fPM",
-        "Friday: 7:00\u202fAM\u2009\u2013\u20096:00\u202fPM",
-        "Saturday: 7:00\u202fAM\u2009\u2013\u20096:00\u202fPM",
-        "Sunday: 7:00\u202fAM\u2009\u2013\u20096:00\u202fPM"
+        "Wednesday: 7:00 AM – 6:00 PM",
+        "Thursday: 7:00 AM – 6:00 PM",
+        "Friday: 7:00 AM – 6:00 PM",
+        "Saturday: 7:00 AM – 6:00 PM",
+        "Sunday: 7:00 AM – 6:00 PM"
       ]
     },
     {
@@ -8124,7 +8004,7 @@
         "bar",
         "fine"
       ],
-      "desc": "Summer-only harbor legend \u2014 mudslides and lobster on Red Brook Harbor.",
+      "desc": "Summer-only harbor legend — mudslides and lobster on Red Brook Harbor.",
       "place_id": "ChIJO_JZ0fbP5IkR0UhnYQRBxb0",
       "photo": "data/eats-photos/the-chart-room.jpg",
       "reviews": 859,
@@ -8221,13 +8101,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM"
+        "Monday: 11:30 AM – 10:00 PM",
+        "Tuesday: 11:30 AM – 10:00 PM",
+        "Wednesday: 11:30 AM – 10:00 PM",
+        "Thursday: 11:30 AM – 10:00 PM",
+        "Friday: 11:30 AM – 10:00 PM",
+        "Saturday: 11:30 AM – 10:00 PM",
+        "Sunday: 11:30 AM – 10:00 PM"
       ]
     },
     {
@@ -8242,7 +8122,7 @@
       "tags": [
         "fine"
       ],
-      "desc": "Beloved Southeast-Asian kitchen \u2014 curries and pho near the bridge.",
+      "desc": "Beloved Southeast-Asian kitchen — curries and pho near the bridge.",
       "place_id": "ChIJY8306AXP5IkRjEtrlXdwfGM",
       "photo": "data/eats-photos/stir-crazy.jpg",
       "reviews": 456,
@@ -8339,13 +8219,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 3:00\u2009\u2013\u20098:30\u202fPM",
-        "Tuesday: 3:00\u2009\u2013\u20098:30\u202fPM",
-        "Wednesday: 3:00\u2009\u2013\u20098:30\u202fPM",
-        "Thursday: 3:00\u2009\u2013\u20098:30\u202fPM",
-        "Friday: 3:00\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 3:00\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 3:00\u2009\u2013\u20098:30\u202fPM"
+        "Monday: 3:00 – 8:30 PM",
+        "Tuesday: 3:00 – 8:30 PM",
+        "Wednesday: 3:00 – 8:30 PM",
+        "Thursday: 3:00 – 8:30 PM",
+        "Friday: 3:00 – 9:00 PM",
+        "Saturday: 3:00 – 9:00 PM",
+        "Sunday: 3:00 – 8:30 PM"
       ]
     },
     {
@@ -8368,7 +8248,7 @@
       "website": "http://www.mezzalunarestaurant.com/",
       "rating_source": "google",
       "enriched_at": "2026-06-22T15:28:23Z",
-      "deal": "Wed & Sat Prime Rib Special \u00b7 weekday lunch specials",
+      "deal": "Wed & Sat Prime Rib Special · weekday lunch specials",
       "business_status": "OPERATIONAL",
       "phone": "(508) 759-4667",
       "hours": [
@@ -8458,13 +8338,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 11:00\u202fAM\u2009\u2013\u20099:30\u202fPM",
-        "Saturday: 11:00\u202fAM\u2009\u2013\u20099:30\u202fPM",
-        "Sunday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 11:00 AM – 9:00 PM",
+        "Tuesday: 11:00 AM – 9:00 PM",
+        "Wednesday: 11:00 AM – 9:00 PM",
+        "Thursday: 11:00 AM – 9:00 PM",
+        "Friday: 11:00 AM – 9:30 PM",
+        "Saturday: 11:00 AM – 9:30 PM",
+        "Sunday: 11:00 AM – 9:00 PM"
       ]
     },
     {
@@ -8488,7 +8368,7 @@
       "website": "https://brickhouseeastham.com/",
       "rating_source": "google",
       "enriched_at": "2026-06-22T15:28:24Z",
-      "deal": "Early Bird daily \u00b7 Wed Prime Rib Night \u00b7 Half-Off App Night",
+      "deal": "Early Bird daily · Wed Prime Rib Night · Half-Off App Night",
       "business_status": "OPERATIONAL",
       "phone": "(774) 801-2475",
       "hours": [
@@ -8578,13 +8458,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 4:00\u2009\u2013\u20098:30\u202fPM",
-        "Tuesday: 4:00\u2009\u2013\u20098:30\u202fPM",
-        "Wednesday: 4:00\u2009\u2013\u20098:30\u202fPM",
-        "Thursday: 4:00\u2009\u2013\u20098:30\u202fPM",
-        "Friday: 4:00\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 4:00\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 4:00\u2009\u2013\u20098:30\u202fPM"
+        "Monday: 4:00 – 8:30 PM",
+        "Tuesday: 4:00 – 8:30 PM",
+        "Wednesday: 4:00 – 8:30 PM",
+        "Thursday: 4:00 – 8:30 PM",
+        "Friday: 4:00 – 9:00 PM",
+        "Saturday: 4:00 – 9:00 PM",
+        "Sunday: 4:00 – 8:30 PM"
       ]
     }
   ]
