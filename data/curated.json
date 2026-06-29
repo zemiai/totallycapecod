@@ -1,5 +1,51 @@
 {
   "version": "1.0",
   "_note": "MANUAL/CURATED layer — hand-added items (e.g. pulled from Facebook posts) that the auto-update crons NEVER overwrite. The app merges these into the events feed (What's Happening + Today + Nearby), de-duped against scraped events, future-only, sorted by start. Per-item schema mirrors data/events.json: { id, category(music|food|food_deal|art|family|farmers_market|happy_hour|festival), title, venue, town, lat, lng, time(display e.g. 'Fri Jun 20 · 7:00 PM'), start(ISO with -04:00), tag(e.g. '🎵 LIVE MUSIC'), info, price, img(optional), source:'Facebook (curated)', source_url(optional FB link) }.",
-  "events": []
+  "events": [
+    {
+      "id": "curated-ptown-2026-07-01-boatslip-tea-dance",
+      "category": "music",
+      "title": "Boatslip Tea Dance",
+      "venue": "The Boatslip Resort",
+      "town": "Provincetown",
+      "lat": 42.0512,
+      "lng": -70.1845,
+      "time": "Jul 1–5 · 4:00 PM",
+      "start": "2026-07-05T16:00:00-04:00",
+      "tag": "🎶 TEA DANCE",
+      "info": "DJ Maryalice poolside during Independence Week.",
+      "price": "$10",
+      "source": "Totally Cape Cod"
+    },
+    {
+      "id": "curated-ptown-2026-07-02-fawc-making-space",
+      "category": "art",
+      "title": "FAWC Opening: “Making Space, Painting Place”",
+      "venue": "Fine Arts Work Center",
+      "town": "Provincetown",
+      "lat": 42.0526,
+      "lng": -70.186,
+      "time": "Wed Jul 2 · 6:00 PM",
+      "start": "2026-07-02T18:00:00-04:00",
+      "tag": "🎨 ART",
+      "info": "Summer exhibition opening reception.",
+      "price": "Free",
+      "source": "Totally Cape Cod"
+    },
+    {
+      "id": "curated-truro-2026-07-05-truro-vineyards-funday",
+      "category": "music",
+      "title": "Sunday Funday at Truro Vineyards",
+      "venue": "Truro Vineyards",
+      "town": "Truro",
+      "lat": 41.9986,
+      "lng": -70.0586,
+      "time": "Sat Jul 5 · 6:00 PM",
+      "start": "2026-07-05T18:00:00-04:00",
+      "tag": "🎶 LIVE MUSIC",
+      "info": "DJ Emerson + Crush Pad Food Truck.",
+      "price": "Free",
+      "source": "Totally Cape Cod"
+    }
+  ]
 }
