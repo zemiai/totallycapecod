@@ -344,6 +344,7 @@
   .nb-locbar button:active{ transform:scale(0.97); }
   .nb-locbar button.locating{ background:var(--ios-sub); }
 
+  .nb-pinhead{ margin:14px 16px 8px; padding:11px 16px; border-radius:12px; font-family:'Fraunces',serif; font-weight:900; font-size:16px; color:#fff; background:linear-gradient(135deg,#0E2A47,#2C5599); box-shadow:0 3px 10px rgba(14,42,71,.25); }
   .nb-townhead{ display:flex; align-items:center; gap:10px; padding:18px 20px 8px; }
   .nb-townhead .line{ flex:1; height:1px; background:var(--ios-divider); }
   .nb-townhead .label{ font-family:'Fraunces',serif; font-weight:900; font-size:16px; color:var(--cape-brown-dark); display:flex; align-items:baseline; gap:7px; }
@@ -1275,6 +1276,7 @@ async function loadData() {
       const seen = new Set(base.map(e => e.id));
       const merged = keep.filter(e => !seen.has(e.id)).concat(base);
       merged.sort((a, b) => new Date(a.start || 0) - new Date(b.start || 0));
+      merged.sort((a, b) => (b.pinned ? 1 : 0) - (a.pinned ? 1 : 0));  // pinned to top (stable: keeps date order within each)
       state.data.events.events = merged;
     }
   } catch (e) { /* no curated layer yet — fine */ }
@@ -2751,10 +2753,15 @@ function nbBuildSequence(){
   const eats    = state.data.eats?.eats || [];
   const beaches = state.data.beaches?.beaches || [];
   const events  = state.data.events?.events || [];
+  // Pinned events (e.g. 4th of July fireworks) ride at the very top of the feed until
+  // they expire (the curated merge already drops them ~12h after they happen).
+  const pinned = events.filter(e => e.pinned && e.lat && e.lng)
+    .map(e => ({ type:"event", town:e.town, lat:e.lat, lng:e.lng, data:e,
+                 mi: distanceMiles(nbUser.lat, nbUser.lng, e.lat, e.lng) }));
   const items=[];
   eats.forEach(r=>{ if(r.lat&&r.lng) items.push({type:"food",town:r.town,lat:r.lat,lng:r.lng,data:r}); });
   beaches.forEach(b=>{ if(b.lat&&b.lng) items.push({type:"beach",town:b.town,lat:b.lat,lng:b.lng,data:b}); });
-  events.forEach(e=>{ if(e.lat&&e.lng) items.push({type:"event",town:e.town,lat:e.lat,lng:e.lng,data:e}); });
+  events.forEach(e=>{ if(e.lat&&e.lng && !e.pinned) items.push({type:"event",town:e.town,lat:e.lat,lng:e.lng,data:e}); });
   items.forEach(it=>{ it.mi=distanceMiles(nbUser.lat,nbUser.lng,it.lat,it.lng); it.forYou=avatarMatch(it); });
   items.sort((a,b)=>a.mi-b.mi);
   const groups=[]; let cur=null;
@@ -2767,6 +2774,10 @@ function nbBuildSequence(){
     groups.forEach(g=>{ g.food.sort((a,b)=>(b.forYou?1:0)-(a.forYou?1:0)); g.live.sort((a,b)=>(b.forYou?1:0)-(a.forYou?1:0)); });
   }
   const seq=[];
+  if(pinned.length){
+    seq.push({type:"pinhead",label:"🎆 4th of July Fireworks"});
+    pinned.forEach(p=>seq.push(p));
+  }
   groups.forEach((g,gi)=>{
     seq.push({type:"townhead",town:g.town,mi:g.mi});
     if(gi===0 && state.data.bridges?.current) seq.push({type:"bridge"});
@@ -2781,6 +2792,9 @@ function nbBuildSequence(){
 }
 
 function nbRenderItem(it){
+  if(it.type==="pinhead"){
+    return `<div class="nb-pinhead">${nbEsc(it.label)}</div>`;
+  }
   if(it.type==="townhead"){
     return `<div class="nb-townhead"><div class="line"></div><div class="label">${nbEsc(it.town)}<span class="mi">${nbAway(it.mi)}</span></div><div class="line"></div></div>`;
   }

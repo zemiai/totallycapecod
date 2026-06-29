@@ -61,7 +61,9 @@
       "info": "Kids activities 6pm · Jeff Lowe Band 8pm · fireworks ~9pm.",
       "price": "Free",
       "source": "Totally Cape Cod",
-      "source_url": "https://www.capecodchamber.org/events/fourth-of-july/"
+      "source_url": "https://www.capecodchamber.org/events/fourth-of-july/",
+      "pinned": true,
+      "img": "https://raw.githubusercontent.com/zemiai/totallycapecod/main/img/fireworks.png"
     },
     {
       "id": "curated-orleans-2026-07-02-fireworks",
@@ -77,7 +79,9 @@
       "info": "Over Rock Harbor at dusk.",
       "price": "Free",
       "source": "Totally Cape Cod",
-      "source_url": "https://www.capecodchamber.org/events/fourth-of-july/"
+      "source_url": "https://www.capecodchamber.org/events/fourth-of-july/",
+      "pinned": true,
+      "img": "https://raw.githubusercontent.com/zemiai/totallycapecod/main/img/fireworks.png"
     },
     {
       "id": "curated-hyannis-2026-07-04-fireworks",
@@ -93,7 +97,9 @@
       "info": "Drone show + fireworks over Hyannis Harbor.",
       "price": "Free",
       "source": "Totally Cape Cod",
-      "source_url": "https://www.capecodchamber.org/events/fourth-of-july/"
+      "source_url": "https://www.capecodchamber.org/events/fourth-of-july/",
+      "pinned": true,
+      "img": "https://raw.githubusercontent.com/zemiai/totallycapecod/main/img/fireworks.png"
     },
     {
       "id": "curated-ptown-2026-07-04-fireworks",
@@ -109,7 +115,9 @@
       "info": "Over the harbor from MacMillan Pier.",
       "price": "Free",
       "source": "Totally Cape Cod",
-      "source_url": "https://www.capecodchamber.org/events/fourth-of-july/"
+      "source_url": "https://www.capecodchamber.org/events/fourth-of-july/",
+      "pinned": true,
+      "img": "https://raw.githubusercontent.com/zemiai/totallycapecod/main/img/fireworks.png"
     },
     {
       "id": "curated-falmouth-2026-07-04-fireworks",
@@ -125,7 +133,9 @@
       "info": "Over Falmouth Heights · rain date Sun Jul 5.",
       "price": "Free",
       "source": "Totally Cape Cod",
-      "source_url": "https://falmouthfireworks.org/"
+      "source_url": "https://falmouthfireworks.org/",
+      "pinned": true,
+      "img": "https://raw.githubusercontent.com/zemiai/totallycapecod/main/img/fireworks.png"
     }
   ]
 }
