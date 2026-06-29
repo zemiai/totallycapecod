@@ -1,13 +1,13 @@
 {
   "today": {
-    "date": "2026-06-28",
+    "date": "2026-06-29",
     "weather": {
-      "temp_high": 74,
-      "temp_low": 64,
-      "condition": "Fog",
-      "icon": "\ud83c\udf2b\ufe0f",
-      "wind_mph": 6,
-      "wind_dir": "E",
+      "temp_high": 72,
+      "temp_low": 66,
+      "condition": "Sunny",
+      "icon": "\u2600\ufe0f",
+      "wind_mph": 7,
+      "wind_dir": "N",
       "humidity": 65,
       "uv_index": 7
     },
@@ -23,17 +23,22 @@
     },
     "tides": [
       {
-        "time": "6:26 AM",
-        "type": "low",
-        "height_ft": -0.3
-      },
-      {
-        "time": "12:11 PM",
+        "time": "12:10 AM",
         "type": "high",
-        "height_ft": 4.2
+        "height_ft": 5.4
       },
       {
-        "time": "6:09 PM",
+        "time": "7:08 AM",
+        "type": "low",
+        "height_ft": -0.2
+      },
+      {
+        "time": "12:52 PM",
+        "type": "high",
+        "height_ft": 4.3
+      },
+      {
+        "time": "6:51 PM",
         "type": "low",
         "height_ft": 0.5
       }
@@ -44,24 +49,11 @@
   },
   "forecast_7day": [
     {
-      "date": "2026-06-28",
-      "day": "Sun",
-      "temp_high": 74,
-      "condition": "Fog",
-      "icon": "\ud83c\udf2b\ufe0f",
-      "temp_low": 64,
-      "sunrise": "5:06 AM",
-      "sunset": "8:20 PM",
-      "low_tide": "6:26 AM",
-      "high_tide": "12:11 PM",
-      "water_temp": 64
-    },
-    {
       "date": "2026-06-29",
       "day": "Mon",
-      "temp_high": 75,
-      "condition": "Fog",
-      "icon": "\ud83c\udf2b\ufe0f",
+      "temp_high": 72,
+      "condition": "Sunny",
+      "icon": "\u2600\ufe0f",
       "temp_low": 66,
       "sunrise": "5:06 AM",
       "sunset": "8:20 PM",
@@ -72,10 +64,10 @@
     {
       "date": "2026-06-30",
       "day": "Tue",
-      "temp_high": 78,
+      "temp_high": 82,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "temp_low": 70,
+      "temp_low": 71,
       "sunrise": "5:07 AM",
       "sunset": "8:20 PM",
       "low_tide": "7:49 AM",
@@ -85,10 +77,10 @@
     {
       "date": "2026-07-01",
       "day": "Wed",
-      "temp_high": 84,
-      "condition": "Storms",
-      "icon": "\u26c8\ufe0f",
-      "temp_low": 72,
+      "temp_high": 82,
+      "condition": "Rain",
+      "icon": "\ud83c\udf27\ufe0f",
+      "temp_low": 73,
       "sunrise": "5:07 AM",
       "sunset": "8:20 PM",
       "low_tide": "8:28 AM",
@@ -98,7 +90,7 @@
     {
       "date": "2026-07-02",
       "day": "Thu",
-      "temp_high": 87,
+      "temp_high": 82,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
       "temp_low": 74,
@@ -111,10 +103,10 @@
     {
       "date": "2026-07-03",
       "day": "Fri",
-      "temp_high": 85,
+      "temp_high": 87,
       "condition": "Rain",
       "icon": "\ud83c\udf27\ufe0f",
-      "temp_low": 72,
+      "temp_low": 71,
       "sunrise": "5:08 AM",
       "sunset": "8:20 PM",
       "low_tide": "9:41 AM",
@@ -127,14 +119,27 @@
       "temp_high": 82,
       "condition": "Rain",
       "icon": "\ud83c\udf27\ufe0f",
-      "temp_low": 68,
+      "temp_low": 70,
       "sunrise": "5:09 AM",
       "sunset": "8:19 PM",
       "low_tide": "10:16 AM",
       "high_tide": "3:14 AM",
       "water_temp": 64
+    },
+    {
+      "date": "2026-07-05",
+      "day": "Sun",
+      "temp_high": 81,
+      "condition": "Rain",
+      "icon": "\ud83c\udf27\ufe0f",
+      "temp_low": 69,
+      "sunrise": "5:09 AM",
+      "sunset": "8:19 PM",
+      "low_tide": "10:52 AM",
+      "high_tide": "3:56 AM",
+      "water_temp": 64
     }
   ],
   "version": "1.0",
-  "updated_at": "2026-06-28T10:31:41Z"
+  "updated_at": "2026-06-29T12:38:49Z"
 }
