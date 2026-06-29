@@ -2526,29 +2526,56 @@ function openLighthouse(slug) {
   openModal('lighthouse');
 }
 
+let lhAudio = null;   // HTMLAudioElement when a real recording (audio_url) exists
 function toggleLighthouseAudio() {
   const btn = document.getElementById('lhPlayBtn');
+  // Real-audio path (natural narration)
+  if (lhAudio) {
+    if (lhAudio.paused) { lhAudio.play(); btn.textContent = '⏸'; }
+    else { lhAudio.pause(); btn.textContent = '▶'; }
+    return;
+  }
+  // Browser-TTS fallback path
   if (state.speechUtterance && speechSynthesis.speaking && !speechSynthesis.paused) {
-    speechSynthesis.pause();
-    btn.textContent = '▶';
+    speechSynthesis.pause(); btn.textContent = '▶';
   } else if (speechSynthesis.paused) {
-    speechSynthesis.resume();
-    btn.textContent = '⏸';
+    speechSynthesis.resume(); btn.textContent = '⏸';
   } else if (currentLighthouse) {
     startLighthouseAudio(currentLighthouse);
   }
 }
 function startLighthouseAudio(l) {
+  stopLighthouseAudio();
+  const btn = document.getElementById('lhPlayBtn');
+  const prog = document.getElementById('lhProgress');
+  // 1) Prefer a real recorded MP3 (natural voice) when we have one.
+  if (l.audio_url) {
+    lhAudio = new Audio(l.audio_url.startsWith('http') ? l.audio_url : ASSET_BASE + l.audio_url);
+    lhAudio.addEventListener('timeupdate', () => {
+      if (lhAudio.duration) prog.style.width = (lhAudio.currentTime / lhAudio.duration * 100) + '%';
+    });
+    lhAudio.addEventListener('ended', () => { btn.textContent = '▶'; prog.style.width = '100%'; });
+    lhAudio.play().catch(() => { lhAudio = null; startTTS(l); });   // if MP3 fails, fall back to TTS
+    btn.textContent = '⏸';
+    return;
+  }
+  // 2) Fallback: browser TTS with the best available voice.
+  startTTS(l);
+}
+function startTTS(l) {
   speechSynthesis.cancel();
   const u = new SpeechSynthesisUtterance(l.script);
-  u.rate = 0.95; u.pitch = 1.0;
-  // Try to pick a high-quality voice
+  u.rate = 0.92; u.pitch = 1.02;
   const voices = speechSynthesis.getVoices();
-  const preferred = voices.find(v => v.name.includes('Samantha') || v.name.includes('Karen') || v.name.includes('Daniel'));
-  if (preferred) u.voice = preferred;
+  // Prefer cloud/enhanced natural voices over the robotic local default.
+  const pick = voices.find(v => /en[-_]US/i.test(v.lang) && /Google US English|Samantha.*Enhanced|Ava|Allison|Natural|Premium|Siri/i.test(v.name))
+            || voices.find(v => /^en/i.test(v.lang) && v.localService === false)
+            || voices.find(v => /Samantha|Karen|Daniel|Moira/.test(v.name))
+            || voices.find(v => /en[-_]US/i.test(v.lang));
+  if (pick) u.voice = pick;
   state.speechUtterance = u;
   state.speechStartTime = Date.now();
-  state.speechDuration = l.duration_min * 60 * 1000;
+  state.speechDuration = (l.duration_min || 3) * 60 * 1000;
   u.onend = () => { document.getElementById('lhPlayBtn').textContent = '▶'; document.getElementById('lhProgress').style.width = '100%'; clearInterval(state.speechInterval); };
   speechSynthesis.speak(u);
   document.getElementById('lhPlayBtn').textContent = '⏸';
@@ -2559,6 +2586,7 @@ function startLighthouseAudio(l) {
   }, 500);
 }
 function stopLighthouseAudio() {
+  if (lhAudio) { try { lhAudio.pause(); } catch (e) {} lhAudio = null; }
   speechSynthesis.cancel();
   clearInterval(state.speechInterval);
   state.speechUtterance = null;
