@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-06-30T13:24:59Z",
+  "updated_at": "2026-06-30T16:04:10Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -194,7 +194,7 @@
       "location": "US",
       "reported_by": "iNaturalist \u00b7 dvkremk",
       "reported_at": "2026-06-22T15:58:24Z",
-      "time_ago": "7 days ago",
+      "time_ago": "8 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/684303895/medium.jpg",
       "notes": "North Atlantic Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/374388401"
@@ -208,7 +208,7 @@
       "location": "Stellwagen Bank",
       "reported_by": "iNaturalist \u00b7 pvlocicero",
       "reported_at": "2026-06-21T15:30:00Z",
-      "time_ago": "8 days ago",
+      "time_ago": "9 days ago",
       "photo_url": "https://static.inaturalist.org/photos/686457932/medium.jpg",
       "notes": "North Atlantic Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/375494530"
@@ -222,7 +222,7 @@
       "location": "US",
       "reported_by": "iNaturalist \u00b7 wombat06",
       "reported_at": "2026-06-21T15:22:08Z",
-      "time_ago": "8 days ago",
+      "time_ago": "9 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/683513909/medium.jpg",
       "notes": "Common Minke Whale",
       "source_url": "https://www.inaturalist.org/observations/373980325"
@@ -236,7 +236,7 @@
       "location": "United States",
       "reported_by": "iNaturalist \u00b7 sepiatomb",
       "reported_at": "2026-06-21T15:12:34Z",
-      "time_ago": "8 days ago",
+      "time_ago": "9 days ago",
       "photo_url": "https://static.inaturalist.org/photos/687444107/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/376008754"
@@ -250,7 +250,7 @@
       "location": "US",
       "reported_by": "iNaturalist \u00b7 wombat06",
       "reported_at": "2026-06-21T14:59:31Z",
-      "time_ago": "8 days ago",
+      "time_ago": "9 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/683515130/medium.jpg",
       "notes": "North Atlantic Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/373980889"
@@ -292,7 +292,7 @@
       "location": "United States",
       "reported_by": "iNaturalist \u00b7 mayres",
       "reported_at": "2026-06-16T15:04:28Z",
-      "time_ago": "13 days ago",
+      "time_ago": "14 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/680532440/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/372422497"
