@@ -1,0 +1,61 @@
+name: "post to Facebook"
+
+# Posts one "Cape Cod Today" update to the Facebook Page each morning, built from
+# the app's live data. Runs daily at 11:30 UTC (7:30 AM ET). Can also be run
+# manually (Actions tab → this workflow → Run workflow) with a dry-run option.
+#
+# Requires repo secrets: FB_PAGE_ID, FB_PAGE_ACCESS_TOKEN  (see SETUP_FACEBOOK.md)
+
+on:
+  schedule:
+    - cron: "30 11 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Preview only — print the post, do NOT send (type 1)"
+        required: false
+        default: ""
+      force:
+        description: "Post even if already posted today (type 1)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: post-facebook
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r scripts/requirements.txt
+      - run: python scripts/post_facebook.py
+        env:
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+          FORCE: ${{ github.event.inputs.force }}
+      - name: Save post state
+        if: github.event.inputs.dry_run != '1'
+        run: |
+          git config user.name "hermes-bot"
+          git config user.email "hermes-bot@users.noreply.github.com"
+          git add data/.fb_state.json
+          if git diff --cached --quiet; then
+            echo "no state change"
+            exit 0
+          fi
+          git commit -m "[fb] record daily post state"
+          for i in 1 2 3 4 5; do
+            if git push; then exit 0; fi
+            git pull --rebase --autostash origin main || exit 1
+            sleep $((i * 3))
+          done
+          exit 1
