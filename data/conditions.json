@@ -1,18 +1,18 @@
 {
   "today": {
-    "date": "2026-06-29",
+    "date": "2026-06-30",
     "weather": {
-      "temp_high": 72,
+      "temp_high": 82,
       "temp_low": 66,
-      "condition": "Sunny",
-      "icon": "\u2600\ufe0f",
-      "wind_mph": 7,
-      "wind_dir": "N",
+      "condition": "Fog",
+      "icon": "\ud83c\udf2b\ufe0f",
+      "wind_mph": 3,
+      "wind_dir": "SW",
       "humidity": 65,
       "uv_index": 7
     },
     "sun": {
-      "sunrise": "5:06 AM",
+      "sunrise": "5:07 AM",
       "sunset": "8:20 PM",
       "civil_twilight_end": "8:53 PM",
       "best_sunset_spot": {
@@ -23,22 +23,22 @@
     },
     "tides": [
       {
-        "time": "12:10 AM",
+        "time": "12:48 AM",
         "type": "high",
         "height_ft": 5.4
       },
       {
-        "time": "7:08 AM",
+        "time": "7:49 AM",
         "type": "low",
         "height_ft": -0.2
       },
       {
-        "time": "12:52 PM",
+        "time": "1:32 PM",
         "type": "high",
         "height_ft": 4.3
       },
       {
-        "time": "6:51 PM",
+        "time": "7:31 PM",
         "type": "low",
         "height_ft": 0.5
       }
@@ -49,25 +49,12 @@
   },
   "forecast_7day": [
     {
-      "date": "2026-06-29",
-      "day": "Mon",
-      "temp_high": 72,
-      "condition": "Sunny",
-      "icon": "\u2600\ufe0f",
-      "temp_low": 66,
-      "sunrise": "5:06 AM",
-      "sunset": "8:20 PM",
-      "low_tide": "7:08 AM",
-      "high_tide": "12:10 AM",
-      "water_temp": 64
-    },
-    {
       "date": "2026-06-30",
       "day": "Tue",
       "temp_high": 82,
-      "condition": "Sunny",
-      "icon": "\u2600\ufe0f",
-      "temp_low": 71,
+      "condition": "Fog",
+      "icon": "\ud83c\udf2b\ufe0f",
+      "temp_low": 66,
       "sunrise": "5:07 AM",
       "sunset": "8:20 PM",
       "low_tide": "7:49 AM",
@@ -77,10 +64,10 @@
     {
       "date": "2026-07-01",
       "day": "Wed",
-      "temp_high": 82,
-      "condition": "Rain",
-      "icon": "\ud83c\udf27\ufe0f",
-      "temp_low": 73,
+      "temp_high": 84,
+      "condition": "Storms",
+      "icon": "\u26c8\ufe0f",
+      "temp_low": 70,
       "sunrise": "5:07 AM",
       "sunset": "8:20 PM",
       "low_tide": "8:28 AM",
@@ -90,10 +77,10 @@
     {
       "date": "2026-07-02",
       "day": "Thu",
-      "temp_high": 82,
-      "condition": "Sunny",
-      "icon": "\u2600\ufe0f",
-      "temp_low": 74,
+      "temp_high": 89,
+      "condition": "Storms",
+      "icon": "\u26c8\ufe0f",
+      "temp_low": 72,
       "sunrise": "5:08 AM",
       "sunset": "8:20 PM",
       "low_tide": "9:05 AM",
@@ -103,7 +90,7 @@
     {
       "date": "2026-07-03",
       "day": "Fri",
-      "temp_high": 87,
+      "temp_high": 92,
       "condition": "Rain",
       "icon": "\ud83c\udf27\ufe0f",
       "temp_low": 71,
@@ -116,10 +103,10 @@
     {
       "date": "2026-07-04",
       "day": "Sat",
-      "temp_high": 82,
-      "condition": "Rain",
-      "icon": "\ud83c\udf27\ufe0f",
-      "temp_low": 70,
+      "temp_high": 89,
+      "condition": "Storms",
+      "icon": "\u26c8\ufe0f",
+      "temp_low": 69,
       "sunrise": "5:09 AM",
       "sunset": "8:19 PM",
       "low_tide": "10:16 AM",
@@ -129,17 +116,30 @@
     {
       "date": "2026-07-05",
       "day": "Sun",
-      "temp_high": 81,
-      "condition": "Rain",
-      "icon": "\ud83c\udf27\ufe0f",
-      "temp_low": 69,
+      "temp_high": 84,
+      "condition": "Sunny",
+      "icon": "\u2600\ufe0f",
+      "temp_low": 63,
       "sunrise": "5:09 AM",
       "sunset": "8:19 PM",
       "low_tide": "10:52 AM",
       "high_tide": "3:56 AM",
       "water_temp": 64
+    },
+    {
+      "date": "2026-07-06",
+      "day": "Mon",
+      "temp_high": 79,
+      "condition": "Rain",
+      "icon": "\ud83c\udf27\ufe0f",
+      "temp_low": 66,
+      "sunrise": "5:10 AM",
+      "sunset": "8:19 PM",
+      "low_tide": "11:29 AM",
+      "high_tide": "4:42 AM",
+      "water_temp": 64
     }
   ],
   "version": "1.0",
-  "updated_at": "2026-06-29T12:38:49Z"
+  "updated_at": "2026-06-30T11:13:49Z"
 }
