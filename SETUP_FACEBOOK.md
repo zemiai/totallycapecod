@@ -104,7 +104,32 @@ Capped at ~14 so it reads clean, not spammy. To tweak the tag map, edit
   already posted that day. (Re-run with **force** `1` to override.)
 - **Fireworks week:** on any day with a fireworks event it leads with the fireworks
   list and attaches the branded `img/fireworks.png`. Other days post a link card.
-- **Instagram:** the same Graph API can cross-post to an IG Business account linked
-  to the Page — say the word and I'll add it.
 - **Renewing the token:** if it ever expires, redo Steps 2–4 and paste the new value
   into the `FB_PAGE_ACCESS_TOKEN` secret. Nothing else changes.
+
+---
+
+## Instagram cross-posting (optional — same photo + caption)
+The poster will also publish to Instagram automatically once you add one more
+secret. It uses the *same* Facebook app and Page token, so no new app needed.
+
+**Requirements (one-time):**
+1. Your Instagram account must be a **Business** (or Creator) account, and it must
+   be **linked to your Facebook Page** (Instagram app → Settings → Accounts Center,
+   or the Page's Settings → Linked accounts).
+2. In Step 2 above, also check these two permissions when generating the token:
+   - `instagram_basic`
+   - `instagram_content_publish`
+3. Find your **Instagram Business account id**: in the Graph API Explorer, run
+   ```
+   me/accounts?fields=instagram_business_account,name
+   ```
+   The Page that's linked to Instagram will show an `instagram_business_account.id`.
+   Copy that id.
+4. Add it as a GitHub secret named **`IG_USER_ID`**.
+
+That's it — once `IG_USER_ID` exists, every daily post goes to **both** Facebook
+and Instagram. If Instagram ever errors, the Facebook post still succeeds (IG
+failures are logged, not fatal). Instagram doesn't allow clickable links in
+captions, so the totallycapecod.com URL appears as text — consider putting the
+link in your IG bio.
