@@ -11,9 +11,14 @@ to post twice for the same Eastern-time day (so a manual re-run or a retry won't
 double-post). Set FORCE=1 to override, or DRY_RUN=1 to print the post without
 sending it.
 
+Also cross-posts to Instagram when IG_USER_ID is set (same photo + caption to an
+Instagram Business account linked to the Page). Instagram requires an image — the
+poster always attaches one, so this always works.
+
 Secrets (GitHub Actions → repo settings → Secrets):
   FB_PAGE_ID            — numeric id of the Facebook Page
   FB_PAGE_ACCESS_TOKEN  — long-lived Page access token (see SETUP_FACEBOOK.md)
+  IG_USER_ID            — (optional) Instagram Business account id to cross-post to
 
 Run via .github/workflows/post-facebook.yml (daily), or locally:
   DRY_RUN=1 python scripts/post_facebook.py
@@ -57,6 +62,7 @@ IMG_EXTS = (".png", ".jpg", ".jpeg", ".webp")
 
 PAGE_ID = os.environ.get("FB_PAGE_ID", "").strip()
 TOKEN = os.environ.get("FB_PAGE_ACCESS_TOKEN", "").strip()
+IG_USER_ID = os.environ.get("IG_USER_ID", "").strip()
 DRY_RUN = os.environ.get("DRY_RUN") == "1"
 FORCE = os.environ.get("FORCE") == "1"
 
@@ -260,12 +266,33 @@ def post(message: str, image: str | None) -> str:
     return (r.json().get("post_id") or r.json().get("id") or "")
 
 
+def post_instagram(caption: str, image: str) -> str:
+    """Two-step Instagram publish: create a media container, then publish it."""
+    c = requests.post(
+        f"{GRAPH}/{IG_USER_ID}/media",
+        data={"image_url": image, "caption": caption, "access_token": TOKEN},
+        timeout=60,
+    )
+    if not c.ok:
+        raise RuntimeError(f"IG create {c.status_code}: {c.text[:400]}")
+    cid = c.json().get("id")
+    p = requests.post(
+        f"{GRAPH}/{IG_USER_ID}/media_publish",
+        data={"creation_id": cid, "access_token": TOKEN},
+        timeout=60,
+    )
+    if not p.ok:
+        raise RuntimeError(f"IG publish {p.status_code}: {p.text[:400]}")
+    return p.json().get("id", "")
+
+
 def main() -> None:
     message, image = compose()
     today_iso = datetime.now(ET).strftime("%Y-%m-%d")
 
     if DRY_RUN:
-        print(f"--- DRY RUN (would post, image={image}) ---\n{message}")
+        targets = "Facebook" + (" + Instagram" if IG_USER_ID else "")
+        print(f"--- DRY RUN (would post to {targets}, image={image}) ---\n{message}")
         return
 
     if not PAGE_ID or not TOKEN:
@@ -283,8 +310,21 @@ def main() -> None:
         return
 
     pid = post(message, image)
-    STATE.write_text(json.dumps({"last_posted_date": today_iso, "last_post_id": pid}, indent=2) + "\n")
     print(f"[fb] ✓ posted {pid} for {today_iso}")
+
+    ig_id = ""
+    if IG_USER_ID:
+        if not image:
+            print("[ig] skipped — Instagram requires an image", file=sys.stderr)
+        else:
+            try:
+                ig_id = post_instagram(message, image)
+                print(f"[ig] ✓ posted {ig_id}")
+            except Exception as e:
+                print(f"[ig] ✗ {e}", file=sys.stderr)
+
+    STATE.write_text(json.dumps(
+        {"last_posted_date": today_iso, "last_post_id": pid, "last_ig_post_id": ig_id}, indent=2) + "\n")
 
 
 if __name__ == "__main__":
