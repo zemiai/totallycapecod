@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-01T16:05:16Z",
+  "updated_at": "2026-07-01T18:24:54Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -12,7 +12,7 @@
       "location": "Chatham, MA, USA",
       "reported_by": "iNaturalist \u00b7 jlscastle",
       "reported_at": "2026-06-30T18:13:47Z",
-      "time_ago": "21 h ago",
+      "time_ago": "1 day ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/689227969/medium.jpg",
       "notes": "Atlantic Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/376932381"
@@ -44,6 +44,20 @@
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/688443523/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/376525345"
+    },
+    {
+      "id": "inat-376161888",
+      "species": "seal",
+      "count": 1,
+      "lat": 42.081,
+      "lng": -70.221,
+      "location": "Gulf of Maine, Provincetown, MA, US",
+      "reported_by": "iNaturalist \u00b7 sheakm",
+      "reported_at": "2026-06-28T12:23:57Z",
+      "time_ago": "3 days ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/687748008/medium.jpg",
+      "notes": "Grey Seal",
+      "source_url": "https://www.inaturalist.org/observations/376161888"
     },
     {
       "id": "inat-376156149",
@@ -86,20 +100,6 @@
       "photo_url": "https://static.inaturalist.org/photos/687239033/medium.jpg",
       "notes": "North Atlantic Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/375883482"
-    },
-    {
-      "id": "inat-375599724",
-      "species": "seal",
-      "count": 1,
-      "lat": 41.6883,
-      "lng": -69.9509,
-      "location": "Barcliff Avenue Ext, Chatham, MA, US",
-      "reported_by": "iNaturalist \u00b7 julie-c",
-      "reported_at": "2026-06-26T17:31:15Z",
-      "time_ago": "4 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/686660945/medium.jpg",
-      "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/375599724"
     },
     {
       "id": "inat-376312429",
@@ -278,7 +278,7 @@
       "location": "Off Cape Cod",
       "reported_by": "iNaturalist \u00b7 peggy38130",
       "reported_at": "2026-06-17T17:04:42Z",
-      "time_ago": "13 days ago",
+      "time_ago": "14 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/681153576/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/372746008"
