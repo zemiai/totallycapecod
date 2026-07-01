@@ -71,6 +71,32 @@ real post immediately. After that it runs itself every morning.
 
 ---
 
+## Pictures 📸
+Every post goes out **as a photo** (photos get far more reach than plain links).
+The image is chosen automatically:
+1. **Your pick for a specific day** — drop a file named by date in `img/social/`,
+   e.g. `img/social/2026-07-04.jpg`, and that day's post uses it.
+2. **Fireworks days** — uses the branded `img/fireworks.png` automatically.
+3. **Rotation** — any other images you add to `img/social/` get rotated through
+   day by day, so posts stay fresh.
+4. **Fallback** — the branded `img/social/default.png` (already included).
+
+So "posting pictures through here" = **commit a photo to `img/social/`** (or name
+it by date to schedule it). No code changes needed. Landscape 1200×630 or square
+1080×1080 look best.
+
+## Hashtags #️⃣
+Hashtags are built automatically from each day's content, so they're always
+relevant — never a static block:
+- Always: `#CapeCod #CapeCodLife #CapeCodMA #CapeCodSummer`
+- Per **town** in the post (e.g. `#Falmouth #Provincetown`)
+- Per **event type** (e.g. `#LiveMusic`, `#CapeCodEats`, `#FamilyFun`, `#CapeCodArt`)
+- Fireworks days add `#Fireworks #FourthOfJuly #July4th #IndependenceDay`
+- Beaches always get `#CapeCodBeaches`
+
+Capped at ~14 so it reads clean, not spammy. To tweak the tag map, edit
+`CATEGORY_TAGS` / `BASE_TAGS` at the top of `scripts/post_facebook.py`.
+
 ## Notes
 - **Schedule:** daily 11:30 UTC = 7:30 AM ET (`.github/workflows/post-facebook.yml`).
   Change the `cron:` line to move it.

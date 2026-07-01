@@ -27,11 +27,33 @@ import requests
 
 ROOT = Path(__file__).parent.parent
 DATA = ROOT / "data"
+SOCIAL = ROOT / "img" / "social"
 STATE = DATA / ".fb_state.json"
 ET = ZoneInfo("America/New_York")
 GRAPH = "https://graph.facebook.com/v21.0"
 SITE = "https://totallycapecod.com"
-FIREWORKS_IMG = "https://raw.githubusercontent.com/zemiai/totallycapecod/main/img/fireworks.png"
+RAW_BASE = "https://raw.githubusercontent.com/zemiai/totallycapecod/main"
+FIREWORKS_IMG = f"{RAW_BASE}/img/fireworks.png"
+
+# Always-on tags, then per-town and per-category tags get added from the day's
+# content so every post is discoverable by the right local + interest audiences.
+BASE_TAGS = ["#CapeCod", "#CapeCodLife", "#CapeCodMA", "#CapeCodSummer"]
+CATEGORY_TAGS = {
+    "music": ["#LiveMusic", "#CapeCodMusic"],
+    "food": ["#CapeCodEats", "#CapeCodFoodie"],
+    "food_deal": ["#CapeCodEats"],
+    "happy_hour": ["#HappyHour", "#CapeCodEats"],
+    "family": ["#FamilyFun", "#CapeCodFamily"],
+    "festival": ["#CapeCodEvents", "#Festival"],
+    "art": ["#CapeCodArt", "#ArtsOnCape"],
+    "farmers_market": ["#FarmersMarket", "#ShopLocal"],
+    "theater": ["#CapeCodTheater"],
+    "film": ["#CapeCodFilm"],
+    "talk": ["#CapeCodEvents"],
+    "event": ["#CapeCodEvents"],
+}
+FIREWORKS_TAGS = ["#Fireworks", "#FourthOfJuly", "#July4th", "#IndependenceDay"]
+IMG_EXTS = (".png", ".jpg", ".jpeg", ".webp")
 
 PAGE_ID = os.environ.get("FB_PAGE_ID", "").strip()
 TOKEN = os.environ.get("FB_PAGE_ACCESS_TOKEN", "").strip()
@@ -70,6 +92,62 @@ def events_today(today_iso: str) -> list[dict]:
     # pinned (fireworks) first, then keep source order
     out.sort(key=lambda e: 0 if e.get("pinned") else 1)
     return out
+
+
+def hashtag(word: str) -> str:
+    """'West Dennis' -> '#WestDennis'."""
+    parts = [p for p in "".join(c if c.isalnum() or c == " " else " " for c in word).split() if p]
+    return "#" + "".join(p.capitalize() for p in parts)
+
+
+def build_hashtags(towns, categories, is_fireworks: bool, has_beach: bool) -> list[str]:
+    tags: list[str] = list(BASE_TAGS)
+    if is_fireworks:
+        tags += FIREWORKS_TAGS
+    if has_beach:
+        tags.append("#CapeCodBeaches")
+    for c in categories:
+        tags += CATEGORY_TAGS.get(c, [])
+    for t in list(towns)[:4]:  # cap town tags so it doesn't read spammy
+        if t:
+            tags.append(hashtag(t))
+    seen, out = set(), []
+    for t in tags:
+        k = t.lower()
+        if k not in seen:
+            seen.add(k)
+            out.append(t)
+    return out[:14]
+
+
+def pick_image(today_iso: str, is_fireworks: bool) -> str | None:
+    """Pick the day's photo (returned as a public raw URL).
+
+    Priority: a date-named file you drop in img/social/ (e.g. 2026-07-04.jpg) →
+    fireworks image on fireworks days → a rotating branded image from img/social/
+    → the branded default. Drop any picture in img/social/ and it goes into the
+    rotation automatically.
+    """
+    if SOCIAL.exists():
+        for ext in IMG_EXTS:
+            f = SOCIAL / f"{today_iso}{ext}"
+            if f.exists():
+                return f"{RAW_BASE}/img/social/{f.name}"
+    if is_fireworks:
+        return FIREWORKS_IMG
+    extras = []
+    if SOCIAL.exists():
+        extras = sorted(
+            p.name for p in SOCIAL.iterdir()
+            if p.suffix.lower() in IMG_EXTS and p.stem not in ("default",)
+            and len(p.stem) != 10  # skip date-named files (handled above)
+        )
+    if extras:
+        doy = datetime.strptime(today_iso, "%Y-%m-%d").timetuple().tm_yday
+        return f"{RAW_BASE}/img/social/{extras[doy % len(extras)]}"
+    if (SOCIAL / "default.png").exists():
+        return f"{RAW_BASE}/img/social/default.png"
+    return None
 
 
 def compose() -> tuple[str, str | None]:
@@ -122,15 +200,17 @@ def compose() -> tuple[str, str | None]:
     # Events / fireworks
     evs = events_today(today_iso)
     fireworks = [e for e in evs if "FIREWORK" in (e.get("tag") or "").upper()]
-    img = None
-    if fireworks:
+    is_fireworks = bool(fireworks)
+    towns, categories = [], []
+    if is_fireworks:
         lines.append("")
         lines.append("🎆 FIREWORKS TONIGHT:")
         for e in fireworks[:6]:
             t = e.get("time", "")
             town = e.get("town", "")
             lines.append(f"• {e.get('title')} — {town}" + (f" · {t.split('·')[-1].strip()}" if "·" in t else ""))
-        img = FIREWORKS_IMG
+            if town:
+                towns.append(town)
     else:
         highlights = [e for e in evs if e.get("time") and ("PM" in e["time"] or "AM" in e["time"])][:3]
         if highlights:
@@ -139,11 +219,26 @@ def compose() -> tuple[str, str | None]:
             for e in highlights:
                 t = e["time"].split("·")[-1].strip()
                 lines.append(f"• {e.get('title')} — {e.get('town','')} · {t}")
+                if e.get("town"):
+                    towns.append(e["town"])
+    for e in evs:
+        if e.get("category"):
+            categories.append(e["category"])
 
     lines.append("")
     lines.append(f"Live beach parking, bridge traffic & today's events 👉 {SITE}")
+
+    # keep town order but unique
+    seen, uniq_towns = set(), []
+    for t in towns:
+        if t not in seen:
+            seen.add(t)
+            uniq_towns.append(t)
+    tags = build_hashtags(uniq_towns, dict.fromkeys(categories), is_fireworks, has_beach=True)
     lines.append("")
-    lines.append("#CapeCod #CapeCodLife #CapeCodMA")
+    lines.append(" ".join(tags))
+
+    img = pick_image(today_iso, is_fireworks)
     return "\n".join(lines), img
 
 
