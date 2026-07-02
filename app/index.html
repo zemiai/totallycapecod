@@ -1124,6 +1124,9 @@
 <script>
 // ============ CONFIG ============
 const STRIPE_LINK = 'https://buy.stripe.com/6oU8wIfTVbmhdZveHQbo401';
+
+// Analytics: safe wrapper — a tracking failure must never break the app.
+function tccT(name, params) { try { if (typeof gtag === 'function') gtag('event', name, params || {}); } catch (e) {} }
 // Concierge backend — proxies questions to Claude (Haiku) with guardrails.
 // Set to null to fall back to static keyword matching only.
 window.TCC_AI_ENDPOINT = '/.netlify/functions/concierge';
@@ -2079,6 +2082,7 @@ function confirmStamp() {
     }
     if (!state.stamps.includes(state.pendingStamp.slug)) {
       state.stamps.push(state.pendingStamp.slug);
+      tccT('stamp_collected', { slug: state.pendingStamp.slug, total: state.stamps.length });
       localStorage.setItem('tcc_stamps', JSON.stringify(state.stamps));
       toast(`🎉 ${state.pendingStamp.name} stamped! ${state.stamps.length}/${(state.data.stamps?.stamps||[]).length||100}`);
       // Flip any matching feed pills to "collected" without re-rendering (keeps scroll position).
@@ -2157,12 +2161,14 @@ function sendAi() {
     const conv = document.getElementById('aiConv');
     conv.innerHTML += `<div class="ai-bubble-ai">⚠️ You've used your free question today. <strong onclick="switchTab('pro')" style="text-decoration:underline; cursor:pointer;">Unlock unlimited for $9.99</strong></div>`;
     conv.scrollTop = conv.scrollHeight;
+    tccT('ai_limit_hit');
     return;
   }
   const input = document.getElementById('aiInput');
   const q = input.value.trim();
   if (!q) return;
   input.value = '';
+  tccT('ai_question', { is_pro: state.isPro ? 1 : 0 });
   document.getElementById('aiStarters')?.remove();   // clear the empty-state suggestions
   const conv = document.getElementById('aiConv');
   conv.innerHTML += `<div class="ai-bubble-user">${q}</div>`;
@@ -2597,6 +2603,7 @@ function stopLighthouseAudio() {
 // ============ TAB SWITCHING ============
 function switchTab(tab) {
   tccEngage();
+  tccT('app_screen', { screen: tab });
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   const screen = document.getElementById('screen-' + tab);
@@ -2974,8 +2981,10 @@ document.querySelectorAll('.modal-bg').forEach(m => m.addEventListener('click', 
 const _isDev = new URLSearchParams(location.search).has('dev');
 
 function goToStripe() {
+  tccT('begin_checkout', { currency: 'USD', value: 9.99 });
   closeModal('purchase');
-  window.location.href = STRIPE_LINK;
+  // Give the event a beat to send before navigating away.
+  setTimeout(() => { window.location.href = STRIPE_LINK; }, 150);
 }
 function unlockPro() {
   state.isPro = true;
@@ -3014,6 +3023,7 @@ function renderPro() {
   const successParam = params.get('success');
   if (proParam === '1' || proParam === 'success' || successParam === 'true') {
     unlockPro();
+    tccT('purchase', { currency: 'USD', value: 9.99, transaction_id: 'tcc_' + Date.now() });
     // Defer modal until DOM is settled
     setTimeout(() => openModal('success'), 300);
     // Clean the URL so refreshing doesn't re-trigger
@@ -3280,6 +3290,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
 
 // Once installed via native prompt, hide the banner
 window.addEventListener('appinstalled', () => {
+  tccT('pwa_install');
   document.getElementById('installBanner').classList.remove('show');
   localStorage.setItem('tcc_install_dismissed', 'true');
   _deferredInstallPrompt = null;

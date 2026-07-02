@@ -231,8 +231,10 @@ def compose() -> tuple[str, str | None]:
         if e.get("category"):
             categories.append(e["category"])
 
+    campaign = "fireworks" if is_fireworks else "daily"
+    tracked = f"{SITE}/?utm_source=facebook&utm_medium=social&utm_campaign={campaign}"
     lines.append("")
-    lines.append(f"Live beach parking, bridge traffic & today's events 👉 {SITE}")
+    lines.append(f"Live beach parking, bridge traffic & today's events 👉 {tracked}")
 
     # keep town order but unique
     seen, uniq_towns = set(), []
@@ -258,7 +260,9 @@ def post(message: str, image: str | None) -> str:
     else:
         r = requests.post(
             f"{GRAPH}/{PAGE_ID}/feed",
-            data={"message": message, "link": SITE, "access_token": TOKEN},
+            data={"message": message,
+                  "link": f"{SITE}/?utm_source=facebook&utm_medium=social&utm_campaign=daily",
+                  "access_token": TOKEN},
             timeout=60,
         )
     if not r.ok:
