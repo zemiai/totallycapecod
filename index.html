@@ -24,6 +24,24 @@
   gtag('config', 'G-Q0YM9WQLWK');
 </script>
 
+<!-- A/B testing harness: add a test here + an applier below; results segment by
+     the ab_* user properties in GA4. Sticky per device via localStorage. -->
+<script>
+  window.tccAB = (function () {
+    var TESTS = { hero_copy: ['control', 'live_now'] };
+    var a = {};
+    try { a = JSON.parse(localStorage.getItem('tcc_ab') || '{}'); } catch (e) {}
+    var changed = false;
+    for (var t in TESTS) {
+      if (TESTS[t].indexOf(a[t]) === -1) { a[t] = TESTS[t][Math.floor(Math.random() * TESTS[t].length)]; changed = true; }
+    }
+    if (changed) { try { localStorage.setItem('tcc_ab', JSON.stringify(a)); } catch (e) {} }
+    gtag('set', 'user_properties', { ab_hero: a.hero_copy });
+    gtag('event', 'ab_assign', { test: 'hero_copy', variant: a.hero_copy });
+    return a;
+  })();
+</script>
+
 <link rel="stylesheet" href="css/tcc.css" />
 <link rel="manifest" href="manifest.json" />
 <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -274,6 +292,14 @@
     <div class="cta-reassure">Free · No app store needed · Works on any phone</div>
   </div>
 </section>
+
+<script>
+  // hero_copy test applier — runs immediately after the hero markup (no flicker).
+  if (window.tccAB && tccAB.hero_copy === 'live_now') {
+    document.querySelector('.hero-title').innerHTML = 'Cape Cod, <span class="script">live</span> right now';
+    document.querySelector('.hero-subtitle').textContent = 'Which beach lots have space, how backed up the bridges are, what\u2019s on tonight \u2014 see it all before you leave the house.';
+  }
+</script>
 
 <div class="wave-divider"></div>
 
