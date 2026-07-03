@@ -60,6 +60,7 @@
   gtag('js', new Date());
   gtag('config', 'G-Q0YM9WQLWK');
 </script>
+<script src="/js/pixel.js" defer></script>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -1126,7 +1127,18 @@
 const STRIPE_LINK = 'https://buy.stripe.com/6oU8wIfTVbmhdZveHQbo401';
 
 // Analytics: safe wrapper — a tracking failure must never break the app.
-function tccT(name, params) { try { if (typeof gtag === 'function') gtag('event', name, params || {}); } catch (e) {} }
+// Sends to GA4, and mirrors to the Meta Pixel (standard events where they map,
+// custom events otherwise) so ads can optimize on real conversions.
+const TCC_FBQ_MAP = { begin_checkout: 'InitiateCheckout', purchase: 'Purchase' };
+function tccT(name, params) {
+  try { if (typeof gtag === 'function') gtag('event', name, params || {}); } catch (e) {}
+  try {
+    if (typeof fbq === 'function') {
+      const std = TCC_FBQ_MAP[name];
+      if (std) fbq('track', std, params || {}); else fbq('trackCustom', name, params || {});
+    }
+  } catch (e) {}
+}
 // Concierge backend — proxies questions to Claude (Haiku) with guardrails.
 // Set to null to fall back to static keyword matching only.
 window.TCC_AI_ENDPOINT = '/.netlify/functions/concierge';
