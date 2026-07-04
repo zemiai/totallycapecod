@@ -352,6 +352,12 @@
   .nb-townhead .label .mi{ font-family:'Inter',sans-serif; font-weight:600; font-size:11px; color:var(--ios-sub); }
 
   .nb-card{ background:var(--ios-card); border-radius:16px; margin:0 16px 12px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.05); }
+  .nb-promo{ display:flex; align-items:center; gap:13px; margin:0 16px 12px; padding:15px 16px; border-radius:16px; background:linear-gradient(135deg,#0E2A47,#1E6B7A); color:#fff; cursor:pointer; box-shadow:0 3px 10px rgba(14,42,71,.22); -webkit-tap-highlight-color:transparent; }
+  .nb-promo:active{ transform:scale(.985); }
+  .nb-promo .ic{ font-size:26px; flex:none; }
+  .nb-promo .t{ font-family:'Fraunces',serif; font-weight:900; font-size:15.5px; line-height:1.25; }
+  .nb-promo .s{ font-size:12.5px; opacity:.88; margin-top:2px; line-height:1.35; }
+  .nb-promo .arr{ margin-left:auto; flex:none; font-size:18px; opacity:.9; }
   .nb-photo{ height:170px; background-size:cover; background-position:center; background-color:var(--cape-sand); position:relative; }
   .cover-icon{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:58px; line-height:1; opacity:0.95; filter:drop-shadow(0 2px 8px rgba(0,0,0,0.28)); pointer-events:none; }
   /* 🔥 Tonight specials rail */
@@ -2768,6 +2774,19 @@ function nbStampPill(lat,lng,slug){
   return `<button class="nb-stamp-pill" data-slug="${s.slug}" onclick="event.stopPropagation(); openStamp('${s.slug}')">🎫 Collect this stamp</button>`;
 }
 
+// In-feed promo cards: the feed is where users live, so the feed routes them to
+// the features that convert. Rotates through the list, one every ~6 items.
+const NB_PROMOS=[
+  {id:'ai',    icon:'✨',  title:'Ask a Cape local anything',  sub:'“Best lobster roll near me?” — instant answers, grounded in live data'},
+  {id:'quiz',  icon:'🏖️', title:'Find your perfect beach',    sub:'4 quick questions · matched from live conditions + real reviews'},
+  {id:'tonight',icon:'🎟️', title:"What's happening tonight",   sub:'Live music, food deals & events near you — updated all day'},
+];
+function tccPromo(id){
+  tccT('promo_click',{promo:id});
+  if(id==='ai') switchTab('ai');
+  else if(id==='quiz'){ switchTab('beaches'); setTimeout(()=>{ try{ startBeachQuiz(); }catch(e){} },300); }
+  else if(id==='tonight') switchTab('today');
+}
 function nbBuildSequence(){
   const eats    = state.data.eats?.eats || [];
   const beaches = state.data.beaches?.beaches || [];
@@ -2807,12 +2826,22 @@ function nbBuildSequence(){
       if(fi<g.food.length) seq.push(g.food[fi++]);
     }
   });
+  // Weave in promo cards: first after ~5 items, then every ~7, one full rotation max.
+  let pi=0;
+  for(let pos=5; pos<seq.length && pi<NB_PROMOS.length; pos+=8){
+    seq.splice(pos,0,{type:"promo",promo:NB_PROMOS[pi++]});
+  }
+  if(pi<NB_PROMOS.length && seq.length) seq.push({type:"promo",promo:NB_PROMOS[pi]});  // short feeds still get one
   return seq;
 }
 
 function nbRenderItem(it){
   if(it.type==="pinhead"){
     return `<div class="nb-pinhead">${nbEsc(it.label)}</div>`;
+  }
+  if(it.type==="promo"){
+    const p=it.promo;
+    return `<div class="nb-promo" onclick="tccPromo('${p.id}')"><div class="ic">${p.icon}</div><div><div class="t">${nbEsc(p.title)}</div><div class="s">${nbEsc(p.sub)}</div></div><div class="arr">→</div></div>`;
   }
   if(it.type==="townhead"){
     return `<div class="nb-townhead"><div class="line"></div><div class="label">${nbEsc(it.town)}<span class="mi">${nbAway(it.mi)}</span></div><div class="line"></div></div>`;
