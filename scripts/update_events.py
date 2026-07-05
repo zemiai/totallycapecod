@@ -101,6 +101,50 @@ VENUES = [
     ("WHAT Theater",       "Wellfleet", "jsonld", "https://what.org/", (41.9291, -70.0330)),
 ]
 
+# Weekly farmers markets — fixed schedules, generated (not scraped) so they never
+# silently vanish. (weekday: Mon=0) Verified for the 2026 season, Jul 2026.
+MARKETS = [
+    # town, venue/address, weekday, start "HH:MM", end "HH:MM", (lat,lng), season (start,end) iso
+    ("Falmouth",     "Marine Park, 180 Scranton Ave",       3, "11:00", "15:00", (41.5487, -70.6060), ("2026-05-21", "2026-10-15")),
+    ("Orleans",      "19 Old Colony Way",                   5, "09:00", "12:00", (41.7900, -69.9900), ("2026-01-01", "2026-12-31")),
+    ("Chatham",      "60 Meetinghouse Rd (Rte 137)",        1, "15:00", "18:00", (41.6960, -69.9740), ("2026-05-19", "2026-10-20")),
+    ("Sandwich",     "Oakcrest Cove, 34 Quaker Mtghouse Rd",1, "09:00", "13:00", (41.7420, -70.4820), ("2026-06-09", "2026-10-13")),
+    ("Wellfleet",    "The Grove, 200 Main St",              2, "08:00", "12:00", (41.9310, -70.0290), ("2026-06-03", "2026-09-30")),
+    ("Provincetown", "Ryder St at Town Hall",               5, "09:00", "13:00", (42.0580, -70.1840), ("2026-05-16", "2026-10-31")),
+]
+
+def synth_markets(now, horizon) -> list[dict]:
+    """Generate each market's occurrences inside the window as normal events."""
+    from datetime import date as _date
+    out = []
+    et = timezone(timedelta(hours=-4))  # EDT (markets are summer-season)
+    day = now.astimezone(et).date()
+    while day <= horizon.astimezone(et).date():
+        for town, venue, wd, t0, t1, (lat, lng), (s0, s1) in MARKETS:
+            if day.weekday() != wd:
+                continue
+            if not (_date.fromisoformat(s0) <= day <= _date.fromisoformat(s1)):
+                continue
+            hh, mm = map(int, t0.split(":"))
+            start = datetime(day.year, day.month, day.day, hh, mm, tzinfo=et)
+            if start < now - timedelta(hours=6):
+                continue
+            h0 = int(t0.split(':')[0]); h1 = int(t1.split(':')[0])
+            fmt = lambda h: f"{(h-1)%12+1}:00 {'AM' if h<12 else 'PM'}"
+            out.append({
+                "id": f"market-{slugify(town)}-{day.isoformat()}",
+                "category": "farmers_market", "tag": "🥕 FARMERS MARKET",
+                "title": f"{town} Farmers Market",
+                "venue": venue, "town": town, "lat": lat, "lng": lng,
+                "time": f"{day.strftime('%a %b')} {day.day} · {fmt(h0)}–{fmt(h1)}",
+                "start": start.isoformat(),
+                "info": "Local produce, baked goods, flowers & more.",
+                "price": "Free", "source": "Totally Cape Cod", "source_url": "",
+                "img": None,
+            })
+        day += timedelta(days=1)
+    return out
+
 # ---- Category / tag inference -----------------------------------------------
 CATEGORY_TAGS = [
     ("music",   "🎵 LIVE MUSIC",  ["concert", "live music", "band", "jazz", "acoustic", "dj", "symphony", "blues", "rock", "folk", "open mic", "songwriter", "orchestra"]),
@@ -455,6 +499,8 @@ def main() -> None:
     now = datetime.now(timezone.utc)
     horizon = now + timedelta(days=WINDOW_DAYS)
     raw = []
+    markets = synth_markets(now, horizon)
+    print(f"[hermes] farmers markets -> {len(markets)} generated")
 
     jobs = []
     for town, url, kind in CHAMBERS:
@@ -514,6 +560,8 @@ def main() -> None:
             if kept >= PER_SOURCE_CAP:
                 break
         print(f"[hermes] {name:16} -> {kept} events in window")
+
+    raw.extend(markets)
 
     # de-dupe by id, sort by start, cap
     seen, events = set(), []
