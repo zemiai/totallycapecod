@@ -36,6 +36,35 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install -r scripts/requirements.txt
+      - name: Generate branded daily image
+        run: python scripts/make_social_image.py
+      - name: Publish image (must be on raw.githubusercontent before Meta fetches it)
+        if: github.event.inputs.dry_run != '1'
+        run: |
+          git config user.name "hermes-bot"
+          git config user.email "hermes-bot@users.noreply.github.com"
+          # prune dated images older than ~2 weeks so the repo doesn't bloat
+          # (filename IS the date; can't use -mtime, checkout resets it)
+          cutoff=$(date -u -d '14 days ago' +%F)
+          for f in img/social/2*-*-*.jpg; do
+            [ -e "$f" ] || continue
+            [[ "$(basename "$f" .jpg)" < "$cutoff" ]] && git rm -q "$f"
+          done
+          git add img/social/
+          if git diff --cached --quiet; then
+            echo "no new image"
+            exit 0
+          fi
+          git commit -m "[social] daily branded image $(date -u +%F)"
+          for i in 1 2 3 4 5; do
+            if git push; then
+              sleep 10  # let the raw CDN pick it up before the API call
+              exit 0
+            fi
+            git pull --rebase --autostash origin main || exit 1
+            sleep $((i * 3))
+          done
+          exit 1
       - run: python scripts/post_facebook.py
         env:
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
