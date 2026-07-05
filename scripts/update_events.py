@@ -76,6 +76,11 @@ CHAMBERS = [
     ("Hyannis",   "https://business.hyannis.com/events",              "chambermaster"),
     ("Mashpee",   "https://business.mashpeechamber.com/events",       "chambermaster"),
     ("Bourne",    "https://www.capecodcanalchamber.org/all-events/",  "custom_canal"),
+    # Upper/Outer Cape gap-fill (added Jul 2026 — feed was Lower-Cape-heavy)
+    ("Falmouth",  "https://business.falmouthchamber.com/events",      "chambermaster"),
+    ("Sandwich",  "https://business.sandwichchamber.com/events",      "chambermaster"),
+    ("Wellfleet", "https://members.wellfleetchamber.com/events",      "chambermaster"),
+    ("Truro",     "https://members.trurochamber.com/events",          "chambermaster"),
 ]
 VENUES = [
     # (display name, town, kind, url, venue_coord_override or None)
@@ -90,6 +95,10 @@ VENUES = [
     # Squarespace event collections (clean JSON via ?format=json)
     ("Devil's Purse",      "South Dennis","squarespace","https://www.devilspurse.com/events", (41.6900, -70.1500)),
     ("Cape Cod Winery",    "Falmouth",  "squarespace","https://www.capecodwinery.com/events", (41.5760, -70.5530)),
+    # Major venues (added Jul 2026)
+    ("Melody Tent",        "Hyannis",   "jsonld", "https://www.melodytent.org/events/", (41.6531, -70.2917)),
+    ("Cape Playhouse",     "Dennis",    "jsonld", "https://www.capeplayhouse.com/", (41.7352, -70.1930)),
+    ("WHAT Theater",       "Wellfleet", "jsonld", "https://what.org/", (41.9291, -70.0330)),
 ]
 
 # ---- Category / tag inference -----------------------------------------------
