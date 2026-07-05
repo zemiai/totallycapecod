@@ -1,0 +1,51 @@
+name: "post video"
+
+# One-shot video post to FB Page + Instagram. Fires when data/manual_video_post.json
+# changes (edit it + push = post), or manually from the Actions tab.
+# Requires repo secrets: FB_PAGE_ID, FB_PAGE_ACCESS_TOKEN, IG_USER_ID
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/manual_video_post.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: post-video
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests
+      - run: python scripts/post_video.py
+        env:
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      - name: Save result
+        if: always()
+        run: |
+          git config user.name "hermes-bot"
+          git config user.email "hermes-bot@users.noreply.github.com"
+          git add data/.video_post_result.json
+          if git diff --cached --quiet; then
+            echo "no result change"
+            exit 0
+          fi
+          git commit -m "[video] record video post result"
+          for i in 1 2 3 4 5; do
+            if git push; then exit 0; fi
+            git pull --rebase --autostash origin main || exit 1
+            sleep $((i * 3))
+          done
+          exit 1
