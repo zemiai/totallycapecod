@@ -1477,9 +1477,16 @@ function renderToday() {
 
   // Happening — TASK9 Lever 5: proPreview also unlocks events on first session
   const events = state.data.events?.events || [];
-  const shown = (state.isPro || state.proPreview) ? events.slice(0,5) : events.slice(0, FREE_EVENT_LIMIT);
-  document.getElementById('todayHappening').innerHTML = shown.map(e => renderEventCard(e)).join('') ||
+  const unlocked = state.isPro || state.proPreview;
+  const shown = unlocked ? events.slice(0, 10) : events.slice(0, FREE_EVENT_LIMIT);
+  let happeningHtml = shown.map(e => renderEventCard(e)).join('') ||
     '<div class="empty-state">No events posted for today yet — check back this morning.</div>';
+  if (events.length > shown.length) {
+    happeningHtml += unlocked
+      ? `<button class="unlock-cta" onclick="switchTab('events')">See all ${events.length} events →</button>`
+      : `<button class="unlock-cta" onclick="switchTab('pro')">🔒 +${events.length - shown.length} more events · Unlock Pro $9.99</button>`;
+  }
+  document.getElementById('todayHappening').innerHTML = happeningHtml;
 
   // Nearest beaches
   getUserLoc(loc => {
