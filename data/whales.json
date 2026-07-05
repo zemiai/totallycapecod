@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-05T20:59:06Z",
+  "updated_at": "2026-07-05T22:08:37Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -12,10 +12,24 @@
       "location": "Massachusetts, US",
       "reported_by": "iNaturalist \u00b7 emery2005",
       "reported_at": "2026-07-05T18:32:02Z",
-      "time_ago": "2 h ago",
+      "time_ago": "3 h ago",
       "photo_url": "",
       "notes": "Atlantic White-sided Dolphin",
       "source_url": "https://www.inaturalist.org/observations/378491531"
+    },
+    {
+      "id": "inat-378549483",
+      "species": "humpback",
+      "count": 1,
+      "lat": 42.1569,
+      "lng": -70.2857,
+      "location": "Gulf of Maine, US",
+      "reported_by": "iNaturalist \u00b7 liamnorton3",
+      "reported_at": "2026-07-05T17:06:45Z",
+      "time_ago": "5 h ago",
+      "photo_url": "https://static.inaturalist.org/photos/692348375/medium.jpg",
+      "notes": "North Atlantic Humpback Whale",
+      "source_url": "https://www.inaturalist.org/observations/378549483"
     },
     {
       "id": "inat-378384396",
@@ -110,7 +124,7 @@
       "location": "W Falmouth Hwy, Falmouth, MA, US",
       "reported_by": "iNaturalist \u00b7 crowgrady",
       "reported_at": "2026-06-27T21:12:12Z",
-      "time_ago": "7 days ago",
+      "time_ago": "8 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/687736831/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/376156149"
