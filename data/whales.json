@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-05T22:08:37Z",
+  "updated_at": "2026-07-05T23:34:28Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -12,7 +12,7 @@
       "location": "Massachusetts, US",
       "reported_by": "iNaturalist \u00b7 emery2005",
       "reported_at": "2026-07-05T18:32:02Z",
-      "time_ago": "3 h ago",
+      "time_ago": "5 h ago",
       "photo_url": "",
       "notes": "Atlantic White-sided Dolphin",
       "source_url": "https://www.inaturalist.org/observations/378491531"
@@ -26,7 +26,7 @@
       "location": "Gulf of Maine, US",
       "reported_by": "iNaturalist \u00b7 liamnorton3",
       "reported_at": "2026-07-05T17:06:45Z",
-      "time_ago": "5 h ago",
+      "time_ago": "6 h ago",
       "photo_url": "https://static.inaturalist.org/photos/692348375/medium.jpg",
       "notes": "North Atlantic Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/378549483"
@@ -138,7 +138,7 @@
       "location": "Barnstable County, MA, USA",
       "reported_by": "iNaturalist \u00b7 jmacaulay",
       "reported_at": "2026-06-26T22:53:00Z",
-      "time_ago": "8 days ago",
+      "time_ago": "9 days ago",
       "photo_url": "https://static.inaturalist.org/photos/687239033/medium.jpg",
       "notes": "North Atlantic Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/375883482"
@@ -222,7 +222,7 @@
       "location": "US",
       "reported_by": "iNaturalist \u00b7 fullmoondeer",
       "reported_at": "2026-06-22T22:36:25Z",
-      "time_ago": "12 days ago",
+      "time_ago": "13 days ago",
       "photo_url": "https://static.inaturalist.org/photos/686822948/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/375682937"
