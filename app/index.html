@@ -1291,8 +1291,13 @@ async function loadData() {
     if (cEvents.length) {
       state.data.events = state.data.events || { events: [] };
       const base = Array.isArray(state.data.events.events) ? state.data.events.events : [];
-      const cutoff = Date.now() - 12 * 3600 * 1000;   // drop curated items >12h past their start
-      const keep = cEvents.filter(e => !e.start || new Date(e.start).getTime() > cutoff);
+      // Pinned hype items (fireworks etc.) expire 3h after start — nothing is staler
+      // than yesterday's fireworks at the top of the feed. Regular items keep 12h.
+      const keep = cEvents.filter(e => {
+        if (!e.start) return true;
+        const graceH = e.pinned ? 3 : 12;
+        return new Date(e.start).getTime() > Date.now() - graceH * 3600 * 1000;
+      });
       const seen = new Set(base.map(e => e.id));
       const merged = keep.filter(e => !seen.has(e.id)).concat(base);
       merged.sort((a, b) => new Date(a.start || 0) - new Date(b.start || 0));
