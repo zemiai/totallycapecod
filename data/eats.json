@@ -2,7 +2,7 @@
   "version": "1.0",
   "updated_at": "2026-07-06T13:53:14Z",
   "enriched": true,
-  "count": 78,
+  "count": 79,
   "eats": [
     {
       "id": "the-lobster-pot",
@@ -9137,6 +9137,22 @@
       ],
       "photo": "data/eats-photos/bad-martha-falmouth.jpg",
       "enriched_at": "2026-07-06T13:53:14Z"
+    },
+    {
+      "id": "devils-purse-brewing",
+      "name": "Devil's Purse Brewing Company",
+      "town": "South Dennis",
+      "lat": 41.6902,
+      "lng": -70.1503,
+      "cuisine": "Brewery",
+      "price": "$",
+      "tags": [
+        "brewery",
+        "beer",
+        "taproom",
+        "local"
+      ],
+      "desc": "South Dennis craft brewery in a converted warehouse \u2014 clean lagers, kolsch and hazy IPAs poured in a laid-back taproom."
     }
   ]
 }

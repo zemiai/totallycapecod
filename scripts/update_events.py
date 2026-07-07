@@ -76,11 +76,12 @@ CHAMBERS = [
     ("Hyannis",   "https://business.hyannis.com/events",              "chambermaster"),
     ("Mashpee",   "https://business.mashpeechamber.com/events",       "chambermaster"),
     ("Bourne",    "https://www.capecodcanalchamber.org/all-events/",  "custom_canal"),
-    # Upper/Outer Cape gap-fill (added Jul 2026 — feed was Lower-Cape-heavy)
-    ("Falmouth",  "https://business.falmouthchamber.com/events",      "chambermaster"),
-    ("Sandwich",  "https://business.sandwichchamber.com/events",      "chambermaster"),
-    ("Wellfleet", "https://members.wellfleetchamber.com/events",      "chambermaster"),
-    ("Truro",     "https://members.trurochamber.com/events",          "chambermaster"),
+    # NOTE (Jul 2026): Falmouth / Sandwich / Wellfleet / Truro chambers were tried
+    # here but none expose machine-readable events — Falmouth's ChamberMaster host
+    # (web.falmouthchamber.com) fails the TLS handshake, Sandwich is a static
+    # brochure site, and Wellfleet + Truro sit behind a 429 bot-wall. They only
+    # produced log-spam and zero events, so they're intentionally omitted. The
+    # Outer Cape is still covered by Provincetown/Eastham/Orleans/Brewster.
 ]
 VENUES = [
     # (display name, town, kind, url, venue_coord_override or None)
@@ -92,13 +93,16 @@ VENUES = [
     ("Provincetown Events","Provincetown","jsonld","https://ptownie.com/provincetown-calendar/", (42.0587, -70.1787)),
     ("Pier 37 Boathouse",  "Falmouth",  "jsonld", "https://www.falmouthpier37.com/events/category/live-music/", (41.5510, -70.6140)),
     ("Sundancers",         "West Dennis","ics",   "https://sundancerscapecod.com/entertainment/", (41.6620, -70.1700)),
-    # Squarespace event collections (clean JSON via ?format=json)
+    # Squarespace event collections (clean JSON via ?format=json). These read fine;
+    # they simply have no upcoming events posted when the taprooms are quiet.
     ("Devil's Purse",      "South Dennis","squarespace","https://www.devilspurse.com/events", (41.6900, -70.1500)),
     ("Cape Cod Winery",    "Falmouth",  "squarespace","https://www.capecodwinery.com/events", (41.5760, -70.5530)),
-    # Major venues (added Jul 2026)
-    ("Melody Tent",        "Hyannis",   "jsonld", "https://www.melodytent.org/events/", (41.6531, -70.2917)),
-    ("Cape Playhouse",     "Dennis",    "jsonld", "https://www.capeplayhouse.com/", (41.7352, -70.1930)),
-    ("WHAT Theater",       "Wellfleet", "jsonld", "https://what.org/", (41.9291, -70.0330)),
+    # Major venue (added Jul 2026). Melody Tent has no Tribe API, but each show's
+    # detail page carries schema.org Event JSON-LD — parse_melody walks the listing
+    # to those detail pages. (Cape Playhouse + WHAT were tried too but only expose
+    # JS ticketing widgets — OvationTix/etix — with no server-side event feed, and
+    # their multi-week theatre "runs" don't map to single-date cards; omitted.)
+    ("Melody Tent",        "Hyannis",   "melody", "https://www.melodytent.org/events/", (41.6531, -70.2917)),
 ]
 
 # Weekly farmers markets — fixed schedules, generated (not scraped) so they never
@@ -347,13 +351,13 @@ def parse_tribe(name: str, town: str, api: str, coord) -> list[dict]:
         })
     return out
 
-def parse_jsonld(name: str, town: str, page: str, coord) -> list[dict]:
+_EVENT_TYPES = ("Event", "TheaterEvent", "MusicEvent", "Festival", "ComedyEvent",
+                "DanceEvent", "ScreeningEvent", "SocialEvent", "ExhibitionEvent")
+
+def _jsonld_event_items(soup) -> list[dict]:
+    """Yield every schema.org Event-ish dict embedded in a page's ld+json blocks."""
     import json
     out = []
-    try:
-        soup = BeautifulSoup(fetch(page).text, "html.parser")
-    except Exception:
-        return out
     for tag in soup.find_all("script", type="application/ld+json"):
         try:
             data = json.loads(tag.string or "")
@@ -367,24 +371,75 @@ def parse_jsonld(name: str, town: str, page: str, coord) -> list[dict]:
             else:
                 flat.append(it)
         for it in flat:
-            if not isinstance(it, dict) or it.get("@type") not in ("Event", "TheaterEvent", "MusicEvent", "Festival"):
-                continue
-            dt = parse_iso(it.get("startDate"))
-            if not dt:
-                continue
-            loc = it.get("location") or {}
-            venue = loc.get("name", "") if isinstance(loc, dict) else ""
-            img = it.get("image")
-            if isinstance(img, list):
-                img = img[0] if img else None
-            if isinstance(img, dict):
-                img = img.get("url")
-            out.append({
-                "title": html.unescape(it.get("name", "").strip()),
-                "start": dt, "has_time": "T" in str(it.get("startDate", "")),
-                "town": town, "venue": html.unescape(venue) or name, "price": "",
-                "url": it.get("url", ""), "img": img,
-            })
+            t = it.get("@type") if isinstance(it, dict) else None
+            t = t[0] if isinstance(t, list) and t else t
+            if isinstance(it, dict) and t in _EVENT_TYPES:
+                out.append(it)
+    return out
+
+def _ld_event_to_row(it: dict, name: str, town: str) -> dict | None:
+    dt = parse_iso(it.get("startDate"))
+    if not dt:
+        return None
+    loc = it.get("location") or {}
+    venue = loc.get("name", "") if isinstance(loc, dict) else ""
+    img = it.get("image")
+    if isinstance(img, list):
+        img = img[0] if img else None
+    if isinstance(img, dict):
+        img = img.get("url")
+    offers = it.get("offers") or {}
+    if isinstance(offers, list):
+        offers = offers[0] if offers else {}
+    price = ""
+    if isinstance(offers, dict) and offers.get("price"):
+        price = f"${offers['price']}"
+    return {
+        "title": html.unescape((it.get("name") or "").strip()),
+        "start": dt, "has_time": "T" in str(it.get("startDate", "")),
+        "town": town, "venue": html.unescape(venue) or name, "price": price,
+        "url": it.get("url", "") or "", "img": img,
+    }
+
+def parse_jsonld(name: str, town: str, page: str, coord) -> list[dict]:
+    try:
+        soup = BeautifulSoup(fetch(page).text, "html.parser")
+    except Exception:
+        return []
+    rows = [_ld_event_to_row(it, name, town) for it in _jsonld_event_items(soup)]
+    return [r for r in rows if r]
+
+def parse_melody(name: str, town: str, listing: str, coord) -> list[dict]:
+    """Melody Tent has no Tribe API, but each show's detail page carries an Event
+    JSON-LD block. Walk the listing (a[href*="/event/"]) to those pages and read it."""
+    host = "https://www.melodytent.org"
+    seen, links = set(), []
+    for lst in (listing, host + "/upcoming-events/"):
+        try:
+            soup = BeautifulSoup(fetch(lst).text, "html.parser")
+        except Exception:
+            continue
+        for a in soup.select('a[href*="/event/"]'):
+            h = a.get("href") or ""
+            if h.startswith("/"):
+                h = host + h
+            if "/event/" in h and h not in seen:
+                seen.add(h)
+                links.append(h)
+        if links:
+            break
+    out = []
+    for h in links[:PER_SOURCE_CAP + 8]:
+        try:
+            ds = BeautifulSoup(fetch(h).text, "html.parser")
+        except Exception:
+            continue
+        for it in _jsonld_event_items(ds):
+            row = _ld_event_to_row(it, name, town)
+            if row:
+                if not row["url"]:
+                    row["url"] = h
+                out.append(row)
     return out
 
 def parse_ics(name: str, town: str, url: str, coord) -> list[dict]:
@@ -429,7 +484,10 @@ def parse_squarespace(name: str, town: str, url: str, coord) -> list[dict]:
     except Exception:
         return out
     host = url.split("/")[0] + "//" + url.split("/")[2]
-    for it in (j.get("items") or []):
+    # Squarespace event collections in calendar view expose events under "upcoming"
+    # (and "items" in list view). Merge both so we catch either layout.
+    rows = (j.get("items") or []) + (j.get("upcoming") or [])
+    for it in rows:
         sd = it.get("startDate") or (it.get("structuredContent") or {}).get("startDate")
         if not sd:
             continue
@@ -520,6 +578,8 @@ def main() -> None:
                 evs = parse_ics(name, town, url, coord)
             elif kind == "squarespace":
                 evs = parse_squarespace(name, town, url, coord)
+            elif kind == "melody":
+                evs = parse_melody(name, town, url, coord)
             elif kind == "custom_ptown":
                 evs = parse_custom_ptown(town, url)
             elif kind == "custom_canal":
