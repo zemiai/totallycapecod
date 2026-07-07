@@ -1,8 +1,36 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-07T17:32:36Z",
+  "updated_at": "2026-07-07T19:53:50Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
+    {
+      "id": "inat-379135373",
+      "species": "seal",
+      "count": 1,
+      "lat": 42.0663,
+      "lng": -70.1122,
+      "location": "Provincetown, MA, US",
+      "reported_by": "iNaturalist \u00b7 huhamaza",
+      "reported_at": "2026-07-07T16:22:20Z",
+      "time_ago": "3 h ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/693484051/medium.jpg",
+      "notes": "Grey Seal",
+      "source_url": "https://www.inaturalist.org/observations/379135373"
+    },
+    {
+      "id": "inat-379134307",
+      "species": "minke",
+      "count": 1,
+      "lat": 41.8948,
+      "lng": -70.0697,
+      "location": "Wellfleet Harbor, Wellfleet, MA, US",
+      "reported_by": "iNaturalist \u00b7 mkitty",
+      "reported_at": "2026-07-07T14:58:52Z",
+      "time_ago": "4 h ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/693482063/medium.jpg",
+      "notes": "Common Minke Whale",
+      "source_url": "https://www.inaturalist.org/observations/379134307"
+    },
     {
       "id": "inat-378491531",
       "species": "dolphin",
@@ -12,7 +40,7 @@
       "location": "Massachusetts, US",
       "reported_by": "iNaturalist \u00b7 emery2005",
       "reported_at": "2026-07-05T18:32:02Z",
-      "time_ago": "1 day ago",
+      "time_ago": "2 days ago",
       "photo_url": "",
       "notes": "Atlantic White-sided Dolphin",
       "source_url": "https://www.inaturalist.org/observations/378491531"
@@ -68,7 +96,7 @@
       "location": "Barcliff Avenue Ext, Chatham, MA, US",
       "reported_by": "iNaturalist \u00b7 spalmer29",
       "reported_at": "2026-07-01T17:34:25Z",
-      "time_ago": "5 days ago",
+      "time_ago": "6 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/692296749/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/378523161"
@@ -82,7 +110,7 @@
       "location": "Chatham, MA, USA",
       "reported_by": "iNaturalist \u00b7 jlscastle",
       "reported_at": "2026-06-30T18:13:47Z",
-      "time_ago": "6 days ago",
+      "time_ago": "7 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/689227969/medium.jpg",
       "notes": "Atlantic Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/376932381"
@@ -96,7 +124,7 @@
       "location": "Orleans, MA, US",
       "reported_by": "iNaturalist \u00b7 christensen_tim",
       "reported_at": "2026-06-28T19:05:08Z",
-      "time_ago": "8 days ago",
+      "time_ago": "9 days ago",
       "photo_url": "https://static.inaturalist.org/photos/692490085/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/378621612"
@@ -110,24 +138,10 @@
       "location": "Barcliff Avenue Ext, Chatham, MA, US",
       "reported_by": "iNaturalist \u00b7 whoajoshwhoa",
       "reported_at": "2026-06-28T18:57:52Z",
-      "time_ago": "8 days ago",
+      "time_ago": "9 days ago",
       "photo_url": "https://static.inaturalist.org/photos/688181802/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/376391250"
-    },
-    {
-      "id": "inat-376525345",
-      "species": "seal",
-      "count": 1,
-      "lat": 41.9196,
-      "lng": -70.5429,
-      "location": "Stage Point Rd, Plymouth, MA, US",
-      "reported_by": "iNaturalist \u00b7 sarahgosburn",
-      "reported_at": "2026-06-28T12:26:29Z",
-      "time_ago": "9 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/688443523/medium.jpg",
-      "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/376525345"
     },
     {
       "id": "inat-376156149",
@@ -222,7 +236,7 @@
       "location": "United States",
       "reported_by": "iNaturalist \u00b7 redpidoptera",
       "reported_at": "2026-06-25T18:35:31Z",
-      "time_ago": "11 days ago",
+      "time_ago": "12 days ago",
       "photo_url": "https://static.inaturalist.org/photos/686909223/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/375725284"
