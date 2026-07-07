@@ -1,0 +1,63 @@
+name: "fetch stock images"
+
+# One-time/on-demand: downloads candidate free-commercial-use photos (Pexels
+# license — free for commercial use, no attribution required) into
+# img/social/stock/ so they can be reviewed and used in social posts/ads.
+# Failures on individual URLs are fine — we curate what lands.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download candidates
+        run: |
+          mkdir -p img/social/stock
+          fetch () {  # fetch <output-name> <url>
+            if curl -sL --max-time 30 -o "img/social/stock/$1" "$2" && [ "$(stat -c%s img/social/stock/$1)" -gt 20000 ]; then
+              echo "OK   $1"
+            else
+              echo "FAIL $1"; rm -f "img/social/stock/$1"
+            fi
+          }
+          # Verified Cape Cod photos from Pexels search
+          fetch cape-beach-grass.jpg      "https://images.pexels.com/photos/296100/pexels-photo-296100.jpeg?auto=compress&w=1600"
+          fetch cape-sunset-heart.jpg     "https://images.pexels.com/photos/68639/pexels-photo-68639.jpeg?auto=compress&w=1600"
+          # Strong candidates (classic beach/coast/lighthouse/seafood, Pexels)
+          fetch beach-umbrella.jpg        "https://images.pexels.com/photos/1032650/pexels-photo-1032650.jpeg?auto=compress&w=1600"
+          fetch lighthouse-coast.jpg      "https://images.pexels.com/photos/831084/pexels-photo-831084.jpeg?auto=compress&w=1600"
+          fetch beach-dunes.jpg           "https://images.pexels.com/photos/533923/pexels-photo-533923.jpeg?auto=compress&w=1600"
+          fetch beach-aerial.jpg          "https://images.pexels.com/photos/1590549/pexels-photo-1590549.jpeg?auto=compress&w=1600"
+          fetch harbor-boats.jpg          "https://images.pexels.com/photos/273886/pexels-photo-273886.jpeg?auto=compress&w=1600"
+          fetch lobster-roll.jpg          "https://images.pexels.com/photos/16743486/pexels-photo-16743486.jpeg?auto=compress&w=1600"
+          fetch oysters.jpg               "https://images.pexels.com/photos/566345/pexels-photo-566345.jpeg?auto=compress&w=1600"
+          fetch kids-beach.jpg            "https://images.pexels.com/photos/1231365/pexels-photo-1231365.jpeg?auto=compress&w=1600"
+          fetch sunset-water.jpg          "https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg?auto=compress&w=1600"
+          echo "---- landed ----"; ls -la img/social/stock/
+      - name: Record licenses
+        run: |
+          cat > img/social/stock/LICENSES.md <<'EOF'
+          All images in this folder were downloaded from Pexels.com.
+          Pexels license: free to use for commercial purposes, no attribution
+          required, modification allowed. https://www.pexels.com/license/
+          Downloaded via .github/workflows/fetch-stock-images.yml — file names
+          map to the pexels-photo-<id> in each URL in that workflow.
+          EOF
+      - name: Commit
+        run: |
+          git config user.name "hermes-bot"
+          git config user.email "hermes-bot@users.noreply.github.com"
+          git add img/social/stock
+          git diff --cached --quiet && echo "nothing landed" && exit 0
+          git commit -m "[social] stock photo candidates (Pexels, free commercial use)"
+          for i in 1 2 3 4 5; do
+            git push && exit 0
+            git pull --rebase --autostash origin main || exit 1
+            sleep $((i * 3))
+          done
+          exit 1
