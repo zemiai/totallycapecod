@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-08T16:38:39Z",
+  "updated_at": "2026-07-08T18:16:25Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -68,7 +68,7 @@
       "location": "Gulf of Maine, US",
       "reported_by": "iNaturalist \u00b7 liamnorton3",
       "reported_at": "2026-07-05T17:06:45Z",
-      "time_ago": "2 days ago",
+      "time_ago": "3 days ago",
       "photo_url": "https://static.inaturalist.org/photos/692348375/medium.jpg",
       "notes": "North Atlantic Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/378549483"
@@ -82,7 +82,7 @@
       "location": "US",
       "reported_by": "iNaturalist \u00b7 mass-a",
       "reported_at": "2026-07-05T17:02:00Z",
-      "time_ago": "2 days ago",
+      "time_ago": "3 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/693023727/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/378899798"
@@ -110,7 +110,7 @@
       "location": "Barcliff Avenue Ext, Chatham, MA, US",
       "reported_by": "iNaturalist \u00b7 whoajoshwhoa",
       "reported_at": "2026-07-03T16:53:57Z",
-      "time_ago": "4 days ago",
+      "time_ago": "5 days ago",
       "photo_url": "https://static.inaturalist.org/photos/692137908/medium.jpg",
       "notes": "Atlantic Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/378439701"
@@ -124,7 +124,7 @@
       "location": "Barcliff Avenue Ext, Chatham, MA, US",
       "reported_by": "iNaturalist \u00b7 spalmer29",
       "reported_at": "2026-07-01T17:34:25Z",
-      "time_ago": "6 days ago",
+      "time_ago": "7 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/692296749/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/378523161"
@@ -138,7 +138,7 @@
       "location": "Chatham, MA, USA",
       "reported_by": "iNaturalist \u00b7 jlscastle",
       "reported_at": "2026-06-30T18:13:47Z",
-      "time_ago": "7 days ago",
+      "time_ago": "8 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/689227969/medium.jpg",
       "notes": "Atlantic Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/376932381"
