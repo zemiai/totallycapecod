@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "date": "2026-07-09",
-  "updated_at": "2026-07-09T16:14:46Z",
+  "updated_at": "2026-07-09T16:45:00Z",
   "_hermes_note": "Hermes overwrites this daily at 5am ET. Categories: music, happy_hour, free_event, family, food_deal, drive_in, farmers_market, trivia, art.",
   "events": [
     {
@@ -21,6 +21,22 @@
       "source_url": "https://www.capedays.com/cape-cod-farmers-markets.html"
     },
     {
+      "id": "wellfleet-2026-07-09-makers-market",
+      "tag": "🌽 FARMERS MARKET",
+      "category": "farmers_market",
+      "date": "2026-07-09",
+      "time": "9:00 AM",
+      "title": "Wellfleet Makers Market",
+      "venue": "Mayo Beach, Wellfleet",
+      "town": "Wellfleet",
+      "info": "Wellfleet · Free · All ages · Local artisans & vendors · 9 AM–3:30 PM · Thursdays & Tuesdays",
+      "price": "Free",
+      "lat": 41.926,
+      "lng": -70.0322,
+      "img": "",
+      "source_url": "https://wellfleetculturaldistrict.org/events"
+    },
+    {
       "id": "falmouth-2026-07-09-farmers-market",
       "tag": "🌽 FARMERS MARKET",
       "category": "farmers_market",
@@ -32,7 +48,7 @@
       "info": "Falmouth · Free · All ages · Every Thursday 11 AM–3 PM through early Oct",
       "price": "Free",
       "lat": 41.5374,
-      "lng": -70.6010,
+      "lng": -70.601,
       "img": "",
       "source_url": "https://falmouthfarmersmarket.com/"
     },
@@ -48,7 +64,7 @@
       "info": "Falmouth · Free · All ages · Artists showcasing paintings, jewelry, pottery & fiber arts · Every Thursday 11 AM–4 PM",
       "price": "Free",
       "lat": 41.5374,
-      "lng": -70.6010,
+      "lng": -70.601,
       "img": "",
       "source_url": "https://www.capedays.com/cape-cod-events-july.html"
     },
@@ -95,8 +111,8 @@
       "town": "Yarmouth",
       "info": "Yarmouth · Free · All ages · Cape Cod Baseball League",
       "price": "Free",
-      "lat": 41.6580,
-      "lng": -70.1760,
+      "lat": 41.658,
+      "lng": -70.176,
       "img": "",
       "source_url": "https://www.capecodleague.com/schedule"
     },
@@ -288,9 +304,41 @@
       "info": "Chatham · Free · All ages · Cape Cod Baseball League",
       "price": "Free",
       "lat": 41.6894,
-      "lng": -69.9630,
+      "lng": -69.963,
       "img": "",
       "source_url": "https://www.capecodleague.com/schedule"
+    },
+    {
+      "id": "payomet-2026-07-09-mavis-staples",
+      "tag": "🎵 LIVE MUSIC",
+      "category": "music",
+      "date": "2026-07-09",
+      "time": "7:00 PM",
+      "title": "Mavis Staples",
+      "venue": "Payomet Performing Arts Center, 29 Old Dewline Rd",
+      "town": "Truro",
+      "info": "Truro · Ticketed · All ages · R&B / soul legend live at Payomet",
+      "price": "Ticketed",
+      "lat": 42.0273,
+      "lng": -70.0616,
+      "img": "",
+      "source_url": "https://payomet.org"
+    },
+    {
+      "id": "provincetown-2026-07-09-youve-got-a-friend",
+      "tag": "🎵 LIVE MUSIC",
+      "category": "music",
+      "date": "2026-07-09",
+      "time": "7:00 PM",
+      "title": "\"You've Got a Friend\" — Carole King & James Taylor Tribute",
+      "venue": "Gifford House, Provincetown",
+      "town": "Provincetown",
+      "info": "Provincetown · $30–$40 · 21+ · With Yaron Spiwak & Josie James",
+      "price": "$30",
+      "lat": 42.0508,
+      "lng": -70.1852,
+      "img": "",
+      "source_url": "https://ptownie.com/provincetown-calendar/"
     },
     {
       "id": "wellfleetcinemas-2026-07-09-drive-in",
@@ -307,6 +355,22 @@
       "lng": -70.0156,
       "img": "",
       "source_url": "https://www.wellfleetcinemas.com/drive-in-theatre/"
+    },
+    {
+      "id": "mashpee-2026-07-09-summer-movie-mamma-mia",
+      "tag": "🎉 FREE EVENT",
+      "category": "free_event",
+      "date": "2026-07-09",
+      "time": "8:30 PM",
+      "title": "Mashpee Summer Movie Night: Mamma Mia!",
+      "venue": "Mashpee Commons Bandstand",
+      "town": "Mashpee",
+      "info": "Mashpee · Free · All ages · Outdoor movie under the stars at Mashpee Commons",
+      "price": "Free",
+      "lat": 41.6162,
+      "lng": -70.4876,
+      "img": "",
+      "source_url": "https://mashpeecommons.com/summereventschedule/"
     },
     {
       "id": "beachcomber-2026-07-09-jammy-buffett",
@@ -389,6 +453,38 @@
       "source_url": "https://www.capedays.com/cape-cod-events-july.html"
     },
     {
+      "id": "sandwich-2026-07-10-heritage-hydrangea-festival",
+      "tag": "🎨 ART",
+      "category": "art",
+      "date": "2026-07-10",
+      "time": "10:00 AM",
+      "title": "Cape Cod Hydrangea Festival at Heritage Museums & Gardens",
+      "venue": "Heritage Museums & Gardens, 67 Grove St",
+      "town": "Sandwich",
+      "info": "Sandwich · $26 adults · $16 youth · Members free · Daily 10 AM–5 PM through Jul 19",
+      "price": "$26",
+      "lat": 41.7478,
+      "lng": -70.5245,
+      "img": "",
+      "source_url": "https://heritagemuseumsandgardens.org/mecevents/hydrangea-festival-1/"
+    },
+    {
+      "id": "barnstable-2026-07-10-cape-cod-greek-festival-day1",
+      "tag": "🎉 FREE EVENT",
+      "category": "free_event",
+      "date": "2026-07-10",
+      "time": "11:00 AM",
+      "title": "Cape Cod Greek Festival (Day 1 of 2)",
+      "venue": "St. George Greek Orthodox Church, 1130 Falmouth Rd",
+      "town": "Barnstable",
+      "info": "Barnstable · Free admission · All ages · Authentic Greek food, music & dancing · Also Sat Jul 11",
+      "price": "Free",
+      "lat": 41.6471,
+      "lng": -70.3455,
+      "img": "",
+      "source_url": "https://www.greekboston.com/event/festival-cape-cod/"
+    },
+    {
       "id": "trurovineyards-2026-07-10-endless-summer-monica-rizzio",
       "tag": "🎵 LIVE MUSIC",
       "category": "music",
@@ -437,6 +533,38 @@
       "source_url": "https://www.capedays.com/cape-cod-music-free.html"
     },
     {
+      "id": "barnstable-2026-07-10-friday-night-main-street",
+      "tag": "🎵 LIVE MUSIC",
+      "category": "music",
+      "date": "2026-07-10",
+      "time": "6:00 PM",
+      "title": "Friday Night Performances on Hyannis Main Street",
+      "venue": "Hyannis Main Street",
+      "town": "Barnstable",
+      "info": "Barnstable · Free · All ages · Live street performances every Friday summer series",
+      "price": "Free",
+      "lat": 41.6516,
+      "lng": -70.283,
+      "img": "",
+      "source_url": "https://artscapecod.org"
+    },
+    {
+      "id": "truro-2026-07-10-leftover-salmon",
+      "tag": "🎵 LIVE MUSIC",
+      "category": "music",
+      "date": "2026-07-10",
+      "time": "7:00 PM",
+      "title": "Leftover Salmon",
+      "venue": "Payomet Performing Arts Center, 29 Old Dewline Rd",
+      "town": "Truro",
+      "info": "Truro · Ticketed · All ages · Bluegrass / jam band legends at Payomet",
+      "price": "Ticketed",
+      "lat": 42.0273,
+      "lng": -70.0616,
+      "img": "",
+      "source_url": "https://payomet.org"
+    },
+    {
       "id": "chatham-2026-07-10-band-concert",
       "tag": "🎵 LIVE MUSIC",
       "category": "music",
@@ -451,6 +579,22 @@
       "lng": -69.9607,
       "img": "",
       "source_url": "https://www.chathamband.com/concert-info"
+    },
+    {
+      "id": "barnstable-2026-07-10-little-river-band",
+      "tag": "🎵 LIVE MUSIC",
+      "category": "music",
+      "date": "2026-07-10",
+      "time": "8:00 PM",
+      "title": "Little River Band",
+      "venue": "Cape Cod Melody Tent, 21 W Main St",
+      "town": "Barnstable",
+      "info": "Barnstable · Ticketed · All ages · Classic rock legends at the Melody Tent · Doors 7 PM",
+      "price": "Ticketed",
+      "lat": 41.6543,
+      "lng": -70.2905,
+      "img": "",
+      "source_url": "https://www.melodytent.org"
     },
     {
       "id": "wellfleetcinemas-2026-07-10-drive-in",
@@ -565,6 +709,38 @@
       "source_url": "https://www.capedays.com/cape-cod-farmers-markets.html"
     },
     {
+      "id": "chatham-2026-07-11-liberty-craft-festival-day1",
+      "tag": "🎨 ART",
+      "category": "art",
+      "date": "2026-07-11",
+      "time": "10:00 AM",
+      "title": "10th Annual Chatham Liberty Craft Festival (Day 1)",
+      "venue": "Community Center Lawn, 702 Main St",
+      "town": "Chatham",
+      "info": "Chatham · Free admission · All ages · Juried craft fair with 100+ artisans · 10 AM–5 PM",
+      "price": "Free",
+      "lat": 41.6795,
+      "lng": -69.962,
+      "img": "",
+      "source_url": "https://castleberryfairs.com/castleberry-chatham-liberty-craft-festival-com/"
+    },
+    {
+      "id": "barnstable-2026-07-11-cape-cod-greek-festival-day2",
+      "tag": "🎉 FREE EVENT",
+      "category": "free_event",
+      "date": "2026-07-11",
+      "time": "11:00 AM",
+      "title": "Cape Cod Greek Festival (Day 2 of 2)",
+      "venue": "St. George Greek Orthodox Church, 1130 Falmouth Rd",
+      "town": "Barnstable",
+      "info": "Barnstable · Free admission · All ages · Authentic Greek food, music & dancing",
+      "price": "Free",
+      "lat": 41.6471,
+      "lng": -70.3455,
+      "img": "",
+      "source_url": "https://www.greekboston.com/event/festival-cape-cod/"
+    },
+    {
       "id": "provincetown-2026-07-11-bear-week",
       "tag": "🎉 FREE EVENT",
       "category": "free_event",
@@ -581,6 +757,22 @@
       "source_url": "https://ptownchamber.com/events/"
     },
     {
+      "id": "barnstable-2026-07-11-circus-vazquez",
+      "tag": "👨‍👩‍👧 FAMILY",
+      "category": "family",
+      "date": "2026-07-11",
+      "time": "1:00 PM",
+      "title": "Circus Vazquez",
+      "venue": "Cape Cod Mall, 793 Iyannough Rd",
+      "town": "Barnstable",
+      "info": "Barnstable · $28–$298 · All ages · Shows at 1 PM, 4 PM & 7 PM · Also Sun Jul 12",
+      "price": "$28",
+      "lat": 41.645,
+      "lng": -70.2951,
+      "img": "",
+      "source_url": "https://www.ticketmaster.com/circus-vazquez-hyannis-07-11-2026/event/Z7r9jZ1A7P9jU"
+    },
+    {
       "id": "trurovineyards-2026-07-11-endless-summer-andrew-dimarzo",
       "tag": "🎵 LIVE MUSIC",
       "category": "music",
@@ -595,6 +787,22 @@
       "lng": -70.0517,
       "img": "",
       "source_url": "https://trurovineyardsofcapecod.com/events-calendar/"
+    },
+    {
+      "id": "truro-2026-07-11-paula-poundstone",
+      "tag": "🎨 ART",
+      "category": "art",
+      "date": "2026-07-11",
+      "time": "7:00 PM",
+      "title": "Paula Poundstone",
+      "venue": "Payomet Performing Arts Center, 29 Old Dewline Rd",
+      "town": "Truro",
+      "info": "Truro · Ticketed · All ages · Grammy-winning stand-up comedian at Payomet",
+      "price": "Ticketed",
+      "lat": 42.0273,
+      "lng": -70.0616,
+      "img": "",
+      "source_url": "https://payomet.org"
     },
     {
       "id": "wellfleetcinemas-2026-07-11-drive-in",
@@ -677,6 +885,22 @@
       "source_url": "https://ediblecapecod.ediblecommunities.com/shop/shop-cape-cod-farmers-markets/"
     },
     {
+      "id": "chatham-2026-07-12-liberty-craft-festival-day2",
+      "tag": "🎨 ART",
+      "category": "art",
+      "date": "2026-07-12",
+      "time": "10:00 AM",
+      "title": "10th Annual Chatham Liberty Craft Festival (Day 2)",
+      "venue": "Community Center Lawn, 702 Main St",
+      "town": "Chatham",
+      "info": "Chatham · Free admission · All ages · Juried craft fair with 100+ artisans · 10 AM–4 PM",
+      "price": "Free",
+      "lat": 41.6795,
+      "lng": -69.962,
+      "img": "",
+      "source_url": "https://castleberryfairs.com/castleberry-chatham-liberty-craft-festival-com/"
+    },
+    {
       "id": "mashpee-2026-07-12-farmers-market",
       "tag": "🌽 FARMERS MARKET",
       "category": "farmers_market",
@@ -707,6 +931,38 @@
       "lng": -70.0778,
       "img": "",
       "source_url": "https://www.capedays.com/cape-cod-music-free.html"
+    },
+    {
+      "id": "dennis-2026-07-12-bad-apple-ccmoa",
+      "tag": "🎵 LIVE MUSIC",
+      "category": "music",
+      "date": "2026-07-12",
+      "time": "4:00 PM",
+      "title": "Summer Music Series: Bad Apple",
+      "venue": "Cape Cod Museum of Art, 60 Hope Ln",
+      "town": "Dennis",
+      "info": "Dennis · $24 (includes museum admission) · All ages · Summer Music and More concert series",
+      "price": "$24",
+      "lat": 41.7325,
+      "lng": -70.1445,
+      "img": "",
+      "source_url": "https://www.capecod.com/lifestyle/adventure-awaits-this-week-on-cape-cod/"
+    },
+    {
+      "id": "falmouth-2026-07-12-brandi-disterheft-trio",
+      "tag": "🎵 LIVE MUSIC",
+      "category": "music",
+      "date": "2026-07-12",
+      "time": "4:00 PM",
+      "title": "The Brandi Disterheft Trio — Jazz",
+      "venue": "West Falmouth Library",
+      "town": "Falmouth",
+      "info": "Falmouth · $45 · All ages · Jazz concert at the West Falmouth Library",
+      "price": "$45",
+      "lat": 41.6087,
+      "lng": -70.6376,
+      "img": "",
+      "source_url": "https://www.capecod.com/lifestyle/adventure-awaits-this-week-on-cape-cod/"
     },
     {
       "id": "trurovineyards-2026-07-12-sunday-funday",
@@ -784,7 +1040,7 @@
       "info": "Dennis · Free · All ages · 18 member artists display watercolors, acrylics & oils · Every Monday 10 AM–4:30 PM",
       "price": "Free",
       "lat": 41.6588,
-      "lng": -70.1530,
+      "lng": -70.153,
       "img": "",
       "source_url": "https://www.capedays.com/cape-cod-events-july.html"
     },
@@ -837,6 +1093,22 @@
       "source_url": "https://trurovineyardsofcapecod.com/events-calendar/"
     },
     {
+      "id": "barnstable-2026-07-13-ukulele-club",
+      "tag": "🎵 LIVE MUSIC",
+      "category": "music",
+      "date": "2026-07-13",
+      "time": "5:30 PM",
+      "title": "Cape Cod Ukulele Club Concert",
+      "venue": "Hyannis Village Green",
+      "town": "Barnstable",
+      "info": "Barnstable · Free · All ages · Free outdoor ukulele concert · 5:30–6:30 PM",
+      "price": "Free",
+      "lat": 41.6516,
+      "lng": -70.283,
+      "img": "",
+      "source_url": "https://artscapecod.org"
+    },
+    {
       "id": "dennis-2026-07-13-village-green-concert",
       "tag": "🎵 LIVE MUSIC",
       "category": "music",
@@ -851,6 +1123,38 @@
       "lng": -70.1538,
       "img": "",
       "source_url": "https://www.capedays.com/cape-cod-music-free.html"
+    },
+    {
+      "id": "truro-2026-07-13-i-draw-slow",
+      "tag": "🎵 LIVE MUSIC",
+      "category": "music",
+      "date": "2026-07-13",
+      "time": "7:00 PM",
+      "title": "I Draw Slow (Irish Acoustic Roots, Dublin)",
+      "venue": "Payomet Performing Arts Center, 29 Old Dewline Rd",
+      "town": "Truro",
+      "info": "Truro · Ticketed · All ages · Acclaimed Irish folk band at Payomet",
+      "price": "Ticketed",
+      "lat": 42.0273,
+      "lng": -70.0616,
+      "img": "",
+      "source_url": "https://payomet.org"
+    },
+    {
+      "id": "eastham-2026-07-13-front-street-jazz",
+      "tag": "🎵 LIVE MUSIC",
+      "category": "music",
+      "date": "2026-07-13",
+      "time": "7:00 PM",
+      "title": "Front Street Jazz Ensemble",
+      "venue": "Windmill Green, Eastham",
+      "town": "Eastham",
+      "info": "Eastham · Free · All ages · Live jazz on the green",
+      "price": "Free",
+      "lat": 41.8369,
+      "lng": -69.9759,
+      "img": "",
+      "source_url": "https://provincetownindependent.org/indies-choice/2026/07/08/indies-choice-290/"
     },
     {
       "id": "wellfleetcinemas-2026-07-13-drive-in",
@@ -885,6 +1189,22 @@
       "source_url": "https://www.capedays.com/cape-cod-farmers-markets.html"
     },
     {
+      "id": "wellfleet-2026-07-14-makers-market",
+      "tag": "🌽 FARMERS MARKET",
+      "category": "farmers_market",
+      "date": "2026-07-14",
+      "time": "9:00 AM",
+      "title": "Wellfleet Makers Market",
+      "venue": "Mayo Beach, Wellfleet",
+      "town": "Wellfleet",
+      "info": "Wellfleet · Free · All ages · Local artisans & vendors · 9 AM–3:30 PM · Thursdays & Tuesdays",
+      "price": "Free",
+      "lat": 41.926,
+      "lng": -70.0322,
+      "img": "",
+      "source_url": "https://wellfleetculturaldistrict.org/events"
+    },
+    {
       "id": "brewster-2026-07-14-different-drummer-craft-fair",
       "tag": "🎨 ART",
       "category": "art",
@@ -912,7 +1232,7 @@
       "info": "Chatham · Free · All ages · Every Tuesday 3–6 PM through Oct 20",
       "price": "Free",
       "lat": 41.6766,
-      "lng": -69.9790,
+      "lng": -69.979,
       "img": "",
       "source_url": "https://www.capedays.com/cape-cod-farmers-markets.html"
     },
@@ -949,6 +1269,22 @@
       "source_url": "https://trurovineyardsofcapecod.com/events-calendar/"
     },
     {
+      "id": "orleans-2026-07-14-live-in-orleans",
+      "tag": "🎵 LIVE MUSIC",
+      "category": "music",
+      "date": "2026-07-14",
+      "time": "5:00 PM",
+      "title": "Live in Orleans! Summer Music Series",
+      "venue": "Various downtown locations, Orleans",
+      "town": "Orleans",
+      "info": "Orleans · Free · All ages · Multi-genre live music throughout downtown Orleans · 5–7 PM · Tuesdays all summer",
+      "price": "Free",
+      "lat": 41.7897,
+      "lng": -69.992,
+      "img": "",
+      "source_url": "https://www.weneedavacation.com/events/live-in-orleans-the-orleans-summer-music-series/"
+    },
+    {
       "id": "hyannis-2026-07-14-harbor-summer-sounds",
       "tag": "🎵 LIVE MUSIC",
       "category": "music",
@@ -965,6 +1301,22 @@
       "source_url": "https://www.capecodchamber.org/articles/stories/post/free-outdoor-entertainment-on-cape-cod/"
     },
     {
+      "id": "barnstable-2026-07-14-summer-sounds-kingfish",
+      "tag": "🎵 LIVE MUSIC",
+      "category": "music",
+      "date": "2026-07-14",
+      "time": "6:00 PM",
+      "title": "Summer Sounds Free Concert: The Kingfish",
+      "venue": "Aselton Park, Ocean St, Hyannis",
+      "town": "Barnstable",
+      "info": "Barnstable · Free · All ages · Blues/jazz at Aselton Park · 6–7:30 PM",
+      "price": "Free",
+      "lat": 41.6558,
+      "lng": -70.2827,
+      "img": "",
+      "source_url": "https://artscapecod.org/event/summer-sounds-concerts-2/"
+    },
+    {
       "id": "eastham-2026-07-14-salt-pond-concert",
       "tag": "🎵 LIVE MUSIC",
       "category": "music",
@@ -979,6 +1331,22 @@
       "lng": -69.9727,
       "img": "",
       "source_url": "https://www.nps.gov/caco/planyourvisit/concerts.htm"
+    },
+    {
+      "id": "wellfleet-2026-07-14-mosquito-story-slam",
+      "tag": "🎨 ART",
+      "category": "art",
+      "date": "2026-07-14",
+      "time": "7:00 PM",
+      "title": "Mosquito Story Slam",
+      "venue": "Wellfleet Preservation Hall, 335 Main St",
+      "town": "Wellfleet",
+      "info": "Wellfleet · $25 · All ages · Sign-ups 6:30 PM · True personal stories told live on stage",
+      "price": "$25",
+      "lat": 41.9284,
+      "lng": -70.0226,
+      "img": "",
+      "source_url": "https://provincetownindependent.org/indies-choice/2026/07/08/indies-choice-290/"
     },
     {
       "id": "squire-chatham-2026-07-14-trivia",
@@ -1045,6 +1413,22 @@
       "source_url": "https://harwichcc.com/"
     },
     {
+      "id": "barnstable-2026-07-15-homegrown-on-the-harbor",
+      "tag": "🎵 LIVE MUSIC",
+      "category": "music",
+      "date": "2026-07-15",
+      "time": "6:00 PM",
+      "title": "Homegrown on the Harbor (PIXY 103)",
+      "venue": "Aselton Park, Ocean St, Hyannis",
+      "town": "Barnstable",
+      "info": "Barnstable · Free · All ages · Local Cape Cod bands presented by PIXY 103 · 6–8 PM",
+      "price": "Free",
+      "lat": 41.6558,
+      "lng": -70.2827,
+      "img": "",
+      "source_url": "https://artsbarnstable.com/event/homegrown-on-the-harbor-free-outdoor-concerts-with-pixy-103-2/2026-07-01/"
+    },
+    {
       "id": "trurovineyards-2026-07-15-wine-and-dine",
       "tag": "🍻 HAPPY HOUR",
       "category": "happy_hour",
@@ -1088,7 +1472,7 @@
       "info": "Barnstable · Free · All ages · Wednesday summer concert series",
       "price": "Free",
       "lat": 41.6516,
-      "lng": -70.2830,
+      "lng": -70.283,
       "img": "",
       "source_url": "https://www.capecodchamber.org/articles/stories/post/free-outdoor-entertainment-on-cape-cod/"
     },
@@ -1119,7 +1503,7 @@
       "town": "Orleans",
       "info": "Orleans · Free · All ages · Wednesday evening steel pan music at Rock Harbor",
       "price": "Free",
-      "lat": 41.8230,
+      "lat": 41.823,
       "lng": -70.0099,
       "img": "",
       "source_url": "https://www.capedays.com/cape-cod-music-free.html"
@@ -1141,6 +1525,22 @@
       "source_url": "https://www.capedays.com/cape-cod-music-free.html"
     },
     {
+      "id": "barnstable-2026-07-15-judy-collins-richard-thompson",
+      "tag": "🎵 LIVE MUSIC",
+      "category": "music",
+      "date": "2026-07-15",
+      "time": "7:00 PM",
+      "title": "Judy Collins & Richard Thompson",
+      "venue": "Cape Cod Melody Tent, 21 W Main St",
+      "town": "Barnstable",
+      "info": "Barnstable · Ticketed · All ages · Folk/rock legends at the Melody Tent · Doors 6 PM",
+      "price": "Ticketed",
+      "lat": 41.6543,
+      "lng": -70.2905,
+      "img": "",
+      "source_url": "https://www.melodytent.org"
+    },
+    {
       "id": "squire-chatham-2026-07-15-musical-bingo",
       "tag": "🧠 TRIVIA",
       "category": "trivia",
@@ -1155,6 +1555,22 @@
       "lng": -69.9614,
       "img": "",
       "source_url": "https://thesquire.com/squire-entertainment-band-calendar"
+    },
+    {
+      "id": "harwich-2026-07-15-marc-cohn-shawn-colvin",
+      "tag": "🎵 LIVE MUSIC",
+      "category": "music",
+      "date": "2026-07-15",
+      "time": "8:00 PM",
+      "title": "Marc Cohn & Shawn Colvin — Cape Cod Jazz & Arts Festival",
+      "venue": "Wequassett Resort & Golf Club, Pleasant Bay",
+      "town": "Harwich",
+      "info": "Harwich · $95+ · 21+ · Dinner 6:30–8:30 PM, music at 8 PM · Reserve in advance",
+      "price": "$95",
+      "lat": 41.7182,
+      "lng": -70.0027,
+      "img": "",
+      "source_url": "https://wequassett.com/experience/cape-cod-jazz-festival/"
     },
     {
       "id": "wellfleetcinemas-2026-07-15-drive-in",
