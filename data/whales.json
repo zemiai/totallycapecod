@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-11T12:32:45Z",
+  "updated_at": "2026-07-11T14:21:37Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -124,7 +124,7 @@
       "location": "Provincetown, MA, US",
       "reported_by": "iNaturalist \u00b7 rsirull",
       "reported_at": "2026-07-09T13:01:23Z",
-      "time_ago": "1 day ago",
+      "time_ago": "2 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/694696566/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/379763397"
@@ -138,7 +138,7 @@
       "location": "Gulf of Maine, Provincetown, MA, US",
       "reported_by": "iNaturalist \u00b7 crifket",
       "reported_at": "2026-07-09T12:41:00Z",
-      "time_ago": "1 day ago",
+      "time_ago": "2 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/694889802/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/379861886"
@@ -152,7 +152,7 @@
       "location": "Gulf of Maine, MA, US",
       "reported_by": "iNaturalist \u00b7 crifket",
       "reported_at": "2026-07-09T12:41:00Z",
-      "time_ago": "1 day ago",
+      "time_ago": "2 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/694889621/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/379861810"
