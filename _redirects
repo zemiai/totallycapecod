@@ -11,6 +11,11 @@
 /app               /app/index.html    200!
 /app/              /app/index.html    200!
 
+# Founder admin dashboard (password-gated via ADMIN_KEY). Pretty URL → function.
+# Query string (?key=…) is forwarded automatically.
+/admin             /.netlify/functions/admin   200
+/admin/            /.netlify/functions/admin   200
+
 # Old paths kept for backwards compatibility.
 /app.html          /                   301!
 /index.html        /                   301!

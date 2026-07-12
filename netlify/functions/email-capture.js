@@ -38,10 +38,14 @@ exports.handler = async (event, context) => {
   const cleanEmail = email.toLowerCase().trim();
   const cleanSource = (source || 'unknown').toString().slice(0, 50);
 
-  // Store in Netlify blobs (available on Netlify)
+  // Store in Netlify blobs (available on Netlify). New emails only — if this
+  // address already signed up, skip the founder ping so repeats don't spam.
+  let isNewLead = false;
   try {
     const { getStore } = require('@netlify/blobs');
     const store = getStore('leads');
+    const already = await store.get(`email:${cleanEmail}`).catch(() => null);
+    isNewLead = !already;
     const id = `lead_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
     await store.setJSON(id, {
       email: cleanEmail,
@@ -49,8 +53,23 @@ exports.handler = async (event, context) => {
       url: url || '',
       timestamp: timestamp || new Date().toISOString(),
     });
+    // Dedupe marker so the same address doesn't re-notify on every submit.
+    await store.set(`email:${cleanEmail}`, timestamp || new Date().toISOString());
   } catch {
     // Blobs not available locally or not configured — that's fine
+  }
+
+  // Ping the founder about a genuinely new signup (Resend, else Zapier).
+  if (isNewLead) {
+    const { notifyFounder } = require('./lib/notify');
+    await notifyFounder({
+      subject: `📥 New email signup — ${cleanEmail}`,
+      html: `<p><strong>New Totally Cape Cod email signup</strong></p>`
+          + `<p>Email: <a href="mailto:${cleanEmail}">${cleanEmail}</a><br>`
+          + `Source: ${cleanSource}<br>`
+          + `Page: ${(url || '').toString().slice(0, 200)}<br>`
+          + `At: ${new Date(timestamp || Date.now()).toLocaleString()}</p>`,
+    });
   }
 
   // Forward to Zapier/Make webhook if configured
