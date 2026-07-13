@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-13T12:30:38Z",
+  "updated_at": "2026-07-13T15:40:55Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -12,7 +12,7 @@
       "location": "Cape Cod Bay, North Eastham, MA, US",
       "reported_by": "iNaturalist \u00b7 rose-free",
       "reported_at": "2026-07-13T01:05:22Z",
-      "time_ago": "11 h ago",
+      "time_ago": "14 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/696878986/medium.jpg",
       "notes": "Common Dolphin",
       "source_url": "https://www.inaturalist.org/observations/380889749"
@@ -96,7 +96,7 @@
       "location": "Off Cape Cod",
       "reported_by": "iNaturalist \u00b7 tyler_van_liew",
       "reported_at": "2026-07-11T15:12:25Z",
-      "time_ago": "1 day ago",
+      "time_ago": "2 days ago",
       "photo_url": "https://static.inaturalist.org/photos/696138634/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/380507115"
@@ -222,7 +222,7 @@
       "location": "Provincetown, MA, US",
       "reported_by": "iNaturalist \u00b7 rsirull",
       "reported_at": "2026-07-09T13:01:23Z",
-      "time_ago": "3 days ago",
+      "time_ago": "4 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/694696566/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/379763397"
@@ -236,7 +236,7 @@
       "location": "Gulf of Maine, Provincetown, MA, US",
       "reported_by": "iNaturalist \u00b7 crifket",
       "reported_at": "2026-07-09T12:41:00Z",
-      "time_ago": "3 days ago",
+      "time_ago": "4 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/694889802/medium.jpg",
       "notes": "Atlantic Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/379861886"
@@ -250,7 +250,7 @@
       "location": "Wellfleet Harbor, Wellfleet, MA, US",
       "reported_by": "iNaturalist \u00b7 mkitty",
       "reported_at": "2026-07-07T14:58:52Z",
-      "time_ago": "5 days ago",
+      "time_ago": "6 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/693482063/medium.jpg",
       "notes": "Common Minke Whale",
       "source_url": "https://www.inaturalist.org/observations/379134307"
@@ -306,7 +306,7 @@
       "location": "US",
       "reported_by": "iNaturalist \u00b7 canadianorchard",
       "reported_at": "2026-07-04T15:21:10Z",
-      "time_ago": "8 days ago",
+      "time_ago": "9 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/692033140/medium.jpg",
       "notes": "North Atlantic Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/378384396"
