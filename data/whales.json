@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-14T17:40:12Z",
+  "updated_at": "2026-07-14T19:18:06Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -250,7 +250,7 @@
       "location": "US",
       "reported_by": "iNaturalist \u00b7 rbpeake",
       "reported_at": "2026-07-11T18:32:31Z",
-      "time_ago": "2 days ago",
+      "time_ago": "3 days ago",
       "photo_url": "https://static.inaturalist.org/photos/696196751/medium.jpg",
       "notes": "Atlantic Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/380536495"
@@ -264,7 +264,7 @@
       "location": "US",
       "reported_by": "iNaturalist \u00b7 rbpeake",
       "reported_at": "2026-07-11T18:09:31Z",
-      "time_ago": "2 days ago",
+      "time_ago": "3 days ago",
       "photo_url": "https://static.inaturalist.org/photos/696018306/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/380445603"
@@ -278,7 +278,7 @@
       "location": "US",
       "reported_by": "iNaturalist \u00b7 rbpeake",
       "reported_at": "2026-07-11T17:46:31Z",
-      "time_ago": "2 days ago",
+      "time_ago": "3 days ago",
       "photo_url": "https://static.inaturalist.org/photos/696200790/medium.jpg",
       "notes": "Atlantic White-sided Dolphin",
       "source_url": "https://www.inaturalist.org/observations/380538625"
@@ -306,7 +306,7 @@
       "location": "Gulf of Maine, MA, US",
       "reported_by": "iNaturalist \u00b7 crifket",
       "reported_at": "2026-07-09T18:56:00Z",
-      "time_ago": "4 days ago",
+      "time_ago": "5 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/695443658/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/380145943"
@@ -320,7 +320,7 @@
       "location": "Gulf of Maine, US",
       "reported_by": "iNaturalist \u00b7 crifket",
       "reported_at": "2026-07-09T18:51:00Z",
-      "time_ago": "4 days ago",
+      "time_ago": "5 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/695438641/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/380144010"
@@ -334,7 +334,7 @@
       "location": "Gulf of Maine, MA, US",
       "reported_by": "iNaturalist \u00b7 crifket",
       "reported_at": "2026-07-09T18:50:00Z",
-      "time_ago": "4 days ago",
+      "time_ago": "5 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/695436790/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/380143090"
@@ -348,7 +348,7 @@
       "location": "Gulf of Maine, US",
       "reported_by": "iNaturalist \u00b7 crifket",
       "reported_at": "2026-07-09T18:23:09Z",
-      "time_ago": "4 days ago",
+      "time_ago": "5 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/694879441/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/379857044"
@@ -362,7 +362,7 @@
       "location": "Massachusetts, US",
       "reported_by": "iNaturalist \u00b7 crifket",
       "reported_at": "2026-07-09T17:46:00Z",
-      "time_ago": "4 days ago",
+      "time_ago": "5 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/694892260/medium.jpg",
       "notes": "Fin Whale",
       "source_url": "https://www.inaturalist.org/observations/379863083"
@@ -376,7 +376,7 @@
       "location": "Massachusetts, US",
       "reported_by": "iNaturalist \u00b7 crifket",
       "reported_at": "2026-07-09T17:45:00Z",
-      "time_ago": "4 days ago",
+      "time_ago": "5 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/694892023/medium.jpg",
       "notes": "Fin Whale",
       "source_url": "https://www.inaturalist.org/observations/379862959"
@@ -404,7 +404,7 @@
       "location": "Massachusetts, US",
       "reported_by": "iNaturalist \u00b7 emery2005",
       "reported_at": "2026-07-05T18:32:02Z",
-      "time_ago": "8 days ago",
+      "time_ago": "9 days ago",
       "photo_url": "",
       "notes": "Atlantic White-sided Dolphin",
       "source_url": "https://www.inaturalist.org/observations/378491531"
