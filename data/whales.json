@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-15T03:15:17Z",
+  "updated_at": "2026-07-15T05:51:54Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -12,7 +12,7 @@
       "location": "Gulf of Maine, US",
       "reported_by": "iNaturalist \u00b7 shanadventures",
       "reported_at": "2026-07-14T15:23:44Z",
-      "time_ago": "11 h ago",
+      "time_ago": "14 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/697995549/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/381467330"
@@ -200,6 +200,20 @@
       "source_url": "https://www.inaturalist.org/observations/380889749"
     },
     {
+      "id": "inat-381563584",
+      "species": "seal",
+      "count": 1,
+      "lat": 42.1989,
+      "lng": -70.2107,
+      "location": "Gulf of Maine, US",
+      "reported_by": "iNaturalist \u00b7 xlaevis",
+      "reported_at": "2026-07-12T20:35:29Z",
+      "time_ago": "2 days ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/698186902/medium.jpg",
+      "notes": "Grey Seal",
+      "source_url": "https://www.inaturalist.org/observations/381563584"
+    },
+    {
       "id": "inat-381263433",
       "species": "humpback",
       "count": 1,
@@ -268,20 +282,6 @@
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/696380710/medium.jpg",
       "notes": "Atlantic Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/380632030"
-    },
-    {
-      "id": "inat-380536495",
-      "species": "seal",
-      "count": 1,
-      "lat": 42.196,
-      "lng": -70.144,
-      "location": "US",
-      "reported_by": "iNaturalist \u00b7 rbpeake",
-      "reported_at": "2026-07-11T18:32:31Z",
-      "time_ago": "3 days ago",
-      "photo_url": "https://static.inaturalist.org/photos/696196751/medium.jpg",
-      "notes": "Atlantic Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/380536495"
     },
     {
       "id": "inat-380445603",
