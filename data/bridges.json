@@ -2,7 +2,7 @@
   "current": {
     "sagamore": {
       "name": "Sagamore Bridge",
-      "current_delay_min": 0,
+      "current_delay_min": 1,
       "current_status": "light",
       "direction": "off_cape",
       "advice": "Sail through \u2014 no delays right now",
@@ -141,5 +141,5 @@
     "on_cape_saturday": "Before 8 AM"
   },
   "version": "1.0",
-  "updated_at": "2026-07-17T16:59:47Z"
+  "updated_at": "2026-07-17T18:07:00Z"
 }
