@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-19T15:56:46Z",
+  "updated_at": "2026-07-19T17:00:50Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -124,7 +124,7 @@
       "location": "Gulf of Maine, MA, US",
       "reported_by": "iNaturalist \u00b7 alex_grady913",
       "reported_at": "2026-07-13T16:15:00Z",
-      "time_ago": "5 days ago",
+      "time_ago": "6 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/697347090/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/381133528"
@@ -138,7 +138,7 @@
       "location": "US",
       "reported_by": "iNaturalist \u00b7 ktmk",
       "reported_at": "2026-07-13T16:13:40Z",
-      "time_ago": "5 days ago",
+      "time_ago": "6 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/697344318/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/381131753"
@@ -152,7 +152,7 @@
       "location": "Gulf of Maine, MA, US",
       "reported_by": "iNaturalist \u00b7 alex_grady913",
       "reported_at": "2026-07-13T16:02:00Z",
-      "time_ago": "5 days ago",
+      "time_ago": "6 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/697353141/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/381132888"
@@ -166,7 +166,7 @@
       "location": "Gulf of Maine, US",
       "reported_by": "iNaturalist \u00b7 alex_grady913",
       "reported_at": "2026-07-13T15:58:00Z",
-      "time_ago": "5 days ago",
+      "time_ago": "6 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/697345558/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/381132401"
@@ -278,7 +278,7 @@
       "location": "US",
       "reported_by": "iNaturalist \u00b7 swampangela",
       "reported_at": "2026-07-12T16:26:47Z",
-      "time_ago": "6 days ago",
+      "time_ago": "7 days ago",
       "photo_url": "https://static.inaturalist.org/photos/697602930/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/381263433"
@@ -362,7 +362,7 @@
       "location": "Barnstable County, MA, USA",
       "reported_by": "iNaturalist \u00b7 mark_o",
       "reported_at": "2026-07-10T17:00:00Z",
-      "time_ago": "8 days ago",
+      "time_ago": "9 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/698432283/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/381690496"
