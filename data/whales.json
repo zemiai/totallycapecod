@@ -1,21 +1,21 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-20T18:28:42Z",
+  "updated_at": "2026-07-20T20:08:18Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
-      "id": "inat-383360208",
+      "id": "inat-383385839",
       "species": "seal",
       "count": 1,
-      "lat": 42.0817,
-      "lng": -70.2174,
-      "location": "Provincetown, MA, USA",
-      "reported_by": "iNaturalist \u00b7 lunatic768",
-      "reported_at": "2026-07-20T17:37:07Z",
-      "time_ago": "51 min ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/701645138/medium.jpg",
+      "lat": 41.688,
+      "lng": -69.9508,
+      "location": "Barcliff Avenue Ext, Chatham, MA, US",
+      "reported_by": "iNaturalist \u00b7 tom_polk",
+      "reported_at": "2026-07-20T14:57:47Z",
+      "time_ago": "5 h ago",
+      "photo_url": "https://static.inaturalist.org/photos/701695978/medium.jpg",
       "notes": "Harbor Seal",
-      "source_url": "https://www.inaturalist.org/observations/383360208"
+      "source_url": "https://www.inaturalist.org/observations/383385839"
     },
     {
       "id": "inat-383008473",
