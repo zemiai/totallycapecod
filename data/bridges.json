@@ -2,21 +2,21 @@
   "current": {
     "sagamore": {
       "name": "Sagamore Bridge",
-      "current_delay_min": 1,
+      "current_delay_min": 0,
       "current_status": "light",
       "direction": "off_cape",
       "advice": "Sail through \u2014 no delays right now",
-      "live_speed_mph": 28,
+      "live_speed_mph": 29,
       "free_flow_mph": 55,
       "last_check": "just now"
     },
     "bourne": {
       "name": "Bourne Bridge",
-      "current_delay_min": 1,
+      "current_delay_min": 0,
       "current_status": "light",
       "direction": "off_cape",
       "advice": "Sail through \u2014 no delays right now",
-      "live_speed_mph": 25,
+      "live_speed_mph": 26,
       "free_flow_mph": 55,
       "last_check": "just now"
     }
@@ -141,5 +141,5 @@
     "on_cape_saturday": "Before 8 AM"
   },
   "version": "1.0",
-  "updated_at": "2026-07-21T15:28:22Z"
+  "updated_at": "2026-07-21T17:06:08Z"
 }
