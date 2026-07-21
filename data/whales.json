@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-21T12:52:28Z",
+  "updated_at": "2026-07-21T15:03:13Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -12,7 +12,7 @@
       "location": "Barnstable County, US-MA, US",
       "reported_by": "iNaturalist \u00b7 anvovk",
       "reported_at": "2026-07-20T22:06:05Z",
-      "time_ago": "14 h ago",
+      "time_ago": "16 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/701794695/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/383436712"
@@ -26,10 +26,24 @@
       "location": "Provincetown, MA, USA",
       "reported_by": "iNaturalist \u00b7 lunatic768",
       "reported_at": "2026-07-20T17:37:07Z",
-      "time_ago": "19 h ago",
+      "time_ago": "21 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/701645138/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/383360208"
+    },
+    {
+      "id": "inat-383385839",
+      "species": "seal",
+      "count": 1,
+      "lat": 41.688,
+      "lng": -69.9508,
+      "location": "Barcliff Avenue Ext, Chatham, MA, US",
+      "reported_by": "iNaturalist \u00b7 tom_polk",
+      "reported_at": "2026-07-20T14:57:47Z",
+      "time_ago": "1 day ago",
+      "photo_url": "https://static.inaturalist.org/photos/701695978/medium.jpg",
+      "notes": "Grey Seal",
+      "source_url": "https://www.inaturalist.org/observations/383385839"
     },
     {
       "id": "inat-383008473",
@@ -54,7 +68,7 @@
       "location": "Chatham, MA, USA",
       "reported_by": "iNaturalist \u00b7 mycapecodadventurepictures",
       "reported_at": "2026-07-18T13:37:00Z",
-      "time_ago": "2 days ago",
+      "time_ago": "3 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/700481221/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/382757312"
@@ -86,20 +100,6 @@
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/700580033/medium.jpg",
       "notes": "Common Dolphin",
       "source_url": "https://www.inaturalist.org/observations/382806039"
-    },
-    {
-      "id": "inat-382277147",
-      "species": "seal",
-      "count": 1,
-      "lat": 41.6545,
-      "lng": -69.9737,
-      "location": "Chatham, MA, USA",
-      "reported_by": "iNaturalist \u00b7 catfinn",
-      "reported_at": "2026-07-16T23:06:00Z",
-      "time_ago": "4 days ago",
-      "photo_url": "https://static.inaturalist.org/photos/699565022/medium.jpg",
-      "notes": "Atlantic Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/382277147"
     },
     {
       "id": "inat-381467330",
@@ -418,7 +418,7 @@
       "location": "Wellfleet Harbor, Wellfleet, MA, US",
       "reported_by": "iNaturalist \u00b7 mkitty",
       "reported_at": "2026-07-07T14:58:52Z",
-      "time_ago": "13 days ago",
+      "time_ago": "14 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/693482063/medium.jpg",
       "notes": "Common Minke Whale",
       "source_url": "https://www.inaturalist.org/observations/379134307"
