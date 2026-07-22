@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-21T23:30:12Z",
+  "updated_at": "2026-07-22T01:00:15Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -408,20 +408,6 @@
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/694892023/medium.jpg",
       "notes": "Fin Whale",
       "source_url": "https://www.inaturalist.org/observations/379862959"
-    },
-    {
-      "id": "inat-379134307",
-      "species": "minke",
-      "count": 1,
-      "lat": 41.8948,
-      "lng": -70.0697,
-      "location": "Wellfleet Harbor, Wellfleet, MA, US",
-      "reported_by": "iNaturalist \u00b7 mkitty",
-      "reported_at": "2026-07-07T14:58:52Z",
-      "time_ago": "14 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/693482063/medium.jpg",
-      "notes": "Common Minke Whale",
-      "source_url": "https://www.inaturalist.org/observations/379134307"
     }
   ]
 }
