@@ -12,11 +12,11 @@
     },
     "bourne": {
       "name": "Bourne Bridge",
-      "current_delay_min": 2,
+      "current_delay_min": 4,
       "current_status": "light",
       "direction": "off_cape",
       "advice": "Sail through \u2014 no delays right now",
-      "live_speed_mph": 22,
+      "live_speed_mph": 17,
       "free_flow_mph": 55,
       "last_check": "just now"
     }
@@ -141,5 +141,5 @@
     "on_cape_saturday": "Before 8 AM"
   },
   "version": "1.0",
-  "updated_at": "2026-07-23T18:59:04Z"
+  "updated_at": "2026-07-23T20:12:34Z"
 }
