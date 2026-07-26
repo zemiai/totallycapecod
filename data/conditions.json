@@ -1,20 +1,20 @@
 {
   "today": {
-    "date": "2026-07-25",
+    "date": "2026-07-26",
     "weather": {
-      "temp_high": 73,
-      "temp_low": 59,
+      "temp_high": 68,
+      "temp_low": 63,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "wind_mph": 2,
-      "wind_dir": "E",
+      "wind_mph": 9,
+      "wind_dir": "NE",
       "humidity": 65,
       "uv_index": 7
     },
     "sun": {
-      "sunrise": "5:26 AM",
-      "sunset": "8:07 PM",
-      "civil_twilight_end": "8:37 PM",
+      "sunrise": "5:27 AM",
+      "sunset": "8:06 PM",
+      "civil_twilight_end": "8:36 PM",
       "best_sunset_spot": {
         "name": "Skaket Beach",
         "town": "Orleans",
@@ -23,22 +23,22 @@
     },
     "tides": [
       {
-        "time": "4:18 AM",
+        "time": "5:09 AM",
         "type": "low",
         "height_ft": -0.1
       },
       {
-        "time": "10:07 AM",
+        "time": "10:58 AM",
         "type": "high",
         "height_ft": 4.0
       },
       {
-        "time": "4:02 PM",
+        "time": "4:52 PM",
         "type": "low",
         "height_ft": 0.4
       },
       {
-        "time": "10:15 PM",
+        "time": "11:02 PM",
         "type": "high",
         "height_ft": 5.1
       }
@@ -49,25 +49,12 @@
   },
   "forecast_7day": [
     {
-      "date": "2026-07-25",
-      "day": "Sat",
-      "temp_low": 62,
-      "temp_high": 73,
-      "condition": "Sunny",
-      "icon": "\u2600\ufe0f",
-      "sunrise": "5:26 AM",
-      "sunset": "8:07 PM",
-      "low_tide": "4:18 AM",
-      "high_tide": "10:07 AM",
-      "water_temp": 64
-    },
-    {
       "date": "2026-07-26",
       "day": "Sun",
-      "temp_high": 72,
+      "temp_high": 68,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "temp_low": 61,
+      "temp_low": 63,
       "sunrise": "5:27 AM",
       "sunset": "8:06 PM",
       "low_tide": "5:09 AM",
@@ -90,10 +77,10 @@
     {
       "date": "2026-07-28",
       "day": "Tue",
-      "temp_high": 75,
-      "condition": "Rain",
-      "icon": "\ud83c\udf27\ufe0f",
-      "temp_low": 67,
+      "temp_high": 74,
+      "condition": "Sunny",
+      "icon": "\u2600\ufe0f",
+      "temp_low": 66,
       "sunrise": "5:29 AM",
       "sunset": "8:04 PM",
       "low_tide": "6:39 AM",
@@ -103,10 +90,10 @@
     {
       "date": "2026-07-29",
       "day": "Wed",
-      "temp_high": 77,
+      "temp_high": 74,
       "condition": "Storms",
       "icon": "\u26c8\ufe0f",
-      "temp_low": 67,
+      "temp_low": 66,
       "sunrise": "5:29 AM",
       "sunset": "8:03 PM",
       "low_tide": "7:19 AM",
@@ -116,10 +103,10 @@
     {
       "date": "2026-07-30",
       "day": "Thu",
-      "temp_high": 78,
+      "temp_high": 76,
       "condition": "Rain",
       "icon": "\ud83c\udf27\ufe0f",
-      "temp_low": 68,
+      "temp_low": 66,
       "sunrise": "5:30 AM",
       "sunset": "8:02 PM",
       "low_tide": "7:57 AM",
@@ -129,16 +116,30 @@
     {
       "date": "2026-07-31",
       "day": "Fri",
-      "temp_high": 79,
-      "condition": "Sunny",
-      "icon": "\u2600\ufe0f",
+      "temp_high": 77,
+      "condition": "Rain",
+      "icon": "\ud83c\udf27\ufe0f",
+      "temp_low": 68,
       "sunrise": "5:31 AM",
       "sunset": "8:01 PM",
       "low_tide": "8:33 AM",
       "high_tide": "1:35 AM",
       "water_temp": 64
+    },
+    {
+      "date": "2026-08-01",
+      "day": "Sat",
+      "temp_high": 79,
+      "condition": "Sunny",
+      "icon": "\u2600\ufe0f",
+      "temp_low": 69,
+      "sunrise": "5:32 AM",
+      "sunset": "7:59 PM",
+      "low_tide": "9:08 AM",
+      "high_tide": "2:11 AM",
+      "water_temp": 64
     }
   ],
   "version": "1.0",
-  "updated_at": "2026-07-25T09:53:23Z"
+  "updated_at": "2026-07-26T10:04:17Z"
 }
