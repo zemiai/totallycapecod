@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-27T05:10:19Z",
+  "updated_at": "2026-07-27T08:54:12Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -12,7 +12,7 @@
       "location": "Bound Brook Island Beach, Wellfleet, MA, US",
       "reported_by": "iNaturalist \u00b7 ben148",
       "reported_at": "2026-07-26T14:47:45Z",
-      "time_ago": "14 h ago",
+      "time_ago": "18 h ago",
       "photo_url": "https://static.inaturalist.org/photos/705381727/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/385310434"
@@ -26,7 +26,7 @@
       "location": "Wellfleet, MA, USA",
       "reported_by": "iNaturalist \u00b7 agarrity2640",
       "reported_at": "2026-07-26T14:33:00Z",
-      "time_ago": "14 h ago",
+      "time_ago": "18 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/705444754/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/385371575"
@@ -40,7 +40,7 @@
       "location": "Wellfleet, MA, USA",
       "reported_by": "iNaturalist \u00b7 agarrity2640",
       "reported_at": "2026-07-26T14:31:00Z",
-      "time_ago": "14 h ago",
+      "time_ago": "18 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/705444674/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/385371571"
@@ -54,7 +54,7 @@
       "location": "Provincetown, MA, USA",
       "reported_by": "iNaturalist \u00b7 annathn",
       "reported_at": "2026-07-26T12:51:00Z",
-      "time_ago": "16 h ago",
+      "time_ago": "20 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/705674090/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/385463981"
@@ -68,7 +68,7 @@
       "location": "Provincetown, MA, USA",
       "reported_by": "iNaturalist \u00b7 annathn",
       "reported_at": "2026-07-26T12:08:00Z",
-      "time_ago": "17 h ago",
+      "time_ago": "20 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/705673710/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/385463964"
