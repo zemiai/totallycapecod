@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-07-31T12:54:32Z",
+  "updated_at": "2026-07-31T15:18:58Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -40,7 +40,7 @@
       "location": "Bound Brook Island Beach, Wellfleet, MA, US",
       "reported_by": "iNaturalist \u00b7 ben148",
       "reported_at": "2026-07-26T14:47:45Z",
-      "time_ago": "4 days ago",
+      "time_ago": "5 days ago",
       "photo_url": "https://static.inaturalist.org/photos/705381727/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/385310434"
@@ -54,7 +54,7 @@
       "location": "Wellfleet, MA, USA",
       "reported_by": "iNaturalist \u00b7 agarrity2640",
       "reported_at": "2026-07-26T14:33:00Z",
-      "time_ago": "4 days ago",
+      "time_ago": "5 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/705444754/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/385371575"
@@ -68,7 +68,7 @@
       "location": "Wellfleet, MA, USA",
       "reported_by": "iNaturalist \u00b7 agarrity2640",
       "reported_at": "2026-07-26T14:31:00Z",
-      "time_ago": "4 days ago",
+      "time_ago": "5 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/705444674/medium.jpg",
       "notes": "Atlantic Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/385371571"
@@ -138,7 +138,7 @@
       "location": "Eastham, MA, US",
       "reported_by": "iNaturalist \u00b7 lilbabybaba",
       "reported_at": "2026-07-21T15:15:50Z",
-      "time_ago": "9 days ago",
+      "time_ago": "10 days ago",
       "photo_url": "https://static.inaturalist.org/photos/702501694/medium.jpg",
       "notes": "Common Dolphin",
       "source_url": "https://www.inaturalist.org/observations/383805219"
