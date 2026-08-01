@@ -35,8 +35,13 @@ OUT = Path(__file__).parent.parent / "data" / "events.json"
 WINDOW_DAYS = 21          # how far ahead to look
 PER_SOURCE_CAP = 25       # don't let one source flood the feed
 TOTAL_CAP = 200
+# Full browser-like headers, not just a UA: SiteGround/Shield bot-walls (Cape Cod
+# Beer, Highfield Hall — Aug 2026) serve a captcha to requests missing
+# Accept/Accept-Language, but pass the same request when they're present.
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-                    "(KHTML, like Gecko) Chrome/124 Safari/537.36"}
+                    "(KHTML, like Gecko) Chrome/124 Safari/537.36",
+      "Accept": "text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.9"}
 TIMEOUT = 25
 
 # ---- Cape Cod town / village coordinates (for geolocating cards) -------------
@@ -291,6 +296,32 @@ def parse_chambermaster(town: str, base: str) -> list[dict]:
                 dt = cm_build_date(mo.get_text(strip=True), day, yr)
                 link = c.select_one("a[href]")
                 add(t.get_text(" ", strip=True), dt, link.get("href") if link else url)
+
+        # Layout E — GrowthZone month-grid calendar (seen on Yarmouth, Aug 2026):
+        # <td.gz-cal-days><div.gz-cal-day>DAYNUM <ul><li.gz-cal-event><a>Title
+        # Month/year come from a header like "August 2026" elsewhere on the page.
+        if not out:
+            hdr = None
+            for el in soup.select('[class*="date"], [class*="month"], h1, h2, h3'):
+                hm = re.search(r"(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+(\d{4})",
+                               el.get_text(" ", strip=True))
+                if hm:
+                    hdr = hm
+                    break
+            if hdr:
+                mon = MONTHS.get(hdr.group(1)[:3].lower())
+                yr = int(hdr.group(2))
+                # active dates only — leading/trailing cells belong to other months
+                for cell in soup.select(".gz-cal-day.gz-cal-activedate"):
+                    dm = re.match(r"\s*(\d{1,2})", cell.get_text(" ", strip=True))
+                    if not dm:
+                        continue
+                    try:
+                        dt = datetime(yr, mon, int(dm.group(1)), tzinfo=timezone.utc)
+                    except (ValueError, TypeError):
+                        continue
+                    for a in cell.select("li.gz-cal-event a[href]"):
+                        add(a.get_text(" ", strip=True), dt, a.get("href"))
 
         # Layout D — legacy "mn-" ChamberMaster theme (date lives inside each .mn-listing)
         if not out:
