@@ -94,9 +94,22 @@ exports.handler = async (event) => {
   try {
     const rec = (await store.get(slug, { type: 'json' }).catch(() => null)) || { reports: [] };
     rec.reports = (rec.reports || []).filter(r => now - r.at < WINDOW_MS);
+    // First report in an otherwise-quiet window is worth a founder ping; the
+    // steady stream of follow-on reports is not (it would flood the inbox).
+    const wasQuiet = rec.reports.length === 0;
     rec.reports.push({ status, at: now, dev: String(body.deviceId || '').slice(0, 40) });
     if (rec.reports.length > MAX_PER_SLUG) rec.reports = rec.reports.slice(-MAX_PER_SLUG);
     await store.set(slug, JSON.stringify(rec));
+    if (wasQuiet) {
+      const { notifyFounder } = require('./lib/notify');
+      await notifyFounder({
+        subject: `🏖️ Beach report: ${slug} → ${status.toUpperCase()}`,
+        html: `<p><strong>First live beach report in the last 3 hours.</strong></p>`
+            + `<p>Beach: ${slug}<br>Status: <strong>${status.toUpperCase()}</strong><br>`
+            + `At: ${new Date(now).toLocaleString()}</p>`
+            + `<p style="color:#888;font-size:12px;">Follow-on reports for this beach in this window are not emailed.</p>`,
+      });
+    }
     return { statusCode: 200, headers, body: JSON.stringify({ ok: true, ...consensus(rec.reports, now) }) };
   } catch (e) {
     return { statusCode: 200, headers, body: JSON.stringify({ ok: true, stored: false }) };

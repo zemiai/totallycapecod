@@ -128,6 +128,22 @@ GitHub Actions free tier: 2,000 minutes/month on private repos. Estimated usage 
 
 ---
 
+## Admin dashboard & report notifications
+
+User activity (feedback, email signups, business submissions, beach reports) is
+stored in Netlify Blobs. Two ways to see it:
+
+1. **Founder emails** — set `RESEND_API_KEY` in Netlify → Site settings →
+   Environment variables. With it set you get an email when: someone submits
+   feedback, a **new** email signs up, or a beach gets its **first** report in a
+   quiet 3-hour window (follow-on reports are not emailed, to avoid flooding).
+   No key set → falls back to `ZAPIER_SUBMISSION_WEBHOOK` if present.
+
+2. **Admin dashboard** — set `ADMIN_KEY` (any long random string) in Netlify env
+   vars, then open `https://totallycapecod.com/admin?key=YOUR_KEY`. It lists
+   recent feedback, leads, submissions, and live beach reports on one page.
+   It's password-gated and `noindex`; rotate `ADMIN_KEY` to revoke access.
+
 ## Next steps you might want
 
 - **Make beach reports actually crowd-sourced.** See [HERMES.md](HERMES.md) §"User submissions back to Hermes". Need a webhook endpoint — Cloudflare Worker or Netlify Function — that ingests POSTs and writes to a KV store. Then `update_beaches.py` reads from KV and merges into `beaches.json`.
