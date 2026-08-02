@@ -2,7 +2,7 @@
   "current": {
     "sagamore": {
       "name": "Sagamore Bridge",
-      "current_delay_min": 15,
+      "current_delay_min": 16,
       "current_status": "moderate",
       "direction": "off_cape",
       "advice": "Moderate backup \u2014 consider waiting until after 7 PM",
@@ -141,5 +141,5 @@
     "on_cape_saturday": "Before 8 AM"
   },
   "version": "1.0",
-  "updated_at": "2026-08-02T17:53:21Z"
+  "updated_at": "2026-08-02T18:54:44Z"
 }
