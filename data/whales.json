@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-03T13:40:21Z",
+  "updated_at": "2026-08-03T16:24:16Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -12,7 +12,7 @@
       "location": "Provincetown, MA, USA",
       "reported_by": "iNaturalist \u00b7 akilee",
       "reported_at": "2026-08-02T17:57:00Z",
-      "time_ago": "19 h ago",
+      "time_ago": "22 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/709913552/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/387673801"
@@ -26,10 +26,24 @@
       "location": "Provincetown, MA, USA",
       "reported_by": "iNaturalist \u00b7 akilee",
       "reported_at": "2026-08-02T17:29:00Z",
-      "time_ago": "20 h ago",
+      "time_ago": "22 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/709913386/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/387673794"
+    },
+    {
+      "id": "inat-387851766",
+      "species": "seal",
+      "count": 1,
+      "lat": 41.6882,
+      "lng": -69.9509,
+      "location": "Barcliff Avenue Ext, Chatham, MA, US",
+      "reported_by": "iNaturalist \u00b7 dinoagano",
+      "reported_at": "2026-08-01T15:40:15Z",
+      "time_ago": "2 days ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/710266389/medium.jpg",
+      "notes": "Grey Seal",
+      "source_url": "https://www.inaturalist.org/observations/387851766"
     },
     {
       "id": "inat-387852364",
@@ -40,7 +54,7 @@
       "location": "Barcliff Avenue Ext, Chatham, MA, US",
       "reported_by": "iNaturalist \u00b7 dinoagano",
       "reported_at": "2026-08-01T15:37:30Z",
-      "time_ago": "1 day ago",
+      "time_ago": "2 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/710266762/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/387852364"
@@ -54,7 +68,7 @@
       "location": "North Atlantic Ocean, Eastham, MA, US",
       "reported_by": "iNaturalist \u00b7 dinoagano",
       "reported_at": "2026-08-01T14:17:13Z",
-      "time_ago": "1 day ago",
+      "time_ago": "2 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/709024645/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/387210401"
@@ -68,24 +82,10 @@
       "location": "North Atlantic Ocean, Eastham, MA, US",
       "reported_by": "iNaturalist \u00b7 dinoagano",
       "reported_at": "2026-08-01T13:43:24Z",
-      "time_ago": "1 day ago",
+      "time_ago": "2 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/709025482/medium.jpg",
       "notes": "Great White Shark",
       "source_url": "https://www.inaturalist.org/observations/387210933"
-    },
-    {
-      "id": "inat-387181964",
-      "species": "seal",
-      "count": 1,
-      "lat": 41.7021,
-      "lng": -69.9407,
-      "location": "Chatham Harbor, Chatham, MA, US",
-      "reported_by": "iNaturalist \u00b7 dinoagano",
-      "reported_at": "2026-08-01T13:11:06Z",
-      "time_ago": "2 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/708972188/medium.jpg",
-      "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/387181964"
     },
     {
       "id": "inat-387140593",
@@ -110,7 +110,7 @@
       "location": "US",
       "reported_by": "iNaturalist \u00b7 drkidd4",
       "reported_at": "2026-07-28T15:23:16Z",
-      "time_ago": "5 days ago",
+      "time_ago": "6 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/706972389/medium.jpg",
       "notes": "North Atlantic Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/386136821"
@@ -208,7 +208,7 @@
       "location": "Eastham, MA, US",
       "reported_by": "iNaturalist \u00b7 lilbabybaba",
       "reported_at": "2026-07-21T15:15:50Z",
-      "time_ago": "12 days ago",
+      "time_ago": "13 days ago",
       "photo_url": "https://static.inaturalist.org/photos/702501694/medium.jpg",
       "notes": "Common Dolphin",
       "source_url": "https://www.inaturalist.org/observations/383805219"
