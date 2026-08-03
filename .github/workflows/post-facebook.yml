@@ -1,14 +1,19 @@
 name: "post to Facebook"
 
-# Posts one "Cape Cod Today" update to the Facebook Page each morning, built from
-# the app's live data. Runs daily at 11:30 UTC (7:30 AM ET). Can also be run
-# manually (Actions tab → this workflow → Run workflow) with a dry-run option.
+# Two posts a day to the FB Page + Instagram, built from the app's live data by
+# the variety engine in scripts/post_facebook.py:
+#   11:30 UTC (7:30 AM ET) — morning format (rotates by weekday)
+#   21:00 UTC (5:00 PM ET) — "Tonight on Cape" evening post
+# The script picks the slot from the clock (ET hour >= 15 → evening); each slot
+# is idempotent via data/.fb_state.json. Images are the curated photos already
+# in img/social/ — no per-day image generation or commit needed anymore.
 #
-# Requires repo secrets: FB_PAGE_ID, FB_PAGE_ACCESS_TOKEN  (see SETUP_FACEBOOK.md)
+# Requires repo secrets: FB_PAGE_ID, FB_PAGE_ACCESS_TOKEN, IG_USER_ID.
 
 on:
   schedule:
     - cron: "30 11 * * *"
+    - cron: "0 21 * * *"
   workflow_dispatch:
     inputs:
       dry_run:
@@ -16,7 +21,11 @@ on:
         required: false
         default: ""
       force:
-        description: "Post even if already posted today (type 1)"
+        description: "Post even if already posted this slot today (type 1)"
+        required: false
+        default: ""
+      mode:
+        description: "Force slot: morning or evening (blank = by clock)"
         required: false
         default: ""
 
@@ -36,35 +45,6 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install -r scripts/requirements.txt
-      - name: Generate branded daily image
-        run: python scripts/make_social_image.py
-      - name: Publish image (must be on raw.githubusercontent before Meta fetches it)
-        if: github.event.inputs.dry_run != '1'
-        run: |
-          git config user.name "hermes-bot"
-          git config user.email "hermes-bot@users.noreply.github.com"
-          # prune dated images older than ~2 weeks so the repo doesn't bloat
-          # (filename IS the date; can't use -mtime, checkout resets it)
-          cutoff=$(date -u -d '14 days ago' +%F)
-          for f in img/social/2*-*-*.jpg; do
-            [ -e "$f" ] || continue
-            [[ "$(basename "$f" .jpg)" < "$cutoff" ]] && git rm -q "$f"
-          done
-          git add img/social/
-          if git diff --cached --quiet; then
-            echo "no new image"
-            exit 0
-          fi
-          git commit -m "[social] daily branded image $(date -u +%F)"
-          for i in 1 2 3 4 5; do
-            if git push; then
-              sleep 10  # let the raw CDN pick it up before the API call
-              exit 0
-            fi
-            git pull --rebase --autostash origin main || exit 1
-            sleep $((i * 3))
-          done
-          exit 1
       - run: python scripts/post_facebook.py
         env:
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
@@ -72,6 +52,7 @@ jobs:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           DRY_RUN: ${{ github.event.inputs.dry_run }}
           FORCE: ${{ github.event.inputs.force }}
+          MODE: ${{ github.event.inputs.mode }}
       - name: Save post state
         if: github.event.inputs.dry_run != '1'
         run: |
@@ -82,7 +63,7 @@ jobs:
             echo "no state change"
             exit 0
           fi
-          git commit -m "[fb] record daily post state"
+          git commit -m "[fb] record post state"
           for i in 1 2 3 4 5; do
             if git push; then exit 0; fi
             git pull --rebase --autostash origin main || exit 1
