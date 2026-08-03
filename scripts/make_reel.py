@@ -121,9 +121,9 @@ def main() -> None:
     parts = []
     try:
         intro = tmp / "s0.mp4"
-        slide(pics[0], [(title, 130, H - 760, FONT),
-                        (tagline, 130, H - 600, FONT),
-                        (now.strftime("%A, %B %-d"), 48, H - 430, FONT_REG)], intro)
+        slide(pics[0], [(title, 108, H - 760, FONT),
+                        (tagline, 108, H - 620, FONT),
+                        (now.strftime("%A, %B %-d"), 48, H - 470, FONT_REG)], intro)
         parts.append(intro)
         for i, e in enumerate(evs, 1):
             p = tmp / f"s{i}.mp4"
