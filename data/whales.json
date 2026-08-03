@@ -1,8 +1,22 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-03T20:10:45Z",
+  "updated_at": "2026-08-03T21:39:47Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
+    {
+      "id": "inat-387985077",
+      "species": "seal",
+      "count": 1,
+      "lat": 42.0811,
+      "lng": -70.2187,
+      "location": "Provincetown, MA, US",
+      "reported_by": "iNaturalist \u00b7 dcanizales",
+      "reported_at": "2026-08-02T19:06:35Z",
+      "time_ago": "1 day ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/710528000/medium.jpg",
+      "notes": "Grey Seal",
+      "source_url": "https://www.inaturalist.org/observations/387985077"
+    },
     {
       "id": "inat-387673801",
       "species": "seal",
@@ -58,20 +72,6 @@
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/710266762/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/387852364"
-    },
-    {
-      "id": "inat-387210401",
-      "species": "seal",
-      "count": 1,
-      "lat": 41.8371,
-      "lng": -69.9424,
-      "location": "North Atlantic Ocean, Eastham, MA, US",
-      "reported_by": "iNaturalist \u00b7 dinoagano",
-      "reported_at": "2026-08-01T14:17:13Z",
-      "time_ago": "2 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/709024645/medium.jpg",
-      "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/387210401"
     },
     {
       "id": "inat-387210933",
