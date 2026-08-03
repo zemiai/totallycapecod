@@ -1,0 +1,34 @@
+name: "diag reel build (throwaway)"
+# Builds the reel with ffmpeg (no secrets, no posting) and uploads sample frames
+# + the mp4 as an artifact for review. Delete after use.
+on:
+  workflow_dispatch:
+  push:
+    branches: [claude/capecod-qa-backlog-zcwzcl]
+    paths: [scripts/make_reel.py, scripts/post_facebook.py, .github/workflows/diag-reel.yml]
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install -r scripts/requirements.txt
+      - name: Build reel (force Friday theme)
+        run: TCC_FAKE_WEEKDAY=4 python scripts/make_reel.py
+      - name: Probe + extract frames
+        run: |
+          f=$(ls img/social/reel-*.mp4 | head -1)
+          echo "== ffprobe =="; ffprobe -v error -show_entries format=duration,size -show_entries stream=width,height,codec_name -of default=noprint_wrappers=1 "$f"
+          mkdir -p /tmp/frames
+          ffmpeg -v error -i "$f" -vf "select='eq(n\,20)+eq(n\,110)+eq(n\,200)+eq(n\,290)+eq(n\,380)'" -vsync vfr /tmp/frames/frame-%d.png
+          ls -la /tmp/frames
+          cat data/.reel_manifest.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reel-preview
+          path: |
+            /tmp/frames/*.png
+            img/social/reel-*.mp4

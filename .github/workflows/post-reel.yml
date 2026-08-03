@@ -1,0 +1,92 @@
+name: "post Reel"
+
+# Twice a week (Tue + Fri, 20:00 UTC = 4 PM ET) build a 15s vertical Reel from
+# the curated photos + live event data (scripts/make_reel.py, ffmpeg) and publish
+# it as an FB Page video + Instagram Reel (scripts/post_reel.py). Reels are the
+# one format Meta still distributes to non-followers — this is the cold-start
+# growth channel. The mp4 is committed to main first so Meta can fetch it from
+# raw.githubusercontent (same pattern as the proven post_video.py).
+#
+# Requires repo secrets: FB_PAGE_ID, FB_PAGE_ACCESS_TOKEN, IG_USER_ID.
+
+on:
+  schedule:
+    - cron: "0 20 * * 2,5"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Build + print only, do NOT publish (type 1)"
+        required: false
+        default: ""
+      force:
+        description: "Publish even if already posted for this date (type 1)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: post-reel
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r scripts/requirements.txt
+      - name: Build reel (ffmpeg)
+        run: python scripts/make_reel.py
+      - name: Push mp4 so Meta can fetch it
+        if: github.event.inputs.dry_run != '1'
+        run: |
+          git config user.name "hermes-bot"
+          git config user.email "hermes-bot@users.noreply.github.com"
+          # prune reels older than ~2 weeks (filename is the date)
+          cutoff=$(date -u -d '14 days ago' +%F)
+          for f in img/social/reel-2*.mp4; do
+            [ -e "$f" ] || continue
+            d=$(basename "$f" .mp4); d=${d#reel-}
+            [[ "$d" < "$cutoff" ]] && git rm -q "$f"
+          done
+          git add img/social/ data/.reel_manifest.json
+          if git diff --cached --quiet; then
+            echo "no new reel (thin day) — nothing to publish"
+            exit 0
+          fi
+          git commit -m "[social] reel $(date -u +%F)"
+          for i in 1 2 3 4 5; do
+            if git push; then
+              sleep 15  # let the raw CDN pick it up before the API fetches it
+              exit 0
+            fi
+            git pull --rebase --autostash origin main || exit 1
+            sleep $((i * 3))
+          done
+          exit 1
+      - name: Publish to FB + IG
+        run: python scripts/post_reel.py
+        env:
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_ACCESS_TOKEN: ${{ secrets.FB_PAGE_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+          FORCE: ${{ github.event.inputs.force }}
+      - name: Save result
+        if: github.event.inputs.dry_run != '1'
+        run: |
+          git config user.name "hermes-bot"
+          git config user.email "hermes-bot@users.noreply.github.com"
+          git add data/.reel_post_result.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "[reel] record post result"
+          for i in 1 2 3 4 5; do
+            if git push; then exit 0; fi
+            git pull --rebase --autostash origin main || exit 1
+            sleep $((i * 3))
+          done
+          exit 1
