@@ -39,6 +39,8 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install -r scripts/requirements.txt
+      - name: Install ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
       - name: Build reel (ffmpeg)
         run: python scripts/make_reel.py
       - name: Push mp4 so Meta can fetch it

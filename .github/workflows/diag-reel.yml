@@ -16,6 +16,8 @@ jobs:
       - uses: actions/setup-python@v5
         with: { python-version: "3.11" }
       - run: pip install -r scripts/requirements.txt
+      - name: Install ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
       - name: Build reel (force Friday theme)
         run: TCC_FAKE_WEEKDAY=4 python scripts/make_reel.py
       - name: Probe + extract frames
