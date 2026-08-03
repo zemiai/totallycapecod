@@ -1,13 +1,13 @@
 name: "diag reel build (throwaway)"
-# Builds the reel with ffmpeg (no secrets, no posting) and uploads sample frames
-# + the mp4 as an artifact for review. Delete after use.
+# Builds the reel (no secrets, no posting) and commits a frame montage to the
+# branch so it can be reviewed from the sandbox. Delete after use.
 on:
   workflow_dispatch:
   push:
     branches: [claude/capecod-qa-backlog-zcwzcl]
-    paths: [scripts/make_reel.py, scripts/post_facebook.py, .github/workflows/diag-reel.yml]
+    paths: [scripts/make_reel.py, .github/workflows/diag-reel.yml]
 permissions:
-  contents: read
+  contents: write
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,17 +20,15 @@ jobs:
         run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
       - name: Build reel (force Friday theme)
         run: TCC_FAKE_WEEKDAY=4 python scripts/make_reel.py
-      - name: Probe + extract frames
+      - name: Montage frames + commit for review
         run: |
           f=$(ls img/social/reel-*.mp4 | head -1)
-          echo "== ffprobe =="; ffprobe -v error -show_entries format=duration,size -show_entries stream=width,height,codec_name -of default=noprint_wrappers=1 "$f"
-          mkdir -p /tmp/frames
-          ffmpeg -v error -i "$f" -vf "select='eq(n\,20)+eq(n\,110)+eq(n\,200)+eq(n\,290)+eq(n\,380)'" -vsync vfr /tmp/frames/frame-%d.png
-          ls -la /tmp/frames
-          cat data/.reel_manifest.json
-      - uses: actions/upload-artifact@v4
-        with:
-          name: reel-preview
-          path: |
-            /tmp/frames/*.png
-            img/social/reel-*.mp4
+          ffprobe -v error -show_entries format=duration,size -show_entries stream=width,height,codec_name -of default=noprint_wrappers=1 "$f"
+          ffmpeg -v error -i "$f" -vf "select='eq(n\,20)+eq(n\,110)+eq(n\,200)+eq(n\,290)+eq(n\,380)',scale=270:480,tile=5x1" -frames:v 1 scripts/dev/reel-preview.jpg
+          git config user.name "hermes-bot"
+          git config user.email "hermes-bot@users.noreply.github.com"
+          git checkout -- img/social || true
+          git clean -fd img/social || true
+          git add scripts/dev/reel-preview.jpg
+          git commit -m "diag: reel frame montage for review"
+          git push
