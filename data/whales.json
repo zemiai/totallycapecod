@@ -1,8 +1,22 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-04T23:02:10Z",
+  "updated_at": "2026-08-05T00:53:57Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
+    {
+      "id": "inat-388334861",
+      "species": "seal",
+      "count": 1,
+      "lat": 42.0651,
+      "lng": -70.2462,
+      "location": "Gulf of Maine, Provincetown, MA, US",
+      "reported_by": "iNaturalist \u00b7 hazellippitt",
+      "reported_at": "2026-08-04T14:35:34Z",
+      "time_ago": "10 h ago",
+      "photo_url": "",
+      "notes": "Grey Seal",
+      "source_url": "https://www.inaturalist.org/observations/388334861"
+    },
     {
       "id": "inat-387985077",
       "species": "seal",
@@ -60,20 +74,6 @@
       "source_url": "https://www.inaturalist.org/observations/387851766"
     },
     {
-      "id": "inat-387852364",
-      "species": "seal",
-      "count": 1,
-      "lat": 41.6883,
-      "lng": -69.9509,
-      "location": "Barcliff Avenue Ext, Chatham, MA, US",
-      "reported_by": "iNaturalist \u00b7 dinoagano",
-      "reported_at": "2026-08-01T15:37:30Z",
-      "time_ago": "3 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/710266762/medium.jpg",
-      "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/387852364"
-    },
-    {
       "id": "inat-387210933",
       "species": "shark",
       "count": 1,
@@ -124,7 +124,7 @@
       "location": "US",
       "reported_by": "iNaturalist \u00b7 graycatbirder",
       "reported_at": "2026-07-26T23:19:52Z",
-      "time_ago": "8 days ago",
+      "time_ago": "9 days ago",
       "photo_url": "https://static.inaturalist.org/photos/709402844/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/387405517"
@@ -156,62 +156,6 @@
       "photo_url": "https://static.inaturalist.org/photos/709401892/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/387405127"
-    },
-    {
-      "id": "inat-383966573",
-      "species": "humpback",
-      "count": 1,
-      "lat": 42.0729,
-      "lng": -70.2421,
-      "location": "Barnstable County, US-MA, US",
-      "reported_by": "iNaturalist \u00b7 bumfsack",
-      "reported_at": "2026-07-21T18:57:53Z",
-      "time_ago": "14 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/702809184/medium.jpg",
-      "notes": "Humpback Whale",
-      "source_url": "https://www.inaturalist.org/observations/383966573"
-    },
-    {
-      "id": "inat-383975627",
-      "species": "humpback",
-      "count": 1,
-      "lat": 42.1789,
-      "lng": -70.2036,
-      "location": "US",
-      "reported_by": "iNaturalist \u00b7 bumfsack",
-      "reported_at": "2026-07-21T18:24:48Z",
-      "time_ago": "14 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/702827599/medium.jpg",
-      "notes": "Humpback Whale",
-      "source_url": "https://www.inaturalist.org/observations/383975627"
-    },
-    {
-      "id": "inat-383975660",
-      "species": "humpback",
-      "count": 1,
-      "lat": 42.182,
-      "lng": -70.209,
-      "location": "US",
-      "reported_by": "iNaturalist \u00b7 bumfsack",
-      "reported_at": "2026-07-21T17:43:04Z",
-      "time_ago": "14 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/702827666/medium.jpg",
-      "notes": "Humpback Whale",
-      "source_url": "https://www.inaturalist.org/observations/383975660"
-    },
-    {
-      "id": "inat-383805219",
-      "species": "dolphin",
-      "count": 1,
-      "lat": 41.8036,
-      "lng": -70.0092,
-      "location": "Eastham, MA, US",
-      "reported_by": "iNaturalist \u00b7 lilbabybaba",
-      "reported_at": "2026-07-21T15:15:50Z",
-      "time_ago": "14 days ago",
-      "photo_url": "https://static.inaturalist.org/photos/702501694/medium.jpg",
-      "notes": "Common Dolphin",
-      "source_url": "https://www.inaturalist.org/observations/383805219"
     }
   ]
 }
