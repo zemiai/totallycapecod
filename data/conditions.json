@@ -1,20 +1,20 @@
 {
   "today": {
-    "date": "2026-08-05",
+    "date": "2026-08-06",
     "weather": {
-      "temp_high": 78,
-      "temp_low": 69,
-      "condition": "Sunny",
-      "icon": "\u2600\ufe0f",
-      "wind_mph": 2,
-      "wind_dir": "W",
+      "temp_high": 79,
+      "temp_low": 72,
+      "condition": "Fog",
+      "icon": "\ud83c\udf2b\ufe0f",
+      "wind_mph": 6,
+      "wind_dir": "SW",
       "humidity": 65,
       "uv_index": 7
     },
     "sun": {
-      "sunrise": "5:37 AM",
-      "sunset": "7:55 PM",
-      "civil_twilight_end": "8:24 PM",
+      "sunrise": "5:38 AM",
+      "sunset": "7:54 PM",
+      "civil_twilight_end": "8:23 PM",
       "best_sunset_spot": {
         "name": "Skaket Beach",
         "town": "Orleans",
@@ -23,17 +23,22 @@
     },
     "tides": [
       {
-        "time": "5:09 AM",
-        "type": "high",
-        "height_ft": 4.7
-      },
-      {
-        "time": "11:37 AM",
+        "time": "12:33 AM",
         "type": "low",
-        "height_ft": -0.0
+        "height_ft": 0.1
       },
       {
-        "time": "5:30 PM",
+        "time": "6:06 AM",
+        "type": "high",
+        "height_ft": 4.5
+      },
+      {
+        "time": "12:26 PM",
+        "type": "low",
+        "height_ft": 0.1
+      },
+      {
+        "time": "6:26 PM",
         "type": "high",
         "height_ft": 5.5
       }
@@ -44,25 +49,12 @@
   },
   "forecast_7day": [
     {
-      "date": "2026-08-05",
-      "day": "Wed",
-      "temp_high": 78,
-      "condition": "Sunny",
-      "icon": "\u2600\ufe0f",
-      "temp_low": 69,
-      "sunrise": "5:37 AM",
-      "sunset": "7:55 PM",
-      "low_tide": "11:37 AM",
-      "high_tide": "5:09 AM",
-      "water_temp": 64
-    },
-    {
       "date": "2026-08-06",
       "day": "Thu",
-      "temp_high": 80,
-      "condition": "Sunny",
-      "icon": "\u2600\ufe0f",
-      "temp_low": 71,
+      "temp_high": 79,
+      "condition": "Fog",
+      "icon": "\ud83c\udf2b\ufe0f",
+      "temp_low": 72,
       "sunrise": "5:38 AM",
       "sunset": "7:54 PM",
       "low_tide": "12:33 AM",
@@ -72,10 +64,10 @@
     {
       "date": "2026-08-07",
       "day": "Fri",
-      "temp_high": 81,
-      "condition": "Sunny",
-      "icon": "\u2600\ufe0f",
-      "temp_low": 71,
+      "temp_high": 80,
+      "condition": "Fog",
+      "icon": "\ud83c\udf2b\ufe0f",
+      "temp_low": 72,
       "sunrise": "5:39 AM",
       "sunset": "7:52 PM",
       "low_tide": "1:38 AM",
@@ -88,7 +80,7 @@
       "temp_high": 80,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "temp_low": 72,
+      "temp_low": 71,
       "sunrise": "5:40 AM",
       "sunset": "7:51 PM",
       "low_tide": "2:45 AM",
@@ -98,10 +90,10 @@
     {
       "date": "2026-08-09",
       "day": "Sun",
-      "temp_high": 84,
+      "temp_high": 81,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "temp_low": 71,
+      "temp_low": 72,
       "sunrise": "5:41 AM",
       "sunset": "7:50 PM",
       "low_tide": "3:50 AM",
@@ -114,7 +106,7 @@
       "temp_high": 84,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "temp_low": 70,
+      "temp_low": 72,
       "sunrise": "5:42 AM",
       "sunset": "7:48 PM",
       "low_tide": "4:53 AM",
@@ -124,17 +116,30 @@
     {
       "date": "2026-08-11",
       "day": "Tue",
-      "temp_high": 82,
+      "temp_high": 83,
       "condition": "Rain",
       "icon": "\ud83c\udf27\ufe0f",
-      "temp_low": 68,
+      "temp_low": 69,
       "sunrise": "5:43 AM",
       "sunset": "7:47 PM",
       "low_tide": "5:51 AM",
       "high_tide": "11:23 AM",
       "water_temp": 64
+    },
+    {
+      "date": "2026-08-12",
+      "day": "Wed",
+      "temp_high": 80,
+      "condition": "Rain",
+      "icon": "\ud83c\udf27\ufe0f",
+      "temp_low": 69,
+      "sunrise": "5:44 AM",
+      "sunset": "7:46 PM",
+      "low_tide": "6:44 AM",
+      "high_tide": "12:17 PM",
+      "water_temp": 64
     }
   ],
   "version": "1.0",
-  "updated_at": "2026-08-05T10:40:51Z"
+  "updated_at": "2026-08-06T10:43:58Z"
 }
