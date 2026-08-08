@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-08T19:55:47Z",
+  "updated_at": "2026-08-08T20:29:33Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -12,7 +12,7 @@
       "location": "Saquatucket Bluffs Rd, Harwich Port, MA, US",
       "reported_by": "iNaturalist \u00b7 jordanmarcucilli",
       "reported_at": "2026-08-08T17:24:40Z",
-      "time_ago": "2 h ago",
+      "time_ago": "3 h ago",
       "photo_url": "https://static.inaturalist.org/photos/713310270/medium.jpg",
       "notes": "Harbor Seal",
       "source_url": "https://www.inaturalist.org/observations/389421109"
