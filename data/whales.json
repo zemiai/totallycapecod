@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-09T19:32:04Z",
+  "updated_at": "2026-08-09T20:30:33Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -12,7 +12,7 @@
       "location": "Barnstable County, US-MA, US",
       "reported_by": "iNaturalist \u00b7 pacostacos",
       "reported_at": "2026-08-09T15:40:49Z",
-      "time_ago": "3 h ago",
+      "time_ago": "4 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/713976571/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/389764450"
@@ -26,7 +26,7 @@
       "location": "Plymouth, MA, US",
       "reported_by": "iNaturalist \u00b7 alexandra928",
       "reported_at": "2026-08-09T11:20:42Z",
-      "time_ago": "8 h ago",
+      "time_ago": "9 h ago",
       "photo_url": "https://static.inaturalist.org/photos/713698565/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/389619227"
@@ -40,7 +40,7 @@
       "location": "MA, US",
       "reported_by": "iNaturalist \u00b7 grahamrella",
       "reported_at": "2026-08-09T00:38:17Z",
-      "time_ago": "18 h ago",
+      "time_ago": "19 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/713483816/medium.jpg",
       "notes": "Common Minke Whale",
       "source_url": "https://www.inaturalist.org/observations/389509500"
@@ -54,7 +54,7 @@
       "location": "MA, US",
       "reported_by": "iNaturalist \u00b7 jordanmarcucilli",
       "reported_at": "2026-08-08T19:52:28Z",
-      "time_ago": "23 h ago",
+      "time_ago": "1 day ago",
       "photo_url": "https://static.inaturalist.org/photos/713552979/medium.jpg",
       "notes": "Harbor Seal",
       "source_url": "https://www.inaturalist.org/observations/389545394"
@@ -68,7 +68,7 @@
       "location": "MA, US",
       "reported_by": "iNaturalist \u00b7 jordanmarcucilli",
       "reported_at": "2026-08-08T19:39:09Z",
-      "time_ago": "23 h ago",
+      "time_ago": "1 day ago",
       "photo_url": "https://static.inaturalist.org/photos/713553405/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/389545613"
