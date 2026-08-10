@@ -84,6 +84,7 @@ status = "ACTIVE" if LIVE else "PAUSED"
 camp = post(f"{ACCOUNT}/campaigns", {
     "name": name, "objective": "OUTCOME_ENGAGEMENT",
     "status": status, "special_ad_categories": "[]",
+    "is_adset_budget_sharing_enabled": "false",
 })
 start = datetime.now(timezone.utc)
 adset = post(f"{ACCOUNT}/adsets", {
