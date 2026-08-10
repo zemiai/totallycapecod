@@ -1136,11 +1136,14 @@ const STRIPE_LINK = 'https://buy.stripe.com/6oU8wIfTVbmhdZveHQbo401';
 // custom events otherwise) so ads can optimize on real conversions.
 const TCC_FBQ_MAP = { begin_checkout: 'InitiateCheckout', purchase: 'Purchase' };
 function tccT(name, params) {
-  try { if (typeof gtag === 'function') gtag('event', name, params || {}); } catch (e) {}
+  // Stamp the intro A/B variant on every event so any funnel step can be split by it.
+  const p = Object.assign({ intro_variant: (typeof _abIntro === 'string' ? _abIntro : 'na') },
+                          params || {});
+  try { if (typeof gtag === 'function') gtag('event', name, p); } catch (e) {}
   try {
     if (typeof fbq === 'function') {
       const std = TCC_FBQ_MAP[name];
-      if (std) fbq('track', std, params || {}); else fbq('trackCustom', name, params || {});
+      if (std) fbq('track', std, p); else fbq('trackCustom', name, p);
     }
   } catch (e) {}
 }
@@ -1173,6 +1176,25 @@ const FREE_LIGHTHOUSE_COUNT = 1;
 const DEFAULT_LOC = { lat: 41.7858, lng: -70.0269 }; // Orleans, MA
 
 // ============ STATE ============
+// A/B: does the first-run "visiting or local?" modal cost us more than it's worth?
+// 'ask'  = show the intro modal + tour (the original flow)
+// 'skip' = straight into the live app, no wall
+// Assigned once per device, sticky, and stamped on EVERY analytics event (see
+// tccT) plus set as a GA4 user property, so the whole funnel — sessions, engage,
+// begin_checkout, purchase — can be split by variant. Kill the test by setting
+// AB_INTRO_FORCE below to 'ask' or 'skip'.
+const AB_INTRO_FORCE = '';
+const _abIntro = (function () {
+  if (AB_INTRO_FORCE) return AB_INTRO_FORCE;
+  let v = localStorage.getItem('tcc_ab_intro');
+  if (v !== 'ask' && v !== 'skip') {
+    v = Math.random() < 0.5 ? 'ask' : 'skip';
+    localStorage.setItem('tcc_ab_intro', v);
+  }
+  return v;
+}());
+try { if (window.gtag) gtag('set', 'user_properties', { intro_variant: _abIntro }); } catch (e) {}
+
 // TASK9: proPreview — first-session preview (Lever 5). NEVER sets isPro.
 const _previewUsed = localStorage.getItem('tcc_preview_used');
 const _isFirstSession = !_previewUsed;
@@ -3257,23 +3279,35 @@ function checkFirstRun() {
   // Also skip if this is a Stripe return (user is already motivated)
   const isStripeReturn = new URLSearchParams(location.search).get('pro') ||
                          new URLSearchParams(location.search).get('success');
-  if (!seen && !isStripeReturn) {
-    // Slight delay so the app has painted first
-    setTimeout(() => openModal('intro'), 350);
+  if (seen || isStripeReturn) return;
+
+  // 'skip' arm: no wall. Land straight in the live feed, and don't run the tour
+  // either — the whole point is measuring time-to-value with zero friction.
+  if (_abIntro === 'skip') {
+    localStorage.setItem('tcc_seen_intro', 'true');
+    localStorage.setItem('tcc_tour_done', 'true');
+    tccT('intro_skipped_by_test');
+    return;
   }
+  // Slight delay so the app has painted first
+  setTimeout(() => {
+    openModal('intro');
+    tccT('intro_shown');          // the denominator: how many actually saw the wall
+  }, 350);
 }
 // Onboarding segmentation — capture visiting vs local once, up front. Drives the
 // Concierge's tone now and becomes a targeting axis (push, Pro, ads) later.
 function chooseVisitorType(type) {
   localStorage.setItem('tcc_visitor_type', type);   // 'visitor' | 'local'
-  if (window.gtag) gtag('event', 'visitor_type_set', { type });
+  tccT('intro_choice', { choice: type });
   dismissIntro(true);   // proceed into the quick tour
 }
 
 function dismissIntro(startTourAfter) {
   closeModal('intro');
+  if (!startTourAfter) tccT('intro_choice', { choice: 'skip' });   // tapped "Skip"
   localStorage.setItem('tcc_seen_intro', 'true');
-  if (window.gtag) gtag('event', 'intro_dismissed', { session_type: _isFirstSession ? 'first' : 'return' });
+  tccT('intro_dismissed', { session_type: _isFirstSession ? 'first' : 'return' });
   if (startTourAfter) {
     setTimeout(startTour, 280);   // let the modal finish closing first
   } else {
