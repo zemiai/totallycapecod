@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-10T07:38:23Z",
+  "updated_at": "2026-08-10T09:18:57Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -12,7 +12,7 @@
       "location": "Nauset Light Beach Rd, Wellfleet, MA, US",
       "reported_by": "iNaturalist \u00b7 johngarrett",
       "reported_at": "2026-08-09T23:39:39Z",
-      "time_ago": "7 h ago",
+      "time_ago": "9 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/714223789/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/389887015"
@@ -26,7 +26,7 @@
       "location": "Chatham, MA 02633, USA",
       "reported_by": "iNaturalist \u00b7 pacostacos",
       "reported_at": "2026-08-09T22:53:42Z",
-      "time_ago": "8 h ago",
+      "time_ago": "10 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/714100431/medium.jpg",
       "notes": "Atlantic Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/389826667"
@@ -40,7 +40,7 @@
       "location": "Barnstable County, US-MA, US",
       "reported_by": "iNaturalist \u00b7 pacostacos",
       "reported_at": "2026-08-09T15:40:49Z",
-      "time_ago": "15 h ago",
+      "time_ago": "17 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/713976571/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/389764450"
@@ -54,7 +54,7 @@
       "location": "Chatham, MA 02633, USA",
       "reported_by": "iNaturalist \u00b7 pacostacos",
       "reported_at": "2026-08-09T15:40:41Z",
-      "time_ago": "15 h ago",
+      "time_ago": "17 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/714100374/medium.jpg",
       "notes": "Atlantic Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/389825553"
@@ -68,7 +68,7 @@
       "location": "Plymouth, MA, US",
       "reported_by": "iNaturalist \u00b7 alexandra928",
       "reported_at": "2026-08-09T11:20:42Z",
-      "time_ago": "20 h ago",
+      "time_ago": "21 h ago",
       "photo_url": "https://static.inaturalist.org/photos/713698565/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/389619227"
