@@ -1,0 +1,62 @@
+name: "ads automation"
+
+# Two jobs, both inert until FB_ADS_TOKEN + FB_AD_ACCOUNT_ID secrets exist:
+#   - daily 10:00 UTC: pull last-7-day ad performance into data/.ads_report.json
+#     (fails RED if the token has expired, so you get a GitHub email)
+#   - Friday 14:00 UTC (10 AM ET): auto-boost the morning weekend-roundup post
+#     ($5/day x 3 days, mid-Cape 30mi radius). Created PAUSED unless the repo
+#     variable AUTO_BOOST_LIVE=1 is set — see SETUP_FACEBOOK.md.
+on:
+  schedule:
+    - cron: "0 10 * * *"
+    - cron: "0 14 * * 5"
+  workflow_dispatch:
+    inputs:
+      job:
+        description: "Which job: report or boost (blank = report)"
+        required: false
+        default: "report"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ads-auto
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests
+      - name: Daily performance report
+        if: github.event.schedule != '0 14 * * 5' && github.event.inputs.job != 'boost'
+        run: python scripts/ads_report.py
+        env:
+          FB_ADS_TOKEN: ${{ secrets.FB_ADS_TOKEN }}
+          FB_AD_ACCOUNT_ID: ${{ secrets.FB_AD_ACCOUNT_ID }}
+      - name: Friday boost of the weekend roundup
+        if: github.event.schedule == '0 14 * * 5' || github.event.inputs.job == 'boost'
+        run: python scripts/boost_post.py
+        env:
+          FB_ADS_TOKEN: ${{ secrets.FB_ADS_TOKEN }}
+          FB_AD_ACCOUNT_ID: ${{ secrets.FB_AD_ACCOUNT_ID }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          AUTO_BOOST_LIVE: ${{ vars.AUTO_BOOST_LIVE }}
+      - name: Commit report if changed
+        run: |
+          git config user.name "hermes-bot"
+          git config user.email "hermes-bot@users.noreply.github.com"
+          git add data/.ads_report.json 2>/dev/null || true
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "[ads] performance report $(date -u +%F)"
+          for i in 1 2 3 4 5; do
+            if git push; then exit 0; fi
+            git pull --rebase --autostash origin main || exit 1
+            sleep $((i * 3))
+          done
+          exit 1
