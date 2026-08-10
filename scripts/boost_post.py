@@ -33,9 +33,23 @@ TARGETING = {
     "age_min": 25, "age_max": 65,
 }
 
-if not TOKEN or not ACCOUNT or not PAGE_ID:
-    print("[boost] ads secrets not set — skipping (add FB_ADS_TOKEN + FB_AD_ACCOUNT_ID to activate)")
+if not TOKEN or not PAGE_ID:
+    print("[boost] FB_ADS_TOKEN not set — skipping (add the secret to activate)")
     sys.exit(0)
+def resolve_account(token, account):
+    """Use the configured act_… id, else auto-discover the token's first ad account."""
+    if account:
+        return account
+    r = requests.get(f"{GRAPH}/me/adaccounts",
+                     params={"fields": "account_id,name", "access_token": token}, timeout=30)
+    accts = r.json().get("data", []) if r.ok else []
+    if not accts:
+        print("[ads] no ad account found for this token — set FB_AD_ACCOUNT_ID", file=sys.stderr)
+        sys.exit(1)
+    aid = "act_" + accts[0]["account_id"]
+    print(f"[ads] auto-discovered ad account {aid} ({accts[0].get('name','')})")
+    return aid
+ACCOUNT = resolve_account(TOKEN, ACCOUNT)
 
 state = json.loads((DATA / ".fb_state.json").read_text()) if (DATA / ".fb_state.json").exists() else {}
 if state.get("last_morning_campaign") != "weekend":

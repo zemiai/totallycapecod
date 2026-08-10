@@ -16,9 +16,23 @@ TOKEN = os.environ.get("FB_ADS_TOKEN", "").strip()
 ACCOUNT = os.environ.get("FB_AD_ACCOUNT_ID", "").strip()
 OUT = Path(__file__).parent.parent / "data" / ".ads_report.json"
 
-if not TOKEN or not ACCOUNT:
-    print("[ads] FB_ADS_TOKEN / FB_AD_ACCOUNT_ID not set — skipping (add secrets to activate)")
+if not TOKEN:
+    print("[ads] FB_ADS_TOKEN not set — skipping (add the secret to activate)")
     sys.exit(0)
+def resolve_account(token, account):
+    """Use the configured act_… id, else auto-discover the token's first ad account."""
+    if account:
+        return account
+    r = requests.get(f"{GRAPH}/me/adaccounts",
+                     params={"fields": "account_id,name", "access_token": token}, timeout=30)
+    accts = r.json().get("data", []) if r.ok else []
+    if not accts:
+        print("[ads] no ad account found for this token — set FB_AD_ACCOUNT_ID", file=sys.stderr)
+        sys.exit(1)
+    aid = "act_" + accts[0]["account_id"]
+    print(f"[ads] auto-discovered ad account {aid} ({accts[0].get('name','')})")
+    return aid
+ACCOUNT = resolve_account(TOKEN, ACCOUNT)
 
 # Token sanity first: a dead token should fail loudly (red run → GitHub emails you).
 me = requests.get(f"{GRAPH}/me", params={"access_token": TOKEN}, timeout=30)
