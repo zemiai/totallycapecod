@@ -1295,6 +1295,11 @@ async function loadData() {
       .then(r => { clearTimeout(tid); return r.ok ? r.json() : null; })
       .catch(() => { clearTimeout(tid); return null; });
   };
+  // Everything below fires at once. Anything awaited *after* the batch would add its
+  // own latency to the critical path, and on mobile LTE that showed up as seconds of
+  // near-blank screen before the app painted.
+  const curatedP = fetchWithTimeout(DATA_BASE + 'curated.json', 8000);
+  const beachLiveP = fetchWithTimeout('/.netlify/functions/beach-report', 6000);
   const results = await Promise.allSettled(files.map(f => fetchWithTimeout(DATA_BASE + f + '.json', 8000)));
   results.forEach((r, i) => {
     const key = files[i] === 'ai-knowledge' ? 'aiKnowledge' : files[i];
@@ -1302,13 +1307,12 @@ async function loadData() {
   });
   // Crowdsourced live beach reports — a Netlify function, not GitHub raw. Empty {} until
   // beachgoers report (and on local/preview where the function isn't running).
-  state.data.beachLive = await fetch('/.netlify/functions/beach-report', { cache: 'no-cache' })
-    .then(r => r.ok ? r.json() : {}).catch(() => ({}));
+  state.data.beachLive = (await beachLiveP) || {};
 
   // Curated layer — hand-added items (e.g. pulled from Facebook) that the events cron
   // never overwrites. Merged into the events feed, de-duped, future-only, newest-first.
   try {
-    const curated = await fetchWithTimeout(DATA_BASE + 'curated.json', 8000);
+    const curated = await curatedP;
     const cEvents = (curated && Array.isArray(curated.events)) ? curated.events : [];
     if (cEvents.length) {
       state.data.events = state.data.events || { events: [] };
@@ -3523,11 +3527,13 @@ function renderAll() {
   renderPro();
 }
 async function init() {
-  await loadData();
-  renderAll();
-  // If the visitor is already sitting on the Nearby feed when data finishes loading
-  // (slow connection), build it now instead of leaving a stuck "loading…" state.
-  if (!nbBuilt && document.getElementById('screen-nearby')?.classList.contains('active')) renderNearby();
+  // Paint first, fetch second. This used to `await loadData()` before rendering
+  // anything, so the whole shell — and the first-run intro — waited on ~450KB of
+  // JSON from raw.githubusercontent plus a Netlify function. On mobile that was
+  // seconds of near-blank screen on the visitor's very first impression. Every
+  // render below is null-safe (`state.data.x?.y`), so an empty-state paint is fine;
+  // renderAll() runs again the moment real data lands.
+  try { renderAll(); } catch (e) { /* empty-state paint is best-effort */ }
   // TASK9 Lever 3: Show first-run onboarding intro to new visitors
   checkFirstRun();
   // Value before asks: returning visitors (already saw onboarding = already got value)
@@ -3538,6 +3544,12 @@ async function init() {
   }
   // Pre-warm voices for TTS
   if ('speechSynthesis' in window) speechSynthesis.getVoices();
+
+  await loadData();
+  renderAll();
+  // If the visitor is already sitting on the Nearby feed when data finishes loading
+  // (slow connection), build it now instead of leaving a stuck "loading…" state.
+  if (!nbBuilt && document.getElementById('screen-nearby')?.classList.contains('active')) renderNearby();
 }
 // Unified scroll position — mobile scrolls the window; the desktop phone-frame scrolls #iosContent.
 function tccScrollTop(){
