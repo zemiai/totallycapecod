@@ -3050,11 +3050,22 @@ document.querySelectorAll('.modal-bg').forEach(m => m.addEventListener('click', 
 // ============ PURCHASE ============
 const _isDev = new URLSearchParams(location.search).has('dev');
 
+// Remember how this visitor first arrived (utm_campaign), so a purchase can be
+// attributed to the ad/post that earned it. Stripe echoes client_reference_id
+// back on the charge, which the nightly metrics job reads.
+(function rememberSource() {
+  const c = new URLSearchParams(location.search).get('utm_campaign');
+  if (c && !localStorage.getItem('tcc_src')) localStorage.setItem('tcc_src', c.slice(0, 40));
+}());
+
 function goToStripe() {
   tccT('begin_checkout', { currency: 'USD', value: 9.99 });
   closeModal('purchase');
+  const src = (localStorage.getItem('tcc_src') || 'direct').replace(/[^A-Za-z0-9_-]/g, '');
+  const url = STRIPE_LINK + (STRIPE_LINK.includes('?') ? '&' : '?')
+            + 'client_reference_id=' + encodeURIComponent(src);
   // Give the event a beat to send before navigating away.
-  setTimeout(() => { window.location.href = STRIPE_LINK; }, 150);
+  setTimeout(() => { window.location.href = url; }, 150);
 }
 function unlockPro() {
   state.isPro = true;

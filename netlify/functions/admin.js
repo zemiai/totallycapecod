@@ -86,6 +86,10 @@ exports.handler = async (event) => {
   }
 
   // --- gather ---
+  let metrics = {};
+  try { metrics = JSON.parse(require('fs').readFileSync(
+    require('path').join(__dirname, '../../data/metrics.json'), 'utf8')); } catch { /* not generated yet */ }
+
   const [feedback, leads, subs, beaches] = await Promise.all([
     readAll(getStore('feedback')),
     readAll(getStore('leads'), { skip: k => k.startsWith('email:') }),
@@ -116,6 +120,38 @@ exports.handler = async (event) => {
   }).filter(b => b.latest).sort((a, b) => b.latest.at - a.latest.at).map(b =>
     `<tr><td>${fmt(b.latest.at)}</td><td>${esc(b.key)}</td><td><strong>${esc((b.latest.status || '').toUpperCase())}</strong></td><td>${b.count}</td></tr>`);
 
+  // ---- Metrics (data/metrics.json, refreshed nightly) ----
+  const money = n => '$' + Number(n || 0).toFixed(2);
+  const ads = metrics.meta_ads || {}, stripe = metrics.stripe || {},
+        ga4 = metrics.ga4 || {}, gsc = metrics.gsc || {};
+  const adRows = (ads.ads || []).map(a =>
+    `<tr><td>${esc(a.ad)}</td><td>${money(a.spend)}</td><td>${a.impressions}</td>`
+    + `<td>${a.clicks}</td><td>${a.ctr}%</td><td>${money(a.cpc)}</td></tr>`);
+  const flagHtml = (ads.flags || []).length
+    ? `<div class="flags"><strong>⚠️ Spend flags</strong><ul>`
+      + ads.flags.map(f => `<li>${esc(f)}</li>`).join('') + `</ul></div>` : '';
+  const campRows = Object.entries(ga4.by_campaign || {}).map(([k, v]) =>
+    `<tr><td>${esc(k)}</td><td>${v}</td></tr>`);
+  const qRows = (gsc.queries || []).map(q =>
+    `<tr><td>${esc(q.q)}</td><td>${q.clicks}</td><td>${q.impressions}</td></tr>`);
+  const notReady = k => (metrics[k] && (metrics[k].skipped || metrics[k].error))
+    ? `<p class="empty">${esc(metrics[k].skipped || metrics[k].error)}</p>` : '';
+
+  const metricsHtml = `
+${section('💸 Ad spend (last 7 days)', ads.ads ? ads.ads.length : 0,
+    (flagHtml || '') + table(['Ad', 'Spend', 'Impr.', 'Clicks', 'CTR', 'CPC'], adRows)
+    + notReady('meta_ads'))}
+${section('💵 Sales (last 30 days)', stripe.sales || 0,
+    stripe.sales != null
+      ? `<p><strong>${stripe.sales}</strong> sales · <strong>${money(stripe.revenue)}</strong> revenue</p>`
+      : notReady('stripe'))}
+${section('📈 Traffic by campaign (last 7 days)', ga4.sessions || 0,
+    (ga4.sessions != null
+      ? `<p><strong>${ga4.sessions}</strong> sessions · ${ga4.users} users · ${ga4.purchases} purchases</p>` : '')
+    + table(['Campaign', 'Sessions'], campRows) + notReady('ga4'))}
+${section('🔍 Top search queries (last 7 days)', (gsc.queries || []).length,
+    table(['Query', 'Clicks', 'Impressions'], qRows) + notReady('gsc'))}`;
+
   const body = `<!doctype html><html><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
 <title>TCC Admin</title><style>
@@ -132,6 +168,8 @@ h2{font-size:15px;margin:0 0 10px;color:var(--navy)}.count{background:var(--sand
 th,td{text-align:left;padding:7px 9px;border-bottom:1px solid #eee;vertical-align:top}
 th{font-size:11px;text-transform:uppercase;letter-spacing:.03em;color:#999}
 td:first-child{white-space:nowrap;color:#666}.empty{color:#999;font-size:13px;margin:4px 0}
+.flags{background:#FDF3E3;border-left:4px solid #C45448;border-radius:8px;padding:10px 14px;margin:0 0 12px;font-size:13px}
+.flags ul{margin:6px 0 0;padding-left:18px}
 .foot{color:#999;font-size:12px;text-align:center;padding:8px 0 24px}
 </style></head><body>
 <header><h1>🐚 Totally Cape Cod — Admin</h1></header>
@@ -141,7 +179,10 @@ td:first-child{white-space:nowrap;color:#666}.empty{color:#999;font-size:13px;ma
   <div class="card"><div class="n">${leads.length}</div><div class="l">Email leads</div></div>
   <div class="card"><div class="n">${subs.length}</div><div class="l">Submissions</div></div>
   <div class="card"><div class="n">${beachRows.length}</div><div class="l">Live beaches</div></div>
+  <div class="card"><div class="n">${ads.total_spend != null ? money(ads.total_spend) : '—'}</div><div class="l">Ad spend 7d</div></div>
+  <div class="card"><div class="n">${stripe.revenue != null ? money(stripe.revenue) : '—'}</div><div class="l">Revenue 30d</div></div>
 </div>
+${metricsHtml}
 ${section('💬 Feedback', feedback.length, table(['When (ET)', 'From', 'Context', 'Message'], fbRows))}
 ${section('📥 Email leads', leads.length, table(['When (ET)', 'Email', 'Source', 'Page'], leadRows))}
 ${section('🏪 Business submissions', subs.length, table(['When (ET)', 'Business', 'Tier', 'Town', 'Category', 'Contact'], subRows))}

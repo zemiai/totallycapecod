@@ -1,0 +1,15 @@
+{
+ "generated_at": "2026-08-10T15:41:26Z",
+ "meta_ads": {
+  "skipped": "FB_ADS_TOKEN / FB_AD_ACCOUNT_ID not set"
+ },
+ "stripe": {
+  "skipped": "STRIPE_REPORTING_KEY not set"
+ },
+ "ga4": {
+  "skipped": "GOOGLE_SA_KEY / GA4_PROPERTY_ID not set"
+ },
+ "gsc": {
+  "skipped": "GOOGLE_SA_KEY not set"
+ }
+}
