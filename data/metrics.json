@@ -1,7 +1,39 @@
 {
- "generated_at": "2026-08-10T15:41:26Z",
+ "generated_at": "2026-08-11T10:51:51Z",
  "meta_ads": {
-  "skipped": "FB_ADS_TOKEN / FB_AD_ACCOUNT_ID not set"
+  "window": "last_7d",
+  "total_spend": 16.11,
+  "total_clicks": 415,
+  "ads": [
+   {
+    "ad": "beat bridge",
+    "campaign": "TCC \u2014 August acquisition",
+    "spend": 10.39,
+    "impressions": 1661,
+    "clicks": 295,
+    "ctr": 17.76,
+    "cpc": 0.04
+   },
+   {
+    "ad": "tonight live",
+    "campaign": "TCC \u2014 August acquisition",
+    "spend": 5.04,
+    "impressions": 763,
+    "clicks": 95,
+    "ctr": 12.45,
+    "cpc": 0.05
+   },
+   {
+    "ad": "beach parking",
+    "campaign": "TCC \u2014 August acquisition",
+    "spend": 0.68,
+    "impressions": 129,
+    "clicks": 25,
+    "ctr": 19.38,
+    "cpc": 0.03
+   }
+  ],
+  "flags": []
  },
  "stripe": {
   "skipped": "STRIPE_REPORTING_KEY not set"
