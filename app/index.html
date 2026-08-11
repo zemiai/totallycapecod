@@ -61,8 +61,18 @@
   gtag('config', 'G-Q0YM9WQLWK');
 </script>
 <script src="/js/pixel.js" defer></script>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Both third-party stylesheets load non-blocking (media=print flips to all on load), so a
+     slow unpkg/Google response can't hold up first paint. noscript keeps them working
+     without JS. Fonts use display=swap, so text renders in the fallback face immediately. -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""
+      media="print" onload="this.media='all'"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"
+      media="print" onload="this.media='all'">
+<noscript>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</noscript>
 <style>
   :root {
     --cape-brown:#5C3D2E; --cape-brown-dark:#3E2A20;
@@ -499,7 +509,7 @@
   <div class="ios-content" id="iosContent">
 
     <!-- ===== NEAR YOU ===== -->
-    <div class="screen active" id="screen-nearby">
+    <div class="screen" id="screen-nearby">
       <div class="ios-large-title">Near You</div>
       <div class="nb-locbar" id="nbLocBar">
         <div class="nb-where"><span class="nb-dot"></span><span id="nbLocLabel">Mid Cape</span></div>
@@ -572,7 +582,7 @@
     </div>
 
     <!-- ===== EVENTS ===== -->
-    <div class="screen" id="screen-events">
+    <div class="screen active" id="screen-events">
       <div class="ios-large-title">What's Happening</div>
       <div class="ios-subhead" id="eventsSubhead">Today's deals, music & free events</div>
       <div class="filter-chips" id="eventFilters"></div>
@@ -762,7 +772,7 @@
 
   <!-- TAB BAR -->
   <div class="tab-bar">
-    <button class="tab-btn active" data-tab="nearby" onclick="switchTab('nearby')"><div class="tab-icon">📍</div><div>Nearby</div></button>
+    <button class="tab-btn active" data-tab="events" onclick="switchTab('events')"><div class="tab-icon">📅</div><div>Events</div></button>
     <button class="tab-btn" data-tab="today" onclick="switchTab('today')"><div class="tab-icon">⚡</div><div>Today</div></button>
     <button class="tab-btn" data-tab="beaches" onclick="switchTab('beaches')"><div class="tab-icon">🏖️</div><div>Beaches</div></button>
     <button class="tab-btn" data-tab="ai" onclick="switchTab('ai')"><div class="tab-icon">✨</div><div>Ask</div></button>
@@ -949,7 +959,7 @@
   <div class="modal-sheet">
     <div class="modal-handle"></div>
     <div class="font-display" style="font-weight:900; font-size:22px; margin-bottom:12px;">More features</div>
-    <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('events')"><span style="font-size:24px;">📅</span><div style="flex:1;"><div class="item-title">What's Happening</div><div class="item-sub">Today's events, music & deals</div></div></div>
+    <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('nearby')"><span style="font-size:24px;">📍</span><div style="flex:1;"><div class="item-title">Near You</div><div class="item-sub">Personalized feed of spots around you</div></div></div>
     <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('passport')"><span style="font-size:24px;">🎫</span><div style="flex:1;"><div class="item-title">Passport</div><div class="item-sub">100+ stamp summer challenge</div></div></div>
     <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('bridges')"><span style="font-size:24px;">🌉</span><div style="flex:1;"><div class="item-title">Bridge Oracle</div><div class="item-sub">Traffic + forecast</div></div></div>
     <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('conditions')"><span style="font-size:24px;">🌊</span><div style="flex:1;"><div class="item-title">Tides & Conditions</div><div class="item-sub">Today + 7-day</div></div></div>
@@ -1126,7 +1136,13 @@
   </div>
 </div>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<!-- defer, NOT blocking: this used to sit render-blocking right above the app script, so
+     every visitor waited on unpkg.com before any app JS ran — including init() and the
+     first-run intro. Leaflet is only needed for the beach/whale/lighthouse maps, which
+     are never the landing tab. All three call sites guard on `typeof L === 'undefined'`,
+     and onload re-renders the map screen if the visitor got there before Leaflet landed. -->
+<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""
+        onload="window.tccLeafletReady && window.tccLeafletReady()"></script>
 <script>
 // ============ CONFIG ============
 const STRIPE_LINK = 'https://buy.stripe.com/6oU8wIfTVbmhdZveHQbo401';
@@ -1645,6 +1661,16 @@ function renderEvents() {
   }
 }
 function filterEvents(cat) { state.eventFilter = cat; renderEvents(); }
+
+// Leaflet is deferred, so a visitor can reach a map screen before it loads. The render
+// guards skip the map silently in that window; this fires when the script finally lands
+// and re-renders whichever map screen is open so it isn't left blank.
+window.tccLeafletReady = function () {
+  const active = document.querySelector('.screen.active')?.id;
+  if (active === 'screen-beaches') renderBeaches();
+  else if (active === 'screen-whales') renderWhales();
+  else if (active === 'screen-lighthouses') renderLighthouses();
+};
 
 // ============ RENDER: BEACHES ============
 let beachMapInstance = null;
@@ -3326,11 +3352,13 @@ function dismissIntro(startTourAfter) {
 // ── Coach-mark guided tour (spotlight the bottom tabs, one tip at a time) ──
 let _tourIdx = 0;
 const TOUR_STEPS = [
-  { tab: 'nearby',  title: '📍 Nearby',      text: 'Your live feed — beaches, eats and events near you right now, closest first. Just scroll.' },
+  // Each step must name a tab that exists in the tab bar — renderTourStep() bails out of
+  // the whole tour if a step's .tab-btn is missing.
+  { tab: 'events',  title: '📅 Events',      text: "Everything happening on Cape Cod — music, food, art and festivals. Filter by what you're into." },
   { tab: 'today',   title: '⚡ Today',       text: "Your daily Cape briefing: nearest beaches, live bridge delays, tonight's specials and tides." },
   { tab: 'beaches', title: '🏖️ Beaches',     text: 'Live water temps, real-time parking, and a 30-second quiz that finds your perfect beach.' },
   { tab: 'ai',      title: '✨ Ask a Local', text: 'Your Cape Cod guide — ask anything: best beach today, lobster rolls, sunset spots.' },
-  { tab: 'more',    title: '··· More',       text: 'Everything else lives here — events, your passport, the Bridge Oracle, tides, whale sightings, lighthouse tours, and Cape Cod Pro.' },
+  { tab: 'more',    title: '··· More',       text: 'Everything else lives here — your Near You feed, the passport, the Bridge Oracle, tides, whale sightings, lighthouse tours, and Cape Cod Pro.' },
 ];
 function replayTour() {            // from the More menu — let anyone re-watch it
   localStorage.removeItem('tcc_tour_done');
@@ -3525,6 +3553,9 @@ function dismissInstall() {
 function renderAll() {
   renderToday();
   renderPro();
+  // Events is the landing tab (ads promise "what's on tonight" — match it), so it has
+  // to be painted on load, not only when switchTab() runs.
+  renderEvents();
 }
 async function init() {
   // Paint first, fetch second. This used to `await loadData()` before rendering
