@@ -1199,7 +1199,13 @@ const DEFAULT_LOC = { lat: 41.7858, lng: -70.0269 }; // Orleans, MA
 // tccT) plus set as a GA4 user property, so the whole funnel — sessions, engage,
 // begin_checkout, purchase — can be split by variant. Kill the test by setting
 // AB_INTRO_FORCE below to 'ask' or 'skip'.
-const AB_INTRO_FORCE = '';
+// VERDICT (Aug 14, n=1,102): 'skip' wins. In the ask arm, 44% of first-time
+// visitors (243 of 557 intro_shown) never interacted with the modal at all,
+// and the payoff — visitor_type_set — was chosen by a small minority. The
+// force takes precedence over stored assignments, so prior 'ask' devices flip
+// to skip too. Assignment + user-property stamping stay live so the variant
+// keeps flowing to GA4 while the change beds in.
+const AB_INTRO_FORCE = 'skip';
 const _abIntro = (function () {
   if (AB_INTRO_FORCE) return AB_INTRO_FORCE;
   let v = localStorage.getItem('tcc_ab_intro');
