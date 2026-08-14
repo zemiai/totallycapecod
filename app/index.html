@@ -2021,9 +2021,17 @@ function reportBeach(status) {
   state.data.beachLive = state.data.beachLive || {};
   state.data.beachLive[slug] = { status, count: (state.data.beachLive[slug]?.count || 0) + 1, at: Date.now() };
   // …and actually SHARE it with other beachgoers (crowdsourced backend).
+  // If we have REAL GPS (not the Orleans fallback), tell the server whether the
+  // reporter is actually near this beach — verified reports get double weight in
+  // the consensus vote. Never a gate: no GPS → near:null, report still counts.
+  let near = null;
+  const loc = state.userLoc;
+  if (loc && loc !== DEFAULT_LOC && state.pendingBeach.lat) {
+    near = distanceMiles(loc.lat, loc.lng, state.pendingBeach.lat, state.pendingBeach.lng) <= 5;
+  }
   fetch('/.netlify/functions/beach-report', {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ slug, status, deviceId: localStorage.getItem('tcc_did') || '' }),
+    body: JSON.stringify({ slug, status, near, deviceId: localStorage.getItem('tcc_did') || '' }),
   }).catch(() => {});
   if (window.gtag) gtag('event', 'beach_report', { slug, status });
   closeModal('beach');

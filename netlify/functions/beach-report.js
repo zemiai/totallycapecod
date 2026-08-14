@@ -7,12 +7,39 @@
  *                                      { slug: { status, count, at } }  (last 3 hours)
  *
  * Storage: @netlify/blobs store "beach-reports", one rolling list per beach slug.
- * Rate-limited per IP so it can't be spammed. No API key required.
+ * No API key required. Abuse defenses (each fails open so a defense outage
+ * never takes down honest reporting):
+ *   - per-IP hourly cap, sized for a human (a family hitting 2-3 beaches), not a bot
+ *   - one VOICE per beach per window: same device/IP re-reporting replaces its
+ *     earlier report instead of stacking votes
+ *   - slug must be a real beach (list fetched from the repo, cached, fail-open)
+ *   - consensus is a weighted majority vote, not last-write-wins: GPS-verified
+ *     reports (client says it's within a few miles) count double, and one
+ *     device can never outvote several honest ones
  */
+const crypto = require('crypto');
 const STATUSES = ['open', 'mid', 'full'];
 const WINDOW_MS = 3 * 60 * 60 * 1000;   // reports older than 3h are ignored / pruned
 const MAX_PER_SLUG = 40;
-const IP_HOURLY_LIMIT = 40;
+const IP_HOURLY_LIMIT = 6;
+const SLUGS_URL = 'https://raw.githubusercontent.com/zemiai/totallycapecod/main/data/beaches.json';
+const SLUGS_TTL_MS = 10 * 60 * 1000;
+let _slugsCache = { at: 0, set: null };
+
+async function knownSlugs() {
+  const now = Date.now();
+  if (_slugsCache.set && now - _slugsCache.at < SLUGS_TTL_MS) return _slugsCache.set;
+  try {
+    const r = await fetch(SLUGS_URL);
+    if (r.ok) {
+      const j = await r.json();
+      const set = new Set((j.beaches || []).map(b => b.slug).filter(Boolean));
+      if (set.size) _slugsCache = { at: now, set };
+      return _slugsCache.set;
+    }
+  } catch { /* fall through */ }
+  return _slugsCache.set;   // stale cache beats nothing; null = fail open
+}
 
 const headers = {
   'Access-Control-Allow-Origin': '*',
@@ -33,9 +60,20 @@ function clientIp(event) {
 function consensus(reports, now) {
   const recent = reports.filter(r => now - r.at < WINDOW_MS);
   if (!recent.length) return null;
+  // Weighted majority: a GPS-verified report counts double an unverified one.
+  // Ties go to the side with the newest report. Last-write-wins is exactly the
+  // rule a troll wants, so it is exactly the rule we don't use.
+  const score = { open: 0, mid: 0, full: 0 };
+  const newest = { open: 0, mid: 0, full: 0 };
+  for (const r of recent) {
+    score[r.status] += r.near === true ? 2 : 1;
+    if (r.at > newest[r.status]) newest[r.status] = r.at;
+  }
+  const winner = STATUSES.slice().sort((a, b) => (score[b] - score[a]) || (newest[b] - newest[a]))[0];
   recent.sort((a, b) => b.at - a.at);
-  return { status: recent[0].status, count: recent.length, at: recent[0].at };
+  return { status: winner, count: recent.length, at: recent[0].at };
 }
+exports._consensus = consensus;   // exposed for tests only
 
 exports.handler = async (event) => {
   if (event.httpMethod === 'OPTIONS') return { statusCode: 200, headers, body: '' };
@@ -76,6 +114,12 @@ exports.handler = async (event) => {
   if (!slug || !STATUSES.includes(status)) {
     return { statusCode: 400, headers, body: JSON.stringify({ error: 'slug + valid status required' }) };
   }
+  // Only real beaches get blobs — a bot spraying made-up slugs pollutes nothing
+  // (and can't trigger founder emails). Fails open if the list can't be fetched.
+  const slugs = await knownSlugs();
+  if (slugs && !slugs.has(slug)) {
+    return { statusCode: 400, headers, body: JSON.stringify({ error: 'unknown beach' }) };
+  }
   if (!store) return { statusCode: 200, headers, body: JSON.stringify({ ok: true, stored: false }) };
 
   const now = Date.now();
@@ -97,7 +141,17 @@ exports.handler = async (event) => {
     // First report in an otherwise-quiet window is worth a founder ping; the
     // steady stream of follow-on reports is not (it would flood the inbox).
     const wasQuiet = rec.reports.length === 0;
-    rec.reports.push({ status, at: now, dev: String(body.deviceId || '').slice(0, 40) });
+    // One voice per beach per window: if this device (or, lacking a deviceId,
+    // this IP) already reported this beach, REPLACE its report — updating your
+    // status is welcome, stacking votes is not.
+    const dev = String(body.deviceId || '').slice(0, 40);
+    const iph = crypto.createHash('sha1').update(ip).digest('hex').slice(0, 10);
+    rec.reports = rec.reports.filter(r => !(dev && r.dev === dev) && !(!dev && r.iph === iph));
+    // near: client-side GPS check — true (within a few miles), false (far), or
+    // null (no GPS). Self-reported, so it only ever raises a report's weight to
+    // 2x; it is never a gate.
+    rec.reports.push({ status, at: now, dev, iph,
+                       near: body.near === true ? true : body.near === false ? false : null });
     if (rec.reports.length > MAX_PER_SLUG) rec.reports = rec.reports.slice(-MAX_PER_SLUG);
     await store.set(slug, JSON.stringify(rec));
     if (wasQuiet) {
