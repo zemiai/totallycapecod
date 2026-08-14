@@ -1992,7 +1992,13 @@ function openBeach(slug) {
       ${b.restrooms ? '🚻 Restrooms' : '— No restrooms'}<br/>
       ${b.lifeguard ? '🛟 Lifeguard on duty' : '⚠️ No lifeguard'}<br/>
       ${b.notes ? '📝 ' + b.notes : ''}
-    </div>`;
+    </div>
+    ${beachStatus(b).live ? '' : `
+    <div style="background:linear-gradient(135deg, #e8f6ee 0%, #d7efe1 100%); border-radius:12px; padding:10px 12px; margin-top:2px; display:flex; align-items:center; gap:10px;">
+      <span style="font-size:20px;">📢</span>
+      <div style="font-size:12.5px; color:#0b5c37; line-height:1.4;"><strong>No live report yet.</strong> At ${b.name} right now? One tap below tells everyone what the lot looks like.</div>
+    </div>`}`;
+  if (!beachStatus(b).live) tccT('report_nudge_shown', { slug: b.slug });
   // Affiliate booking CTA
   document.getElementById('beachModalAffiliate').innerHTML = `
     <div style="background:linear-gradient(135deg, var(--cape-cream) 0%, var(--cape-sand) 100%); border-radius:14px; padding:12px 14px; display:flex; align-items:center; justify-content:space-between; gap:10px;">

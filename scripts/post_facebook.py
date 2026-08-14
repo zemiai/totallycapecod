@@ -190,6 +190,28 @@ def fmt_beach_pick():
     tags = base_tags() + ["#CapeCodBeaches", hashtag(b.get("town", "CapeCod"))]
     return lines, photo_for("beach"), "beach_pick", tags
 
+def fmt_report_ask():
+    """Community ask: crowdsource beach-lot reports. Runs Saturday morning — peak
+    beach traffic, when a report is worth the most to the next family in the car.
+    The ask is the point; the beach list is the excuse to post it."""
+    beaches = (load("beaches.json") or {}).get("beaches") or []
+    picks = sorted(beaches, key=lambda b: b.get("crowd", 3), reverse=True)[:3]
+    hook = rotate(["🙏 Cape crowd, do a stranger a solid this morning:",
+                   "🙏 One tap from your beach chair helps the whole Cape:",
+                   "🙏 Beach-day favor — takes literally ten seconds:"])
+    lines = [hook, "",
+             "If you're AT a beach today, open the app, tap your lot's status "
+             "(🟢 spots · 🟠 filling · 🔴 full). That's it.",
+             "",
+             "Somebody circling with hot kids in the back seat sees your report "
+             "before they waste the drive. Next weekend, someone does it for you."]
+    if picks:
+        names = " · ".join(f"{b.get('name')}" for b in picks if b.get("name"))
+        lines += ["", f"Busiest lots most Saturdays: {names} — reports from those help most."]
+    lines += ["", "Live lot status for all 27 beaches is free on the app."]
+    tags = base_tags() + ["#CapeCodBeaches", "#CapeCodTips"]
+    return lines, photo_for("beach", salt=1), "report_ask", tags
+
 def fmt_tonight():
     today = now_et().strftime("%Y-%m-%d")
     evs = evening_events(today, 3)
@@ -347,8 +369,10 @@ def fmt_evening():
     return lines, photo_for("sunset", salt=1), "evening", tags
 
 # ------------------------------------------------------------------ compose ---
+# Saturday = report_ask: peak beach morning, when a lot report helps the most people.
+# (fmt_spotlight still runs via the weekend/evening slots' event coverage.)
 MORNING_FORMATS = {0: fmt_beach_pick, 1: fmt_tonight, 2: fmt_question,
-                   3: fmt_gem, 4: fmt_weekend, 5: fmt_spotlight, 6: fmt_sunset}
+                   3: fmt_gem, 4: fmt_weekend, 5: fmt_report_ask, 6: fmt_sunset}
 
 def compose(mode: str):
     """Return (fb_message, ig_caption, image_url, campaign)."""
