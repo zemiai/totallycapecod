@@ -1,33 +1,37 @@
 {
-  "at": "2026-08-14T10:58:40Z",
+  "at": "2026-08-15T10:24:32Z",
   "window": "last_7d",
   "ads": [
     {
       "campaign_name": "TCC \u2014 August acquisition",
       "adset_name": "Cape + Boston \u00b7 all placements",
       "ad_name": "beach parking",
-      "spend": "0.86",
-      "impressions": "156",
-      "reach": "147",
-      "clicks": "31",
-      "ctr": "19.871795",
-      "cpc": "0.027742",
+      "spend": "1.17",
+      "impressions": "197",
+      "reach": "181",
+      "clicks": "37",
+      "ctr": "18.781726",
+      "cpc": "0.031622",
       "actions": [
         {
           "action_type": "link_click",
-          "value": "20"
+          "value": "27"
         },
         {
           "action_type": "landing_page_view",
-          "value": "15"
+          "value": "19"
         },
         {
           "action_type": "omni_landing_page_view",
-          "value": "15"
+          "value": "19"
         },
         {
           "action_type": "post_engagement",
-          "value": "23"
+          "value": "30"
+        },
+        {
+          "action_type": "like",
+          "value": "1"
         },
         {
           "action_type": "post_interaction_gross",
@@ -35,7 +39,7 @@
         },
         {
           "action_type": "page_engagement",
-          "value": "23"
+          "value": "31"
         },
         {
           "action_type": "post_interaction_net",
@@ -54,98 +58,106 @@
           "value": "1"
         }
       ],
-      "date_start": "2026-08-07",
-      "date_stop": "2026-08-13"
+      "date_start": "2026-08-08",
+      "date_stop": "2026-08-14"
     },
     {
       "campaign_name": "TCC \u2014 August acquisition",
       "adset_name": "Cape + Boston \u00b7 all placements",
       "ad_name": "beat bridge",
-      "spend": "51.36",
-      "impressions": "8482",
-      "reach": "6069",
-      "clicks": "1545",
-      "ctr": "18.215044",
-      "cpc": "0.033243",
+      "spend": "63",
+      "impressions": "10285",
+      "reach": "7179",
+      "clicks": "1875",
+      "ctr": "18.230433",
+      "cpc": "0.0336",
       "actions": [
         {
           "action_type": "link_click",
-          "value": "823"
+          "value": "1015"
         },
         {
           "action_type": "post_reaction",
-          "value": "37"
+          "value": "51"
         },
         {
           "action_type": "landing_page_view",
-          "value": "573"
+          "value": "706"
         },
         {
           "action_type": "omni_landing_page_view",
-          "value": "573"
+          "value": "706"
         },
         {
           "action_type": "onsite_conversion.post_unlike",
-          "value": "2"
+          "value": "3"
         },
         {
           "action_type": "post_engagement",
-          "value": "975"
+          "value": "1229"
         },
         {
           "action_type": "like",
-          "value": "45"
+          "value": "51"
         },
         {
           "action_type": "post_interaction_gross",
-          "value": "54"
+          "value": "75"
+        },
+        {
+          "action_type": "comment",
+          "value": "1"
         },
         {
           "action_type": "page_engagement",
-          "value": "1020"
+          "value": "1280"
         },
         {
           "action_type": "post_interaction_net",
-          "value": "56"
+          "value": "78"
         },
         {
           "action_type": "post",
-          "value": "4"
+          "value": "6"
         },
         {
           "action_type": "onsite_conversion.post_save",
-          "value": "13"
+          "value": "17"
+        },
+        {
+          "action_type": "onsite_conversion.post_net_comment",
+          "value": "1"
         },
         {
           "action_type": "onsite_conversion.post_net_save",
-          "value": "13"
+          "value": "17"
         },
         {
           "action_type": "onsite_conversion.post_net_like",
-          "value": "35"
+          "value": "48"
         },
         {
           "action_type": "video_view",
-          "value": "98"
+          "value": "139"
         }
       ],
-      "date_start": "2026-08-07",
-      "date_stop": "2026-08-13"
+      "date_start": "2026-08-08",
+      "date_stop": "2026-08-14"
     },
     {
       "campaign_name": "TCC \u2014 August acquisition",
       "adset_name": "Cape + Boston \u00b7 all placements",
       "ad_name": "tonight live",
-      "spend": "5.76",
-      "impressions": "874",
-      "reach": "756",
-      "clicks": "106",
-      "ctr": "12.128146",
-      "cpc": "0.05434",
+      "spend": "6.05",
+      "impressions": "934",
+      "reach": "786",
+      "clicks": "109",
+      "ctr": "11.670236",
+      "cpc": "0.055505",
       "actions": [
         {
           "action_type": "link_click",
-          "value": "52"
+          "value": "54"
         },
         {
           "action_type": "post_reaction",
@@ -153,15 +165,15 @@
         },
         {
           "action_type": "landing_page_view",
-          "value": "35"
+          "value": "37"
         },
         {
           "action_type": "omni_landing_page_view",
-          "value": "35"
+          "value": "37"
         },
         {
           "action_type": "post_engagement",
-          "value": "58"
+          "value": "60"
         },
         {
           "action_type": "like",
@@ -173,7 +185,7 @@
         },
         {
           "action_type": "page_engagement",
-          "value": "63"
+          "value": "65"
         },
         {
           "action_type": "post_interaction_net",
@@ -192,8 +204,8 @@
           "value": "4"
         }
       ],
-      "date_start": "2026-08-07",
-      "date_stop": "2026-08-13"
+      "date_start": "2026-08-08",
+      "date_stop": "2026-08-14"
     }
   ]
 }
