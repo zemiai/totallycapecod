@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-15T22:19:47Z",
+  "updated_at": "2026-08-15T22:47:19Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -110,7 +110,7 @@
       "location": "Off Cape Cod",
       "reported_by": "iNaturalist \u00b7 tianshuo",
       "reported_at": "2026-08-09T22:38:00Z",
-      "time_ago": "5 days ago",
+      "time_ago": "6 days ago",
       "photo_url": "https://static.inaturalist.org/photos/715365249/medium.jpg",
       "notes": "North Atlantic Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/390467603"
@@ -124,7 +124,7 @@
       "location": "Off Cape Cod",
       "reported_by": "iNaturalist \u00b7 tianshuo",
       "reported_at": "2026-08-09T22:38:00Z",
-      "time_ago": "5 days ago",
+      "time_ago": "6 days ago",
       "photo_url": "https://static.inaturalist.org/photos/715365246/medium.jpg",
       "notes": "North Atlantic Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/390467602"
@@ -138,7 +138,7 @@
       "location": "Off Cape Cod",
       "reported_by": "iNaturalist \u00b7 tianshuo",
       "reported_at": "2026-08-09T22:38:00Z",
-      "time_ago": "5 days ago",
+      "time_ago": "6 days ago",
       "photo_url": "https://static.inaturalist.org/photos/715364888/medium.jpg",
       "notes": "North Atlantic Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/390467598"
@@ -152,7 +152,7 @@
       "location": "Off Cape Cod",
       "reported_by": "iNaturalist \u00b7 tianshuo",
       "reported_at": "2026-08-09T22:32:00Z",
-      "time_ago": "5 days ago",
+      "time_ago": "6 days ago",
       "photo_url": "https://static.inaturalist.org/photos/715364696/medium.jpg",
       "notes": "North Atlantic Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/390467597"
@@ -166,7 +166,7 @@
       "location": "Off Cape Cod",
       "reported_by": "iNaturalist \u00b7 tianshuo",
       "reported_at": "2026-08-09T22:31:00Z",
-      "time_ago": "5 days ago",
+      "time_ago": "6 days ago",
       "photo_url": "https://static.inaturalist.org/photos/715364659/medium.jpg",
       "notes": "North Atlantic Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/390467596"
