@@ -57,6 +57,12 @@ FORCE = os.environ.get("FORCE", "") == "1"
 # Curated Cape photos in img/social/ (Pexels, free commercial — STOCK_CREDITS.md),
 # tagged so each format gets an on-topic image. Day-of-year rotation keeps variety.
 PHOTO_TAGS = {
+    # Founder-shot originals (Nauset Light Beach, Eastham — no license needed).
+    # Dusk/evening mood: weighted toward the sunset + evening + gem slots.
+    "nauset-light-beach-dusk.jpg": {"beach", "sunset", "family"},
+    "nauset-light-red-beacon.jpg": {"sunset", "gem", "question"},
+    "nauset-light-glow.jpg":       {"sunset", "gem", "events"},
+    "nauset-light-bluff.jpg":      {"gem", "question"},
     "beach-dunes.jpg":       {"beach"},
     "beach-umbrella.jpg":    {"beach", "sunset"},
     "cape-beach-grass.jpg":  {"beach", "gem"},
