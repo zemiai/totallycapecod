@@ -22,3 +22,15 @@ no attribution required, modification allowed.
 
 Curated from a wider Pexels candidate set; non-Cape shots (forest, autumn birch,
 mountain backdrop, paella, lightning storm) were rejected.
+
+## Founder originals — no license needed
+
+Shot by the founder at Nauset Light Beach, Eastham (Aug 2026). EXIF (GPS,
+timestamps) stripped before commit; resized to 1600px.
+
+| File | Subject |
+|------|---------|
+| nauset-light-beach-dusk.jpg | Nauset Light Beach at dusk, beachgoers on sand |
+| nauset-light-red-beacon.jpg | Nauset Light silhouette, red beacon lit |
+| nauset-light-glow.jpg | Lantern room glowing through the dune fence at sunset |
+| nauset-light-bluff.jpg | Lighthouse over the eroding bluff |
