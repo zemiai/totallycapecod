@@ -1,22 +1,8 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-16T13:55:06Z",
+  "updated_at": "2026-08-16T14:22:16Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
-    {
-      "id": "inat-391264671",
-      "species": "shark",
-      "count": 1,
-      "lat": 41.6709,
-      "lng": -69.9217,
-      "location": "North Atlantic Ocean, MA, US",
-      "reported_by": "iNaturalist \u00b7 busch_laura",
-      "reported_at": "2026-08-14T19:59:40Z",
-      "time_ago": "1 day ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/716912465/medium.jpg",
-      "notes": "Great White Shark",
-      "source_url": "https://www.inaturalist.org/observations/391264671"
-    },
     {
       "id": "inat-390606276",
       "species": "humpback",
@@ -40,7 +26,7 @@
       "location": "Wellfleet Harbor",
       "reported_by": "iNaturalist \u00b7 turnerfalk",
       "reported_at": "2026-08-11T14:03:07Z",
-      "time_ago": "4 days ago",
+      "time_ago": "5 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/715088373/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/390329382"
@@ -54,7 +40,7 @@
       "location": "Plymouth, MA, USA",
       "reported_by": "iNaturalist \u00b7 ackreager",
       "reported_at": "2026-08-11T14:00:00Z",
-      "time_ago": "4 days ago",
+      "time_ago": "5 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/715259390/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/390416151"
