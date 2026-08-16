@@ -1,35 +1,44 @@
 {
- "generated_at": "2026-08-15T10:24:32Z",
+ "generated_at": "2026-08-16T10:25:26Z",
  "meta_ads": {
   "window": "last_7d",
-  "total_spend": 70.22,
-  "total_clicks": 2021,
+  "total_spend": 85.46,
+  "total_clicks": 2190,
   "ads": [
    {
     "ad": "beat bridge",
     "campaign": "TCC \u2014 August acquisition",
-    "spend": 63.0,
-    "impressions": 10285,
-    "clicks": 1875,
+    "spend": 63.12,
+    "impressions": 10298,
+    "clicks": 1877,
     "ctr": 18.23,
     "cpc": 0.03
    },
    {
+    "ad": "beach parking",
+    "campaign": "TCC \u2014 August acquisition",
+    "spend": 15.11,
+    "impressions": 1573,
+    "clicks": 167,
+    "ctr": 10.62,
+    "cpc": 0.09
+   },
+   {
     "ad": "tonight live",
     "campaign": "TCC \u2014 August acquisition",
-    "spend": 6.05,
-    "impressions": 934,
+    "spend": 6.06,
+    "impressions": 935,
     "clicks": 109,
-    "ctr": 11.67,
+    "ctr": 11.66,
     "cpc": 0.06
    },
    {
     "ad": "beach parking",
     "campaign": "TCC \u2014 August acquisition",
     "spend": 1.17,
-    "impressions": 197,
+    "impressions": 198,
     "clicks": 37,
-    "ctr": 18.78,
+    "ctr": 18.69,
     "cpc": 0.03
    }
   ],
