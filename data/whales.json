@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-17T13:37:46Z",
+  "updated_at": "2026-08-17T14:25:41Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -12,7 +12,7 @@
       "location": "Chatham, MA 02633, USA",
       "reported_by": "iNaturalist \u00b7 bottaw",
       "reported_at": "2026-08-16T18:01:30Z",
-      "time_ago": "19 h ago",
+      "time_ago": "20 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/717996638/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/391825405"
@@ -26,7 +26,7 @@
       "location": "Plymouth County, MA, USA",
       "reported_by": "iNaturalist \u00b7 muhtasim31",
       "reported_at": "2026-08-16T17:05:52Z",
-      "time_ago": "20 h ago",
+      "time_ago": "21 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/717961337/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/391805650"
@@ -40,7 +40,7 @@
       "location": "Cape Cod National Seashore, Barnstable County, US-MA, US",
       "reported_by": "iNaturalist \u00b7 bborgmannwinter",
       "reported_at": "2026-08-16T16:37:48Z",
-      "time_ago": "20 h ago",
+      "time_ago": "21 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/718088691/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/391872874"
@@ -54,10 +54,24 @@
       "location": "Eastham, MA, US",
       "reported_by": "iNaturalist \u00b7 bborgmannwinter",
       "reported_at": "2026-08-16T16:01:45Z",
-      "time_ago": "21 h ago",
+      "time_ago": "22 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/718088354/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/391872457"
+    },
+    {
+      "id": "inat-392085988",
+      "species": "seal",
+      "count": 1,
+      "lat": 41.7898,
+      "lng": -69.9315,
+      "location": "North Atlantic Ocean, Orleans, MA, US",
+      "reported_by": "iNaturalist \u00b7 busch_laura",
+      "reported_at": "2026-08-15T21:39:28Z",
+      "time_ago": "1 day ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/718500965/medium.jpg",
+      "notes": "Harbor Seal",
+      "source_url": "https://www.inaturalist.org/observations/392085988"
     },
     {
       "id": "inat-391264671",
@@ -86,20 +100,6 @@
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/715972706/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/390606276"
-    },
-    {
-      "id": "inat-390329382",
-      "species": "seal",
-      "count": 1,
-      "lat": 41.8982,
-      "lng": -70.0258,
-      "location": "Wellfleet Harbor",
-      "reported_by": "iNaturalist \u00b7 turnerfalk",
-      "reported_at": "2026-08-11T14:03:07Z",
-      "time_ago": "5 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/715088373/medium.jpg",
-      "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/390329382"
     },
     {
       "id": "inat-390467603",
