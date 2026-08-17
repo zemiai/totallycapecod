@@ -1,9 +1,9 @@
 {
- "generated_at": "2026-08-16T10:25:26Z",
+ "generated_at": "2026-08-17T10:34:00Z",
  "meta_ads": {
   "window": "last_7d",
-  "total_spend": 85.46,
-  "total_clicks": 2190,
+  "total_spend": 100.33,
+  "total_clicks": 2341,
   "ads": [
    {
     "ad": "beat bridge",
@@ -17,10 +17,10 @@
    {
     "ad": "beach parking",
     "campaign": "TCC \u2014 August acquisition",
-    "spend": 15.11,
-    "impressions": 1573,
-    "clicks": 167,
-    "ctr": 10.62,
+    "spend": 29.98,
+    "impressions": 2790,
+    "clicks": 318,
+    "ctr": 11.4,
     "cpc": 0.09
    },
    {
