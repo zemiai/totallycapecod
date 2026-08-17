@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-17T04:40:16Z",
+  "updated_at": "2026-08-17T05:33:53Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -12,7 +12,7 @@
       "location": "Chatham, MA 02633, USA",
       "reported_by": "iNaturalist \u00b7 bottaw",
       "reported_at": "2026-08-16T18:01:30Z",
-      "time_ago": "10 h ago",
+      "time_ago": "11 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/717996638/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/391825405"
@@ -26,7 +26,7 @@
       "location": "Plymouth County, MA, USA",
       "reported_by": "iNaturalist \u00b7 muhtasim31",
       "reported_at": "2026-08-16T17:05:52Z",
-      "time_ago": "11 h ago",
+      "time_ago": "12 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/717961337/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/391805650"
@@ -54,7 +54,7 @@
       "location": "Eastham, MA, US",
       "reported_by": "iNaturalist \u00b7 bborgmannwinter",
       "reported_at": "2026-08-16T16:01:45Z",
-      "time_ago": "12 h ago",
+      "time_ago": "13 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/718088354/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/391872457"
