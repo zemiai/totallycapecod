@@ -1,20 +1,20 @@
 {
   "today": {
-    "date": "2026-08-17",
+    "date": "2026-08-18",
     "weather": {
       "temp_high": 73,
-      "temp_low": 65,
-      "condition": "Rain",
-      "icon": "\ud83c\udf27\ufe0f",
-      "wind_mph": 12,
-      "wind_dir": "S",
+      "temp_low": 68,
+      "condition": "Fog",
+      "icon": "\ud83c\udf2b\ufe0f",
+      "wind_mph": 6,
+      "wind_dir": "N",
       "humidity": 65,
       "uv_index": 7
     },
     "sun": {
-      "sunrise": "5:49 AM",
-      "sunset": "7:38 PM",
-      "civil_twilight_end": "8:07 PM",
+      "sunrise": "5:50 AM",
+      "sunset": "7:37 PM",
+      "civil_twilight_end": "8:05 PM",
       "best_sunset_spot": {
         "name": "Skaket Beach",
         "town": "Orleans",
@@ -23,24 +23,24 @@
     },
     "tides": [
       {
-        "time": "3:59 AM",
+        "time": "4:52 AM",
+        "type": "high",
+        "height_ft": 4.9
+      },
+      {
+        "time": "11:15 AM",
+        "type": "low",
+        "height_ft": 0.1
+      },
+      {
+        "time": "5:11 PM",
         "type": "high",
         "height_ft": 5.3
       },
       {
-        "time": "10:32 AM",
+        "time": "11:58 PM",
         "type": "low",
-        "height_ft": -0.1
-      },
-      {
-        "time": "4:22 PM",
-        "type": "high",
-        "height_ft": 5.4
-      },
-      {
-        "time": "11:06 PM",
-        "type": "low",
-        "height_ft": -0.0
+        "height_ft": 0.0
       }
     ],
     "water_temp_f": 64,
@@ -49,25 +49,12 @@
   },
   "forecast_7day": [
     {
-      "date": "2026-08-17",
-      "day": "Mon",
-      "temp_low": 69,
-      "temp_high": 73,
-      "condition": "Rain",
-      "icon": "\ud83c\udf27\ufe0f",
-      "sunrise": "5:49 AM",
-      "sunset": "7:38 PM",
-      "low_tide": "10:32 AM",
-      "high_tide": "3:59 AM",
-      "water_temp": 64
-    },
-    {
       "date": "2026-08-18",
       "day": "Tue",
+      "temp_low": 68,
       "temp_high": 73,
       "condition": "Fog",
       "icon": "\ud83c\udf2b\ufe0f",
-      "temp_low": 68,
       "sunrise": "5:50 AM",
       "sunset": "7:37 PM",
       "low_tide": "11:15 AM",
@@ -77,10 +64,10 @@
     {
       "date": "2026-08-19",
       "day": "Wed",
-      "temp_high": 78,
-      "condition": "Sunny",
-      "icon": "\u2600\ufe0f",
-      "temp_low": 70,
+      "temp_high": 79,
+      "condition": "Fog",
+      "icon": "\ud83c\udf2b\ufe0f",
+      "temp_low": 71,
       "sunrise": "5:51 AM",
       "sunset": "7:35 PM",
       "low_tide": "12:00 PM",
@@ -91,9 +78,9 @@
       "date": "2026-08-20",
       "day": "Thu",
       "temp_high": 77,
-      "condition": "Rain",
-      "icon": "\ud83c\udf27\ufe0f",
-      "temp_low": 67,
+      "condition": "Sunny",
+      "icon": "\u2600\ufe0f",
+      "temp_low": 68,
       "sunrise": "5:52 AM",
       "sunset": "7:34 PM",
       "low_tide": "12:54 AM",
@@ -103,7 +90,7 @@
     {
       "date": "2026-08-21",
       "day": "Fri",
-      "temp_high": 77,
+      "temp_high": 74,
       "condition": "Rain",
       "icon": "\ud83c\udf27\ufe0f",
       "temp_low": 67,
@@ -116,10 +103,10 @@
     {
       "date": "2026-08-22",
       "day": "Sat",
-      "temp_high": 77,
+      "temp_high": 78,
       "condition": "Rain",
       "icon": "\ud83c\udf27\ufe0f",
-      "temp_low": 67,
+      "temp_low": 68,
       "sunrise": "5:54 AM",
       "sunset": "7:31 PM",
       "low_tide": "2:47 AM",
@@ -129,16 +116,29 @@
     {
       "date": "2026-08-23",
       "day": "Sun",
-      "temp_high": 78,
+      "temp_high": 80,
       "condition": "Rain",
       "icon": "\ud83c\udf27\ufe0f",
+      "temp_low": 68,
       "sunrise": "5:55 AM",
       "sunset": "7:29 PM",
       "low_tide": "3:42 AM",
       "high_tide": "9:35 AM",
       "water_temp": 64
+    },
+    {
+      "date": "2026-08-24",
+      "day": "Mon",
+      "temp_high": 80,
+      "condition": "Rain",
+      "icon": "\ud83c\udf27\ufe0f",
+      "sunrise": "5:56 AM",
+      "sunset": "7:28 PM",
+      "low_tide": "4:33 AM",
+      "high_tide": "10:26 AM",
+      "water_temp": 64
     }
   ],
   "version": "1.0",
-  "updated_at": "2026-08-17T08:49:13Z"
+  "updated_at": "2026-08-18T08:42:02Z"
 }
