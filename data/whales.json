@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-19T15:59:19Z",
+  "updated_at": "2026-08-19T16:39:21Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -12,7 +12,7 @@
       "location": "Barcliff Avenue Ext, Chatham, MA, US",
       "reported_by": "iNaturalist \u00b7 mschonen",
       "reported_at": "2026-08-18T16:20:06Z",
-      "time_ago": "23 h ago",
+      "time_ago": "1 day ago",
       "photo_url": "https://static.inaturalist.org/photos/719174840/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/392429014"
@@ -68,7 +68,7 @@
       "location": "Cape Cod National Seashore, Barnstable County, US-MA, US",
       "reported_by": "iNaturalist \u00b7 bborgmannwinter",
       "reported_at": "2026-08-16T16:37:48Z",
-      "time_ago": "2 days ago",
+      "time_ago": "3 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/718088691/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/391872874"
@@ -110,7 +110,7 @@
       "location": "United States",
       "reported_by": "iNaturalist \u00b7 nsharp",
       "reported_at": "2026-08-11T16:21:00Z",
-      "time_ago": "7 days ago",
+      "time_ago": "8 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/718723745/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/392200634"
@@ -334,7 +334,7 @@
       "location": "Massachusetts, US",
       "reported_by": "iNaturalist \u00b7 kyle_leclerc",
       "reported_at": "2026-08-05T16:23:49Z",
-      "time_ago": "13 days ago",
+      "time_ago": "14 days ago",
       "photo_url": "https://static.inaturalist.org/photos/714159002/medium.jpg",
       "notes": "Fin Whale",
       "source_url": "https://www.inaturalist.org/observations/389854786"
