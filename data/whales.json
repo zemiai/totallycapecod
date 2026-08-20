@@ -1,8 +1,22 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-20T17:56:58Z",
+  "updated_at": "2026-08-20T18:44:04Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
+    {
+      "id": "inat-392994103",
+      "species": "seal",
+      "count": 1,
+      "lat": 41.8453,
+      "lng": -69.9459,
+      "location": "Wellfleet, MA, US",
+      "reported_by": "iNaturalist \u00b7 jowenowns",
+      "reported_at": "2026-08-18T19:21:04Z",
+      "time_ago": "1 day ago",
+      "photo_url": "https://static.inaturalist.org/photos/720276210/medium.jpg",
+      "notes": "Grey Seal",
+      "source_url": "https://www.inaturalist.org/observations/392994103"
+    },
     {
       "id": "inat-392429014",
       "species": "seal",
@@ -40,7 +54,7 @@
       "location": "Chatham, MA 02633, USA",
       "reported_by": "iNaturalist \u00b7 bottaw",
       "reported_at": "2026-08-16T18:01:30Z",
-      "time_ago": "3 days ago",
+      "time_ago": "4 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/717996638/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/391825405"
@@ -58,20 +72,6 @@
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/717977587/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/391805650"
-    },
-    {
-      "id": "inat-391872874",
-      "species": "seal",
-      "count": 1,
-      "lat": 41.8439,
-      "lng": -69.9466,
-      "location": "Cape Cod National Seashore, Barnstable County, US-MA, US",
-      "reported_by": "iNaturalist \u00b7 bborgmannwinter",
-      "reported_at": "2026-08-16T16:37:48Z",
-      "time_ago": "4 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/718088691/medium.jpg",
-      "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/391872874"
     },
     {
       "id": "inat-391264671",
