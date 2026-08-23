@@ -1,8 +1,22 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-23T02:43:41Z",
+  "updated_at": "2026-08-23T03:49:11Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
+    {
+      "id": "inat-393620048",
+      "species": "seal",
+      "count": 1,
+      "lat": 41.6882,
+      "lng": -69.9509,
+      "location": "Barcliff Avenue Ext, Chatham, MA, US",
+      "reported_by": "iNaturalist \u00b7 bunnyflop",
+      "reported_at": "2026-08-22T19:57:27Z",
+      "time_ago": "7 h ago",
+      "photo_url": "https://static.inaturalist.org/photos/721498144/medium.jpg",
+      "notes": "Grey Seal",
+      "source_url": "https://www.inaturalist.org/observations/393620048"
+    },
     {
       "id": "inat-393019303",
       "species": "seal",
@@ -58,20 +72,6 @@
       "photo_url": "https://static.inaturalist.org/photos/720276210/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/392994103"
-    },
-    {
-      "id": "inat-392429014",
-      "species": "seal",
-      "count": 1,
-      "lat": 41.6883,
-      "lng": -69.9511,
-      "location": "Barcliff Avenue Ext, Chatham, MA, US",
-      "reported_by": "iNaturalist \u00b7 mschonen",
-      "reported_at": "2026-08-18T16:20:06Z",
-      "time_ago": "4 days ago",
-      "photo_url": "https://static.inaturalist.org/photos/719174840/medium.jpg",
-      "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/392429014"
     },
     {
       "id": "inat-391264671",
