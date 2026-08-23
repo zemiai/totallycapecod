@@ -26,6 +26,12 @@
   directory = "netlify/functions"
   node_bundler = "esbuild"
 
+# The admin dashboard reads the nightly business report from disk. Netlify
+# functions only contain traced dependencies by default, so explicitly bundle
+# this data file with the admin function.
+[functions."admin"]
+  included_files = ["data/metrics.json"]
+
 # Reliable trigger for the beach water-temp pipeline. GitHub throttles its own
 # schedule: cron, so this dispatches update-beaches.yml every 30 min. The
 # function self-limits to May–Oct and no-ops if GH_DISPATCH_TOKEN isn't set.

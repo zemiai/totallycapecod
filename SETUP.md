@@ -140,9 +140,19 @@ stored in Netlify Blobs. Two ways to see it:
    No key set → falls back to `ZAPIER_SUBMISSION_WEBHOOK` if present.
 
 2. **Admin dashboard** — set `ADMIN_KEY` (any long random string) in Netlify env
-   vars, then open `https://totallycapecod.com/admin?key=YOUR_KEY`. It lists
-   recent feedback, leads, submissions, and live beach reports on one page.
-   It's password-gated and `noindex`; rotate `ADMIN_KEY` to revoke access.
+   vars, deploy, then open `https://totallycapecod.com/admin` and enter the key
+   in the login form. A successful login creates a secure, HttpOnly 12-hour
+   session cookie. The dashboard lists recent feedback, leads, submissions,
+   live beach reports, reporting metrics, and connection diagnostics. Use its
+   storage health button to confirm Netlify Blobs can write/read/delete. It is
+   `noindex`; rotate `ADMIN_KEY` to revoke all existing sessions.
+
+   The dashboard loads `data/metrics.json` live from GitHub (with a bundled
+   fallback) so data-only metric commits appear without a Netlify deploy. If
+   `STRIPE_SECRET_KEY` is available to Functions, the dashboard also reads
+   successful PaymentIntents directly from Stripe for its rolling 30-day sales
+   total. GA4 and Search Console still require `GOOGLE_SA_KEY` and
+   `GA4_PROPERTY_ID` in the GitHub Actions secrets used by `ads-auto.yml`.
 
 ## Next steps you might want
 
