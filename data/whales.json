@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-22T23:44:59Z",
+  "updated_at": "2026-08-23T01:14:30Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -296,34 +296,6 @@
       "photo_url": "https://static.inaturalist.org/photos/715363972/medium.jpg",
       "notes": "North Atlantic Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/390467584"
-    },
-    {
-      "id": "inat-389509500",
-      "species": "minke",
-      "count": 1,
-      "lat": 41.7478,
-      "lng": -70.3751,
-      "location": "MA, US",
-      "reported_by": "iNaturalist \u00b7 grahamrella",
-      "reported_at": "2026-08-09T00:38:17Z",
-      "time_ago": "13 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/713483816/medium.jpg",
-      "notes": "Common Minke Whale",
-      "source_url": "https://www.inaturalist.org/observations/389509500"
-    },
-    {
-      "id": "inat-389822498",
-      "species": "humpback",
-      "count": 1,
-      "lat": 42.1709,
-      "lng": -70.2459,
-      "location": "US",
-      "reported_by": "iNaturalist \u00b7 chilicatx",
-      "reported_at": "2026-08-08T14:47:10Z",
-      "time_ago": "14 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/714092379/medium.jpg",
-      "notes": "Humpback Whale",
-      "source_url": "https://www.inaturalist.org/observations/389822498"
     }
   ]
 }
