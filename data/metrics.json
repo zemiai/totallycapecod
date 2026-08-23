@@ -1,18 +1,18 @@
 {
- "generated_at": "2026-08-22T10:25:36Z",
+ "generated_at": "2026-08-23T10:25:38Z",
  "meta_ads": {
   "window": "last_7d",
-  "total_spend": 65.32,
-  "total_clicks": 632,
+  "total_spend": 50.17,
+  "total_clicks": 462,
   "ads": [
    {
     "ad": "beach parking",
     "campaign": "TCC \u2014 August acquisition",
-    "spend": 65.32,
-    "impressions": 5588,
-    "clicks": 632,
-    "ctr": 11.31,
-    "cpc": 0.1
+    "spend": 50.17,
+    "impressions": 4006,
+    "clicks": 462,
+    "ctr": 11.53,
+    "cpc": 0.11
    }
   ],
   "flags": []
