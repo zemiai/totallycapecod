@@ -1,21 +1,21 @@
 {
-  "at": "2026-08-24T10:38:35Z",
+  "at": "2026-08-25T10:34:46Z",
   "window": "last_7d",
   "ads": [
     {
       "campaign_name": "TCC \u2014 August acquisition",
       "adset_name": "Cape + Boston \u00b7 all placements",
       "ad_name": "beach parking",
-      "spend": "35.21",
-      "impressions": "2791",
-      "reach": "2353",
-      "clicks": "313",
-      "ctr": "11.214618",
-      "cpc": "0.112492",
+      "spend": "20.64",
+      "impressions": "1713",
+      "reach": "1575",
+      "clicks": "178",
+      "ctr": "10.391127",
+      "cpc": "0.115955",
       "actions": [
         {
           "action_type": "link_click",
-          "value": "212"
+          "value": "115"
         },
         {
           "action_type": "post_reaction",
@@ -23,23 +23,23 @@
         },
         {
           "action_type": "landing_page_view",
-          "value": "148"
+          "value": "74"
         },
         {
           "action_type": "omni_landing_page_view",
-          "value": "148"
+          "value": "74"
         },
         {
           "action_type": "post_engagement",
-          "value": "221"
+          "value": "123"
         },
         {
           "action_type": "like",
-          "value": "3"
+          "value": "2"
         },
         {
           "action_type": "post_interaction_gross",
-          "value": "9"
+          "value": "8"
         },
         {
           "action_type": "comment",
@@ -47,15 +47,15 @@
         },
         {
           "action_type": "page_engagement",
-          "value": "224"
+          "value": "125"
         },
         {
           "action_type": "post_interaction_net",
-          "value": "9"
+          "value": "8"
         },
         {
           "action_type": "post",
-          "value": "2"
+          "value": "1"
         },
         {
           "action_type": "onsite_conversion.post_save",
@@ -74,8 +74,8 @@
           "value": "4"
         }
       ],
-      "date_start": "2026-08-17",
-      "date_stop": "2026-08-23"
+      "date_start": "2026-08-18",
+      "date_stop": "2026-08-24"
     }
   ]
 }
