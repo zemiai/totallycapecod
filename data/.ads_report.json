@@ -1,81 +1,45 @@
 {
-  "at": "2026-08-25T10:34:46Z",
+  "at": "2026-08-26T10:37:11Z",
   "window": "last_7d",
   "ads": [
     {
       "campaign_name": "TCC \u2014 August acquisition",
       "adset_name": "Cape + Boston \u00b7 all placements",
       "ad_name": "beach parking",
-      "spend": "20.64",
-      "impressions": "1713",
-      "reach": "1575",
-      "clicks": "178",
-      "ctr": "10.391127",
-      "cpc": "0.115955",
+      "spend": "3.54",
+      "impressions": "281",
+      "reach": "272",
+      "clicks": "27",
+      "ctr": "9.608541",
+      "cpc": "0.131111",
       "actions": [
         {
           "action_type": "link_click",
-          "value": "115"
-        },
-        {
-          "action_type": "post_reaction",
-          "value": "4"
+          "value": "23"
         },
         {
           "action_type": "landing_page_view",
-          "value": "74"
+          "value": "14"
         },
         {
           "action_type": "omni_landing_page_view",
-          "value": "74"
+          "value": "14"
         },
         {
           "action_type": "post_engagement",
-          "value": "123"
+          "value": "23"
         },
         {
           "action_type": "like",
-          "value": "2"
-        },
-        {
-          "action_type": "post_interaction_gross",
-          "value": "8"
-        },
-        {
-          "action_type": "comment",
           "value": "1"
         },
         {
           "action_type": "page_engagement",
-          "value": "125"
-        },
-        {
-          "action_type": "post_interaction_net",
-          "value": "8"
-        },
-        {
-          "action_type": "post",
-          "value": "1"
-        },
-        {
-          "action_type": "onsite_conversion.post_save",
-          "value": "2"
-        },
-        {
-          "action_type": "onsite_conversion.post_net_comment",
-          "value": "1"
-        },
-        {
-          "action_type": "onsite_conversion.post_net_save",
-          "value": "2"
-        },
-        {
-          "action_type": "onsite_conversion.post_net_like",
-          "value": "4"
+          "value": "24"
         }
       ],
-      "date_start": "2026-08-18",
-      "date_stop": "2026-08-24"
+      "date_start": "2026-08-19",
+      "date_stop": "2026-08-25"
     }
   ]
 }
