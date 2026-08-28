@@ -1,8 +1,22 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-27T23:54:31Z",
+  "updated_at": "2026-08-28T09:42:11Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
+    {
+      "id": "inat-395114292",
+      "species": "humpback",
+      "count": 1,
+      "lat": 42.1936,
+      "lng": -70.2091,
+      "location": "US",
+      "reported_by": "iNaturalist \u00b7 wildlymistaken",
+      "reported_at": "2026-08-27T17:48:56Z",
+      "time_ago": "15 h ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/724441679/medium.jpg",
+      "notes": "Humpback Whale",
+      "source_url": "https://www.inaturalist.org/observations/395114292"
+    },
     {
       "id": "inat-395080585",
       "species": "seal",
@@ -12,10 +26,38 @@
       "location": "Chatham, MA, USA",
       "reported_by": "iNaturalist \u00b7 mycapecodadventurepictures",
       "reported_at": "2026-08-27T13:40:00Z",
-      "time_ago": "10 h ago",
+      "time_ago": "20 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/724372401/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/395080585"
+    },
+    {
+      "id": "inat-395114578",
+      "species": "seal",
+      "count": 1,
+      "lat": 42.0733,
+      "lng": -70.24,
+      "location": "Provincetown, MA, US",
+      "reported_by": "iNaturalist \u00b7 wildlymistaken",
+      "reported_at": "2026-08-27T12:46:25Z",
+      "time_ago": "20 h ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/724442264/medium.jpg",
+      "notes": "Grey Seal",
+      "source_url": "https://www.inaturalist.org/observations/395114578"
+    },
+    {
+      "id": "inat-395086181",
+      "species": "seal",
+      "count": 1,
+      "lat": 42.078,
+      "lng": -70.1568,
+      "location": "Provincetown, MA, US",
+      "reported_by": "iNaturalist \u00b7 geraldine_lavin",
+      "reported_at": "2026-08-25T23:14:10Z",
+      "time_ago": "2 days ago",
+      "photo_url": "https://static.inaturalist.org/photos/724383154/medium.jpg",
+      "notes": "Grey Seal",
+      "source_url": "https://www.inaturalist.org/observations/395086181"
     },
     {
       "id": "inat-395019474",
@@ -44,34 +86,6 @@
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/723815239/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/394797353"
-    },
-    {
-      "id": "inat-394797108",
-      "species": "seal",
-      "count": 1,
-      "lat": 41.899,
-      "lng": -69.9652,
-      "location": "Wellfleet, MA, USA",
-      "reported_by": "iNaturalist \u00b7 nymeria_sand",
-      "reported_at": "2026-08-25T14:59:00Z",
-      "time_ago": "2 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/723814749/medium.jpg",
-      "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/394797108"
-    },
-    {
-      "id": "inat-394796954",
-      "species": "seal",
-      "count": 1,
-      "lat": 41.8987,
-      "lng": -69.965,
-      "location": "Wellfleet, MA, USA",
-      "reported_by": "iNaturalist \u00b7 nymeria_sand",
-      "reported_at": "2026-08-25T14:57:00Z",
-      "time_ago": "2 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/723814325/medium.jpg",
-      "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/394796954"
     },
     {
       "id": "inat-394795724",
@@ -268,20 +282,6 @@
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/723804483/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/394792022"
-    },
-    {
-      "id": "inat-393951840",
-      "species": "humpback",
-      "count": 1,
-      "lat": 42.0927,
-      "lng": -70.2167,
-      "location": "Race Point, Barnstable County, MA, USA",
-      "reported_by": "iNaturalist \u00b7 cotingidae",
-      "reported_at": "2026-08-22T22:20:00Z",
-      "time_ago": "5 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/722154689/medium.jpg",
-      "notes": "Humpback Whale",
-      "source_url": "https://www.inaturalist.org/observations/393951840"
     },
     {
       "id": "inat-393772299",
