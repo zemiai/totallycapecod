@@ -1,44 +1,10 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-29T14:38:29Z",
+  "updated_at": "2026-08-29T19:00:41Z",
   "window_days": 21,
-  "count": 153,
+  "count": 152,
   "_hermes_note": "Real Cape Cod events scraped from chambers + venues. update_events.py",
   "events": [
-    {
-      "id": "market-orleans-2026-08-29",
-      "category": "farmers_market",
-      "tag": "\ud83e\udd55 FARMERS MARKET",
-      "title": "Orleans Farmers Market",
-      "venue": "19 Old Colony Way",
-      "town": "Orleans",
-      "lat": 41.79,
-      "lng": -69.99,
-      "time": "Sat Aug 29 \u00b7 9:00 AM\u201312:00 PM",
-      "start": "2026-08-29T09:00:00-04:00",
-      "info": "Local produce, baked goods, flowers & more.",
-      "price": "Free",
-      "source": "Totally Cape Cod",
-      "source_url": "",
-      "img": null
-    },
-    {
-      "id": "market-provincetown-2026-08-29",
-      "category": "farmers_market",
-      "tag": "\ud83e\udd55 FARMERS MARKET",
-      "title": "Provincetown Farmers Market",
-      "venue": "Ryder St at Town Hall",
-      "town": "Provincetown",
-      "lat": 42.058,
-      "lng": -70.184,
-      "time": "Sat Aug 29 \u00b7 9:00 AM\u20131:00 PM",
-      "start": "2026-08-29T09:00:00-04:00",
-      "info": "Local produce, baked goods, flowers & more.",
-      "price": "Free",
-      "source": "Totally Cape Cod",
-      "source_url": "",
-      "img": null
-    },
     {
       "id": "juggle-jams-in-eastham-20260829",
       "tag": "\ud83d\udcc5 EVENT",
@@ -1519,11 +1485,11 @@
       "start": "2026-09-06T19:30:00-04:00"
     },
     {
-      "id": "jon-beninghof-20260906",
+      "id": "jon-macnamera-20260906",
       "tag": "\ud83d\udcc5 EVENT",
       "category": "event",
       "time": "Sun Sep 6 \u00b7 9:00 PM",
-      "title": "Jon Beninghof",
+      "title": "Jon Macnamera",
       "venue": "Pier 37 Boathouse",
       "town": "Falmouth",
       "info": "",
@@ -1536,11 +1502,11 @@
       "start": "2026-09-06T21:00:00+00:00"
     },
     {
-      "id": "jon-macnamera-20260906",
+      "id": "jon-beninghof-20260906",
       "tag": "\ud83d\udcc5 EVENT",
       "category": "event",
       "time": "Sun Sep 6 \u00b7 9:00 PM",
-      "title": "Jon Macnamera",
+      "title": "Jon Beninghof",
       "venue": "Pier 37 Boathouse",
       "town": "Falmouth",
       "info": "",
@@ -2605,6 +2571,23 @@
       "source": "Cape Cod Beer",
       "source_url": "https://capecodbeer.com/event/cape-cod-beer-oktoberfest/",
       "start": "2026-09-19T12:00:00+00:00"
+    },
+    {
+      "id": "josh-ritter-a-book-of-gold-thrown-open-20260919",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Sat Sep 19 \u00b7 7:00 PM",
+      "title": "Josh Ritter: A Book Of Gold Thrown Open",
+      "venue": "Payomet \u2013 Performing Arts Center",
+      "town": "Truro",
+      "info": "",
+      "price": "",
+      "lat": 41.9979,
+      "lng": -70.0492,
+      "img": "https://payomet.org/wp-content/uploads/2026/08/JoshRitter-600x380-1.jpg",
+      "source": "Payomet",
+      "source_url": "https://payomet.org/calendar/josh-ritter-a-book-of-gold-thrown-open/",
+      "start": "2026-09-19T19:00:00+00:00"
     }
   ]
 }
