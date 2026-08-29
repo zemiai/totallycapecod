@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-29T21:30:41Z",
+  "updated_at": "2026-08-29T23:53:33Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -12,7 +12,7 @@
       "location": "Off Cape Cod",
       "reported_by": "iNaturalist \u00b7 topfred",
       "reported_at": "2026-08-29T15:18:49Z",
-      "time_ago": "6 h ago",
+      "time_ago": "8 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/725224924/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/395514838"
@@ -26,7 +26,7 @@
       "location": "USA",
       "reported_by": "iNaturalist \u00b7 topfred",
       "reported_at": "2026-08-29T14:22:24Z",
-      "time_ago": "7 h ago",
+      "time_ago": "9 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/725206435/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/395504739"
@@ -40,7 +40,7 @@
       "location": "Barnstable, Massachusetts, United States",
       "reported_by": "iNaturalist \u00b7 dimus",
       "reported_at": "2026-08-29T01:10:00Z",
-      "time_ago": "20 h ago",
+      "time_ago": "22 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/725087985/medium.jpg",
       "notes": "Atlantic Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/395442316"
@@ -96,7 +96,7 @@
       "location": "Provincetown, MA, US",
       "reported_by": "iNaturalist \u00b7 geraldine_lavin",
       "reported_at": "2026-08-25T23:14:10Z",
-      "time_ago": "3 days ago",
+      "time_ago": "4 days ago",
       "photo_url": "https://static.inaturalist.org/photos/724383154/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/395086181"
