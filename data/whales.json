@@ -1,8 +1,22 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-29T10:18:41Z",
+  "updated_at": "2026-08-29T15:10:24Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
+    {
+      "id": "inat-395442316",
+      "species": "seal",
+      "count": 1,
+      "lat": 41.6703,
+      "lng": -70.0194,
+      "location": "Barnstable, Massachusetts, United States",
+      "reported_by": "iNaturalist \u00b7 dimus",
+      "reported_at": "2026-08-29T01:10:00Z",
+      "time_ago": "14 h ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/725087985/medium.jpg",
+      "notes": "Atlantic Grey Seal",
+      "source_url": "https://www.inaturalist.org/observations/395442316"
+    },
     {
       "id": "inat-395114292",
       "species": "humpback",
@@ -26,7 +40,7 @@
       "location": "Chatham, MA, USA",
       "reported_by": "iNaturalist \u00b7 mycapecodadventurepictures",
       "reported_at": "2026-08-27T13:40:00Z",
-      "time_ago": "1 day ago",
+      "time_ago": "2 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/724372401/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/395080585"
@@ -40,7 +54,7 @@
       "location": "Provincetown, MA, US",
       "reported_by": "iNaturalist \u00b7 wildlymistaken",
       "reported_at": "2026-08-27T12:46:25Z",
-      "time_ago": "1 day ago",
+      "time_ago": "2 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/724442264/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/395114578"
@@ -72,20 +86,6 @@
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/724253635/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/395019474"
-    },
-    {
-      "id": "inat-394797353",
-      "species": "seal",
-      "count": 1,
-      "lat": 41.9017,
-      "lng": -69.9663,
-      "location": "Wellfleet, MA, USA",
-      "reported_by": "iNaturalist \u00b7 nymeria_sand",
-      "reported_at": "2026-08-25T15:04:00Z",
-      "time_ago": "3 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/723815239/medium.jpg",
-      "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/394797353"
     },
     {
       "id": "inat-394795724",
@@ -292,7 +292,7 @@
       "location": "Barnstable County, MA, USA",
       "reported_by": "iNaturalist \u00b7 nicholaslionrider",
       "reported_at": "2026-08-22T14:43:00Z",
-      "time_ago": "6 days ago",
+      "time_ago": "7 days ago",
       "photo_url": "https://static.inaturalist.org/photos/721804052/medium.jpg",
       "notes": "Great White Shark",
       "source_url": "https://www.inaturalist.org/observations/393772299"
