@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-31T17:53:39Z",
+  "updated_at": "2026-08-31T22:29:46Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -166,7 +166,7 @@
       "location": "Eastham, MA 02642, USA",
       "reported_by": "iNaturalist \u00b7 agnesmp",
       "reported_at": "2026-08-29T19:00:55Z",
-      "time_ago": "1 day ago",
+      "time_ago": "2 days ago",
       "photo_url": "https://static.inaturalist.org/photos/725770858/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/395797834"
@@ -278,7 +278,7 @@
       "location": "Off Cape Cod",
       "reported_by": "iNaturalist \u00b7 nymeria_sand",
       "reported_at": "2026-08-23T20:02:00Z",
-      "time_ago": "7 days ago",
+      "time_ago": "8 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/723811861/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/394795724"
@@ -292,7 +292,7 @@
       "location": "Off Cape Cod",
       "reported_by": "iNaturalist \u00b7 nymeria_sand",
       "reported_at": "2026-08-23T19:48:00Z",
-      "time_ago": "7 days ago",
+      "time_ago": "8 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/723810722/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/394794999"
