@@ -1,27 +1,10 @@
 {
   "version": "1.0",
-  "updated_at": "2026-08-31T17:11:41Z",
+  "updated_at": "2026-08-31T21:13:48Z",
   "window_days": 21,
   "count": 147,
   "_hermes_note": "Real Cape Cod events scraped from chambers + venues. update_events.py",
   "events": [
-    {
-      "id": "circus-camp-kids-base-camp-for-ages-7-12-20260831",
-      "tag": "\ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc67 FAMILY",
-      "category": "family",
-      "time": "Mon Aug 31 \u00b7 8:00 AM",
-      "title": "Circus Camp // Kids Base Camp for Ages 7-12",
-      "venue": "Cirque by the Sea at WHAT",
-      "town": "Truro",
-      "info": "",
-      "price": "",
-      "lat": 41.9979,
-      "lng": -70.0492,
-      "img": "https://payomet.org/wp-content/uploads/2026/06/BaseCamp-logo-860x562-1.webp",
-      "source": "Payomet",
-      "source_url": "https://payomet.org/calendar/circus-camp-kids-base-camp-for-ages-7-12-9/",
-      "start": "2026-08-31T08:00:00+00:00"
-    },
     {
       "id": "circus-camp-tiny-tent-for-ages-5-6-20260831",
       "tag": "\ud83d\udcc5 EVENT",
@@ -2486,6 +2469,23 @@
       "source": "Cape Cod Winery",
       "source_url": "https://www.capecodwinery.com/events/nfp45bt4zhfpr9t2dw5kg6xn4zjxmd",
       "start": "2026-09-20T19:00:00.361000+00:00"
+    },
+    {
+      "id": "sip-paint-with-karen-scata-20260920",
+      "tag": "\ud83c\udf74 FOOD & DRINK",
+      "category": "food",
+      "time": "Sun Sep 20 \u00b7 10:00 PM",
+      "title": "Sip & Paint with Karen Scata",
+      "venue": "Cape Cod Winery",
+      "town": "Falmouth",
+      "info": "",
+      "price": "",
+      "lat": 41.5515,
+      "lng": -70.6148,
+      "img": null,
+      "source": "Cape Cod Winery",
+      "source_url": "https://www.capecodwinery.com/events/sip-paint-with-karen-scata-3",
+      "start": "2026-09-20T22:00:00.278000+00:00"
     },
     {
       "id": "chair-yoga-with-yves-vandeplas-20260921",
