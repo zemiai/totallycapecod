@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-09-02T09:18:19Z",
+  "updated_at": "2026-09-02T13:46:44Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -12,7 +12,7 @@
       "location": "Aunt Lydia S Cove, Chatham, MA, US",
       "reported_by": "iNaturalist \u00b7 oriolballestermarti",
       "reported_at": "2026-09-02T03:50:47Z",
-      "time_ago": "5 h ago",
+      "time_ago": "9 h ago",
       "photo_url": "https://static.inaturalist.org/photos/727161660/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/396517887"
@@ -26,10 +26,24 @@
       "location": "Gulf of Maine, MA, US",
       "reported_by": "iNaturalist \u00b7 robertkhay",
       "reported_at": "2026-09-01T23:06:00Z",
-      "time_ago": "10 h ago",
+      "time_ago": "14 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/727143810/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/396509378"
+    },
+    {
+      "id": "inat-396642435",
+      "species": "dolphin",
+      "count": 1,
+      "lat": 42.1714,
+      "lng": -70.3242,
+      "location": "US",
+      "reported_by": "iNaturalist \u00b7 britt15808",
+      "reported_at": "2026-09-01T17:11:41Z",
+      "time_ago": "20 h ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/727393746/medium.jpg",
+      "notes": "Common Dolphin",
+      "source_url": "https://www.inaturalist.org/observations/396642435"
     },
     {
       "id": "inat-396245546",
