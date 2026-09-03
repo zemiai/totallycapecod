@@ -1,8 +1,22 @@
 {
   "version": "1.0",
-  "updated_at": "2026-09-03T15:50:09Z",
+  "updated_at": "2026-09-03T19:06:25Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
+    {
+      "id": "inat-396953442",
+      "species": "seal",
+      "count": 1,
+      "lat": 41.6883,
+      "lng": -69.9509,
+      "location": "Barcliff Avenue Ext, Chatham, MA, US",
+      "reported_by": "iNaturalist \u00b7 robertkhay",
+      "reported_at": "2026-09-03T16:35:09Z",
+      "time_ago": "2 h ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/727997217/medium.jpg",
+      "notes": "Grey Seal",
+      "source_url": "https://www.inaturalist.org/observations/396953442"
+    },
     {
       "id": "inat-396809294",
       "species": "humpback",
@@ -12,7 +26,7 @@
       "location": "US",
       "reported_by": "iNaturalist \u00b7 skiman1016",
       "reported_at": "2026-09-03T00:48:31Z",
-      "time_ago": "15 h ago",
+      "time_ago": "18 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/727718336/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/396809294"
@@ -26,7 +40,7 @@
       "location": "US",
       "reported_by": "iNaturalist \u00b7 skiman1016",
       "reported_at": "2026-09-02T19:29:02Z",
-      "time_ago": "20 h ago",
+      "time_ago": "23 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/727713826/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/396807320"
@@ -40,10 +54,24 @@
       "location": "US",
       "reported_by": "iNaturalist \u00b7 skiman1016",
       "reported_at": "2026-09-02T19:11:40Z",
-      "time_ago": "20 h ago",
+      "time_ago": "23 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/727714151/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/396807443"
+    },
+    {
+      "id": "inat-396946595",
+      "species": "humpback",
+      "count": 1,
+      "lat": 42.2099,
+      "lng": -69.9456,
+      "location": "Gulf of Maine, US",
+      "reported_by": "iNaturalist \u00b7 xenabird",
+      "reported_at": "2026-09-02T13:34:05Z",
+      "time_ago": "1 day ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/727984142/medium.jpg",
+      "notes": "Humpback Whale",
+      "source_url": "https://www.inaturalist.org/observations/396946595"
     },
     {
       "id": "inat-396517887",
@@ -74,6 +102,20 @@
       "source_url": "https://www.inaturalist.org/observations/396509378"
     },
     {
+      "id": "inat-396946582",
+      "species": "dolphin",
+      "count": 1,
+      "lat": 42.1037,
+      "lng": -69.7231,
+      "location": "Gulf of Maine",
+      "reported_by": "iNaturalist \u00b7 xenabird",
+      "reported_at": "2026-09-01T21:35:43Z",
+      "time_ago": "1 day ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/727984106/medium.jpg",
+      "notes": "Atlantic White-sided Dolphin",
+      "source_url": "https://www.inaturalist.org/observations/396946582"
+    },
+    {
       "id": "inat-396642435",
       "species": "dolphin",
       "count": 1,
@@ -82,7 +124,7 @@
       "location": "US",
       "reported_by": "iNaturalist \u00b7 britt15808",
       "reported_at": "2026-09-01T17:11:41Z",
-      "time_ago": "1 day ago",
+      "time_ago": "2 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/727393746/medium.jpg",
       "notes": "Common Dolphin",
       "source_url": "https://www.inaturalist.org/observations/396642435"
@@ -110,7 +152,7 @@
       "location": "US",
       "reported_by": "iNaturalist \u00b7 forlakessake",
       "reported_at": "2026-08-31T16:00:52Z",
-      "time_ago": "2 days ago",
+      "time_ago": "3 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/726657248/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/396245749"
@@ -138,7 +180,7 @@
       "location": "Barnstable County, MA, USA",
       "reported_by": "iNaturalist \u00b7 thomasroehl",
       "reported_at": "2026-08-30T16:54:00Z",
-      "time_ago": "3 days ago",
+      "time_ago": "4 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/726202744/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/396020023"
@@ -152,7 +194,7 @@
       "location": "Barnstable County, MA, USA",
       "reported_by": "iNaturalist \u00b7 thomasroehl",
       "reported_at": "2026-08-30T16:53:00Z",
-      "time_ago": "3 days ago",
+      "time_ago": "4 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/726202731/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/396020020"
@@ -166,7 +208,7 @@
       "location": "Off Cape Cod",
       "reported_by": "iNaturalist \u00b7 thomasroehl",
       "reported_at": "2026-08-30T16:01:00Z",
-      "time_ago": "3 days ago",
+      "time_ago": "4 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/726202689/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/396020016"
@@ -180,7 +222,7 @@
       "location": "Off Cape Cod",
       "reported_by": "iNaturalist \u00b7 thomasroehl",
       "reported_at": "2026-08-30T15:56:00Z",
-      "time_ago": "3 days ago",
+      "time_ago": "4 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/726202665/medium.jpg",
       "notes": "Atlantic White-sided Dolphin",
       "source_url": "https://www.inaturalist.org/observations/396020014"
@@ -194,7 +236,7 @@
       "location": "Off Cape Cod",
       "reported_by": "iNaturalist \u00b7 thomasroehl",
       "reported_at": "2026-08-30T15:54:00Z",
-      "time_ago": "3 days ago",
+      "time_ago": "4 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/726202656/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/396020012"
@@ -208,7 +250,7 @@
       "location": "Off Cape Cod",
       "reported_by": "iNaturalist \u00b7 thomasroehl",
       "reported_at": "2026-08-30T15:54:00Z",
-      "time_ago": "3 days ago",
+      "time_ago": "4 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/726205118/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/396020008"
@@ -270,20 +312,6 @@
       "source_url": "https://www.inaturalist.org/observations/396020004"
     },
     {
-      "id": "inat-395986246",
-      "species": "seal",
-      "count": 1,
-      "lat": 42.0817,
-      "lng": -70.188,
-      "location": "Provincetown, MA, US",
-      "reported_by": "iNaturalist \u00b7 forlakessake",
-      "reported_at": "2026-08-30T15:21:59Z",
-      "time_ago": "4 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/726139580/medium.jpg",
-      "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/395986246"
-    },
-    {
       "id": "inat-395514838",
       "species": "humpback",
       "count": 1,
@@ -296,20 +324,6 @@
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/725224924/medium.jpg",
       "notes": "North Atlantic Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/395514838"
-    },
-    {
-      "id": "inat-395515543",
-      "species": "humpback",
-      "count": 1,
-      "lat": 42.1759,
-      "lng": -70.1761,
-      "location": "USA",
-      "reported_by": "iNaturalist \u00b7 topfred",
-      "reported_at": "2026-08-29T14:45:14Z",
-      "time_ago": "5 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/725226408/medium.jpg",
-      "notes": "Humpback Whale",
-      "source_url": "https://www.inaturalist.org/observations/395515543"
     },
     {
       "id": "inat-393772299",
