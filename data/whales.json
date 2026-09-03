@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-09-03T21:48:53Z",
+  "updated_at": "2026-09-03T23:47:31Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -12,7 +12,7 @@
       "location": "Barcliff Avenue Ext, Chatham, MA, US",
       "reported_by": "iNaturalist \u00b7 robertkhay",
       "reported_at": "2026-09-03T16:35:09Z",
-      "time_ago": "5 h ago",
+      "time_ago": "7 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/727997217/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/396953442"
@@ -26,7 +26,7 @@
       "location": "US",
       "reported_by": "iNaturalist \u00b7 skiman1016",
       "reported_at": "2026-09-03T00:48:31Z",
-      "time_ago": "20 h ago",
+      "time_ago": "22 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/727718336/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/396809294"
@@ -96,7 +96,7 @@
       "location": "Gulf of Maine, MA, US",
       "reported_by": "iNaturalist \u00b7 robertkhay",
       "reported_at": "2026-09-01T23:06:00Z",
-      "time_ago": "1 day ago",
+      "time_ago": "2 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/727143810/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/396509378"
