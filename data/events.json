@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "updated_at": "2026-09-03T13:46:15Z",
+  "updated_at": "2026-09-03T18:58:53Z",
   "window_days": 21,
-  "count": 152,
+  "count": 155,
   "_hermes_note": "Real Cape Cod events scraped from chambers + venues. update_events.py",
   "events": [
     {
@@ -225,6 +225,23 @@
       "source": "Mashpee",
       "source_url": "https://business.mashpeechamber.com/events/Details/anchor-and-vines-ribbon-cutting-and-welcome-1906811?sourceTypeId=Website",
       "start": "2026-09-04T00:00:00+00:00"
+    },
+    {
+      "id": "prez-hall-taste-of-the-towns-20260904",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Fri Sep 4 \u00b7 8:00 AM",
+      "title": "Prez Hall Taste of the Towns",
+      "venue": "Devil's Purse",
+      "town": "South Dennis",
+      "info": "",
+      "price": "",
+      "lat": 41.69,
+      "lng": -70.15,
+      "img": null,
+      "source": "Devil's Purse",
+      "source_url": "https://www.devilspurse.com/events/2026/9/4/prez-hall-taste-of-the-towns",
+      "start": "2026-09-04T08:00:00.467000+00:00"
     },
     {
       "id": "chair-yoga-with-yves-vandeplas-20260904",
@@ -924,11 +941,11 @@
       "start": "2026-09-06T19:30:00-04:00"
     },
     {
-      "id": "jon-macnamera-20260906",
+      "id": "jon-beninghof-20260906",
       "tag": "\ud83d\udcc5 EVENT",
       "category": "event",
       "time": "Sun Sep 6 \u00b7 9:00 PM",
-      "title": "Jon Macnamera",
+      "title": "Jon Beninghof",
       "venue": "Pier 37 Boathouse",
       "town": "Falmouth",
       "info": "",
@@ -941,11 +958,11 @@
       "start": "2026-09-06T21:00:00+00:00"
     },
     {
-      "id": "jon-beninghof-20260906",
+      "id": "jon-macnamera-20260906",
       "tag": "\ud83d\udcc5 EVENT",
       "category": "event",
       "time": "Sun Sep 6 \u00b7 9:00 PM",
-      "title": "Jon Beninghof",
+      "title": "Jon Macnamera",
       "venue": "Pier 37 Boathouse",
       "town": "Falmouth",
       "info": "",
@@ -1228,6 +1245,23 @@
       "source": "Payomet",
       "source_url": "https://payomet.org/calendar/circus-classes-tiny-tents-for-ages-5-6/",
       "start": "2026-09-09T15:30:00+00:00"
+    },
+    {
+      "id": "circus-classes-adult-aerial-20260909",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Wed Sep 9 \u00b7 5:45 PM",
+      "title": "Circus Classes // Adult Aerial",
+      "venue": "Cirque by the Sea at WHAT",
+      "town": "Truro",
+      "info": "",
+      "price": "",
+      "lat": 41.9979,
+      "lng": -70.0492,
+      "img": "https://payomet.org/wp-content/uploads/2026/09/Circus-Classes-Adult-Aerial_860x562.webp",
+      "source": "Payomet",
+      "source_url": "https://payomet.org/calendar/circus-classes-adult-aerial/",
+      "start": "2026-09-09T17:45:00+00:00"
     },
     {
       "id": "eastham-golf-tournament-awards-banquet-20260910",
@@ -2588,6 +2622,23 @@
       "source": "Totally Cape Cod",
       "source_url": "",
       "img": null
+    },
+    {
+      "id": "summer-in-the-city-the-circus-that-never-sleeps-20260924",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Thu Sep 24 \u00b7 6:00 PM",
+      "title": "Summer in the City: The Circus that Never Sleeps",
+      "venue": "Cirque by the Sea at WHAT",
+      "town": "Truro",
+      "info": "",
+      "price": "",
+      "lat": 41.9979,
+      "lng": -70.0492,
+      "img": "https://payomet.org/wp-content/uploads/2026/05/Summer-in-the-city_updated_860x562.webp",
+      "source": "Payomet",
+      "source_url": "https://payomet.org/calendar/summer-in-the-city-the-circus-that-never-sleeps-11/",
+      "start": "2026-09-24T18:00:00+00:00"
     }
   ]
 }
