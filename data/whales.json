@@ -1,8 +1,36 @@
 {
   "version": "1.0",
-  "updated_at": "2026-09-06T11:13:42Z",
+  "updated_at": "2026-09-06T14:20:09Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
+    {
+      "id": "inat-397735825",
+      "species": "seal",
+      "count": 1,
+      "lat": 42.0289,
+      "lng": -70.1797,
+      "location": "Provincetown, MA, US",
+      "reported_by": "iNaturalist \u00b7 meatbol",
+      "reported_at": "2026-09-05T16:25:11Z",
+      "time_ago": "21 h ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/729524940/medium.jpg",
+      "notes": "Grey Seal",
+      "source_url": "https://www.inaturalist.org/observations/397735825"
+    },
+    {
+      "id": "inat-397763867",
+      "species": "seal",
+      "count": 1,
+      "lat": 42.0507,
+      "lng": -70.1841,
+      "location": "Macmillan Wharf, Provincetown, MA, US",
+      "reported_by": "iNaturalist \u00b7 meatbol",
+      "reported_at": "2026-09-05T15:38:57Z",
+      "time_ago": "22 h ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/729580142/medium.jpg",
+      "notes": "Grey Seal",
+      "source_url": "https://www.inaturalist.org/observations/397763867"
+    },
     {
       "id": "inat-397281166",
       "species": "humpback",
@@ -110,7 +138,7 @@
       "location": "Gulf of Maine, US",
       "reported_by": "iNaturalist \u00b7 xenabird",
       "reported_at": "2026-09-02T13:34:05Z",
-      "time_ago": "3 days ago",
+      "time_ago": "4 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/727984142/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/396946595"
@@ -128,20 +156,6 @@
       "photo_url": "https://static.inaturalist.org/photos/727161660/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/396517887"
-    },
-    {
-      "id": "inat-396509378",
-      "species": "seal",
-      "count": 1,
-      "lat": 42.0203,
-      "lng": -70.0354,
-      "location": "Gulf of Maine, MA, US",
-      "reported_by": "iNaturalist \u00b7 robertkhay",
-      "reported_at": "2026-09-01T23:06:00Z",
-      "time_ago": "4 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/727143810/medium.jpg",
-      "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/396509378"
     },
     {
       "id": "inat-396946582",
@@ -170,20 +184,6 @@
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/727393746/medium.jpg",
       "notes": "Common Dolphin",
       "source_url": "https://www.inaturalist.org/observations/396642435"
-    },
-    {
-      "id": "inat-396245546",
-      "species": "seal",
-      "count": 1,
-      "lat": 41.688,
-      "lng": -69.9508,
-      "location": "Barcliff Avenue Ext, Chatham, MA, US",
-      "reported_by": "iNaturalist \u00b7 forlakessake",
-      "reported_at": "2026-08-31T19:41:23Z",
-      "time_ago": "5 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/726656794/medium.jpg",
-      "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/396245546"
     },
     {
       "id": "inat-396245749",
