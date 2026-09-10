@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "updated_at": "2026-09-10T13:44:52Z",
+  "updated_at": "2026-09-10T18:49:20Z",
   "window_days": 21,
-  "count": 149,
+  "count": 155,
   "_hermes_note": "Real Cape Cod events scraped from chambers + venues. update_events.py",
   "events": [
     {
@@ -310,6 +310,23 @@
       "source": "Cape Cod Beer",
       "source_url": "https://capecodbeer.com/event/live-music-with-boston-naturals-4/",
       "start": "2026-09-11T19:00:00+00:00"
+    },
+    {
+      "id": "womr-fundraiser-event-20260911",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Fri Sep 11 \u00b7 7:00 PM",
+      "title": "WOMR Fundraiser Event",
+      "venue": "Devil's Purse",
+      "town": "South Dennis",
+      "info": "",
+      "price": "",
+      "lat": 41.69,
+      "lng": -70.15,
+      "img": null,
+      "source": "Devil's Purse",
+      "source_url": "https://www.devilspurse.com/events/2026/9/11/womr-fundraiser-event",
+      "start": "2026-09-11T19:00:00.593000+00:00"
     },
     {
       "id": "live-music-with-john-mcnamara-20260911",
@@ -1128,6 +1145,23 @@
       "start": "2026-09-17T00:00:00+00:00"
     },
     {
+      "id": "sound-healing-salt-therapy-experience-experience-deep-peace-",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Thu Sep 17",
+      "title": "Sound Healing & Salt Therapy Experience Experience deep peace as crystal singing bowls harmonize your energy inside our warm, glowing salt cave. Feel stress melt away with every soothing vibration.",
+      "venue": "",
+      "town": "Orleans",
+      "info": "",
+      "price": "",
+      "lat": 41.7901,
+      "lng": -69.9873,
+      "img": null,
+      "source": "Orleans",
+      "source_url": "https://members.orleanscapecod.org/events/details/sound-healing-salt-therapy-experience-09-17-2026-21015",
+      "start": "2026-09-17T00:00:00+00:00"
+    },
+    {
       "id": "tech-drop-in-at-the-brewster-ladies-library-20260917",
       "tag": "\ud83d\udcc5 EVENT",
       "category": "event",
@@ -1366,6 +1400,23 @@
       "start": "2026-09-18T16:00:00+00:00"
     },
     {
+      "id": "live-music-with-chris-lebeau-20260918",
+      "tag": "\ud83c\udfb5 LIVE MUSIC",
+      "category": "music",
+      "time": "Fri Sep 18 \u00b7 11:00 PM",
+      "title": "Live Music with Chris LeBeau",
+      "venue": "Cape Cod Winery",
+      "town": "Falmouth",
+      "info": "",
+      "price": "",
+      "lat": 41.5515,
+      "lng": -70.6148,
+      "img": null,
+      "source": "Cape Cod Winery",
+      "source_url": "https://www.capecodwinery.com/events/frzs4zdm6z5fga4p833dkpxp5wahfe",
+      "start": "2026-09-18T23:00:00.606000+00:00"
+    },
+    {
       "id": "lenny-clarke-steve-sweeney-comedy-20260919",
       "tag": "\ud83d\ude02 COMEDY",
       "category": "comedy",
@@ -1449,6 +1500,23 @@
       "source": "Totally Cape Cod",
       "source_url": "",
       "img": null
+    },
+    {
+      "id": "pokket-beer-fest-20260919",
+      "tag": "\ud83c\udf74 FOOD & DRINK",
+      "category": "food",
+      "time": "Sat Sep 19 \u00b7 2:30 PM",
+      "title": "Pokket Beer Fest",
+      "venue": "The Pokket at Pier 37 Boathouse",
+      "town": "Falmouth",
+      "info": "",
+      "price": "$20",
+      "lat": 41.5515,
+      "lng": -70.6148,
+      "img": "https://falmouthpier37.com/images/pokket-beer-fest.webp",
+      "source": "Pier 37 Boathouse",
+      "source_url": "https://falmouthpier37.com/entertainment/#beer-fest",
+      "start": "2026-09-19T14:30:00-04:00"
     },
     {
       "id": "josh-ritter-a-book-of-gold-thrown-open-20260919",
@@ -1959,6 +2027,23 @@
       "source": "Highfield Hall",
       "source_url": "https://highfieldhallandgardens.org/event/chair-yoga-9-25-26/",
       "start": "2026-09-25T10:30:00+00:00"
+    },
+    {
+      "id": "live-music-with-clyde-mitchell-leaman-20260925",
+      "tag": "\ud83c\udfb5 LIVE MUSIC",
+      "category": "music",
+      "time": "Fri Sep 25 \u00b7 11:00 PM",
+      "title": "Live Music with Clyde Mitchell Leaman",
+      "venue": "Cape Cod Winery",
+      "town": "Falmouth",
+      "info": "",
+      "price": "",
+      "lat": 41.5515,
+      "lng": -70.6148,
+      "img": null,
+      "source": "Cape Cod Winery",
+      "source_url": "https://www.capecodwinery.com/events/3mjtja46sxk9xb93dwfmhmewk77an7",
+      "start": "2026-09-25T23:00:00.720000+00:00"
     },
     {
       "id": "pet-blessing-parade-t-dance-20260926",
@@ -2537,6 +2622,23 @@
       "source": "Totally Cape Cod",
       "source_url": "",
       "img": null
+    },
+    {
+      "id": "enchanted-witches-hat-topiary-workshop-with-anna-holmes-2026",
+      "tag": "\ud83c\udf99\ufe0f TALK",
+      "category": "talk",
+      "time": "Thu Oct 1 \u00b7 5:30 PM",
+      "title": "Enchanted Witches Hat Topiary Workshop with Anna Holmes",
+      "venue": "Highfield Hall",
+      "town": "Falmouth",
+      "info": "",
+      "price": "$55 \u2013 $65",
+      "lat": 41.5515,
+      "lng": -70.6148,
+      "img": "https://highfieldhallandgardens.org/wp-content/uploads/10-1-26-Witches-Hat-Anna-Holmes-frame.jpg",
+      "source": "Highfield Hall",
+      "source_url": "https://highfieldhallandgardens.org/event/witches-hat-topiary-anna-holmes-2026/",
+      "start": "2026-10-01T17:30:00+00:00"
     }
   ]
 }
