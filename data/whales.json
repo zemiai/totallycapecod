@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-09-10T19:56:36Z",
+  "updated_at": "2026-09-10T22:19:58Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -12,7 +12,7 @@
       "location": "Orleans, MA 02653, USA",
       "reported_by": "iNaturalist \u00b7 cdonahue6",
       "reported_at": "2026-09-10T16:14:09Z",
-      "time_ago": "3 h ago",
+      "time_ago": "6 h ago",
       "photo_url": "https://static.inaturalist.org/photos/732074610/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/399041556"
@@ -26,7 +26,7 @@
       "location": "Chatham, MA 02633, USA",
       "reported_by": "iNaturalist \u00b7 elizabeth_singh",
       "reported_at": "2026-09-10T15:19:55Z",
-      "time_ago": "4 h ago",
+      "time_ago": "6 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/732033347/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/399007616"
@@ -166,7 +166,7 @@
       "location": "Gulf of Maine",
       "reported_by": "iNaturalist \u00b7 xenabird",
       "reported_at": "2026-09-01T21:35:43Z",
-      "time_ago": "8 days ago",
+      "time_ago": "9 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/727984106/medium.jpg",
       "notes": "Atlantic White-sided Dolphin",
       "source_url": "https://www.inaturalist.org/observations/396946582"
