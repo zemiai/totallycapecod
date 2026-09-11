@@ -341,22 +341,6 @@
       "source_url": "https://ediblecapecod.ediblecommunities.com/shop/shop-cape-cod-farmers-markets/"
     },
     {
-      "id": "secondsummercycle-2026-09-13-charity-bike-ride",
-      "tag": "👨‍👩‍👧 FAMILY",
-      "category": "family",
-      "date": "2026-09-13",
-      "time": "9:00 AM",
-      "title": "Second Summer Cycle (Charity Bike Ride)",
-      "venue": "Smugglers Beach",
-      "town": "Yarmouth",
-      "info": "Yarmouth · $30+ registration · All ages · Scenic Cape Cod charity bike ride along the shore",
-      "price": "$30",
-      "lat": 41.6452,
-      "lng": -70.1893,
-      "img": "",
-      "source_url": "https://www.secondsummercycle.com/"
-    },
-    {
       "id": "windmillweekend-2026-09-13-parade",
       "tag": "🎉 FREE EVENT",
       "category": "free_event",
@@ -435,6 +419,22 @@
       "lng": -70.6128,
       "img": "",
       "source_url": "https://museumsonthegreen.org/event/7395/"
+    },
+    {
+      "id": "secondsummercycle-2026-09-13-charity-bike-ride",
+      "tag": "👨‍👩‍👧 FAMILY",
+      "category": "family",
+      "date": "2026-09-13",
+      "time": "9:00 AM",
+      "title": "Second Summer Cycle (Charity Bike Ride)",
+      "venue": "Smugglers Beach",
+      "town": "Yarmouth",
+      "info": "Yarmouth · $30+ registration · All ages · Scenic Cape Cod charity bike ride along the shore",
+      "price": "$30",
+      "lat": 41.6452,
+      "lng": -70.1893,
+      "img": "",
+      "source_url": "https://www.secondsummercycle.com/"
     },
     {
       "id": "payomet-2026-09-13-tom-rush",
