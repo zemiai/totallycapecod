@@ -2,11 +2,11 @@
   "current": {
     "sagamore": {
       "name": "Sagamore Bridge",
-      "current_delay_min": 28,
-      "current_status": "heavy",
+      "current_delay_min": 4,
+      "current_status": "light",
       "direction": "off_cape",
-      "advice": "Moderate backup \u2014 consider waiting until after 7 PM",
-      "live_speed_mph": 8,
+      "advice": "Sail through \u2014 no delays right now",
+      "live_speed_mph": 23,
       "free_flow_mph": 55,
       "last_check": "just now"
     },
@@ -16,7 +16,7 @@
       "current_status": "light",
       "direction": "off_cape",
       "advice": "Sail through \u2014 no delays right now",
-      "live_speed_mph": 16,
+      "live_speed_mph": 19,
       "free_flow_mph": 55,
       "last_check": "just now"
     }
@@ -141,5 +141,5 @@
     "on_cape_saturday": "Before 8 AM"
   },
   "version": "1.0",
-  "updated_at": "2026-09-15T18:34:51Z"
+  "updated_at": "2026-09-15T21:49:06Z"
 }
