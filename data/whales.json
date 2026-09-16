@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-09-15T23:02:47Z",
+  "updated_at": "2026-09-16T01:31:54Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -100,6 +100,20 @@
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/733186301/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/399615001"
+    },
+    {
+      "id": "inat-400584029",
+      "species": "dolphin",
+      "count": 1,
+      "lat": 42.2477,
+      "lng": -70.0836,
+      "location": "Off Cape Cod",
+      "reported_by": "iNaturalist \u00b7 danobirds",
+      "reported_at": "2026-09-12T15:17:00Z",
+      "time_ago": "3 days ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/735130748/medium.jpg",
+      "notes": "Common Dolphin",
+      "source_url": "https://www.inaturalist.org/observations/400584029"
     },
     {
       "id": "inat-400056877",
@@ -250,7 +264,7 @@
       "location": "US",
       "reported_by": "iNaturalist \u00b7 skiman1016",
       "reported_at": "2026-09-03T00:48:31Z",
-      "time_ago": "12 days ago",
+      "time_ago": "13 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/727718336/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/396809294"
@@ -296,34 +310,6 @@
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/727984142/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/396946595"
-    },
-    {
-      "id": "inat-396946582",
-      "species": "dolphin",
-      "count": 1,
-      "lat": 42.1037,
-      "lng": -69.7231,
-      "location": "Gulf of Maine",
-      "reported_by": "iNaturalist \u00b7 xenabird",
-      "reported_at": "2026-09-01T21:35:43Z",
-      "time_ago": "14 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/727984106/medium.jpg",
-      "notes": "Atlantic White-sided Dolphin",
-      "source_url": "https://www.inaturalist.org/observations/396946582"
-    },
-    {
-      "id": "inat-396642435",
-      "species": "dolphin",
-      "count": 1,
-      "lat": 42.1714,
-      "lng": -70.3242,
-      "location": "US",
-      "reported_by": "iNaturalist \u00b7 britt15808",
-      "reported_at": "2026-09-01T17:11:41Z",
-      "time_ago": "14 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/727393746/medium.jpg",
-      "notes": "Common Dolphin",
-      "source_url": "https://www.inaturalist.org/observations/396642435"
     }
   ]
 }
