@@ -1,27 +1,10 @@
 {
   "version": "1.0",
-  "updated_at": "2026-09-16T14:17:12Z",
+  "updated_at": "2026-09-16T19:13:03Z",
   "window_days": 21,
   "count": 149,
   "_hermes_note": "Real Cape Cod events scraped from chambers + venues. update_events.py",
   "events": [
-    {
-      "id": "market-wellfleet-2026-09-16",
-      "category": "farmers_market",
-      "tag": "\ud83e\udd55 FARMERS MARKET",
-      "title": "Wellfleet Farmers Market",
-      "venue": "The Grove, 200 Main St",
-      "town": "Wellfleet",
-      "lat": 41.931,
-      "lng": -70.029,
-      "time": "Wed Sep 16 \u00b7 8:00 AM\u201312:00 PM",
-      "start": "2026-09-16T08:00:00-04:00",
-      "info": "Local produce, baked goods, flowers & more.",
-      "price": "Free",
-      "source": "Totally Cape Cod",
-      "source_url": "",
-      "img": null
-    },
     {
       "id": "chair-yoga-with-melissa-goodwin-20260916",
       "tag": "\ud83d\udcc5 EVENT",
@@ -822,20 +805,20 @@
       "start": "2026-09-20T00:00:00+00:00"
     },
     {
-      "id": "stand-for-truth-stand-with-survivors-and-community-members-a",
-      "tag": "\ud83d\udc68\u200d\ud83d\udc69\u200d\ud83d\udc67 FAMILY",
-      "category": "family",
+      "id": "cape-symphony-presents-hot-tamale-brass-band-20260920",
+      "tag": "\ud83c\udfb5 LIVE MUSIC",
+      "category": "music",
       "time": "Sun Sep 20",
-      "title": "Stand for Truth STAND WITH SURVIVORS AND COMMUNITY MEMBERS AS WE RAISE OUR VOICES FOR TRUTH, ACCOUNTABILITY, AND THE PROTECTION OF CHILDREN.",
+      "title": "Cape Symphony Presents: Hot Tamale Brass Band",
       "venue": "",
-      "town": "Orleans",
+      "town": "Eastham",
       "info": "",
       "price": "",
-      "lat": 41.7901,
-      "lng": -69.9873,
+      "lat": 41.83,
+      "lng": -69.974,
       "img": null,
-      "source": "Orleans",
-      "source_url": "https://members.orleanscapecod.org/events/details/stand-for-truth-09-20-2026-25521",
+      "source": "Eastham",
+      "source_url": "https://members.easthamchamber.com/events/details/cape-symphony-presents-hot-tamale-brass-band-5896",
       "start": "2026-09-20T00:00:00+00:00"
     },
     {
@@ -2537,6 +2520,23 @@
       "source": "Highfield Hall",
       "source_url": "https://highfieldhallandgardens.org/event/chair-yoga-10-7-26/",
       "start": "2026-10-07T10:30:00+00:00"
+    },
+    {
+      "id": "cape-cod-package-store-fall-brew-fest-20261007",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Wed Oct 7 \u00b7 6:00 PM",
+      "title": "Cape Cod Package Store Fall Brew Fest",
+      "venue": "Devil's Purse",
+      "town": "South Dennis",
+      "info": "",
+      "price": "",
+      "lat": 41.69,
+      "lng": -70.15,
+      "img": null,
+      "source": "Devil's Purse",
+      "source_url": "https://www.devilspurse.com/events/2023/11/4/cape-cod-package-store-fall-brew-fest-z7pez",
+      "start": "2026-10-07T18:00:00.234000+00:00"
     }
   ]
 }
