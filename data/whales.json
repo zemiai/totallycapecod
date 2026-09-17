@@ -1,8 +1,22 @@
 {
   "version": "1.0",
-  "updated_at": "2026-09-17T20:30:37Z",
+  "updated_at": "2026-09-17T23:02:08Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
+    {
+      "id": "inat-401082283",
+      "species": "seal",
+      "count": 1,
+      "lat": 41.6884,
+      "lng": -69.9509,
+      "location": "Chatham, MA, USA",
+      "reported_by": "iNaturalist \u00b7 mycapecodadventurepictures",
+      "reported_at": "2026-09-17T13:59:00Z",
+      "time_ago": "9 h ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/736118486/medium.jpg",
+      "notes": "Grey Seal",
+      "source_url": "https://www.inaturalist.org/observations/401082283"
+    },
     {
       "id": "inat-400962281",
       "species": "humpback",
@@ -254,20 +268,6 @@
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/734422022/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/400240151"
-    },
-    {
-      "id": "inat-399041556",
-      "species": "seal",
-      "count": 1,
-      "lat": 41.7662,
-      "lng": -69.9333,
-      "location": "Orleans, MA 02653, USA",
-      "reported_by": "iNaturalist \u00b7 cdonahue6",
-      "reported_at": "2026-09-10T16:14:09Z",
-      "time_ago": "7 days ago",
-      "photo_url": "https://static.inaturalist.org/photos/732074610/medium.jpg",
-      "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/399041556"
     },
     {
       "id": "inat-397281166",
