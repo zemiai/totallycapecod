@@ -1,8 +1,22 @@
 {
   "version": "1.0",
-  "updated_at": "2026-09-19T20:05:45Z",
+  "updated_at": "2026-09-19T22:23:46Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
+    {
+      "id": "inat-401663534",
+      "species": "seal",
+      "count": 1,
+      "lat": 42.0787,
+      "lng": -70.164,
+      "location": "Provincetown, MA, US",
+      "reported_by": "iNaturalist \u00b7 philip_sg",
+      "reported_at": "2026-09-19T21:15:08Z",
+      "time_ago": "1 h ago",
+      "photo_url": "https://static.inaturalist.org/photos/737244527/medium.jpg",
+      "notes": "Grey Seal",
+      "source_url": "https://www.inaturalist.org/observations/401663534"
+    },
     {
       "id": "inat-401082283",
       "species": "seal",
@@ -284,18 +298,32 @@
       "source_url": "https://www.inaturalist.org/observations/399304608"
     },
     {
-      "id": "inat-400240151",
-      "species": "seal",
+      "id": "inat-401679772",
+      "species": "humpback",
       "count": 1,
-      "lat": 42.0036,
-      "lng": -70.6002,
-      "location": "Plymouth, MA, USA",
-      "reported_by": "iNaturalist \u00b7 eamonccorbett",
-      "reported_at": "2026-09-10T16:20:00Z",
-      "time_ago": "9 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/734422022/medium.jpg",
-      "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/400240151"
+      "lat": 42.228,
+      "lng": -70.2386,
+      "location": "Off Cape Cod",
+      "reported_by": "iNaturalist \u00b7 dgarv75",
+      "reported_at": "2026-09-07T20:17:00Z",
+      "time_ago": "12 days ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/737273564/medium.jpg",
+      "notes": "Humpback Whale",
+      "source_url": "https://www.inaturalist.org/observations/401679772"
+    },
+    {
+      "id": "inat-401679771",
+      "species": "humpback",
+      "count": 1,
+      "lat": 42.23,
+      "lng": -70.2328,
+      "location": "Off Cape Cod",
+      "reported_by": "iNaturalist \u00b7 dgarv75",
+      "reported_at": "2026-09-07T20:15:00Z",
+      "time_ago": "12 days ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/737273574/medium.jpg",
+      "notes": "Humpback Whale",
+      "source_url": "https://www.inaturalist.org/observations/401679771"
     }
   ]
 }
