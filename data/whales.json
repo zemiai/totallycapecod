@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-09-20T20:22:02Z",
+  "updated_at": "2026-09-20T22:36:47Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -12,10 +12,24 @@
       "location": "North Atlantic Ocean, Nantucket, MA, US",
       "reported_by": "iNaturalist \u00b7 steve_romero",
       "reported_at": "2026-09-20T17:05:37Z",
-      "time_ago": "3 h ago",
+      "time_ago": "5 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/737751958/medium.jpg",
       "notes": "Great White Shark",
       "source_url": "https://www.inaturalist.org/observations/401918188"
+    },
+    {
+      "id": "inat-402007594",
+      "species": "seal",
+      "count": 1,
+      "lat": 42.0799,
+      "lng": -70.2197,
+      "location": "Race Point Beach, Provincetown, MA 02657, USA",
+      "reported_by": "iNaturalist \u00b7 joew1392",
+      "reported_at": "2026-09-20T13:19:00Z",
+      "time_ago": "9 h ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/737931014/medium.jpg",
+      "notes": "Grey Seal",
+      "source_url": "https://www.inaturalist.org/observations/402007594"
     },
     {
       "id": "inat-401663534",
@@ -26,7 +40,7 @@
       "location": "Provincetown, MA, US",
       "reported_by": "iNaturalist \u00b7 philip_sg",
       "reported_at": "2026-09-19T21:15:08Z",
-      "time_ago": "23 h ago",
+      "time_ago": "1 day ago",
       "photo_url": "https://static.inaturalist.org/photos/737244527/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/401663534"
@@ -198,20 +212,6 @@
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/736689859/medium.jpg",
       "notes": "Common Dolphin",
       "source_url": "https://www.inaturalist.org/observations/401379987"
-    },
-    {
-      "id": "inat-399685061",
-      "species": "seal",
-      "count": 1,
-      "lat": 41.6094,
-      "lng": -69.991,
-      "location": "Nantucket Sound, Chatham, MA, US",
-      "reported_by": "iNaturalist \u00b7 juliacasavant",
-      "reported_at": "2026-09-12T15:47:27Z",
-      "time_ago": "8 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/733322032/medium.jpg",
-      "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/399685061"
     },
     {
       "id": "inat-399615001",
