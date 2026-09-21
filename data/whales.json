@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-09-21T05:55:28Z",
+  "updated_at": "2026-09-21T12:07:15Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -12,7 +12,7 @@
       "location": "Chatham, MA, US",
       "reported_by": "iNaturalist \u00b7 naturesfairy",
       "reported_at": "2026-09-20T20:48:20Z",
-      "time_ago": "9 h ago",
+      "time_ago": "15 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/738085019/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/402081075"
@@ -26,7 +26,7 @@
       "location": "North Atlantic Ocean, Nantucket, MA, US",
       "reported_by": "iNaturalist \u00b7 steve_romero",
       "reported_at": "2026-09-20T17:05:37Z",
-      "time_ago": "12 h ago",
+      "time_ago": "19 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/737751958/medium.jpg",
       "notes": "Great White Shark",
       "source_url": "https://www.inaturalist.org/observations/401918188"
@@ -40,7 +40,7 @@
       "location": "Race Point Beach, Provincetown, MA 02657, USA",
       "reported_by": "iNaturalist \u00b7 joew1392",
       "reported_at": "2026-09-20T13:19:00Z",
-      "time_ago": "16 h ago",
+      "time_ago": "22 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/737931014/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/402007594"
