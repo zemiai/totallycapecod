@@ -1,44 +1,10 @@
 {
   "version": "1.0",
-  "updated_at": "2026-09-23T14:19:10Z",
+  "updated_at": "2026-09-23T19:19:41Z",
   "window_days": 21,
-  "count": 136,
+  "count": 122,
   "_hermes_note": "Real Cape Cod events scraped from chambers + venues. update_events.py",
   "events": [
-    {
-      "id": "market-wellfleet-2026-09-23",
-      "category": "farmers_market",
-      "tag": "\ud83e\udd55 FARMERS MARKET",
-      "title": "Wellfleet Farmers Market",
-      "venue": "The Grove, 200 Main St",
-      "town": "Wellfleet",
-      "lat": 41.931,
-      "lng": -70.029,
-      "time": "Wed Sep 23 \u00b7 8:00 AM\u201312:00 PM",
-      "start": "2026-09-23T08:00:00-04:00",
-      "info": "Local produce, baked goods, flowers & more.",
-      "price": "Free",
-      "source": "Totally Cape Cod",
-      "source_url": "",
-      "img": null
-    },
-    {
-      "id": "chair-yoga-with-melissa-goodwin-20260923",
-      "tag": "\ud83d\udcc5 EVENT",
-      "category": "event",
-      "time": "Wed Sep 23 \u00b7 10:30 AM",
-      "title": "Chair Yoga with Melissa Goodwin",
-      "venue": "Highfield Hall",
-      "town": "Falmouth",
-      "info": "",
-      "price": "$15 \u2013 $20",
-      "lat": 41.5515,
-      "lng": -70.6148,
-      "img": "https://highfieldhallandgardens.org/wp-content/uploads/2026-Chair-Yoga-Melissa-Goodwin-frame-1.jpg",
-      "source": "Highfield Hall",
-      "source_url": "https://highfieldhallandgardens.org/event/chair-yoga-9-23-26/",
-      "start": "2026-09-23T10:30:00+00:00"
-    },
     {
       "id": "circus-classes-tiny-tents-for-ages-5-6-20260923",
       "tag": "\ud83d\udcc5 EVENT",
@@ -361,23 +327,6 @@
       "source": "Chatham",
       "source_url": "https://business.chathaminfo.com/events/details/marconi-rca-wireless-museum-open-09-25-2026-32801",
       "start": "2026-09-25T00:00:00+00:00"
-    },
-    {
-      "id": "chair-yoga-with-yves-vandeplas-20260925",
-      "tag": "\ud83d\udcc5 EVENT",
-      "category": "event",
-      "time": "Fri Sep 25 \u00b7 10:30 AM",
-      "title": "Chair Yoga with Yves Vandeplas",
-      "venue": "Highfield Hall",
-      "town": "Falmouth",
-      "info": "",
-      "price": "$15 \u2013 $20",
-      "lat": 41.5515,
-      "lng": -70.6148,
-      "img": "https://highfieldhallandgardens.org/wp-content/uploads/2025-Chair-Yoga.jpg",
-      "source": "Highfield Hall",
-      "source_url": "https://highfieldhallandgardens.org/event/chair-yoga-9-25-26/",
-      "start": "2026-09-25T10:30:00+00:00"
     },
     {
       "id": "live-music-with-clyde-mitchell-leaman-20260925",
@@ -703,23 +652,6 @@
       "start": "2026-09-27T00:00:00+00:00"
     },
     {
-      "id": "sold-out-meet-the-chef-with-aundria-jones-20260927",
-      "tag": "\ud83d\udcc5 EVENT",
-      "category": "event",
-      "time": "Sun Sep 27 \u00b7 12:00 PM",
-      "title": "SOLD OUT! Meet the Chef with Aundria Jones",
-      "venue": "Highfield Hall",
-      "town": "Falmouth",
-      "info": "",
-      "price": "$75 \u2013 $85",
-      "lat": 41.5515,
-      "lng": -70.6148,
-      "img": "https://highfieldhallandgardens.org/wp-content/uploads/9-27-26-Aundria-Jones-frame.jpg",
-      "source": "Highfield Hall",
-      "source_url": "https://highfieldhallandgardens.org/event/meet-the-chef-aundria-jones/",
-      "start": "2026-09-27T12:00:00+00:00"
-    },
-    {
       "id": "love-local-fest-20260927",
       "tag": "\ud83d\udcc5 EVENT",
       "category": "event",
@@ -803,23 +735,6 @@
       "source": "Orleans",
       "source_url": "https://members.orleanscapecod.org/events/details/help-us-bring-back-the-orleans-grange-online-presentation-25547",
       "start": "2026-09-28T00:00:00+00:00"
-    },
-    {
-      "id": "chair-yoga-with-yves-vandeplas-20260928",
-      "tag": "\ud83d\udcc5 EVENT",
-      "category": "event",
-      "time": "Mon Sep 28 \u00b7 10:30 AM",
-      "title": "Chair Yoga with Yves Vandeplas",
-      "venue": "Highfield Hall",
-      "town": "Falmouth",
-      "info": "",
-      "price": "$15 \u2013 $20",
-      "lat": 41.5515,
-      "lng": -70.6148,
-      "img": "https://highfieldhallandgardens.org/wp-content/uploads/2025-Chair-Yoga.jpg",
-      "source": "Highfield Hall",
-      "source_url": "https://highfieldhallandgardens.org/event/chair-yoga-9-28-26/",
-      "start": "2026-09-28T10:30:00+00:00"
     },
     {
       "id": "brewster-ladies-library-lgbtq-seniors-life-changes-support-g",
@@ -1009,23 +924,6 @@
       "img": null
     },
     {
-      "id": "chair-yoga-with-melissa-goodwin-20260930",
-      "tag": "\ud83d\udcc5 EVENT",
-      "category": "event",
-      "time": "Wed Sep 30 \u00b7 10:30 AM",
-      "title": "Chair Yoga with Melissa Goodwin",
-      "venue": "Highfield Hall",
-      "town": "Falmouth",
-      "info": "",
-      "price": "$15 \u2013 $20",
-      "lat": 41.5515,
-      "lng": -70.6148,
-      "img": "https://highfieldhallandgardens.org/wp-content/uploads/2026-Chair-Yoga-Melissa-Goodwin-frame-1.jpg",
-      "source": "Highfield Hall",
-      "source_url": "https://highfieldhallandgardens.org/event/chair-yoga-9-30-26/",
-      "start": "2026-09-30T10:30:00+00:00"
-    },
-    {
       "id": "circus-classes-tiny-tents-for-ages-5-6-20260930",
       "tag": "\ud83d\udcc5 EVENT",
       "category": "event",
@@ -1162,23 +1060,6 @@
       "img": null
     },
     {
-      "id": "enchanted-witches-hat-topiary-workshop-with-anna-holmes-2026",
-      "tag": "\ud83c\udf99\ufe0f TALK",
-      "category": "talk",
-      "time": "Thu Oct 1 \u00b7 5:30 PM",
-      "title": "Enchanted Witches Hat Topiary Workshop with Anna Holmes",
-      "venue": "Highfield Hall",
-      "town": "Falmouth",
-      "info": "",
-      "price": "$55 \u2013 $65",
-      "lat": 41.5515,
-      "lng": -70.6148,
-      "img": "https://highfieldhallandgardens.org/wp-content/uploads/10-1-26-Witches-Hat-Anna-Holmes-frame.jpg",
-      "source": "Highfield Hall",
-      "source_url": "https://highfieldhallandgardens.org/event/witches-hat-topiary-anna-holmes-2026/",
-      "start": "2026-10-01T17:30:00+00:00"
-    },
-    {
       "id": "america250-fall-band-concert-pursuit-of-happiness-20261002",
       "tag": "\ud83c\udfb5 LIVE MUSIC",
       "category": "music",
@@ -1211,23 +1092,6 @@
       "source": "Eastham",
       "source_url": "https://members.easthamchamber.com/events/details/the-fall-of-the-house-of-usher-10-02-2026-5877",
       "start": "2026-10-02T00:00:00+00:00"
-    },
-    {
-      "id": "chair-yoga-with-yves-vandeplas-20261002",
-      "tag": "\ud83d\udcc5 EVENT",
-      "category": "event",
-      "time": "Fri Oct 2 \u00b7 10:30 AM",
-      "title": "Chair Yoga with Yves Vandeplas",
-      "venue": "Highfield Hall",
-      "town": "Falmouth",
-      "info": "",
-      "price": "$15 \u2013 $20",
-      "lat": 41.5515,
-      "lng": -70.6148,
-      "img": "https://highfieldhallandgardens.org/wp-content/uploads/2025-Chair-Yoga.jpg",
-      "source": "Highfield Hall",
-      "source_url": "https://highfieldhallandgardens.org/event/chair-yoga-10-2-26/",
-      "start": "2026-10-02T10:30:00+00:00"
     },
     {
       "id": "the-fall-of-the-house-of-usher-20261003",
@@ -1451,40 +1315,6 @@
       "start": "2026-10-04T00:00:00+00:00"
     },
     {
-      "id": "hearty-fall-cooking-with-chef-kate-20261004",
-      "tag": "\ud83d\udcc5 EVENT",
-      "category": "event",
-      "time": "Sun Oct 4 \u00b7 12:00 PM",
-      "title": "Hearty Fall Cooking with Chef Kate",
-      "venue": "Highfield Hall",
-      "town": "Falmouth",
-      "info": "",
-      "price": "$75 \u2013 $85",
-      "lat": 41.5515,
-      "lng": -70.6148,
-      "img": "https://highfieldhallandgardens.org/wp-content/uploads/10-4-26-hearty-fall-cooking-frame.jpg",
-      "source": "Highfield Hall",
-      "source_url": "https://highfieldhallandgardens.org/event/hearty-fall-cooking/",
-      "start": "2026-10-04T12:00:00+00:00"
-    },
-    {
-      "id": "canceled-we-are-the-men-a-nation-of-song-and-the-choir-that-",
-      "tag": "\ud83d\udcc5 EVENT",
-      "category": "event",
-      "time": "Sun Oct 4 \u00b7 4:00 PM",
-      "title": "CANCELED \u2013 We Are The Men, A Nation of Song \u2014 And the Choir That Brought Its Spirit to Cape Cod",
-      "venue": "Highfield Hall",
-      "town": "Falmouth",
-      "info": "",
-      "price": "$20 \u2013 $30",
-      "lat": 41.5515,
-      "lng": -70.6148,
-      "img": "https://highfieldhallandgardens.org/wp-content/uploads/10-4-26-We-Are-The-Men-frame.jpg",
-      "source": "Highfield Hall",
-      "source_url": "https://highfieldhallandgardens.org/event/we-are-the-men/",
-      "start": "2026-10-04T16:00:00+00:00"
-    },
-    {
       "id": "live-music-with-clyde-mitchell-leaman-20261004",
       "tag": "\ud83c\udfb5 LIVE MUSIC",
       "category": "music",
@@ -1534,23 +1364,6 @@
       "source": "Cape Cod Winery",
       "source_url": "https://www.capecodwinery.com/events/9se4yn34ptsjwmzha9detwxym3zljt",
       "start": "2026-10-04T22:00:00.229000+00:00"
-    },
-    {
-      "id": "chair-yoga-with-yves-vandeplas-20261005",
-      "tag": "\ud83d\udcc5 EVENT",
-      "category": "event",
-      "time": "Mon Oct 5 \u00b7 10:30 AM",
-      "title": "Chair Yoga with Yves Vandeplas",
-      "venue": "Highfield Hall",
-      "town": "Falmouth",
-      "info": "",
-      "price": "$15 \u2013 $20",
-      "lat": 41.5515,
-      "lng": -70.6148,
-      "img": "https://highfieldhallandgardens.org/wp-content/uploads/2025-Chair-Yoga.jpg",
-      "source": "Highfield Hall",
-      "source_url": "https://highfieldhallandgardens.org/event/chair-yoga-10-5-26/",
-      "start": "2026-10-05T10:30:00+00:00"
     },
     {
       "id": "market-sandwich-2026-10-06",
@@ -1621,23 +1434,6 @@
       "start": "2026-10-06T16:15:00+00:00"
     },
     {
-      "id": "felted-pumpkin-workshop-with-cheryl-flett-20261006",
-      "tag": "\ud83c\udf99\ufe0f TALK",
-      "category": "talk",
-      "time": "Tue Oct 6 \u00b7 5:00 PM",
-      "title": "Felted Pumpkin Workshop with Cheryl Flett",
-      "venue": "Highfield Hall",
-      "town": "Falmouth",
-      "info": "",
-      "price": "$35 \u2013 $45",
-      "lat": 41.5515,
-      "lng": -70.6148,
-      "img": "https://highfieldhallandgardens.org/wp-content/uploads/10-6-26-Felted-Pumpkins-frame.jpg",
-      "source": "Highfield Hall",
-      "source_url": "https://highfieldhallandgardens.org/event/felted-pumpkins-workshop-2026/",
-      "start": "2026-10-06T17:00:00+00:00"
-    },
-    {
       "id": "circus-classes-adult-aerial-20261006",
       "tag": "\ud83d\udcc5 EVENT",
       "category": "event",
@@ -1687,23 +1483,6 @@
       "source": "Eastham",
       "source_url": "https://members.easthamchamber.com/events/details/the-fall-of-the-house-of-usher-10-07-2026-5879",
       "start": "2026-10-07T00:00:00+00:00"
-    },
-    {
-      "id": "chair-yoga-with-melissa-goodwin-20261007",
-      "tag": "\ud83d\udcc5 EVENT",
-      "category": "event",
-      "time": "Wed Oct 7 \u00b7 10:30 AM",
-      "title": "Chair Yoga with Melissa Goodwin",
-      "venue": "Highfield Hall",
-      "town": "Falmouth",
-      "info": "",
-      "price": "$15 \u2013 $20",
-      "lat": 41.5515,
-      "lng": -70.6148,
-      "img": "https://highfieldhallandgardens.org/wp-content/uploads/2026-Chair-Yoga-Melissa-Goodwin-frame-1.jpg",
-      "source": "Highfield Hall",
-      "source_url": "https://highfieldhallandgardens.org/event/chair-yoga-10-7-26/",
-      "start": "2026-10-07T10:30:00+00:00"
     },
     {
       "id": "circus-classes-tiny-tents-for-ages-5-6-20261007",
@@ -1874,23 +1653,6 @@
       "source": "Dennis",
       "source_url": "https://business.dennischamber.com/calendar/Details/75th-anniversary-gala-1702406?sourceTypeId=Website",
       "start": "2026-10-09T00:00:00+00:00"
-    },
-    {
-      "id": "chair-yoga-with-yves-vandeplas-20261009",
-      "tag": "\ud83d\udcc5 EVENT",
-      "category": "event",
-      "time": "Fri Oct 9 \u00b7 10:30 AM",
-      "title": "Chair Yoga with Yves Vandeplas",
-      "venue": "Highfield Hall",
-      "town": "Falmouth",
-      "info": "",
-      "price": "$15 \u2013 $20",
-      "lat": 41.5515,
-      "lng": -70.6148,
-      "img": "https://highfieldhallandgardens.org/wp-content/uploads/2025-Chair-Yoga.jpg",
-      "source": "Highfield Hall",
-      "source_url": "https://highfieldhallandgardens.org/event/chair-yoga-10-9-26/",
-      "start": "2026-10-09T10:30:00+00:00"
     },
     {
       "id": "fall-monumental-yard-sale-20261010",
@@ -2114,23 +1876,6 @@
       "start": "2026-10-11T00:00:00+00:00"
     },
     {
-      "id": "wampanoag-culture-celebration-open-house-all-ages-20261011",
-      "tag": "\ud83c\udfaa FESTIVAL",
-      "category": "festival",
-      "time": "Sun Oct 11 \u00b7 10:00 AM",
-      "title": "Wampanoag Culture Celebration & Open House (All Ages)",
-      "venue": "Highfield Hall",
-      "town": "Falmouth",
-      "info": "",
-      "price": "FREE",
-      "lat": 41.5515,
-      "lng": -70.6148,
-      "img": "https://highfieldhallandgardens.org/wp-content/uploads/10.4.25-Wampanoag-Cultural-Celebration.jpg",
-      "source": "Highfield Hall",
-      "source_url": "https://highfieldhallandgardens.org/event/wampanoag-culture-celebration-2026/",
-      "start": "2026-10-11T10:00:00+00:00"
-    },
-    {
       "id": "women-s-week-20261012",
       "tag": "\ud83d\udcc5 EVENT",
       "category": "event",
@@ -2301,21 +2046,38 @@
       "start": "2026-10-14T00:00:00+00:00"
     },
     {
-      "id": "chair-yoga-with-melissa-goodwin-20261014",
+      "id": "view-details-20261014",
       "tag": "\ud83d\udcc5 EVENT",
       "category": "event",
-      "time": "Wed Oct 14 \u00b7 10:30 AM",
-      "title": "Chair Yoga with Melissa Goodwin",
-      "venue": "Highfield Hall",
-      "town": "Falmouth",
+      "time": "Wed Oct 14",
+      "title": "View Details",
+      "venue": "",
+      "town": "Bourne",
       "info": "",
-      "price": "$15 \u2013 $20",
-      "lat": 41.5515,
-      "lng": -70.6148,
-      "img": "https://highfieldhallandgardens.org/wp-content/uploads/2026-Chair-Yoga-Melissa-Goodwin-frame-1.jpg",
-      "source": "Highfield Hall",
-      "source_url": "https://highfieldhallandgardens.org/event/chair-yoga-10-14-26/",
-      "start": "2026-10-14T10:30:00+00:00"
+      "price": "",
+      "lat": 41.7412,
+      "lng": -70.599,
+      "img": null,
+      "source": "Bourne",
+      "source_url": "https://web.capecodcanalchamber.org/events/Morning-Business-Connections-1718/details",
+      "start": "2026-10-14T00:00:00+00:00"
+    },
+    {
+      "id": "circus-classes-tiny-tents-for-ages-5-6-20261014",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Wed Oct 14 \u00b7 3:30 PM",
+      "title": "Circus Classes // Tiny Tents for Ages 5 & 6",
+      "venue": "Cirque by the Sea at WHAT",
+      "town": "Truro",
+      "info": "",
+      "price": "",
+      "lat": 41.9979,
+      "lng": -70.0492,
+      "img": "https://payomet.org/wp-content/uploads/2026/09/CIRCUS-CLASSES-TINY-TENTS.webp",
+      "source": "Payomet",
+      "source_url": "https://payomet.org/calendar/circus-classes-tiny-tents-for-ages-5-6-6/",
+      "start": "2026-10-14T15:30:00+00:00"
     }
   ]
 }
