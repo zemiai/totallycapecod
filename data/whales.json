@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-09-25T19:25:52Z",
+  "updated_at": "2026-09-25T22:40:01Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -26,7 +26,7 @@
       "location": "Cape Cod Canal Bike Paths, Buzzards Bay, MA, US",
       "reported_by": "iNaturalist \u00b7 david_moore7",
       "reported_at": "2026-09-23T21:45:07Z",
-      "time_ago": "1 day ago",
+      "time_ago": "2 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/739698316/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/402906346"
@@ -96,7 +96,7 @@
       "location": "Off Cape Cod",
       "reported_by": "iNaturalist \u00b7 peterselmayr",
       "reported_at": "2026-09-15T20:05:00Z",
-      "time_ago": "9 days ago",
+      "time_ago": "10 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/739195924/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/402648544"
@@ -110,7 +110,7 @@
       "location": "Off Cape Cod",
       "reported_by": "iNaturalist \u00b7 peterselmayr",
       "reported_at": "2026-09-15T19:46:00Z",
-      "time_ago": "9 days ago",
+      "time_ago": "10 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/739195911/medium.jpg",
       "notes": "Atlantic White-sided Dolphin",
       "source_url": "https://www.inaturalist.org/observations/402648538"
