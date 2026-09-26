@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-09-25T22:40:01Z",
+  "updated_at": "2026-09-26T01:12:10Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -16,6 +16,20 @@
       "photo_url": "https://static.inaturalist.org/photos/739982456/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/403054715"
+    },
+    {
+      "id": "inat-403368776",
+      "species": "seal",
+      "count": 1,
+      "lat": 42.0814,
+      "lng": -70.2182,
+      "location": "Provincetown, MA, US",
+      "reported_by": "iNaturalist \u00b7 sponks",
+      "reported_at": "2026-09-24T14:53:45Z",
+      "time_ago": "1 day ago",
+      "photo_url": "https://static.inaturalist.org/photos/740599824/medium.jpg",
+      "notes": "Grey Seal",
+      "source_url": "https://www.inaturalist.org/observations/403368776"
     },
     {
       "id": "inat-402906346",
@@ -58,20 +72,6 @@
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/738983364/medium.jpg",
       "notes": "Atlantic Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/402541197"
-    },
-    {
-      "id": "inat-402534638",
-      "species": "seal",
-      "count": 1,
-      "lat": 41.3862,
-      "lng": -70.0478,
-      "location": "Nantucket, MA, US",
-      "reported_by": "iNaturalist \u00b7 avaboettiger",
-      "reported_at": "2026-09-22T14:44:55Z",
-      "time_ago": "3 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/738971089/medium.jpg",
-      "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/402534638"
     },
     {
       "id": "inat-401918188",
@@ -310,48 +310,6 @@
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/734052503/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/400056326"
-    },
-    {
-      "id": "inat-399304705",
-      "species": "humpback",
-      "count": 1,
-      "lat": 42.0298,
-      "lng": -70.2357,
-      "location": "Barnstable County",
-      "reported_by": "iNaturalist \u00b7 andrewss22",
-      "reported_at": "2026-09-11T16:59:19Z",
-      "time_ago": "14 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/732582663/medium.jpg",
-      "notes": "Humpback Whale",
-      "source_url": "https://www.inaturalist.org/observations/399304705"
-    },
-    {
-      "id": "inat-399304648",
-      "species": "humpback",
-      "count": 1,
-      "lat": 42.0298,
-      "lng": -70.2358,
-      "location": "Barnstable County",
-      "reported_by": "iNaturalist \u00b7 andrewss22",
-      "reported_at": "2026-09-11T16:59:07Z",
-      "time_ago": "14 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/732582534/medium.jpg",
-      "notes": "Humpback Whale",
-      "source_url": "https://www.inaturalist.org/observations/399304648"
-    },
-    {
-      "id": "inat-399304608",
-      "species": "humpback",
-      "count": 1,
-      "lat": 42.0298,
-      "lng": -70.2358,
-      "location": "Barnstable County",
-      "reported_by": "iNaturalist \u00b7 andrewss22",
-      "reported_at": "2026-09-11T16:58:56Z",
-      "time_ago": "14 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/732582439/medium.jpg",
-      "notes": "Humpback Whale",
-      "source_url": "https://www.inaturalist.org/observations/399304608"
     }
   ]
 }
