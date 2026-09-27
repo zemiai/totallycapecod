@@ -1,8 +1,50 @@
 {
   "version": "1.0",
-  "updated_at": "2026-09-27T00:46:02Z",
+  "updated_at": "2026-09-27T06:15:33Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
+    {
+      "id": "inat-403736611",
+      "species": "dolphin",
+      "count": 1,
+      "lat": 42.0844,
+      "lng": -70.0544,
+      "location": "MA, US",
+      "reported_by": "iNaturalist \u00b7 cormorantccm",
+      "reported_at": "2026-09-27T01:36:38Z",
+      "time_ago": "4 h ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/741331087/medium.jpg",
+      "notes": "Atlantic White-sided Dolphin",
+      "source_url": "https://www.inaturalist.org/observations/403736611"
+    },
+    {
+      "id": "inat-403736295",
+      "species": "minke",
+      "count": 1,
+      "lat": 42.0898,
+      "lng": -70.1071,
+      "location": "MA, US",
+      "reported_by": "iNaturalist \u00b7 cormorantccm",
+      "reported_at": "2026-09-27T01:32:57Z",
+      "time_ago": "4 h ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/741330382/medium.jpg",
+      "notes": "Common Minke Whale",
+      "source_url": "https://www.inaturalist.org/observations/403736295"
+    },
+    {
+      "id": "inat-403728584",
+      "species": "seal",
+      "count": 1,
+      "lat": 41.6683,
+      "lng": -70.0336,
+      "location": "South Chatham, Chatham, MA 02659, USA",
+      "reported_by": "iNaturalist \u00b7 hcourt",
+      "reported_at": "2026-09-26T16:34:13Z",
+      "time_ago": "13 h ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/741315108/medium.jpg",
+      "notes": "Grey Seal",
+      "source_url": "https://www.inaturalist.org/observations/403728584"
+    },
     {
       "id": "inat-403054715",
       "species": "seal",
@@ -58,20 +100,6 @@
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/740729576/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/403432677"
-    },
-    {
-      "id": "inat-402573479",
-      "species": "seal",
-      "count": 1,
-      "lat": 41.7751,
-      "lng": -70.496,
-      "location": "Sandwich, MA 02563, USA",
-      "reported_by": "iNaturalist \u00b7 russetpotato",
-      "reported_at": "2026-09-22T17:33:00Z",
-      "time_ago": "4 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/739038815/medium.jpg",
-      "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/402573479"
     },
     {
       "id": "inat-401918188",
