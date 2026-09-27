@@ -1,8 +1,36 @@
 {
   "version": "1.0",
-  "updated_at": "2026-09-27T17:08:47Z",
+  "updated_at": "2026-09-27T20:18:00Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
+    {
+      "id": "inat-403973614",
+      "species": "seal",
+      "count": 1,
+      "lat": 42.0818,
+      "lng": -70.2213,
+      "location": "Provincetown, MA, US",
+      "reported_by": "iNaturalist \u00b7 blurs",
+      "reported_at": "2026-09-27T19:49:05Z",
+      "time_ago": "28 min ago",
+      "photo_url": "",
+      "notes": "Grey Seal",
+      "source_url": "https://www.inaturalist.org/observations/403973614"
+    },
+    {
+      "id": "inat-403973385",
+      "species": "seal",
+      "count": 1,
+      "lat": 42.081,
+      "lng": -70.2242,
+      "location": "Provincetown, MA, US",
+      "reported_by": "iNaturalist \u00b7 blurs",
+      "reported_at": "2026-09-27T19:48:36Z",
+      "time_ago": "29 min ago",
+      "photo_url": "",
+      "notes": "Harbor Seal",
+      "source_url": "https://www.inaturalist.org/observations/403973385"
+    },
     {
       "id": "inat-403736611",
       "species": "dolphin",
@@ -12,7 +40,7 @@
       "location": "MA, US",
       "reported_by": "iNaturalist \u00b7 cormorantccm",
       "reported_at": "2026-09-27T01:36:38Z",
-      "time_ago": "15 h ago",
+      "time_ago": "18 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/741331087/medium.jpg",
       "notes": "Atlantic White-sided Dolphin",
       "source_url": "https://www.inaturalist.org/observations/403736611"
@@ -26,7 +54,7 @@
       "location": "MA, US",
       "reported_by": "iNaturalist \u00b7 cormorantccm",
       "reported_at": "2026-09-27T01:32:57Z",
-      "time_ago": "15 h ago",
+      "time_ago": "18 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/741330382/medium.jpg",
       "notes": "Common Minke Whale",
       "source_url": "https://www.inaturalist.org/observations/403736295"
@@ -74,34 +102,6 @@
       "source_url": "https://www.inaturalist.org/observations/403368776"
     },
     {
-      "id": "inat-402906346",
-      "species": "seal",
-      "count": 1,
-      "lat": 41.7465,
-      "lng": -70.5985,
-      "location": "Cape Cod Canal Bike Paths, Buzzards Bay, MA, US",
-      "reported_by": "iNaturalist \u00b7 david_moore7",
-      "reported_at": "2026-09-23T21:45:07Z",
-      "time_ago": "3 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/739698316/medium.jpg",
-      "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/402906346"
-    },
-    {
-      "id": "inat-403432677",
-      "species": "seal",
-      "count": 1,
-      "lat": 41.6895,
-      "lng": -69.9494,
-      "location": "Chatham, MA, USA",
-      "reported_by": "iNaturalist \u00b7 heifer03",
-      "reported_at": "2026-09-23T15:25:00Z",
-      "time_ago": "4 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/740729576/medium.jpg",
-      "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/403432677"
-    },
-    {
       "id": "inat-401918188",
       "species": "shark",
       "count": 1,
@@ -124,7 +124,7 @@
       "location": "Off Cape Cod",
       "reported_by": "iNaturalist \u00b7 peterselmayr",
       "reported_at": "2026-09-15T20:05:00Z",
-      "time_ago": "11 days ago",
+      "time_ago": "12 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/739195924/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/402648544"
@@ -138,7 +138,7 @@
       "location": "Off Cape Cod",
       "reported_by": "iNaturalist \u00b7 peterselmayr",
       "reported_at": "2026-09-15T19:46:00Z",
-      "time_ago": "11 days ago",
+      "time_ago": "12 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/739195911/medium.jpg",
       "notes": "Atlantic White-sided Dolphin",
       "source_url": "https://www.inaturalist.org/observations/402648538"
@@ -152,7 +152,7 @@
       "location": "Off Cape Cod",
       "reported_by": "iNaturalist \u00b7 peterselmayr",
       "reported_at": "2026-09-15T19:20:00Z",
-      "time_ago": "11 days ago",
+      "time_ago": "12 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/739195885/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/402648535"
