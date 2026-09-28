@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-09-21T16:22:16Z",
+  "updated_at": "2026-09-28T18:02:52Z",
   "enriched": true,
   "count": 79,
   "eats": [
@@ -21,10 +21,10 @@
       "desc": "Iconic waterfront since 1979 \u2014 lobster rolls, clam chowder, harbor views.",
       "place_id": "ChIJodQ3d3yn_IkRaL3U202uvJ0",
       "photo": "data/eats-photos/the-lobster-pot.jpg",
-      "reviews": 10693,
+      "reviews": 10777,
       "website": "http://www.ptownlobsterpot.com/?utm_source=google&utm_medium=wix_google_business_profile&utm_campaign=2343733837063219921",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:16Z",
+      "enriched_at": "2026-09-28T18:01:54Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 487-0842",
@@ -140,48 +140,24 @@
       "desc": "Oceanfront dining with a legendary martini list. A P-town institution.",
       "place_id": "ChIJW79HTmWn_IkRzPfkuTK9RLI",
       "photo": "data/eats-photos/the-mews-restaurant-cafe.jpg",
-      "reviews": 797,
+      "reviews": 798,
       "website": "http://mewsptown.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:17Z",
+      "enriched_at": "2026-09-28T18:01:55Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 487-1500",
       "hours": [
         {
           "open": {
-            "day": 0,
-            "hour": 17,
-            "minute": 0
-          },
-          "close": {
-            "day": 0,
-            "hour": 21,
-            "minute": 0
-          }
-        },
-        {
-          "open": {
-            "day": 1,
-            "hour": 17,
-            "minute": 0
-          },
-          "close": {
-            "day": 1,
-            "hour": 21,
-            "minute": 0
-          }
-        },
-        {
-          "open": {
             "day": 2,
             "hour": 17,
             "minute": 0
           },
           "close": {
             "day": 2,
-            "hour": 21,
-            "minute": 0
+            "hour": 20,
+            "minute": 30
           }
         },
         {
@@ -192,8 +168,8 @@
           },
           "close": {
             "day": 3,
-            "hour": 21,
-            "minute": 0
+            "hour": 20,
+            "minute": 30
           }
         },
         {
@@ -204,8 +180,8 @@
           },
           "close": {
             "day": 4,
-            "hour": 21,
-            "minute": 0
+            "hour": 20,
+            "minute": 30
           }
         },
         {
@@ -217,7 +193,7 @@
           "close": {
             "day": 5,
             "hour": 21,
-            "minute": 30
+            "minute": 0
           }
         },
         {
@@ -229,18 +205,18 @@
           "close": {
             "day": 6,
             "hour": 21,
-            "minute": 30
+            "minute": 0
           }
         }
       ],
       "hours_text": [
-        "Monday: 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 5:00\u2009\u2013\u20099:30\u202fPM",
-        "Saturday: 5:00\u2009\u2013\u20099:30\u202fPM",
-        "Sunday: 5:00\u2009\u2013\u20099:00\u202fPM"
+        "Monday: Closed",
+        "Tuesday: 5:00\u2009\u2013\u20098:30\u202fPM",
+        "Wednesday: 5:00\u2009\u2013\u20098:30\u202fPM",
+        "Thursday: 5:00\u2009\u2013\u20098:30\u202fPM",
+        "Friday: 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Sunday: Closed"
       ]
     },
     {
@@ -258,10 +234,10 @@
       "desc": "Sunset dining right on the water. A splurge that earns it.",
       "place_id": "ChIJsQWvzmJY-4kRpvSkHnaWXYc",
       "photo": "data/eats-photos/the-red-inn.jpg",
-      "reviews": 780,
+      "reviews": 782,
       "website": "http://theredinn.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:18Z",
+      "enriched_at": "2026-09-28T18:01:55Z",
       "deal": "Raw Bar Happy Hour \u00b7 Fri\u2013Sun 2\u20134:30pm",
       "business_status": "OPERATIONAL",
       "phone": "(508) 487-7334",
@@ -378,10 +354,10 @@
       "desc": "Beachfront counter \u2014 go for the lobster roll and frozen ros\u00e9.",
       "place_id": "ChIJy0gAcH6n_IkR2t0LvOv8TYE",
       "photo": "data/eats-photos/the-canteen.jpg",
-      "reviews": 2441,
+      "reviews": 2444,
       "website": "http://www.thecanteenptown.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:19Z",
+      "enriched_at": "2026-09-28T18:01:56Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 487-3800",
@@ -497,10 +473,10 @@
       "desc": "Late-night Commercial Street slice. The after-bar ritual.",
       "place_id": "ChIJESmjOn6n_IkRqfSl9ckjvJI",
       "photo": "data/eats-photos/spiritus-pizza.jpg",
-      "reviews": 1197,
+      "reviews": 1203,
       "website": "http://spirituspizza.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:19Z",
+      "enriched_at": "2026-09-28T18:01:57Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 487-2808",
@@ -616,10 +592,10 @@
       "desc": "Build a beach picnic with their famous sandwiches.",
       "place_id": "ChIJuUiYUXqn_IkRZwCKh3bEfXw",
       "photo": "data/eats-photos/far-land-provisions.jpg",
-      "reviews": 617,
+      "reviews": 620,
       "website": "http://www.farlandprovisions.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:20Z",
+      "enriched_at": "2026-09-28T18:01:58Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 487-0045",
@@ -735,10 +711,10 @@
       "desc": "Wine flights and live music under the trees. Food trucks on site.",
       "place_id": "ChIJ8RlHtHWg_IkRBxpMWI8Z82w",
       "photo": "data/eats-photos/truro-vineyards.jpg",
-      "reviews": 623,
+      "reviews": 626,
       "website": "http://www.trurovineyardsofcapecod.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:21Z",
+      "enriched_at": "2026-09-28T18:01:58Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 487-6200",
@@ -854,10 +830,10 @@
       "desc": "A former blacksmith shop turned buzzy bistro. Famous fish tacos.",
       "place_id": "ChIJU_F0ddhf-4kRUstz0hsHeCs",
       "photo": "data/eats-photos/blackfish.jpg",
-      "reviews": 271,
+      "reviews": 272,
       "website": "https://www.blackfishtruro.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:22Z",
+      "enriched_at": "2026-09-28T18:01:59Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 349-3399",
@@ -952,7 +928,7 @@
       "reviews": 1006,
       "website": "http://www.montanos.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:23Z",
+      "enriched_at": "2026-09-28T18:02:00Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 487-2026",
@@ -1068,10 +1044,10 @@
       "desc": "Raw bar and sushi in a building topped by a boat. Oysters galore.",
       "place_id": "ChIJz9aI9Ehn-4kR5tpTPtkA_6g",
       "photo": "data/eats-photos/macs-shack.jpg",
-      "reviews": 1316,
+      "reviews": 1321,
       "website": "http://www.macsseafood.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:23Z",
+      "enriched_at": "2026-09-28T18:02:01Z",
       "deal": "Thursdays: All-You-Can-Eat Fish & Chips",
       "business_status": "OPERATIONAL",
       "phone": "(508) 349-6333",
@@ -1188,10 +1164,10 @@
       "desc": "Order at the counter, eat on the harbor as the fleet comes in.",
       "place_id": "ChIJ7xYExUZn-4kRjghulFODehE",
       "photo": "data/eats-photos/macs-seafood.jpg",
-      "reviews": 974,
+      "reviews": 978,
       "website": "http://www.macsseafood.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:24Z",
+      "enriched_at": "2026-09-28T18:02:01Z",
       "deal": "Thu: All-You-Can-Eat Fish & Chips \u00b7 Daily Happy Hour",
       "business_status": "OPERATIONAL",
       "phone": "(508) 349-9611",
@@ -1307,10 +1283,10 @@
       "desc": "French-trained pastry. Croissants that ruin all other croissants.",
       "place_id": "ChIJIUDvpsJm-4kR4v5PsqeD53c",
       "photo": "data/eats-photos/pb-boulangerie-bistro.jpg",
-      "reviews": 1478,
+      "reviews": 1482,
       "website": "https://pbboulangeriebistro.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:25Z",
+      "enriched_at": "2026-09-28T18:02:02Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 349-1600",
@@ -1323,18 +1299,6 @@
           },
           "close": {
             "day": 0,
-            "hour": 20,
-            "minute": 0
-          }
-        },
-        {
-          "open": {
-            "day": 4,
-            "hour": 17,
-            "minute": 0
-          },
-          "close": {
-            "day": 4,
             "hour": 20,
             "minute": 0
           }
@@ -1368,7 +1332,7 @@
         "Monday: Closed",
         "Tuesday: Closed",
         "Wednesday: Closed",
-        "Thursday: 5:00\u2009\u2013\u20098:00\u202fPM",
+        "Thursday: Closed",
         "Friday: 5:00\u2009\u2013\u20098:00\u202fPM",
         "Saturday: 5:00\u2009\u2013\u20098:00\u202fPM",
         "Sunday: 5:00\u2009\u2013\u20098:00\u202fPM"
@@ -1390,10 +1354,10 @@
       "desc": "Locals' joint over Duck Creek \u2014 oysters they pull themselves.",
       "place_id": "ChIJ8WaihEZn-4kRmrPqBtMsAuw",
       "photo": "data/eats-photos/the-bookstore-restaurant.jpg",
-      "reviews": 1315,
+      "reviews": 1318,
       "website": "http://www.wellfleetoyster.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:25Z",
+      "enriched_at": "2026-09-28T18:02:03Z",
       "deal": "Happy Hour & Small Plates daily",
       "business_status": "OPERATIONAL",
       "phone": "(508) 349-3154",
@@ -1510,10 +1474,10 @@
       "desc": "Beach bar on the dunes at Cahoon Hollow. Live bands + raw bar.",
       "place_id": "ChIJsTPAsDBh-4kRTRNYmi0VutM",
       "photo": "data/eats-photos/the-beachcomber.jpg",
-      "reviews": 1526,
+      "reviews": 1531,
       "website": "http://www.thebeachcomber.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:26Z",
+      "enriched_at": "2026-09-28T18:02:03Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 349-6055"
@@ -1533,10 +1497,10 @@
       "desc": "Porch dining in a sea-captain's house downtown. Brunch + dinner.",
       "place_id": "ChIJLRp6WEln-4kRE67FE3YNH5Q",
       "photo": "data/eats-photos/winslows-tavern.jpg",
-      "reviews": 519,
+      "reviews": 521,
       "website": "http://www.winslowstavern.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:27Z",
+      "enriched_at": "2026-09-28T18:02:04Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 349-6450",
@@ -1704,7 +1668,7 @@
       "reviews": 2175,
       "website": "http://www.arnoldsrestaurant.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:28Z",
+      "enriched_at": "2026-09-28T18:02:05Z",
       "deal": null,
       "business_status": "CLOSED_TEMPORARILY",
       "phone": "(508) 255-2575",
@@ -1801,7 +1765,7 @@
       "reviews": 14,
       "website": "https://pjscapecod.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:29Z",
+      "enriched_at": "2026-09-28T18:02:06Z",
       "deal": null,
       "business_status": "CLOSED_TEMPORARILY",
       "phone": "(508) 255-6770",
@@ -1906,10 +1870,10 @@
       "desc": "A Cape Sunday tradition \u2014 hand-cut donuts and a buzzing counter.",
       "place_id": "ChIJU8uagpto-4kR9tJNdnHbz3Y",
       "photo": "data/eats-photos/hole-in-one-donuts.jpg",
-      "reviews": 699,
+      "reviews": 700,
       "website": "https://theholecapecod.com/eastham/?utm_source=gmb_eastham&utm_medium=organic&utm_campaign=listing",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:29Z",
+      "enriched_at": "2026-09-28T18:02:06Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 255-9446",
@@ -2029,7 +1993,7 @@
       "reviews": 791,
       "website": "https://www.fairwaycapecod.com/?utm_source=gmb&utm_medium=organic&utm_campaign=listing",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:30Z",
+      "enriched_at": "2026-09-28T18:02:07Z",
       "deal": "Weekly breakfast & dinner specials",
       "business_status": "OPERATIONAL",
       "phone": "(508) 255-3893",
@@ -2229,10 +2193,10 @@
       "desc": "Modern clam-shack \u2014 smash burgers, lobster rolls, frappes.",
       "place_id": "ChIJlTr32Wtp-4kRCvibwRfSGS0",
       "photo": "data/eats-photos/the-knack.jpg",
-      "reviews": 1574,
+      "reviews": 1577,
       "website": "https://www.theknackcapecod.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:31Z",
+      "enriched_at": "2026-09-28T18:02:08Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(774) 316-4595",
@@ -2349,10 +2313,10 @@
       "desc": "Coffee, cinnamon buns, and house chocolates. Orleans' morning HQ.",
       "place_id": "ChIJK9c7g3xp-4kRDsUKuAzChYk",
       "photo": "data/eats-photos/hot-chocolate-sparrow.jpg",
-      "reviews": 1833,
+      "reviews": 1837,
       "website": "http://www.hotchocolatesparrow.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:32Z",
+      "enriched_at": "2026-09-28T18:02:09Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 240-6970",
@@ -2471,7 +2435,7 @@
       "reviews": 1238,
       "website": "http://www.land-ho.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:33Z",
+      "enriched_at": "2026-09-28T18:02:10Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 255-5165",
@@ -2567,7 +2531,7 @@
       "lng": -69.9889,
       "cuisine": "American",
       "price": "$$",
-      "rating": 4.4,
+      "rating": 4.5,
       "tags": [
         "fine",
         "seafood"
@@ -2575,10 +2539,10 @@
       "desc": "Downtown bistro \u2014 wood-grilled fish and a lively bar scene.",
       "place_id": "ChIJjaBSXXtp-4kRuVTVS_9LV4o",
       "photo": "data/eats-photos/mahoneys-atlantic-bar-grill.jpg",
-      "reviews": 470,
+      "reviews": 474,
       "website": "http://mahoneysatlantic.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:34Z",
+      "enriched_at": "2026-09-28T18:02:10Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(774) 207-7921",
@@ -2682,10 +2646,10 @@
       "desc": "Tiny, beloved, no-reservations \u2014 some of the best seafood on the Cape.",
       "place_id": "ChIJQTh4CspB-4kRBKxY6fqmNyA",
       "photo": "data/eats-photos/brewster-fish-house.jpg",
-      "reviews": 500,
+      "reviews": 502,
       "website": "http://www.brewsterfishhousecapecod.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:34Z",
+      "enriched_at": "2026-09-28T18:02:11Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 896-7867",
@@ -2793,7 +2757,7 @@
       "reviews": 950,
       "website": "https://cobies.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:35Z",
+      "enriched_at": "2026-09-28T18:02:12Z",
       "deal": "Daily specials on the board",
       "business_status": "CLOSED_TEMPORARILY",
       "phone": "(508) 896-7021",
@@ -2910,10 +2874,10 @@
       "desc": "Order-at-the-window family spot \u2014 fried seafood and lobster dinners.",
       "place_id": "ChIJ1bgKN9pB-4kR91k6aRxf7hw",
       "photo": "data/eats-photos/jts-seafood.jpg",
-      "reviews": 937,
+      "reviews": 939,
       "website": "http://www.jt-seafood.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:36Z",
+      "enriched_at": "2026-09-28T18:02:12Z",
       "deal": "Cash-discount pricing \u00b7 Kids specials",
       "business_status": "CLOSED_TEMPORARILY",
       "phone": "(508) 896-3355",
@@ -3028,26 +2992,14 @@
       "desc": "Special-occasion French prix-fixe in a 1689 estate. The big splurge.",
       "place_id": "ChIJFQ355c5B-4kRWW8WepUu9Kc",
       "photo": "data/eats-photos/chillingsworth.jpg",
-      "reviews": 172,
+      "reviews": 173,
       "website": "http://www.chillingsworth.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:36Z",
+      "enriched_at": "2026-09-28T18:02:13Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 896-3640",
       "hours": [
-        {
-          "open": {
-            "day": 3,
-            "hour": 17,
-            "minute": 0
-          },
-          "close": {
-            "day": 3,
-            "hour": 20,
-            "minute": 0
-          }
-        },
         {
           "open": {
             "day": 4,
@@ -3088,7 +3040,7 @@
       "hours_text": [
         "Monday: Closed",
         "Tuesday: Closed",
-        "Wednesday: 5:00\u2009\u2013\u20098:00\u202fPM",
+        "Wednesday: Closed",
         "Thursday: 5:00\u2009\u2013\u20098:00\u202fPM",
         "Friday: 5:00\u2009\u2013\u20098:00\u202fPM",
         "Saturday: 5:00\u2009\u2013\u20098:00\u202fPM",
@@ -3111,10 +3063,10 @@
       "desc": "Craft roaster with a sunlit cafe. Best pour-over on the Mid-Cape.",
       "place_id": "ChIJi4mIeNBB-4kRDjHIj-LlGfI",
       "photo": "data/eats-photos/snowy-owl-coffee-roasters.jpg",
-      "reviews": 995,
+      "reviews": 999,
       "website": "https://socoffee.co/pages/coffee-house-in-brewster?utm_source=gmb_brewster&utm_medium=organic&utm_campaign=listing",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:37Z",
+      "enriched_at": "2026-09-28T18:02:14Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(774) 323-0605",
@@ -3230,10 +3182,10 @@
       "desc": "Refined coastal dining in a sea-captain's house. Quietly excellent.",
       "place_id": "ChIJMz21fEA--4kR8UwqnQMPtHY",
       "photo": "data/eats-photos/cape-sea-grille.jpg",
-      "reviews": 326,
+      "reviews": 328,
       "website": "http://www.capeseagrille.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:38Z",
+      "enriched_at": "2026-09-28T18:02:15Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 432-4745",
@@ -3325,10 +3277,10 @@
       "desc": "Harbor-view deck \u2014 sunset cocktails and twin lobsters.",
       "place_id": "ChIJrYMydbU_-4kRVU3vQ6IURfk",
       "photo": "data/eats-photos/brax-landing.jpg",
-      "reviews": 2405,
+      "reviews": 2413,
       "website": "http://www.braxrestaurant.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:39Z",
+      "enriched_at": "2026-09-28T18:02:15Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 432-5515",
@@ -3444,10 +3396,10 @@
       "desc": "Romantic, candle-lit Tuscan. Reservations a must in summer.",
       "place_id": "ChIJ7aRrLngV-4kRE50oMq39X_M",
       "photo": "data/eats-photos/bucas-tuscan-roadhouse.jpg",
-      "reviews": 593,
+      "reviews": 596,
       "website": "http://www.bucastuscanroadhouse.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:39Z",
+      "enriched_at": "2026-09-28T18:02:16Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 432-6900",
@@ -3563,10 +3515,10 @@
       "desc": "Tucked off Main Street \u2014 bouillabaisse and oysters in a buzzy room.",
       "place_id": "ChIJyRMiwJ8U-4kR1Q2QAT9XbbE",
       "photo": "data/eats-photos/the-impudent-oyster.jpg",
-      "reviews": 825,
+      "reviews": 830,
       "website": "http://theimpudentoyster.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:40Z",
+      "enriched_at": "2026-09-28T18:02:17Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 945-3545",
@@ -3767,10 +3719,10 @@
       "desc": "Lobster rolls on the pier, watching seals and the fishing fleet.",
       "place_id": "ChIJESlJs1kT-4kRp-7l4_nJEpo",
       "photo": "data/eats-photos/chatham-pier-fish-market.jpg",
-      "reviews": 2549,
+      "reviews": 2557,
       "website": "https://www.chathampierfishmkt.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:41Z",
+      "enriched_at": "2026-09-28T18:02:18Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 945-3474",
@@ -3887,10 +3839,10 @@
       "desc": "Townie tavern and raw bar. Loud, fun, and always packed.",
       "place_id": "ChIJXQgSsJ8U-4kRwgW48kJcLUc",
       "photo": "data/eats-photos/the-chatham-squire.jpg",
-      "reviews": 1916,
+      "reviews": 1921,
       "website": "http://www.thesquire.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:42Z",
+      "enriched_at": "2026-09-28T18:02:18Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 945-0945",
@@ -4005,10 +3957,10 @@
       "desc": "Wood-fired Mediterranean with a sleek bar. Brunch is a scene.",
       "place_id": "ChIJgWiEAb0U-4kREzJF1SX5viU",
       "photo": "data/eats-photos/del-mar-bar-bistro.jpg",
-      "reviews": 487,
+      "reviews": 488,
       "website": "https://www.delmarbistro.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:42Z",
+      "enriched_at": "2026-09-28T18:02:19Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 945-9988",
@@ -4115,7 +4067,7 @@
       "reviews": 565,
       "website": "http://www.hangarbchatham.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:43Z",
+      "enriched_at": "2026-09-28T18:02:20Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 593-3655",
@@ -4208,10 +4160,10 @@
       "desc": "BYOB sleeper hit \u2014 picnic tables right on the harbor. Cash only.",
       "place_id": "ChIJXcNTwkhH-4kR2dPePD7qdbk",
       "photo": "data/eats-photos/sesuit-harbor-cafe.jpg",
-      "reviews": 2676,
+      "reviews": 2679,
       "website": "http://www.sesuit-harbor-cafe.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:44Z",
+      "enriched_at": "2026-09-28T18:02:20Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 385-6134",
@@ -4224,8 +4176,8 @@
           },
           "close": {
             "day": 0,
-            "hour": 20,
-            "minute": 0
+            "hour": 14,
+            "minute": 30
           }
         },
         {
@@ -4236,8 +4188,8 @@
           },
           "close": {
             "day": 1,
-            "hour": 20,
-            "minute": 0
+            "hour": 14,
+            "minute": 30
           }
         },
         {
@@ -4248,8 +4200,8 @@
           },
           "close": {
             "day": 2,
-            "hour": 20,
-            "minute": 0
+            "hour": 14,
+            "minute": 30
           }
         },
         {
@@ -4260,8 +4212,8 @@
           },
           "close": {
             "day": 3,
-            "hour": 20,
-            "minute": 0
+            "hour": 14,
+            "minute": 30
           }
         },
         {
@@ -4272,8 +4224,8 @@
           },
           "close": {
             "day": 4,
-            "hour": 20,
-            "minute": 0
+            "hour": 14,
+            "minute": 30
           }
         },
         {
@@ -4284,8 +4236,8 @@
           },
           "close": {
             "day": 5,
-            "hour": 20,
-            "minute": 0
+            "hour": 14,
+            "minute": 30
           }
         },
         {
@@ -4296,19 +4248,19 @@
           },
           "close": {
             "day": 6,
-            "hour": 20,
-            "minute": 0
+            "hour": 14,
+            "minute": 30
           }
         }
       ],
       "hours_text": [
-        "Monday: 7:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Tuesday: 7:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Wednesday: 7:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Thursday: 7:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Friday: 7:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Saturday: 7:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Sunday: 7:00\u202fAM\u2009\u2013\u20098:00\u202fPM"
+        "Monday: 7:00\u202fAM\u2009\u2013\u20092:30\u202fPM",
+        "Tuesday: 7:00\u202fAM\u2009\u2013\u20092:30\u202fPM",
+        "Wednesday: 7:00\u202fAM\u2009\u2013\u20092:30\u202fPM",
+        "Thursday: 7:00\u202fAM\u2009\u2013\u20092:30\u202fPM",
+        "Friday: 7:00\u202fAM\u2009\u2013\u20092:30\u202fPM",
+        "Saturday: 7:00\u202fAM\u2009\u2013\u20092:30\u202fPM",
+        "Sunday: 7:00\u202fAM\u2009\u2013\u20092:30\u202fPM"
       ]
     },
     {
@@ -4328,10 +4280,10 @@
       "desc": "Water-view booths \u2014 Sunday brunch and big seafood plates.",
       "place_id": "ChIJRUdBwFtH-4kR3DPpwanHNVI",
       "photo": "data/eats-photos/marshside.jpg",
-      "reviews": 1248,
+      "reviews": 1250,
       "website": "http://www.themarshside.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:44Z",
+      "enriched_at": "2026-09-28T18:02:21Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 385-4010",
@@ -4449,7 +4401,7 @@
       "reviews": 1325,
       "website": "https://www.sundaeschool.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:45Z",
+      "enriched_at": "2026-09-28T18:02:22Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 394-9122",
@@ -4494,10 +4446,10 @@
       "desc": "Fried-clam shack with soft serve. A 6A summer rite of passage.",
       "place_id": "ChIJnd9admA4-4kRjHekQDYEgGA",
       "photo": "data/eats-photos/captain-frostys.jpg",
-      "reviews": 977,
+      "reviews": 979,
       "website": "http://www.captainfrosty.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:46Z",
+      "enriched_at": "2026-09-28T18:02:23Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 385-8548",
@@ -4600,10 +4552,10 @@
       "desc": "Pre-theater dining across from the Cape Playhouse. Warm and reliable.",
       "place_id": "ChIJmRGrxIA4-4kRpTy_Ms-Jc0c",
       "photo": "data/eats-photos/scargo-cafe.jpg",
-      "reviews": 1405,
+      "reviews": 1407,
       "website": "http://www.scargocafe.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:46Z",
+      "enriched_at": "2026-09-28T18:02:23Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 385-8200",
@@ -4720,10 +4672,10 @@
       "desc": "Since 1953 \u2014 whole-belly clams and onion rings by the bucket.",
       "place_id": "ChIJXQSoj1I5-4kRtvuo6aNpePw",
       "photo": "data/eats-photos/kream-n-kone.jpg",
-      "reviews": 2176,
+      "reviews": 2180,
       "website": "https://www.kreamnkone.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:47Z",
+      "enriched_at": "2026-09-28T18:02:24Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 394-0808",
@@ -4840,10 +4792,10 @@
       "desc": "Award-winning clam chowder. Marsh-view pub the locals swear by.",
       "place_id": "ChIJSYT6QGw6-4kRwrG7_q_Irko",
       "photo": "data/eats-photos/captain-parkers-pub.jpg",
-      "reviews": 3845,
+      "reviews": 3853,
       "website": "https://www.captainparkers.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:48Z",
+      "enriched_at": "2026-09-28T18:02:25Z",
       "deal": "Specials Fri/Sat after 4pm + all day Sun",
       "business_status": "OPERATIONAL",
       "phone": "(508) 771-4266",
@@ -4962,7 +4914,7 @@
       "reviews": 351,
       "website": "https://lighthousekeeperspantry.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:49Z",
+      "enriched_at": "2026-09-28T18:02:25Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(774) 994-8295",
@@ -5080,7 +5032,7 @@
       "reviews": 397,
       "website": "http://www.inaho-sushi.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:49Z",
+      "enriched_at": "2026-09-28T18:02:26Z",
       "deal": null,
       "business_status": "CLOSED_TEMPORARILY",
       "phone": "(508) 362-5522",
@@ -5173,10 +5125,10 @@
       "desc": "Sea-view deck over Nantucket Sound. Chowder and big breakfasts.",
       "place_id": "ChIJL0XVN0M6-4kR7Bu3nfVP5tA",
       "photo": "data/eats-photos/skipper-chowder-house.jpg",
-      "reviews": 4068,
+      "reviews": 4081,
       "website": "http://skipperrestaurant.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:50Z",
+      "enriched_at": "2026-09-28T18:02:27Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 394-7406",
@@ -5294,7 +5246,7 @@
       "reviews": 857,
       "website": "http://www.fourseasicecream.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:51Z",
+      "enriched_at": "2026-09-28T18:02:28Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 775-1394",
@@ -5354,7 +5306,7 @@
       "reviews": 1371,
       "website": "http://www.paindavignon.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:52Z",
+      "enriched_at": "2026-09-28T18:02:28Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 778-8588",
@@ -5519,10 +5471,10 @@
       "desc": "Fried clams on a dock deck as the boats slide by. Summer-only.",
       "place_id": "ChIJ101rYPow-4kR0jA52E9LmgU",
       "photo": "data/eats-photos/baxters-boathouse.jpg",
-      "reviews": 1392,
+      "reviews": 1396,
       "website": "http://www.baxterscapecod.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:52Z",
+      "enriched_at": "2026-09-28T18:02:29Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 775-4490",
@@ -5602,10 +5554,10 @@
       "desc": "Marina sunset spot \u2014 frozen drinks and lobster over the harbor.",
       "place_id": "ChIJpa7OFG_X5IkRBqKlYp5W_to",
       "photo": "data/eats-photos/tugboats.jpg",
-      "reviews": 1453,
+      "reviews": 1458,
       "website": "https://www.tugboatscapecod.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:53Z",
+      "enriched_at": "2026-09-28T18:02:30Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 775-6433",
@@ -5721,10 +5673,10 @@
       "desc": "Across from the ferries \u2014 chowder, raw bar, easy harbor views.",
       "place_id": "ChIJZbVzxPsw-4kR7HGC42e1Xbo",
       "photo": "data/eats-photos/the-black-cat-tavern.jpg",
-      "reviews": 2693,
+      "reviews": 2699,
       "website": "http://www.blackcattavern.com/?utm_source=googlemaps",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:54Z",
+      "enriched_at": "2026-09-28T18:02:31Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 778-1233",
@@ -5842,7 +5794,7 @@
       "reviews": 166,
       "website": "http://fivebaysbistro.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:55Z",
+      "enriched_at": "2026-09-28T18:02:32Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 420-5559",
@@ -5958,10 +5910,10 @@
       "desc": "Harborside dining with live piano. Sunset over Barnstable Harbor.",
       "place_id": "ChIJJbLuNuY2-4kRSYcxTtRdQfA",
       "photo": "data/eats-photos/mattakeese-wharf.jpg",
-      "reviews": 988,
+      "reviews": 993,
       "website": "http://www.mattakeese.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:56Z",
+      "enriched_at": "2026-09-28T18:02:32Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 362-4511",
@@ -6080,23 +6032,11 @@
       "reviews": 273,
       "website": "http://www.barnstabletuscancuisine.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:56Z",
+      "enriched_at": "2026-09-28T18:02:33Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 362-2355",
       "hours": [
-        {
-          "open": {
-            "day": 0,
-            "hour": 16,
-            "minute": 0
-          },
-          "close": {
-            "day": 0,
-            "hour": 21,
-            "minute": 0
-          }
-        },
         {
           "open": {
             "day": 2,
@@ -6165,7 +6105,7 @@
         "Thursday: 4:00\u2009\u2013\u20099:00\u202fPM",
         "Friday: 4:00\u2009\u2013\u20099:00\u202fPM",
         "Saturday: 4:00\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 4:00\u2009\u2013\u20099:00\u202fPM"
+        "Sunday: Closed"
       ]
     },
     {
@@ -6183,10 +6123,10 @@
       "desc": "Mashpee Commons brasserie \u2014 escargot, steak frites, lively bar.",
       "place_id": "ChIJ2-jM1kTS5IkRZw3Nmpqs8Vs",
       "photo": "data/eats-photos/bleu.jpg",
-      "reviews": 723,
+      "reviews": 722,
       "website": "http://www.bleurestaurant.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:57Z",
+      "enriched_at": "2026-09-28T18:02:34Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 539-7907",
@@ -6386,10 +6326,10 @@
       "desc": "Tuscan trattoria at the Commons \u2014 handmade pasta, wood-grilled.",
       "place_id": "ChIJpWAM00TS5IkRNvSMgOXjQ6M",
       "photo": "data/eats-photos/siena.jpg",
-      "reviews": 530,
+      "reviews": 532,
       "website": "https://www.siena.us/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:58Z",
+      "enriched_at": "2026-09-28T18:02:34Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 477-5929",
@@ -6508,7 +6448,7 @@
       "reviews": 260,
       "website": "http://www.trevicafe.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:21:59Z",
+      "enriched_at": "2026-09-28T18:02:35Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 477-0055",
@@ -6614,7 +6554,7 @@
       "reviews": 614,
       "website": "http://www.polarcave.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:22:00Z",
+      "enriched_at": "2026-09-28T18:02:36Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 477-5553",
@@ -6708,7 +6648,7 @@
       "reviews": 297,
       "website": "https://www.belfryinn.com/?utm_source=google&utm_medium+GBP",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:22:01Z",
+      "enriched_at": "2026-09-28T18:02:37Z",
       "deal": "Prix-Fixe Menu available",
       "business_status": "OPERATIONAL",
       "phone": "(508) 888-8550"
@@ -6730,10 +6670,10 @@
       "desc": "Family fried-seafood institution by the canal. Order at the counter.",
       "place_id": "ChIJdSsM4UbK5IkRFmoQie9jh2Y",
       "photo": "data/eats-photos/seafood-sams.jpg",
-      "reviews": 2366,
+      "reviews": 2367,
       "website": "https://www.seafoodsams.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:22:02Z",
+      "enriched_at": "2026-09-28T18:02:38Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 888-4629",
@@ -6849,10 +6789,10 @@
       "desc": "Proper English tea and savory pies in a 1740s carriage house.",
       "place_id": "ChIJoSmV4rTL5IkREmNIFKY8wCg",
       "photo": "data/eats-photos/the-dunbar-tea-room.jpg",
-      "reviews": 614,
+      "reviews": 616,
       "website": "http://www.thedunbarhouse.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:22:03Z",
+      "enriched_at": "2026-09-28T18:02:39Z",
       "deal": "Sunday brunch specials",
       "business_status": "OPERATIONAL",
       "phone": "(508) 833-2485",
@@ -6944,10 +6884,10 @@
       "desc": "Floor-to-ceiling marina views and their own seafood market downstairs.",
       "place_id": "ChIJ_UjXijjK5IkRVuu5S6OysN4",
       "photo": "data/eats-photos/fishermens-view.jpg",
-      "reviews": 1664,
+      "reviews": 1673,
       "website": "http://www.fishermensview.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:22:03Z",
+      "enriched_at": "2026-09-28T18:02:40Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 591-0088",
@@ -7063,10 +7003,10 @@
       "desc": "Main Street favorite \u2014 generous Italian, always a wait, always worth it.",
       "place_id": "ChIJbew7M3nX5IkRaiEn4pmd-LY",
       "photo": "data/eats-photos/la-cucina-sul-mare.jpg",
-      "reviews": 964,
+      "reviews": 967,
       "website": "http://www.lacucinasulmare.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:22:04Z",
+      "enriched_at": "2026-09-28T18:02:40Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 548-5600",
@@ -7174,7 +7114,7 @@
       "lng": -70.6139,
       "cuisine": "American",
       "price": "$$",
-      "rating": 4.4,
+      "rating": 4.5,
       "tags": [
         "casual",
         "bar"
@@ -7182,10 +7122,10 @@
       "desc": "Cozy Main Street standby \u2014 chowder, burgers, and a friendly bar.",
       "place_id": "ChIJray96n7X5IkRytdEb7lU_pM",
       "photo": "data/eats-photos/the-quarterdeck.jpg",
-      "reviews": 1479,
+      "reviews": 1483,
       "website": "http://www.qdfalmouth.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:22:05Z",
+      "enriched_at": "2026-09-28T18:02:41Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 548-9900",
@@ -7301,10 +7241,10 @@
       "desc": "Tequila bar and modern Mexican. Guac and margaritas on Main Street.",
       "place_id": "ChIJ97ZkuH7X5IkR7YV-F8cGkKg",
       "photo": "data/eats-photos/anejo-mexican-bistro.jpg",
-      "reviews": 1945,
+      "reviews": 1948,
       "website": "http://anejo.cc/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:22:06Z",
+      "enriched_at": "2026-09-28T18:02:42Z",
       "deal": "Sunday brunch specials & cocktails",
       "business_status": "OPERATIONAL",
       "phone": "(508) 388-7631",
@@ -7423,7 +7363,7 @@
       "reviews": 730,
       "website": "http://www.thecaptainkidd.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:22:06Z",
+      "enriched_at": "2026-09-28T18:02:42Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 548-8563",
@@ -7518,7 +7458,7 @@
       "lat": 41.5239,
       "lng": -70.6739,
       "cuisine": "Mexican",
-      "price": "$",
+      "price": "$$",
       "rating": 4.3,
       "tags": [
         "mexican",
@@ -7527,10 +7467,10 @@
       "desc": "Fish tacos by the ferry dock. Quick, fresh, and fun.",
       "place_id": "ChIJe_Qzp4DY5IkRI25HHoX5hIs",
       "photo": "data/eats-photos/quicks-hole-taqueria.jpg",
-      "reviews": 322,
+      "reviews": 325,
       "website": "http://quicksholetaqueria.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:22:07Z",
+      "enriched_at": "2026-09-28T18:02:43Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 495-0792",
@@ -7635,10 +7575,10 @@
       "desc": "French bakers, line out the door \u2014 baguettes, tarts, croissants.",
       "place_id": "ChIJZ7-sMHnX5IkRgLmGtLoQQBE",
       "photo": "data/eats-photos/maison-villatte.jpg",
-      "reviews": 1185,
+      "reviews": 1186,
       "website": "https://www.facebook.com/profile.php?id=100057245816386&mibextid=ZbWKwL",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:22:08Z",
+      "enriched_at": "2026-09-28T18:02:44Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(774) 255-1855",
@@ -7734,7 +7674,7 @@
       "reviews": 907,
       "website": "https://chartroomcapecod.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:22:09Z",
+      "enriched_at": "2026-09-28T18:02:44Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 563-5350",
@@ -7813,10 +7753,10 @@
       "desc": "Beloved Southeast-Asian kitchen \u2014 curries and pho near the bridge.",
       "place_id": "ChIJY8306AXP5IkRjEtrlXdwfGM",
       "photo": "data/eats-photos/stir-crazy.jpg",
-      "reviews": 481,
+      "reviews": 482,
       "website": "https://stircrazycapecod.com/?utm_source=google",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:22:09Z",
+      "enriched_at": "2026-09-28T18:02:45Z",
       "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 564-6464",
@@ -7935,7 +7875,7 @@
       "reviews": 1526,
       "website": "http://www.mezzalunarestaurant.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:22:10Z",
+      "enriched_at": "2026-09-28T18:02:46Z",
       "deal": "Wed & Sat Prime Rib Special \u00b7 weekday lunch specials",
       "business_status": "OPERATIONAL",
       "phone": "(508) 759-4667",
@@ -8052,10 +7992,10 @@
       "desc": "Fresh local seafood, Caribbean-inspired plates & hand-cut steaks on Route 6. Open 7 days.",
       "place_id": "ChIJ_RZsU-lp-4kRMwx9d21wYAI",
       "photo": "data/eats-photos/the-brickhouse-restaurant.jpg",
-      "reviews": 700,
+      "reviews": 705,
       "website": "https://brickhouseeastham.com/",
       "rating_source": "google",
-      "enriched_at": "2026-09-21T16:22:11Z",
+      "enriched_at": "2026-09-28T18:02:47Z",
       "deal": "Early Bird daily \u00b7 Wed Prime Rib Night \u00b7 Half-Off App Night",
       "business_status": "OPERATIONAL",
       "phone": "(774) 801-2475",
@@ -8068,8 +8008,8 @@
           },
           "close": {
             "day": 0,
-            "hour": 21,
-            "minute": 0
+            "hour": 20,
+            "minute": 30
           }
         },
         {
@@ -8080,8 +8020,8 @@
           },
           "close": {
             "day": 1,
-            "hour": 21,
-            "minute": 0
+            "hour": 20,
+            "minute": 30
           }
         },
         {
@@ -8092,8 +8032,8 @@
           },
           "close": {
             "day": 2,
-            "hour": 21,
-            "minute": 0
+            "hour": 20,
+            "minute": 30
           }
         },
         {
@@ -8104,8 +8044,8 @@
           },
           "close": {
             "day": 3,
-            "hour": 21,
-            "minute": 0
+            "hour": 20,
+            "minute": 30
           }
         },
         {
@@ -8116,8 +8056,8 @@
           },
           "close": {
             "day": 4,
-            "hour": 21,
-            "minute": 0
+            "hour": 20,
+            "minute": 30
           }
         },
         {
@@ -8146,13 +8086,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 4:00\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 4:00\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 4:00\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 4:00\u2009\u2013\u20099:00\u202fPM",
+        "Monday: 4:00\u2009\u2013\u20098:30\u202fPM",
+        "Tuesday: 4:00\u2009\u2013\u20098:30\u202fPM",
+        "Wednesday: 4:00\u2009\u2013\u20098:30\u202fPM",
+        "Thursday: 4:00\u2009\u2013\u20098:30\u202fPM",
         "Friday: 4:00\u2009\u2013\u20099:00\u202fPM",
         "Saturday: 4:00\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 4:00\u2009\u2013\u20099:00\u202fPM"
+        "Sunday: 4:00\u2009\u2013\u20098:30\u202fPM"
       ]
     },
     {
@@ -8237,7 +8177,7 @@
         "Sunday: 12:00\u2009\u2013\u20095:00\u202fPM"
       ],
       "photo": "data/eats-photos/cape-cod-beer.jpg",
-      "enriched_at": "2026-09-21T16:22:12Z"
+      "enriched_at": "2026-09-28T18:02:47Z"
     },
     {
       "id": "hog-island-beer",
@@ -8258,7 +8198,7 @@
       "business_status": "OPERATIONAL",
       "rating": 4.0,
       "rating_source": "google",
-      "reviews": 573,
+      "reviews": 574,
       "website": "https://www.hogislandbeerco.com/",
       "phone": "(508) 255-2337",
       "hours": [
@@ -8321,7 +8261,7 @@
         "Sunday: 12:00\u2009\u2013\u20098:00\u202fPM"
       ],
       "photo": "data/eats-photos/hog-island-beer.jpg",
-      "enriched_at": "2026-09-21T16:22:12Z"
+      "enriched_at": "2026-09-28T18:02:48Z"
     },
     {
       "id": "naukabout-brewery",
@@ -8342,7 +8282,7 @@
       "business_status": "OPERATIONAL",
       "rating": 4.6,
       "rating_source": "google",
-      "reviews": 488,
+      "reviews": 489,
       "website": "http://www.naukabout.com/",
       "phone": "(508) 444-9822",
       "hours": [
@@ -8405,7 +8345,7 @@
         "Sunday: 12:00\u2009\u2013\u20096:00\u202fPM"
       ],
       "photo": "data/eats-photos/naukabout-brewery.jpg",
-      "enriched_at": "2026-09-21T16:22:13Z"
+      "enriched_at": "2026-09-28T18:02:49Z"
     },
     {
       "id": "barnstable-brewing",
@@ -8426,7 +8366,7 @@
       "business_status": "OPERATIONAL",
       "rating": 4.6,
       "rating_source": "google",
-      "reviews": 306,
+      "reviews": 307,
       "website": "http://www.barnstablebrewing.com/",
       "phone": "(774) 470-6989",
       "hours": [
@@ -8489,7 +8429,7 @@
         "Sunday: 12:00\u2009\u2013\u20097:00\u202fPM"
       ],
       "photo": "data/eats-photos/barnstable-brewing.jpg",
-      "enriched_at": "2026-09-21T16:22:14Z"
+      "enriched_at": "2026-09-28T18:02:50Z"
     },
     {
       "id": "aquatic-brewing",
@@ -8584,7 +8524,7 @@
         "Sunday: 12:00\u2009\u2013\u20096:00\u202fPM"
       ],
       "photo": "data/eats-photos/aquatic-brewing.jpg",
-      "enriched_at": "2026-09-21T16:22:15Z"
+      "enriched_at": "2026-09-28T18:02:50Z"
     },
     {
       "id": "bad-martha-falmouth",
@@ -8605,60 +8545,72 @@
       "business_status": "OPERATIONAL",
       "rating": 4.4,
       "rating_source": "google",
-      "reviews": 437,
+      "reviews": 439,
       "website": "http://www.badmarthabeer.com/",
       "phone": "(508) 372-6740",
       "hours": [
         {
           "open": {
             "day": 0,
-            "hour": 11,
-            "minute": 30
+            "hour": 12,
+            "minute": 0
           },
           "close": {
             "day": 0,
-            "hour": 18,
+            "hour": 20,
             "minute": 0
           }
         },
         {
           "open": {
             "day": 1,
-            "hour": 12,
+            "hour": 14,
             "minute": 0
           },
           "close": {
             "day": 1,
+            "hour": 19,
+            "minute": 30
+          }
+        },
+        {
+          "open": {
+            "day": 2,
+            "hour": 14,
+            "minute": 0
+          },
+          "close": {
+            "day": 2,
+            "hour": 20,
+            "minute": 0
+          }
+        },
+        {
+          "open": {
+            "day": 3,
+            "hour": 14,
+            "minute": 0
+          },
+          "close": {
+            "day": 3,
+            "hour": 20,
+            "minute": 0
+          }
+        },
+        {
+          "open": {
+            "day": 4,
+            "hour": 14,
+            "minute": 0
+          },
+          "close": {
+            "day": 4,
             "hour": 20,
             "minute": 30
           }
         },
         {
           "open": {
-            "day": 3,
-            "hour": 15,
-            "minute": 0
-          },
-          "close": {
-            "day": 3,
-            "hour": 21,
-            "minute": 0
-          }
-        },
-        {
-          "open": {
-            "day": 4,
-            "hour": 15,
-            "minute": 0
-          },
-          "close": {
-            "day": 4,
-            "hour": 21,
-            "minute": 0
-          }
-        },
-        {
-          "open": {
             "day": 5,
             "hour": 12,
             "minute": 0
@@ -8666,7 +8618,7 @@
           "close": {
             "day": 5,
             "hour": 21,
-            "minute": 30
+            "minute": 0
           }
         },
         {
@@ -8678,21 +8630,21 @@
           "close": {
             "day": 6,
             "hour": 21,
-            "minute": 30
+            "minute": 0
           }
         }
       ],
       "hours_text": [
-        "Monday: 12:00\u2009\u2013\u20098:30\u202fPM",
-        "Tuesday: Closed",
-        "Wednesday: 3:00\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 3:00\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 12:00\u2009\u2013\u20099:30\u202fPM",
-        "Saturday: 12:00\u2009\u2013\u20099:30\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u20096:00\u202fPM"
+        "Monday: 2:00\u2009\u2013\u20097:30\u202fPM",
+        "Tuesday: 2:00\u2009\u2013\u20098:00\u202fPM",
+        "Wednesday: 2:00\u2009\u2013\u20098:00\u202fPM",
+        "Thursday: 2:00\u2009\u2013\u20098:30\u202fPM",
+        "Friday: 12:00\u2009\u2013\u20099:00\u202fPM",
+        "Saturday: 12:00\u2009\u2013\u20099:00\u202fPM",
+        "Sunday: 12:00\u2009\u2013\u20098:00\u202fPM"
       ],
       "photo": "data/eats-photos/bad-martha-falmouth.jpg",
-      "enriched_at": "2026-09-21T16:22:16Z"
+      "enriched_at": "2026-09-28T18:02:51Z"
     },
     {
       "id": "devils-purse-brewing",
@@ -8788,7 +8740,7 @@
         "Sunday: 12:00\u2009\u2013\u20096:00\u202fPM"
       ],
       "photo": "data/eats-photos/devils-purse-brewing.jpg",
-      "enriched_at": "2026-09-21T16:22:16Z"
+      "enriched_at": "2026-09-28T18:02:52Z"
     }
   ]
 }
