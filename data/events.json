@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-09-28T17:46:05Z",
+  "updated_at": "2026-09-28T21:28:21Z",
   "window_days": 21,
   "count": 115,
   "_hermes_note": "Real Cape Cod events scraped from chambers + venues. update_events.py",
