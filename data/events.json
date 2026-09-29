@@ -1,27 +1,10 @@
 {
   "version": "1.0",
-  "updated_at": "2026-09-29T16:03:32Z",
+  "updated_at": "2026-09-29T20:20:14Z",
   "window_days": 21,
-  "count": 135,
+  "count": 134,
   "_hermes_note": "Real Cape Cod events scraped from chambers + venues. update_events.py",
   "events": [
-    {
-      "id": "market-sandwich-2026-09-29",
-      "category": "farmers_market",
-      "tag": "\ud83e\udd55 FARMERS MARKET",
-      "title": "Sandwich Farmers Market",
-      "venue": "Oakcrest Cove, 34 Quaker Mtghouse Rd",
-      "town": "Sandwich",
-      "lat": 41.742,
-      "lng": -70.482,
-      "time": "Tue Sep 29 \u00b7 9:00 AM\u20131:00 PM",
-      "start": "2026-09-29T09:00:00-04:00",
-      "info": "Local produce, baked goods, flowers & more.",
-      "price": "Free",
-      "source": "Totally Cape Cod",
-      "source_url": "",
-      "img": null
-    },
     {
       "id": "market-chatham-2026-09-29",
       "category": "farmers_market",
@@ -1791,23 +1774,6 @@
       "start": "2026-10-14T00:00:00+00:00"
     },
     {
-      "id": "view-details-20261014",
-      "tag": "\ud83d\udcc5 EVENT",
-      "category": "event",
-      "time": "Wed Oct 14",
-      "title": "View Details",
-      "venue": "",
-      "town": "Bourne",
-      "info": "",
-      "price": "",
-      "lat": 41.7412,
-      "lng": -70.599,
-      "img": null,
-      "source": "Bourne",
-      "source_url": "https://web.capecodcanalchamber.org/events/Morning-Business-Connections-1718/details",
-      "start": "2026-10-14T00:00:00+00:00"
-    },
-    {
       "id": "chair-yoga-with-melissa-goodwin-20261014",
       "tag": "\ud83d\udcc5 EVENT",
       "category": "event",
@@ -2299,6 +2265,23 @@
       "source": "Totally Cape Cod",
       "source_url": "",
       "img": null
+    },
+    {
+      "id": "felted-acorn-garland-workshop-with-cheryl-flett-20261020",
+      "tag": "\ud83c\udf99\ufe0f TALK",
+      "category": "talk",
+      "time": "Tue Oct 20 \u00b7 5:00 PM",
+      "title": "Felted Acorn Garland Workshop with Cheryl Flett",
+      "venue": "Highfield Hall",
+      "town": "Falmouth",
+      "info": "",
+      "price": "$35 \u2013 $45",
+      "lat": 41.5515,
+      "lng": -70.6148,
+      "img": "https://highfieldhallandgardens.org/wp-content/uploads/10-20-26-Felted-Acorns-with-Cheryl-Flett-frame.jpg",
+      "source": "Highfield Hall",
+      "source_url": "https://highfieldhallandgardens.org/event/felted-acorn-garland-workshop-with-cheryl-flett/",
+      "start": "2026-10-20T17:00:00+00:00"
     }
   ]
 }
