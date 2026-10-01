@@ -1,8 +1,22 @@
 {
   "version": "1.0",
-  "updated_at": "2026-10-01T00:40:58Z",
+  "updated_at": "2026-10-01T06:51:17Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
+    {
+      "id": "inat-404884324",
+      "species": "seal",
+      "count": 1,
+      "lat": 42.0594,
+      "lng": -70.0955,
+      "location": "Truro, MA, USA",
+      "reported_by": "iNaturalist \u00b7 russetpotato",
+      "reported_at": "2026-09-30T19:44:00Z",
+      "time_ago": "11 h ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/743603420/medium.jpg",
+      "notes": "Grey Seal",
+      "source_url": "https://www.inaturalist.org/observations/404884324"
+    },
     {
       "id": "inat-404866983",
       "species": "humpback",
@@ -12,7 +26,7 @@
       "location": "Off Cape Cod",
       "reported_by": "iNaturalist \u00b7 ggiribet",
       "reported_at": "2026-09-30T16:30:00Z",
-      "time_ago": "8 h ago",
+      "time_ago": "14 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/743570394/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/404866983"
@@ -26,7 +40,7 @@
       "location": "Off Cape Cod",
       "reported_by": "iNaturalist \u00b7 ggiribet",
       "reported_at": "2026-09-30T16:29:00Z",
-      "time_ago": "8 h ago",
+      "time_ago": "14 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/743570397/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/404866985"
@@ -40,7 +54,7 @@
       "location": "Off Cape Cod",
       "reported_by": "iNaturalist \u00b7 ggiribet",
       "reported_at": "2026-09-30T15:50:00Z",
-      "time_ago": "8 h ago",
+      "time_ago": "15 h ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/743570240/medium.jpg",
       "notes": "Common Minke Whale",
       "source_url": "https://www.inaturalist.org/observations/404866958"
@@ -88,6 +102,20 @@
       "source_url": "https://www.inaturalist.org/observations/403973385"
     },
     {
+      "id": "inat-404876343",
+      "species": "seal",
+      "count": 1,
+      "lat": 41.7754,
+      "lng": -70.4984,
+      "location": "Sandwich, MA 02563, USA",
+      "reported_by": "iNaturalist \u00b7 samzhang",
+      "reported_at": "2026-09-27T18:42:00Z",
+      "time_ago": "3 days ago",
+      "photo_url": "https://static.inaturalist.org/photos/743589094/medium.jpg",
+      "notes": "Atlantic Grey Seal",
+      "source_url": "https://www.inaturalist.org/observations/404876343"
+    },
+    {
       "id": "inat-403736611",
       "species": "dolphin",
       "count": 1,
@@ -96,7 +124,7 @@
       "location": "MA, US",
       "reported_by": "iNaturalist \u00b7 cormorantccm",
       "reported_at": "2026-09-27T01:36:38Z",
-      "time_ago": "3 days ago",
+      "time_ago": "4 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/741331087/medium.jpg",
       "notes": "Atlantic White-sided Dolphin",
       "source_url": "https://www.inaturalist.org/observations/403736611"
@@ -110,7 +138,7 @@
       "location": "MA, US",
       "reported_by": "iNaturalist \u00b7 cormorantccm",
       "reported_at": "2026-09-27T01:32:57Z",
-      "time_ago": "3 days ago",
+      "time_ago": "4 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/741330382/medium.jpg",
       "notes": "Common Minke Whale",
       "source_url": "https://www.inaturalist.org/observations/403736295"
@@ -128,34 +156,6 @@
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/741315108/medium.jpg",
       "notes": "Atlantic Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/403728584"
-    },
-    {
-      "id": "inat-403054715",
-      "species": "seal",
-      "count": 1,
-      "lat": 42.0814,
-      "lng": -70.2182,
-      "location": "Provincetown, MA, US",
-      "reported_by": "iNaturalist \u00b7 sponks",
-      "reported_at": "2026-09-24T14:54:48Z",
-      "time_ago": "6 days ago",
-      "photo_url": "https://static.inaturalist.org/photos/739982456/medium.jpg",
-      "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/403054715"
-    },
-    {
-      "id": "inat-403368776",
-      "species": "seal",
-      "count": 1,
-      "lat": 42.0814,
-      "lng": -70.2182,
-      "location": "Provincetown, MA, US",
-      "reported_by": "iNaturalist \u00b7 sponks",
-      "reported_at": "2026-09-24T14:53:45Z",
-      "time_ago": "6 days ago",
-      "photo_url": "https://static.inaturalist.org/photos/740599824/medium.jpg",
-      "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/403368776"
     },
     {
       "id": "inat-401918188",
