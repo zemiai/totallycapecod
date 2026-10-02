@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-10-02T16:29:34Z",
+  "updated_at": "2026-10-02T20:54:40Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -40,7 +40,7 @@
       "location": "Truro, MA, USA",
       "reported_by": "iNaturalist \u00b7 russetpotato",
       "reported_at": "2026-09-30T19:44:00Z",
-      "time_ago": "1 day ago",
+      "time_ago": "2 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/743603420/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/404884324"
@@ -54,7 +54,7 @@
       "location": "Off Cape Cod",
       "reported_by": "iNaturalist \u00b7 ggiribet",
       "reported_at": "2026-09-30T16:30:00Z",
-      "time_ago": "1 day ago",
+      "time_ago": "2 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/743570394/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/404866983"
@@ -166,7 +166,7 @@
       "location": "Provincetown, MA, US",
       "reported_by": "iNaturalist \u00b7 blurs",
       "reported_at": "2026-09-27T19:49:05Z",
-      "time_ago": "4 days ago",
+      "time_ago": "5 days ago",
       "photo_url": "",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/403973614"
@@ -208,7 +208,7 @@
       "location": "North Atlantic Ocean, Nantucket, MA, US",
       "reported_by": "iNaturalist \u00b7 steve_romero",
       "reported_at": "2026-09-20T17:05:37Z",
-      "time_ago": "11 days ago",
+      "time_ago": "12 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/737751958/medium.jpg",
       "notes": "Great White Shark",
       "source_url": "https://www.inaturalist.org/observations/401918188"
