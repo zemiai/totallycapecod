@@ -1,8 +1,22 @@
 {
   "version": "1.0",
-  "updated_at": "2026-10-02T20:54:40Z",
+  "updated_at": "2026-10-03T00:10:04Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
+    {
+      "id": "inat-405322210",
+      "species": "seal",
+      "count": 1,
+      "lat": 41.7757,
+      "lng": -70.5326,
+      "location": "Sagamore, Bourne, MA, USA",
+      "reported_by": "iNaturalist \u00b7 mycapecodadventurepictures",
+      "reported_at": "2026-10-02T13:36:00Z",
+      "time_ago": "10 h ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/744472562/medium.jpg",
+      "notes": "Grey Seal",
+      "source_url": "https://www.inaturalist.org/observations/405322210"
+    },
     {
       "id": "inat-405011427",
       "species": "seal",
@@ -158,27 +172,13 @@
       "source_url": "https://www.inaturalist.org/observations/404418525"
     },
     {
-      "id": "inat-403973614",
-      "species": "seal",
-      "count": 1,
-      "lat": 42.0818,
-      "lng": -70.2213,
-      "location": "Provincetown, MA, US",
-      "reported_by": "iNaturalist \u00b7 blurs",
-      "reported_at": "2026-09-27T19:49:05Z",
-      "time_ago": "5 days ago",
-      "photo_url": "",
-      "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/403973614"
-    },
-    {
       "id": "inat-403736611",
       "species": "dolphin",
       "count": 1,
       "lat": 42.0844,
       "lng": -70.0544,
       "location": "MA, US",
-      "reported_by": "iNaturalist \u00b7 cormorantccm",
+      "reported_by": "iNaturalist \u00b7 cormorantcm",
       "reported_at": "2026-09-27T01:36:38Z",
       "time_ago": "5 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/741331087/medium.jpg",
@@ -192,7 +192,7 @@
       "lat": 42.0898,
       "lng": -70.1071,
       "location": "MA, US",
-      "reported_by": "iNaturalist \u00b7 cormorantccm",
+      "reported_by": "iNaturalist \u00b7 cormorantcm",
       "reported_at": "2026-09-27T01:32:57Z",
       "time_ago": "5 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/741330382/medium.jpg",
