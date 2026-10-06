@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-10-05T18:46:32Z",
+  "updated_at": "2026-10-06T00:35:52Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -12,7 +12,7 @@
       "location": "Eastham, MA, US",
       "reported_by": "iNaturalist \u00b7 loganstecker",
       "reported_at": "2026-10-04T20:15:40Z",
-      "time_ago": "22 h ago",
+      "time_ago": "1 day ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/745685666/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/405921648"
@@ -124,7 +124,7 @@
       "location": "Stellwagen Bank, United States",
       "reported_by": "iNaturalist \u00b7 johnfromkw",
       "reported_at": "2026-10-03T00:30:00Z",
-      "time_ago": "2 days ago",
+      "time_ago": "3 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/745588606/medium.jpg",
       "notes": "Atlantic White-sided Dolphin",
       "source_url": "https://www.inaturalist.org/observations/405886775"
@@ -138,7 +138,7 @@
       "location": "Stellwagen Bank, United States",
       "reported_by": "iNaturalist \u00b7 johnfromkw",
       "reported_at": "2026-10-02T23:51:00Z",
-      "time_ago": "2 days ago",
+      "time_ago": "3 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/745588408/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/405886776"
@@ -152,7 +152,7 @@
       "location": "Provincetown, MA, USA",
       "reported_by": "iNaturalist \u00b7 johnfromkw",
       "reported_at": "2026-10-02T22:14:00Z",
-      "time_ago": "2 days ago",
+      "time_ago": "3 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/745596665/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/405886798"
