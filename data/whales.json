@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-10-06T23:34:38Z",
+  "updated_at": "2026-10-07T04:29:03Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -194,7 +194,7 @@
       "location": "Stellwagen Bank, United States",
       "reported_by": "iNaturalist \u00b7 johnfromkw",
       "reported_at": "2026-10-03T00:30:00Z",
-      "time_ago": "3 days ago",
+      "time_ago": "4 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/745588606/medium.jpg",
       "notes": "Atlantic White-sided Dolphin",
       "source_url": "https://www.inaturalist.org/observations/405886775"
@@ -208,7 +208,7 @@
       "location": "Stellwagen Bank, United States",
       "reported_by": "iNaturalist \u00b7 johnfromkw",
       "reported_at": "2026-10-02T23:51:00Z",
-      "time_ago": "3 days ago",
+      "time_ago": "4 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/745588408/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/405886776"
@@ -320,7 +320,7 @@
       "location": "MA, US",
       "reported_by": "iNaturalist \u00b7 cormorantcm",
       "reported_at": "2026-09-27T01:36:38Z",
-      "time_ago": "9 days ago",
+      "time_ago": "10 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/741331087/medium.jpg",
       "notes": "Atlantic White-sided Dolphin",
       "source_url": "https://www.inaturalist.org/observations/403736611"
@@ -334,7 +334,7 @@
       "location": "MA, US",
       "reported_by": "iNaturalist \u00b7 cormorantcm",
       "reported_at": "2026-09-27T01:32:57Z",
-      "time_ago": "9 days ago",
+      "time_ago": "10 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/741330382/medium.jpg",
       "notes": "Common Minke Whale",
       "source_url": "https://www.inaturalist.org/observations/403736295"
