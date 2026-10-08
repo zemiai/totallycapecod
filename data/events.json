@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-10-08T16:47:19Z",
+  "updated_at": "2026-10-08T20:55:25Z",
   "window_days": 21,
   "count": 115,
   "_hermes_note": "Real Cape Cod events scraped from chambers + venues. update_events.py",
@@ -1145,6 +1145,23 @@
       "start": "2026-10-16T00:00:00+00:00"
     },
     {
+      "id": "plymouth-rock-r-wooden-rocking-boat-workshop-20261016",
+      "tag": "\ud83c\udfb5 LIVE MUSIC",
+      "category": "music",
+      "time": "Fri Oct 16",
+      "title": "PLYMOUTH ROCK\u2019R: WOODEN ROCKING BOAT WORKSHOP",
+      "venue": "",
+      "town": "Hyannis",
+      "info": "",
+      "price": "",
+      "lat": 41.652,
+      "lng": -70.2828,
+      "img": null,
+      "source": "Hyannis",
+      "source_url": "https://business.hyannis.com/events/details/plymouth-rock-r-wooden-rocking-boat-workshop-4101",
+      "start": "2026-10-16T00:00:00+00:00"
+    },
+    {
       "id": "jill-meyer-book-signing-20261016",
       "tag": "\ud83d\udcc5 EVENT",
       "category": "event",
@@ -1924,23 +1941,6 @@
       "img": null,
       "source": "Hyannis",
       "source_url": "https://business.hyannis.com/events/details/2026-annual-meeting-and-awards-ceremony-4089",
-      "start": "2026-10-29T00:00:00+00:00"
-    },
-    {
-      "id": "us-army-jazz-ambassadors-free-concert-in-hyannis-10-29-20261",
-      "tag": "\ud83c\udfb5 LIVE MUSIC",
-      "category": "music",
-      "time": "Thu Oct 29",
-      "title": "US Army Jazz Ambassadors - Free Concert In Hyannis, 10/29",
-      "venue": "",
-      "town": "Hyannis",
-      "info": "",
-      "price": "",
-      "lat": 41.652,
-      "lng": -70.2828,
-      "img": null,
-      "source": "Hyannis",
-      "source_url": "https://business.hyannis.com/events/details/us-army-jazz-ambassadors-free-concert-in-hyannis-10-29-4094",
       "start": "2026-10-29T00:00:00+00:00"
     },
     {
