@@ -1,25 +1,9 @@
 {
   "version": "1.0",
-  "date": "2026-10-07",
-  "updated_at": "2026-10-07T16:15:59Z",
+  "date": "2026-10-08",
+  "updated_at": "2026-10-08T10:08:00Z",
   "_hermes_note": "Hermes overwrites this daily at 5am ET. Categories: music, happy_hour, free_event, family, food_deal, drive_in, farmers_market, trivia, art.",
   "events": [
-    {
-      "id": "wellfleet-2026-10-07-farmers-market",
-      "tag": "🌽 FARMERS MARKET",
-      "category": "farmers_market",
-      "date": "2026-10-07",
-      "time": "8:00 AM",
-      "title": "Wellfleet Farmers' Market",
-      "venue": "The Grove at First Congregational Church",
-      "town": "Wellfleet",
-      "info": "Wellfleet · Free · All ages · Wednesdays through Oct 15",
-      "price": "Free",
-      "lat": 41.9322,
-      "lng": -70.0297,
-      "img": "",
-      "source_url": "https://ediblecapecod.ediblecommunities.com/shop/shop-cape-cod-farmers-markets/"
-    },
     {
       "id": "falmouth-2026-10-08-farmers-market",
       "tag": "🌽 FARMERS MARKET",
@@ -69,6 +53,22 @@
       "source_url": "https://capecodmaritimemuseum.org/events-and-lectures/history-on-tap-816"
     },
     {
+      "id": "dennis-2026-10-08-improv-cape-cod",
+      "tag": "🎭 COMEDY",
+      "category": "art",
+      "date": "2026-10-08",
+      "time": "7:00 PM",
+      "title": "Improv Cape Cod Comedy Night",
+      "venue": "Cape Cod Museum of Art",
+      "town": "Dennis",
+      "info": "Dennis · Free · All ages · An evening of improvisational comedy · 7 PM",
+      "price": "Free",
+      "lat": 41.7340,
+      "lng": -70.2047,
+      "img": "",
+      "source_url": "https://provincetownindependent.org/indies-choice/2026/10/07/indies-choice-303/"
+    },
+    {
       "id": "barnstable-2026-10-09-osterville-farmers-market",
       "tag": "🌽 FARMERS MARKET",
       "category": "farmers_market",
@@ -83,6 +83,22 @@
       "lng": -70.3853,
       "img": "",
       "source_url": "https://www.facebook.com/OstervilleFarmersMarket/"
+    },
+    {
+      "id": "orleans-2026-10-09-womr-party-in-the-park",
+      "tag": "🎵 LIVE MUSIC",
+      "category": "music",
+      "date": "2026-10-09",
+      "time": "2:00 PM",
+      "title": "WOMR Party in the Park",
+      "venue": "Orleans Village Green",
+      "town": "Orleans",
+      "info": "Orleans · Free · All ages · Live music by Watch Your Step and Wildflower Lane · Hosted by community radio WOMR · 2 PM",
+      "price": "Free",
+      "lat": 41.7895,
+      "lng": -70.0003,
+      "img": "",
+      "source_url": "https://provincetownindependent.org/indies-choice/2026/10/07/indies-choice-303/"
     },
     {
       "id": "bourne-2026-10-10-cranberry-harvest-festival",
@@ -189,7 +205,7 @@
       "title": "Sandwich Glass Museum PumpkinFest",
       "venue": "Sandwich Glass Museum",
       "town": "Sandwich",
-      "info": "Sandwich · Museum admission · All ages · Pumpkin decorating, fall activities, and glass art exhibits",
+      "info": "Sandwich · $10 admission · All ages · Pumpkin decorating, fall activities, and glass art exhibits",
       "price": "$10",
       "lat": 41.7594,
       "lng": -70.4927,
@@ -285,7 +301,7 @@
       "title": "Sandwich Glass Museum PumpkinFest — Day 2",
       "venue": "Sandwich Glass Museum",
       "town": "Sandwich",
-      "info": "Sandwich · Museum admission · All ages · Pumpkin decorating, fall activities & glassblowing demos",
+      "info": "Sandwich · $10 admission · All ages · Pumpkin decorating, fall activities & glassblowing demos",
       "price": "$10",
       "lat": 41.7594,
       "lng": -70.4927,
@@ -323,6 +339,22 @@
       "lng": -69.9492,
       "img": "",
       "source_url": "https://www.capedays.com/cape-cod-events-october.html"
+    },
+    {
+      "id": "brewster-2026-10-11-chatham-bars-inn-fall-frolic",
+      "tag": "👨‍👩‍👧 FAMILY",
+      "category": "family",
+      "date": "2026-10-11",
+      "time": "11:00 AM",
+      "title": "Chatham Bars Inn Farm Fall Frolic",
+      "venue": "Chatham Bars Inn Farm (former Brewster Sea Camps)",
+      "town": "Brewster",
+      "info": "Brewster · $10/vehicle · All ages · Live music, lawn games & kids' pumpkin painting · Two slots: 11 AM–2 PM or 2–5 PM",
+      "price": "$10/vehicle",
+      "lat": 41.7677,
+      "lng": -70.0897,
+      "img": "",
+      "source_url": "https://www.chathambarsinn.com/events/chatham-bars-inn-farm-fall-frolic/"
     },
     {
       "id": "yarmouth-2026-10-12-seaside-festival-day3",
