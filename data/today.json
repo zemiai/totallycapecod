@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "date": "2026-10-08",
-  "updated_at": "2026-10-08T10:00:00Z",
+  "updated_at": "2026-10-08T22:00:00Z",
   "_hermes_note": "Hermes overwrites this daily at 5am ET. Categories: music, happy_hour, free_event, family, food_deal, drive_in, farmers_market, trivia, art.",
   "events": [
     {
@@ -85,6 +85,22 @@
       "source_url": "https://www.capecodchamber.org/events/"
     },
     {
+      "id": "wellfleet-2026-10-08-ghost-tours",
+      "tag": "👨‍👩‍👧 FAMILY",
+      "category": "family",
+      "date": "2026-10-08",
+      "time": "8:00 PM",
+      "title": "Wellfleet Historical Ghost Tours",
+      "venue": "Wellfleet Historical Society & Museum, 262 Main Street",
+      "town": "Wellfleet",
+      "info": "Wellfleet · $20/person · All ages · 1.5-hr evening walking tour of historic village",
+      "price": "$20",
+      "lat": 41.9281,
+      "lng": -70.0199,
+      "img": "",
+      "source_url": "https://www.wellfleethistoricalsociety.org/walking-tours"
+    },
+    {
       "id": "trurovineyards-2026-10-09-fall-trivia",
       "tag": "🧠 TRIVIA",
       "category": "trivia",
@@ -131,6 +147,22 @@
       "lng": -70.2830,
       "img": "",
       "source_url": "https://www.capecodchamber.org/events/"
+    },
+    {
+      "id": "mashpee-2026-10-09-haunted-hallows",
+      "tag": "👨‍👩‍👧 FAMILY",
+      "category": "family",
+      "date": "2026-10-09",
+      "time": "5:00 PM",
+      "title": "Haunted Hallows & Halloweentown Market",
+      "venue": "Mashpee Commons Village Green",
+      "town": "Mashpee",
+      "info": "Mashpee · Market free; Haunted Hallows ticketed · All ages · 5–9 PM · Oct 9–10",
+      "price": "Free/Varies",
+      "lat": 41.6091,
+      "lng": -70.4916,
+      "img": "",
+      "source_url": "https://www.ticketsignup.io/TicketEvent/HauntedHallows"
     },
     {
       "id": "falmouth-2026-10-10-marathon-half",
@@ -277,6 +309,22 @@
       "source_url": "https://www.capecodchamber.org/events/"
     },
     {
+      "id": "orleans-2026-10-10-outermost-blues-festival",
+      "tag": "🎵 LIVE MUSIC",
+      "category": "music",
+      "date": "2026-10-10",
+      "time": "11:00 AM",
+      "title": "Outermost Roots & Blues Festival",
+      "venue": "Nauset Beach",
+      "town": "Orleans",
+      "info": "Orleans · $70 · All ages · G Love & Special Sauce, Digable Planets, Ron Artis II + more",
+      "price": "$70",
+      "lat": 41.8014,
+      "lng": -69.9492,
+      "img": "",
+      "source_url": "https://www.outermostfestival.com/"
+    },
+    {
       "id": "falmouth-2026-10-11-marathon-full",
       "tag": "👨‍👩‍👧 FAMILY",
       "category": "family",
@@ -403,6 +451,38 @@
       "lng": -69.9630,
       "img": "",
       "source_url": "https://www.capedays.com/cape-cod-events-october.html"
+    },
+    {
+      "id": "provincetown-2026-10-12-womens-week",
+      "tag": "🎨 ART",
+      "category": "art",
+      "date": "2026-10-12",
+      "time": "10:00 AM",
+      "title": "Women's Week Provincetown — Opening Day",
+      "venue": "Various venues, Provincetown",
+      "town": "Provincetown",
+      "info": "Provincetown · Varies by event · Oct 12–18 · Live music, comedy, art, dancing, yoga",
+      "price": "Varies",
+      "lat": 42.0494,
+      "lng": -70.1872,
+      "img": "",
+      "source_url": "https://womensweekprovincetown.com/"
+    },
+    {
+      "id": "wellfleet-2026-10-12-ghost-tours",
+      "tag": "👨‍👩‍👧 FAMILY",
+      "category": "family",
+      "date": "2026-10-12",
+      "time": "8:00 PM",
+      "title": "Wellfleet Historical Ghost Tours",
+      "venue": "Wellfleet Historical Society & Museum, 262 Main Street",
+      "town": "Wellfleet",
+      "info": "Wellfleet · $20/person · All ages · 1.5-hr evening walking tour of historic village",
+      "price": "$20",
+      "lat": 41.9281,
+      "lng": -70.0199,
+      "img": "",
+      "source_url": "https://www.wellfleethistoricalsociety.org/walking-tours"
     },
     {
       "id": "chatham-2026-10-13-farmers-market",
