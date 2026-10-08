@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-10-08T17:29:37Z",
+  "updated_at": "2026-10-08T22:22:02Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -26,7 +26,7 @@
       "location": "Eastham, MA, US",
       "reported_by": "iNaturalist \u00b7 loganstecker",
       "reported_at": "2026-10-04T20:15:40Z",
-      "time_ago": "3 days ago",
+      "time_ago": "4 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/745685666/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/405921648"
@@ -68,7 +68,7 @@
       "location": "Stellwagen Bank, United States",
       "reported_by": "iNaturalist \u00b7 jimit1991",
       "reported_at": "2026-10-03T17:46:00Z",
-      "time_ago": "4 days ago",
+      "time_ago": "5 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/746280628/medium.jpg",
       "notes": "North Atlantic Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/406214299"
@@ -82,7 +82,7 @@
       "location": "Stellwagen Bank, United States",
       "reported_by": "iNaturalist \u00b7 jimit1991",
       "reported_at": "2026-10-03T17:44:00Z",
-      "time_ago": "4 days ago",
+      "time_ago": "5 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/746282497/medium.jpg",
       "notes": "North Atlantic Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/406215174"
