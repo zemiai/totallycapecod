@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-10-09T21:08:35Z",
+  "updated_at": "2026-10-10T01:05:51Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -16,6 +16,20 @@
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/747024862/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/406586584"
+    },
+    {
+      "id": "inat-407114199",
+      "species": "humpback",
+      "count": 1,
+      "lat": 42.2695,
+      "lng": -70.298,
+      "location": "US",
+      "reported_by": "iNaturalist \u00b7 fhmohair",
+      "reported_at": "2026-10-05T16:47:23Z",
+      "time_ago": "4 days ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/748080263/medium.jpg",
+      "notes": "Humpback Whale",
+      "source_url": "https://www.inaturalist.org/observations/407114199"
     },
     {
       "id": "inat-405921648",
@@ -194,7 +208,7 @@
       "location": "Stellwagen Bank, United States",
       "reported_by": "iNaturalist \u00b7 johnfromkw",
       "reported_at": "2026-10-03T00:30:00Z",
-      "time_ago": "6 days ago",
+      "time_ago": "7 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/745588606/medium.jpg",
       "notes": "Atlantic White-sided Dolphin",
       "source_url": "https://www.inaturalist.org/observations/405886775"
@@ -208,7 +222,7 @@
       "location": "Stellwagen Bank, United States",
       "reported_by": "iNaturalist \u00b7 johnfromkw",
       "reported_at": "2026-10-02T23:51:00Z",
-      "time_ago": "6 days ago",
+      "time_ago": "7 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/745588408/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/405886776"
