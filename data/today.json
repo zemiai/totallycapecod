@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "date": "2026-10-10",
-  "updated_at": "2026-10-10T05:00:00Z",
+  "updated_at": "2026-10-10T09:02:00Z",
   "_hermes_note": "Hermes overwrites this daily at 5am ET. Categories: music, happy_hour, free_event, family, food_deal, drive_in, farmers_market, trivia, art.",
   "events": [
     {
@@ -51,6 +51,22 @@
       "lng": -70.1675,
       "img": "",
       "source_url": "https://www.capedays.com/cape-cod-farmers-markets.html"
+    },
+    {
+      "id": "bourne-2026-10-10-cranberry-harvest-festival",
+      "tag": "🎉 FREE EVENT",
+      "category": "free_event",
+      "date": "2026-10-10",
+      "time": "10:00 AM",
+      "title": "Cranberry Harvest Festival at Aptucxet",
+      "venue": "Museums at Aptucxet, 24 Aptucxet Rd",
+      "town": "Bourne",
+      "info": "Bourne · Free · All ages · Local vendors, Cape Cod cranberry heritage · 10 AM–3 PM",
+      "price": "Free",
+      "lat": 41.7557,
+      "lng": -70.5955,
+      "img": "",
+      "source_url": "https://www.bournehistoricalsociety.org/"
     },
     {
       "id": "yarmouth-2026-10-10-taylor-bray-fall-festival",
@@ -149,6 +165,38 @@
       "source_url": "https://capecodmarathon.com/"
     },
     {
+      "id": "barnstable-2026-10-10-hyarts-shanties",
+      "tag": "🎨 ART",
+      "category": "art",
+      "date": "2026-10-10",
+      "time": "11:00 AM",
+      "title": "HyARTS Artist Shanties (Final Weekend)",
+      "venue": "Aselton Park, Hyannis",
+      "town": "Barnstable",
+      "info": "Barnstable · Free · All ages · Local artists · Through Oct 11 · 11 AM–4 PM",
+      "price": "Free",
+      "lat": 41.6558,
+      "lng": -70.2827,
+      "img": "",
+      "source_url": "https://www.hyannisarts.org/artist-shanties"
+    },
+    {
+      "id": "mashpee-2026-10-10-fall-fest-block-party",
+      "tag": "👨‍👩‍👧 FAMILY",
+      "category": "family",
+      "date": "2026-10-10",
+      "time": "11:00 AM",
+      "title": "Fall Fest Block Party at Mashpee Commons",
+      "venue": "Mashpee Commons Village Green",
+      "town": "Mashpee",
+      "info": "Mashpee · Free · All ages · 11 AM–3 PM",
+      "price": "Free",
+      "lat": 41.6091,
+      "lng": -70.4916,
+      "img": "",
+      "source_url": "https://mashpeecommons.com/events/"
+    },
+    {
       "id": "orleans-2026-10-10-outermost-blues-festival",
       "tag": "🎵 LIVE MUSIC",
       "category": "music",
@@ -227,6 +275,22 @@
       "lng": -70.5303,
       "img": "",
       "source_url": "https://capecodmarathon.com/"
+    },
+    {
+      "id": "barnstable-2026-10-11-hyarts-shanties-final",
+      "tag": "🎨 ART",
+      "category": "art",
+      "date": "2026-10-11",
+      "time": "11:00 AM",
+      "title": "HyARTS Artist Shanties (Final Day of Season)",
+      "venue": "Aselton Park, Hyannis",
+      "town": "Barnstable",
+      "info": "Barnstable · Free · All ages · Last day · 11 AM–4 PM",
+      "price": "Free",
+      "lat": 41.6558,
+      "lng": -70.2827,
+      "img": "",
+      "source_url": "https://www.hyannisarts.org/artist-shanties"
     },
     {
       "id": "mashpee-2026-10-11-farmers-market",
@@ -387,6 +451,22 @@
       "lng": -70.5930,
       "img": "",
       "source_url": "https://ediblecapecod.ediblecommunities.com/shop/shop-cape-cod-farmers-markets/"
+    },
+    {
+      "id": "barnstable-2026-10-15-cape-cod-beer-trivia",
+      "tag": "🧠 TRIVIA",
+      "category": "trivia",
+      "date": "2026-10-15",
+      "time": "6:00 PM",
+      "title": "Taproom Trivia Night",
+      "venue": "Cape Cod Beer, 1336 Phinney's Lane",
+      "town": "Barnstable",
+      "info": "Barnstable · Free to play · Teams up to 6 · Prizes · 6–8 PM",
+      "price": "Free",
+      "lat": 41.6606,
+      "lng": -70.2725,
+      "img": "",
+      "source_url": "https://capecodbeer.com/events/"
     },
     {
       "id": "falmouth-2026-10-15-sins-sips-secrets",
