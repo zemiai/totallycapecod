@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "updated_at": "2026-10-16T14:07:13Z",
+  "updated_at": "2026-10-16T19:08:01Z",
   "window_days": 21,
-  "count": 90,
+  "count": 91,
   "_hermes_note": "Real Cape Cod events scraped from chambers + venues. update_events.py",
   "events": [
     {
@@ -1148,7 +1148,7 @@
       "id": "howl-o-ween-at-devils-purse-20261024",
       "tag": "\ud83d\udcc5 EVENT",
       "category": "event",
-      "time": "Sat Oct 24 \u00b7 7:00 PM",
+      "time": "Sat Oct 24 \u00b7 6:00 PM",
       "title": "Howl-O-Ween at Devils Purse",
       "venue": "Devil's Purse",
       "town": "South Dennis",
@@ -1159,7 +1159,7 @@
       "img": null,
       "source": "Devil's Purse",
       "source_url": "https://www.devilspurse.com/events/2026/10/24/howl-o-ween-at-devils-purse",
-      "start": "2026-10-24T19:00:00.967000+00:00"
+      "start": "2026-10-24T18:00:00.776000+00:00"
     },
     {
       "id": "live-music-with-liam-jonny-20261024",
@@ -1414,6 +1414,23 @@
       "img": null,
       "source": "Dennis",
       "source_url": "https://business.dennischamber.com/calendar/Details/dennis-halloweenpalooza-1622890?sourceTypeId=Website",
+      "start": "2026-10-31T00:00:00+00:00"
+    },
+    {
+      "id": "northside-umc-trunk-or-treat-20261031",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Sat Oct 31",
+      "title": "Northside UMC Trunk or Treat",
+      "venue": "",
+      "town": "Dennis",
+      "info": "",
+      "price": "",
+      "lat": 41.7353,
+      "lng": -70.1936,
+      "img": null,
+      "source": "Dennis",
+      "source_url": "https://business.dennischamber.com/calendar/Details/northside-umc-trunk-or-treat-1961058?sourceTypeId=Website",
       "start": "2026-10-31T00:00:00+00:00"
     },
     {
