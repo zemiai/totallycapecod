@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "updated_at": "2026-10-17T13:05:16Z",
+  "updated_at": "2026-10-17T18:02:54Z",
   "window_days": 21,
-  "count": 84,
+  "count": 83,
   "_hermes_note": "Real Cape Cod events scraped from chambers + venues. update_events.py",
   "events": [
     {
@@ -55,23 +55,6 @@
       "source": "Devil's Purse",
       "source_url": "https://www.devilspurse.com/events/2026/10/17/oysterfest-tasting-at-wellfleet-preservation-hall",
       "start": "2026-10-17T14:00:00.032000+00:00"
-    },
-    {
-      "id": "polar-park-fall-festival-20261017",
-      "tag": "\ud83c\udfaa FESTIVAL",
-      "category": "festival",
-      "time": "Sat Oct 17 \u00b7 3:30 PM",
-      "title": "Polar Park Fall Festival",
-      "venue": "Devil's Purse",
-      "town": "South Dennis",
-      "info": "",
-      "price": "",
-      "lat": 41.69,
-      "lng": -70.15,
-      "img": null,
-      "source": "Devil's Purse",
-      "source_url": "https://www.devilspurse.com/events/2026/10/6/uwmiug1z4i9a6cpfr0tj6hwvz45d9t",
-      "start": "2026-10-17T15:30:00.828000+00:00"
     },
     {
       "id": "live-music-with-wildflower-lane-20261017",
