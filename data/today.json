@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "date": "2026-10-17",
-  "updated_at": "2026-10-17T10:15:00Z",
+  "updated_at": "2026-10-17T22:00:00Z",
   "_hermes_note": "Hermes overwrites this daily at 5am ET. Categories: music, happy_hour, free_event, family, food_deal, drive_in, farmers_market, trivia, art.",
   "events": [
     {
@@ -277,6 +277,22 @@
       "source_url": "https://artsempoweringlife.org/performing-arts-center-events/"
     },
     {
+      "id": "provincetown-2026-10-18-transweek",
+      "tag": "🎉 FREE EVENT",
+      "category": "free_event",
+      "date": "2026-10-18",
+      "time": "Varies",
+      "title": "TransWeek Provincetown (Oct 18–23)",
+      "venue": "Various Venues",
+      "town": "Provincetown",
+      "info": "Provincetown · Varies by event · Annual LGBTQ+ trans community celebration week",
+      "price": "Varies",
+      "lat": 42.0494,
+      "lng": -70.1872,
+      "img": "",
+      "source_url": "https://ptownchamber.com/events/transweek/"
+    },
+    {
       "id": "wellfleet-2026-10-19-ghost-tours",
       "tag": "👨‍👩‍👧 FAMILY",
       "category": "family",
@@ -291,6 +307,22 @@
       "lng": -70.0328,
       "img": "",
       "source_url": "https://www.wellfleethistoricalsociety.org/walking-tours"
+    },
+    {
+      "id": "sandwich-2026-10-20-farmers-market",
+      "tag": "🌽 FARMERS MARKET",
+      "category": "farmers_market",
+      "date": "2026-10-20",
+      "time": "10:00 AM",
+      "title": "Sandwich Farmers' Market",
+      "venue": "Oakcrest Cove Field, 34 Quaker Meeting House Rd",
+      "town": "Sandwich",
+      "info": "Sandwich · Free · All ages · Tuesday market through mid-October · 10 AM–2 PM",
+      "price": "Free",
+      "lat": 41.7554,
+      "lng": -70.4856,
+      "img": "",
+      "source_url": "https://www.capedays.com/cape-cod-farmers-markets.html"
     },
     {
       "id": "chatham-2026-10-20-farmers-market-final",
