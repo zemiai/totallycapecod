@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "updated_at": "2026-10-19T16:35:25Z",
+  "updated_at": "2026-10-19T20:47:51Z",
   "window_days": 21,
-  "count": 77,
+  "count": 78,
   "_hermes_note": "Real Cape Cod events scraped from chambers + venues. update_events.py",
   "events": [
     {
@@ -346,23 +346,6 @@
       "start": "2026-10-22T00:00:00+00:00"
     },
     {
-      "id": "live-at-5-05-business-after-hours-join-us-for-our-member-net",
-      "tag": "\ud83d\udcc5 EVENT",
-      "category": "event",
-      "time": "Thu Oct 22",
-      "title": "Live at 5:05- Business After Hours Join us for our Member Networking Social New Live at 5:05 Business After Hours- Our Hosts this month is Harwich Paint & Decorating",
-      "venue": "",
-      "town": "Harwich",
-      "info": "",
-      "price": "",
-      "lat": 41.6863,
-      "lng": -70.078,
-      "img": null,
-      "source": "Harwich",
-      "source_url": "https://business.harwichcc.com/events/details/live-at-5-05-business-after-hours-25893",
-      "start": "2026-10-22T00:00:00+00:00"
-    },
-    {
       "id": "history-on-tap-uncovering-climate-clues-from-new-england-wha",
       "tag": "\ud83c\udf99\ufe0f TALK",
       "category": "talk",
@@ -514,6 +497,23 @@
       "source": "Devil's Purse",
       "source_url": "https://www.devilspurse.com/events/2026/10/23/70s-vinyl-music-bingo",
       "start": "2026-10-23T20:00:00.204000+00:00"
+    },
+    {
+      "id": "live-music-with-clyde-mitchell-leaman-20261023",
+      "tag": "\ud83c\udfb5 LIVE MUSIC",
+      "category": "music",
+      "time": "Fri Oct 23 \u00b7 11:00 PM",
+      "title": "Live Music with Clyde Mitchell Leaman",
+      "venue": "Cape Cod Winery",
+      "town": "Falmouth",
+      "info": "",
+      "price": "",
+      "lat": 41.5515,
+      "lng": -70.6148,
+      "img": null,
+      "source": "Cape Cod Winery",
+      "source_url": "https://www.capecodwinery.com/events/tjeswrwzzyr5h4mle6hzbn8f2ca79h",
+      "start": "2026-10-23T23:00:00.239000+00:00"
     },
     {
       "id": "so-percussion-concert-20261024",
@@ -888,6 +888,23 @@
       "source": "Cape Cod Winery",
       "source_url": "https://www.capecodwinery.com/events/sip-sign-with-julie-from-snapshot-crafting",
       "start": "2026-10-25T20:00:00.094000+00:00"
+    },
+    {
+      "id": "live-music-with-johnny-mac-20261025",
+      "tag": "\ud83c\udfb5 LIVE MUSIC",
+      "category": "music",
+      "time": "Sun Oct 25 \u00b7 8:00 PM",
+      "title": "Live Music with Johnny Mac",
+      "venue": "Cape Cod Winery",
+      "town": "Falmouth",
+      "info": "",
+      "price": "",
+      "lat": 41.5515,
+      "lng": -70.6148,
+      "img": null,
+      "source": "Cape Cod Winery",
+      "source_url": "https://www.capecodwinery.com/events/live-music-with-johnny-mac-2",
+      "start": "2026-10-25T20:00:00.708000+00:00"
     },
     {
       "id": "hand-knit-blanket-workshop-with-the-prendy-stitches-20261025",
