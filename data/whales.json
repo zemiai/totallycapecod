@@ -1,22 +1,8 @@
 {
   "version": "1.0",
-  "updated_at": "2026-10-19T07:20:41Z",
+  "updated_at": "2026-10-19T14:51:41Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
-    {
-      "id": "inat-407665452",
-      "species": "seal",
-      "count": 1,
-      "lat": 41.9082,
-      "lng": -69.9739,
-      "location": "Wellfleet, MA, USA",
-      "reported_by": "iNaturalist \u00b7 jrawson",
-      "reported_at": "2026-10-10T19:03:00Z",
-      "time_ago": "8 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/749198104/medium.jpg",
-      "notes": "Harbor Seal",
-      "source_url": "https://www.inaturalist.org/observations/407665452"
-    },
     {
       "id": "inat-408972740",
       "species": "dolphin",
@@ -40,7 +26,7 @@
       "location": "Provincetown, MA, USA",
       "reported_by": "iNaturalist \u00b7 twendall",
       "reported_at": "2026-10-10T11:51:30Z",
-      "time_ago": "8 days ago",
+      "time_ago": "9 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/748939100/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/407536936"
@@ -96,7 +82,7 @@
       "location": "Ocean View Dr, Eastham, MA, US",
       "reported_by": "iNaturalist \u00b7 loganstecker",
       "reported_at": "2026-10-07T14:20:33Z",
-      "time_ago": "11 days ago",
+      "time_ago": "12 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/747024862/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/406586584"
