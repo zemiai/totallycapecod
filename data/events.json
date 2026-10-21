@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "updated_at": "2026-10-21T14:34:51Z",
+  "updated_at": "2026-10-21T19:46:47Z",
   "window_days": 21,
-  "count": 67,
+  "count": 80,
   "_hermes_note": "Real Cape Cod events scraped from chambers + venues. update_events.py",
   "events": [
     {
@@ -210,6 +210,23 @@
       "start": "2026-10-23T10:30:00+00:00"
     },
     {
+      "id": "live-music-with-johnny-hoy-and-the-bluefish-20261023",
+      "tag": "\ud83c\udfb5 LIVE MUSIC",
+      "category": "music",
+      "time": "Fri Oct 23 \u00b7 7:00 PM",
+      "title": "Live Music With Johnny Hoy and The Bluefish",
+      "venue": "Cape Cod Beer",
+      "town": "Hyannis",
+      "info": "",
+      "price": "",
+      "lat": 41.652,
+      "lng": -70.2828,
+      "img": "https://capecodbeer.com/wp-content/uploads/image-3.webp",
+      "source": "Cape Cod Beer",
+      "source_url": "https://capecodbeer.com/event/live-music-with-johnny-hoy-and-the-bluefish/",
+      "start": "2026-10-23T19:00:00+00:00"
+    },
+    {
       "id": "70-s-vinyl-music-bingo-20261023",
       "tag": "\ud83d\udcc5 EVENT",
       "category": "event",
@@ -309,6 +326,23 @@
       "img": null,
       "source": "Orleans",
       "source_url": "https://members.orleanscapecod.org/events/details/live-music-at-hog-island-brewery-orleans-10-24-2026-20008",
+      "start": "2026-10-24T00:00:00+00:00"
+    },
+    {
+      "id": "live-music-the-barley-neck-20261024",
+      "tag": "\ud83c\udfb5 LIVE MUSIC",
+      "category": "music",
+      "time": "Sat Oct 24",
+      "title": "Live Music | The Barley Neck",
+      "venue": "",
+      "town": "Orleans",
+      "info": "",
+      "price": "",
+      "lat": 41.7901,
+      "lng": -69.9873,
+      "img": null,
+      "source": "Orleans",
+      "source_url": "https://members.orleanscapecod.org/events/details/live-music-at-the-barley-neck-10-24-2026-7043",
       "start": "2026-10-24T00:00:00+00:00"
     },
     {
@@ -480,6 +514,23 @@
       "source": "Payomet",
       "source_url": "https://payomet.org/calendar/roots-a-farm-to-circus-show/",
       "start": "2026-10-24T13:00:00+00:00"
+    },
+    {
+      "id": "live-music-with-mr-gotcha-20261024",
+      "tag": "\ud83c\udfb5 LIVE MUSIC",
+      "category": "music",
+      "time": "Sat Oct 24 \u00b7 6:00 PM",
+      "title": "Live Music With Mr. Gotcha!",
+      "venue": "Cape Cod Beer",
+      "town": "Hyannis",
+      "info": "",
+      "price": "",
+      "lat": 41.652,
+      "lng": -70.2828,
+      "img": "https://capecodbeer.com/wp-content/uploads/Live-Music-Graphics-9-2.png",
+      "source": "Cape Cod Beer",
+      "source_url": "https://capecodbeer.com/event/live-music-with-mr-gotcha/",
+      "start": "2026-10-24T18:00:00+00:00"
     },
     {
       "id": "howl-o-ween-at-devils-purse-20261024",
@@ -720,6 +771,23 @@
       "start": "2026-10-27T00:00:00+00:00"
     },
     {
+      "id": "circus-classes-open-skills-for-ages-7-12-20261027",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Tue Oct 27 \u00b7 4:15 PM",
+      "title": "Circus Classes // Open Skills for Ages 7\u201312",
+      "venue": "Truro Central School (off Rte. 6)",
+      "town": "Truro",
+      "info": "",
+      "price": "",
+      "lat": 41.9979,
+      "lng": -70.0492,
+      "img": "https://payomet.org/wp-content/uploads/2026/10/Circus-Classes_Open-Skills-for-Ages-7\u201312.webp",
+      "source": "Payomet",
+      "source_url": "https://payomet.org/calendar/circus-classes-open-skills-for-ages-7-12-7/",
+      "start": "2026-10-27T16:15:00+00:00"
+    },
+    {
       "id": "community-pumpkin-carving-celebration-free-20261028",
       "tag": "\ud83c\udfaa FESTIVAL",
       "category": "festival",
@@ -856,6 +924,23 @@
       "start": "2026-10-29T14:00:00.251000+00:00"
     },
     {
+      "id": "circus-classes-youth-performance-troupe-20261029",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Thu Oct 29 \u00b7 4:30 PM",
+      "title": "Circus Classes // Youth Performance Troupe",
+      "venue": "Truro Central School (off Rte. 6)",
+      "town": "Truro",
+      "info": "",
+      "price": "",
+      "lat": 41.9979,
+      "lng": -70.0492,
+      "img": null,
+      "source": "Payomet",
+      "source_url": "https://payomet.org/calendar/circus-classes-youth-performance-troupe/",
+      "start": "2026-10-29T16:30:00+00:00"
+    },
+    {
       "id": "circus-classes-little-lions-for-ages-3-4-20261030",
       "tag": "\ud83d\udcc5 EVENT",
       "category": "event",
@@ -871,6 +956,40 @@
       "source": "Payomet",
       "source_url": "https://payomet.org/calendar/circus-classes-little-lions-for-ages-3-4-7/",
       "start": "2026-10-30T15:30:00+00:00"
+    },
+    {
+      "id": "circus-classes-tiny-tent-for-ages-5-6-20261030",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Fri Oct 30 \u00b7 3:30 PM",
+      "title": "Circus Classes // Tiny Tent for Ages 5 & 6",
+      "venue": "Truro Central School (off Rte. 6)",
+      "town": "Truro",
+      "info": "",
+      "price": "",
+      "lat": 41.9979,
+      "lng": -70.0492,
+      "img": "https://payomet.org/wp-content/uploads/2026/10/CIRCUS-CLASSES-TINY-TENT.webp",
+      "source": "Payomet",
+      "source_url": "https://payomet.org/calendar/circus-classes-tiny-tent-for-ages-5-6/",
+      "start": "2026-10-30T15:30:00+00:00"
+    },
+    {
+      "id": "halloween-party-at-cape-cod-beer-20261030",
+      "tag": "\ud83c\udf74 FOOD & DRINK",
+      "category": "food",
+      "time": "Fri Oct 30 \u00b7 6:00 PM",
+      "title": "Halloween Party at Cape Cod Beer!",
+      "venue": "Cape Cod Beer",
+      "town": "Hyannis",
+      "info": "",
+      "price": "",
+      "lat": 41.652,
+      "lng": -70.2828,
+      "img": "https://capecodbeer.com/wp-content/uploads/859767213_1543979474433545_2257496079186139791_n.jpg",
+      "source": "Cape Cod Beer",
+      "source_url": "https://capecodbeer.com/event/halloween-party-at-cape-cod-beer/",
+      "start": "2026-10-30T18:00:00+00:00"
     },
     {
       "id": "dennis-halloweenpalooza-20261031",
@@ -992,6 +1111,23 @@
       "start": "2026-11-01T00:00:00+00:00"
     },
     {
+      "id": "circus-classes-open-skills-for-ages-7-12-20261103",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Tue Nov 3 \u00b7 4:15 PM",
+      "title": "Circus Classes // Open Skills for Ages 7\u201312",
+      "venue": "Truro Central School (off Rte. 6)",
+      "town": "Truro",
+      "info": "",
+      "price": "",
+      "lat": 41.9979,
+      "lng": -70.0492,
+      "img": "https://payomet.org/wp-content/uploads/2026/10/Circus-Classes_Open-Skills-for-Ages-7\u201312.webp",
+      "source": "Payomet",
+      "source_url": "https://payomet.org/calendar/circus-classes-open-skills-for-ages-7-12-8/",
+      "start": "2026-11-03T16:15:00+00:00"
+    },
+    {
       "id": "provincetown-food-wine-festival-20261104",
       "tag": "\ud83c\udf74 FOOD & DRINK",
       "category": "food",
@@ -1007,6 +1143,40 @@
       "source": "Provincetown",
       "source_url": "https://ptownchamber.com/events/provincetown-food-wine-festival/",
       "start": "2026-11-04T00:00:00+00:00"
+    },
+    {
+      "id": "circus-classes-youth-performance-troupe-20261105",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Thu Nov 5 \u00b7 4:30 PM",
+      "title": "Circus Classes // Youth Performance Troupe",
+      "venue": "Truro Central School (off Rte. 6)",
+      "town": "Truro",
+      "info": "",
+      "price": "",
+      "lat": 41.9979,
+      "lng": -70.0492,
+      "img": "https://payomet.org/wp-content/uploads/2026/10/Circus-Classes-__-Performance-Youth-Troupe-for-Ages-7\u201318.webp",
+      "source": "Payomet",
+      "source_url": "https://payomet.org/calendar/circus-classes-youth-performance-troupe-2/",
+      "start": "2026-11-05T16:30:00+00:00"
+    },
+    {
+      "id": "blue-light-special-comedy-show-for-the-brewster-patrolman-s-",
+      "tag": "\ud83d\ude02 COMEDY",
+      "category": "comedy",
+      "time": "Thu Nov 5 \u00b7 7:00 PM",
+      "title": "BLUE LIGHT SPECIAL Comedy Show for the Brewster Patrolman\u2019s Union Local 332",
+      "venue": "Cape Cod Beer",
+      "town": "Hyannis",
+      "info": "",
+      "price": "",
+      "lat": 41.652,
+      "lng": -70.2828,
+      "img": "https://capecodbeer.com/wp-content/uploads/image-4.webp",
+      "source": "Cape Cod Beer",
+      "source_url": "https://capecodbeer.com/event/blue-light-special-comedy-show-for-the-brewster-patrolmans-union-local-332/",
+      "start": "2026-11-05T19:00:00+00:00"
     },
     {
       "id": "daniel-roth-in-concert-on-the-st-cecilia-organ-20261106",
@@ -1041,6 +1211,40 @@
       "source": "Payomet",
       "source_url": "https://payomet.org/calendar/circus-classes-little-lions-for-ages-3-4-8/",
       "start": "2026-11-06T15:30:00+00:00"
+    },
+    {
+      "id": "circus-classes-tiny-tent-for-ages-5-6-20261106",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Fri Nov 6 \u00b7 4:30 PM",
+      "title": "Circus Classes // Tiny Tent for Ages 5 & 6",
+      "venue": "Truro Central School (off Rte. 6)",
+      "town": "Truro",
+      "info": "",
+      "price": "",
+      "lat": 41.9979,
+      "lng": -70.0492,
+      "img": "https://payomet.org/wp-content/uploads/2026/10/CIRCUS-CLASSES-TINY-TENT.webp",
+      "source": "Payomet",
+      "source_url": "https://payomet.org/calendar/circus-classes-tiny-tent-for-ages-5-6-2/",
+      "start": "2026-11-06T16:30:00+00:00"
+    },
+    {
+      "id": "live-music-with-funktapuss-20261106",
+      "tag": "\ud83c\udfb5 LIVE MUSIC",
+      "category": "music",
+      "time": "Fri Nov 6 \u00b7 6:00 PM",
+      "title": "Live Music With Funktapuss!",
+      "venue": "Cape Cod Beer",
+      "town": "Hyannis",
+      "info": "",
+      "price": "",
+      "lat": 41.652,
+      "lng": -70.2828,
+      "img": "https://capecodbeer.com/wp-content/uploads/Live-Music-Graphics-10-4.png",
+      "source": "Cape Cod Beer",
+      "source_url": "https://capecodbeer.com/event/live-music-with-funktapuss-2/",
+      "start": "2026-11-06T18:00:00+00:00"
     },
     {
       "id": "death-bingo-20261106",
@@ -1143,6 +1347,23 @@
       "source": "Payomet",
       "source_url": "https://payomet.org/calendar/walter-parks-the-unlawful-assembly-featuring-vance-gilbert/",
       "start": "2026-11-08T17:00:00+00:00"
+    },
+    {
+      "id": "circus-classes-open-skills-for-ages-7-12-20261110",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Tue Nov 10 \u00b7 4:15 PM",
+      "title": "Circus Classes // Open Skills for Ages 7\u201312",
+      "venue": "Truro Central School (off Rte. 6)",
+      "town": "Truro",
+      "info": "",
+      "price": "",
+      "lat": 41.9979,
+      "lng": -70.0492,
+      "img": "https://payomet.org/wp-content/uploads/2026/10/Circus-Classes_Open-Skills-for-Ages-7\u201312.webp",
+      "source": "Payomet",
+      "source_url": "https://payomet.org/calendar/circus-classes-open-skills-for-ages-7-12-9/",
+      "start": "2026-11-10T16:15:00+00:00"
     }
   ]
 }
