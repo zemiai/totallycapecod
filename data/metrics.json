@@ -1,10 +1,20 @@
 {
- "generated_at": "2026-10-22T14:55:11Z",
+ "generated_at": "2026-10-23T14:43:13Z",
  "meta_ads": {
   "window": "last_7d",
-  "total_spend": 0.0,
-  "total_clicks": 0,
-  "ads": [],
+  "total_spend": 4.77,
+  "total_clicks": 7,
+  "ads": [
+   {
+    "ad": "[10/22/2026] Promoting local business Brickhouse Restaurant Eastham MA",
+    "campaign": "[10/22/2026] Promoting local business Brickhouse Restaurant Eastham MA",
+    "spend": 4.77,
+    "impressions": 1364,
+    "clicks": 7,
+    "ctr": 0.51,
+    "cpc": 0.68
+   }
+  ],
   "flags": []
  },
  "stripe": {
