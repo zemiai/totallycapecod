@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-23T14:43:13Z",
+  "at": "2026-10-24T13:52:23Z",
   "window": "last_7d",
   "ads": [
     {
@@ -22,7 +22,7 @@
         },
         {
           "action_type": "post_engagement",
-          "value": "78"
+          "value": "79"
         },
         {
           "action_type": "post_interaction_gross",
@@ -30,7 +30,7 @@
         },
         {
           "action_type": "page_engagement",
-          "value": "78"
+          "value": "79"
         },
         {
           "action_type": "post_interaction_net",
@@ -46,16 +46,16 @@
         },
         {
           "action_type": "video_view",
-          "value": "71"
+          "value": "72"
         }
       ],
       "cpc": "0.681429",
-      "ctr": "0.513196",
-      "date_start": "2026-10-16",
-      "date_stop": "2026-10-22",
+      "ctr": "0.51207",
+      "date_start": "2026-10-17",
+      "date_stop": "2026-10-23",
       "clicks": "7",
-      "impressions": "1364",
-      "reach": "1214",
+      "impressions": "1367",
+      "reach": "1220",
       "spend": "4.77",
       "ad_name": "[10/22/2026] Promoting local business Brickhouse Restaurant Eastham MA",
       "adset_name": "[10/22/2026] Promoting local business Brickhouse Restaurant Eastham MA",
