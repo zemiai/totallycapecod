@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "updated_at": "2026-10-24T13:28:38Z",
+  "updated_at": "2026-10-24T18:27:14Z",
   "window_days": 21,
-  "count": 73,
+  "count": 74,
   "_hermes_note": "Real Cape Cod events scraped from chambers + venues. update_events.py",
   "events": [
     {
@@ -1245,6 +1245,23 @@
       "source": "Totally Cape Cod",
       "source_url": "",
       "img": null
+    },
+    {
+      "id": "making-movies-20261114",
+      "tag": "\ud83c\udfac FILM",
+      "category": "film",
+      "time": "Sat Nov 14 \u00b7 6:00 PM",
+      "title": "Making Movies",
+      "venue": "Payomet",
+      "town": "Truro",
+      "info": "",
+      "price": "",
+      "lat": 41.9979,
+      "lng": -70.0492,
+      "img": "https://payomet.org/wp-content/uploads/2026/10/MakingMovies-860x562-1.webp",
+      "source": "Payomet",
+      "source_url": "https://payomet.org/calendar/making-movies/",
+      "start": "2026-11-14T18:00:00+00:00"
     }
   ]
 }
