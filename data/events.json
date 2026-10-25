@@ -1,10 +1,27 @@
 {
   "version": "1.0",
-  "updated_at": "2026-10-25T13:50:11Z",
+  "updated_at": "2026-10-25T18:37:29Z",
   "window_days": 21,
-  "count": 64,
+  "count": 70,
   "_hermes_note": "Real Cape Cod events scraped from chambers + venues. update_events.py",
   "events": [
+    {
+      "id": "professional-pie-baking-with-kate-rickard-20261025",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Sun Oct 25 \u00b7 12:00 PM",
+      "title": "Professional Pie Baking with Kate Rickard",
+      "venue": "Highfield Hall",
+      "town": "Falmouth",
+      "info": "",
+      "price": "$75 \u2013 $85",
+      "lat": 41.5515,
+      "lng": -70.6148,
+      "img": "https://highfieldhallandgardens.org/wp-content/uploads/10-25-26-pie-baking-frame-2.jpg",
+      "source": "Highfield Hall",
+      "source_url": "https://highfieldhallandgardens.org/event/pie-baking-2026/",
+      "start": "2026-10-25T12:00:00+00:00"
+    },
     {
       "id": "roots-a-farm-to-circus-show-20261025",
       "tag": "\ud83d\udcc5 EVENT",
@@ -499,6 +516,23 @@
       "start": "2026-10-30T15:30:00+00:00"
     },
     {
+      "id": "halloween-party-at-cape-cod-beer-20261030",
+      "tag": "\ud83c\udf74 FOOD & DRINK",
+      "category": "food",
+      "time": "Fri Oct 30 \u00b7 6:00 PM",
+      "title": "Halloween Party at Cape Cod Beer!",
+      "venue": "Cape Cod Beer",
+      "town": "Hyannis",
+      "info": "",
+      "price": "",
+      "lat": 41.652,
+      "lng": -70.2828,
+      "img": "https://capecodbeer.com/wp-content/uploads/859767213_1543979474433545_2257496079186139791_n.jpg",
+      "source": "Cape Cod Beer",
+      "source_url": "https://capecodbeer.com/event/halloween-party-at-cape-cod-beer/",
+      "start": "2026-10-30T18:00:00+00:00"
+    },
+    {
       "id": "live-music-hog-island-brewery-orleans-20261031",
       "tag": "\ud83c\udfb5 LIVE MUSIC",
       "category": "music",
@@ -703,6 +737,23 @@
       "start": "2026-11-05T16:30:00+00:00"
     },
     {
+      "id": "blue-light-special-comedy-show-for-the-brewster-patrolman-s-",
+      "tag": "\ud83d\ude02 COMEDY",
+      "category": "comedy",
+      "time": "Thu Nov 5 \u00b7 7:00 PM",
+      "title": "BLUE LIGHT SPECIAL Comedy Show for the Brewster Patrolman\u2019s Union Local 332",
+      "venue": "Cape Cod Beer",
+      "town": "Hyannis",
+      "info": "",
+      "price": "",
+      "lat": 41.652,
+      "lng": -70.2828,
+      "img": "https://capecodbeer.com/wp-content/uploads/image-4.webp",
+      "source": "Cape Cod Beer",
+      "source_url": "https://capecodbeer.com/event/blue-light-special-comedy-show-for-the-brewster-patrolmans-union-local-332/",
+      "start": "2026-11-05T19:00:00+00:00"
+    },
+    {
       "id": "daniel-roth-in-concert-on-the-st-cecilia-organ-20261106",
       "tag": "\ud83c\udfb5 LIVE MUSIC",
       "category": "music",
@@ -752,6 +803,23 @@
       "source": "Payomet",
       "source_url": "https://payomet.org/calendar/circus-classes-tiny-tent-for-ages-5-6-2/",
       "start": "2026-11-06T16:30:00+00:00"
+    },
+    {
+      "id": "live-music-with-funktapuss-20261106",
+      "tag": "\ud83c\udfb5 LIVE MUSIC",
+      "category": "music",
+      "time": "Fri Nov 6 \u00b7 6:00 PM",
+      "title": "Live Music With Funktapuss!",
+      "venue": "Cape Cod Beer",
+      "town": "Hyannis",
+      "info": "",
+      "price": "",
+      "lat": 41.652,
+      "lng": -70.2828,
+      "img": "https://capecodbeer.com/wp-content/uploads/Live-Music-Graphics-10-4.png",
+      "source": "Cape Cod Beer",
+      "source_url": "https://capecodbeer.com/event/live-music-with-funktapuss-2/",
+      "start": "2026-11-06T18:00:00+00:00"
     },
     {
       "id": "death-bingo-20261106",
@@ -992,6 +1060,23 @@
       "start": "2026-11-13T16:30:00+00:00"
     },
     {
+      "id": "live-music-with-flydown-20261113",
+      "tag": "\ud83c\udfb5 LIVE MUSIC",
+      "category": "music",
+      "time": "Fri Nov 13 \u00b7 6:00 PM",
+      "title": "Live Music With Flydown!",
+      "venue": "Cape Cod Beer",
+      "town": "Hyannis",
+      "info": "",
+      "price": "",
+      "lat": 41.652,
+      "lng": -70.2828,
+      "img": "https://capecodbeer.com/wp-content/uploads/flydown-eb.png",
+      "source": "Cape Cod Beer",
+      "source_url": "https://capecodbeer.com/event/live-music-with-flydown/",
+      "start": "2026-11-13T18:00:00+00:00"
+    },
+    {
       "id": "making-movies-20261113",
       "tag": "\ud83c\udfad THEATER",
       "category": "theater",
@@ -1075,6 +1160,23 @@
       "source": "Payomet",
       "source_url": "https://payomet.org/calendar/making-movies/",
       "start": "2026-11-14T18:00:00+00:00"
+    },
+    {
+      "id": "live-music-with-boston-naturals-20261114",
+      "tag": "\ud83c\udfb5 LIVE MUSIC",
+      "category": "music",
+      "time": "Sat Nov 14 \u00b7 7:00 PM",
+      "title": "Live Music With Boston Naturals!",
+      "venue": "Cape Cod Beer",
+      "town": "Hyannis",
+      "info": "",
+      "price": "",
+      "lat": 41.652,
+      "lng": -70.2828,
+      "img": "https://capecodbeer.com/wp-content/uploads/Live-Music-Graphics-10-1.png",
+      "source": "Cape Cod Beer",
+      "source_url": "https://capecodbeer.com/event/live-music-with-boston-naturals-6/",
+      "start": "2026-11-14T19:00:00+00:00"
     },
     {
       "id": "the-hundred-aker-wood-20261115",
