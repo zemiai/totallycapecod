@@ -5,7 +5,8 @@ Collects into data/metrics.json (data-only commit → no Netlify rebuild):
   meta_ads   — per-ad spend/clicks/CTR/CPC last 7d + WASTE FLAGS   (FB_ADS_TOKEN)
   stripe     — sales count + revenue, last 30d                     (STRIPE_REPORTING_KEY)
   ga4        — sessions/users last 7d + by campaign + purchases    (GOOGLE_SA_KEY, GA4_PROPERTY_ID)
-  gsc        — top search queries last 7d                          (GOOGLE_SA_KEY)
+  gsc        — ranking movement: 28d vs prior 28d, top queries/pages, tracked keywords,
+               sitemap status; daily snapshot in data/gsc_history.json   (GOOGLE_SA_KEY)
 
 Each collector skips cleanly when its secret is absent and can't break the
 others. The waste guard prints ::warning:: annotations for any ad with
@@ -131,27 +132,130 @@ def collect_ga4():
     return out
 
 
+# Core searches we care about, on top of every keyword in content/plan.json.
+CORE_KEYWORDS = ["totally cape cod", "sagamore bridge traffic", "bourne bridge traffic",
+                 "cape cod bridge traffic", "cape cod water temperature", "cape cod beach conditions",
+                 "cape cod events this weekend", "things to do on cape cod", "cape cod beaches"]
+GSC_HISTORY = DATA / "gsc_history.json"
+
+
+def _tracked_keywords():
+    kws = list(CORE_KEYWORDS)
+    try:
+        plan = json.loads((DATA.parent / "content" / "plan.json").read_text(encoding="utf-8"))
+        for t in plan.get("topics", []):
+            kws += t.get("keywords", [])
+    except Exception:
+        pass
+    out, seen = [], set()
+    for k in kws:
+        k = k.strip().lower()
+        if k and k not in seen:
+            seen.add(k)
+            out.append(k)
+    return out[:80]
+
+
 def collect_gsc():
+    """Search Console via the API (service account in GOOGLE_SA_KEY, added as a user on the
+    property). Reports ranking MOVEMENT: last 28 days vs the 28 before (GSC data lags ~3 days),
+    top queries/pages with position change, our tracked keywords, sitemap status. Also appends a
+    daily snapshot to data/gsc_history.json so the trend builds up over weeks."""
     if not os.environ.get("GOOGLE_SA_KEY", "").strip():
         return {"skipped": "GOOGLE_SA_KEY not set"}
     try:
-        token = _google_token(["https://www.googleapis.com/auth/webmasters.readonly"])
+        token = _google_token(["https://www.googleapis.com/auth/webmasters"])
     except Exception as e:
         return {"error": f"auth: {e}"}
-    end = datetime.now(timezone.utc).date()
-    body = {"startDate": str(end - timedelta(days=7)), "endDate": str(end),
-            "dimensions": ["query"], "rowLimit": 10}
-    for site in ("sc-domain:totallycapecod.com", "https://totallycapecod.com/"):
-        r = requests.post(
-            "https://searchconsole.googleapis.com/webmasters/v3/sites/"
-            f"{requests.utils.quote(site, safe='')}/searchAnalytics/query",
-            headers={"Authorization": f"Bearer {token}"}, json=body, timeout=60)
-        if r.ok:
-            rows = r.json().get("rows", [])
-            return {"window": "last_7d", "site": site,
-                    "queries": [{"q": x["keys"][0], "clicks": x["clicks"],
-                                 "impressions": x["impressions"]} for x in rows]}
-    return {"error": "no accessible Search Console property (add the service account as a user)"}
+    API = "https://searchconsole.googleapis.com/webmasters/v3"
+    H = {"Authorization": f"Bearer {token}"}
+    r = requests.get(f"{API}/sites", headers=H, timeout=60)
+    if not r.ok:
+        return {"error": f"sites.list {r.status_code}: {r.text[:200]}"}
+    mine = [x for x in r.json().get("siteEntry", []) if "totallycapecod" in x.get("siteUrl", "")
+            and x.get("permissionLevel") != "siteUnverifiedUser"]
+    if not mine:
+        return {"error": "no accessible totallycapecod.com property — add the service account's email "
+                         "as a user in Search Console (Settings → Users and permissions)"}
+    mine.sort(key=lambda x: (not x["siteUrl"].startswith("sc-domain:"), x["siteUrl"]))
+    site, perm = mine[0]["siteUrl"], mine[0].get("permissionLevel")
+    base = f"{API}/sites/{requests.utils.quote(site, safe='')}"
+
+    def query(start, end, dims=None, limit=1000):
+        body = {"startDate": str(start), "endDate": str(end), "rowLimit": limit}
+        if dims:
+            body["dimensions"] = dims
+        q = requests.post(f"{base}/searchAnalytics/query", headers=H, json=body, timeout=60)
+        q.raise_for_status()
+        return q.json().get("rows", [])
+
+    end = datetime.now(timezone.utc).date() - timedelta(days=3)          # GSC data lag
+    cur = (end - timedelta(days=27), end)
+    prev = (end - timedelta(days=55), end - timedelta(days=28))
+
+    def totals(win):
+        rows = query(*win)
+        x = rows[0] if rows else {}
+        return {"from": str(win[0]), "to": str(win[1]), "clicks": x.get("clicks", 0),
+                "impressions": x.get("impressions", 0), "ctr": round(x.get("ctr", 0) * 100, 2),
+                "avg_position": round(x.get("position", 0), 1) if x else None}
+
+    def fmt(row, before):
+        b = before.get(row["keys"][0])
+        pos, bpos = round(row["position"], 1), (round(b["position"], 1) if b else None)
+        return {"key": row["keys"][0], "clicks": row["clicks"], "impressions": row["impressions"],
+                "position": pos, "position_before": bpos,
+                "moved_up_by": (round(bpos - pos, 1) if bpos is not None else None)}   # + = better
+
+    out = {"site": site, "permission": perm, "window": "28d vs previous 28d (data lags ~3 days)",
+           "current": totals(cur), "previous": totals(prev)}
+    cq, pq = query(*cur, ["query"]), query(*prev, ["query"])
+    pmap = {r["keys"][0]: r for r in pq}
+    cq.sort(key=lambda r: -r["impressions"])
+    out["top_queries"] = [fmt(r, pmap) for r in cq[:30]]
+    cmap = {r["keys"][0]: r for r in cq}
+    out["tracked_keywords"] = []
+    for kw in _tracked_keywords():
+        c, p = cmap.get(kw), pmap.get(kw)
+        out["tracked_keywords"].append({
+            "keyword": kw,
+            "position": round(c["position"], 1) if c else None,
+            "position_before": round(p["position"], 1) if p else None,
+            "impressions": c["impressions"] if c else 0, "clicks": c["clicks"] if c else 0})
+    cp, pp = query(*cur, ["page"], 50), query(*prev, ["page"], 200)
+    ppmap = {r["keys"][0]: r for r in pp}
+    cp.sort(key=lambda r: -r["impressions"])
+    out["top_pages"] = [fmt(r, ppmap) for r in cp[:25]]
+    # last-7-day query list kept for the /admin dashboard
+    wk = query(end - timedelta(days=6), end, ["query"], 10)
+    out["queries"] = [{"q": x["keys"][0], "clicks": x["clicks"], "impressions": x["impressions"],
+                       "position": round(x["position"], 1)} for x in wk]
+    # sitemap: report status; submit it if missing and we have Full/Owner access
+    try:
+        sm = requests.get(f"{base}/sitemaps", headers=H, timeout=60).json().get("sitemap", [])
+        want = "https://totallycapecod.com/sitemap.xml"
+        if not any(x.get("path") == want for x in sm) and perm in ("siteOwner", "siteFullUser"):
+            put = requests.put(f"{base}/sitemaps/{requests.utils.quote(want, safe='')}", headers=H, timeout=60)
+            out["sitemap_submitted_now"] = put.ok
+            sm = requests.get(f"{base}/sitemaps", headers=H, timeout=60).json().get("sitemap", [])
+        out["sitemaps"] = [{"path": x.get("path"), "last_submitted": x.get("lastSubmitted"),
+                            "last_downloaded": x.get("lastDownloaded"), "errors": x.get("errors"),
+                            "warnings": x.get("warnings"),
+                            "submitted_urls": sum(int(c.get("submitted", 0)) for c in x.get("contents", []))}
+                           for x in sm]
+    except Exception as e:
+        out["sitemaps_error"] = str(e)[:200]
+    # daily snapshot → history (trend over weeks)
+    try:
+        hist = json.loads(GSC_HISTORY.read_text()) if GSC_HISTORY.exists() else []
+    except Exception:
+        hist = []
+    snap = {"date": str(datetime.now(timezone.utc).date()), **{k: out["current"][k] for k in
+            ("clicks", "impressions", "ctr", "avg_position")},
+            "tracked": {k["keyword"]: k["position"] for k in out["tracked_keywords"] if k["position"]}}
+    hist = [h for h in hist if h.get("date") != snap["date"]] + [snap]
+    GSC_HISTORY.write_text(json.dumps(hist[-180:], indent=1) + "\n")
+    return out
 
 
 for name, fn in (("meta_ads", collect_meta_ads), ("stripe", collect_stripe),
