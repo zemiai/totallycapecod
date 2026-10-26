@@ -1,0 +1,145 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-10-26T17:20:00Z",
+  "_how_it_works": "Photos from local photographers, used ONLY with their permission. Every use (site, Facebook, Instagram) must show the photographer's name and link back to them. scripts/post_facebook.py rotates these into posts (see 'post' below); scripts/build_photos_page.py builds /photos.html. To add a photographer: get permission in writing first, record it under 'permission', then add their photos here.",
+  "photographers": {
+    "r-marcotte": {
+      "name": "R. Marcotte Photography",
+      "about": "Landscape photographer based on Cape Cod, MA",
+      "facebook": "https://www.facebook.com/rmarcottephotography/",
+      "portfolio": "https://rmarcottephotography.mypixieset.com/",
+      "permission": "Granted to Versel Johnson over Facebook Messenger on 2026-10-26 (\"Of course!\"), for use on the site and in posts with credit and a link back."
+    }
+  },
+  "photos": [
+    {
+      "id": "rm-nauset-light-night",
+      "photographer": "r-marcotte",
+      "file": "img/photos/r-marcotte/nauset-light-night.jpg",
+      "width": 1440,
+      "height": 1304,
+      "title": "Nauset Light under the stars",
+      "place": "Nauset Light Beach, Eastham",
+      "alt": "Nauset Light's red and white tower lit against a starry night sky, its beam sweeping the clouds",
+      "source_url": "https://www.facebook.com/photo/?fbid=613936567391398",
+      "photographer_note": "Shot while looking for the Milky Way and meteors at Nauset Light Beach, Cape Cod National Seashore.",
+      "tags": [
+        "lighthouse",
+        "night",
+        "eastham",
+        "seashore"
+      ],
+      "post": {
+        "rotation": true
+      }
+    },
+    {
+      "id": "rm-sandwich-boardwalk",
+      "photographer": "r-marcotte",
+      "file": "img/photos/r-marcotte/sandwich-boardwalk-pilings.jpg",
+      "width": 1440,
+      "height": 1080,
+      "title": "Under the Sandwich Boardwalk",
+      "place": "Sandwich Boardwalk, Sandwich",
+      "alt": "Weathered pilings and cross-braces beneath the Sandwich Boardwalk, with marsh and water beyond",
+      "source_url": "https://www.facebook.com/photo/?fbid=560512772177218",
+      "photographer_note": "Taken from the mud beneath the boardwalk.",
+      "tags": [
+        "boardwalk",
+        "sandwich",
+        "marsh"
+      ],
+      "post": {
+        "rotation": true
+      }
+    },
+    {
+      "id": "rm-chatham-boat",
+      "photographer": "r-marcotte",
+      "file": "img/photos/r-marcotte/chatham-boat-bow.jpg",
+      "width": 1328,
+      "height": 1328,
+      "title": "A weathered bow",
+      "place": "Chatham",
+      "alt": "The weathered wooden bow of a boat crusted with mussel shells, with water and sky behind",
+      "source_url": "https://www.facebook.com/photo/?fbid=583056666589495",
+      "photographer_note": "Fun fact from the photographer: half this boat was missing!",
+      "tags": [
+        "boat",
+        "chatham",
+        "harbor"
+      ],
+      "post": {
+        "rotation": true
+      }
+    },
+    {
+      "id": "rm-jetty-sunset",
+      "photographer": "r-marcotte",
+      "file": "img/photos/r-marcotte/jetty-sunset.jpg",
+      "width": 1440,
+      "height": 1440,
+      "title": "Sunset at the jetty",
+      "place": "",
+      "alt": "Waves washing up a pebbly beach at sunset, with a jetty and its markers silhouetted on the horizon",
+      "source_url": "https://www.facebook.com/photo/?fbid=240742624154236",
+      "photographer_note": "",
+      "tags": [
+        "sunset",
+        "beach",
+        "jetty"
+      ],
+      "post": {
+        "rotation": true
+      }
+    },
+    {
+      "id": "rm-snow-day",
+      "photographer": "r-marcotte",
+      "file": "img/photos/r-marcotte/snow-day.jpg",
+      "width": 1440,
+      "height": 1440,
+      "title": "Snow day",
+      "place": "",
+      "alt": "An orange snow shovel standing in fresh snow against a snow-crusted garage",
+      "source_url": "https://www.facebook.com/photo/?fbid=475707453991084",
+      "photographer_note": "The photographer was excited about the snow that day.",
+      "tags": [
+        "snow",
+        "winter"
+      ],
+      "post": {
+        "rotation": true,
+        "window": {
+          "from": "12-01",
+          "to": "03-15"
+        }
+      }
+    },
+    {
+      "id": "rm-christmas-lights",
+      "photographer": "r-marcotte",
+      "file": "img/photos/r-marcotte/christmas-lights.jpg",
+      "width": 1440,
+      "height": 1578,
+      "title": "Christmas lights",
+      "place": "Providence, RI",
+      "alt": "Strings of colorful Christmas lights glowing along a railing at night",
+      "source_url": "https://www.facebook.com/photo/?fbid=454862146075615",
+      "photographer_note": "Posted with \"Merry Christmas to all.\"",
+      "tags": [
+        "christmas",
+        "holiday"
+      ],
+      "post": {
+        "rotation": false,
+        "dates": [
+          "12-25"
+        ],
+        "occasion": "christmas"
+      },
+      "gallery": false,
+      "internal_note": "Taken in Providence, RI: never caption it as Cape Cod."
+    }
+  ]
+}

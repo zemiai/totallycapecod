@@ -488,22 +488,85 @@ def fmt_evening():
 MORNING_FORMATS = {0: fmt_beach_pick, 1: fmt_tonight, 2: fmt_question,
                    3: fmt_gem, 4: fmt_weekend, 5: fmt_report_ask, 6: fmt_sunset}
 
-def compose(mode: str):
-    """Return (fb_message, ig_caption, image_url, campaign)."""
+# ------------------------------------------------- local photographers' work --
+# data/photos.json: photos shared WITH PERMISSION by local photographers. Every post that
+# uses one carries a full credit line + link back. Christmas-type photos are reserved for
+# their date (post.dates, MM-DD); the rest rotate into morning posts on Tue/Thu/Sat, never
+# reusing a photo within PHOTO_REUSE_DAYS.
+PHOTO_DAYS = {1, 3, 5}          # Tue, Thu, Sat (Mon=0)
+PHOTO_REUSE_DAYS = 21
+
+def _in_window(mmdd: str, win: dict | None) -> bool:
+    if not win:
+        return True
+    a, b = win.get("from", "01-01"), win.get("to", "12-31")
+    return a <= mmdd <= b if a <= b else (mmdd >= a or mmdd <= b)
+
+def credited_photo(mode: str, state: dict) -> dict | None:
+    if os.environ.get("TCC_NO_CREDITED_PHOTO") == "1":
+        return None
+    data = load("photos.json") or {}
+    photos, people = data.get("photos") or [], data.get("photographers") or {}
+    now = now_et()
+    mmdd = os.environ.get("TCC_FAKE_MMDD", "") or now.strftime("%m-%d")
+    for ph in photos:                                   # dated occasions win (morning post)
+        if mode == "morning" and mmdd in (ph.get("post") or {}).get("dates", []):
+            return {**ph, "_by": people.get(ph["photographer"], {})}
+    if mode != "morning" or weekday_et() not in PHOTO_DAYS:
+        return None
+    used = state.get("photo_last_used") or {}
+    def days_since(pid):
+        try:
+            return (now.date() - datetime.strptime(used[pid], "%Y-%m-%d").date()).days
+        except Exception:
+            return 10**6
+    pool = [ph for ph in photos
+            if (ph.get("post") or {}).get("rotation") and _in_window(mmdd, (ph.get("post") or {}).get("window"))
+            and (ROOT / ph["file"]).exists() and days_since(ph["id"]) >= PHOTO_REUSE_DAYS]
+    if not pool:
+        return None
+    pool.sort(key=lambda ph: (-days_since(ph["id"]), ph["id"]))   # least recently used first
+    ph = pool[0]
+    return {**ph, "_by": people.get(ph["photographer"], {})}
+
+def photo_credit(ph: dict) -> tuple[str, str]:
+    """(facebook_line, instagram_line) — full credit, always with a way to find the photographer."""
+    by = ph.get("_by") or {}
+    name = by.get("name", "the photographer")
+    what = ph.get("title", "")
+    where = f" — {ph['place']}" if ph.get("place") else ""
+    fb = f"📸 {what}{where}. Photo by {name}, shared with permission. See more of their work → {by.get('facebook', '')}".strip()
+    ig = f"📸 {what}{where}. Photo by {name}, shared with permission. Find more of their work on Facebook: {name}"
+    return fb, ig
+
+def fmt_christmas(ph: dict):
+    lines = ["🎄 Merry Christmas from all of us at Totally Cape Cod!", "",
+             "Wishing you a warm, bright day, wherever you're celebrating. Thanks for spending the year on the Cape with us."]
+    return lines, f"{RAW_BASE}/{ph['file']}", "christmas", ["#MerryChristmas", "#CapeCod", "#CapeCodLife"]
+
+def compose(mode: str, state: dict | None = None):
+    """Return (fb_message, ig_caption, image_url, campaign, credited_photo_id)."""
     today = now_et().strftime("%Y-%m-%d")
     fireworks = [e for e in events_on(today) if "FIREWORK" in (e.get("tag") or "").upper()]
-    if mode == "evening":
+    ph = credited_photo(mode, state or {})
+    if ph and (ph.get("post") or {}).get("occasion") == "christmas":
+        lines, img, campaign, tags = fmt_christmas(ph)
+    elif mode == "evening":
         lines, img, campaign, tags = fmt_evening()
     elif fireworks:
+        ph = None                                     # fireworks posts keep their own image
         lines, img, campaign, tags = fmt_fireworks(fireworks)
     else:
         lines, img, campaign, tags = MORNING_FORMATS[weekday_et()]()
+    if ph:
+        img = f"{RAW_BASE}/{ph['file']}"
 
     body = "\n".join(lines).rstrip()
     tagline = " ".join(dict.fromkeys(tags))          # dedupe, keep order
-    fb_message = f"{body}\n\n{tagline}"
-    ig_caption = f"{body}\n\n🔗 totallycapecod.com\n\n{tagline}"
-    return fb_message, ig_caption, img, campaign
+    credit_fb, credit_ig = photo_credit(ph) if ph else ("", "")
+    fb_message = f"{body}\n\n{credit_fb + chr(10) + chr(10) if ph else ''}{tagline}"
+    ig_caption = f"{body}\n\n{credit_ig + chr(10) + chr(10) if ph else ''}🔗 totallycapecod.com\n\n{tagline}"
+    return fb_message, ig_caption, img, campaign, (ph or {}).get("id", "")
 
 def tracked_link(campaign: str) -> str:
     return f"{SITE}/?utm_source=facebook&utm_medium=social&utm_campaign={campaign}"
@@ -561,7 +624,13 @@ def post_instagram(caption: str, image: str) -> str:
 
 def main() -> None:
     mode = os.environ.get("MODE", "").strip() or ("evening" if now_et().hour >= 15 else "morning")
-    fb_message, ig_caption, image, campaign = compose(mode)
+    state = {}
+    if STATE.exists():
+        try:
+            state = json.loads(STATE.read_text())
+        except Exception:
+            state = {}
+    fb_message, ig_caption, image, campaign, photo_id = compose(mode, state)
     today_iso = now_et().strftime("%Y-%m-%d")
     state_key = "last_posted_date" if mode == "morning" else "last_posted_evening_date"
     link = tracked_link(campaign)
@@ -572,6 +641,8 @@ def main() -> None:
         targets = "Facebook" + (" + Instagram" if IG_USER_ID else "")
         print(f"--- DRY RUN [{mode} · {campaign}] (to {targets}, image={image}) ---")
         print(fb_message)
+        if photo_id:
+            print(f"--- instagram caption ---\n{ig_caption}")
         print(f"--- first comment ---\n{link_comment}")
         return
 
@@ -579,12 +650,6 @@ def main() -> None:
         print("ERROR: FB_PAGE_ID / FB_PAGE_ACCESS_TOKEN not set", file=sys.stderr)
         sys.exit(1)
 
-    state = {}
-    if STATE.exists():
-        try:
-            state = json.loads(STATE.read_text())
-        except Exception:
-            state = {}
     if state.get(state_key) == today_iso and not FORCE:
         print(f"[fb] already posted {mode} slot for {today_iso} — skipping (FORCE=1 to override)")
         return
@@ -606,6 +671,8 @@ def main() -> None:
             except Exception as e:
                 print(f"[ig] ✗ {e}", file=sys.stderr)
 
+    if photo_id:
+        state.setdefault("photo_last_used", {})[photo_id] = today_iso
     state.update({state_key: today_iso,
                   f"last_{mode}_post_id": pid,
                   f"last_{mode}_ig_post_id": ig_id,
