@@ -1,95 +1,10 @@
 {
   "version": "1.0",
-  "updated_at": "2026-10-25T18:37:29Z",
+  "updated_at": "2026-10-26T16:15:02Z",
   "window_days": 21,
-  "count": 70,
+  "count": 65,
   "_hermes_note": "Real Cape Cod events scraped from chambers + venues. update_events.py",
   "events": [
-    {
-      "id": "professional-pie-baking-with-kate-rickard-20261025",
-      "tag": "\ud83d\udcc5 EVENT",
-      "category": "event",
-      "time": "Sun Oct 25 \u00b7 12:00 PM",
-      "title": "Professional Pie Baking with Kate Rickard",
-      "venue": "Highfield Hall",
-      "town": "Falmouth",
-      "info": "",
-      "price": "$75 \u2013 $85",
-      "lat": 41.5515,
-      "lng": -70.6148,
-      "img": "https://highfieldhallandgardens.org/wp-content/uploads/10-25-26-pie-baking-frame-2.jpg",
-      "source": "Highfield Hall",
-      "source_url": "https://highfieldhallandgardens.org/event/pie-baking-2026/",
-      "start": "2026-10-25T12:00:00+00:00"
-    },
-    {
-      "id": "roots-a-farm-to-circus-show-20261025",
-      "tag": "\ud83d\udcc5 EVENT",
-      "category": "event",
-      "time": "Sun Oct 25 \u00b7 1:00 PM",
-      "title": "Roots: A Farm to Circus Show",
-      "venue": "Tony Andrews Farm in E. Falmouth",
-      "town": "Truro",
-      "info": "",
-      "price": "",
-      "lat": 41.9979,
-      "lng": -70.0492,
-      "img": "https://payomet.org/wp-content/uploads/2026/08/Roots-A-Farm-to-Circus-Show-1.webp",
-      "source": "Payomet",
-      "source_url": "https://payomet.org/calendar/roots-a-farm-to-circus-show-2/",
-      "start": "2026-10-25T13:00:00+00:00"
-    },
-    {
-      "id": "sip-sign-with-julie-from-snapshot-crafting-20261025",
-      "tag": "\ud83c\udf74 FOOD & DRINK",
-      "category": "food",
-      "time": "Sun Oct 25 \u00b7 8:00 PM",
-      "title": "Sip & Sign with Julie from Snapshot Crafting",
-      "venue": "Cape Cod Winery",
-      "town": "Falmouth",
-      "info": "",
-      "price": "",
-      "lat": 41.5515,
-      "lng": -70.6148,
-      "img": null,
-      "source": "Cape Cod Winery",
-      "source_url": "https://www.capecodwinery.com/events/sip-sign-with-julie-from-snapshot-crafting",
-      "start": "2026-10-25T20:00:00.094000+00:00"
-    },
-    {
-      "id": "live-music-with-johnny-mac-20261025",
-      "tag": "\ud83c\udfb5 LIVE MUSIC",
-      "category": "music",
-      "time": "Sun Oct 25 \u00b7 8:00 PM",
-      "title": "Live Music with Johnny Mac",
-      "venue": "Cape Cod Winery",
-      "town": "Falmouth",
-      "info": "",
-      "price": "",
-      "lat": 41.5515,
-      "lng": -70.6148,
-      "img": null,
-      "source": "Cape Cod Winery",
-      "source_url": "https://www.capecodwinery.com/events/live-music-with-johnny-mac-2",
-      "start": "2026-10-25T20:00:00.708000+00:00"
-    },
-    {
-      "id": "hand-knit-blanket-workshop-with-the-prendy-stitches-20261025",
-      "tag": "\ud83c\udf74 FOOD & DRINK",
-      "category": "food",
-      "time": "Sun Oct 25 \u00b7 10:00 PM",
-      "title": "Hand Knit Blanket Workshop with The Prendy Stitches",
-      "venue": "Cape Cod Winery",
-      "town": "Falmouth",
-      "info": "",
-      "price": "",
-      "lat": 41.5515,
-      "lng": -70.6148,
-      "img": null,
-      "source": "Cape Cod Winery",
-      "source_url": "https://www.capecodwinery.com/events/hand-knit-blanket-workshop-with-the-prendy-stitches",
-      "start": "2026-10-25T22:00:00.666000+00:00"
-    },
     {
       "id": "public-skating-at-charles-moore-arena-20261027",
       "tag": "\ud83d\udcc5 EVENT",
@@ -104,6 +19,7 @@
       "lng": -69.9873,
       "img": null,
       "source": "Orleans",
+      "credit": "Orleans Chamber of Commerce",
       "source_url": "https://members.orleanscapecod.org/events/details/public-skating-at-charles-moore-arena-10-27-2026-20315",
       "start": "2026-10-27T00:00:00+00:00"
     },
@@ -121,6 +37,7 @@
       "lng": -70.0819,
       "img": null,
       "source": "Brewster",
+      "credit": "Brewster Chamber of Commerce",
       "source_url": "https://members.brewster-capecod.com/events/details/brewster-ladies-library-presents-managing-fall-in-the-garden-with-erin-camire-9561",
       "start": "2026-10-27T00:00:00+00:00"
     },
@@ -138,6 +55,7 @@
       "lng": -70.0819,
       "img": null,
       "source": "Brewster",
+      "credit": "Brewster Chamber of Commerce",
       "source_url": "https://members.brewster-capecod.com/events/details/brewster-ladies-library-lgbtq-seniors-life-changes-support-group-10-27-2026-9523",
       "start": "2026-10-27T00:00:00+00:00"
     },
@@ -155,6 +73,7 @@
       "lng": -70.0819,
       "img": null,
       "source": "Brewster",
+      "credit": "Brewster Chamber of Commerce",
       "source_url": "https://members.brewster-capecod.com/events/details/tech-drop-in-at-the-brewster-ladies-library-10-27-2026-7373",
       "start": "2026-10-27T00:00:00+00:00"
     },
@@ -172,6 +91,7 @@
       "lng": -70.0492,
       "img": "https://payomet.org/wp-content/uploads/2026/10/Circus-Classes_Open-Skills-for-Ages-7\u201312.webp",
       "source": "Payomet",
+      "credit": "Payomet Performing Arts Center",
       "source_url": "https://payomet.org/calendar/circus-classes-open-skills-for-ages-7-12-7/",
       "start": "2026-10-27T16:15:00+00:00"
     },
@@ -189,6 +109,7 @@
       "lng": -70.0819,
       "img": null,
       "source": "Brewster",
+      "credit": "Brewster Chamber of Commerce",
       "source_url": "https://members.brewster-capecod.com/events/details/community-pumpkin-carving-celebration-free-9569",
       "start": "2026-10-28T00:00:00+00:00"
     },
@@ -206,6 +127,7 @@
       "lng": -70.078,
       "img": null,
       "source": "Harwich",
+      "credit": "Harwich Chamber of Commerce",
       "source_url": "https://business.harwichcc.com/events/details/2nd-annual-harwich-pto-and-harwich-chamber-halloween-parade-25885",
       "start": "2026-10-28T00:00:00+00:00"
     },
@@ -223,6 +145,7 @@
       "lng": -70.1787,
       "img": null,
       "source": "Provincetown",
+      "credit": "Provincetown Chamber of Commerce",
       "source_url": "https://ptownchamber.com/events/halloween-weekend-and-spooky-bear/",
       "start": "2026-10-29T00:00:00+00:00"
     },
@@ -240,6 +163,7 @@
       "lng": -69.9873,
       "img": null,
       "source": "Orleans",
+      "credit": "Orleans Chamber of Commerce",
       "source_url": "https://members.orleanscapecod.org/events/details/public-skating-at-charles-moore-arena-10-29-2026-20316",
       "start": "2026-10-29T00:00:00+00:00"
     },
@@ -257,6 +181,7 @@
       "lng": -69.9873,
       "img": null,
       "source": "Orleans",
+      "credit": "Orleans Chamber of Commerce",
       "source_url": "https://members.orleanscapecod.org/events/details/sound-healing-salt-therapy-experience-10-29-2026-21021",
       "start": "2026-10-29T00:00:00+00:00"
     },
@@ -274,6 +199,7 @@
       "lng": -70.0819,
       "img": null,
       "source": "Brewster",
+      "credit": "Brewster Chamber of Commerce",
       "source_url": "https://members.brewster-capecod.com/events/details/tech-drop-in-at-the-brewster-ladies-library-10-29-2026-8964",
       "start": "2026-10-29T00:00:00+00:00"
     },
@@ -291,6 +217,7 @@
       "lng": -70.0819,
       "img": null,
       "source": "Brewster",
+      "credit": "Brewster Chamber of Commerce",
       "source_url": "https://members.brewster-capecod.com/events/details/brewster-ladies-library-get-your-travel-on-using-library-resources-to-make-traveling-easier-cheaper-and-more-safe-9562",
       "start": "2026-10-29T00:00:00+00:00"
     },
@@ -308,6 +235,7 @@
       "lng": -70.0819,
       "img": null,
       "source": "Brewster",
+      "credit": "Brewster Chamber of Commerce",
       "source_url": "https://members.brewster-capecod.com/events/details/brewster-historical-society-presents-a-grave-situation-walking-tour-of-brewster-cemetery-10-29-2026-9545",
       "start": "2026-10-29T00:00:00+00:00"
     },
@@ -325,6 +253,7 @@
       "lng": -70.2828,
       "img": null,
       "source": "Hyannis",
+      "credit": "Hyannis Area Chamber of Commerce",
       "source_url": "https://business.hyannis.com/events/details/history-on-tap-biodiversity-on-shipwrecks-4050",
       "start": "2026-10-29T00:00:00+00:00"
     },
@@ -342,6 +271,7 @@
       "lng": -70.2828,
       "img": null,
       "source": "Hyannis",
+      "credit": "Hyannis Area Chamber of Commerce",
       "source_url": "https://business.hyannis.com/events/details/2026-annual-meeting-and-awards-ceremony-4089",
       "start": "2026-10-29T00:00:00+00:00"
     },
@@ -359,6 +289,7 @@
       "lng": -70.2828,
       "img": null,
       "source": "Hyannis",
+      "credit": "Hyannis Area Chamber of Commerce",
       "source_url": "https://business.hyannis.com/events/details/us-army-jazz-ambassadors-free-concert-in-hyannis-10-29-4094",
       "start": "2026-10-29T00:00:00+00:00"
     },
@@ -376,6 +307,7 @@
       "lng": -70.15,
       "img": null,
       "source": "Devil's Purse",
+      "credit": "Devil's Purse",
       "source_url": "https://www.devilspurse.com/events/2026/10/29/pelham-house-oysterfest-at-love-farms",
       "start": "2026-10-29T14:00:00.251000+00:00"
     },
@@ -393,6 +325,7 @@
       "lng": -70.0492,
       "img": null,
       "source": "Payomet",
+      "credit": "Payomet Performing Arts Center",
       "source_url": "https://payomet.org/calendar/circus-classes-youth-performance-troupe/",
       "start": "2026-10-29T16:30:00+00:00"
     },
@@ -410,6 +343,7 @@
       "lng": -69.9873,
       "img": null,
       "source": "Orleans",
+      "credit": "Orleans Chamber of Commerce",
       "source_url": "https://members.orleanscapecod.org/events/details/public-skating-at-charles-moore-arena-10-30-2026-20317",
       "start": "2026-10-30T00:00:00+00:00"
     },
@@ -427,6 +361,7 @@
       "lng": -69.9873,
       "img": null,
       "source": "Orleans",
+      "credit": "Orleans Chamber of Commerce",
       "source_url": "https://members.orleanscapecod.org/events/details/live-music-at-the-barley-neck-10-30-2026-7044",
       "start": "2026-10-30T00:00:00+00:00"
     },
@@ -444,6 +379,7 @@
       "lng": -69.9597,
       "img": null,
       "source": "Chatham",
+      "credit": "Chatham Chamber of Commerce",
       "source_url": "https://business.chathaminfo.com/events/details/marconi-rca-wireless-museum-open-10-30-2026-32871",
       "start": "2026-10-30T00:00:00+00:00"
     },
@@ -461,6 +397,7 @@
       "lng": -69.9597,
       "img": null,
       "source": "Chatham",
+      "credit": "Chatham Chamber of Commerce",
       "source_url": "https://business.chathaminfo.com/events/details/gorey-a-work-in-progress-screening-book-signing-w-christopher-seufert-32900",
       "start": "2026-10-30T00:00:00+00:00"
     },
@@ -478,6 +415,7 @@
       "lng": -69.9597,
       "img": null,
       "source": "Chatham",
+      "credit": "Chatham Chamber of Commerce",
       "source_url": "https://business.chathaminfo.com/events/details/adult-boo-bash-32877",
       "start": "2026-10-30T00:00:00+00:00"
     },
@@ -495,6 +433,7 @@
       "lng": -70.0492,
       "img": "https://payomet.org/wp-content/uploads/2026/10/CIRCUS-CLASSES_LITTLE-LIONS.webp",
       "source": "Payomet",
+      "credit": "Payomet Performing Arts Center",
       "source_url": "https://payomet.org/calendar/circus-classes-little-lions-for-ages-3-4-7/",
       "start": "2026-10-30T15:30:00+00:00"
     },
@@ -512,25 +451,9 @@
       "lng": -70.0492,
       "img": "https://payomet.org/wp-content/uploads/2026/10/CIRCUS-CLASSES-TINY-TENT.webp",
       "source": "Payomet",
+      "credit": "Payomet Performing Arts Center",
       "source_url": "https://payomet.org/calendar/circus-classes-tiny-tent-for-ages-5-6/",
       "start": "2026-10-30T15:30:00+00:00"
-    },
-    {
-      "id": "halloween-party-at-cape-cod-beer-20261030",
-      "tag": "\ud83c\udf74 FOOD & DRINK",
-      "category": "food",
-      "time": "Fri Oct 30 \u00b7 6:00 PM",
-      "title": "Halloween Party at Cape Cod Beer!",
-      "venue": "Cape Cod Beer",
-      "town": "Hyannis",
-      "info": "",
-      "price": "",
-      "lat": 41.652,
-      "lng": -70.2828,
-      "img": "https://capecodbeer.com/wp-content/uploads/859767213_1543979474433545_2257496079186139791_n.jpg",
-      "source": "Cape Cod Beer",
-      "source_url": "https://capecodbeer.com/event/halloween-party-at-cape-cod-beer/",
-      "start": "2026-10-30T18:00:00+00:00"
     },
     {
       "id": "live-music-hog-island-brewery-orleans-20261031",
@@ -546,6 +469,7 @@
       "lng": -69.9873,
       "img": null,
       "source": "Orleans",
+      "credit": "Orleans Chamber of Commerce",
       "source_url": "https://members.orleanscapecod.org/events/details/live-music-at-hog-island-brewery-orleans-10-31-2026-20009",
       "start": "2026-10-31T00:00:00+00:00"
     },
@@ -563,7 +487,26 @@
       "lng": -69.9873,
       "img": null,
       "source": "Orleans",
+      "credit": "Orleans Chamber of Commerce",
       "source_url": "https://members.orleanscapecod.org/events/details/live-music-at-the-barley-neck-10-31-2026-7045",
+      "start": "2026-10-31T00:00:00+00:00"
+    },
+    {
+      "id": "halloween-edward-gorey-book-signing-on-martha-s-vineyard-wit",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Sat Oct 31",
+      "title": "Halloween Edward Gorey Book Signing on Martha's Vineyard with Christopher Seufert Halloween Edward Gorey Book Signing on Martha's Vineyard with Christopher Seufert",
+      "venue": "",
+      "town": "Chatham",
+      "info": "",
+      "price": "",
+      "lat": 41.6815,
+      "lng": -69.9597,
+      "img": null,
+      "source": "Chatham",
+      "credit": "Chatham Chamber of Commerce",
+      "source_url": "https://business.chathaminfo.com/events/details/halloween-edward-gorey-book-signing-on-martha-s-vineyard-with-christopher-seufert-32901",
       "start": "2026-10-31T00:00:00+00:00"
     },
     {
@@ -579,8 +522,9 @@
       "start": "2026-10-31T09:00:00-04:00",
       "info": "Local produce, baked goods, flowers & more.",
       "price": "Free",
-      "source": "Totally Cape Cod",
-      "source_url": "",
+      "source": "Orleans Farmers Market",
+      "credit": "Orleans Farmers Market",
+      "source_url": "https://www.orleansfarmersmarket.org",
       "img": null
     },
     {
@@ -596,7 +540,8 @@
       "start": "2026-10-31T09:00:00-04:00",
       "info": "Local produce, baked goods, flowers & more.",
       "price": "Free",
-      "source": "Totally Cape Cod",
+      "source": "Provincetown Farmers Market",
+      "credit": "Provincetown Farmers Market",
       "source_url": "",
       "img": null
     },
@@ -614,6 +559,7 @@
       "lng": -70.6148,
       "img": null,
       "source": "Cape Cod Winery",
+      "credit": "Cape Cod Winery",
       "source_url": "https://www.capecodwinery.com/events/sip-spook-halloween-party",
       "start": "2026-10-31T18:30:00.170000+00:00"
     },
@@ -631,6 +577,7 @@
       "lng": -70.6148,
       "img": null,
       "source": "Cape Cod Winery",
+      "credit": "Cape Cod Winery",
       "source_url": "https://www.capecodwinery.com/events/k2kd95rjzhxhawt3rmc9zg953bdh53",
       "start": "2026-10-31T20:00:00.078000+00:00"
     },
@@ -648,6 +595,7 @@
       "lng": -69.974,
       "img": null,
       "source": "Eastham",
+      "credit": "Eastham Chamber of Commerce",
       "source_url": "https://members.easthamchamber.com/events/details/thanksgiving-hymn-sing-5967",
       "start": "2026-11-01T00:00:00+00:00"
     },
@@ -665,6 +613,7 @@
       "lng": -70.0819,
       "img": null,
       "source": "Brewster",
+      "credit": "Brewster Chamber of Commerce",
       "source_url": "https://members.brewster-capecod.com/events/details/arts-empowering-life-hosts-thanksgiving-hymn-sing-9566",
       "start": "2026-11-01T00:00:00+00:00"
     },
@@ -682,7 +631,26 @@
       "lng": -70.0819,
       "img": null,
       "source": "Brewster",
+      "credit": "Brewster Chamber of Commerce",
       "source_url": "https://members.brewster-capecod.com/events/details/brewster-ladies-library-hosts-grief-support-group-with-maureen-keane-bottino-11-03-2026-9394",
+      "start": "2026-11-03T00:00:00+00:00"
+    },
+    {
+      "id": "brewster-ladies-library-collage-club-20261103",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Tue Nov 3",
+      "title": "Brewster Ladies' Library Collage Club",
+      "venue": "",
+      "town": "Brewster",
+      "info": "",
+      "price": "",
+      "lat": 41.7601,
+      "lng": -70.0819,
+      "img": null,
+      "source": "Brewster",
+      "credit": "Brewster Chamber of Commerce",
+      "source_url": "https://members.brewster-capecod.com/events/details/brewster-ladies-library-collage-club-11-03-2026-8611",
       "start": "2026-11-03T00:00:00+00:00"
     },
     {
@@ -699,6 +667,7 @@
       "lng": -70.0492,
       "img": "https://payomet.org/wp-content/uploads/2026/10/Circus-Classes_Open-Skills-for-Ages-7\u201312.webp",
       "source": "Payomet",
+      "credit": "Payomet Performing Arts Center",
       "source_url": "https://payomet.org/calendar/circus-classes-open-skills-for-ages-7-12-8/",
       "start": "2026-11-03T16:15:00+00:00"
     },
@@ -716,6 +685,7 @@
       "lng": -70.1787,
       "img": null,
       "source": "Provincetown",
+      "credit": "Provincetown Chamber of Commerce",
       "source_url": "https://ptownchamber.com/events/provincetown-food-wine-festival/",
       "start": "2026-11-04T00:00:00+00:00"
     },
@@ -733,25 +703,9 @@
       "lng": -70.0492,
       "img": "https://payomet.org/wp-content/uploads/2026/10/Circus-Classes-__-Performance-Youth-Troupe-for-Ages-7\u201318.webp",
       "source": "Payomet",
+      "credit": "Payomet Performing Arts Center",
       "source_url": "https://payomet.org/calendar/circus-classes-youth-performance-troupe-2/",
       "start": "2026-11-05T16:30:00+00:00"
-    },
-    {
-      "id": "blue-light-special-comedy-show-for-the-brewster-patrolman-s-",
-      "tag": "\ud83d\ude02 COMEDY",
-      "category": "comedy",
-      "time": "Thu Nov 5 \u00b7 7:00 PM",
-      "title": "BLUE LIGHT SPECIAL Comedy Show for the Brewster Patrolman\u2019s Union Local 332",
-      "venue": "Cape Cod Beer",
-      "town": "Hyannis",
-      "info": "",
-      "price": "",
-      "lat": 41.652,
-      "lng": -70.2828,
-      "img": "https://capecodbeer.com/wp-content/uploads/image-4.webp",
-      "source": "Cape Cod Beer",
-      "source_url": "https://capecodbeer.com/event/blue-light-special-comedy-show-for-the-brewster-patrolmans-union-local-332/",
-      "start": "2026-11-05T19:00:00+00:00"
     },
     {
       "id": "daniel-roth-in-concert-on-the-st-cecilia-organ-20261106",
@@ -767,7 +721,26 @@
       "lng": -69.974,
       "img": null,
       "source": "Eastham",
+      "credit": "Eastham Chamber of Commerce",
       "source_url": "https://members.easthamchamber.com/events/details/daniel-roth-in-concert-on-the-st-cecilia-organ-5854",
+      "start": "2026-11-06T00:00:00+00:00"
+    },
+    {
+      "id": "introducing-capucine-de-wulf-20261106",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Fri Nov 6",
+      "title": "Introducing Capucine De Wulf",
+      "venue": "",
+      "town": "Orleans",
+      "info": "",
+      "price": "",
+      "lat": 41.7901,
+      "lng": -69.9873,
+      "img": null,
+      "source": "Orleans",
+      "credit": "Orleans Chamber of Commerce",
+      "source_url": "https://members.orleanscapecod.org/events/details/introducing-capucine-de-wulf-25605",
       "start": "2026-11-06T00:00:00+00:00"
     },
     {
@@ -784,6 +757,7 @@
       "lng": -70.0492,
       "img": "https://payomet.org/wp-content/uploads/2026/10/CIRCUS-CLASSES_LITTLE-LIONS.webp",
       "source": "Payomet",
+      "credit": "Payomet Performing Arts Center",
       "source_url": "https://payomet.org/calendar/circus-classes-little-lions-for-ages-3-4-8/",
       "start": "2026-11-06T15:30:00+00:00"
     },
@@ -801,25 +775,9 @@
       "lng": -70.0492,
       "img": "https://payomet.org/wp-content/uploads/2026/10/CIRCUS-CLASSES-TINY-TENT.webp",
       "source": "Payomet",
+      "credit": "Payomet Performing Arts Center",
       "source_url": "https://payomet.org/calendar/circus-classes-tiny-tent-for-ages-5-6-2/",
       "start": "2026-11-06T16:30:00+00:00"
-    },
-    {
-      "id": "live-music-with-funktapuss-20261106",
-      "tag": "\ud83c\udfb5 LIVE MUSIC",
-      "category": "music",
-      "time": "Fri Nov 6 \u00b7 6:00 PM",
-      "title": "Live Music With Funktapuss!",
-      "venue": "Cape Cod Beer",
-      "town": "Hyannis",
-      "info": "",
-      "price": "",
-      "lat": 41.652,
-      "lng": -70.2828,
-      "img": "https://capecodbeer.com/wp-content/uploads/Live-Music-Graphics-10-4.png",
-      "source": "Cape Cod Beer",
-      "source_url": "https://capecodbeer.com/event/live-music-with-funktapuss-2/",
-      "start": "2026-11-06T18:00:00+00:00"
     },
     {
       "id": "death-bingo-20261106",
@@ -835,6 +793,7 @@
       "lng": -70.15,
       "img": null,
       "source": "Devil's Purse",
+      "credit": "Devil's Purse",
       "source_url": "https://www.devilspurse.com/events/2026/11/6/death-bingo",
       "start": "2026-11-06T22:00:00.818000+00:00"
     },
@@ -852,6 +811,7 @@
       "lng": -69.974,
       "img": null,
       "source": "Eastham",
+      "credit": "Eastham Chamber of Commerce",
       "source_url": "https://members.easthamchamber.com/events/details/lost-voices-of-byzantium-5968",
       "start": "2026-11-07T00:00:00+00:00"
     },
@@ -869,6 +829,7 @@
       "lng": -70.2828,
       "img": null,
       "source": "Hyannis",
+      "credit": "Hyannis Area Chamber of Commerce",
       "source_url": "https://business.hyannis.com/events/details/sea-turtle-open-house-at-wellfleet-bay-4103",
       "start": "2026-11-07T00:00:00+00:00"
     },
@@ -886,6 +847,7 @@
       "lng": -70.494,
       "img": "https://bunny-wp-pullzone-94pwz2rapx.b-cdn.net/wp-content/uploads/2021/02/HMG_HydrangeaFestival_HighRez_0010-scaled.jpg",
       "source": "Heritage Museums",
+      "credit": "Heritage Museums & Gardens",
       "source_url": "https://heritagemuseumsandgardens.org/mecevents/hydrangea-winter-workshop/?occurrence=2026-11-07",
       "start": "2026-11-07T00:00:00+00:00"
     },
@@ -899,11 +861,12 @@
       "lat": 41.79,
       "lng": -69.99,
       "time": "Sat Nov 7 \u00b7 9:00 AM\u201312:00 PM",
-      "start": "2026-11-07T09:00:00-04:00",
+      "start": "2026-11-07T09:00:00-05:00",
       "info": "Local produce, baked goods, flowers & more.",
       "price": "Free",
-      "source": "Totally Cape Cod",
-      "source_url": "",
+      "source": "Orleans Farmers Market",
+      "credit": "Orleans Farmers Market",
+      "source_url": "https://www.orleansfarmersmarket.org",
       "img": null
     },
     {
@@ -920,6 +883,7 @@
       "lng": -70.0492,
       "img": "https://payomet.org/wp-content/uploads/2026/09/WalterParks-860x562-1.webp",
       "source": "Payomet",
+      "credit": "Payomet Performing Arts Center",
       "source_url": "https://payomet.org/calendar/walter-parks-the-unlawful-assembly-featuring-vance-gilbert/",
       "start": "2026-11-08T17:00:00+00:00"
     },
@@ -937,6 +901,7 @@
       "lng": -70.0492,
       "img": "https://payomet.org/wp-content/uploads/2026/10/Circus-Classes_Open-Skills-for-Ages-7\u201312.webp",
       "source": "Payomet",
+      "credit": "Payomet Performing Arts Center",
       "source_url": "https://payomet.org/calendar/circus-classes-open-skills-for-ages-7-12-9/",
       "start": "2026-11-10T16:15:00+00:00"
     },
@@ -954,7 +919,26 @@
       "lng": -69.974,
       "img": null,
       "source": "Eastham",
+      "credit": "Eastham Chamber of Commerce",
       "source_url": "https://members.easthamchamber.com/events/details/the-hundred-aker-wood-5937",
+      "start": "2026-11-12T00:00:00+00:00"
+    },
+    {
+      "id": "holiday-floral-arranging-join-chatham-bars-inn-s-fine-garden",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Thu Nov 12",
+      "title": "Holiday Floral Arranging Join Chatham Bars Inn\u2019s Fine Gardener Pam Vasques to design your very own holiday floral arrangement! Leave with new skills and your floral creation to take hom",
+      "venue": "",
+      "town": "Chatham",
+      "info": "",
+      "price": "",
+      "lat": 41.6815,
+      "lng": -69.9597,
+      "img": null,
+      "source": "Chatham",
+      "credit": "Chatham Chamber of Commerce",
+      "source_url": "https://business.chathaminfo.com/events/details/holiday-floral-arranging-32878",
       "start": "2026-11-12T00:00:00+00:00"
     },
     {
@@ -971,6 +955,7 @@
       "lng": -70.078,
       "img": null,
       "source": "Harwich",
+      "credit": "Harwich Chamber of Commerce",
       "source_url": "https://business.harwichcc.com/events/details/winter-birds-of-nantucket-sound-25891",
       "start": "2026-11-12T00:00:00+00:00"
     },
@@ -988,7 +973,26 @@
       "lng": -70.2828,
       "img": null,
       "source": "Hyannis",
+      "credit": "Hyannis Area Chamber of Commerce",
       "source_url": "https://business.hyannis.com/events/details/history-on-tap-restoring-cranberry-bogs-to-natural-conditions-4051",
+      "start": "2026-11-12T00:00:00+00:00"
+    },
+    {
+      "id": "alex-torres-his-latin-orchestra-at-the-cultural-center-of-ca",
+      "tag": "\ud83c\udfb5 LIVE MUSIC",
+      "category": "music",
+      "time": "Thu Nov 12",
+      "title": "Alex Torres & His Latin Orchestra at the Cultural Center of Cape Cod Nov. 12",
+      "venue": "",
+      "town": "Hyannis",
+      "info": "",
+      "price": "",
+      "lat": 41.652,
+      "lng": -70.2828,
+      "img": null,
+      "source": "Hyannis",
+      "credit": "Hyannis Area Chamber of Commerce",
+      "source_url": "https://business.hyannis.com/events/details/alex-torres-his-latin-orchestra-at-the-cultural-center-of-cape-cod-nov-12-4104",
       "start": "2026-11-12T00:00:00+00:00"
     },
     {
@@ -1005,6 +1009,7 @@
       "lng": -70.0492,
       "img": "https://payomet.org/wp-content/uploads/2026/10/Circus-Classes-__-Performance-Youth-Troupe-for-Ages-7\u201318.webp",
       "source": "Payomet",
+      "credit": "Payomet Performing Arts Center",
       "source_url": "https://payomet.org/calendar/circus-classes-youth-performance-troupe-3/",
       "start": "2026-11-12T16:30:00+00:00"
     },
@@ -1022,6 +1027,7 @@
       "lng": -69.974,
       "img": null,
       "source": "Eastham",
+      "credit": "Eastham Chamber of Commerce",
       "source_url": "https://members.easthamchamber.com/events/details/the-hundred-aker-wood-11-13-2026-5983",
       "start": "2026-11-13T00:00:00+00:00"
     },
@@ -1039,6 +1045,7 @@
       "lng": -70.0492,
       "img": "https://payomet.org/wp-content/uploads/2026/10/CIRCUS-CLASSES_LITTLE-LIONS.webp",
       "source": "Payomet",
+      "credit": "Payomet Performing Arts Center",
       "source_url": "https://payomet.org/calendar/circus-classes-little-lions-for-ages-3-4-9/",
       "start": "2026-11-13T15:30:00+00:00"
     },
@@ -1056,25 +1063,9 @@
       "lng": -70.0492,
       "img": "https://payomet.org/wp-content/uploads/2026/10/CIRCUS-CLASSES-TINY-TENT.webp",
       "source": "Payomet",
+      "credit": "Payomet Performing Arts Center",
       "source_url": "https://payomet.org/calendar/circus-classes-tiny-tent-for-ages-5-6-3/",
       "start": "2026-11-13T16:30:00+00:00"
-    },
-    {
-      "id": "live-music-with-flydown-20261113",
-      "tag": "\ud83c\udfb5 LIVE MUSIC",
-      "category": "music",
-      "time": "Fri Nov 13 \u00b7 6:00 PM",
-      "title": "Live Music With Flydown!",
-      "venue": "Cape Cod Beer",
-      "town": "Hyannis",
-      "info": "",
-      "price": "",
-      "lat": 41.652,
-      "lng": -70.2828,
-      "img": "https://capecodbeer.com/wp-content/uploads/flydown-eb.png",
-      "source": "Cape Cod Beer",
-      "source_url": "https://capecodbeer.com/event/live-music-with-flydown/",
-      "start": "2026-11-13T18:00:00+00:00"
     },
     {
       "id": "making-movies-20261113",
@@ -1090,6 +1081,7 @@
       "lng": -70.0492,
       "img": "https://payomet.org/wp-content/uploads/2026/10/MakingMovies-860x562-1.webp",
       "source": "Payomet",
+      "credit": "Payomet Performing Arts Center",
       "source_url": "https://payomet.org/calendar/making-movies-2/",
       "start": "2026-11-13T19:00:00+00:00"
     },
@@ -1107,6 +1099,7 @@
       "lng": -69.974,
       "img": null,
       "source": "Eastham",
+      "credit": "Eastham Chamber of Commerce",
       "source_url": "https://members.easthamchamber.com/events/details/the-hundred-aker-wood-6006",
       "start": "2026-11-14T00:00:00+00:00"
     },
@@ -1124,6 +1117,7 @@
       "lng": -70.2828,
       "img": null,
       "source": "Hyannis",
+      "credit": "Hyannis Area Chamber of Commerce",
       "source_url": "https://business.hyannis.com/events/details/2026-state-of-wellfleet-harbor-conference-4102",
       "start": "2026-11-14T00:00:00+00:00"
     },
@@ -1137,11 +1131,12 @@
       "lat": 41.79,
       "lng": -69.99,
       "time": "Sat Nov 14 \u00b7 9:00 AM\u201312:00 PM",
-      "start": "2026-11-14T09:00:00-04:00",
+      "start": "2026-11-14T09:00:00-05:00",
       "info": "Local produce, baked goods, flowers & more.",
       "price": "Free",
-      "source": "Totally Cape Cod",
-      "source_url": "",
+      "source": "Orleans Farmers Market",
+      "credit": "Orleans Farmers Market",
+      "source_url": "https://www.orleansfarmersmarket.org",
       "img": null
     },
     {
@@ -1158,25 +1153,9 @@
       "lng": -70.0492,
       "img": "https://payomet.org/wp-content/uploads/2026/10/MakingMovies-860x562-1.webp",
       "source": "Payomet",
+      "credit": "Payomet Performing Arts Center",
       "source_url": "https://payomet.org/calendar/making-movies/",
       "start": "2026-11-14T18:00:00+00:00"
-    },
-    {
-      "id": "live-music-with-boston-naturals-20261114",
-      "tag": "\ud83c\udfb5 LIVE MUSIC",
-      "category": "music",
-      "time": "Sat Nov 14 \u00b7 7:00 PM",
-      "title": "Live Music With Boston Naturals!",
-      "venue": "Cape Cod Beer",
-      "town": "Hyannis",
-      "info": "",
-      "price": "",
-      "lat": 41.652,
-      "lng": -70.2828,
-      "img": "https://capecodbeer.com/wp-content/uploads/Live-Music-Graphics-10-1.png",
-      "source": "Cape Cod Beer",
-      "source_url": "https://capecodbeer.com/event/live-music-with-boston-naturals-6/",
-      "start": "2026-11-14T19:00:00+00:00"
     },
     {
       "id": "the-hundred-aker-wood-20261115",
@@ -1192,6 +1171,7 @@
       "lng": -69.974,
       "img": null,
       "source": "Eastham",
+      "credit": "Eastham Chamber of Commerce",
       "source_url": "https://members.easthamchamber.com/events/details/the-hundred-aker-wood-6011",
       "start": "2026-11-15T00:00:00+00:00"
     }
