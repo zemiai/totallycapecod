@@ -1481,7 +1481,8 @@ function renderLens() {
   const now = new Date();
   const mmdd = String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
   const inWin = w => !w || (w.from <= w.to ? (mmdd >= w.from && mmdd <= w.to) : (mmdd >= w.from || mmdd <= w.to));
-  const pool = (d.photos || []).filter(p => p.gallery !== false && p.post && p.post.rotation && inWin(p.post.window));
+  // Photo of the Week spotlights local photographers (permission photos), not the NPS public-domain set.
+  const pool = (d.photos || []).filter(p => p.gallery !== false && p.post && p.post.rotation && inWin(p.post.window) && (people[p.photographer] || {}).license !== 'public-domain');
   if (!pool.length) { el.innerHTML = ''; return; }
   const week = Math.floor((now - new Date(now.getFullYear(), 0, 1)) / 604800000);
   const p = pool[week % pool.length]; const by = people[p.photographer] || {};

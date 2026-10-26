@@ -22,9 +22,9 @@ from datetime import timedelta
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from post_facebook import (SOCIAL, DATA, PHOTO_TAGS, now_et, weekday_et,
+from post_facebook import (SOCIAL, DATA, ROOT, now_et, weekday_et,
                            events_on, evening_events, plausible_time, clock_of,
-                           dedupe_by_title)
+                           dedupe_by_title, scenery_pool)
 from lib.season import is_offseason
 
 W, H = 1080, 1920
@@ -55,12 +55,36 @@ def wrap(s: str, width: int = 22, max_lines: int = 3) -> list[str]:
     return lines
 
 
-def photos(n: int) -> list[Path]:
-    pool = sorted(p for p in (SOCIAL / f for f in PHOTO_TAGS) if p.exists())
+def photos(n: int) -> list[dict]:
+    """n photos from the Cape-Cod-scenery-only pool (no people), rotating by day of year.
+    Each item is a pool dict (file + credit info); credits go into the captions."""
+    pool = sorted(scenery_pool(), key=lambda ph: ph["id"])
     if not pool:
-        sys.exit("no photos in img/social — nothing to build a reel from")
+        sys.exit("no photos available — nothing to build a reel from")
     doy = now_et().timetuple().tm_yday
-    return [pool[(doy + i) % len(pool)] for i in range(n)]
+    start = (doy * 7) % len(pool)
+    return [pool[(start + i) % len(pool)] for i in range(n)]
+
+
+def reel_credits(pics: list[dict]) -> str:
+    """One credit line naming everyone whose photo appears in the reel."""
+    perm, pd_names, has_pd = [], [], False
+    for ph in pics:
+        by = ph.get("_by") or {}
+        if not by:
+            continue                                   # founder's own photo
+        if by.get("license") == "public-domain":
+            has_pd = True
+            c = ph.get("credit") or ""
+            nm = c.split("/", 1)[1].strip() if "/" in c else ""
+            if nm and nm not in pd_names:
+                pd_names.append(nm)
+        elif by.get("name") and by["name"] not in perm:
+            perm.append(by["name"])
+    parts = [f"{n} (shared with permission)" for n in perm]
+    if has_pd:
+        parts.append("National Park Service" + (f" ({', '.join(pd_names)})" if pd_names else "") + ", public domain")
+    return ("📸 Photos: " + "; ".join(parts)) if parts else ""
 
 
 def slide(photo: Path, texts: list[tuple[str, int, int, str]], out: Path) -> None:
@@ -131,16 +155,16 @@ def main() -> None:
     parts = []
     try:
         intro = tmp / "s0.mp4"
-        slide(pics[0], [(title, 108, H - 760, FONT),
+        slide(ROOT / pics[0]["file"], [(title, 108, H - 760, FONT),
                         (tagline, 108, H - 620, FONT),
                         (now.strftime("%A, %B %-d"), 48, H - 470, FONT_REG)], intro)
         parts.append(intro)
         for i, e in enumerate(evs, 1):
             p = tmp / f"s{i}.mp4"
-            slide(pics[i], event_slide_texts(e), p)
+            slide(ROOT / pics[i]["file"], event_slide_texts(e), p)
             parts.append(p)
         outro = tmp / "s9.mp4"
-        slide(pics[-1], [("totallycapecod.com", 72, H - 720, FONT),
+        slide(ROOT / pics[-1]["file"], [("totallycapecod.com", 72, H - 720, FONT),
                          ("live events · water temps" if is_offseason() else "live events · beach parking", 46, H - 610, FONT_REG),
                          ("bridge delays · free", 46, H - 540, FONT_REG)], outro)
         parts.append(outro)
@@ -155,8 +179,10 @@ def main() -> None:
 
     lines = [hook, ""] + [f"• {e.get('title','')[:60]} — {e.get('venue') or e.get('town','')}" for e in evs]
     tags = "#CapeCod #CapeCodLife #CapeCodEvents #ThingsToDoCapeCod"
-    fb_caption = "\n".join(lines) + f"\n\nFull list on totallycapecod.com\n\n{tags}"
-    ig_caption = "\n".join(lines) + f"\n\n🔗 totallycapecod.com\n\n{tags} #Reels"
+    credit = reel_credits(pics)
+    credit_block = f"\n\n{credit}" if credit else ""
+    fb_caption = "\n".join(lines) + f"{credit_block}\n\nFull list on totallycapecod.com\n\n{tags}"
+    ig_caption = "\n".join(lines) + f"{credit_block}\n\n🔗 totallycapecod.com\n\n{tags} #Reels"
 
     (DATA / ".reel_manifest.json").write_text(json.dumps({
         "video": f"img/social/{out_mp4.name}", "date": date_iso,

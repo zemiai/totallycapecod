@@ -1,14 +1,23 @@
 {
   "version": "1.0",
-  "updated_at": "2026-10-26T17:20:00Z",
-  "_how_it_works": "Photos from local photographers, used ONLY with their permission. Every use (site, Facebook, Instagram) must show the photographer's name and link back to them. scripts/post_facebook.py rotates these into posts (see 'post' below); scripts/build_photos_page.py builds /photos.html. To add a photographer: get permission in writing first, record it under 'permission', then add their photos here.",
+  "updated_at": "2026-10-26T18:10:00Z",
+  "_how_it_works": "scripts/post_facebook.py rotates every photo with post.rotation=true into Facebook/Instagram posts (least-recently-used first, credit line added automatically); post.occasions maps MM-DD to a holiday post (e.g. 12-25 christmas). scripts/build_photos_page.py builds /photos.html. The app's Photo of the Week uses permission photos only (local photographers).",
   "photographers": {
     "r-marcotte": {
       "name": "R. Marcotte Photography",
       "about": "Landscape photographer based on Cape Cod, MA",
       "facebook": "https://www.facebook.com/rmarcottephotography/",
       "portfolio": "https://rmarcottephotography.mypixieset.com/",
-      "permission": "Granted to Versel Johnson over Facebook Messenger on 2026-10-26 (\"Of course!\"), for use on the site and in posts with credit and a link back."
+      "permission": "Granted to Versel Johnson over Facebook Messenger on 2026-10-26 (\"Of course!\"), for use on the site and in posts with credit and a link back.",
+      "license": "permission"
+    },
+    "nps-caco": {
+      "name": "National Park Service, Cape Cod National Seashore",
+      "short": "NPS",
+      "about": "Public-domain photos from the National Park Service's Cape Cod National Seashore media library",
+      "website": "https://www.nps.gov/caco/learn/photosmultimedia/index.htm",
+      "license": "public-domain",
+      "permission": "Public domain: each photo is marked 'Public domain' (constraint) in the NPS media library (developer.nps.gov multimedia API, checked 2026-10-26). Credited to NPS and the named photographer where given."
     }
   },
   "photos": [
@@ -30,7 +39,10 @@
         "seashore"
       ],
       "post": {
-        "rotation": true
+        "rotation": true,
+        "occasions": {
+          "12-25": "christmas"
+        }
       }
     },
     {
@@ -40,7 +52,7 @@
       "width": 1440,
       "height": 1080,
       "title": "Under the Sandwich Boardwalk",
-      "place": "Sandwich Boardwalk, Sandwich",
+      "place": "Sandwich",
       "alt": "Weathered pilings and cross-braces beneath the Sandwich Boardwalk, with marsh and water beyond",
       "source_url": "https://www.facebook.com/photo/?fbid=560512772177218",
       "photographer_note": "Taken from the mud beneath the boardwalk.",
@@ -74,72 +86,419 @@
       }
     },
     {
-      "id": "rm-jetty-sunset",
-      "photographer": "r-marcotte",
-      "file": "img/photos/r-marcotte/jetty-sunset.jpg",
-      "width": 1440,
-      "height": 1440,
-      "title": "Sunset at the jetty",
-      "place": "",
-      "alt": "Waves washing up a pebbly beach at sunset, with a jetty and its markers silhouetted on the horizon",
-      "source_url": "https://www.facebook.com/photo/?fbid=240742624154236",
-      "photographer_note": "",
+      "id": "nps-nauset-light-beach-early-morning",
+      "photographer": "nps-caco",
+      "credit": "NPS / Brittni Connell",
+      "file": "img/photos/nps/nauset-light-beach-early-morning.jpg",
+      "width": 1600,
+      "height": 1200,
+      "title": "Early morning at Nauset Light Beach",
+      "place": "Nauset Light Beach, Eastham",
+      "alt": "The sun rising over Nauset Light Beach, with a lifeguard chair on the empty sand",
+      "source_url": "https://www.nps.gov/media/photo/gallery-item.htm?pg=1&id=4C22F193-48CB-4116-BE05-F2C625C94D2A&gid=75E67DCE-78B9-4E4E-97FE-DB40B675075E",
+      "nps_title": "Early morning at Nauset Light Beach",
       "tags": [
-        "sunset",
         "beach",
-        "jetty"
+        "sunrise",
+        "eastham"
       ],
       "post": {
         "rotation": true
       }
     },
     {
-      "id": "rm-snow-day",
-      "photographer": "r-marcotte",
-      "file": "img/photos/r-marcotte/snow-day.jpg",
-      "width": 1440,
-      "height": 1440,
-      "title": "Snow day",
-      "place": "",
-      "alt": "An orange snow shovel standing in fresh snow against a snow-crusted garage",
-      "source_url": "https://www.facebook.com/photo/?fbid=475707453991084",
-      "photographer_note": "The photographer was excited about the snow that day.",
+      "id": "nps-nauset-light-beach-sunrise",
+      "photographer": "nps-caco",
+      "credit": "NPS photo",
+      "file": "img/photos/nps/nauset-light-beach-sunrise.jpg",
+      "width": 1600,
+      "height": 1098,
+      "title": "Sunrise at Nauset Light Beach",
+      "place": "Nauset Light Beach, Eastham",
+      "alt": "The sun rising over the Atlantic, seen past a dune fence at Nauset Light Beach",
+      "source_url": "https://www.nps.gov/media/photo/gallery-item.htm?pg=1&id=6895FF38-6C62-4723-BA69-24FE3E971B82&gid=0D932194-8D61-437E-97BE-E7F974EE1A6B",
+      "nps_title": "Nauset Light Beach",
       "tags": [
-        "snow",
-        "winter"
+        "beach",
+        "sunrise",
+        "eastham"
       ],
       "post": {
-        "rotation": true,
-        "window": {
-          "from": "12-01",
-          "to": "03-15"
-        }
+        "rotation": true
       }
     },
     {
-      "id": "rm-christmas-lights",
-      "photographer": "r-marcotte",
-      "file": "img/photos/r-marcotte/christmas-lights.jpg",
-      "width": 1440,
-      "height": 1578,
-      "title": "Christmas lights",
-      "place": "Providence, RI",
-      "alt": "Strings of colorful Christmas lights glowing along a railing at night",
-      "source_url": "https://www.facebook.com/photo/?fbid=454862146075615",
-      "photographer_note": "Posted with \"Merry Christmas to all.\"",
+      "id": "nps-marconi-beach",
+      "photographer": "nps-caco",
+      "credit": "NPS / Brittni Connell",
+      "file": "img/photos/nps/marconi-beach.jpg",
+      "width": 1600,
+      "height": 1200,
+      "title": "Marconi Beach",
+      "place": "Marconi Beach, Wellfleet",
+      "alt": "A wide sandy beach below a tall sand cliff, with surf rolling in",
+      "source_url": "https://www.nps.gov/media/photo/gallery-item.htm?pg=1&id=40024AE7-5F9B-4E92-B8B8-BD3CA0375767&gid=75E67DCE-78B9-4E4E-97FE-DB40B675075E",
+      "nps_title": "Marconi Beach",
       "tags": [
-        "christmas",
-        "holiday"
+        "beach",
+        "cliffs",
+        "wellfleet"
       ],
       "post": {
-        "rotation": false,
-        "dates": [
-          "12-25"
-        ],
-        "occasion": "christmas"
-      },
-      "gallery": false,
-      "internal_note": "Taken in Providence, RI: never caption it as Cape Cod."
+        "rotation": true
+      }
+    },
+    {
+      "id": "nps-marconi-site-ocean-view",
+      "photographer": "nps-caco",
+      "credit": "NPS / Brittni Connell",
+      "file": "img/photos/nps/marconi-site-ocean-view.jpg",
+      "width": 1600,
+      "height": 845,
+      "title": "Ocean view from the Marconi Site",
+      "place": "Marconi Site, Wellfleet",
+      "alt": "Blue ocean beyond a wooden fence and green shrubs on the dunes",
+      "source_url": "https://www.nps.gov/media/photo/gallery-item.htm?pg=1&id=C2CB9EBB-86D3-401E-B062-1CA33707C6DF&gid=75E67DCE-78B9-4E4E-97FE-DB40B675075E",
+      "nps_title": "Ocean view from Marconi Site",
+      "tags": [
+        "ocean",
+        "dunes",
+        "wellfleet"
+      ],
+      "post": {
+        "rotation": true
+      }
+    },
+    {
+      "id": "nps-truro-dunes",
+      "photographer": "nps-caco",
+      "credit": "NPS photo",
+      "file": "img/photos/nps/truro-dunes.jpg",
+      "width": 1600,
+      "height": 1200,
+      "title": "Truro dunes",
+      "place": "Truro",
+      "alt": "Beige sand dunes rolling toward the water under drifting white clouds",
+      "source_url": "https://www.nps.gov/media/photo/gallery-item.htm?pg=1&id=225AD6B5-1DD8-B71B-0B5F-20D701B873D3&gid=20766416-1DD8-B71B-0B97-8DAD51401DC6",
+      "nps_title": "Truro Dunes",
+      "tags": [
+        "dunes",
+        "truro"
+      ],
+      "post": {
+        "rotation": true
+      }
+    },
+    {
+      "id": "nps-province-lands-dunes",
+      "photographer": "nps-caco",
+      "credit": "NPS photo",
+      "file": "img/photos/nps/province-lands-dunes.jpg",
+      "width": 1080,
+      "height": 810,
+      "title": "Province Lands dunes",
+      "place": "Province Lands, Provincetown",
+      "alt": "Sand dunes and low green scrub in the Province Lands",
+      "source_url": "https://www.nps.gov/media/photo/gallery-item.htm?pg=1&id=C114D373-155D-451F-674A-A51168C20317&gid=75E67DCE-78B9-4E4E-97FE-DB40B675075E",
+      "nps_title": "Province Lands dunes",
+      "tags": [
+        "dunes",
+        "provincetown"
+      ],
+      "post": {
+        "rotation": true
+      }
+    },
+    {
+      "id": "nps-compass-grass",
+      "photographer": "nps-caco",
+      "credit": "NPS photo",
+      "file": "img/photos/nps/compass-grass.jpg",
+      "width": 1600,
+      "height": 1067,
+      "title": "Compass grass",
+      "place": "Cape Cod National Seashore",
+      "alt": "Blades of beach grass bending in the wind and tracing circles in the sand",
+      "source_url": "https://www.nps.gov/media/photo/gallery-item.htm?pg=1&id=20D60A7A-1DD8-B71B-0BA7-9DFB646A3CFB&gid=20766416-1DD8-B71B-0B97-8DAD51401DC6",
+      "nps_title": "Compass Grass",
+      "tags": [
+        "dunes",
+        "nature"
+      ],
+      "post": {
+        "rotation": true
+      }
+    },
+    {
+      "id": "nps-atlantic-surf-evening",
+      "photographer": "nps-caco",
+      "credit": "NPS photo",
+      "file": "img/photos/nps/atlantic-surf-evening.jpg",
+      "width": 1440,
+      "height": 1038,
+      "title": "Atlantic surf in the evening",
+      "place": "Cape Cod National Seashore",
+      "alt": "The sky fading from blue to pink as small waves break on the beach",
+      "source_url": "https://www.nps.gov/media/photo/gallery-item.htm?pg=1&id=C0FEE5F1-155D-451F-67EF-853372D4EEAA&gid=75E67DCE-78B9-4E4E-97FE-DB40B675075E",
+      "nps_title": "Atlantic Surf in the Evening",
+      "tags": [
+        "ocean",
+        "sunset"
+      ],
+      "post": {
+        "rotation": true
+      }
+    },
+    {
+      "id": "nps-atlantic-surf-misty-morning",
+      "photographer": "nps-caco",
+      "credit": "NPS photo",
+      "file": "img/photos/nps/atlantic-surf-misty-morning.jpg",
+      "width": 1600,
+      "height": 1184,
+      "title": "Atlantic surf on a misty morning",
+      "place": "Cape Cod National Seashore",
+      "alt": "Waves breaking along the beach on a misty morning",
+      "source_url": "https://www.nps.gov/media/photo/gallery-item.htm?pg=1&id=C0FB4284-155D-451F-6705-41D1D8F1909A&gid=75E67DCE-78B9-4E4E-97FE-DB40B675075E",
+      "nps_title": "Atlantic Surf in the Morning",
+      "tags": [
+        "ocean",
+        "morning"
+      ],
+      "post": {
+        "rotation": true
+      }
+    },
+    {
+      "id": "nps-great-island-trail",
+      "photographer": "nps-caco",
+      "credit": "NPS photo",
+      "file": "img/photos/nps/great-island-trail.jpg",
+      "width": 1080,
+      "height": 810,
+      "title": "Great Island Trail",
+      "place": "Great Island Trail, Wellfleet",
+      "alt": "A trail through pines overlooking marsh and water at Great Island",
+      "source_url": "https://www.nps.gov/media/photo/gallery-item.htm?pg=1&id=C116186C-155D-451F-67FE-808A2A97D8E5&gid=75E67DCE-78B9-4E4E-97FE-DB40B675075E",
+      "nps_title": "Great Island Trail",
+      "tags": [
+        "trail",
+        "marsh",
+        "wellfleet"
+      ],
+      "post": {
+        "rotation": true
+      }
+    },
+    {
+      "id": "nps-old-harbor-life-saving-station",
+      "photographer": "nps-caco",
+      "credit": "NPS photo",
+      "file": "img/photos/nps/old-harbor-life-saving-station.jpg",
+      "width": 1440,
+      "height": 1080,
+      "title": "Old Harbor Life-Saving Station",
+      "place": "Provincetown",
+      "alt": "The shingled Old Harbor Life-Saving Station in the dunes on a clear day",
+      "source_url": "https://www.nps.gov/media/photo/gallery-item.htm?pg=1&id=C103662F-155D-451F-6752-4F2605DF30BC&gid=75E67DCE-78B9-4E4E-97FE-DB40B675075E",
+      "nps_title": "Old Harbor Life-Saving Station",
+      "tags": [
+        "history",
+        "dunes",
+        "provincetown"
+      ],
+      "post": {
+        "rotation": true
+      }
+    },
+    {
+      "id": "nps-old-harbor-station-in-the-mist",
+      "photographer": "nps-caco",
+      "credit": "NPS photo",
+      "file": "img/photos/nps/old-harbor-station-in-the-mist.jpg",
+      "width": 1440,
+      "height": 944,
+      "title": "Old Harbor Life-Saving Station in the mist",
+      "place": "Provincetown",
+      "alt": "The Old Harbor Life-Saving Station in the dunes, shrouded in fog",
+      "source_url": "https://www.nps.gov/media/photo/gallery-item.htm?pg=1&id=C0F8CAF1-155D-451F-674E-9BBC35FD0FBD&gid=75E67DCE-78B9-4E4E-97FE-DB40B675075E",
+      "nps_title": "Old Harbor Life-Saving Station in the Mist",
+      "tags": [
+        "history",
+        "fog",
+        "provincetown"
+      ],
+      "post": {
+        "rotation": true
+      }
+    },
+    {
+      "id": "nps-race-point-light-from-hatches-harbor",
+      "photographer": "nps-caco",
+      "credit": "NPS photo",
+      "file": "img/photos/nps/race-point-light-from-hatches-harbor.jpg",
+      "width": 1440,
+      "height": 1080,
+      "title": "Race Point Light from Hatches Harbor",
+      "place": "Hatches Harbor, Provincetown",
+      "alt": "Race Point Light on the horizon beyond the green salt marsh of Hatches Harbor",
+      "source_url": "https://www.nps.gov/media/photo/gallery-item.htm?pg=1&id=C105B7E3-155D-451F-678A-0ABE0DA744D5&gid=75E67DCE-78B9-4E4E-97FE-DB40B675075E",
+      "nps_title": "Race Point Light from Hatches Harbor, Provincetown",
+      "tags": [
+        "lighthouse",
+        "marsh",
+        "provincetown"
+      ],
+      "post": {
+        "rotation": true
+      }
+    },
+    {
+      "id": "nps-race-point-light",
+      "photographer": "nps-caco",
+      "credit": "NPS photo",
+      "file": "img/photos/nps/race-point-light.jpg",
+      "width": 1024,
+      "height": 768,
+      "title": "Race Point Light",
+      "place": "Provincetown",
+      "alt": "Race Point Light and its keeper’s house among the dunes",
+      "source_url": "https://www.nps.gov/media/photo/gallery-item.htm?pg=1&id=C129DB19-155D-451F-67FD-CA1B4D31E536&gid=C1241C08-155D-451F-67AE-6981D9528E80",
+      "nps_title": "Race Point Light, Provincetown",
+      "tags": [
+        "lighthouse",
+        "provincetown"
+      ],
+      "post": {
+        "rotation": true
+      }
+    },
+    {
+      "id": "nps-race-point-light-sunset",
+      "photographer": "nps-caco",
+      "credit": "NPS photo",
+      "file": "img/photos/nps/race-point-light-sunset.jpg",
+      "width": 1024,
+      "height": 768,
+      "title": "Race Point Light at sunset",
+      "place": "Provincetown",
+      "alt": "The keeper’s house and Race Point Light glowing pink at sunset",
+      "source_url": "https://www.nps.gov/media/photo/gallery-item.htm?pg=1&id=C12B6458-155D-451F-672A-10D9833FE6A7&gid=C1241C08-155D-451F-67AE-6981D9528E80",
+      "nps_title": "Race Point Light, Provincetown",
+      "tags": [
+        "lighthouse",
+        "sunset",
+        "provincetown"
+      ],
+      "post": {
+        "rotation": true
+      }
+    },
+    {
+      "id": "nps-highland-light",
+      "photographer": "nps-caco",
+      "credit": "NPS photo",
+      "file": "img/photos/nps/highland-light.jpg",
+      "width": 1440,
+      "height": 1080,
+      "title": "Highland Light",
+      "place": "Truro",
+      "alt": "Highland Light’s white tower and keeper’s house under a blue sky",
+      "source_url": "https://www.nps.gov/media/photo/gallery-item.htm?pg=1&id=C107266C-155D-451F-677C-0FA7926A36CC&gid=C0F8CA5C-155D-451F-67F6-A876A8DE3C24",
+      "nps_title": "Highland Light",
+      "tags": [
+        "lighthouse",
+        "truro"
+      ],
+      "post": {
+        "rotation": true
+      }
+    },
+    {
+      "id": "nps-three-sisters-lighthouses",
+      "photographer": "nps-caco",
+      "credit": "NPS photo",
+      "file": "img/photos/nps/three-sisters-lighthouses.jpg",
+      "width": 1024,
+      "height": 685,
+      "title": "The Three Sisters lighthouses",
+      "place": "Eastham",
+      "alt": "The Three Sisters lighthouses on a green lawn among trees",
+      "source_url": "https://www.nps.gov/media/photo/gallery-item.htm?pg=1&id=C1255287-155D-451F-670B-F7B8AC9BFBE6&gid=C1241C08-155D-451F-67AE-6981D9528E80",
+      "nps_title": "Three Sisters lighthouses, Eastham",
+      "tags": [
+        "lighthouse",
+        "eastham"
+      ],
+      "post": {
+        "rotation": true
+      }
+    },
+    {
+      "id": "nps-hatches-harbor",
+      "photographer": "nps-caco",
+      "credit": "NPS / Brittni Connell",
+      "file": "img/photos/nps/hatches-harbor.jpg",
+      "width": 1600,
+      "height": 1071,
+      "title": "Hatches Harbor",
+      "place": "Hatches Harbor, Provincetown",
+      "alt": "Calm water winding through the salt marsh at Hatches Harbor",
+      "source_url": "https://www.nps.gov/media/photo/gallery-item.htm?pg=1&id=DB1061E6-FF72-42C8-AF13-012FA9A5C33C&gid=75E67DCE-78B9-4E4E-97FE-DB40B675075E",
+      "nps_title": "Hatches Harbor",
+      "tags": [
+        "marsh",
+        "provincetown"
+      ],
+      "post": {
+        "rotation": true
+      }
+    },
+    {
+      "id": "nps-hatches-harbor-creek",
+      "photographer": "nps-caco",
+      "credit": "NPS / Brittni Connell",
+      "file": "img/photos/nps/hatches-harbor-creek.jpg",
+      "width": 1600,
+      "height": 1071,
+      "title": "Hatches Harbor creek",
+      "place": "Hatches Harbor, Provincetown",
+      "alt": "A tidal creek cutting through tall green marsh grass",
+      "source_url": "https://www.nps.gov/media/photo/gallery-item.htm?pg=1&id=87591E14-23F3-427F-87A9-5F9501923567&gid=75E67DCE-78B9-4E4E-97FE-DB40B675075E",
+      "nps_title": "Hatches Harbor",
+      "tags": [
+        "marsh",
+        "provincetown"
+      ],
+      "post": {
+        "rotation": true
+      }
+    },
+    {
+      "id": "nps-gull-pond-water-lily",
+      "photographer": "nps-caco",
+      "credit": "NPS photo",
+      "file": "img/photos/nps/gull-pond-water-lily.jpg",
+      "width": 1600,
+      "height": 1600,
+      "title": "Water lily on Gull Pond",
+      "place": "Gull Pond",
+      "alt": "A yellow water lily rising above lily pads on Gull Pond",
+      "source_url": "https://www.nps.gov/media/photo/gallery-item.htm?pg=1&id=1B6CB279-4D31-43FD-B452-F8CF631AC4C0&gid=F11ED413-DF33-43C0-8E79-6FAD220ACCB5",
+      "nps_title": "Plant life on Gull Pond",
+      "tags": [
+        "pond",
+        "nature"
+      ],
+      "post": {
+        "rotation": true
+      }
     }
+  ],
+  "_rules": [
+    "Only real Cape Cod scenery. No photos with people in them, not even distant beachgoers.",
+    "Only photos we may use: written permission from the photographer (recorded under 'permission') or public domain.",
+    "Always credit: the photographer's name (or 'NPS / name') plus a link to the original or their page, everywhere the photo appears.",
+    "Never caption a photo with a place it wasn't taken. If the location isn't known, don't use it."
   ]
 }

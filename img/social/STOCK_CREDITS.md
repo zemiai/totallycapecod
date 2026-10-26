@@ -1,5 +1,12 @@
 # Social stock photos — licensing
 
+> **Retired from posts and reels (Oct 26, 2026).** House rule: posts use only real Cape Cod
+> scenery with no people in the shot. The Pexels shots below aren't verifiably Cape Cod (and
+> two show people), and the founder's dusk beach shot has beachgoers in frame, so none of them
+> are in the rotation anymore. Files are kept for the record. Current photo sources:
+> `scripts/post_facebook.py` → `PHOTO_TAGS` (founder's Nauset Light shots) and `data/photos.json`
+> (local photographers with permission + public-domain National Park Service photos, always credited).
+
 These hand-picked Cape-Cod-looking photos rotate through the social poster's
 image pool (`scripts/post_facebook.py` → `pick_image()` picks any non-date-named
 image here by day-of-year).

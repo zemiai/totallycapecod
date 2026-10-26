@@ -66,25 +66,15 @@ DRY_RUN = os.environ.get("DRY_RUN", "") == "1"
 FORCE = os.environ.get("FORCE", "") == "1"
 
 # ---------------------------------------------------------------- photo pool --
-# Curated Cape photos in img/social/ (Pexels, free commercial — STOCK_CREDITS.md),
-# tagged so each format gets an on-topic image. Day-of-year rotation keeps variety.
+# Founder photos in img/social/ (see STOCK_CREDITS.md). Credited photos live in
+# data/photos.json — see scenery_pool()/pick_photo() below.
 PHOTO_TAGS = {
-    # Founder-shot originals (Nauset Light Beach, Eastham — no license needed).
-    # Dusk/evening mood: weighted toward the sunset + evening + gem slots.
-    "nauset-light-beach-dusk.jpg": {"beach", "sunset", "family"},
+    # Founder-shot originals (Nauset Light Beach, Eastham — no license needed). House rule
+    # (Oct 2026): real Cape Cod scenery only, no people — so the Pexels stock shots and the
+    # dusk beach shot (beachgoers in frame) are retired from posts and reels.
     "nauset-light-red-beacon.jpg": {"sunset", "gem", "question"},
     "nauset-light-glow.jpg":       {"sunset", "gem", "events"},
     "nauset-light-bluff.jpg":      {"gem", "question"},
-    "beach-dunes.jpg":       {"beach"},
-    "beach-umbrella.jpg":    {"beach", "sunset"},
-    "cape-beach-grass.jpg":  {"beach", "gem"},
-    "cape-sunset-heart.jpg": {"sunset", "question"},
-    "coastal-cottage.jpg":   {"town", "gem", "question"},
-    "kids-at-shore.jpg":     {"beach", "family"},
-    "oysters.jpg":           {"food", "events", "question"},
-    "pier-sunset.jpg":       {"beach", "sunset"},
-    "sunset-water.jpg":      {"sunset", "events"},
-    "whale-watch-fluke.jpg": {"gem", "events", "family"},
 }
 
 def now_et() -> datetime:
@@ -207,7 +197,7 @@ def fmt_fireworks(evs: list[dict]):
         lines.append(ev_line(e))
         if e.get("town"):
             towns.append(e["town"])
-    lines += ["", "Tag who you're taking. 🇺🇸"]
+    lines += ["", "Tag who you're taking." + (" 🇺🇸" if now_et().month == 7 else "")]
     tags = base_tags() + ["#Fireworks", "#CapeCodEvents"] + [hashtag(t) for t in towns[:2]]
     return lines, FIREWORKS_IMG, "fireworks", tags
 
@@ -488,13 +478,13 @@ def fmt_evening():
 MORNING_FORMATS = {0: fmt_beach_pick, 1: fmt_tonight, 2: fmt_question,
                    3: fmt_gem, 4: fmt_weekend, 5: fmt_report_ask, 6: fmt_sunset}
 
-# ------------------------------------------------- local photographers' work --
-# data/photos.json: photos shared WITH PERMISSION by local photographers. Every post that
-# uses one carries a full credit line + link back. Christmas-type photos are reserved for
-# their date (post.dates, MM-DD); the rest rotate into morning posts on Tue/Thu/Sat, never
-# reusing a photo within PHOTO_REUSE_DAYS.
-PHOTO_DAYS = {1, 3, 5}          # Tue, Thu, Sat (Mon=0)
-PHOTO_REUSE_DAYS = 21
+# --------------------------------------------------------- photos for posts --
+# House rule (Oct 2026): posts use ONLY real Cape Cod scenery with NO people in the shot.
+# The pool = the founder's own Nauset Light shots (PHOTO_TAGS, no credit needed) + every
+# data/photos.json photo with post.rotation (local photographers who gave permission, and
+# public-domain National Park Service photos). Least-recently-used goes first so the feed
+# doesn't repeat; any photo that isn't the founder's gets a full credit line automatically.
+# post.occasions maps MM-DD -> a holiday post (e.g. "12-25": "christmas").
 
 def _in_window(mmdd: str, win: dict | None) -> bool:
     if not win:
@@ -502,70 +492,104 @@ def _in_window(mmdd: str, win: dict | None) -> bool:
     a, b = win.get("from", "01-01"), win.get("to", "12-31")
     return a <= mmdd <= b if a <= b else (mmdd >= a or mmdd <= b)
 
-def credited_photo(mode: str, state: dict) -> dict | None:
-    if os.environ.get("TCC_NO_CREDITED_PHOTO") == "1":
-        return None
+def _mmdd() -> str:
+    return os.environ.get("TCC_FAKE_MMDD", "") or now_et().strftime("%m-%d")
+
+def scenery_pool() -> list[dict]:
+    """Every photo the posters may use, as dicts with id/file/title/place and _by (credit info)."""
+    pool = [{"id": f"founder:{f}", "file": f"img/social/{f}", "title": "", "place": "", "_by": None}
+            for f in sorted(PHOTO_TAGS) if (SOCIAL / f).exists()]
     data = load("photos.json") or {}
-    photos, people = data.get("photos") or [], data.get("photographers") or {}
-    now = now_et()
-    mmdd = os.environ.get("TCC_FAKE_MMDD", "") or now.strftime("%m-%d")
-    for ph in photos:                                   # dated occasions win (morning post)
-        if mode == "morning" and mmdd in (ph.get("post") or {}).get("dates", []):
-            return {**ph, "_by": people.get(ph["photographer"], {})}
-    if mode != "morning" or weekday_et() not in PHOTO_DAYS:
-        return None
-    used = state.get("photo_last_used") or {}
-    def days_since(pid):
-        try:
-            return (now.date() - datetime.strptime(used[pid], "%Y-%m-%d").date()).days
-        except Exception:
-            return 10**6
-    pool = [ph for ph in photos
-            if (ph.get("post") or {}).get("rotation") and _in_window(mmdd, (ph.get("post") or {}).get("window"))
-            and (ROOT / ph["file"]).exists() and days_since(ph["id"]) >= PHOTO_REUSE_DAYS]
+    people = data.get("photographers") or {}
+    mmdd = _mmdd()
+    for ph in data.get("photos") or []:
+        post = ph.get("post") or {}
+        if post.get("rotation") and _in_window(mmdd, post.get("window")) and (ROOT / ph["file"]).exists():
+            pool.append({**ph, "_by": people.get(ph.get("photographer"), {})})
+    return pool
+
+def pick_photo(mode: str, state: dict) -> dict | None:
+    data = load("photos.json") or {}
+    people = data.get("photographers") or {}
+    mmdd = _mmdd()
+    if mode == "morning":                                  # dated occasions win
+        for ph in data.get("photos") or []:
+            occ = ((ph.get("post") or {}).get("occasions") or {}).get(mmdd)
+            if occ and (ROOT / ph["file"]).exists():
+                return {**ph, "_by": people.get(ph.get("photographer"), {}), "_occasion": occ}
+    pool = scenery_pool()
     if not pool:
         return None
-    pool.sort(key=lambda ph: (-days_since(ph["id"]), ph["id"]))   # least recently used first
-    ph = pool[0]
-    return {**ph, "_by": people.get(ph["photographer"], {})}
+    used = state.get("photo_last_used") or {}
+    salt = now_et().timetuple().tm_yday
+    # least recently used first; never-used photos first of all; stable shuffle among ties
+    pool.sort(key=lambda ph: (used.get(ph["id"], ""), (hash_str(ph["id"]) + salt) % 9973))
+    return pool[0]
 
-def photo_credit(ph: dict) -> tuple[str, str]:
-    """(facebook_line, instagram_line) — full credit, always with a way to find the photographer."""
-    by = ph.get("_by") or {}
+def hash_str(s: str) -> int:
+    h = 0
+    for ch in s:
+        h = (h * 31 + ord(ch)) & 0xFFFFFFFF
+    return h
+
+def photo_label(ph: dict) -> str:
+    """'Highland Light — Truro', or just the place when the title is already in it."""
+    what, place = ph.get("title", ""), ph.get("place", "")
+    if place and what and what.lower() in place.lower():
+        return place
+    return f"{what} — {place}" if place and place != what else what
+
+def pd_credit(ph: dict, by: dict) -> str:
+    """'Brittni Connell / National Park Service' or 'National Park Service, Cape Cod National Seashore'."""
+    c = (ph.get("credit") or "").strip()
+    named = c.split("/", 1)[1].strip() if "/" in c else ""
+    return f"{named} / National Park Service" if named else by.get("name", "National Park Service")
+
+def photo_credit(ph: dict | None) -> tuple[str, str]:
+    """(facebook_line, instagram_line). Empty for the founder's own photos."""
+    by = (ph or {}).get("_by") or {}
+    if not ph or not by:
+        return "", ""
+    label = photo_label(ph)
+    if by.get("license") == "public-domain":
+        who = pd_credit(ph, by)
+        fb = f"📸 {label}. Photo: {who} (public domain) → {ph.get('source_url', '')}".strip()
+        ig = f"📸 {label}. Photo: {who} (public domain)."
+        return fb, ig
     name = by.get("name", "the photographer")
-    what = ph.get("title", "")
-    where = f" — {ph['place']}" if ph.get("place") else ""
-    fb = f"📸 {what}{where}. Photo by {name}, shared with permission. See more of their work → {by.get('facebook', '')}".strip()
-    ig = f"📸 {what}{where}. Photo by {name}, shared with permission. Find more of their work on Facebook: {name}"
+    fb = f"📸 {label}. Photo by {name}, shared with permission. See more of their work → {by.get('facebook', '')}".strip()
+    ig = f"📸 {label}. Photo by {name}, shared with permission. Find more of their work on Facebook: {name}"
     return fb, ig
 
-def fmt_christmas(ph: dict):
+def fmt_christmas():
     lines = ["🎄 Merry Christmas from all of us at Totally Cape Cod!", "",
              "Wishing you a warm, bright day, wherever you're celebrating. Thanks for spending the year on the Cape with us."]
-    return lines, f"{RAW_BASE}/{ph['file']}", "christmas", ["#MerryChristmas", "#CapeCod", "#CapeCodLife"]
+    return lines, "", "christmas", ["#MerryChristmas", "#CapeCod", "#CapeCodLife"]
 
 def compose(mode: str, state: dict | None = None):
-    """Return (fb_message, ig_caption, image_url, campaign, credited_photo_id)."""
+    """Return (fb_message, ig_caption, image_url, campaign, photo_id)."""
     today = now_et().strftime("%Y-%m-%d")
     fireworks = [e for e in events_on(today) if "FIREWORK" in (e.get("tag") or "").upper()]
-    ph = credited_photo(mode, state or {})
-    if ph and (ph.get("post") or {}).get("occasion") == "christmas":
-        lines, img, campaign, tags = fmt_christmas(ph)
+    ph = pick_photo(mode, state or {})
+    if ph and ph.get("_occasion") == "christmas":
+        lines, img, campaign, tags = fmt_christmas()
     elif mode == "evening":
         lines, img, campaign, tags = fmt_evening()
     elif fireworks:
-        ph = None                                     # fireworks posts keep their own image
         lines, img, campaign, tags = fmt_fireworks(fireworks)
     else:
         lines, img, campaign, tags = MORNING_FORMATS[weekday_et()]()
-    if ph:
+    july_fireworks = img == FIREWORKS_IMG and now_et().month == 7     # that graphic says "4th of July"
+    if ph and not july_fireworks:
         img = f"{RAW_BASE}/{ph['file']}"
+    else:
+        ph = None
 
     body = "\n".join(lines).rstrip()
     tagline = " ".join(dict.fromkeys(tags))          # dedupe, keep order
-    credit_fb, credit_ig = photo_credit(ph) if ph else ("", "")
-    fb_message = f"{body}\n\n{credit_fb + chr(10) + chr(10) if ph else ''}{tagline}"
-    ig_caption = f"{body}\n\n{credit_ig + chr(10) + chr(10) if ph else ''}🔗 totallycapecod.com\n\n{tagline}"
+    credit_fb, credit_ig = photo_credit(ph)
+    fb_message = f"{body}\n\n{credit_fb + chr(10) + chr(10) if credit_fb else ''}{tagline}"
+    ig_caption = f"{body}\n\n{credit_ig + chr(10) + chr(10) if credit_ig else ''}🔗 totallycapecod.com\n\n{tagline}"
     return fb_message, ig_caption, img, campaign, (ph or {}).get("id", "")
 
 def tracked_link(campaign: str) -> str:

@@ -28,27 +28,32 @@ def main() -> None:
         if not photos:
             continue
         cards = []
+        pd = p.get("license") == "public-domain"
         for x in photos:
             place = f'{esc(x["place"])} · ' if x.get("place") else ""
             note = f'<p class="ph-note">{esc(x["photographer_note"])}</p>' if x.get("photographer_note") else ""
+            c = (x.get("credit") or "").strip()
+            named = c.split("/", 1)[1].strip() if "/" in c else ""
+            who = (f"{named} / NPS (public domain)" if named else "NPS photo (public domain)") if pd else p["name"]
             cards.append(
                 f'<figure class="ph-card">'
                 f'<a href="{esc(x["source_url"])}" target="_blank" rel="noopener" '
                 f'onclick="gtag(\'event\',\'outbound_click\',{{type:\'photographer\',item:\'{esc(x["id"])}\',location:\'photos_page\'}})">'
                 f'<img src="/{esc(x["file"])}" width="{x["width"]}" height="{x["height"]}" alt="{esc(x["alt"])}" loading="lazy" /></a>'
-                f'<figcaption><strong>{esc(x["title"])}</strong><span>{place}📸 {esc(p["name"])}</span>{note}'
+                f'<figcaption><strong>{esc(x["title"])}</strong><span>{place}📸 {esc(who)}</span>{note}'
                 f'<a class="ph-link" href="{esc(x["source_url"])}" target="_blank" rel="noopener">View the original →</a></figcaption></figure>')
             ld_images.append({
                 "@type": "ImageObject",
                 "contentUrl": f'{SITE}/{x["file"]}',
                 "name": x["title"],
                 "description": x["alt"],
-                "creditText": p["name"],
-                "creator": {"@type": "Organization", "name": p["name"], "url": p["facebook"]},
-                "copyrightNotice": f'© {p["name"]}',
-                "acquireLicensePage": p.get("portfolio") or p["facebook"],
+                "creditText": who,
+                "creator": {"@type": "Organization", "name": p["name"], "url": p.get("facebook") or p.get("website")},
+                "copyrightNotice": "Public domain" if pd else f'© {p["name"]}',
+                **({} if pd else {"acquireLicensePage": p.get("portfolio") or p["facebook"]}),
             })
-        links = [f'<a class="btn btn-navy btn-sm" href="{esc(p["facebook"])}" target="_blank" rel="noopener">See more on Facebook →</a>']
+        links = ([f'<a class="btn btn-navy btn-sm" href="{esc(p["website"])}" target="_blank" rel="noopener">More NPS photos →</a>'] if pd
+                 else [f'<a class="btn btn-navy btn-sm" href="{esc(p["facebook"])}" target="_blank" rel="noopener">See more on Facebook →</a>'])
         if p.get("portfolio"):
             links.append(f'<a class="btn btn-sm ph-ghost" href="{esc(p["portfolio"])}" target="_blank" rel="noopener">Portfolio →</a>')
         sections.append(
@@ -56,10 +61,10 @@ def main() -> None:
             f'<p class="ph-about">{esc(p.get("about", ""))}</p></div><div class="ph-links">{"".join(links)}</div></div>'
             f'<div class="ph-grid">{"".join(cards)}</div></section>')
 
-    ld = {"@context": "https://schema.org", "@type": "CollectionPage", "name": "Cape Cod Through Local Lenses",
+    ld = {"@context": "https://schema.org", "@type": "CollectionPage", "name": "Cape Cod Photos",
           "url": f"{SITE}/photos.html", "hasPart": ld_images}
-    title = "Cape Cod Photos by Local Photographers | Totally Cape Cod"
-    desc = "Cape Cod photos shared with permission by local photographers, each credited and linked so you can see more of their work."
+    title = "Cape Cod Photos: Lighthouses, Dunes & Beaches | Totally Cape Cod"
+    desc = "Cape Cod scenery from local photographers (shared with permission) and the National Park Service (public domain), each credited and linked to the original."
     page = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -104,14 +109,14 @@ def main() -> None:
 <nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/events.html">Events</a><a href="/guides/">Guides</a><a href="/app/">📱 App</a></div><button class="nav-mobile-toggle" onclick="toggleMobileMenu()">☰</button></div></nav>
 <div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()"><a href="/">Home</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/events.html">Events</a><a href="/guides/">Guides</a><a href="/app/">📱 Open the App</a></div></div>
 
-<section class="hero" style="min-height:40vh;"><div class="hero-overlay"></div><div class="hero-content" style="padding-top:84px;max-width:860px;"><div class="hero-badge">📸 Local Photographers</div><h1 class="hero-title">Cape Cod Through Local Lenses</h1><p class="hero-subtitle">Shared with the photographers' permission. Tap any photo to see the original, then go see more of their work.</p></div></section>
+<section class="hero" style="min-height:40vh;"><div class="hero-overlay"></div><div class="hero-content" style="padding-top:84px;max-width:860px;"><div class="hero-badge">📸 Real Cape Cod scenery</div><h1 class="hero-title">Cape Cod Photos</h1><p class="hero-subtitle">Real Cape Cod scenery, shared with permission by local photographers, plus public-domain photos from the National Park Service. Tap any photo to see the original.</p></div></section>
 
 <div class="content-wrap">
 {"".join(sections)}
 <section class="section"><div class="card" style="padding:22px;text-align:center;"><h3 style="font-family:'Fraunces',serif;font-weight:900;margin:0 0 6px;">Photograph the Cape?</h3><p style="color:var(--text-secondary);margin:0 0 12px;">We feature local photographers with full credit and a link back, and only with your permission.</p><a class="btn btn-primary" href="/contact.html">Get in touch →</a></div></section>
 </div>
 
-<footer class="site-footer"><div class="footer-inner"><div><div class="footer-brand">Totally Cape Cod</div><p class="footer-desc">The unofficial guide to the best of Cape Cod.</p></div><div class="footer-links"><div class="footer-heading">Explore</div><a href="/beaches.html">Beaches</a><a href="/eats.html">Restaurants</a><a href="/events.html">Events</a><a href="/photos.html">Photos</a></div><div class="footer-links"><div class="footer-heading">Guides</div><a href="/guides/">All guides</a><a href="/guides/standards/">How we fact-check</a><a href="/contact.html">Report an error</a></div></div><div class="footer-bottom">© 2026 Totally Cape Cod. Photos © their photographers, used with permission.</div></footer>
+<footer class="site-footer"><div class="footer-inner"><div><div class="footer-brand">Totally Cape Cod</div><p class="footer-desc">The unofficial guide to the best of Cape Cod.</p></div><div class="footer-links"><div class="footer-heading">Explore</div><a href="/beaches.html">Beaches</a><a href="/eats.html">Restaurants</a><a href="/events.html">Events</a><a href="/photos.html">Photos</a></div><div class="footer-links"><div class="footer-heading">Guides</div><a href="/guides/">All guides</a><a href="/guides/standards/">How we fact-check</a><a href="/contact.html">Report an error</a></div></div><div class="footer-bottom">© 2026 Totally Cape Cod. Photos © their photographers, used with permission; National Park Service photos are public domain.</div></footer>
 <script>function toggleMobileMenu(){{document.getElementById('mobileMenu').classList.toggle('show');}}</script>
 </body>
 </html>
