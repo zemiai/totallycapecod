@@ -1397,6 +1397,23 @@ async function loadData() {
       state.data.events.events = merged;
     }
   } catch (e) { /* no curated layer yet — fine */ }
+  // Drop events that are already over: the scraper keeps a 12-hour tail and pages stay open
+  // across midnight. Multi-day items carry an `end` time and stay listed until then.
+  try {
+    const evs = state.data.events?.events;
+    if (Array.isArray(evs)) {
+      const todayET = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+      const cutoff = Date.now() - 3 * 3600 * 1000;
+      state.data.events.events = evs.filter(e => {
+        if (e.end && !isNaN(Date.parse(e.end))) return Date.parse(e.end) >= Date.now();
+        const st = String(e.start || '');
+        if (!st) return true;
+        if (/T00:00(:00)?(\.0+)?(Z|\+00:00)$/.test(st)) return st.slice(0, 10) >= todayET;   // date-only listing
+        const t = Date.parse(st);
+        return isNaN(t) || t >= cutoff;
+      });
+    }
+  } catch (e) { /* keep the unfiltered list */ }
 }
 
 // ============ UTIL ============

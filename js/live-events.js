@@ -117,7 +117,8 @@
         var t = Date.parse(e.start);
         if (isNaN(t)) return;
         var day = eventDay(e);
-        if (isDateOnly(e) ? day < today : t < cutoff) return;
+        var endT = e.end ? Date.parse(e.end) : NaN;
+        if (!isNaN(endT) ? endT < Date.now() : (isDateOnly(e) ? day < today : t < cutoff)) return;
         // Same event listed twice (two chambers, or an id-less repeat) → keep one.
         var n = norm(e.title), seen = byDay[day] || (byDay[day] = []);
         if ((e.id && seenId[e.id]) || seen.some(function (s) {
