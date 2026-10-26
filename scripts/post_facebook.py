@@ -40,7 +40,7 @@ Secrets: FB_PAGE_ID, FB_PAGE_ACCESS_TOKEN, IG_USER_ID (see SETUP_FACEBOOK.md).
 Run via .github/workflows/post-facebook.yml, or locally: DRY_RUN=1 python scripts/post_facebook.py
 """
 from __future__ import annotations
-import json, os, re, sys
+import json, os, re, sys, time
 from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -536,11 +536,28 @@ def post_instagram(caption: str, image: str) -> str:
     if not c.ok:
         raise RuntimeError(f"IG create {c.status_code}: {c.text[:400]}")
     cid = c.json().get("id")
-    p = requests.post(f"{GRAPH}/{IG_USER_ID}/media_publish",
-                      data={"creation_id": cid, "access_token": TOKEN}, timeout=60)
-    if not p.ok:
+    # Instagram processes the image asynchronously. Publishing too early fails with
+    # "Media ID is not available / not ready for publishing" (code 9007) — that was
+    # behind ~1 in 4 missed IG posts in Sep–Oct 2026. Wait for FINISHED, then publish,
+    # and retry the publish a few times if Instagram still says it isn't ready.
+    for _ in range(12):                       # up to ~60 s
+        st = requests.get(f"{GRAPH}/{cid}", params={"fields": "status_code", "access_token": TOKEN}, timeout=30)
+        code = st.json().get("status_code") if st.ok else None
+        if code == "FINISHED":
+            break
+        if code in ("ERROR", "EXPIRED"):
+            raise RuntimeError(f"IG container {code}: {st.text[:300]}")
+        time.sleep(5)
+    for attempt in range(4):
+        p = requests.post(f"{GRAPH}/{IG_USER_ID}/media_publish",
+                          data={"creation_id": cid, "access_token": TOKEN}, timeout=60)
+        if p.ok:
+            return p.json().get("id", "")
+        if '"code":9007' in p.text and attempt < 3:
+            time.sleep(10)
+            continue
         raise RuntimeError(f"IG publish {p.status_code}: {p.text[:400]}")
-    return p.json().get("id", "")
+    return ""
 
 def main() -> None:
     mode = os.environ.get("MODE", "").strip() or ("evening" if now_et().hour >= 15 else "morning")
