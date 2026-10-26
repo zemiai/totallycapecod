@@ -1937,7 +1937,7 @@ const BEACH_DNA = {
   'coast-guard':    { side:'ocean', surf:'big', temp:'cold', kids:'ok',   flats:true,  vibe:'natural',  park:'nps',     traits:['surf','seals','sunrise','sandbar'],
     blurb:"Routinely ranked one of America's best beaches — wild Atlantic surf, a beloved marsh boardwalk approach, and low-tide sandbars kids build castles on. In summer you park inland and shuttle in. Seals patrol; swim near the guards." },
   'race-point':     { side:'ocean', surf:'moderate', temp:'cold', kids:'ok', flats:false, vibe:'natural', park:'nps',  traits:['seals','whales','sunset','wild'],
-    blurb:"Land's end. Reviewers watch whales breach and seals bob right from the sand, with sunsets behind a 200-year-old lighthouse. Wild, undeveloped, unforgettable — cold rough water and real shark presence, so it's for wandering more than swimming." },
+    blurb:"Land's end. Reviewers watch whales breach and seals bob right from the sand, and the sunsets are huge. Wild, undeveloped, unforgettable — cold rough water and real shark presence, so it's for wandering more than swimming." },
   'marconi':        { side:'ocean', surf:'big', temp:'cold', kids:'tough',flats:false, vibe:'natural',  park:'nps',     traits:['dunes','surf','seals','sharks','wild'],
     blurb:"The tallest dunes on the Seashore and a steep staircase down to empty, dramatic Atlantic — 'a serene, untouched paradise' with the best surf of the National Seashore beaches. Icy, rocky entry and the strongest shark signage on the Cape." },
   'cahoon-hollow':  { side:'ocean', surf:'big', temp:'cold', kids:'ok',   flats:false, vibe:'lively',   park:'paid',    traits:['bar','surf','lively','food'],
@@ -1961,7 +1961,7 @@ const BEACH_DNA = {
   'corporation':    { side:'bay',   surf:'calm', temp:'moderate', kids:'great', flats:true, vibe:'family', park:'paid',  traits:['family','food','sunset'],
     blurb:"The dependable family all-rounder reviewers vote 'best bay beach' — lifeguards, a beloved snack bar, a playground and a protected cove full of hermit crabs. Time low tide for the tide pools; water runs ~10° cooler than the south side and it's wall-to-wall at high tide." },
   'first-encounter':{ side:'bay',   surf:'calm', temp:'warm', kids:'great',flats:true,  vibe:'natural',  park:'paid',    traits:['sunset','flats','quiet'],
-    blurb:"THE sunset pilgrimage — 'apparently the place to watch a sunset,' where the tide pulls back a mile and the sky 'explodes in pink and purple.' Calm, warm shallow flats and deep history (Pilgrims met the Wampanoag here). Go to walk the flats at golden hour, not really to swim." },
+    blurb:"THE sunset pilgrimage — 'apparently the place to watch a sunset,' where the tide pulls back a mile and the sky 'explodes in pink and purple.' Calm, warm shallow flats and deep history: the site of the Pilgrims' 1620 'First Encounter' with the Nauset. Go to walk the flats at golden hour, not really to swim." },
   'breakwater':     { side:'bay',   surf:'calm', temp:'warm', kids:'great',flats:true,  vibe:'family',   park:'paid',    traits:['flats','family'],
     blurb:"Small, easy and right off 6A — the gateway to the famous Brewster Flats, where the water recedes nearly a mile. Warm, shallow, wave-free swimming when the tide's in; tide-pool walking when it's out. 'Mind the tide chart' is the universal advice." },
   'paines-creek':   { side:'bay',   surf:'calm', temp:'warm', kids:'great',flats:true,  vibe:'natural',  park:'paid',    traits:['sunset','flats','quiet'],
@@ -2131,7 +2131,7 @@ function openBeach(slug) {
   document.getElementById('beachModalName').textContent = b.name;
   document.getElementById('beachModalTown').textContent = `${b.town} · ${b.region}`;
   document.getElementById('beachModalDetails').innerHTML = `
-    <div class="ios-list-item"><span class="status-dot" style="background:var(--status-${beachStatus(b).code})"></span><div style="flex:1;"><div class="item-title">${beachStatus(b).label}</div><div class="item-sub">${b.water_temp?`🌊 ${b.water_temp}°F · `:''}${beachStatus(b).fresh}</div></div></div>
+    <div class="ios-list-item"><span class="status-dot" style="background:var(--status-${beachStatus(b).code})"></span><div style="flex:1;"><div class="item-title">${beachStatus(b).label}</div><div class="item-sub">${b.water_temp?`🌊 ${b.water_temp}°F${b.water_temp_src?` (nearest sensor: ${b.water_temp_src})`:''} · `:''}${beachStatus(b).fresh}</div></div></div>
     <div style="font-size:12px; color:var(--ios-sub); padding:8px 0; line-height:1.5;">
       ${b.sticker_required ? (tccOff() ? '🏷️ Sticker/fee lot in summer · off-season: follow posted signs' : '🏷️ Sticker required') : '✅ No sticker needed'}<br/>
       ${b.restrooms ? (tccOff() ? '🚻 Restrooms (may be closed off-season)' : '🚻 Restrooms') : '— No restrooms'}<br/>
@@ -3759,6 +3759,11 @@ async function init() {
   // render below is null-safe (`state.data.x?.y`), so an empty-state paint is fine;
   // renderAll() runs again the moment real data lands.
   try { renderAll(); } catch (e) { /* empty-state paint is best-effort */ }
+  // Deep link from the guides: /app/?tab=whales opens that screen directly.
+  try {
+    const t = new URLSearchParams(location.search).get('tab');
+    if (t && /^[a-z]+$/.test(t) && document.getElementById('screen-' + t)) switchTab(t);
+  } catch (e) {}
   // TASK9 Lever 3: Show first-run onboarding intro to new visitors
   checkFirstRun();
   // Value before asks: returning visitors (already saw onboarding = already got value)
@@ -3772,6 +3777,15 @@ async function init() {
 
   await loadData();
   renderAll();
+  // Deep link from the website: /app/?beach=<slug> opens that beach's details.
+  try {
+    const want = (new URLSearchParams(location.search).get('beach') || '').toLowerCase();
+    if (want) {
+      const list = state.data.beaches?.beaches || [];
+      const hit = list.find(x => x.slug === want) || list.find(x => (x.name || '').toLowerCase() === want);
+      if (hit) { switchTab('beaches'); openBeach(hit.slug); }
+    }
+  } catch (e) {}
   // If the visitor is already sitting on the Nearby feed when data finishes loading
   // (slow connection), build it now instead of leaving a stuck "loading…" state.
   if (!nbBuilt && document.getElementById('screen-nearby')?.classList.contains('active')) renderNearby();

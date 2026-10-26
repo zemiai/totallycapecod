@@ -4,17 +4,17 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#4A90A4" />
-<title>Live Music on Cape Cod Tonight — Venues &amp; Shows</title>
-<meta name="description" content="Find live music on Cape Cod tonight: venues, towns, showtimes and prices pulled from our real-time events feed. Updated daily with local gigs across the Cape." />
+<title>Live Music on Cape Cod Tonight &amp; This Week | Totally Cape Cod</title>
+<meta name="description" content="Live music on Cape Cod tonight and over the next two weeks: venues, towns and showtimes from our events feed, refreshed twice a day and linked to each listing." />
 <link rel="canonical" href="https://totallycapecod.com/cape-cod-live-music-tonight.html" />
-<meta property="og:title" content="Live Music on Cape Cod Tonight — Venues &amp; Shows" />
-<meta property="og:description" content="Find live music on Cape Cod tonight: venues, towns, showtimes and prices pulled from our real-time events feed. Updated daily with local gigs across the Cape." />
+<meta property="og:title" content="Live Music on Cape Cod Tonight &amp; This Week" />
+<meta property="og:description" content="Live music on Cape Cod tonight and over the next two weeks: venues, towns and showtimes from our events feed, refreshed twice a day and linked to each listing." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://totallycapecod.com/cape-cod-live-music-tonight.html" />
 <meta property="og:image" content="https://totallycapecod.com/og-image.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Live Music on Cape Cod Tonight — Venues &amp; Shows" />
-<meta name="twitter:description" content="Find live music on Cape Cod tonight: venues, towns, showtimes and prices pulled from our real-time events feed. Updated daily with local gigs across the Cape." />
+<meta name="twitter:title" content="Live Music on Cape Cod Tonight &amp; This Week" />
+<meta name="twitter:description" content="Live music on Cape Cod tonight and over the next two weeks: venues, towns and showtimes from our events feed, refreshed twice a day and linked to each listing." />
 <meta name="twitter:image" content="https://totallycapecod.com/og-image.png" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0YM9WQLWK"></script>
 <script>
@@ -85,18 +85,18 @@
 <section class="hero" style="min-height:40vh;">
   <div class="hero-overlay"></div>
   <div class="hero-content" style="padding-top:80px;">
-    <div class="hero-badge">Tonight's Shows</div>
+    <div class="hero-badge">Tonight &amp; This Week</div>
     <h1 class="hero-title" style="font-size:clamp(26px,4.5vw,50px);">Live Music on Cape Cod <span class="script">Tonight</span></h1>
-    <p class="hero-subtitle">Bars, venues &amp; outdoor stages — tonight's gigs across the Cape</p>
+    <p class="hero-subtitle">Bars, venues &amp; stages across the Cape, tonight and the next two weeks</p>
   </div>
 </section>
 
 <section class="section page-wrap">
 
   <p style="font-size:15px; line-height:1.7; color:var(--text); margin:0 0 28px; max-width:760px;">
-    Cape Cod has a surprisingly vibrant live music scene — from acoustic sets at waterfront bars in Falmouth to
-    jazz nights in Provincetown and rock at venues in Hyannis. This page shows tonight's live music events pulled
-    directly from our real-time events feed, so you always see what's actually happening, not just what was planned months ago.
+    Cape Cod has a lively music scene, from acoustic sets at waterfront bars to jazz nights and full-band shows.
+    This page lists tonight's shows first, then the next two weeks, from our events feed, which pulls venue and
+    organizer calendars twice a day. Every listing links to its source, so confirm details there before you go.
   </p>
 
   <div id="eventsData">
@@ -150,18 +150,20 @@ function toggleMobileMenu(){document.getElementById('mobileMenu').classList.togg
 
 var DATA_URL = 'https://raw.githubusercontent.com/zemiai/totallycapecod/main/data/events.json';
 
-function todayStr() {
-  var d = new Date();
-  return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+function etDate(d) { return new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York' }).format(d); }
+function fmtWhen(iso) {
+  var d = new Date(iso); if (isNaN(d)) return 'unknown';
+  var mins = Math.round((Date.now() - d.getTime()) / 60000);
+  var ago = mins < 60 ? mins + ' min ago' : (mins < 1440 ? Math.round(mins / 60) + ' h ago' : Math.round(mins / 1440) + ' days ago');
+  return d.toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) + ' (' + ago + ')';
 }
-
-function isTodayOrNear(startStr) {
-  if (!startStr) return true;
-  var today = todayStr();
-  var evDate = startStr.slice(0,10);
-  return evDate >= today && evDate <= today;
+function notEnded(e, today) {
+  var now = Date.now();
+  if (e.end) return new Date(e.end).getTime() > now;
+  if (!e.start) return false;
+  if (e.start.length <= 10) return e.start >= today;
+  return new Date(e.start).getTime() + 3 * 3600000 > now;
 }
-
 function eventCard(ev, extraClass) {
   var cls = extraClass || '';
   var priceHtml = '';
@@ -181,6 +183,7 @@ function eventCard(ev, extraClass) {
       (ev.time ? '<span>🕐 ' + ev.time + '</span>' : '') +
     '</div>' +
     priceHtml +
+    ((ev.credit || ev.source) ? '<div style="font-size:11px;color:var(--text-secondary);margin:6px 0;">via ' + (ev.credit || ev.source) + '</div>' : '') +
     linkHtml +
   '</div>';
 }
@@ -192,33 +195,34 @@ async function loadData() {
     if (!res.ok) throw new Error('HTTP ' + res.status);
     var data = await res.json();
     var events = data.events || [];
-    var updatedAt = data.updated_at ? new Date(data.updated_at).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}) : 'recently';
-
-    // Filter to today's events (or near-future within window)
-    var today = todayStr();
-    var musicEvents = events.filter(function(e) {
-      return e.category === 'music' && (!e.start || e.start.slice(0,10) >= today);
-    }).slice(0, 30);
-
-    var foodEvents = events.filter(function(e) {
-      return e.category === 'food' && (!e.start || e.start.slice(0,10) >= today);
-    }).slice(0, 12);
+    try {
+      var cres = await fetch(DATA_URL.replace('events.json', 'curated.json'));
+      if (cres.ok) { var cd = await cres.json(); events = events.concat((cd.events || []).filter(function(e){ return e.category === 'music' || e.category === 'food'; })); }
+    } catch (ce) {}
+    var updatedAt = data.updated_at ? fmtWhen(data.updated_at) : 'unknown';
+    var today = etDate(new Date());
+    var horizon = etDate(new Date(Date.now() + 14 * 86400000));
+    function byStart(a, b) { return String(a.start || '').localeCompare(String(b.start || '')); }
+    function inWindow(e) { var d = String(e.start || '').slice(0, 10); return d && d <= horizon && notEnded(e, today); }
+    var music = events.filter(function(e){ return e.category === 'music' && inWindow(e); }).sort(byStart);
+    var tonight = music.filter(function(e){ return String(e.start).slice(0, 10) === today; });
+    var later = music.filter(function(e){ return String(e.start).slice(0, 10) > today; }).slice(0, 30);
+    var foodEvents = events.filter(function(e){ return e.category === 'food' && inWindow(e); }).sort(byStart).slice(0, 12);
 
     var html = '';
-
-    if (musicEvents.length > 0) {
-      html += '<h2 class="section-heading">🎵 Live Music</h2>';
-      html += '<div class="events-grid">' + musicEvents.map(function(e){ return eventCard(e,''); }).join('') + '</div>';
-    } else {
-      html += '<div class="empty-state">No live music events found for today — check back later or <a href="/events.html">see all events</a>.</div>';
+    html += '<h2 class="section-heading">🎵 Tonight</h2>';
+    html += tonight.length
+      ? '<div class="events-grid">' + tonight.map(function(e){ return eventCard(e,''); }).join('') + '</div>'
+      : '<div class="empty-state">No live music listed for tonight yet. Here\'s what\'s coming up.</div>';
+    if (later.length > 0) {
+      html += '<h2 class="section-heading">🎵 Coming up (next two weeks)</h2>';
+      html += '<div class="events-grid">' + later.map(function(e){ return eventCard(e,''); }).join('') + '</div>';
     }
-
     if (foodEvents.length > 0) {
       html += '<h2 class="section-heading">🍽️ Food &amp; Drink Events</h2>';
       html += '<div class="events-grid">' + foodEvents.map(function(e){ return eventCard(e,'food'); }).join('') + '</div>';
     }
-
-    html += '<p class="updated-line">Last updated: ' + updatedAt + ' · <a href="/events.html">See all Cape Cod events →</a></p>';
+    html += '<p class="updated-line">Events feed updated: ' + updatedAt + ' · <a href="/events.html">See all Cape Cod events →</a></p>';
     container.innerHTML = html;
 
   } catch (e) {

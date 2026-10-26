@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "_note": "MANUAL/CURATED layer — hand-added items (e.g. organizers' public Facebook events) that the auto-update crons NEVER overwrite. The app merges these into the events feed (What's Happening + Today + Nearby), de-duped against scraped events, future-only, sorted by start. Every item credits its organizer (credit) and links the listing it came from (source_url). Per-item schema mirrors data/events.json: { id, category, title, venue, town, lat, lng, time (display), start (ISO with ET offset), tag, info, price, img(optional), source, credit, source_url, verified }.",
-  "updated_at": "2026-10-26T14:30:00Z",
+  "updated_at": "2026-10-26T16:17:09Z",
   "events": [
     {
       "id": "curated-hyannis-2026-10-28-luncheon-train",
@@ -110,6 +110,25 @@
       "credit": "Harwich Community Center",
       "source_url": "https://www.facebook.com/events/1096002556162634/",
       "verified": "2026-10-26 (organizer's public Facebook event)"
+    },
+    {
+      "id": "curated-wellfleet-2026-11-07-sea-turtle-open-house",
+      "category": "family",
+      "title": "Sea Turtle Open House",
+      "venue": "Mass Audubon Wellfleet Bay Wildlife Sanctuary, 291 State Highway (Route 6)",
+      "town": "Wellfleet",
+      "lat": 41.8821,
+      "lng": -69.9957,
+      "time": "Sat Nov 7 · 11:00 AM–3:00 PM",
+      "start": "2026-11-07T11:00:00-05:00",
+      "end": "2026-11-07T15:00:00-05:00",
+      "tag": "👨‍👩‍👧 FAMILY",
+      "info": "All-ages open house on why sea turtles strand on Cape Cod beaches, with presentations, touch tables, kids' games and crafts. Free with a Mass Audubon membership or regular sanctuary admission; special programs (beach patrols, lab tours) cost extra.",
+      "price": "",
+      "source": "Mass Audubon",
+      "credit": "Mass Audubon Wellfleet Bay Wildlife Sanctuary",
+      "source_url": "https://www.massaudubon.org/places-to-explore/wildlife-sanctuaries/wellfleet-bay/news/sea-turtle-open-house-2026",
+      "verified": "2026-10-26 (organizer's website)"
     },
     {
       "id": "curated-dennis-2026-11-07-field-of-honor",

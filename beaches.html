@@ -4,17 +4,17 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#1A3A6C" />
-<title>Cape Cod Beaches — 28 Mapped with Live Conditions | Totally Cape Cod</title>
-<meta name="description" content="Discover the best beaches on Cape Cod. 28 mapped beaches with live conditions, parking info, and hidden gems. Filter by family-friendly, dog-friendly, surfing, and more." />
+<title>Cape Cod Beaches: Parking & Dog Rules, Water Temps | Totally Cape Cod</title>
+<meta name="description" content="Cape Cod beaches with the parking and dog rules that trip visitors up, plus water temps, tides and beach reports in the free app. Filter by family, surf and sunset." />
 <link rel="canonical" href="https://totallycapecod.com/beaches.html" />
-<meta property="og:title" content="Cape Cod Beaches — 28 Mapped with Live Conditions | Totally Cape Cod" />
-<meta property="og:description" content="Discover the best beaches on Cape Cod. 28 mapped beaches with live conditions, parking info, and hidden gems. Filter by family-friendly, dog-friendly, surfing, and more." />
+<meta property="og:title" content="Cape Cod Beaches: Parking & Dog Rules, Water Temps | Totally Cape Cod" />
+<meta property="og:description" content="Cape Cod beaches with the parking and dog rules that trip visitors up, plus water temps, tides and beach reports in the free app. Filter by family, surf and sunset." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://totallycapecod.com/beaches.html" />
 <meta property="og:image" content="https://totallycapecod.com/og-image.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Cape Cod Beaches — 28 Mapped with Live Conditions | Totally Cape Cod" />
-<meta name="twitter:description" content="Discover the best beaches on Cape Cod. 28 mapped beaches with live conditions, parking info, and hidden gems. Filter by family-friendly, dog-friendly, surfing, and more." />
+<meta name="twitter:title" content="Cape Cod Beaches: Parking & Dog Rules, Water Temps | Totally Cape Cod" />
+<meta name="twitter:description" content="Cape Cod beaches with the parking and dog rules that trip visitors up, plus water temps, tides and beach reports in the free app. Filter by family, surf and sunset." />
 <meta name="twitter:image" content="https://totallycapecod.com/og-image.png" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0YM9WQLWK"></script>
 <script>
@@ -85,9 +85,9 @@
 <section class="hero" style="min-height:50vh;">
   <div class="hero-overlay"></div>
   <div class="hero-content" style="padding-top:80px;">
-    <div class="hero-badge">27 Beaches Mapped</div>
+    <div class="hero-badge">27 beaches mapped in the app</div>
     <h1 class="hero-title">Cape Cod <span class="script">Beaches</span></h1>
-    <p class="hero-subtitle">Filter by your vibe and find your beach — then check live water temps and tides in the app. <span class="s-off">Off-season: no lifeguards on duty, and beach restrooms may be closed.</span></p>
+    <p class="hero-subtitle">Filter by your vibe and find your beach — then check water temps from the nearest sensor, tides and beach reports in the app. <span class="s-off">Off-season: no lifeguards on duty, and beach restrooms may be closed.</span></p>
   </div>
 </section>
 
@@ -96,7 +96,7 @@
     <div class="filter-chip active" onclick="filterBeaches('all',this)">All</div>
     <div class="filter-chip" onclick="filterBeaches('family',this)">👨‍👩‍👧 Family</div>
     <div class="filter-chip" onclick="filterBeaches('hidden',this)">🗺️ Hidden Gem</div>
-    <div class="filter-chip" onclick="filterBeaches('dog',this)">🐕 Dog-friendly</div>
+    <div class="filter-chip" onclick="filterBeaches('dog',this)">🐕 Dogs (seasonal rules)</div>
     <div class="filter-chip" onclick="filterBeaches('surf',this)">🏄 Surfing</div>
     <div class="filter-chip" onclick="filterBeaches('sunset',this)">🌅 Sunset Spot</div>
   </div>
@@ -148,15 +148,15 @@
 function toggleMobileMenu(){document.getElementById('mobileMenu').classList.toggle('show');}
 
 const beaches = [
-  {name:'Race Point Beach',town:'Provincetown',tags:['family','dog','sunset'],status:'open',img:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',spots:'Plenty of parking',desc:'Wide dunes, calm water, and some of the best sunsets on the Outer Cape.'},
-  {name:'Coast Guard Beach',town:'Eastham',tags:['family','surf','sunset'],status:'open',img:'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80',spots:'Limited — arrive early',desc:'Part of the National Seashore. Stunning cliffs and great waves for body surfing.'},
-  {name:'Nauset Beach',town:'Orleans',tags:['family','surf'],status:'mid',img:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',spots:'Filling up',desc:'Miles of sand, great for long walks. Food trucks and restrooms nearby.'},
-  {name:'Sandy Neck Beach',town:'Barnstable',tags:['family','dog','hidden'],status:'open',img:'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80',spots:'Open',desc:'Massive dunes, off-roading allowed with permit. Dog-friendly year-round.'},
-  {name:'Mayflower Beach',town:'Dennis',tags:['family','sunset'],status:'open',img:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',spots:'Plenty',desc:'Gentle tide pools at low tide — perfect for kids. Amazing sunsets.'},
-  {name:'Ballston Beach',town:'Truro',tags:['hidden','surf','dog'],status:'open',img:'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80',spots:'Open',desc:'A local secret. Fewer crowds, great waves, and beautiful dunes.'},
-  {name:'Herring Cove Beach',town:'Provincetown',tags:['family','sunset','dog'],status:'mid',img:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',spots:'Filling',desc:'Calm, warm water. THE spot for sunset watching on the Outer Cape.'},
-  {name:'Old Silver Beach',town:'Falmouth',tags:['family'],status:'full',img:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',spots:'Lot Full',desc:'Buzzing beach with warm water, snack bar, and plenty of parking (when available).'},
-  {name:'Craigville Beach',town:'Centerville',tags:['family','surf'],status:'open',img:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',spots:'Open',desc:'Young crowd, warm water, concession stand, and beach volleyball.'},
+  {name:'Race Point Beach',slug:'race-point',town:'Provincetown',tags:['family','dog','sunset'],img:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',desc:'Wide beach and big dunes at the tip of the Cape, in the National Seashore. Cold Atlantic water with swift currents. Dogs: 6-ft leash where allowed; not on lifeguarded areas in summer.'},
+  {name:'Coast Guard Beach',slug:'coast-guard',town:'Eastham',tags:['family','surf'],img:'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80',desc:'National Seashore beach on the open Atlantic. Mid-June to Labor Day the beach lot is for Eastham residents and handicap placards — park at Little Creek and ride the shuttle.'},
+  {name:'Nauset Beach',slug:'nauset-beach',town:'Orleans',tags:['family','surf'],img:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',desc:'Miles of open-Atlantic sand, great for long walks.'},
+  {name:'Sandy Neck Beach',slug:'sandy-neck',town:'Barnstable',tags:['hidden'],img:'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80',desc:'Long barrier beach with big dunes on Cape Cod Bay. Dogs and off-road driving have seasonal rules and permits — check the Town of Barnstable\'s Sandy Neck page before you go.'},
+  {name:'Mayflower Beach',slug:'mayflower',town:'Dennis',tags:['family','sunset'],img:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',desc:'Wide tidal flats at low tide and sunset views over Cape Cod Bay.'},
+  {name:'Ballston Beach',slug:'',town:'Truro',tags:['hidden','surf','dog'],img:'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80',desc:'Ocean beach at the end of South Pamet Road, with no lifeguards. From the 3rd Saturday of June to Labor Day, the 65-space lot needs a Truro beach sticker (no day passes), and dogs aren\'t allowed 9 AM–6 PM.'},
+  {name:'Herring Cove Beach',slug:'herring-cove',town:'Provincetown',tags:['family','sunset','dog'],img:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',desc:'The National Seashore\'s only Cape Cod Bay beach: gentler waves, slightly warmer water and, in the Park Service\'s words, killer sunsets. Dogs: 6-ft leash where allowed; the northwest side is closed to pets April 1–October 15.'},
+  {name:'Old Silver Beach',slug:'old-silver',town:'Falmouth',tags:['family','sunset'],img:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',desc:'Buzzards Bay beach in North Falmouth with a public lot and a separate residents\' lot in season. Falmouth bans dogs on its public beaches May 1–October 1.'},
+  {name:'Craigville Beach',slug:'craigville',town:'Centerville',tags:['family'],img:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',desc:'Long Nantucket Sound beach in Centerville (Barnstable).'},
 ];
 
 let currentFilter = 'all';
@@ -174,7 +174,7 @@ function renderBeaches() {
         <div class="tags">${b.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
         <p style="font-size:13px; color:var(--text-secondary); margin:0 0 10px; line-height:1.5;">${b.desc}</p>
         <div class="actions">
-          <a href="/app/?beach=${encodeURIComponent(b.name)}" class="btn-view" onclick="gtag('event','view_detail',{item:'${b.name}'})">View</a>
+          <a href="/app/${b.slug?'?beach='+encodeURIComponent(b.slug):'?tab=beaches'}" class="btn-view" onclick="gtag('event','view_detail',{item:'${b.name}'})">View</a>
           <a href="https://www.booking.com/searchresults.html?ss=${encodeURIComponent(b.town+', Cape Cod')}" target="_blank" rel="noopener" class="btn-book"
              onclick="gtag('event','affiliate_click',{type:'booking',item:'${b.name}',location:'beaches_card'})">Book Stay</a>
         </div>

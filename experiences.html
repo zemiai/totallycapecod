@@ -48,31 +48,31 @@
 <nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/guides/">Guides</a><a href="/app/">📱 App</a></div><button class="nav-mobile-toggle" onclick="toggleMobileMenu()">☰</button></div></nav>
 <div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()"><a href="/">Home</a><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/events.html">What's Happening</a><a href="/itinerary.html">Plan My Trip</a><a href="/guides/">Guides</a><a href="/app/">📱 Open the App</a></div></div>
 
-<section class="hero" style="min-height:50vh;"><div class="hero-overlay"></div><div class="hero-content" style="padding-top:80px;"><div class="hero-badge">⛵ Cape Cod Adventures</div><h1 class="hero-title">Experiences & <span class="script">Tours</span></h1><p class="hero-subtitle">Whale watching, sailing, lighthouse tours, and hidden adventures. Book directly and skip the lines.</p></div></section>
+<section class="hero" style="min-height:50vh;"><div class="hero-overlay"></div><div class="hero-content" style="padding-top:80px;"><div class="hero-badge">⛵ Cape Cod Adventures</div><h1 class="hero-title">Experiences & <span class="script">Tours</span></h1><p class="hero-subtitle">Whale watching, sailing, lighthouse tours, and hidden adventures. Reserve ahead with the operator or on Viator.</p></div></section>
 
 <section class="section page-wrap">
 <div class="filter-bar">
 <div class="filter-chip active" onclick="filterExp('all',this)">All</div>
 <div class="filter-chip" onclick="filterExp('whale',this)">🐋 Whale Watching</div>
-<div class="filter-chip" onclick="filterExp('sailing',this)">⛵ Sailing</div>
-<div class="filter-chip" onclick="filterExp('kayak',this)">🛶 Kayaking</div>
+<div class="filter-chip" onclick="filterExp('boat',this)">⛵ On the Water</div>
+<div class="filter-chip" onclick="filterExp('nature',this)">🌿 Nature Walks</div>
 <div class="filter-chip" onclick="filterExp('lighthouse',this)">💡 Lighthouses</div>
 <div class="filter-chip" onclick="filterExp('bike',this)">🚲 Biking</div>
 </div>
 
 <div class="affiliate-band" style="margin-bottom:20px;">
-<div><div class="label">🎫 Book on Viator</div><div class="title">Skip the lines — reserve Cape Cod experiences in advance</div></div>
+<div><div class="label">🎫 Book on Viator</div><div class="title">Reserve Cape Cod tours and cruises in advance</div></div>
 <a href="https://www.viator.com/Cape-Cod/d5265-ttd" target="_blank" rel="noopener" class="btn btn-navy btn-sm" onclick="gtag('event','affiliate_click',{type:'viator',location:'experiences_banner'})">Browse →</a>
 </div>
 
 <div class="exp-grid" id="expGrid"></div>
 
 <div class="card" style="padding:24px; margin-top:32px;">
-<h3 style="font-family:'Fraunces',serif; font-weight:900; font-size:20px; margin:0 0 6px; color:var(--cape-brown-dark);">⭐ Top 3 Must-Do Cape Experiences</h3>
+<h3 style="font-family:'Fraunces',serif; font-weight:900; font-size:20px; margin:0 0 6px; color:var(--cape-brown-dark);">⭐ Three Cape Classics</h3>
 <div class="grid-3" style="margin-top:16px;">
 <div class="card" style="padding:16px;"><div style="font-size:28px; margin-bottom:8px;">🐋</div><div style="font-weight:700; font-size:15px; margin-bottom:4px;">Whale Watch from Provincetown</div><div style="font-size:13px; color:var(--text-secondary);">3–4 hours out to Stellwagen Bank. Boats run seasonally — check the operator's schedule.</div></div>
-<div class="card" style="padding:16px;"><div style="font-size:28px; margin-bottom:8px;">💡</div><div style="font-weight:700; font-size:15px; margin-bottom:4px;">Lighthouse Self-Guided Tour</div><div style="font-size:13px; color:var(--text-secondary);">12 lighthouses, audio stories, and the best photo ops on the Cape.</div></div>
-<div class="card" style="padding:16px;"><div style="font-size:28px; margin-bottom:8px;">⛵</div><div style="font-weight:700; font-size:15px; margin-bottom:4px;">Sunset Sail from Hyannis</div><div style="font-size:13px; color:var(--text-secondary);">2 hours on the water. Bring wine and watch the sun melt into the sound.</div></div>
+<div class="card" style="padding:16px;"><div style="font-size:28px; margin-bottom:8px;">💡</div><div style="font-weight:700; font-size:15px; margin-bottom:4px;">Lighthouse Self-Guided Tour</div><div style="font-size:13px; color:var(--text-secondary);">12 lighthouses with audio stories, in the free app.</div></div>
+<div class="card" style="padding:16px;"><div style="font-size:28px; margin-bottom:8px;">⛵</div><div style="font-weight:700; font-size:15px; margin-bottom:4px;">Sunset Cruise from Hyannis</div><div style="font-size:13px; color:var(--text-secondary);">Evening cruises run in season — check the operator’s schedule.</div></div>
 </div>
 </div>
 
@@ -94,16 +94,15 @@
 <script>
 function toggleMobileMenu(){document.getElementById('mobileMenu').classList.toggle('show');}
 const exps=[
-{name:"Provincetown Whale Watch",town:"Provincetown",price:"$65",duration:"3-4 hrs",rating:4.7,tags:["whale"],img:"https://images.unsplash.com/photo-1568430462989-44163eb1752f?w=600&q=80",desc:"Seasonal trips — check the operator's schedule. Naturalist on board. One of the best whale watches in the world."},
-{name:"Cape Cod Canal Bike Tour",town:"Bourne to Provincetown",price:"$45",duration:"2 hrs",rating:4.5,tags:["bike"],img:"https://images.unsplash.com/photo-1485965120184-e224f7a1d7f6?w=600&q=80",desc:"Flat, scenic 7-mile path along the canal. Great for families and casual riders."},
-{name:"Sunset Sail — Bay Spirit",town:"Hyannis",price:"$55",duration:"2 hrs",rating:4.6,tags:["sailing"],img:"https://images.unsplash.com/photo-1500514966906-fe245eea9344?w=600&q=80",desc:"Catamaran sunset cruise with drinks and music. Pure magic on the water."},
-{name:"Wellfleet Bay Wildlife Sanctuary",town:"Wellfleet",price:"$8",duration:"2-3 hrs",rating:4.8,tags:["kayak"],img:"https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80",desc:"Kayak through tidal creeks and salt marshes. Guided tours available."},
-{name:"Highland Lighthouse Tour",town:"Truro",price:"$10",duration:"1 hr",rating:4.6,tags:["lighthouse"],img:"https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80",desc:"Climb to the top for panoramic views of the National Seashore."},
-{name:"Dolphin Fleet Whale Watch",town:"Provincetown",price:"$58",duration:"3-4 hrs",rating:4.7,tags:["whale"],img:"https://images.unsplash.com/photo-1568430462989-44163eb1752f?w=600&q=80",desc:"Smaller boats, closer encounters. Researchers on every trip."},
-{name:"Cape Cod Rail Trail",town:"Dennis to Wellfleet",price:"Free",duration:"3-4 hrs",rating:4.5,tags:["bike"],img:"https://images.unsplash.com/photo-1485965120184-e224f7a1d7f6?w=600&q=80",desc:"25 miles of paved trail through woods, ponds, and beaches."},
-{name:"Nauset Marsh Kayak Tour",town:"Eastham",price:"$60",duration:"2.5 hrs",rating:4.7,tags:["kayak"],img:"https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80",desc:"Paddle through marshes with seals and ospreys. Guided by naturalists."},
-{name:"Chatham Lighthouse Beach Walk",town:"Chatham",price:"Free",duration:"1-2 hrs",rating:4.4,tags:["lighthouse"],img:"https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80",desc:"Iconic lighthouse + dramatic erosion cliffs. Great for photography."},
-{name:"Pirates Cove Mini Golf",town:"South Yarmouth",price:"$15",duration:"1.5 hrs",rating:4.3,tags:["family"],img:"https://images.unsplash.com/photo-1534234828563-025cf17ebb12?w=600&q=80",desc:"Two 18-hole courses. Classic Cape Cod family fun."},
+{name:"Dolphin Fleet Whale Watch",town:"Provincetown",price:"",duration:"3–4 hrs",tags:["whale"],img:"https://images.unsplash.com/photo-1568430462989-44163eb1752f?w=600&q=80",desc:"Naturalist-led whale watch trips from Provincetown to Stellwagen Bank. Boats run seasonally — check the operator's schedule."},
+{name:"Cape Cod Canal Bikeway",town:"Bourne & Sandwich",price:"Free",duration:"About 7 mi each side",tags:["bike"],img:"https://images.unsplash.com/photo-1485965120184-e224f7a1d7f6?w=600&q=80",desc:"Flat, paved service roads along both banks of the Cape Cod Canal. Great for families and casual riders."},
+{name:"Bay Spirit Sunset Cruise",town:"Hyannis",price:"",duration:"Evening",tags:["boat"],img:"https://images.unsplash.com/photo-1500514966906-fe245eea9344?w=600&q=80",desc:"Sunset cruise on a 64-foot motor catamaran with a full bar in the cabin. Seasonal."},
+{name:"Wellfleet Bay Wildlife Sanctuary",town:"Wellfleet",price:"$8 adults",duration:"5 miles of trails",tags:["nature"],img:"https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80",desc:"Mass Audubon trails through salt marsh, woods and beach. Members free; no dogs. Guided programs are sold separately."},
+{name:"Highland Lighthouse Tour",town:"Truro",price:"$10 adults",duration:"About 20 min",tags:["lighthouse"],img:"https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80",desc:"Climb the National Seashore's Highland Light. Climbers must be at least 48 inches tall. Open daily May 1–October 25 in 2026."},
+{name:"Cape Cod Rail Trail",town:"Yarmouth to Wellfleet",price:"Free",duration:"About 25 mi",tags:["bike"],img:"https://images.unsplash.com/photo-1485965120184-e224f7a1d7f6?w=600&q=80",desc:"Paved trail through woods, past ponds and near beaches."},
+{name:"Great Island Trail",town:"Wellfleet",price:"Free",duration:"Up to 8.8 mi round trip",tags:["nature"],img:"https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80",desc:"The National Seashore's most difficult trail: mostly soft sand, out to the Jeremy Point overlook. Portions are submerged at high tide, so check the tides."},
+{name:"Chatham Lighthouse overlook",town:"Chatham",price:"Free",duration:"30-min parking",tags:["lighthouse"],img:"https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80",desc:"View and photograph the lighthouse from the sidewalk and the beach below. The closest lot has a strictly enforced 30-minute limit, so for a longer visit park in town and walk."},
+{name:"Pirate's Cove Adventure Golf",town:"South Yarmouth",price:"",duration:"",tags:["family"],img:"https://images.unsplash.com/photo-1534234828563-025cf17ebb12?w=600&q=80",desc:"Two 18-hole mini golf courses. Seasonal — check hours before you go."},
 ];
 let expFilter='all';
 function renderExps(){
@@ -111,15 +110,15 @@ function renderExps(){
   const filtered=expFilter==='all'?exps:exps.filter(e=>e.tags.includes(expFilter));
   grid.innerHTML=filtered.map(e=>`
     <div class="exp-card">
-      <div class="cover" style="background-image:url('${e.img}')"><span class="price-pill">${e.price}</span></div>
+      <div class="cover" style="background-image:url('${e.img}')">${e.price?`<span class="price-pill">${e.price}</span>`:''}</div>
       <div class="body">
         <h3>${e.name}</h3>
-        <div class="meta">${e.town} · ${e.duration} · ⭐ ${e.rating}</div>
+        <div class="meta">${[e.town,e.duration].filter(Boolean).join(' · ')}</div>
         <div class="tags">${e.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
         <p style="font-size:13px;color:var(--text-secondary);margin:0 0 10px;line-height:1.5;">${e.desc}</p>
         <div class="actions">
-          <a href="https://www.viator.com/searchResults/all?text=${encodeURIComponent(e.name)}" target="_blank" rel="noopener" class="btn-view" onclick="gtag('event','affiliate_click',{type:'viator',item:'${e.name}',location:'experiences_card'})">Book on Viator</a>
-          <a href="https://www.tripadvisor.com/Search?q=${encodeURIComponent(e.name+' Cape Cod')}" target="_blank" rel="noopener" class="btn-book" onclick="gtag('event','affiliate_click',{type:'tripadvisor',item:'${e.name}',location:'experiences_card'})">Reviews</a>
+          <a href="https://www.viator.com/searchResults/all?text=${encodeURIComponent(e.name)}" target="_blank" rel="noopener" class="btn-view" onclick="gtag('event','affiliate_click',{type:'viator',item:'${e.name.replace(/'/g,'')}',location:'experiences_card'})">Book on Viator</a>
+          <a href="https://www.tripadvisor.com/Search?q=${encodeURIComponent(e.name+' Cape Cod')}" target="_blank" rel="noopener" class="btn-book" onclick="gtag('event','affiliate_click',{type:'tripadvisor',item:'${e.name.replace(/'/g,'')}',location:'experiences_card'})">Reviews</a>
         </div>
       </div>
     </div>

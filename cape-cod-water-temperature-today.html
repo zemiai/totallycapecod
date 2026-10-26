@@ -4,17 +4,17 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#4A90A4" />
-<title>Cape Cod Water Temperature Today — Live by Beach</title>
-<meta name="description" content="Live Cape Cod ocean water temperature today for every beach — updated throughout the day. See which beaches are warmest right now on the Cape and Islands." />
+<title>Cape Cod Water Temperature Today: Readings by Beach | Totally Cape Cod</title>
+<meta name="description" content="Cape Cod water temperature today from three NOAA sensors (Woods Hole, a Cape Cod Bay buoy and a Nantucket Sound buoy), matched to each beach's nearest sensor." />
 <link rel="canonical" href="https://totallycapecod.com/cape-cod-water-temperature-today.html" />
-<meta property="og:title" content="Cape Cod Water Temperature Today — Live by Beach" />
-<meta property="og:description" content="Live Cape Cod ocean water temperature today for every beach — updated throughout the day. See which beaches are warmest right now on the Cape and Islands." />
+<meta property="og:title" content="Cape Cod Water Temperature Today: Readings by Beach" />
+<meta property="og:description" content="Cape Cod water temperature today from three NOAA sensors (Woods Hole, a Cape Cod Bay buoy and a Nantucket Sound buoy), matched to each beach's nearest sensor." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://totallycapecod.com/cape-cod-water-temperature-today.html" />
 <meta property="og:image" content="https://totallycapecod.com/og-image.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Cape Cod Water Temperature Today — Live by Beach" />
-<meta name="twitter:description" content="Live Cape Cod ocean water temperature today for every beach — updated throughout the day. See which beaches are warmest right now on the Cape and Islands." />
+<meta name="twitter:title" content="Cape Cod Water Temperature Today: Readings by Beach" />
+<meta name="twitter:description" content="Cape Cod water temperature today from three NOAA sensors (Woods Hole, a Cape Cod Bay buoy and a Nantucket Sound buoy), matched to each beach's nearest sensor." />
 <meta name="twitter:image" content="https://totallycapecod.com/og-image.png" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0YM9WQLWK"></script>
 <script>
@@ -91,19 +91,20 @@
 <section class="hero" style="min-height:40vh;">
   <div class="hero-overlay"></div>
   <div class="hero-content" style="padding-top:80px;">
-    <div class="hero-badge">Live Water Temps</div>
+    <div class="hero-badge">Water Temps Today</div>
     <h1 class="hero-title" style="font-size:clamp(26px,5vw,50px);">Cape Cod Water <span class="script">Temperature</span> Today</h1>
-    <p class="hero-subtitle">Current ocean temp at every beach — updated all day long</p>
+    <p class="hero-subtitle">Readings from three NOAA sensors, matched to each beach</p>
   </div>
 </section>
 
 <section class="section page-wrap">
 
   <p style="font-size:15px; line-height:1.7; color:var(--text); margin:0 0 28px; max-width:760px;">
-    Cape Cod ocean temperatures vary more than most visitors expect — Bay-side beaches in Barnstable and Dennis can run
-    5–10°F warmer than the ocean-facing National Seashore beaches in Eastham or Wellfleet, especially in summer.
-    This page shows the current water temperature at every beach in our live data feed, so you can find the warmest
-    swim of the day before you leave the house.
+    Water temperatures vary around the Cape: Cape Cod Bay, Nantucket Sound and the open Atlantic can differ by several
+    degrees, especially in summer. Each beach below shows the latest reading from its nearest working sensor: NOAA's
+    Woods Hole station, the Cape Cod Bay buoy or the Nantucket Sound buoy. There's no sensor on the ocean side, so
+    Atlantic-facing beaches such as Nauset, Coast Guard, Marconi and Race Point show the Cape Cod Bay reading, and the
+    water there can be several degrees different.
   </p>
 
   <div id="tempData">
@@ -191,12 +192,19 @@ function renderGrid(beaches) {
       '<div class="beach-town-card">' + b.town + '</div>' +
       '<div class="temp-display temp-' + cls + '">' + b.water_temp + '<span class="temp-unit">°F</span></div>' +
       '<div class="temp-label-feel ' + feel.cls + '">' + feel.label + '</div>' +
+      '<div style="font-size:11px;color:var(--text-secondary);margin-top:6px;">' + (b.water_temp_src ? 'Sensor: ' + b.water_temp_src : 'Sensor reading') + (b.water_temp_at ? ' · ' + fmtWhen(b.water_temp_at) : ' · time unknown') + '</div>' +
     '</div>';
   }).join('');
 
   return cards || '<div style="text-align:center;padding:20px;color:var(--text-secondary);">No temperature data available right now.</div>';
 }
 
+function fmtWhen(iso) {
+  var d = new Date(iso); if (isNaN(d)) return '';
+  var mins = Math.round((Date.now() - d.getTime()) / 60000);
+  var ago = mins < 60 ? mins + ' min ago' : (mins < 1440 ? Math.round(mins / 60) + ' h ago' : Math.round(mins / 1440) + ' days ago');
+  return d.toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) + ' (' + ago + ')';
+}
 function setSort(mode, btn) {
   sortMode = mode;
   document.querySelectorAll('.sort-btn').forEach(function(b){ b.classList.remove('active'); });
@@ -214,7 +222,8 @@ async function loadData() {
     var beaches = data.beaches || [];
     if (!beaches.length) throw new Error('No beach data');
     beachesAll = beaches;
-    var updatedAt = data.updated_at ? new Date(data.updated_at).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}) : 'recently';
+    var updatedAt = data.updated_at ? fmtWhen(data.updated_at) : 'unknown';
+    var staleNote = (data.updated_at && (Date.now() - new Date(data.updated_at).getTime()) > 6 * 3600000) ? ' · <strong>These readings are more than 6 hours old.</strong>' : '';
 
     container.innerHTML =
       '<div class="legend">' +
@@ -229,7 +238,7 @@ async function loadData() {
         '<button class="sort-btn" onclick="setSort(\'town\',this)">By Town</button>' +
       '</div>' +
       '<div class="temp-grid" id="tempGrid">' + renderGrid(beaches) + '</div>' +
-      '<p class="updated-line">Last updated: ' + updatedAt + ' · <a href="/app/">Full data in the app →</a></p>';
+      '<p class="updated-line">Data file updated: ' + updatedAt + staleNote + ' · <a href="/app/">Full data in the app →</a></p>';
 
   } catch (e) {
     console.error(e);
