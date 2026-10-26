@@ -536,8 +536,8 @@
       <div id="proStatusBanner"></div>
       <!-- Email capture banner (shown once to free users) -->
       <div id="emailBanner" style="display:none; margin:10px 16px; background:linear-gradient(135deg, var(--cape-navy) 0%, var(--cape-navy-dark) 100%); color:white; padding:14px; border-radius:14px; box-shadow:0 4px 12px rgba(26,58,108,0.25);">
-        <div style="font-weight:700; font-size:14px;">📜 Free 2026 Vibe Guide</div>
-        <div style="font-size:12px; opacity:0.85; margin:4px 0 10px;">Hidden beaches, best lobster rolls, secret sunsets — delivered to your inbox.</div>
+        <div style="font-weight:700; font-size:14px;">📬 Cape Cod updates by email</div>
+        <div style="font-size:12px; opacity:0.85; margin:4px 0 10px;">New guides, events and seasonal tips from Totally Cape Cod.</div>
         <div style="display:flex; gap:6px;">
           <input type="email" id="appEmailInput" placeholder="your@email.com" style="flex:1; padding:8px 12px; border:none; border-radius:10px; font-size:13px;" />
           <button onclick="submitAppEmail()" style="background:var(--gold); color:white; border:none; padding:8px 14px; border-radius:10px; font-weight:700; font-size:12px; cursor:pointer;">Send</button>
@@ -593,6 +593,8 @@
         <button onclick="switchTab('events')">See all →</button>
       </div>
       <div id="todayHappening"></div>
+      <!-- Photo of the week from a local photographer (data/photos.json — used with permission, always credited) -->
+      <div id="todayLens"></div>
       <div id="todayBeachSlotOff"></div>
     </div>
 
@@ -1348,7 +1350,7 @@ if (PREVIEW_BRANCH) {
   });
 }
 async function loadData() {
-  const files = ['stamps', 'beaches', 'today', 'conditions', 'bridges', 'whales', 'lighthouses', 'ai-knowledge', 'eats', 'events'];
+  const files = ['stamps', 'beaches', 'today', 'conditions', 'bridges', 'whales', 'lighthouses', 'ai-knowledge', 'eats', 'events', 'photos'];
   const fetchWithTimeout = (url, ms) => {
     const controller = new AbortController();
     const tid = setTimeout(() => controller.abort(), ms);
@@ -1473,8 +1475,25 @@ function renderSpecials() {
 }
 
 // ============ RENDER: TODAY ============
+function renderLens() {
+  const el = document.getElementById('todayLens'); if (!el) return;
+  const d = state.data.photos || {}; const people = d.photographers || {};
+  const now = new Date();
+  const mmdd = String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+  const inWin = w => !w || (w.from <= w.to ? (mmdd >= w.from && mmdd <= w.to) : (mmdd >= w.from || mmdd <= w.to));
+  const pool = (d.photos || []).filter(p => p.gallery !== false && p.post && p.post.rotation && inWin(p.post.window));
+  if (!pool.length) { el.innerHTML = ''; return; }
+  const week = Math.floor((now - new Date(now.getFullYear(), 0, 1)) / 604800000);
+  const p = pool[week % pool.length]; const by = people[p.photographer] || {};
+  el.innerHTML = `<div class="ios-section-title"><span>📸 Photo of the Week</span><button onclick="location.href='/photos.html'">Gallery →</button></div>
+    <a href="${nbEsc(p.source_url)}" target="_blank" rel="noopener" style="display:block;margin:0 16px;border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.08);">
+      <img src="/${nbEsc(p.file)}" alt="${nbEsc(p.alt)}" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;"></a>
+    <div style="margin:8px 16px 4px;font-size:13px;line-height:1.5;color:var(--ios-sub);"><strong style="color:var(--ios-text,#111);">${nbEsc(p.title)}</strong>${p.place ? ' · ' + nbEsc(p.place) : ''}<br>
+      📸 <a href="${nbEsc(by.facebook || p.source_url)}" target="_blank" rel="noopener">${nbEsc(by.name || 'Local photographer')}</a>, shared with permission · <a href="${nbEsc(by.facebook || p.source_url)}" target="_blank" rel="noopener">See more of their work →</a></div>`;
+}
 function renderToday() {
   renderSpecials();
+  try { renderLens(); } catch (e) {}
   // Date
   const opts = { weekday:'long', month:'long', day:'numeric' };
   document.getElementById('todayDate').textContent = new Date().toLocaleDateString('en-US', opts);
@@ -3483,15 +3502,16 @@ async function submitAppEmail() {
   const email = document.getElementById('appEmailInput').value;
   if (!email || !email.includes('@')) { toast('Please enter a valid email'); return; }
   try {
-    await fetch('/.netlify/functions/email-capture', {
+    const res = await fetch('/.netlify/functions/email-capture', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, source: 'app_banner', url: location.href, timestamp: new Date().toISOString() })
     });
-  } catch {}
+    if (!res.ok) throw new Error('signup failed');
+  } catch { toast('That didn’t go through. Please try again.'); return; }
   localStorage.setItem('tcc_email_captured', 'true');
   document.getElementById('emailBanner').style.display = 'none';
-  toast('🎉 Guide sent! Check your inbox.');
+  toast('🎉 You’re subscribed!');
   gtag && gtag('event','generate_lead',{method:'app_banner'});
 }
 
