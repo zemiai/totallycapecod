@@ -11,13 +11,15 @@
  *   class="s-summer"      shown only in summer mode
  *   class="s-off"         shown only in off-season mode
  *   data-season-label     text replaced with "Summer 2027" / "Off-Season 2026–27"
- * JS: TCCSeason.isOff(), TCCSeason.pick(summerValue, offValue), TCCSeason.label()
+ *   "free_until": "YYYY-MM-DD" → every Pro feature free for everyone before this date
+ * JS: TCCSeason.isOff(), TCCSeason.pick(summerValue, offValue), TCCSeason.label(),
+ *     TCCSeason.isFree(), TCCSeason.freeUntilLabel()
  *     document.addEventListener('tcc:season', e => …)  — fires when the mode changes after load.
  */
 (function () {
   var root = document.documentElement;
-  var KEY = 'tcc_season';
-  var DEF_START = '05-22', DEF_END = '09-14';
+  var KEY = 'tcc_season', FREE_KEY = 'tcc_free_until';
+  var DEF_START = '05-22', DEF_END = '09-14', DEF_FREE_UNTIL = '2027-05-22';
   var params = new URLSearchParams(location.search);
   var forced = params.get('season');
   if (forced !== 'summer' && forced !== 'offseason') forced = null;
@@ -62,6 +64,19 @@
     }
   }
 
+  // Free period: Pro features free for everyone until free_until (ET calendar date).
+  var freeUntil = DEF_FREE_UNTIL;
+  try { var fu = localStorage.getItem(FREE_KEY); if (fu !== null) freeUntil = /^\d{4}-\d{2}-\d{2}$/.test(fu) ? fu : ''; } catch (e) {}
+  function todayET() {
+    return new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+  }
+  function isFree() { return !!freeUntil && todayET() < freeUntil; }
+  function freeUntilLabel() {
+    // The last free day, e.g. free_until 2027-05-22 → "May 21"
+    var d = new Date(freeUntil + 'T12:00:00Z'); d.setUTCDate(d.getUTCDate() - 1);
+    return new Intl.DateTimeFormat('en-US', { timeZone: 'UTC', month: 'long', day: 'numeric' }).format(d);
+  }
+
   // 1) Paint immediately: URL override → last known mode → date default. No flash on repeat visits.
   var cached = null;
   try { cached = localStorage.getItem(KEY); } catch (e) {}
@@ -78,14 +93,28 @@
     mode: function () { return root.dataset.season; },
     isOff: function () { return root.dataset.season === 'offseason'; },
     pick: function (summerVal, offVal) { return root.dataset.season === 'offseason' ? offVal : summerVal; },
-    label: label, resolve: resolve, config: null
+    label: label, resolve: resolve, config: null,
+    isFree: isFree, freeUntil: function () { return freeUntil; }, freeUntilLabel: freeUntilLabel
   };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', paintLabels);
   else paintLabels();
   if (!forced && window.fetch) {
     fetch(RAW, { cache: 'no-cache' })
       .then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (cfg) { if (cfg) { window.TCCSeason.config = cfg; set(resolve(cfg), true); } })
+      .then(function (cfg) {
+        if (!cfg) return;
+        window.TCCSeason.config = cfg;
+        // free_until: a YYYY-MM-DD date, or missing/empty = no free period.
+        var wasFree = isFree();
+        freeUntil = /^\d{4}-\d{2}-\d{2}$/.test(cfg.free_until || '') ? cfg.free_until : '';
+        try { localStorage.setItem(FREE_KEY, freeUntil); } catch (e) {}
+        var freeChanged = wasFree !== isFree();
+        var prev = root.dataset.season;
+        set(resolve(cfg), true);
+        if (freeChanged && prev === root.dataset.season) {
+          try { document.dispatchEvent(new CustomEvent('tcc:season', { detail: { mode: root.dataset.season, free: isFree() } })); } catch (e) {}
+        }
+      })
       .catch(function () {});
   }
 })();

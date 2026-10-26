@@ -727,6 +727,25 @@
 
     <!-- ===== PRO ===== -->
     <div class="screen" id="screen-pro">
+      <!-- Free season (data/season.json "free_until"): everything unlocked, no purchase ask -->
+      <div id="proFreeSeason" style="display:none; padding:30px 20px;">
+        <div style="background:linear-gradient(135deg,#1A3A6C 0%,#2C5599 100%); color:white; padding:30px 20px; border-radius:20px; text-align:center;">
+          <div style="font-size:56px;">🎁</div>
+          <div class="font-display" style="font-weight:900; font-size:28px; margin-top:10px;">Everything's free</div>
+          <div style="opacity:0.9; font-size:13px; margin-top:6px;">Every Pro feature is unlocked for everyone until <strong id="proFreeUntil">May 21</strong>. No sign-up, no card.</div>
+        </div>
+        <div class="ios-section-title" style="padding-left:0;"><span>Unlocked for you</span></div>
+        <div style="background:white; border-radius:14px; padding:16px; box-shadow:0 1px 3px rgba(0,0,0,0.04);">
+          <div style="padding:5px 0;">✅ All 27 beaches</div>
+          <div style="padding:5px 0;">✅ Every event, every filter</div>
+          <div style="padding:5px 0;">✅ All 100 passport stamps + badges</div>
+          <div style="padding:5px 0;">✅ Unlimited AI Concierge</div>
+          <div style="padding:5px 0;">✅ 7-day bridge + tide forecasts</div>
+          <div style="padding:5px 0;">✅ All lighthouse audio tours</div>
+        </div>
+        <div style="text-align:center; color:var(--ios-sub); font-size:12px; margin-top:14px; line-height:1.5;">Already bought Pro? It's yours for life — nothing changes.<br/>
+          <button onclick="openModal('restorePurchase')" style="background:none; border:none; color:var(--cape-navy); font-size:12px; font-weight:600; text-decoration:underline; cursor:pointer; font-family:inherit;">Restore purchase</button></div>
+      </div>
       <!-- TASK9 Lever 2: Enhanced paywall persuasion copy -->
       <div id="proSplashLocked">
         <div style="background:linear-gradient(135deg,#1A3A6C 0%,#2C5599 100%); color:white; padding:30px 20px; text-align:center;">
@@ -1453,7 +1472,9 @@ function renderToday() {
 
   // Pro banner (or Lever 4 streak + Lever 5 preview taste banners)
   const banner = document.getElementById('proStatusBanner');
-  if (state.isPro) {
+  if (!state.isPro && tccFree()) {
+    banner.innerHTML = `<div class="pro-banner"><div style="display:flex; align-items:center; gap:10px;"><span style="font-size:22px;">🎁</span><div style="flex:1;"><div style="font-weight:700; font-size:14px;">Everything's free until ${tccFreeLabel()}</div><div style="font-size:11px; opacity:0.85;">Every Pro feature unlocked for the off-season — no sign-up, no catch.</div></div></div></div>`;
+  } else if (state.isPro) {
     banner.innerHTML = `<div class="pro-banner"><div style="display:flex; align-items:center; gap:10px;"><span style="font-size:22px;">👑</span><div style="flex:1;"><div style="font-weight:700; font-size:14px;">Cape Cod Pro</div><div style="font-size:11px; opacity:0.85;">All features unlocked</div></div></div></div>`;
   } else {
     let bannerHtml = '';
@@ -1551,7 +1572,7 @@ function renderToday() {
 
   // Happening — TASK9 Lever 5: proPreview also unlocks events on first session
   const events = state.data.events?.events || [];
-  const unlocked = state.isPro || state.proPreview;
+  const unlocked = hasPro() || state.proPreview;
   const shown = unlocked ? events.slice(0, 10) : events.slice(0, FREE_EVENT_LIMIT);
   let happeningHtml = shown.map(e => renderEventCard(e)).join('') ||
     '<div class="empty-state">No events posted for today yet — check back this morning.</div>';
@@ -1684,7 +1705,7 @@ function renderEvents() {
   // Filter chips — TASK9 Lever 5: proPreview unlocks category filters on first session
   const cats = [{id:'all',label:'All'},{id:'music',label:'🎵 Music'},{id:'theater',label:'🎭 Theater'},{id:'art',label:'🎨 Art'},{id:'food',label:'🍴 Food & Drink'},{id:'family',label:'👨‍👩‍👧 Family'},{id:'festival',label:'🎪 Festival'},{id:'talk',label:'🎙️ Talks'}];
   document.getElementById('eventFilters').innerHTML = cats.map(c => {
-    const locked = !state.isPro && !state.proPreview && c.id !== 'all';
+    const locked = !hasPro() && !state.proPreview && c.id !== 'all';
     return `<div class="chip ${state.eventFilter===c.id?'active':''} ${locked?'locked':''}" onclick="${locked?`switchTab('pro')`:`filterEvents('${c.id}')`}">${c.label}${locked?' 🔒':''}</div>`;
   }).join('');
 
@@ -1692,7 +1713,7 @@ function renderEvents() {
   let filtered = events;
   if (state.eventFilter !== 'all') filtered = events.filter(e => e.category === state.eventFilter);
   // TASK9 Lever 5: proPreview gets full event list on first session
-  const shown = (state.isPro || state.proPreview) ? filtered : filtered.slice(0, FREE_EVENT_LIMIT);
+  const shown = (hasPro() || state.proPreview) ? filtered : filtered.slice(0, FREE_EVENT_LIMIT);
   const eventsEmpty = filtered.length === 0
     ? (events.length === 0
         ? '<div class="empty-state">No events posted for today yet — check back this morning.</div>'
@@ -1701,7 +1722,7 @@ function renderEvents() {
   document.getElementById('eventsList').innerHTML = shown.map(e => renderEventCard(e)).join('') || eventsEmpty;
 
   // TASK9 Lever 5: loss-aversion copy on events unlock CTA
-  if (!state.isPro && !state.proPreview && filtered.length > FREE_EVENT_LIMIT) {
+  if (!hasPro() && !state.proPreview && filtered.length > FREE_EVENT_LIMIT) {
     const usedPreview = _previewUsed && _previewUsed !== new Date().toDateString();
     const ctaMsg = usedPreview
       ? `You saw all ${filtered.length} events last visit — unlock everything again · $9.99`
@@ -1779,10 +1800,10 @@ function renderBeaches() {
       '<div class="ios-list-item"><div class="item-sub">Beach reports start rolling in each morning — check back soon.</div></div>';
 
     // TASK9 Lever 5: proPreview also unlocks all beaches on first session
-    if (state.isPro || state.proPreview) {
+    if (hasPro() || state.proPreview) {
       document.getElementById('beachLockedSection').innerHTML = '';
       document.getElementById('beachUnlockedSection').innerHTML = `
-        <div class="ios-section-title"><span>${state.proPreview && !state.isPro ? '🎁 All beaches — free preview' : 'All Cape beaches'}</span></div>
+        <div class="ios-section-title"><span>${state.proPreview && !hasPro() ? '🎁 All beaches — free preview' : 'All Cape beaches'}</span></div>
         <div class="ios-list">${sorted.slice(FREE_BEACH_LIMIT).map(b => renderBeachRow(b)).join('')}</div>`;
     } else {
       // Second+ session, not Pro — show loss-aversion at the lock point (Lever 5)
@@ -1826,6 +1847,10 @@ function beachStatus(b){
 }
 // ---- Season helpers (switch lives in data/season.json → js/season.js) ----
 function tccOff(){ return !!(window.TCCSeason && TCCSeason.isOff()); }
+// Free season: every Pro feature open to everyone until data/season.json "free_until".
+function tccFree(){ return !!(window.TCCSeason && TCCSeason.isFree && TCCSeason.isFree()); }
+function tccFreeLabel(){ return (window.TCCSeason && TCCSeason.freeUntilLabel) ? TCCSeason.freeUntilLabel() : 'May'; }
+function hasPro(){ return state.isPro || tccFree(); }
 // Lifeguard season on the Cape runs roughly late June → Labor Day (town + National
 // Seashore schedules; see docs/SEASON.md for sources). Labor Day = first Monday of September.
 function tccLifeguardSeason(d){
@@ -1855,6 +1880,16 @@ applyTodayLayout();
 document.addEventListener('tcc:season', () => {
   applyTodayLayout();
   try { renderAll(); } catch (e) {}
+  // Free season may have changed too — re-render any open paywalled screen.
+  const act = document.querySelector('.screen.active')?.id || '';
+  try {
+    if (act === 'screen-passport') renderPassport();
+    else if (act === 'screen-ai') renderAi();
+    else if (act === 'screen-bridges') renderBridges();
+    else if (act === 'screen-conditions') renderConditions();
+    else if (act === 'screen-lighthouses') renderLighthouses();
+    else if (act === 'screen-whales') renderWhales();
+  } catch (e) {}
   if (beachMapInstance) { beachMapInstance.remove(); beachMapInstance = null; }
   if (document.getElementById('screen-beaches')?.classList.contains('active')) { try { renderBeaches(); } catch (e) {} }
 });
@@ -2203,7 +2238,7 @@ function renderPassport() {
       Array.from({length: 25}, () => `<div class="stamp">?</div>`).join('');
   }
 
-  if (!state.isPro) {
+  if (!hasPro()) {
     document.getElementById('passportLockedSection').innerHTML = `
       <div class="ios-section-title"><span>🔒 75 more · Pro</span></div>
       <div style="padding:0 16px;">
@@ -2224,10 +2259,10 @@ function renderPassport() {
   document.getElementById('stampCounter').textContent = c;
   const total = stamps.length || 100;                 // real collection size (data-driven, not hardcoded)
   const totalEl = document.getElementById('stampTotal'); if (totalEl) totalEl.textContent = total;
-  const max = state.isPro ? total : FREE_STAMP_LIMIT;
+  const max = hasPro() ? total : FREE_STAMP_LIMIT;
   document.getElementById('stampProgress').style.width = (c / max * 100) + '%';
   const _tier = currentTier(c), _next = nextTier(c);
-  document.getElementById('stampTierLabel').textContent = _tier ? `${_tier.icon} ${_tier.name}` : (state.isPro ? 'Pro · collecting' : `Free · max ${FREE_STAMP_LIMIT}`);
+  document.getElementById('stampTierLabel').textContent = _tier ? `${_tier.icon} ${_tier.name}` : (state.isPro ? 'Pro · collecting' : tccFree() ? 'Free season · all 100 open' : `Free · max ${FREE_STAMP_LIMIT}`);
   document.getElementById('stampNextBadge').textContent = _next ? `Next: ${_next.icon} ${_next.name} (${_next.at})` : '🏆 Cape Master!';
   renderTierTrack(c);
   // First-time encouragement when no stamps yet collected
@@ -2250,11 +2285,11 @@ function openStamp(slug) {
     btn.textContent = '✓ Collected';
     btn.style.background = 'var(--ios-sub)';
     btn.onclick = () => closeModal('stamp');
-  } else if (!state.isPro && state.stamps.length >= FREE_STAMP_LIMIT && s.is_pro === false) {
+  } else if (!hasPro() && state.stamps.length >= FREE_STAMP_LIMIT && s.is_pro === false) {
     btn.textContent = 'Free limit reached — Upgrade';
     btn.style.background = 'var(--gold-dark)';
     btn.onclick = () => { closeModal('stamp'); switchTab('pro'); };
-  } else if (!state.isPro && s.is_pro) {
+  } else if (!hasPro() && s.is_pro) {
     btn.textContent = '🔒 Pro · Unlock for $9.99';
     btn.style.background = 'var(--gold-dark)';
     btn.onclick = () => { closeModal('stamp'); switchTab('pro'); };
@@ -2290,8 +2325,8 @@ function confirmStamp() {
 
 // ============ RENDER: AI ============
 function renderAi() {
-  const left = state.isPro ? '∞' : Math.max(0, 1 - state.aiCount);
-  document.getElementById('aiQuestionsLeft').textContent = state.isPro ? 'Unlimited' : `${left} free question${left===1?'':'s'} left today`;
+  const left = hasPro() ? '∞' : Math.max(0, 1 - state.aiCount);
+  document.getElementById('aiQuestionsLeft').textContent = hasPro() ? (state.isPro ? 'Unlimited' : `Unlimited · free until ${tccFreeLabel()}`) : `${left} free question${left===1?'':'s'} left today`;
 }
 function quickAi(q) {
   // May be invoked from the Today tab's "Ask a Cape Local" block — make sure the
@@ -2352,7 +2387,7 @@ function buildAiContext() {
   } catch (e) { return ''; }
 }
 function sendAi() {
-  if (!state.isPro && state.aiCount >= 1) {
+  if (!hasPro() && state.aiCount >= 1) {
     const conv = document.getElementById('aiConv');
     conv.innerHTML += `<div class="ai-bubble-ai">⚠️ You've used your free question today. <strong onclick="switchTab('pro')" style="text-decoration:underline; cursor:pointer;">Unlock unlimited for $9.99</strong></div>`;
     conv.scrollTop = conv.scrollHeight;
@@ -2383,7 +2418,7 @@ function sendAi() {
   // Charge the free-question quota only when a real answer was actually given —
   // never for kill-switch, not-yet-configured, rate-limit, or already-limited cases.
   const chargeQuestion = () => {
-    if (!state.isPro) {
+    if (!hasPro()) {
       state.aiCount++;
       localStorage.setItem('tcc_ai_today', String(state.aiCount));
       renderAi();
@@ -2397,7 +2432,7 @@ function sendAi() {
     fetch(window.TCC_AI_ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ question: q, deviceId, isPro: state.isPro, context: buildAiContext() }),
+      body: JSON.stringify({ question: q, deviceId, isPro: hasPro(), context: buildAiContext() }),
     })
       .then(async r => {
         const d = await r.json().catch(() => ({}));
@@ -2507,7 +2542,7 @@ function renderBridges() {
     </div>
   `).join('');
 
-  if (state.isPro) {
+  if (hasPro()) {
     const week = state.data.bridges?.forecast_7day || [];
     document.getElementById('bridge7Day').innerHTML = `
       <div class="ios-section-title"><span>📆 7-day forecast (Pro)</span></div>
@@ -2563,7 +2598,7 @@ function renderConditions() {
     <div class="ios-list-item"><span style="font-size:22px;">${w.icon}</span><div style="flex:1;"><div class="item-title">${w.condition} · ${w.temp_high}° / ${w.temp_low}° ${condFresh}</div><div class="item-sub">Wind ${w.wind_mph}mph ${w.wind_dir} · Humidity ${w.humidity}% · UV ${w.uv_index}</div></div></div>
     <div class="ios-list-item"><span style="font-size:22px;">🌊</span><div style="flex:1;"><div class="item-title">Water ${c.water_temp_f}°F</div><div class="item-sub">Swell ${c.swell_height_ft}ft @ ${c.swell_period_sec}s</div></div></div>`;
 
-  if (state.isPro) {
+  if (hasPro()) {
     const f = state.data.conditions?.forecast_7day || [];
     document.getElementById('conditions7Day').innerHTML = `
       <div class="ios-section-title"><span>📆 7-day forecast (Pro)</span></div>
@@ -2627,7 +2662,7 @@ function renderWhales() {
     <button onclick="openModal('reportSighting')" style="background:var(--cape-navy); color:white; border:none; padding:11px 22px; border-radius:12px; font-weight:700; font-size:14px; cursor:pointer;">Report a sighting</button>
   </div>`;
 
-  document.getElementById('whaleProTease').innerHTML = state.isPro ? `
+  document.getElementById('whaleProTease').innerHTML = hasPro() ? `
     <div class="pro-banner" style="margin:14px 16px;">
       <div style="font-weight:700; font-size:14px;">🔔 Push alerts ON</div>
       <div style="font-size:12px; opacity:0.85;">You'll be notified when whales are spotted within 10 mi.</div>
@@ -2705,7 +2740,7 @@ function renderLighthouses() {
   }
 
   document.getElementById('lighthouseList').innerHTML = lhs.map(l => {
-    const locked = !state.isPro && !l.is_free;
+    const locked = !hasPro() && !l.is_free;
     return `<div class="ios-list-item tappable" onclick="${locked ? `switchTab('pro')` : `openLighthouse('${l.slug}')`}">
       <span style="font-size:24px;">${locked ? '🔒' : '💡'}</span>
       <div style="flex:1;">
@@ -3247,6 +3282,17 @@ if (_isDev) {
   };
 }
 function renderPro() {
+  const freeNote = document.getElementById('proFreeSeason');
+  if (freeNote) {
+    freeNote.style.display = (!state.isPro && tccFree()) ? 'block' : 'none';
+    const lbl = document.getElementById('proFreeUntil'); if (lbl) lbl.textContent = tccFreeLabel();
+  }
+  if (!state.isPro && tccFree()) {
+    document.getElementById('proSplashLocked').style.display = 'none';
+    document.getElementById('proSplashUnlocked').style.display = 'none';
+    document.getElementById('moreMenuProStatus').textContent = `🎁 Free until ${tccFreeLabel()}`;
+    return;
+  }
   if (state.isPro) {
     document.getElementById('proSplashLocked').style.display = 'none';
     document.getElementById('proSplashUnlocked').style.display = 'block';

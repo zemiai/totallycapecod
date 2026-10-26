@@ -3,7 +3,7 @@
 One setting controls the season for the whole site: **`data/season.json`**.
 
 ```json
-{ "mode": "auto", "auto_summer_start": "05-22", "auto_summer_end": "09-14" }
+{ "mode": "auto", "auto_summer_start": "05-22", "auto_summer_end": "09-14", "free_until": "2027-05-22" }
 ```
 
 | `mode`      | What happens |
@@ -11,6 +11,8 @@ One setting controls the season for the whole site: **`data/season.json`**.
 | `auto`      | Summer mode from `auto_summer_start` to `auto_summer_end` (MM-DD), off-season the rest of the year. Default. |
 | `summer`    | Force summer mode. |
 | `offseason` | Force off-season mode. |
+
+**`free_until`** — every Pro feature (all beaches, all events and filters, 100 stamps, unlimited AI, 7-day forecasts, lighthouse tours, whale alerts) is free for everyone *before* this date (ET). On that date the paywall returns by itself. Set it to a past date (or `""`) to end the free period early; move it to extend. People who bought Pro keep it either way. AI questions stay capped at 30/hour per visitor server-side, which bounds the API bill.
 
 The app, the guide pages and the Facebook/Instagram posts all read this file live from GitHub, so **changing it needs no deploy**. Edit it on github.com → commit to `main` and the site switches within a minute. To preview a mode without changing anything, add `?season=summer` or `?season=offseason` to any page URL.
 
