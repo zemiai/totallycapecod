@@ -1366,7 +1366,12 @@ async function loadData() {
         return new Date(e.start).getTime() > Date.now() - graceH * 3600 * 1000;
       });
       const seen = new Set(base.map(e => e.id));
-      const merged = keep.filter(e => !seen.has(e.id)).concat(base);
+      // Also drop a curated item when a chamber calendar already lists the same event that day.
+      const nt = t => String(t || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+      const baseKeys = base.map(e => [nt(e.title), String(e.start || '').slice(0, 10)]);
+      const dupOfBase = e => { const n = nt(e.title), d = String(e.start || '').slice(0, 10);
+        return baseKeys.some(([bn, bd]) => bd === d && (bn === n || (Math.min(bn.length, n.length) >= 12 && (bn.includes(n) || n.includes(bn))))); };
+      const merged = keep.filter(e => !seen.has(e.id) && !dupOfBase(e)).concat(base);
       merged.sort((a, b) => new Date(a.start || 0) - new Date(b.start || 0));
       merged.sort((a, b) => (b.pinned ? 1 : 0) - (a.pinned ? 1 : 0));  // pinned to top (stable: keeps date order within each)
       state.data.events.events = merged;
