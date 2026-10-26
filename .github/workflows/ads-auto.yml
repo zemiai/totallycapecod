@@ -19,6 +19,7 @@ on:
 
 permissions:
   contents: write
+  id-token: write      # keyless Google auth (workload identity) for Search Console + GA4
 
 concurrency:
   group: ads-auto
@@ -39,6 +40,13 @@ jobs:
         env:
           FB_ADS_TOKEN: ${{ secrets.FB_ADS_TOKEN }}
           FB_AD_ACCOUNT_ID: ${{ secrets.FB_AD_ACCOUNT_ID }}
+      - name: Google auth (keyless — GitHub OIDC → tcc-metrics service account)
+        if: github.event.schedule != '0 14 * * 5' && github.event.inputs.job != 'boost'
+        continue-on-error: true
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/107969132506/locations/global/workloadIdentityPools/github/providers/github-repo
+          service_account: tcc-metrics@totally-capecod.iam.gserviceaccount.com
       - name: Business metrics (ads + stripe + ga4 + search console)
         if: github.event.schedule != '0 14 * * 5' && github.event.inputs.job != 'boost'
         run: python scripts/update_metrics.py

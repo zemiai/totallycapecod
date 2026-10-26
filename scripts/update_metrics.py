@@ -4,9 +4,12 @@
 Collects into data/metrics.json (data-only commit → no Netlify rebuild):
   meta_ads   — per-ad spend/clicks/CTR/CPC last 7d + WASTE FLAGS   (FB_ADS_TOKEN)
   stripe     — sales count + revenue, last 30d                     (STRIPE_REPORTING_KEY)
-  ga4        — sessions/users last 7d + by campaign + purchases    (GOOGLE_SA_KEY, GA4_PROPERTY_ID)
+  ga4        — sessions/users last 7d + by campaign + purchases    (Google creds; property auto-found)
   gsc        — ranking movement: 28d vs prior 28d, top queries/pages, tracked keywords,
-               sitemap status; daily snapshot in data/gsc_history.json   (GOOGLE_SA_KEY)
+               sitemap status; daily snapshot in data/gsc_history.json
+
+Google credentials: keyless workload identity in ads-auto.yml (service account
+tcc-metrics@totally-capecod.iam.gserviceaccount.com), or a GOOGLE_SA_KEY secret.
 
 Each collector skips cleanly when its secret is absent and can't break the
 others. The waste guard prints ::warning:: annotations for any ad with
@@ -86,25 +89,63 @@ def collect_stripe():
             "by_source": by_source}
 
 
+def _has_google() -> bool:
+    """Either a service-account key (GOOGLE_SA_KEY) or keyless workload-identity credentials
+    from google-github-actions/auth (GOOGLE_APPLICATION_CREDENTIALS)."""
+    return bool(os.environ.get("GOOGLE_SA_KEY", "").strip() or os.environ.get("GOOGLE_APPLICATION_CREDENTIALS", "").strip())
+
+
 def _google_token(scopes):
-    raw = os.environ.get("GOOGLE_SA_KEY", "").strip()
-    if not raw:
-        return None
-    from google.oauth2 import service_account
     from google.auth.transport.requests import Request
-    creds = service_account.Credentials.from_service_account_info(json.loads(raw), scopes=scopes)
+    raw = os.environ.get("GOOGLE_SA_KEY", "").strip()
+    if raw:
+        from google.oauth2 import service_account
+        creds = service_account.Credentials.from_service_account_info(json.loads(raw), scopes=scopes)
+    elif os.environ.get("GOOGLE_APPLICATION_CREDENTIALS", "").strip():
+        import google.auth
+        creds, _ = google.auth.default(scopes=scopes)
+    else:
+        return None
     creds.refresh(Request())
     return creds.token
 
 
-def collect_ga4():
+GA4_MEASUREMENT_ID = "G-Q0YM9WQLWK"      # the site's gtag ID; used to find the GA4 property
+
+
+def _ga4_property(token):
+    """GA4_PROPERTY_ID if set, else find the property whose web stream uses GA4_MEASUREMENT_ID
+    among the properties this account can see (Analytics Admin API)."""
     prop = os.environ.get("GA4_PROPERTY_ID", "").strip()
-    if not os.environ.get("GOOGLE_SA_KEY", "").strip() or not prop:
-        return {"skipped": "GOOGLE_SA_KEY / GA4_PROPERTY_ID not set"}
+    if prop:
+        return prop
+    H = {"Authorization": f"Bearer {token}"}
+    r = requests.get("https://analyticsadmin.googleapis.com/v1beta/accountSummaries", headers=H,
+                     params={"pageSize": 200}, timeout=60)
+    if not r.ok:
+        return None
+    for acct in r.json().get("accountSummaries", []):
+        for ps in acct.get("propertySummaries", []):
+            pid = ps["property"].split("/")[-1]
+            st = requests.get(f"https://analyticsadmin.googleapis.com/v1beta/properties/{pid}/dataStreams",
+                              headers=H, timeout=60)
+            for ds in (st.json().get("dataStreams", []) if st.ok else []):
+                if (ds.get("webStreamData") or {}).get("measurementId") == GA4_MEASUREMENT_ID:
+                    return pid
+    return None
+
+
+def collect_ga4():
+    if not _has_google():
+        return {"skipped": "no Google credentials (workload identity or GOOGLE_SA_KEY)"}
     try:
         token = _google_token(["https://www.googleapis.com/auth/analytics.readonly"])
     except Exception as e:
         return {"error": f"auth: {e}"}
+    prop = _ga4_property(token)
+    if not prop:
+        return {"error": f"no GA4 property with stream {GA4_MEASUREMENT_ID} visible — add "
+                         "tcc-metrics@totally-capecod.iam.gserviceaccount.com as a Viewer in GA4"}
     def run(body):
         r = requests.post(
             f"https://analyticsdata.googleapis.com/v1beta/properties/{prop}:runReport",
@@ -161,8 +202,8 @@ def collect_gsc():
     property). Reports ranking MOVEMENT: last 28 days vs the 28 before (GSC data lags ~3 days),
     top queries/pages with position change, our tracked keywords, sitemap status. Also appends a
     daily snapshot to data/gsc_history.json so the trend builds up over weeks."""
-    if not os.environ.get("GOOGLE_SA_KEY", "").strip():
-        return {"skipped": "GOOGLE_SA_KEY not set"}
+    if not _has_google():
+        return {"skipped": "no Google credentials (workload identity or GOOGLE_SA_KEY)"}
     try:
         token = _google_token(["https://www.googleapis.com/auth/webmasters"])
     except Exception as e:
@@ -175,8 +216,9 @@ def collect_gsc():
     mine = [x for x in r.json().get("siteEntry", []) if "totallycapecod" in x.get("siteUrl", "")
             and x.get("permissionLevel") != "siteUnverifiedUser"]
     if not mine:
-        return {"error": "no accessible totallycapecod.com property — add the service account's email "
-                         "as a user in Search Console (Settings → Users and permissions)"}
+        return {"error": "no accessible totallycapecod.com property — add "
+                         "tcc-metrics@totally-capecod.iam.gserviceaccount.com as a Full user in Search Console "
+                         "(Settings → Users and permissions)"}
     mine.sort(key=lambda x: (not x["siteUrl"].startswith("sc-domain:"), x["siteUrl"]))
     site, perm = mine[0]["siteUrl"], mine[0].get("permissionLevel")
     base = f"{API}/sites/{requests.utils.quote(site, safe='')}"
