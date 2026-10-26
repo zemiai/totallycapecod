@@ -19,7 +19,8 @@
       "cluster": "wildlife",
       "keywords": ["right whales cape cod bay", "where to see seals on cape cod", "cape cod whale watching winter", "seals chatham", "best time to see whales off cape cod"],
       "window": {"from": "10-15", "to": "04-30"},
-      "status": "queued",
+      "status": "published",
+      "published": "2026-10-26",
       "auto": false,
       "priority": 2,
       "brief": "Off-season wildlife from shore: when right whales are in Cape Cod Bay, where seals haul out, legal viewing distances, who to call for a stranded animal."

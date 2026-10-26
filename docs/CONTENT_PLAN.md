@@ -64,7 +64,7 @@ search volumes.
 | Events | cape cod events this weekend / today / this week, events calendar | /events.html (now live + sourced) |
 | Seasons | cape cod in november … april, cape cod in winter, weather by month, best time to visit | monthly guides (queued, each in its season window) |
 | Planning | is cape cod worth visiting (top autocomplete phrase), how many days, is cape cod an island, is cape cod expensive | queued |
-| Wildlife | right whales cape cod bay, where to see seals, whale watching | winter wildlife guide (in progress) |
+| Wildlife | right whales cape cod bay, where to see seals, whale watching, cold-stunned sea turtles | /guides/whales-and-seals-cape-cod-winter/ ✅ |
 | Beaches | dog friendly beaches, free parking, beach stickers 2027, sharks | queued for spring |
 | Towns | provincetown off-season, things to do in chatham | queued |
 
