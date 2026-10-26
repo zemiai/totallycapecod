@@ -1,0 +1,69 @@
+name: "content writer"
+
+# About two researched, fact-checked guides a week (Tue + Fri, 9:15 AM ET in EDT /
+# 8:15 AM in EST). Each run picks the next in-season topic from content/plan.json,
+# researches it, drafts it ONLY from cited evidence, and publishes it only if every
+# fact-check passes (scripts/content/writer.py). Anything that fails is parked in
+# content/drafts/ with a report instead of going live.
+#
+# Needs ONE repo secret: ANTHROPIC_API_KEY (preferred — enables web research) or
+# GEMINI_API_KEY (seed URLs + site data only). Without a key the run skips cleanly.
+
+on:
+  schedule:
+    - cron: "15 13 * * 2,5"
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: "Topic id from content/plan.json (blank = next one due)"
+        required: false
+        default: ""
+      dry_run:
+        description: "Type 1 to research + draft + fact-check without publishing"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: content-writer
+  cancel-in-progress: false
+
+jobs:
+  write:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r scripts/requirements.txt
+      - name: Research, write, fact-check and build
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          CONTENT_MODEL: ${{ vars.CONTENT_MODEL }}
+          CONTENT_TOPIC: ${{ github.event.inputs.topic }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+        run: python scripts/content/writer.py
+      - name: Commit and push
+        if: github.event.inputs.dry_run != '1'
+        run: |
+          git config user.name "hermes-bot"
+          git config user.email "hermes-bot@users.noreply.github.com"
+          git add content guides authors sitemap.xml
+          if git diff --cached --quiet; then
+            echo "nothing to publish"
+            exit 0
+          fi
+          msg="[content] $(cat .content_commit_msg 2>/dev/null || echo 'guide update')"
+          git commit -m "$msg"
+          for i in 1 2 3 4 5; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep $((i * 5))
+          done
+          exit 1

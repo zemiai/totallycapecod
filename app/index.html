@@ -506,6 +506,7 @@
     <a href="/stays.html">Stays</a>
     <a href="/experiences.html">Experiences</a>
     <a href="/events.html">What's Happening</a>
+    <a href="/guides/">Guides</a>
   </nav>
 </aside>
 
@@ -679,9 +680,9 @@
     <!-- ===== BRIDGES ===== -->
     <div class="screen" id="screen-bridges">
       <div class="ios-large-title">Bridge Oracle</div>
-      <div class="ios-subhead">Current delays + when to leave</div>
+      <div class="ios-subhead">Live delays from Google Maps traffic + typical patterns</div>
       <div id="bridgeCurrent"></div>
-      <div class="ios-section-title"><span>📅 Today's hourly forecast</span></div>
+      <div class="ios-section-title" id="bridgeHourlyTitle"><span>📅 Typical busy summer day, by hour (estimate)</span></div>
       <div class="ios-list" id="bridgeHourly"></div>
       <div id="bridge7Day"></div>
       <div id="bridgeTips"></div>
@@ -740,7 +741,7 @@
           <div style="padding:5px 0;">✅ Every event, every filter</div>
           <div style="padding:5px 0;">✅ All 100 passport stamps + badges</div>
           <div style="padding:5px 0;">✅ Unlimited AI Concierge</div>
-          <div style="padding:5px 0;">✅ 7-day bridge + tide forecasts</div>
+          <div style="padding:5px 0;">✅ Bridge traffic patterns + 7-day tide &amp; weather forecasts</div>
           <div style="padding:5px 0;">✅ All lighthouse audio tours</div>
         </div>
         <div style="text-align:center; color:var(--ios-sub); font-size:12px; margin-top:14px; line-height:1.5;">Already bought Pro? It's yours for life — nothing changes.<br/>
@@ -762,7 +763,7 @@
           <!-- Lead with highest-value outcomes first -->
           <div class="benefit-row s-summer"><span class="icon">🏖️</span><div><strong>All 27 beaches — live parking &amp; water temp</strong><div style="font-size:12px; color:var(--ios-sub); margin-top:1px;">Never drive to a full lot again</div></div></div>
           <div class="benefit-row s-off"><span class="icon">🏖️</span><div><strong>All 27 beaches — water temps &amp; tides</strong><div style="font-size:12px; color:var(--ios-sub); margin-top:1px;">Plan off-season beach walks around the tide</div></div></div>
-          <div class="benefit-row"><span class="icon">🌉</span><div><strong>7-day bridge traffic predictor</strong><div style="font-size:12px; color:var(--ios-sub); margin-top:1px;">Know the best time to cross — days ahead</div></div></div>
+          <div class="benefit-row"><span class="icon">🌉</span><div><strong>Bridge traffic patterns</strong><div style="font-size:12px; color:var(--ios-sub); margin-top:1px;">Typical summer busy times + easier times to cross</div></div></div>
           <div class="benefit-row"><span class="icon">⚡</span><div><strong>Unlimited events — music, food, art &amp; more</strong><div style="font-size:12px; color:var(--ios-sub); margin-top:1px;">Filter by category · nothing hidden</div></div></div>
           <div class="benefit-row"><span class="icon">🎫</span><div><strong>All 100 passport stamps + milestone badges</strong><div style="font-size:12px; color:var(--ios-sub); margin-top:1px;"><span class="s-summer">The full Cape summer challenge</span><span class="s-off">The full Cape challenge — any season</span></div></div></div>
           <div class="benefit-row"><span class="icon">🤖</span><strong>Unlimited AI Concierge</strong></div>
@@ -796,7 +797,7 @@
           <div style="padding:5px 0;">✅ Unlimited Today events</div>
           <div style="padding:5px 0;">✅ All 100 stamps + badges</div>
           <div style="padding:5px 0;">✅ Unlimited AI</div>
-          <div style="padding:5px 0;">✅ 7-day bridge + tide forecast</div>
+          <div style="padding:5px 0;">✅ Bridge traffic patterns + 7-day tide &amp; weather forecast</div>
           <div style="padding:5px 0;">✅ Whale alerts + sighting submissions</div>
           <div style="padding:5px 0;">✅ All 12 lighthouse audio tours</div>
           <div style="padding:5px 0;">✅ Ad-free forever</div>
@@ -2496,6 +2497,11 @@ function renderBridges() {
     document.getElementById('bridgeTips').innerHTML = '';
     return;
   }
+  // Freshness from the file's real update time (the per-bridge "last_check" text is static).
+  const bUpd = Date.parse(state.data.bridges?.updated_at || '');
+  const bAge = isNaN(bUpd) ? null : Math.round((Date.now() - bUpd) / 60000);
+  const bFresh = bAge == null ? 'Live' : bAge < 60 ? `Updated ${Math.max(1, bAge)}m ago` : bAge < 1440 ? `Updated ${Math.round(bAge / 60)}h ago` : 'Updating…';
+  b.sagamore.last_check = bFresh; b.bourne.last_check = bFresh;
   // TASK9 Lever 4: freshness cues on bridge cards
   document.getElementById('bridgeCurrent').innerHTML = `
     <div class="bridge-card">
@@ -2517,6 +2523,17 @@ function renderBridges() {
       <div class="bridge-delay ${b.bourne.current_status==='light'?'light':b.bourne.current_status==='heavy'?'heavy':'moderate'}">${b.bourne.current_delay_min}<span style="font-size:14px;">m</span></div>
     </div>`;
 
+  // The hourly/weekly patterns and "best times" are fixed summer estimates, not live forecasts.
+  // Off-season they'd mislead, so show them only in summer mode, clearly labeled.
+  const hTitle = document.getElementById('bridgeHourlyTitle');
+  if (tccOff()) {
+    if (hTitle) hTitle.style.display = 'none';
+    document.getElementById('bridgeHourly').innerHTML = '<div class="ios-list-item"><div class="item-sub">The delays above are live, measured from Google Maps traffic through the day. Typical summer patterns return in summer mode.</div></div>';
+    document.getElementById('bridge7Day').innerHTML = '';
+    document.getElementById('bridgeTips').innerHTML = '';
+    return;
+  }
+  if (hTitle) hTitle.style.display = '';
   const hourly = state.data.bridges?.forecast_24h || [];
   if (!hourly.length) {
     document.getElementById('bridgeHourly').innerHTML = '<div class="ios-list-item"><div class="item-sub">Hourly forecast updating…</div></div>';
@@ -2545,7 +2562,7 @@ function renderBridges() {
   if (hasPro()) {
     const week = state.data.bridges?.forecast_7day || [];
     document.getElementById('bridge7Day').innerHTML = `
-      <div class="ios-section-title"><span>📆 7-day forecast (Pro)</span></div>
+      <div class="ios-section-title"><span>📆 Typical summer week (estimate)</span></div>
       <div class="ios-list">${week.map(d => `
         <div class="ios-list-item">
           <div style="width:40px; font-weight:700;">${d.day}</div>
@@ -2556,7 +2573,7 @@ function renderBridges() {
         </div>`).join('')}</div>`;
     const tips = state.data.bridges?.best_times_to_leave;
     document.getElementById('bridgeTips').innerHTML = tips ? `
-      <div class="ios-section-title"><span>🚗 Best times to leave</span></div>
+      <div class="ios-section-title"><span>🚗 Usually-easier times to cross in summer (estimate)</span></div>
       <div class="ios-list">
         <div class="ios-list-item"><div style="flex:1;"><div class="item-title">Sundays off-Cape</div><div class="item-sub">${tips.off_cape_sunday}</div></div></div>
         <div class="ios-list-item"><div style="flex:1;"><div class="item-title">Weekdays off-Cape</div><div class="item-sub">${tips.off_cape_weekday}</div></div></div>
@@ -2565,8 +2582,8 @@ function renderBridges() {
       </div>` : '';
   } else {
     document.getElementById('bridge7Day').innerHTML = `
-      <div class="ios-section-title"><span>🔒 7-day forecast · Pro</span></div>
-      <button class="unlock-cta" onclick="switchTab('pro')">Unlock 7-day predictor + best times to leave · $9.99</button>`;
+      <div class="ios-section-title"><span>🔒 Summer traffic patterns · Pro</span></div>
+      <button class="unlock-cta" onclick="switchTab('pro')">Unlock typical patterns + best times to cross · $9.99</button>`;
     document.getElementById('bridgeTips').innerHTML = '';
   }
 }

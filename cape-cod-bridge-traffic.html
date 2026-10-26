@@ -24,6 +24,7 @@
   gtag('config', 'G-Q0YM9WQLWK');
 </script>
 <script src="/js/pixel.js" defer></script>
+<script src="/js/season.js"></script>
 <link rel="stylesheet" href="css/tcc.css" />
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
@@ -72,7 +73,7 @@
       <a href="/stays.html">Stays</a>
       <a href="/experiences.html">Experiences</a>
       <a href="/events.html">What's Happening</a>
-      <a href="/app/">📱 App</a>
+      <a href="/guides/">Guides</a><a href="/app/">📱 App</a>
     </div>
     <button class="nav-mobile-toggle" onclick="toggleMobileMenu()">☰</button>
   </div>
@@ -87,7 +88,7 @@
     <a href="/experiences.html">Experiences</a>
     <a href="/events.html">What's Happening</a>
     <a href="/itinerary.html">Plan My Trip</a>
-    <a href="/app/">📱 Open the App</a>
+    <a href="/guides/">Guides</a><a href="/app/">📱 Open the App</a>
   </div>
 </div>
 
@@ -96,16 +97,16 @@
   <div class="hero-content" style="padding-top:80px;">
     <div class="hero-badge">Live Traffic</div>
     <h1 class="hero-title" style="font-size:clamp(24px,4.5vw,48px);">Cape Cod Bridge <span class="script">Traffic</span> Right Now</h1>
-    <p class="hero-subtitle">Sagamore &amp; Bourne Bridge — current delays + best times to leave</p>
+    <p class="hero-subtitle">Sagamore &amp; Bourne Bridge — live delays from Google Maps traffic</p>
   </div>
 </section>
 
 <section class="section page-wrap">
 
   <p style="font-size:15px; line-height:1.7; color:var(--text); margin:0 0 28px; max-width:760px;">
-    The Sagamore and Bourne bridges are the only two ways on and off Cape Cod — and on a summer Friday afternoon they can add
-    45+ minutes to your drive. This page pulls live speed and delay data for both bridges, shows a 24-hour forecast so you can
-    pick the right departure window, and gives the best times to leave for the week ahead.
+    The Sagamore and Bourne bridges are the two highway bridges over the Cape Cod Canal. This page pulls live speed and
+    delay data for both from Google Maps traffic through the day, and in summer adds typical busy-day patterns (estimates)
+    to help you pick a departure window.
   </p>
 
   <div id="bridgeData">
@@ -173,7 +174,7 @@ function bridgeCard(b, delay) {
     '<div class="bridge-delay ' + cls + '">' + delayText + '</div>' +
     '<div class="bridge-label">Current delay</div>' +
     '<div class="bridge-advice">' + (b.advice || '') + '</div>' +
-    '<div class="bridge-speed">🚗 ' + (b.live_speed_mph || '—') + ' mph · free-flow ' + (b.free_flow_mph || '—') + ' mph · checked ' + (b.last_check || 'recently') + '</div>' +
+    '<div class="bridge-speed">🚗 ' + (b.live_speed_mph || '—') + ' mph · free-flow ' + (b.free_flow_mph || '—') + ' mph · checked ' + (window.__bridgeChecked || 'recently') + '</div>' +
   '</div>';
 }
 
@@ -198,6 +199,8 @@ async function loadData() {
     var forecast = data.forecast_24h || [];
     var bestTimes = data.best_times_to_leave || {};
     var updatedAt = data.updated_at ? new Date(data.updated_at).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}) : 'recently';
+    window.__bridgeChecked = updatedAt;   // real update time (the per-bridge text field is static)
+    var OFF = !!(window.TCCSeason && TCCSeason.isOff());
 
     var forecastRows = forecast.map(function(f) {
       return '<tr>' +
@@ -228,7 +231,8 @@ async function loadData() {
         bridgeCard(bou, bou.current_delay_min || 0) +
       '</div>' +
 
-      '<h2 class="section-label">24-Hour Forecast</h2>' +
+      (OFF ? '<p class="updated-line">Delays above are live, measured from Google Maps traffic through the day. The typical summer patterns we show in summer are hidden for the off-season.</p>' :
+      '<h2 class="section-label">Typical Busy Summer Day, by Hour (estimate)</h2>' +
       '<div style="overflow-x:auto;background:white;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);">' +
         '<table class="forecast-table">' +
           '<thead><tr>' +
@@ -240,8 +244,8 @@ async function loadData() {
         '</table>' +
       '</div>' +
 
-      '<h2 class="section-label">Best Times to Leave</h2>' +
-      '<div class="best-times-grid">' + bestCardsHtml + '</div>' +
+      '<h2 class="section-label">Usually-Easier Times to Cross in Summer (estimate)</h2>' +
+      '<div class="best-times-grid">' + bestCardsHtml + '</div>') +
       '<p class="updated-line">Last updated: ' + updatedAt + ' · <a href="/app/">Live bridge data in the app →</a></p>';
 
   } catch (e) {

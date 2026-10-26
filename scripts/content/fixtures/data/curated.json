@@ -1,0 +1,41 @@
+{
+ "version": "1.0",
+ "events": [
+  {
+   "id": "curated-mashpee-2026-11-27-cape-cod-christmas-market",
+   "category": "festival",
+   "title": "The Cape Cod Christmas Market",
+   "venue": "Naukabout Beer Garden, 4 Job's Fishing Rd",
+   "town": "Mashpee",
+   "lat": 41.6481,
+   "lng": -70.4822,
+   "time": "Fri Nov 27–Sun Nov 29 · 11:00 AM–2:00 PM daily",
+   "start": "2026-11-27T11:00:00-05:00",
+   "tag": "🎄 HOLIDAY MARKET",
+   "info": "Three-day outdoor holiday market over Thanksgiving weekend — local makers, food, live entertainment and Santa. Free admission.",
+   "price": "Free",
+   "source": "Facebook",
+   "credit": "Lemonadio.com, Mashpee Commons, Mashpee Chamber of Commerce & Naukabout",
+   "source_url": "https://www.facebook.com/events/2461427824362331/",
+   "verified": "2026-10-26 (organizer's public Facebook event)"
+  },
+  {
+   "id": "curated-harwich-2026-12-05-wequassett-merry-market",
+   "category": "festival",
+   "title": "Annual Merry Market & Fireworks at Wequassett",
+   "venue": "Wequassett Resort and Golf Club, 2173 Head of the Bay Rd",
+   "town": "Harwich",
+   "lat": 41.6863,
+   "lng": -70.078,
+   "time": "Sat Dec 5 · 1:00 PM–5:00 PM",
+   "start": "2026-12-05T13:00:00-05:00",
+   "tag": "🎄 HOLIDAY",
+   "info": "Holiday market and fireworks on Pleasant Bay.",
+   "price": "",
+   "source": "Facebook",
+   "credit": "Wequassett Resort and Golf Club",
+   "source_url": "https://www.facebook.com/events/906390749108224/",
+   "verified": "2026-10-26 (organizer's public Facebook event)"
+  }
+ ]
+}

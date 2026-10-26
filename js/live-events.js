@@ -3,6 +3,9 @@
  * element with data-live-events. Every card credits its source and links to it.
  *   <div data-live-events data-limit="6"></div>
  *   data-group="day"  → group cards under date headings (events page)
+ *   data-match="christmas|stroll"  → only events whose title/tag/venue matches (regex, case-insensitive)
+ *   data-from="2026-11-20" data-to="2026-12-31"  → only events on these ET dates (inclusive)
+ *   data-town="Chatham|Harwich"   → only these towns (regex)
  */
 (function () {
   var params = new URLSearchParams(location.search);
@@ -68,10 +71,24 @@
       (credit ? '<p style="font-size:12px;color:var(--text-secondary,#6b6b6b);margin:0;">' + credit + '</p>' : '') +
       '</div>';
   }
+  function safeRe(src) {
+    if (!src) return null;
+    try { return new RegExp(src, 'i'); } catch (e) { return null; }
+  }
   function render(el, events) {
     var limit = parseInt(el.getAttribute('data-limit') || '6', 10);
     var group = el.getAttribute('data-group') === 'day';
-    var list = events.slice(0, limit);
+    var match = safeRe(el.getAttribute('data-match'));
+    var townRe = safeRe(el.getAttribute('data-town'));
+    var from = el.getAttribute('data-from') || '', to = el.getAttribute('data-to') || '';
+    var list = events.filter(function (e) {
+      var day = eventDay(e);
+      if (from && day < from) return false;
+      if (to && day > to) return false;
+      if (townRe && !townRe.test(e.town || '')) return false;
+      if (match && !match.test([e.title, e.tag, e.venue, e.info].join(' '))) return false;
+      return true;
+    }).slice(0, limit);
     if (!list.length) {
       el.innerHTML = '<p style="color:var(--text-secondary,#6b6b6b);">No upcoming events are listed right now — check back soon, or open the app for tonight\'s picks.</p>';
       return;

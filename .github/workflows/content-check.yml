@@ -1,0 +1,36 @@
+name: "content check"
+
+# Guards the fact-check gate itself: every guide must validate (all facts cited, all
+# citations real), a clean mock draft must pass, and a mock draft with an invented date,
+# time and quote must be blocked. Runs whenever guides or the pipeline change.
+
+on:
+  push:
+    paths: ["content/**", "scripts/content/**"]
+  pull_request:
+    paths: ["content/**", "scripts/content/**"]
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r scripts/requirements.txt
+      - name: Every published guide validates
+        run: python scripts/content/build_site.py --check
+      - name: Clean draft passes the gate
+        run: |
+          CONTENT_LLM=mock CONTENT_MOCK=mock_ok.json CONTENT_DATA_DIR=scripts/content/fixtures/data CONTENT_PLAN=scripts/content/fixtures/test_plan.json DRY_RUN=1 \
+            python scripts/content/writer.py | tee ok.log
+          grep -q "passed all checks" ok.log
+      - name: Draft with invented facts is blocked
+        run: |
+          CONTENT_LLM=mock CONTENT_MOCK=mock_bad.json CONTENT_DATA_DIR=scripts/content/fixtures/data CONTENT_PLAN=scripts/content/fixtures/test_plan.json DRY_RUN=1 \
+            python scripts/content/writer.py | tee bad.log
+          grep -q "NOT PUBLISHED" bad.log
+          grep -q "dropped unverifiable quote" bad.log

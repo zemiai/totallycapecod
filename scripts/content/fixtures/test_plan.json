@@ -1,0 +1,20 @@
+{
+ "topics": [
+  {
+   "id": "test-markets",
+   "slug": "test-holiday-markets",
+   "title": "Test: Cape Cod Holiday Markets 2026",
+   "data": [
+    "events"
+   ],
+   "events_match": "Christmas Market|Merry Market",
+   "events_from": "2026-11-01",
+   "events_to": "2026-12-31",
+   "min_notes": 2,
+   "keywords": [
+    "test"
+   ],
+   "priority": 1
+  }
+ ]
+}

@@ -1,0 +1,14 @@
+{
+ "research": [
+  "[{\"note\": \"The Cape Cod Christmas Market runs Friday through Sunday, November 27\\u201329, 2026, 11 AM to 2 PM daily.\", \"doc\": \"D1\", \"quote\": \"When: Fri Nov 27\\u2013Sun Nov 29 \\u00b7 11:00 AM\\u20132:00 PM daily\"}, {\"note\": \"It is at the Naukabout Beer Garden, 4 Job's Fishing Rd, Mashpee, with free admission.\", \"doc\": \"D1\", \"quote\": \"Where: Naukabout Beer Garden, 4 Job's Fishing Rd, Mashpee\"}, {\"note\": \"Admission to the Christmas Market is free.\", \"doc\": \"D1\", \"quote\": \"Price: Free\"}, {\"note\": \"Wequassett's Merry Market & Fireworks is Saturday, December 5, 2026, 1\\u20135 PM.\", \"doc\": \"D2\", \"quote\": \"When: Sat Dec 5 \\u00b7 1:00 PM\\u20135:00 PM\"}, {\"note\": \"A made-up fact that is not in the document.\", \"doc\": \"D2\", \"quote\": \"Tickets cost $40 and sell out every year\"}]"
+ ],
+ "draft": [
+  "{\"title\": \"Test: Cape Cod Holiday Markets 2026\", \"seo_title\": \"Test Holiday Markets\", \"kicker\": \"Test\", \"description\": \"Test guide for the writer pipeline.\", \"faq\": [{\"q\": \"When is the Cape Cod Christmas Market?\", \"a\": \"Friday through Sunday, Nov 27\\u201329, from 11 AM to 2 PM daily [1].\"}], \"body_markdown\": \"## Markets\\n\\nThe Cape Cod Christmas Market runs Fri Nov 27 through Sun Nov 29, 11 AM to 2 PM daily, at the Naukabout Beer Garden in Mashpee, and admission is free [1].\\n\\nWequassett's Merry Market & Fireworks is on Saturday, Dec 9, from 1 PM to 7 PM, and it is the biggest market on the Cape [2].\\n\\n- **Tip:** confirm before you drive.\"}"
+ ],
+ "revise": [
+  "{\"title\": \"Test: Cape Cod Holiday Markets 2026\", \"seo_title\": \"Test Holiday Markets\", \"kicker\": \"Test\", \"description\": \"Test guide for the writer pipeline.\", \"faq\": [{\"q\": \"When is the Cape Cod Christmas Market?\", \"a\": \"Friday through Sunday, Nov 27\\u201329, from 11 AM to 2 PM daily [1].\"}], \"body_markdown\": \"## Markets\\n\\nThe Cape Cod Christmas Market runs Fri Nov 27 through Sun Nov 29, 11 AM to 2 PM daily, at the Naukabout Beer Garden in Mashpee, and admission is free [1].\\n\\nWequassett's Merry Market & Fireworks is on Saturday, Dec 9, from 1 PM to 7 PM, and it is the biggest market on the Cape [2].\\n\\n- **Tip:** confirm before you drive.\"}"
+ ],
+ "audit": [
+  "{\"issues\": [{\"sentence\": \"it is the biggest market on the Cape\", \"problem\": \"superlative not in evidence\"}]}"
+ ]
+}
