@@ -2,8 +2,11 @@ name: "[hermes] beaches"
 
 on:
   schedule:
-    # Every 20 min, May-October only (Cape's tourist season).
+    # Every 20 min, May-October (Cape's tourist season).
     - cron: "*/20 * * 5,6,7,8,9,10 *"
+    # Off-season (Nov-Apr): every 3 hours, so water temps stay honestly "live" year-round
+    # (the app only calls a reading live if it's under 6 hours old).
+    - cron: "15 */3 * 11,12,1,2,3,4 *"
   workflow_dispatch:
 
 concurrency:

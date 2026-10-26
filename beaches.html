@@ -24,6 +24,7 @@
   gtag('config', 'G-Q0YM9WQLWK');
 </script>
 <script src="/js/pixel.js" defer></script>
+<script src="/js/season.js"></script>
 <link rel="stylesheet" href="css/tcc.css" />
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
@@ -86,7 +87,7 @@
   <div class="hero-content" style="padding-top:80px;">
     <div class="hero-badge">27 Beaches Mapped</div>
     <h1 class="hero-title">Cape Cod <span class="script">Beaches</span></h1>
-    <p class="hero-subtitle">Live conditions. Real parking info. Hidden gems only locals know. Filter by your vibe and find your perfect beach.</p>
+    <p class="hero-subtitle">Filter by your vibe and find your beach — then check live water temps and tides in the app. <span class="s-off">Off-season: no lifeguards on duty, and beach restrooms may be closed.</span></p>
   </div>
 </section>
 
@@ -166,11 +167,10 @@ function renderBeaches() {
   grid.innerHTML = filtered.map(b => `
     <div class="beach-card" data-tags="${b.tags.join(' ')}">
       <div class="cover" style="background-image:url('${b.img}')">
-        <span class="status-pill ${b.status}">${b.status === 'open' ? '✅ Open' : b.status === 'mid' ? '🟠 Filling' : '❌ Full'}</span>
       </div>
       <div class="body">
         <h3>${b.name}</h3>
-        <div class="meta">${b.town} · ${b.spots}</div>
+        <div class="meta">${b.town}</div>
         <div class="tags">${b.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
         <p style="font-size:13px; color:var(--text-secondary); margin:0 0 10px; line-height:1.5;">${b.desc}</p>
         <div class="actions">

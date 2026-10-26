@@ -13,6 +13,15 @@ Two slots a day, each with a real Cape photo (not a text-card infographic):
     Sun  sunset spot               (best spot + time tonight)
   Fireworks days override everything with the fireworks lineup.
 
+  OFF-SEASON (data/season.json → mode offseason, or auto outside summer): beach-lot
+  formats switch to off-season ones (Mon beach walk + water temp, Sat "what's open"
+  community ask), the evening post drops the "room for a swim" line, and summer-only
+  questions/hashtags rotate out. Flip season.json back to summer to restore.
+
+  Honesty rule: lot status in data/beaches.json is a static TYPICAL pattern, not a live
+  reading, so posts never claim a beach "has room right now" unless a beachgoer
+  reported it in the last 3 hours (live reports from the beach-report function).
+
   EVENING (5 PM ET) — "Tonight on Cape": events with times + which beach lots
   still have room + sunset. Posted when people decide what to do.
 
@@ -31,11 +40,14 @@ Secrets: FB_PAGE_ID, FB_PAGE_ACCESS_TOKEN, IG_USER_ID (see SETUP_FACEBOOK.md).
 Run via .github/workflows/post-facebook.yml, or locally: DRY_RUN=1 python scripts/post_facebook.py
 """
 from __future__ import annotations
-import json, os, sys
+import json, os, re, sys
 from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 import requests
+
+sys.path.insert(0, str(Path(__file__).parent))
+from lib.season import is_offseason, season_hashtag  # noqa: E402  (season switch: data/season.json)
 
 ROOT = Path(__file__).parent.parent
 DATA = ROOT / "data"
@@ -101,6 +113,21 @@ def load(name: str):
     except Exception:
         return {}
 
+def _norm_title(t: str) -> str:
+    return " ".join(re.sub(r"[^a-z0-9]+", " ", (t or "").lower()).split())
+
+def dedupe_by_title(evs: list[dict]) -> list[dict]:
+    """Drop repeats of the same event — the same show on two nights, or one event listed
+    by two chambers ("Hymn Sing" vs "X hosts Hymn Sing"). Keeps the first occurrence."""
+    out, seen = [], []
+    for e in evs:
+        n = _norm_title(e.get("title"))
+        if not n or any(n == s or (min(len(n), len(s)) >= 12 and (n in s or s in n)) for s in seen):
+            continue
+        seen.append(n)
+        out.append(e)
+    return out
+
 def events_on(date_iso: str) -> list[dict]:
     """All events (scraped + curated) starting on the given ET date."""
     out, seen = [], set()
@@ -110,7 +137,7 @@ def events_on(date_iso: str) -> list[dict]:
                 seen.add(e.get("id"))
                 out.append(e)
     out.sort(key=lambda e: (0 if e.get("pinned") else 1, e.get("start") or ""))
-    return out
+    return dedupe_by_title(out)
 
 def evening_events(date_iso: str, n: int) -> list[dict]:
     evs = [e for e in events_on(date_iso) if "PM" in (e.get("time") or "") and plausible_time(e)]
@@ -157,7 +184,19 @@ BASE_TAGS = ["#CapeCod", "#CapeCodLife", "#CapeCodMA", "#CapeCodSummer"]
 
 def base_tags() -> list[str]:
     wk = now_et().isocalendar()[1]
-    return [BASE_TAGS[wk % 4], BASE_TAGS[(wk + 1) % 4]]
+    tags = BASE_TAGS[:3] + [season_hashtag()]          # #CapeCodSummer only in summer mode
+    return [tags[wk % 4], tags[(wk + 1) % 4]]
+
+def live_reports() -> dict:
+    """Real beachgoer lot reports from the last 3 hours (slug → {status, at, count})."""
+    try:
+        r = requests.get(f"{SITE}/.netlify/functions/beach-report", timeout=15)
+        data = r.json() if r.ok else {}
+    except Exception:
+        return {}
+    now_ms = datetime.now().timestamp() * 1000
+    return {k: v for k, v in (data or {}).items()
+            if isinstance(v, dict) and v.get("at") and now_ms - float(v["at"]) < 3 * 3600 * 1000}
 
 def fmt_fireworks(evs: list[dict]):
     lines = [rotate(["🎆 Fireworks on the Cape TONIGHT — here's where:",
@@ -173,19 +212,28 @@ def fmt_fireworks(evs: list[dict]):
     return lines, FIREWORKS_IMG, "fireworks", tags
 
 def fmt_beach_pick():
+    if is_offseason():
+        return fmt_beach_walk()
     beaches = (load("beaches.json") or {}).get("beaches") or []
-    opens = sorted([b for b in beaches if b.get("status") == "open"],
-                   key=lambda b: b.get("crowd", 3))
+    live = live_reports()
+    live_open = [b for b in beaches if (live.get(b.get("slug")) or {}).get("status") == "open"]
+    opens = live_open or sorted([b for b in beaches if b.get("status") == "open"],
+                                key=lambda b: b.get("crowd", 3))
     if not opens:
-        return fmt_tonight()  # nothing open (off-season) — fall through
+        return fmt_tonight()
     cond = (load("conditions.json") or {}).get("today") or {}
     water = cond.get("water_temp_f")
     b = opens[0]
-    hook = rotate([f"Locals' move today: {b.get('name')}.",
-                   f"If you only hit one beach today, make it {b.get('name')}.",
-                   f"Skip the circling — {b.get('name')} has room right now."])
+    if live_open:
+        hook = rotate([f"Reported just now: {b.get('name')} has spots.",
+                       f"Skip the circling — beachgoers say {b.get('name')} has room right now."])
+        detail = (b.get("town") or "") + " · live report from the app"
+    else:   # typical pattern only — no "right now" claims
+        hook = rotate([f"Locals' move today: {b.get('name')}.",
+                       f"If you only hit one beach today, make it {b.get('name')}.",
+                       f"Usually an easier lot: {b.get('name')}."])
+        detail = (b.get("town") or "") + " · usually has parking — check live reports before you drive"
     lines = [f"🏖️ {hook}", ""]
-    detail = (b.get("town") or "") + (f" · {b.get('spots_text')}" if b.get("spots_text") else "")
     if detail.strip():
         lines.append(detail)
     if water:
@@ -196,10 +244,58 @@ def fmt_beach_pick():
     tags = base_tags() + ["#CapeCodBeaches", hashtag(b.get("town", "CapeCod"))]
     return lines, photo_for("beach"), "beach_pick", tags
 
+def temp_is_fresh(b: dict, hours: int = 6) -> bool:
+    """True only when the beach's water-temp reading is recent (feeds slow off-season)."""
+    try:
+        at = datetime.fromisoformat(str(b.get("water_temp_at", "")).replace("Z", "+00:00"))
+    except ValueError:
+        return False
+    return (datetime.now(ET) - at).total_seconds() < hours * 3600
+
+def fmt_beach_walk():
+    """Off-season Monday: one beach for a walk, with today's real water temp + tides."""
+    beaches = (load("beaches.json") or {}).get("beaches") or []
+    if not beaches:
+        return fmt_sunset()
+    b = rotate(sorted(beaches, key=lambda x: x.get("slug", "")))
+    cond = (load("conditions.json") or {}).get("today") or {}
+    sset = (cond.get("sun") or {}).get("sunset")
+    tides = ", ".join(f"{'High' if t.get('type') == 'high' else 'Low'} {t.get('time')}"
+                      for t in (cond.get("tides") or [])[:4] if t.get("time"))
+    hook = rotate([f"Off-season beach walk of the week: {b.get('name')}.",
+                   f"The Cape's best-kept secret is {now_et().strftime('%B')}. This week: {b.get('name')}.",
+                   f"Quiet lot, open sand: {b.get('name')}, {b.get('town', '')}."])
+    lines = [f"🍂 {hook}", "", f"📍 {b.get('name')} — {b.get('town', '')}"]
+    if b.get("water_temp") and temp_is_fresh(b):
+        lines.append(f"🌊 Water {b['water_temp']}° right now (nearest NOAA/buoy reading)")
+    if tides:
+        lines.append(f"↕️ Tides today: {tides}")
+    if sset:
+        lines.append(f"🌅 Sunset {sset}")
+    lines += ["", "No lifeguards this time of year — enjoy it from the sand. 🧥",
+              "Live water temps + tides for 27 beaches on the app."]
+    tags = base_tags() + ["#CapeCodBeaches", hashtag(b.get("town", "CapeCod"))]
+    return lines, photo_for("beach"), "beach_walk", tags
+
+def fmt_open_ask():
+    """Off-season Saturday: community ask — what's open this weekend (the #1 off-season question)."""
+    hook = rotate(["🙋 Off-season question for the locals:",
+                   "🙋 Help a visitor out this weekend:",
+                   "🙋 Cape crowd — settle this for the off-season folks:"])
+    lines = [hook, "",
+             "What's your favorite spot that stays open all winter? Coffee, chowder, "
+             "breakfast, a bar with a fireplace — drop the name and town. 👇",
+             "",
+             "We'll check the best answers and add them to our off-season guide — with credit to you."]
+    tags = base_tags() + ["#CapeCodOffSeason", "#CapeCodEats"]
+    return lines, photo_for("town", salt=1), "open_ask", tags
+
 def fmt_report_ask():
     """Community ask: crowdsource beach-lot reports. Runs Saturday morning — peak
     beach traffic, when a report is worth the most to the next family in the car.
     The ask is the point; the beach list is the excuse to post it."""
+    if is_offseason():
+        return fmt_open_ask()
     beaches = (load("beaches.json") or {}).get("beaches") or []
     picks = sorted(beaches, key=lambda b: b.get("crowd", 3), reverse=True)[:3]
     hook = rotate(["🙏 Cape crowd, do a stranger a solid this morning:",
@@ -249,8 +345,19 @@ QUESTIONS = [
     ("Sagamore or Bourne at 9 AM on a Saturday — which do you chance?", "question"),
 ]
 
+QUESTIONS_OFF = [
+    ("Best off-season Cape day: empty beach walk, or a long lunch in P-town?", "beach"),
+    ("Settle it once and for all: lobster roll HOT with butter, or COLD with mayo?", "food"),
+    ("Best sunset on the Cape: Rock Harbor, Skaket… or somewhere you won't tell anyone?", "sunset"),
+    ("Chowder or bisque on a cold Cape night? Defend your answer. 🥣", "food"),
+    ("Which Main Street is best in the off-season: Chatham, Falmouth, or Wellfleet?", "town"),
+    ("Clam shack fries or onion rings? (There is a wrong answer.)", "food"),
+    ("Ocean side or bay side for a winter beach walk?", "beach"),
+    ("Sagamore or Bourne — which bridge do you trust on a Sunday in November?", "question"),
+]
+
 def fmt_question():
-    q, kind = rotate(QUESTIONS)
+    q, kind = rotate(QUESTIONS_OFF if is_offseason() else QUESTIONS)
     lines = [q, "", "👇 Drop it in the comments."]
     tags = base_tags() + ["#CapeCodDebate"]
     return lines, photo_for(kind, salt=3), "question", tags
@@ -356,7 +463,8 @@ def fmt_evening():
     cond = (load("conditions.json") or {}).get("today") or {}
     sset = (cond.get("sun") or {}).get("sunset")
     beaches = (load("beaches.json") or {}).get("beaches") or []
-    opens = [b for b in beaches if b.get("status") == "open"][:2]
+    live = {} if is_offseason() else live_reports()
+    opens = [b for b in beaches if (live.get(b.get("slug")) or {}).get("status") == "open"][:2]
     lines = [rotate(["🌙 Tonight on the Cape:",
                      "🌙 Making plans? Here's tonight:",
                      "🌙 The Cape after 5, sorted:"]), ""]
@@ -367,10 +475,10 @@ def fmt_evening():
             towns.append(e["town"])
     if opens:
         names = " & ".join(b.get("name", "") for b in opens)
-        lines.append(f"🏖️ Still room at {names} for a late-day swim.")
+        lines.append(f"🏖️ Beachgoers report room at {names} for a late-day swim.")
     if sset:
         lines.append(f"🌅 Sunset {sset}.")
-    lines += ["", "Live events + beach lots on the app."]
+    lines += ["", "Live events + water temps on the app." if is_offseason() else "Live events + beach lots on the app."]
     tags = base_tags() + ["#CapeCodTonight"] + [hashtag(t) for t in dict.fromkeys(towns)][:2]
     return lines, photo_for("sunset", salt=1), "evening", tags
 
@@ -440,7 +548,8 @@ def main() -> None:
     today_iso = now_et().strftime("%Y-%m-%d")
     state_key = "last_posted_date" if mode == "morning" else "last_posted_evening_date"
     link = tracked_link(campaign)
-    link_comment = f"📍 Live beach parking, bridge delays & tonight's events → {link}"
+    link_comment = (f"📍 Live water temps, bridge delays & tonight's events → {link}" if is_offseason()
+                    else f"📍 Live beach parking, bridge delays & tonight's events → {link}")
 
     if DRY_RUN:
         targets = "Facebook" + (" + Instagram" if IG_USER_ID else "")
@@ -475,7 +584,8 @@ def main() -> None:
             try:
                 ig_id = post_instagram(ig_caption, image)
                 print(f"[ig] ✓ posted {ig_id}")
-                comment(ig_id, f"Live beach parking + tonight's events → {link}")
+                comment(ig_id, (f"Live water temps + tonight's events → {link}" if is_offseason()
+                                else f"Live beach parking + tonight's events → {link}"))
             except Exception as e:
                 print(f"[ig] ✗ {e}", file=sys.stderr)
 

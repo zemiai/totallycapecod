@@ -4,10 +4,11 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#7BBCD0" />
-<title>Totally Cape Cod — Plan Your Perfect Summer 2026</title>
-<meta name="description" content="The best beaches, hidden gems, restaurants, and events on Cape Cod. Plan your perfect summer with Totally Cape Cod." />
-<meta name="keywords" content="Cape Cod, beaches, things to do, restaurants, hotels, summer 2026, Provincetown, Nantucket, Martha's Vineyard" />
-<meta property="og:title" content="Totally Cape Cod — Plan Your Perfect Summer 2026" />
+<script src="/js/season.js"></script>
+<title>Totally Cape Cod — Live Beaches, Bridge Traffic &amp; Things to Do on Cape Cod</title>
+<meta name="description" content="Live Cape Cod beach water temps, bridge traffic, tides, events and restaurants — plan a Cape Cod trip in any season with Totally Cape Cod." />
+<meta name="keywords" content="Cape Cod, beaches, things to do, restaurants, events, bridge traffic, Provincetown, Chatham, Wellfleet" />
+<meta property="og:title" content="Totally Cape Cod — Live Beaches, Bridge Traffic &amp; Things to Do" />
 <meta property="og:description" content="The best beaches, hidden gems, restaurants, and events on Cape Cod." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://totallycapecod.com/" />
@@ -283,9 +284,9 @@
 <section class="hero">
   <div class="hero-overlay"></div>
   <div class="hero-content" style="padding-top: 80px;">
-    <div class="hero-badge">🟢 Live now · Summer 2026</div>
+    <div class="hero-badge">🟢 Live now · <span data-season-label>Summer 2026</span></div>
     <h1 class="hero-title">Never waste a day on <span class="script">Cape Cod</span></h1>
-    <p class="hero-subtitle">Live beach parking, bridge delays, water temps and tonight's specials — updated every few minutes. Know before you drive.</p>
+    <p class="hero-subtitle"><span class="s-summer">Live beach parking, bridge delays, water temps and tonight's specials — updated every few minutes. Know before you drive.</span><span class="s-off">Live bridge delays, water temps, tides and tonight's events — updated through the day. Know before you drive.</span></p>
     <div class="hero-buttons">
       <a href="/app/" class="btn btn-primary btn-lg" onclick="gtag('event','click',{event_category:'hero',event_label:'open_app'})">Open the Free App →</a>
       <a href="/beaches.html" class="btn btn-ghost" onclick="gtag('event','click',{event_category:'hero',event_label:'explore_beaches'})">Explore Beaches 🏝️</a>
@@ -296,7 +297,8 @@
 
 <script>
   // hero_copy test applier — runs immediately after the hero markup (no flicker).
-  if (window.tccAB && tccAB.hero_copy === 'live_now') {
+  // Summer-only copy test (beach-lot wording) — skipped in the off-season.
+  if (window.tccAB && tccAB.hero_copy === 'live_now' && !(window.TCCSeason && TCCSeason.isOff())) {
     document.querySelector('.hero-title').innerHTML = 'Cape Cod, <span class="script">live</span> right now';
     document.querySelector('.hero-subtitle').textContent = 'Which beach lots have space, how backed up the bridges are, what\u2019s on tonight \u2014 see it all before you leave the house.';
   }
@@ -312,10 +314,11 @@
     <p class="section-subtitle">One free app. Real-time. Built by locals.</p>
   </div>
   <div class="outcomes-grid">
-    <div class="outcome"><span class="ic">🏖️</span><div><strong>Find open beach parking</strong><p>See which lots have spots before you drive — never circle for an hour.</p></div></div>
+    <div class="outcome s-summer"><span class="ic">🏖️</span><div><strong>Find open beach parking</strong><p>See which lots have spots before you drive — never circle for an hour.</p></div></div>
+    <div class="outcome s-off"><span class="ic">🏖️</span><div><strong>Plan a beach walk</strong><p>Live water temps and today's tide times for 27 Cape beaches.</p></div></div>
     <div class="outcome"><span class="ic">🌉</span><div><strong>Beat the bridge</strong><p>Live Sagamore &amp; Bourne delays, so you cross at the right time.</p></div></div>
     <div class="outcome"><span class="ic">🦞</span><div><strong>Find tonight's dinner</strong><p>What's open near you right now — lobster rolls, shacks &amp; specials.</p></div></div>
-    <div class="outcome"><span class="ic">👧</span><div><strong>Keep the kids busy</strong><p>Today's events, tide-pool beaches &amp; a 100-stamp summer passport.</p></div></div>
+    <div class="outcome"><span class="ic">👧</span><div><strong>Keep the kids busy</strong><p>Today's events, tide-pool beaches &amp; a 100-stamp <span class="s-summer">summer</span><span class="s-off">Cape</span> passport.</p></div></div>
     <div class="outcome"><span class="ic">💬</span><div><strong>Ask a local anything</strong><p>An AI Cape guide that answers from live, on-the-ground conditions.</p></div></div>
     <div class="outcome"><span class="ic">☀️</span><div><strong>Never waste a vacation day</strong><p>Real-time water temps, weather &amp; conditions across the whole Cape.</p></div></div>
   </div>
@@ -475,26 +478,10 @@
     <p class="section-subtitle">What's going on this week across the Cape.</p>
   </div>
 
-  <div class="grid-3">
-    <div class="card" style="padding: 20px;">
-      <div style="font-size: 12px; font-weight: 700; color: var(--coral-soft); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px;">Music</div>
-      <h3 style="font-weight: 700; font-size: 16px; margin: 0 0 4px;">Pops by the Sea</h3>
-      <p style="font-size: 13px; color: var(--text-secondary); margin: 0 0 12px;">Hyannis · June 20</p>
-      <p style="font-size: 13px; color: var(--text); line-height: 1.5; margin: 0;">Big summer kickoff concert. Lawn chairs, picnic blankets, and that first real "the Cape is back" feeling.</p>
-    </div>
-    <div class="card" style="padding: 20px;">
-      <div style="font-size: 12px; font-weight: 700; color: var(--coral-soft); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px;">Food</div>
-      <h3 style="font-weight: 700; font-size: 16px; margin: 0 0 4px;">Wellfleet OysterFest</h3>
-      <p style="font-size: 13px; color: var(--text-secondary); margin: 0 0 12px;">Wellfleet · Aug 24</p>
-      <p style="font-size: 13px; color: var(--text); line-height: 1.5; margin: 0;">Classic Cape Cod summer food pilgrimage. Oysters, chowder, and the kind of crowd that knows exactly why they're here.</p>
-    </div>
-    <div class="card" style="padding: 20px;">
-      <div style="font-size: 12px; font-weight: 700; color: var(--coral-soft); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px;">Festival</div>
-      <h3 style="font-weight: 700; font-size: 16px; margin: 0 0 4px;">Provincetown Carnival</h3>
-      <p style="font-size: 13px; color: var(--text-secondary); margin: 0 0 12px;">Provincetown · Aug 16-23</p>
-      <p style="font-size: 13px; color: var(--text); line-height: 1.5; margin: 0;">One of the Cape's biggest and most electric weeks. Plan early, book early, and leave room for spontaneous late nights.</p>
-    </div>
-  </div>
+  <!-- Live, sourced events (js/live-events.js) — replaced the old hand-typed summer cards,
+       which had wrong dates (e.g. OysterFest is in October, not August). -->
+  <div data-live-events data-limit="6"><p style="color: var(--text-secondary);">Loading this week's events…</p></div>
+  <script src="/js/live-events.js" defer></script>
 
   <div style="text-align: center; margin-top: 24px;">
     <a href="/events.html" class="btn btn-primary" onclick="gtag('event','click',{event_category:'events',event_label:'view_all'})">View Full Calendar 📅</a>

@@ -88,6 +88,26 @@ CHAMBERS = [
     # produced log-spam and zero events, so they're intentionally omitted. The
     # Outer Cape is still covered by Provincetown/Eastham/Orleans/Brewster.
 ]
+# Full organization names for crediting each listing ("via …" on every event card).
+CREDIT = {
+    "Provincetown": "Provincetown Chamber of Commerce",
+    "Eastham": "Eastham Chamber of Commerce",
+    "Orleans": "Orleans Chamber of Commerce",
+    "Brewster": "Brewster Chamber of Commerce",
+    "Chatham": "Chatham Chamber of Commerce",
+    "Harwich": "Harwich Chamber of Commerce",
+    "Dennis": "Dennis Chamber of Commerce",
+    "Yarmouth": "Yarmouth Chamber of Commerce",
+    "Hyannis": "Hyannis Area Chamber of Commerce",
+    "Mashpee": "Mashpee Chamber of Commerce",
+    "Bourne": "Cape Cod Canal Region Chamber of Commerce",
+    "Provincetown Events": "Ptownie.com",
+    "Heritage Museums": "Heritage Museums & Gardens",
+    "Highfield Hall": "Highfield Hall & Gardens",
+    "Cape Cod Beer": "Cape Cod Beer",
+    "Payomet": "Payomet Performing Arts Center",
+    "Melody Tent": "Cape Cod Melody Tent",
+}
 VENUES = [
     # (display name, town, kind, url, venue_coord_override or None)
     ("Payomet",            "Truro",     "tribe",  "https://payomet.org/wp-json/tribe/events/v1/events", (42.0392, -70.0731)),
@@ -112,10 +132,16 @@ VENUES = [
 
 # Weekly farmers markets — fixed schedules, generated (not scraped) so they never
 # silently vanish. (weekday: Mon=0) Verified for the 2026 season, Jul 2026.
+# Orleans hours/locations re-verified Oct 2026 against the market's MarketSpread listings
+# (summer: May 2–Nov 28, 19 Old Colony Way; winter: Dec 5–Apr 24, 5 Namskaket Rd).
+# Optional 8th field = (credit name, source URL) so every market is credited to its organizer.
 MARKETS = [
     # town, venue/address, weekday, start "HH:MM", end "HH:MM", (lat,lng), season (start,end) iso
     ("Falmouth",     "Marine Park, 180 Scranton Ave",       3, "11:00", "15:00", (41.5487, -70.6060), ("2026-05-21", "2026-10-15")),
-    ("Orleans",      "19 Old Colony Way",                   5, "09:00", "12:00", (41.7900, -69.9900), ("2026-01-01", "2026-12-31")),
+    ("Orleans",      "19 Old Colony Way",                   5, "09:00", "12:00", (41.7900, -69.9900), ("2026-05-02", "2026-11-28"),
+     ("Orleans Farmers Market", "https://www.orleansfarmersmarket.org")),
+    ("Orleans",      "5 Namskaket Rd (winter market)",      5, "10:00", "12:00", (41.7900, -69.9900), ("2026-12-05", "2027-04-24"),
+     ("Orleans Farmers Market", "https://www.orleansfarmersmarket.org")),
     ("Chatham",      "60 Meetinghouse Rd (Rte 137)",        1, "15:00", "18:00", (41.6960, -69.9740), ("2026-05-19", "2026-10-20")),
     ("Sandwich",     "Oakcrest Cove, 34 Quaker Mtghouse Rd",1, "09:00", "13:00", (41.7420, -70.4820), ("2026-06-09", "2026-10-13")),
     ("Wellfleet",    "The Grove, 200 Main St",              2, "08:00", "12:00", (41.9310, -70.0290), ("2026-06-03", "2026-09-30")),
@@ -126,10 +152,13 @@ def synth_markets(now, horizon) -> list[dict]:
     """Generate each market's occurrences inside the window as normal events."""
     from datetime import date as _date
     out = []
-    et = timezone(timedelta(hours=-4))  # EDT (markets are summer-season)
+    from zoneinfo import ZoneInfo
+    et = ZoneInfo("America/New_York")  # EDT/EST — the Orleans market runs year-round
     day = now.astimezone(et).date()
     while day <= horizon.astimezone(et).date():
-        for town, venue, wd, t0, t1, (lat, lng), (s0, s1) in MARKETS:
+        for m in MARKETS:
+            town, venue, wd, t0, t1, (lat, lng), (s0, s1) = m[:7]
+            credit_name, credit_url = (m[7] if len(m) > 7 else (f"{m[0]} Farmers Market", ""))
             if day.weekday() != wd:
                 continue
             if not (_date.fromisoformat(s0) <= day <= _date.fromisoformat(s1)):
@@ -148,7 +177,7 @@ def synth_markets(now, horizon) -> list[dict]:
                 "time": f"{day.strftime('%a %b')} {day.day} · {fmt(h0)}–{fmt(h1)}",
                 "start": start.isoformat(),
                 "info": "Local produce, baked goods, flowers & more.",
-                "price": "Free", "source": "Totally Cape Cod", "source_url": "",
+                "price": "Free", "source": credit_name, "credit": credit_name, "source_url": credit_url,
                 "img": None,
             })
         day += timedelta(days=1)
@@ -644,7 +673,7 @@ def main() -> None:
                 "info": "", "price": e.get("price", "") or "",
                 "lat": round(lat, 4), "lng": round(lng, 4),
                 "img": e.get("img"),
-                "source": name, "source_url": e.get("url", ""),
+                "source": name, "credit": CREDIT.get(name, name), "source_url": e.get("url", ""),
                 "start": dt.isoformat(),
             })
             kept += 1

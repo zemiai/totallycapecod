@@ -14,6 +14,7 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0YM9WQLWK"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q0YM9WQLWK');</script>
 <script src="/js/pixel.js" defer></script>
+<script src="/js/season.js"></script>
 <link rel="stylesheet" href="css/tcc.css" />
 <link rel="manifest" href="manifest.json" />
 <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -185,6 +186,16 @@
 </footer>
 
 <script>
+// Honest beach labels: typical patterns (summer) or off-season — never the static seed
+// "spots"/"just now" text, which isn't a live reading. Season switch: data/season.json.
+function tccOffFeed(){ return !!(window.TCCSeason && TCCSeason.isOff()); }
+function beachTypical(b){
+  if (tccOffFeed()) return 'Off-season · quiet';
+  return ({open:'Usually has parking', mid:'Often busy midday', full:'Often full midday'})[b.status] || 'Check before you go';
+}
+function tempAgeMin(b){ const t = Date.parse(b && b.water_temp_at || ''); return isNaN(t) ? null : Math.max(0, Math.round((Date.now() - t) / 60000)); }
+function tempFresh(b){ const m = tempAgeMin(b); return m != null && m < 360; }
+function tempAge(b){ const m = tempAgeMin(b); if (m == null) return ''; return m < 60 ? m + 'm ago' : m < 1440 ? Math.round(m / 60) + 'h ago' : Math.round(m / 1440) + 'd ago'; }
 function toggleMobileMenu(){document.getElementById('mobileMenu').classList.toggle('show');}
 
 /* ============================================================
@@ -491,13 +502,11 @@ function renderItem(it){
       <div class="kind-pill kp-beach">Beach</div></div>
       <div class="post-body">
         <div class="stat-grid">
-          <span class="pill ${b.status}">${STATUS_LABEL[b.status]||b.status}</span>
+          <span class="pill ${tccOffFeed()?'':b.status}">${esc(beachTypical(b))}</span>
           <div class="stat"><b>Water</b>${b.water_temp}°F</div>
-          <div class="stat"><b>Parking</b>${esc(b.spots_text)}</div>
-          <div class="stat"><b>Crowd</b>${crowdDots(b.crowd)}</div>
         </div>
         ${b.notes?`<p style="margin-top:10px;">${esc(b.notes)}</p>`:""}
-        <div class="updated"><span class="live-dot"></span>Updated ${esc(b.updated)}</div>
+        ${tempAge(b)?`<div class="updated">${tempFresh(b)?'<span class="live-dot"></span>':''}Water temp updated ${tempAge(b)}</div>`:""}
       </div></div>`;
   }
   if(it.type==="event"){

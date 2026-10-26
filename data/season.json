@@ -1,0 +1,8 @@
+{
+  "version": "1.0",
+  "mode": "auto",
+  "auto_summer_start": "05-22",
+  "auto_summer_end": "09-14",
+  "updated_at": "2026-10-26T14:00:00Z",
+  "_how_to_switch": "This one setting controls the whole site's season (app, guide pages, social posts). auto = summer mode from auto_summer_start to auto_summer_end (MM-DD), off-season the rest of the year. Change mode to \"summer\" or \"offseason\" to force one. Read live from GitHub — no deploy needed. See docs/SEASON.md."
+}

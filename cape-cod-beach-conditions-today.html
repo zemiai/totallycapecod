@@ -24,6 +24,7 @@
   gtag('config', 'G-Q0YM9WQLWK');
 </script>
 <script src="/js/pixel.js" defer></script>
+<script src="/js/season.js"></script>
 <link rel="stylesheet" href="css/tcc.css" />
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
@@ -98,7 +99,12 @@
 
 <section class="section page-wrap">
 
-  <p style="font-size:15px; line-height:1.7; color:var(--text); margin:0 0 28px; max-width:760px;">
+  <p class="s-off" style="font-size:15px; line-height:1.7; color:var(--text); margin:0 0 16px; max-width:760px; background:#FFF6E5; border:1px solid #F1DFB8; border-radius:12px; padding:12px 14px;">
+    🍂 <strong>It's the off-season.</strong> No lifeguards are on duty — Cape lifeguard seasons run roughly from mid- to late June
+    through Labor Day — and beach sticker and fee rules are mainly a summer thing (they vary by town, so follow posted signs).
+    Water temperatures below are still live from NOAA and Cape buoys.
+  </p>
+  <p class="s-summer" style="font-size:15px; line-height:1.7; color:var(--text); margin:0 0 28px; max-width:760px;">
     Parking fills fast on summer days — especially at National Seashore beaches like Coast Guard and Race Point.
     This page shows the <strong>live water temperature</strong> at 20+ Cape Cod beaches (from NOAA and Cape buoys), plus the
     <strong>typical</strong> parking and crowd pattern for each. For real-time, crowdsourced parking — updated as beachgoers
@@ -179,15 +185,16 @@ async function loadData() {
     const beaches = data.beaches || [];
     if (!beaches.length) throw new Error('No beach data');
 
+    const OFF = !!(window.TCCSeason && TCCSeason.isOff());
     const rows = beaches.map(function(b) {
       return '<tr>' +
         '<td><strong>' + b.name + '</strong></td>' +
         '<td>' + b.town + '</td>' +
-        '<td>' + statusBadge(b.status) + '<br><span style="font-size:11px;color:var(--text-secondary);">' + (b.spots_text || '') + '</span></td>' +
-        '<td>' + crowdDots(b.crowd || 0) + '</td>' +
+        '<td>' + (OFF ? '<span class="status-badge" style="background:#eee;color:#555;">Off-season</span>' : statusBadge(b.status)) + '</td>' +
+        '<td>' + (OFF ? '<span style="color:var(--text-secondary);">Quiet</span>' : crowdDots(b.crowd || 0)) + '</td>' +
         '<td><span class="temp-badge">' + (b.water_temp ? b.water_temp + '°F' : '—') + '</span></td>' +
         '<td>' +
-          (b.lifeguard ? '<span class="icon-bool" title="Lifeguard on duty">🏊</span> ' : '') +
+          (b.lifeguard ? '<span class="icon-bool" title="' + (OFF ? 'Lifeguarded in summer (none on duty now)' : 'Lifeguarded beach (summer)') + '">🏊</span> ' : '') +
           (b.restrooms ? '<span class="icon-bool" title="Restrooms">🚻</span> ' : '') +
           (b.sticker_required ? '<span class="icon-bool" title="Sticker required">🅿️</span>' : '') +
         '</td>' +
@@ -222,6 +229,7 @@ async function loadData() {
 }
 
 loadData();
+document.addEventListener('tcc:season', loadData);
 </script>
 
 </body>

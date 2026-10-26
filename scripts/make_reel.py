@@ -23,7 +23,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from post_facebook import (SOCIAL, DATA, PHOTO_TAGS, now_et, weekday_et,
-                           events_on, evening_events, plausible_time, clock_of)
+                           events_on, evening_events, plausible_time, clock_of,
+                           dedupe_by_title)
+from lib.season import is_offseason
 
 W, H = 1080, 1920
 SLIDE_S = 2.9
@@ -101,8 +103,16 @@ def main() -> None:
         title, tagline = "THIS WEEKEND", "ON CAPE COD"
         sat = (now + timedelta(days=(5 - now.weekday()) % 7)).strftime("%Y-%m-%d")
         sun = (now + timedelta(days=(6 - now.weekday()) % 7)).strftime("%Y-%m-%d")
-        evs = ([e for e in events_on(sat) if plausible_time(e)][:2] +
-               [e for e in events_on(sun) if plausible_time(e)][:1])
+        # Pick from both days, then drop repeats (the same show on Sat AND Sun was
+        # listed twice in the 10/23 reel), keeping two Saturday picks + one Sunday.
+        sat_evs = [e for e in events_on(sat) if plausible_time(e)]
+        sun_evs = [e for e in events_on(sun) if plausible_time(e)]
+        uniq = dedupe_by_title(sat_evs[:4] + sun_evs[:4])
+        sat_u = [e for e in uniq if (e.get("start") or "")[:10] == sat][:2]
+        sun_u = [e for e in uniq if (e.get("start") or "")[:10] == sun][:1]
+        evs = sat_u + sun_u
+        if len(evs) < 3:
+            evs = uniq[:3]
         campaign = "reel_weekend"
         hook = "This weekend on Cape Cod 🦞 Save this."
     else:        # default — tonight
@@ -131,7 +141,7 @@ def main() -> None:
             parts.append(p)
         outro = tmp / "s9.mp4"
         slide(pics[-1], [("totallycapecod.com", 72, H - 720, FONT),
-                         ("live events · beach parking", 46, H - 610, FONT_REG),
+                         ("live events · water temps" if is_offseason() else "live events · beach parking", 46, H - 610, FONT_REG),
                          ("bridge delays · free", 46, H - 540, FONT_REG)], outro)
         parts.append(outro)
 

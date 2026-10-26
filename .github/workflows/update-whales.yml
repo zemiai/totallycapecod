@@ -2,8 +2,10 @@ name: "[hermes] whales"
 
 on:
   schedule:
-    # Every 30 min, May-October only.
+    # Every 30 min, May-October.
     - cron: "*/30 * * 5,6,7,8,9,10 *"
+    # Off-season (Nov-Apr): every 6 hours — right whales visit Cape Cod Bay in winter/spring.
+    - cron: "40 */6 * 11,12,1,2,3,4 *"
   workflow_dispatch:
 
 concurrency:

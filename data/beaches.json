@@ -415,7 +415,7 @@
       "water_temp": 56,
       "sticker_required": true,
       "restrooms": true,
-      "lifeguard": true,
+      "lifeguard": false,
       "updated": "just now",
       "notes": "",
       "water_temp_at": "2026-10-26T11:07:14Z",
