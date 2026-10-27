@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-10-27T04:48:05Z",
+  "updated_at": "2026-10-27T10:12:45Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -86,6 +86,20 @@
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/755915434/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/410828360"
+    },
+    {
+      "id": "inat-411054430",
+      "species": "dolphin",
+      "count": 1,
+      "lat": 42.1488,
+      "lng": -70.2997,
+      "location": "Off Cape Cod",
+      "reported_by": "iNaturalist \u00b7 bmvig",
+      "reported_at": "2026-10-25T15:35:00Z",
+      "time_ago": "1 day ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/756113173/medium.jpg",
+      "notes": "Atlantic White-sided Dolphin",
+      "source_url": "https://www.inaturalist.org/observations/411054430"
     },
     {
       "id": "inat-410828325",
