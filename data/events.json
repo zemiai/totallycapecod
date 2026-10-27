@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "updated_at": "2026-10-27T15:29:08Z",
+  "updated_at": "2026-10-27T20:18:33Z",
   "window_days": 21,
-  "count": 66,
+  "count": 67,
   "_hermes_note": "Real Cape Cod events scraped from chambers + venues. update_events.py",
   "events": [
     {
@@ -564,6 +564,24 @@
       "start": "2026-11-01T00:00:00+00:00"
     },
     {
+      "id": "tech-drop-in-at-the-brewster-ladies-library-20261103",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Tue Nov 3",
+      "title": "Tech Drop In at the Brewster Ladies Library",
+      "venue": "",
+      "town": "Brewster",
+      "info": "",
+      "price": "",
+      "lat": 41.7601,
+      "lng": -70.0819,
+      "img": null,
+      "source": "Brewster",
+      "credit": "Brewster Chamber of Commerce",
+      "source_url": "https://members.brewster-capecod.com/events/details/tech-drop-in-at-the-brewster-ladies-library-11-03-2026-9579",
+      "start": "2026-11-03T00:00:00+00:00"
+    },
+    {
       "id": "brewster-ladies-library-hosts-grief-support-group-with-maure",
       "tag": "\ud83d\udcc5 EVENT",
       "category": "event",
@@ -579,24 +597,6 @@
       "source": "Brewster",
       "credit": "Brewster Chamber of Commerce",
       "source_url": "https://members.brewster-capecod.com/events/details/brewster-ladies-library-hosts-grief-support-group-with-maureen-keane-bottino-11-03-2026-9394",
-      "start": "2026-11-03T00:00:00+00:00"
-    },
-    {
-      "id": "brewster-ladies-library-collage-club-20261103",
-      "tag": "\ud83d\udcc5 EVENT",
-      "category": "event",
-      "time": "Tue Nov 3",
-      "title": "Brewster Ladies' Library Collage Club",
-      "venue": "",
-      "town": "Brewster",
-      "info": "",
-      "price": "",
-      "lat": 41.7601,
-      "lng": -70.0819,
-      "img": null,
-      "source": "Brewster",
-      "credit": "Brewster Chamber of Commerce",
-      "source_url": "https://members.brewster-capecod.com/events/details/brewster-ladies-library-collage-club-11-03-2026-8611",
       "start": "2026-11-03T00:00:00+00:00"
     },
     {
@@ -1192,6 +1192,24 @@
       "credit": "Eastham Chamber of Commerce",
       "source_url": "https://members.easthamchamber.com/events/details/the-hundred-aker-wood-6011",
       "start": "2026-11-15T00:00:00+00:00"
+    },
+    {
+      "id": "circus-classes-open-skills-for-ages-7-12-20261117",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Tue Nov 17 \u00b7 4:15 PM",
+      "title": "Circus Classes // Open Skills for Ages 7\u201312",
+      "venue": "Truro Central School (off Rte. 6)",
+      "town": "Truro",
+      "info": "",
+      "price": "",
+      "lat": 41.9979,
+      "lng": -70.0492,
+      "img": "https://payomet.org/wp-content/uploads/2026/10/Circus-Classes_Open-Skills-for-Ages-7\u201312.webp",
+      "source": "Payomet",
+      "credit": "Payomet Performing Arts Center",
+      "source_url": "https://payomet.org/calendar/circus-classes-open-skills-for-ages-7-12-10/",
+      "start": "2026-11-17T16:15:00+00:00"
     }
   ]
 }
