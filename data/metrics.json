@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-26T16:37:13Z",
+ "generated_at": "2026-10-27T15:46:18Z",
  "meta_ads": {
   "window": "last_7d",
   "total_spend": 4.77,
@@ -21,9 +21,9 @@
   "skipped": "STRIPE_REPORTING_KEY not set"
  },
  "ga4": {
-  "skipped": "GOOGLE_SA_KEY / GA4_PROPERTY_ID not set"
+  "error": "no GA4 property with stream G-Q0YM9WQLWK visible \u2014 add tcc-metrics@totally-capecod.iam.gserviceaccount.com as a Viewer in GA4"
  },
  "gsc": {
-  "skipped": "GOOGLE_SA_KEY not set"
+  "error": "no accessible totallycapecod.com property \u2014 add tcc-metrics@totally-capecod.iam.gserviceaccount.com as a Full user in Search Console (Settings \u2192 Users and permissions)"
  }
 }
