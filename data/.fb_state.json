@@ -5,8 +5,11 @@
   "last_morning_post_id": "1107396432468180_122132127831374306",
   "last_morning_ig_post_id": "18154964371526852",
   "last_morning_campaign": "beach_walk",
-  "last_posted_evening_date": "2026-10-25",
-  "last_evening_post_id": "1107396432468180_122131930575374306",
-  "last_evening_ig_post_id": "17988292205878318",
-  "last_evening_campaign": "evening"
+  "last_posted_evening_date": "2026-10-26",
+  "last_evening_post_id": "1107396432468180_122132175591374306",
+  "last_evening_ig_post_id": "18130351742308094",
+  "last_evening_campaign": "evening",
+  "photo_last_used": {
+    "founder:nauset-light-bluff.jpg": "2026-10-26"
+  }
 }
