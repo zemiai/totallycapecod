@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "updated_at": "2026-10-28T16:12:38Z",
+  "updated_at": "2026-10-28T20:41:42Z",
   "window_days": 21,
-  "count": 74,
+  "count": 75,
   "_hermes_note": "Real Cape Cod events scraped from chambers + venues. update_events.py",
   "events": [
     {
@@ -346,6 +346,24 @@
       "credit": "Cape Cod Beer",
       "source_url": "https://capecodbeer.com/event/halloween-party-at-cape-cod-beer/",
       "start": "2026-10-30T18:00:00+00:00"
+    },
+    {
+      "id": "live-music-with-clyde-mitch-leaman-20261030",
+      "tag": "\ud83c\udfb5 LIVE MUSIC",
+      "category": "music",
+      "time": "Fri Oct 30 \u00b7 11:00 PM",
+      "title": "Live Music with Clyde Mitch Leaman",
+      "venue": "Cape Cod Winery",
+      "town": "Falmouth",
+      "info": "",
+      "price": "",
+      "lat": 41.5515,
+      "lng": -70.6148,
+      "img": null,
+      "source": "Cape Cod Winery",
+      "credit": "Cape Cod Winery",
+      "source_url": "https://www.capecodwinery.com/events/live-music-with-clyde-mitch-leaman-1",
+      "start": "2026-10-30T23:00:00.150000+00:00"
     },
     {
       "id": "live-music-hog-island-brewery-orleans-20261031",
