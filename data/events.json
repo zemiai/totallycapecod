@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "updated_at": "2026-10-29T16:20:42Z",
+  "updated_at": "2026-10-29T20:44:55Z",
   "window_days": 21,
-  "count": 73,
+  "count": 75,
   "_hermes_note": "Real Cape Cod events scraped from chambers + venues. update_events.py",
   "events": [
     {
@@ -651,6 +651,24 @@
       "source": "Orleans",
       "credit": "Orleans Chamber of Commerce",
       "source_url": "https://members.orleanscapecod.org/events/details/introducing-capucine-de-wulf-25605",
+      "start": "2026-11-06T00:00:00+00:00"
+    },
+    {
+      "id": "live-music-the-barley-neck-20261106",
+      "tag": "\ud83c\udfb5 LIVE MUSIC",
+      "category": "music",
+      "time": "Fri Nov 6",
+      "title": "Live Music | The Barley Neck",
+      "venue": "",
+      "town": "Orleans",
+      "info": "",
+      "price": "",
+      "lat": 41.7901,
+      "lng": -69.9873,
+      "img": null,
+      "source": "Orleans",
+      "credit": "Orleans Chamber of Commerce",
+      "source_url": "https://members.orleanscapecod.org/events/details/live-music-at-the-barley-neck-11-06-2026-7046",
       "start": "2026-11-06T00:00:00+00:00"
     },
     {
@@ -1318,6 +1336,24 @@
       "credit": "Highfield Hall & Gardens",
       "source_url": "https://highfieldhallandgardens.org/event/holidays-at-highfield-11-19-26/",
       "start": "2026-11-19T10:00:00+00:00"
+    },
+    {
+      "id": "circus-classes-youth-performance-troupe-20261119",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Thu Nov 19 \u00b7 4:30 PM",
+      "title": "Circus Classes // Youth Performance Troupe",
+      "venue": "Truro Central School (off Rte. 6)",
+      "town": "Truro",
+      "info": "",
+      "price": "",
+      "lat": 41.9979,
+      "lng": -70.0492,
+      "img": "https://payomet.org/wp-content/uploads/2026/10/Circus-Classes-__-Performance-Youth-Troupe-for-Ages-7\u201318.webp",
+      "source": "Payomet",
+      "credit": "Payomet Performing Arts Center",
+      "source_url": "https://payomet.org/calendar/circus-classes-youth-performance-troupe-4/",
+      "start": "2026-11-19T16:30:00+00:00"
     }
   ]
 }
