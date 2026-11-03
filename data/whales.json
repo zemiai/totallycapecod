@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-11-02T21:54:33Z",
+  "updated_at": "2026-11-03T07:12:15Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -74,18 +74,18 @@
       "source_url": "https://www.inaturalist.org/observations/412006963"
     },
     {
-      "id": "inat-411641901",
+      "id": "inat-412520790",
       "species": "seal",
       "count": 1,
-      "lat": 42.081,
-      "lng": -70.2203,
-      "location": "Provincetown, MA, USA",
-      "reported_by": "iNaturalist \u00b7 mycapecodadventurepictures",
-      "reported_at": "2026-10-29T14:51:00Z",
-      "time_ago": "4 days ago",
-      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/757304262/medium.jpg",
+      "lat": 42.0825,
+      "lng": -70.2155,
+      "location": "Provincetown, MA, US",
+      "reported_by": "iNaturalist \u00b7 bobkroeger",
+      "reported_at": "2026-10-30T12:20:14Z",
+      "time_ago": "3 days ago",
+      "photo_url": "https://static.inaturalist.org/photos/759078395/medium.jpg",
       "notes": "Grey Seal",
-      "source_url": "https://www.inaturalist.org/observations/411641901"
+      "source_url": "https://www.inaturalist.org/observations/412520790"
     },
     {
       "id": "inat-411166703",
@@ -110,7 +110,7 @@
       "location": "MA, US",
       "reported_by": "iNaturalist \u00b7 madzalt",
       "reported_at": "2026-10-26T00:50:45Z",
-      "time_ago": "7 days ago",
+      "time_ago": "8 days ago",
       "photo_url": "",
       "notes": "Common Dolphin",
       "source_url": "https://www.inaturalist.org/observations/410863987"
@@ -124,7 +124,7 @@
       "location": "MA, US",
       "reported_by": "iNaturalist \u00b7 madzalt",
       "reported_at": "2026-10-25T22:14:55Z",
-      "time_ago": "7 days ago",
+      "time_ago": "8 days ago",
       "photo_url": "",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/410836324"
@@ -138,7 +138,7 @@
       "location": "Massachusetts, US",
       "reported_by": "iNaturalist \u00b7 madzalt",
       "reported_at": "2026-10-25T22:14:33Z",
-      "time_ago": "7 days ago",
+      "time_ago": "8 days ago",
       "photo_url": "",
       "notes": "North Atlantic Right Whale",
       "source_url": "https://www.inaturalist.org/observations/410836106"
@@ -152,7 +152,7 @@
       "location": "US",
       "reported_by": "iNaturalist \u00b7 madzalt",
       "reported_at": "2026-10-25T22:13:31Z",
-      "time_ago": "7 days ago",
+      "time_ago": "8 days ago",
       "photo_url": "",
       "notes": "North Atlantic Minke Whale",
       "source_url": "https://www.inaturalist.org/observations/410836045"
