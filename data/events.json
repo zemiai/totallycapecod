@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "updated_at": "2026-11-07T15:49:44Z",
+  "updated_at": "2026-11-07T19:44:16Z",
   "window_days": 21,
-  "count": 90,
+  "count": 93,
   "_hermes_note": "Real Cape Cod events scraped from chambers + venues. update_events.py",
   "events": [
     {
@@ -453,6 +453,24 @@
       "source": "Orleans",
       "credit": "Orleans Chamber of Commerce",
       "source_url": "https://members.orleanscapecod.org/events/details/in-the-whale-an-immersive-cinema-experience-25639",
+      "start": "2026-11-13T00:00:00+00:00"
+    },
+    {
+      "id": "live-music-the-barley-neck-20261113",
+      "tag": "\ud83c\udfb5 LIVE MUSIC",
+      "category": "music",
+      "time": "Fri Nov 13",
+      "title": "Live Music | The Barley Neck",
+      "venue": "",
+      "town": "Orleans",
+      "info": "",
+      "price": "",
+      "lat": 41.7901,
+      "lng": -69.9873,
+      "img": null,
+      "source": "Orleans",
+      "credit": "Orleans Chamber of Commerce",
+      "source_url": "https://members.orleanscapecod.org/events/details/live-music-at-the-barley-neck-11-13-2026-7048",
       "start": "2026-11-13T00:00:00+00:00"
     },
     {
@@ -1029,6 +1047,24 @@
       "source": "Yarmouth",
       "credit": "Yarmouth Chamber of Commerce",
       "source_url": "https://www.thacherhall.org/event-details/candlelight-music",
+      "start": "2026-11-20T00:00:00+00:00"
+    },
+    {
+      "id": "view-details-20261120",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Fri Nov 20",
+      "title": "View Details",
+      "venue": "",
+      "town": "Bourne",
+      "info": "",
+      "price": "",
+      "lat": 41.7412,
+      "lng": -70.599,
+      "img": null,
+      "source": "Bourne",
+      "credit": "Cape Cod Canal Region Chamber of Commerce",
+      "source_url": "https://web.capecodcanalchamber.org/atlas/events/ribbon-cutting-salt-ivy-boutique-1727/details",
       "start": "2026-11-20T00:00:00+00:00"
     },
     {
@@ -1624,6 +1660,24 @@
       "credit": "Orleans Farmers Market",
       "source_url": "https://www.orleansfarmersmarket.org",
       "img": null
+    },
+    {
+      "id": "live-music-with-lava-bomb-20261128",
+      "tag": "\ud83c\udfb5 LIVE MUSIC",
+      "category": "music",
+      "time": "Sat Nov 28 \u00b7 6:00 PM",
+      "title": "Live Music with Lava Bomb",
+      "venue": "Cape Cod Beer",
+      "town": "Hyannis",
+      "info": "",
+      "price": "",
+      "lat": 41.652,
+      "lng": -70.2828,
+      "img": "https://capecodbeer.com/wp-content/uploads/June-2026-Live-Music-Graphics-10.png",
+      "source": "Cape Cod Beer",
+      "credit": "Cape Cod Beer",
+      "source_url": "https://capecodbeer.com/event/live-music-with-lava-bomb-2/",
+      "start": "2026-11-28T18:00:00+00:00"
     }
   ]
 }
