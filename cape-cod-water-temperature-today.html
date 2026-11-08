@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#4A90A4" />
 <title>Cape Cod Water Temperature Today: Readings by Beach | Totally Cape Cod</title>
-<meta name="description" content="Cape Cod water temperature today from three NOAA sensors (Woods Hole, a Cape Cod Bay buoy and a Nantucket Sound buoy), matched to each beach's nearest sensor." />
+<meta name="description" content="Cape Cod water temperature today from three sensors: NOAA's Woods Hole station, a NOAA buoy in Nantucket Sound and a Cape Cod Bay buoy. Each beach shows its nearest sensor's reading and when we checked it." />
 <link rel="canonical" href="https://totallycapecod.com/cape-cod-water-temperature-today.html" />
 <meta property="og:title" content="Cape Cod Water Temperature Today: Readings by Beach" />
-<meta property="og:description" content="Cape Cod water temperature today from three NOAA sensors (Woods Hole, a Cape Cod Bay buoy and a Nantucket Sound buoy), matched to each beach's nearest sensor." />
+<meta property="og:description" content="Cape Cod water temperature today from three sensors: NOAA's Woods Hole station, a NOAA buoy in Nantucket Sound and a Cape Cod Bay buoy. Each beach shows its nearest sensor's reading and when we checked it." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://totallycapecod.com/cape-cod-water-temperature-today.html" />
 <meta property="og:image" content="https://totallycapecod.com/og-image.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Cape Cod Water Temperature Today: Readings by Beach" />
-<meta name="twitter:description" content="Cape Cod water temperature today from three NOAA sensors (Woods Hole, a Cape Cod Bay buoy and a Nantucket Sound buoy), matched to each beach's nearest sensor." />
+<meta name="twitter:description" content="Cape Cod water temperature today from three sensors: NOAA's Woods Hole station, a NOAA buoy in Nantucket Sound and a Cape Cod Bay buoy. Each beach shows its nearest sensor's reading and when we checked it." />
 <meta name="twitter:image" content="https://totallycapecod.com/og-image.png" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0YM9WQLWK"></script>
 <script>
@@ -34,18 +34,16 @@
   .temp-card { background:white; border-radius:var(--radius-md); padding:20px 18px; box-shadow:var(--shadow-sm); text-align:center; transition:transform var(--transition-fast), box-shadow var(--transition-fast); }
   .temp-card:hover { transform:translateY(-2px); box-shadow:var(--shadow-md); }
   .temp-display { font-size:48px; font-weight:800; line-height:1; margin:8px 0 4px; }
-  .temp-warm { color:#1a7a52; }
-  .temp-mild { color:#a05a00; }
+  .temp-warm { color:#b4532a; }
+  .temp-mild { color:#8a6a1f; }
   .temp-cool { color:var(--sea-deep); }
   .temp-cold { color:#5056a1; }
   .temp-unit { font-size:22px; vertical-align:super; }
   .beach-name-card { font-weight:700; font-size:15px; color:var(--warm-brown); margin-bottom:4px; }
   .beach-town-card { font-size:12px; color:var(--text-secondary); }
   .temp-label-feel { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; margin-top:8px; }
-  .feel-warm { color:#1a7a52; }
-  .feel-mild { color:#a05a00; }
-  .feel-cool { color:var(--sea-deep); }
   .feel-cold { color:#5056a1; }
+  .sensor-link { color:inherit; text-decoration:underline; }
   .sort-bar { display:flex; gap:10px; margin-bottom:20px; flex-wrap:wrap; }
   .sort-btn { padding:8px 18px; border-radius:var(--radius-full); font-size:13px; font-weight:700; cursor:pointer; border:2px solid var(--divider); background:white; color:var(--text-secondary); transition:all var(--transition-fast); }
   .sort-btn.active { background:var(--sea-deep); color:white; border-color:var(--sea-deep); }
@@ -93,18 +91,24 @@
   <div class="hero-content" style="padding-top:80px;">
     <div class="hero-badge">Water Temps Today</div>
     <h1 class="hero-title" style="font-size:clamp(26px,5vw,50px);">Cape Cod Water <span class="script">Temperature</span> Today</h1>
-    <p class="hero-subtitle">Readings from three NOAA sensors, matched to each beach</p>
+    <p class="hero-subtitle">Readings from three sensors, matched to each beach</p>
   </div>
 </section>
 
 <section class="section page-wrap">
 
-  <p style="font-size:15px; line-height:1.7; color:var(--text); margin:0 0 28px; max-width:760px;">
-    Water temperatures vary around the Cape: Cape Cod Bay, Nantucket Sound and the open Atlantic can differ by several
-    degrees, especially in summer. Each beach below shows the latest reading from its nearest working sensor: NOAA's
-    Woods Hole station, the Cape Cod Bay buoy or the Nantucket Sound buoy. There's no sensor on the ocean side, so
-    Atlantic-facing beaches such as Nauset, Coast Guard, Marconi and Race Point show the Cape Cod Bay reading, and the
-    water there can be several degrees different.
+  <p style="font-size:15px; line-height:1.7; color:var(--text); margin:0 0 16px; max-width:760px;">
+    Each beach below shows the latest reading from its nearest working sensor:
+    <a href="https://tidesandcurrents.noaa.gov/stationhome.html?id=8447930" target="_blank" rel="noopener">NOAA's Woods Hole station (8447930)</a>,
+    <a href="https://www.ndbc.noaa.gov/station_page.php?station=44020" target="_blank" rel="noopener">NOAA buoy 44020 in Nantucket Sound</a>
+    or <a href="https://www.ndbc.noaa.gov/station_page.php?station=44090" target="_blank" rel="noopener">buoy 44090 in Cape Cod Bay</a>
+    (owned and maintained by Woods Hole Group/NERACOOS; NOAA's National Data Buoy Center publishes its data).
+    There's no sensor on the ocean side, so Atlantic-facing beaches such as Nauset, Coast Guard, Marconi and Race Point
+    show the Cape Cod Bay reading — the water there isn't measured and may be warmer or colder.
+  </p>
+  <p style="font-size:14px; line-height:1.6; color:var(--text); margin:0 0 28px; max-width:760px; background:var(--sea-mist); border-radius:12px; padding:12px 14px;">
+    🌊 The National Weather Service defines cold water as <strong>70°F or lower</strong> and explains the risk of cold shock on its
+    <a href="https://www.weather.gov/gyx/HazardOfColdWaterActivities" target="_blank" rel="noopener">Hazard of Cold Water Activities</a> page.
   </p>
 
   <div id="tempData">
@@ -123,7 +127,7 @@
   <div style="margin-top:40px; background:var(--sand-light); border-radius:var(--radius-lg); padding:32px; text-align:center;">
     <p style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--warm-brown-soft); margin:0 0 10px;">Get it live on your phone</p>
     <h2 style="font-family:'Fraunces',serif; font-weight:900; font-size:26px; margin:0 0 8px; color:var(--warm-brown);">Open the Totally Cape Cod App</h2>
-    <p style="color:var(--text-secondary); font-size:14px; margin:0 0 20px;">Real-time beaches, bridge traffic, tides &amp; tonight's events — all in one place.</p>
+    <p style="color:var(--text-secondary); font-size:14px; margin:0 0 20px;">Water temps, bridge traffic, tides &amp; tonight's events — all in one place.</p>
     <a href="/app/" class="btn btn-primary" onclick="gtag('event','cta_click',{page:'water-temp',location:'bottom'})">Open the App →</a>
   </div>
 
@@ -133,7 +137,7 @@
   <div class="footer-inner">
     <div>
       <div class="footer-brand">Totally Cape Cod</div>
-      <p class="footer-desc">The unofficial guide to the best of Cape Cod.</p>
+      <p class="footer-desc">Cape Cod beaches, events and eats, linked to their sources.</p>
     </div>
     <div class="footer-links">
       <div class="footer-heading">Explore</div>
@@ -160,18 +164,28 @@ var DATA_URL = 'https://raw.githubusercontent.com/zemiai/totallycapecod/main/dat
 var beachesAll = [];
 var sortMode = 'warmest';
 
+// Neutral temperature bands. The 70°F line is the National Weather Service's cold-water definition.
 function tempClass(t) {
-  if (t >= 70) return 'warm';
+  if (t > 70) return 'warm';
   if (t >= 65) return 'mild';
   if (t >= 60) return 'cool';
   return 'cold';
 }
 
-function feelLabel(t) {
-  if (t >= 70) return { cls:'feel-warm', label:'🏊 Perfect swimming' };
-  if (t >= 65) return { cls:'feel-mild', label:'😊 Good for most' };
-  if (t >= 60) return { cls:'feel-cool', label:'🥶 Refreshing' };
-  return { cls:'feel-cold', label:'❄️ Cold' };
+function nwsLabel(t) {
+  return t <= 70 ? '<div class="temp-label-feel feel-cold">Cold water by NWS definition (70°F or lower)</div>' : '';
+}
+
+// Station pages for each sensor name used in data/beaches.json
+var SENSOR_LINKS = {
+  'Woods Hole': 'https://tidesandcurrents.noaa.gov/stationhome.html?id=8447930',
+  'Nantucket Sound buoy': 'https://www.ndbc.noaa.gov/station_page.php?station=44020',
+  'Cape Cod Bay buoy': 'https://www.ndbc.noaa.gov/station_page.php?station=44090'
+};
+function sensorHtml(src) {
+  if (!src) return 'Sensor not recorded';
+  var url = SENSOR_LINKS[src];
+  return 'Sensor: ' + (url ? '<a class="sensor-link" href="' + url + '" target="_blank" rel="noopener">' + src + '</a>' : src);
 }
 
 function renderGrid(beaches) {
@@ -186,13 +200,12 @@ function renderGrid(beaches) {
 
   var cards = sorted.filter(function(b){ return b.water_temp; }).map(function(b) {
     var cls = tempClass(b.water_temp);
-    var feel = feelLabel(b.water_temp);
     return '<div class="temp-card">' +
       '<div class="beach-name-card">' + b.name + '</div>' +
       '<div class="beach-town-card">' + b.town + '</div>' +
       '<div class="temp-display temp-' + cls + '">' + b.water_temp + '<span class="temp-unit">°F</span></div>' +
-      '<div class="temp-label-feel ' + feel.cls + '">' + feel.label + '</div>' +
-      '<div style="font-size:11px;color:var(--text-secondary);margin-top:6px;">' + (b.water_temp_src ? 'Sensor: ' + b.water_temp_src : 'Sensor reading') + (b.water_temp_at ? ' · ' + fmtWhen(b.water_temp_at) : ' · time unknown') + '</div>' +
+      nwsLabel(b.water_temp) +
+      '<div style="font-size:11px;color:var(--text-secondary);margin-top:6px;">' + sensorHtml(b.water_temp_src) + (b.water_temp_at ? ' · checked ' + fmtWhen(b.water_temp_at) : ' · time unknown') + '</div>' +
     '</div>';
   }).join('');
 
@@ -227,10 +240,10 @@ async function loadData() {
 
     container.innerHTML =
       '<div class="legend">' +
-        '<span class="legend-item"><span class="legend-dot" style="background:#1a7a52;"></span>70°F+ — Perfect</span>' +
-        '<span class="legend-item"><span class="legend-dot" style="background:#a05a00;"></span>65–69°F — Good</span>' +
-        '<span class="legend-item"><span class="legend-dot" style="background:var(--sea-deep);"></span>60–64°F — Refreshing</span>' +
-        '<span class="legend-item"><span class="legend-dot" style="background:#5056a1;"></span>Below 60°F — Cold</span>' +
+        '<span class="legend-item"><span class="legend-dot" style="background:#b4532a;"></span>Above 70°F</span>' +
+        '<span class="legend-item"><span class="legend-dot" style="background:#8a6a1f;"></span>65–70°F</span>' +
+        '<span class="legend-item"><span class="legend-dot" style="background:var(--sea-deep);"></span>60–64°F</span>' +
+        '<span class="legend-item"><span class="legend-dot" style="background:#5056a1;"></span>Below 60°F</span>' +
       '</div>' +
       '<div class="sort-bar">' +
         '<button class="sort-btn active" onclick="setSort(\'warmest\',this)">Warmest First</button>' +

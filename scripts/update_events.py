@@ -237,19 +237,27 @@ def parse_chambermaster_date(s: str):
         return None
     return cm_build_date(m.group(1), int(m.group(2)), int(m.group(3)) if m.group(3) else None)
 
+# Cape Cod listings publish local clock times. A time with no offset is Eastern time, not UTC
+# (treating it as UTC made a 5 PM event look like it started at noon and vanish early).
+# Date-only values stay at midnight UTC, the app's "all-day" convention.
+ET = __import__("zoneinfo").ZoneInfo("America/New_York")
+
 def parse_iso(s: str):
     if not s:
         return None
     s = s.strip().replace("Z", "+00:00")
+    has_clock = bool(re.search(r"\d[ T]\d{2}:\d{2}", s))
     for fmt in (None,):
         try:
             dt = datetime.fromisoformat(s)
-            return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
+            if dt.tzinfo:
+                return dt
+            return dt.replace(tzinfo=ET) if has_clock else dt.replace(tzinfo=timezone.utc)
         except ValueError:
             pass
     m = re.match(r"(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})", s)
     if m:
-        return datetime(*[int(x) for x in m.groups()], tzinfo=timezone.utc)
+        return datetime(*[int(x) for x in m.groups()], tzinfo=ET)
     m = re.match(r"(\d{4})-(\d{2})-(\d{2})", s)
     if m:
         return datetime(int(m.group(1)), int(m.group(2)), int(m.group(3)), tzinfo=timezone.utc)
@@ -519,14 +527,16 @@ def parse_ics(name: str, town: str, url: str, coord) -> list[dict]:
     out = []
     for block in text.split("BEGIN:VEVENT")[1:]:
         sm = re.search(r"\nSUMMARY[^:]*:(.+)", block)
-        dm = re.search(r"\nDTSTART[^:]*:(\d{8})(?:T(\d{6}))?", block)
+        dm = re.search(r"\nDTSTART[^:]*:(\d{8})(?:T(\d{6})(Z)?)?", block)
         if not sm or not dm:
             continue
         d = dm.group(1)
         tm = dm.group(2)
+        # "...Z" is UTC; TZID=… or floating times are local (Eastern) clock times.
+        tz = timezone.utc if (dm.group(3) or not tm) else ET
         try:
             dt = datetime(int(d[:4]), int(d[4:6]), int(d[6:8]),
-                          int(tm[:2]) if tm else 0, int(tm[2:4]) if tm else 0, tzinfo=timezone.utc)
+                          int(tm[:2]) if tm else 0, int(tm[2:4]) if tm else 0, tzinfo=tz)
         except ValueError:
             continue
         title = sm.group(1).strip().replace("\\,", ",").replace("\\;", ";").replace("\\n", " ")
@@ -661,7 +671,11 @@ def main() -> None:
             title = clean_title(e["title"])
             if not title or len(title) < 3:
                 continue
+            if e.get("has_time", False):
+                dt = dt.astimezone(ET)                      # show and store the local clock time
             has_time = e.get("has_time", False) and not (dt.hour == 0 and dt.minute == 0)
+            if not has_time:                                # all-day: midnight UTC of the listed date
+                dt = datetime(dt.year, dt.month, dt.day, tzinfo=timezone.utc)
             cat, tag = categorize(f'{title} {e.get("venue","")}')
             raw.append({
                 "id": slugify(f'{title}-{dt.strftime("%Y%m%d")}'),
@@ -685,7 +699,7 @@ def main() -> None:
 
     # de-dupe by id, sort by start, cap
     seen, events = set(), []
-    for e in sorted(raw, key=lambda x: x["start"]):
+    for e in sorted(raw, key=lambda x: datetime.fromisoformat(x["start"])):
         if e["id"] in seen:
             continue
         seen.add(e["id"])

@@ -267,7 +267,9 @@
   .a2hs-topbar .dots{ position:relative; font-size:18px; color:#444; padding:0 4px; }
   .a2hs-menu{ position:absolute; right:8px; top:44px; width:66%; background:#fff; border-radius:12px; padding:4px 0; box-shadow:0 8px 22px rgba(0,0,0,0.18); }
 
-  .map-container{ height:240px; margin:0 16px; border-radius:14px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.04); }
+  /* position + z-index:0 keep Leaflet's own z-indexes (400–1000) inside the map, so pins and
+     zoom buttons no longer draw over the modals (z-index 200) and the tab bar. */
+  .map-container{ position:relative; z-index:0; height:240px; margin:0 16px; border-radius:14px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.04); }
   #leafletMap, #beachMap, #whaleMap, #lighthouseMap{ height:100%; width:100%; }
 
   .tide-chart{ background:white; margin:0 16px; border-radius:14px; padding:14px; box-shadow:0 1px 3px rgba(0,0,0,0.04); }
@@ -277,7 +279,7 @@
   .tide-row .low{ background:#ffe5cc; color:#8f4d10; }
 
   .bridge-card{ background:white; margin:0 16px 10px; border-radius:14px; padding:14px; box-shadow:0 1px 3px rgba(0,0,0,0.04); display:flex; align-items:center; gap:12px; }
-  /* Ask a Cape Local (Concierge surfaced on Today) */
+  /* Ask the AI Concierge (surfaced on Today) */
   .local-ask{ background:linear-gradient(135deg,#0E2A47,#1C4E80); color:#fff; margin:0 16px 12px; border-radius:16px; padding:14px; box-shadow:0 4px 14px rgba(14,42,71,0.25); cursor:pointer; }
   .local-ask-row{ display:flex; align-items:center; gap:12px; }
   .local-ask-avatar{ font-size:30px; line-height:1; }
@@ -373,7 +375,7 @@
   .nb-ask-cta{ margin-top:7px; font-size:13px; font-weight:800; color:#1E6B7A; }
   .nb-photo{ height:170px; background-size:cover; background-position:center; background-color:var(--cape-sand); position:relative; }
   .cover-icon{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:58px; line-height:1; opacity:0.95; filter:drop-shadow(0 2px 8px rgba(0,0,0,0.28)); pointer-events:none; }
-  /* 🔥 Tonight specials rail */
+  /* Today on the Cape rail (events starting today) */
   .specials-rail{ display:flex; gap:10px; overflow-x:auto; padding:2px 16px 6px; margin-bottom:4px; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
   .specials-rail::-webkit-scrollbar{ display:none; }
   .special-card{ flex:0 0 auto; width:200px; border-radius:14px; padding:12px 13px; color:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.12); cursor:pointer; position:relative; overflow:hidden; }
@@ -477,7 +479,7 @@
 <body>
 
 <div class="desktop-header">
-  <b>Totally Cape Cod</b> — the real-time Cape app · best on your phone
+  <b>Totally Cape Cod</b> — the Cape Cod app · best on your phone
 </div>
 
 <aside class="desktop-aside">
@@ -790,14 +792,12 @@
         </div>
         <div class="ios-section-title" style="padding-left:0;"><span>Your perks</span></div>
         <div style="background:white; border-radius:14px; padding:16px; box-shadow:0 1px 3px rgba(0,0,0,0.04);">
-          <div style="padding:5px 0;">✅ All 27 beaches live</div>
+          <div style="padding:5px 0;">✅ All <span data-count="beaches">27</span> beaches</div>
           <div style="padding:5px 0;">✅ Unlimited Today events</div>
-          <div style="padding:5px 0;">✅ All 100 stamps + badges</div>
+          <div style="padding:5px 0;">✅ All <span data-count="stamps">100+</span> stamps + badges</div>
           <div style="padding:5px 0;">✅ Unlimited AI</div>
-          <div style="padding:5px 0;">✅ Bridge traffic patterns + 7-day tide &amp; weather forecast</div>
-          <div style="padding:5px 0;">✅ Whale alerts + sighting submissions</div>
-          <div style="padding:5px 0;">✅ All 12 lighthouse audio tours</div>
-          <div style="padding:5px 0;">✅ Ad-free forever</div>
+          <div style="padding:5px 0;">✅ 7-day tide &amp; weather forecast</div>
+          <div style="padding:5px 0;">✅ All <span data-count="lighthouses">12</span> lighthouse audio tours</div>
         </div>
       </div>
     </div>
@@ -820,22 +820,22 @@
     <div class="modal-handle"></div>
     <div style="text-align:center; padding:4px 0 14px;">
       <img src="/icon-512.png" alt="Totally Cape Cod" style="height:68px; width:auto; display:block; margin:0 auto;" />
-      <div class="font-display" style="font-weight:900; font-size:24px; color:var(--cape-navy); margin-top:6px;">Never waste a day on Cape Cod</div>
-      <div style="color:var(--ios-sub); font-size:13px; margin-top:4px;">Beat the crowds, beat the bridge, find what's on tonight →</div>
+      <div class="font-display" style="font-weight:900; font-size:24px; color:var(--cape-navy); margin-top:6px;">Plan your Cape Cod day</div>
+      <div style="color:var(--ios-sub); font-size:13px; margin-top:4px;">Beaches, tides, bridge traffic and upcoming events →</div>
     </div>
     <div class="intro-bullet">
       <div class="intro-icon">🏖️</div>
       <div class="intro-copy">
-        <strong>Live beach &amp; tide intel</strong>
-        <span class="s-summer">Real-time parking status, water temp, crowd levels, and today's tides — across all of Cape Cod.</span>
-        <span class="s-off">Water temps, today's tides and sunset times — across all of Cape Cod.</span>
+        <strong>Beach &amp; tide info</strong>
+        <span class="s-summer">Water temps, today's tides, and parking reports from beachgoers when someone has reported in the last 3 hours.</span>
+        <span class="s-off">Water temps, today's tides and sunset times.</span>
       </div>
     </div>
     <div class="intro-bullet">
       <div class="intro-icon">⚡</div>
       <div class="intro-copy">
-        <strong>Today's events &amp; bridge delays</strong>
-        <span>Music, food, art, and festivals happening now — plus live bridge wait times so you never get stuck.</span>
+        <strong>Events &amp; bridge delays</strong>
+        <span>Upcoming music, food, art and festivals from local calendars, plus current bridge delays.</span>
       </div>
     </div>
     <div class="intro-bullet">
@@ -890,7 +890,7 @@
   <div class="modal-sheet" style="text-align:center;">
     <div class="modal-handle"></div>
     <div class="font-display" style="font-weight:900; font-size:20px; color:var(--cape-navy);">Add to your Home Screen</div>
-    <div style="color:var(--ios-sub); font-size:12.5px; margin-top:3px;">Two taps — then it opens full-screen like a real app (and unlocks alerts).</div>
+    <div style="color:var(--ios-sub); font-size:12.5px; margin-top:3px;">Two taps — then it opens full-screen like a real app.</div>
     <div class="a2hs-phone">
       <div class="a2hs-screen">
         <!-- Scene 1: Safari — circle the Share button -->
@@ -936,7 +936,7 @@
   <div class="modal-sheet" style="text-align:center;">
     <div class="modal-handle"></div>
     <div class="font-display" style="font-weight:900; font-size:20px; color:var(--cape-navy);">Install the app</div>
-    <div style="color:var(--ios-sub); font-size:12.5px; margin-top:3px;">Two taps — then it opens full-screen like a real app (and unlocks alerts).</div>
+    <div style="color:var(--ios-sub); font-size:12.5px; margin-top:3px;">Two taps — then it opens full-screen like a real app.</div>
     <div class="a2hs-phone">
       <div class="a2hs-screen">
         <!-- Scene 1: Chrome — circle the ⋮ menu -->
@@ -997,10 +997,10 @@
     <div class="font-display" style="font-weight:900; font-size:22px; margin-bottom:12px;">More features</div>
     <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('nearby')"><span style="font-size:24px;">📍</span><div style="flex:1;"><div class="item-title">Near You</div><div class="item-sub">Personalized feed of spots around you</div></div></div>
     <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('passport')"><span style="font-size:24px;">🎫</span><div style="flex:1;"><div class="item-title">Passport</div><div class="item-sub"><span class="s-summer">100+ stamp summer challenge</span><span class="s-off">100+ stamp Cape challenge</span></div></div></div>
-    <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('bridges')"><span style="font-size:24px;">🌉</span><div style="flex:1;"><div class="item-title">Bridge Oracle</div><div class="item-sub">Traffic + forecast</div></div></div>
+    <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('bridges')"><span style="font-size:24px;">🌉</span><div style="flex:1;"><div class="item-title">Bridge Oracle</div><div class="item-sub">Current bridge delays</div></div></div>
     <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('conditions')"><span style="font-size:24px;">🌊</span><div style="flex:1;"><div class="item-title">Tides & Conditions</div><div class="item-sub">Today + 7-day</div></div></div>
-    <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('whales')"><span style="font-size:24px;">🐋</span><div style="flex:1;"><div class="item-title">Whale Spotter</div><div class="item-sub">Live sightings</div></div></div>
-    <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('lighthouses')"><span style="font-size:24px;">💡</span><div style="flex:1;"><div class="item-title">Lighthouse Audio Tours</div><div class="item-sub">12 self-guided tours</div></div></div>
+    <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('whales')"><span style="font-size:24px;">🐋</span><div style="flex:1;"><div class="item-title">Whale Spotter</div><div class="item-sub">Recent sightings (iNaturalist)</div></div></div>
+    <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('lighthouses')"><span style="font-size:24px;">💡</span><div style="flex:1;"><div class="item-title">Lighthouse Audio Tours</div><div class="item-sub"><span data-count="lighthouses">12</span> self-guided tours</div></div></div>
     <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('pro')"><span style="font-size:24px;">👑</span><div style="flex:1;"><div class="item-title">Cape Cod Pro</div><div class="item-sub" id="moreMenuProStatus">$9.99 lifetime</div></div></div>
     <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); replayTour()"><span style="font-size:24px;">🧭</span><div style="flex:1;"><div class="item-title">Quick tour</div><div class="item-sub">How the app works</div></div></div>
     <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); openModal('feedback')"><span style="font-size:24px;">💬</span><div style="flex:1;"><div class="item-title">What's missing?</div><div class="item-sub">Tell us what would make your trip better</div></div></div>
@@ -1080,7 +1080,7 @@
           <div class="audio-progress" style="margin-top:6px;"><div class="audio-progress-fill" id="lhProgress"></div></div>
         </div>
       </div>
-      <div style="margin-top:10px; font-size:11px; color:var(--ios-sub);">Narrated by your device — works offline. Pro users can download MP3.</div>
+      <div style="margin-top:10px; font-size:11px; color:var(--ios-sub);">Read aloud by your device's voice.</div>
     </div>
     <div style="margin-top:14px; font-size:13px; color:var(--ios-text); line-height:1.55; max-height:200px; overflow-y:auto;" id="lhTranscript"></div>
     <button onclick="closeModal('lighthouse'); stopLighthouseAudio();" style="width:100%; background:var(--cape-navy); color:white; border:none; padding:13px; border-radius:14px; font-weight:700; font-size:15px; margin-top:14px;">Done</button>
@@ -1092,7 +1092,7 @@
   <div class="modal-sheet">
     <div class="modal-handle"></div>
     <div class="font-display" style="font-weight:900; font-size:22px;">Report a sighting</div>
-    <div style="color:var(--ios-sub); font-size:13px; margin-top:2px;">Help other visitors find marine life</div>
+    <div style="color:var(--ios-sub); font-size:13px; margin-top:2px;">Saved on this device — it shows on your sightings map and list</div>
     <div style="margin-top:14px;">
       <label style="font-size:12px; color:var(--ios-sub); font-weight:700;">Species</label>
       <select id="sightingSpecies" style="width:100%; padding:10px; border:1px solid var(--ios-divider); border-radius:10px; font-size:14px; margin-top:4px;">
@@ -1129,9 +1129,7 @@
     </div>
     <div style="background:var(--ios-bg); border-radius:12px; padding:14px; margin-top:16px; font-size:13px;">
       <div style="display:flex; justify-content:space-between; align-items:center;"><span style="font-weight:600;">Cape Cod Pro (Lifetime)</span><span style="font-weight:800; font-size:16px;">$9.99</span></div>
-      <!-- Price anchor in modal -->
-      <div style="color:var(--cape-brown); font-size:11px; font-weight:600; margin-top:5px;"><span class="s-summer">Less than a single beach parking fee</span><span class="s-off">Less than a lobster roll</span> — once, forever.</div>
-      <div style="color:var(--ios-sub); font-size:11px; margin-top:3px;">30-day money-back guarantee · restore anytime</div>
+      <div style="color:var(--ios-sub); font-size:11px; margin-top:3px;">One-time payment · restore anytime</div>
     </div>
     <button onclick="goToStripe()" style="width:100%; background:var(--cape-navy); color:white; border:none; padding:14px; border-radius:14px; font-weight:700; font-size:15px; margin-top:18px; font-family:inherit; cursor:pointer;">Continue to checkout →</button>
     <button onclick="closeModal('purchase')" style="width:100%; background:transparent; color:var(--cape-navy); border:none; padding:10px; font-weight:600; font-size:14px; cursor:pointer;">Maybe later</button>
@@ -1167,7 +1165,7 @@
     <div class="modal-handle"></div>
     <div style="font-size:60px;">🎉</div>
     <div class="font-display" style="font-weight:900; font-size:22px; margin-top:6px;">Welcome to Pro!</div>
-    <p style="color:var(--ios-sub); font-size:14px; margin-top:6px;">All 8 features unlocked. Go explore.</p>
+    <p style="color:var(--ios-sub); font-size:14px; margin-top:6px;">Every Pro feature is unlocked. Go explore.</p>
     <button onclick="closeModal('success'); switchTab('today');" style="width:100%; background:var(--cape-navy); color:white; border:none; padding:14px; border-radius:14px; font-weight:700; font-size:15px; margin-top:14px;">Let's go</button>
   </div>
 </div>
@@ -1439,28 +1437,100 @@ function fmtMarkdown(text) {
   return text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
 }
 
-// 🔥 Tonight on the Cape — restaurant specials (owner's edge) + tonight's food/music, real data.
+// ── Honesty helpers: every number shown carries where it came from and how old it is ──
+// Today's date in Eastern time, YYYY-MM-DD.
+function tccTodayET(d) {
+  return new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(d || new Date());
+}
+// When a beach's water temperature was read, in Eastern time ("12:54 PM", or "Nov 7, 12:54 PM").
+function tccTempWhen(b) {
+  const t = b && b.water_temp_at ? new Date(b.water_temp_at) : null;
+  if (!t || isNaN(t)) return '';
+  const time = t.toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' });
+  if (tccTodayET(t) === tccTodayET()) return time;
+  return t.toLocaleDateString('en-US', { timeZone: 'America/New_York', month: 'short', day: 'numeric' }) + ', ' + time;
+}
+// "56°F (Cape Cod Bay buoy, 12:54 PM)": the reading, the sensor it came from and when.
+// The sensor can be miles from the beach (ocean-side beaches use the Cape Cod Bay buoy),
+// so it is always named. No sensor named → the reading isn't shown.
+function tccTempTag(b, srcPrefix) {
+  if (!b || b.water_temp == null || b.water_temp === '' || !b.water_temp_src) return '';
+  const when = tccTempWhen(b);
+  return `${nbEsc(b.water_temp)}°F (${srcPrefix || ''}${nbEsc(b.water_temp_src)}${when ? ', ' + when : ''})`;
+}
+// Distances are from the visitor's location, or from Orleans when we don't have it.
+function tccFromLabel() { return state.userLoc === DEFAULT_LOC ? ' from Orleans' : ''; }
+// Age of the bridge reading, from the file's real update time. (Each bridge's "last_check"
+// text in the feed is a fixed string, so it is never shown.)
+function tccBridgeAge() {
+  const t = Date.parse(state.data.bridges?.updated_at || '');
+  if (isNaN(t)) return { label: 'Update time unknown', fresh: false };
+  const m = Math.max(1, Math.round((Date.now() - t) / 60000));
+  const label = m < 60 ? `Updated ${m}m ago` : m < 1440 ? `Updated ${Math.round(m / 60)}h ago` : `Updated ${Math.round(m / 1440)}d ago`;
+  return { label, fresh: m < 90 };
+}
+function tccBridgeAgeLabel() {
+  const a = tccBridgeAge();
+  return `<span class="freshness-label${a.fresh ? '' : ' stale'}" style="margin-left:6px;">${a.label}</span>`;
+}
+// One factual line per bridge, from the measured delay (no timing advice — we have no source for it).
+function tccBridgeLine(x) {
+  const dir = x.direction === 'off_cape' ? 'Off-Cape' : x.direction === 'on_cape' ? 'On-Cape' : '';
+  const d = Number(x.current_delay_min) || 0;
+  const delay = d > 0 ? `About ${d} min slower than without traffic` : 'No traffic delay measured';
+  return (dir ? dir + ' · ' : '') + delay;
+}
+// "6 days ago", worked out from the report's own timestamp (the feed's "time_ago" text goes stale).
+function tccAgo(iso, fallback) {
+  const t = Date.parse(iso || '');
+  if (isNaN(t)) return fallback || '';
+  const m = Math.max(0, Math.round((Date.now() - t) / 60000));
+  if (m < 1) return 'Just now';
+  if (m < 60) return m + ' min ago';
+  const h = Math.round(m / 60);
+  if (h < 24) return h + (h === 1 ? ' hour ago' : ' hours ago');
+  const d = Math.round(h / 24);
+  return d + (d === 1 ? ' day ago' : ' days ago');
+}
+// Where to check parking, fees and lifeguard schedules. Sources are the ones in docs/SEASON.md.
+// The five Cape Cod National Seashore beaches in the app, as listed on the NPS page below
+// (it names six: Coast Guard, Nauset Light, Marconi, Head of the Meadow, Race Point, Herring Cove).
+const TCC_NPS_BEACHES = ['coast-guard', 'marconi', 'head-of-meadow', 'race-point', 'herring-cove'];
+const TCC_SRC = {
+  nps: 'https://home.nps.gov/thingstodo/beachrelaxation.htm',
+  county: 'https://capecod.gov/2024/05/24/barnstable-countys-guide-to-getting-beach-parking-stickers-on-cape-cod-a-breakdown-for-15-towns-and-the-cape-cod-national-seashore-2024',
+};
+function tccBeachInfo(b) {
+  const a = (url, text) => `<a href="${url}" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="color:inherit; text-decoration:underline;">${text}</a>`;
+  if (b && TCC_NPS_BEACHES.includes(b.slug)) {
+    return `Part of Cape Cod National Seashore. Check the ${a(TCC_SRC.nps, 'National Park Service page')} for parking, fees and lifeguard schedules.`;
+  }
+  return `Check the town's website or the ${a(TCC_SRC.county, 'Barnstable County beach guide (2024)')} for parking, fees and lifeguard schedules.`;
+}
+// Counts in the static copy come from the data, so they can't drift from it.
+function tccPaintCounts() {
+  const n = { beaches: (state.data.beaches?.beaches || []).length,
+              stamps: (state.data.stamps?.stamps || []).length,
+              lighthouses: (state.data.lighthouses?.lighthouses || []).length };
+  document.querySelectorAll('[data-count]').forEach(el => { const v = n[el.dataset.count]; if (v) el.textContent = v; });
+}
+
+// 📅 Today on the Cape — only events whose listing says they start today (Eastern time),
+// each credited to its source. Restaurant deals aren't shown: none has a saved source.
 function renderSpecials() {
-  const eats = (state.data.eats?.eats || []).filter(r => r.deal);
-  const events = (state.data.events?.events || []).filter(e => ['food','music','food_deal','happy_hour'].includes(e.category));
-  const cards = [];
-  eats.slice(0, 8).forEach(r => {
-    const grad = (COVER_STYLE.food || COVER_STYLE.default)[0];
-    cards.push(`<div class="special-card" style="background:${grad}" onclick="switchTab('nearby')">
-      <div class="sc-kind">🍴 Special</div>
-      <div class="sc-name">${nbEsc(r.name)}</div>
-      <div class="sc-sub">${nbEsc(r.town)}${r.cuisine ? ' · ' + nbEsc(r.cuisine) : ''}</div>
-      <div class="sc-deal">🔥 ${nbEsc(r.deal)}</div>
-    </div>`);
-  });
-  events.slice(0, 8).forEach(e => {
-    const [grad, icon] = COVER_STYLE[e.category] || COVER_STYLE.music;
-    cards.push(`<div class="special-card" style="background:${grad}" onclick="switchTab('events')">
+  const todayET = tccTodayET();
+  const events = (state.data.events?.events || [])
+    .filter(e => /^https?:\/\//i.test(e.source_url || '') && String(e.start || '').slice(0, 10) === todayET);
+  const cards = events.slice(0, 10).map(e => {
+    const [grad, icon] = COVER_STYLE[e.category] || COVER_STYLE.default;
+    const via = tccCreditLink(e);
+    return `<div class="special-card" style="background:${grad}" onclick="switchTab('events')">
       <div class="sc-kind">${nbEsc(e.tag || (icon + ' Event'))}</div>
       <div class="sc-name">${nbEsc(e.title)}</div>
       <div class="sc-sub">${nbEsc([e.venue, e.town].filter(Boolean).join(' · '))}</div>
       <div class="sc-deal">🕒 ${nbEsc(e.time || '')}${e.price ? ' · ' + nbEsc(e.price) : ''}</div>
-    </div>`);
+      ${via ? `<div class="sc-sub" style="margin-top:6px;">via ${via}</div>` : ''}
+    </div>`;
   });
   const rail = document.getElementById('todaySpecials');
   const title = document.getElementById('todaySpecialsTitle');
@@ -1490,6 +1560,13 @@ function renderLens() {
 function renderToday() {
   renderSpecials();
   try { renderLens(); } catch (e) {}
+  // Off-season note: how many of the app's restaurants Google lists as temporarily closed.
+  const offNote = document.getElementById('offClosedNote');
+  if (offNote) {
+    const eatsAll = state.data.eats?.eats || [];
+    const closed = eatsAll.filter(r => r.business_status === 'CLOSED_TEMPORARILY').length;
+    offNote.textContent = eatsAll.length ? ` On Google, ${closed} of the ${eatsAll.length} restaurants in this app are listed as temporarily closed.` : '';
+  }
   // Date
   const opts = { weekday:'long', month:'long', day:'numeric' };
   document.getElementById('todayDate').textContent = new Date().toLocaleDateString('en-US', opts);
@@ -1530,16 +1607,16 @@ function renderToday() {
       const beachCount = (state.data.beaches?.beaches || []).length;
       bannerHtml += `<div class="preview-taste-banner">
         <div class="preview-icon">🎁</div>
-        <div style="flex:1;"><strong>All ${beachCount || 28} beaches unlocked — free preview</strong><br/><span style="font-size:11px; font-weight:400;">This is your first visit. Explore everything once — on us.</span></div>
+        <div style="flex:1;"><strong>All ${beachCount ? beachCount + ' ' : ''}beaches unlocked — free preview</strong><br/><span style="font-size:11px; font-weight:400;">This is your first visit. Explore everything once — on us.</span></div>
       </div>`;
     }
 
-    // TASK9 Lever 5: loss-aversion CTA on second+ session if preview was used
+    // TASK9 Lever 5: second+ session after the first-visit preview. The app doesn't know
+    // what the visitor looked at, only that everything was unlocked on that first visit.
     if (!state.proPreview && _previewUsed && _previewUsed !== new Date().toDateString()) {
-      const beachCount = (state.data.beaches?.beaches || []).length;
       bannerHtml += `<div class="loss-aversion-cta">
-        <div class="la-headline">You explored all ${beachCount || 28} beaches last time 🏖️</div>
-        <div class="la-sub">Keep them all unlocked — plus bridge forecasts, unlimited events, and more.</div>
+        <div class="la-headline">All beaches were unlocked on your first visit 🏖️</div>
+        <div class="la-sub">Keep them all unlocked — plus unlimited events and more.</div>
         <button onclick="openModal('purchase')">Keep everything unlocked — $9.99</button>
       </div>`;
     }
@@ -1559,16 +1636,15 @@ function renderToday() {
     </div>
   `).join('') || '<div class="ios-list-item"><div class="item-sub">Tide & conditions data updating…</div></div>';
 
-  // Bridges — TASK9 Lever 4: freshness cue on last_check
+  // Bridges — freshness from the file's real update time (tccBridgeAge)
   const b = state.data.bridges?.current;
-  if (b) {
-    const freshLabel = b.sagamore.last_check ? `<span class="freshness-label" style="margin-left:6px;">${b.sagamore.last_check}</span>` : '';
+  if (b && b.sagamore) {
     document.getElementById('todayBridges').innerHTML = `
       <div class="bridge-card">
         <div style="font-size:32px;">🌉</div>
         <div style="flex:1;">
-          <div class="item-title">Sagamore ${freshLabel}</div>
-          <div class="item-sub">${b.sagamore.advice}</div>
+          <div class="item-title">Sagamore ${tccBridgeAgeLabel()}</div>
+          <div class="item-sub">${tccBridgeLine(b.sagamore)} · Google Maps traffic data</div>
         </div>
         <div class="bridge-delay ${b.sagamore.current_status==='light'?'light':b.sagamore.current_status==='heavy'?'heavy':'moderate'}">${b.sagamore.current_delay_min}<span style="font-size:14px;">m</span></div>
       </div>
@@ -1584,18 +1660,18 @@ function renderToday() {
       </div>`;
   }
 
-  // Ask a Cape Local — surface the Concierge at peak intent, with tappable starter questions
+  // Ask the AI Concierge — surface it at peak intent, with neutral starter questions (it never ranks places)
   const cq = tccOff()
-    ? ['Best beach walk today?', "What's open for dinner?", 'Lobster roll near me', 'Rainy day with kids']
-    : ['Best beach right now?', "Where's parking open?", 'Lobster roll near me', 'Rainy day with kids'];
+    ? ['When is low tide today?', "What's open for dinner?", 'Lobster roll near me', 'Rainy day with kids']
+    : ['Water temps today?', 'Any beach parking reports?', 'Lobster roll near me', 'Rainy day with kids'];
   document.getElementById('todayConcierge').innerHTML = `
-    <div class="ios-section-title"><span>💬 Ask a Cape Local</span><button onclick="switchTab('ai')">Open →</button></div>
+    <div class="ios-section-title"><span>💬 Ask the AI Concierge</span><button onclick="switchTab('ai')">Open →</button></div>
     <div class="local-ask" onclick="switchTab('ai')">
       <div class="local-ask-row">
         <span class="local-ask-avatar">🦞</span>
         <div style="flex:1;">
-          <div class="local-ask-title">Your Cape Cod local guide</div>
-          <div class="local-ask-sub">Real-time answers on beaches, food, bridges & tonight — free question every day.</div>
+          <div class="local-ask-title">AI Concierge</div>
+          <div class="local-ask-sub">Answers from the app's sourced data on beaches, tides, bridges, events and restaurants — free question every day.</div>
         </div>
       </div>
       <div class="local-ask-chips">
@@ -1622,16 +1698,18 @@ function renderToday() {
       .map(b => ({...b, dist: distanceMiles(loc.lat, loc.lng, b.lat, b.lng)}))
       .sort((a,b) => a.dist - b.dist)
       .slice(0, 3);
-    document.getElementById('todayBeaches').innerHTML = beaches.map(b => `
+    document.getElementById('todayBeaches').innerHTML = beaches.map(b => {
+      const st = beachStatus(b), temp = tccTempTag(b);
+      return `
       <div class="ios-list-item tappable" onclick="openBeach('${b.slug}')">
-        <span class="status-dot" style="background:var(--status-${beachStatus(b).code})"></span>
+        <span class="status-dot" style="background:var(--status-${st.code})"></span>
         <div style="flex:1; min-width:0;">
           <div class="item-title">${b.name}</div>
-          <div class="item-sub">${beachStatus(b).live?'<span style="color:#1F9D63;">●</span> ':''}${beachStatus(b).label} · 🌊 ${b.water_temp}°F · ${b.dist.toFixed(1)}mi</div>
+          <div class="item-sub">${st.live?'<span style="color:#1F9D63;">●</span> ':''}${st.label}${temp ? ' · 🌊 ' + temp : ''} · ${b.dist.toFixed(1)}mi${tccFromLabel()}</div>
         </div>
-        <div class="crowd-bar">${Array.from({length:5}, (_,j) => `<span class="${j < beachStatus(b).crowd ? 'on' : ''}"></span>`).join('')}</div>
-      </div>
-    `).join('') || '<div class="ios-list-item"><div class="item-sub">Beach reports start rolling in each morning — check back soon.</div></div>';
+        ${st.live ? `<div class="crowd-bar">${Array.from({length:5}, (_,j) => `<span class="${j < st.crowd ? 'on' : ''}"></span>`).join('')}</div>` : ''}
+      </div>`;
+    }).join('') || '<div class="ios-list-item"><div class="item-sub">Beach data is loading — check back in a moment.</div></div>';
   });
 }
 
@@ -1704,11 +1782,15 @@ const TCC_CREDIT = {
   'Heritage Museums':'Heritage Museums & Gardens', 'Highfield Hall':'Highfield Hall & Gardens',
   'Payomet':'Payomet Performing Arts Center', 'Melody Tent':'Cape Cod Melody Tent'
 };
-function tccCredit(e) {
+function tccCreditLink(e) {
   const name = e.credit || TCC_CREDIT[e.source] || e.source;
   if (!name) return '';
   const url = /^https?:\/\//i.test(e.source_url || '') ? e.source_url : '';
-  const label = url ? `<a href="${nbEsc(url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="color:inherit; text-decoration:underline;">${nbEsc(name)}</a>` : nbEsc(name);
+  return url ? `<a href="${nbEsc(url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="color:inherit; text-decoration:underline;">${nbEsc(name)}</a>` : nbEsc(name);
+}
+function tccCredit(e) {
+  const label = tccCreditLink(e);
+  if (!label) return '';
   return `<div style="color:var(--ios-sub); font-size:11px; margin-top:4px;">via ${label}</div>`;
 }
 function renderEventCard(e) {
@@ -1733,7 +1815,7 @@ function renderEvents() {
   const events = state.data.events?.events || [];
   document.getElementById('eventsSubhead').textContent = events.length
     ? `${events.length} upcoming events on Cape Cod`
-    : "Today's deals, music & free events";
+    : 'Upcoming events from local calendars';
 
   // Filter chips — TASK9 Lever 5: proPreview unlocks category filters on first session
   const cats = [{id:'all',label:'All'},{id:'music',label:'🎵 Music'},{id:'theater',label:'🎭 Theater'},{id:'art',label:'🎨 Art'},{id:'food',label:'🍴 Food & Drink'},{id:'family',label:'👨‍👩‍👧 Family'},{id:'festival',label:'🎪 Festival'},{id:'talk',label:'🎙️ Talks'}];
@@ -1758,7 +1840,7 @@ function renderEvents() {
   if (!hasPro() && !state.proPreview && filtered.length > FREE_EVENT_LIMIT) {
     const usedPreview = _previewUsed && _previewUsed !== new Date().toDateString();
     const ctaMsg = usedPreview
-      ? `You saw all ${filtered.length} events last visit — unlock everything again · $9.99`
+      ? `All events were unlocked on your first visit — unlock them again · $9.99`
       : `🔒 +${filtered.length - FREE_EVENT_LIMIT} more events · Unlock Pro $9.99`;
     document.getElementById('eventsUnlockCta').innerHTML = `<button class="unlock-cta" onclick="switchTab('pro')">${ctaMsg}</button>`;
   } else {
@@ -1789,14 +1871,14 @@ function renderBeaches() {
     const liveCount = Object.keys(state.data.beachLive || {}).length;
     const tempLive = beaches.some(b => tccFreshTemp(b));
     if (tccOff()) {
-      subEl.textContent = `${beaches.length} beaches${tempLive ? ' · live water temps' : ''} · off-season: no lifeguards on duty`;
+      subEl.textContent = `${beaches.length} beaches${tempLive ? ' · live water temps' : ''} · off-season`;
     } else {
       subEl.textContent = liveCount > 0
         ? `🟢 ${liveCount} reporting live now · ${beaches.length} beaches`
         : `${beaches.length} beaches${tempLive ? ' · live water temp' : ''} · tap any to report parking`;
     }
   } else {
-    subEl.textContent = 'Beach reports start rolling in each morning — check back soon.';
+    subEl.textContent = 'Beach data is loading — check back in a moment.';
   }
 
   // Map: hide container when no beaches to avoid blank grey pane
@@ -1816,11 +1898,11 @@ function renderBeaches() {
         beaches.forEach(b => {
           // Pin color + popup come from beachStatus(): a live beachgoer report, or an
           // honestly-labeled typical/off-season status — never the static seed text.
-          const st = beachStatus(b);
+          const st = beachStatus(b), temp = tccTempTag(b);
           const color = { open:'#34C759', mid:'#FF9500', full:'#FF3B30', off:'#8E8E93' }[st.code] || '#8E8E93';
           L.circleMarker([b.lat, b.lng], { radius:8, fillColor:color, color:'#fff', weight:2, fillOpacity:1 })
             .addTo(beachMapInstance)
-            .bindPopup(`<b>${b.name}</b><br>${b.town}<br>${st.label}${b.water_temp ? `<br>🌊 ${b.water_temp}°F` : ''}`);
+            .bindPopup(`<b>${b.name}</b><br>${b.town}<br>${st.label}${temp ? `<br>🌊 ${temp}` : ''}`);
         });
       }
     }, 100);
@@ -1830,7 +1912,7 @@ function renderBeaches() {
     const sorted = beaches.map(b => ({...b, dist: distanceMiles(loc.lat, loc.lng, b.lat, b.lng)})).sort((a,b) => a.dist - b.dist);
     const free = sorted.slice(0, FREE_BEACH_LIMIT);
     document.getElementById('beachListFree').innerHTML = free.map(b => renderBeachRow(b)).join('') ||
-      '<div class="ios-list-item"><div class="item-sub">Beach reports start rolling in each morning — check back soon.</div></div>';
+      '<div class="ios-list-item"><div class="item-sub">Beach data is loading — check back in a moment.</div></div>';
 
     // TASK9 Lever 5: proPreview also unlocks all beaches on first session
     if (hasPro() || state.proPreview) {
@@ -1842,7 +1924,7 @@ function renderBeaches() {
       // Second+ session, not Pro — show loss-aversion at the lock point (Lever 5)
       const usedPreview = _previewUsed && _previewUsed !== new Date().toDateString();
       const lockMsg = usedPreview
-        ? `You explored all ${beaches.length} beaches last visit 🏖️ — keep them all for $9.99`
+        ? `All beaches were unlocked on your first visit 🏖️ — keep them all for $9.99`
         : `🔒 + ${beaches.length - FREE_BEACH_LIMIT} more beaches · Pro`;
       document.getElementById('beachLockedSection').innerHTML = `
         <div class="ios-section-title"><span>${lockMsg}</span></div>
@@ -1857,8 +1939,8 @@ function renderBeaches() {
   });
 }
 // Merge the crowdsourced live layer (beachLive) over the static baseline, honestly.
-// A real recent report → live status + "🟢 Live · Xm ago". No report → labeled "Typical",
-// so we never present static seed data as a live reading.
+// A real recent report → live status + "🟢 Live · Xm ago". No report → "No recent report"
+// (or "Off-season"), so we never present static seed data as a live reading.
 function beachStatus(b){
   const live = state.data.beachLive && state.data.beachLive[b.slug];
   const now = Date.now();
@@ -1882,16 +1964,12 @@ function beachStatus(b){
 function tccOff(){ return !!(window.TCCSeason && TCCSeason.isOff()); }
 // Free season: every Pro feature open to everyone until data/season.json "free_until".
 function tccFree(){ return !!(window.TCCSeason && TCCSeason.isFree && TCCSeason.isFree()); }
-function tccFreeLabel(){ return (window.TCCSeason && TCCSeason.freeUntilLabel) ? TCCSeason.freeUntilLabel() : 'May'; }
+// season.js's freeUntilLabel() throws when free_until is "" (a documented way to end the free
+// period); this label only shows while the free period is on, so fall back to '' then.
+function tccFreeLabel(){ try { return (window.TCCSeason && TCCSeason.freeUntilLabel) ? TCCSeason.freeUntilLabel() : 'May'; } catch (e) { return ''; } }
 function hasPro(){ return state.isPro || tccFree(); }
-// Lifeguard season on the Cape runs roughly late June → Labor Day (town + National
-// Seashore schedules; see docs/SEASON.md for sources). Labor Day = first Monday of September.
-function tccLifeguardSeason(d){
-  d = d || new Date();
-  const y = d.getFullYear(), sep1 = new Date(y, 8, 1);
-  const laborDay = new Date(y, 8, 1 + ((1 - sep1.getDay() + 7) % 7), 23, 59, 59);
-  return d >= new Date(y, 5, 20) && d <= laborDay;
-}
+// Lifeguard schedules differ by town and beach (e.g. Brewster guards only Long Pond, mid-July to
+// mid-August), so the app states no dates; tccBeachInfo() links the town/NPS sources instead.
 // A water temp counts as "live" only if the reading is under 6 hours old.
 function tccFreshTemp(b){
   const t = b && b.water_temp_at ? Date.parse(b.water_temp_at) : NaN;
@@ -1928,79 +2006,56 @@ document.addEventListener('tcc:season', () => {
 });
 function renderBeachRow(b) {
   const st = beachStatus(b);
-  const tempTxt = b.water_temp ? ` · 🌊 ${b.water_temp}°F` : '';
+  const temp = tccTempTag(b);
+  const tempTxt = temp ? ` · 🌊 ${temp}` : '';
   const liveDot = st.live ? '<span style="color:#1F9D63;">●</span> ' : '';
+  // Crowd bars only reflect a live beachgoer report — with none, there is nothing to show.
   return `<div class="ios-list-item tappable" onclick="openBeach('${b.slug}')">
     <span class="status-dot" style="background:var(--status-${st.code})"></span>
     <div style="flex:1; min-width:0;">
       <div class="item-title">${b.name}</div>
-      <div class="item-sub">${liveDot}${st.label}${tempTxt}${b.dist ? ' · ' + b.dist.toFixed(1) + 'mi' : ''}</div>
+      <div class="item-sub">${liveDot}${st.label}${tempTxt}${b.dist ? ' · ' + b.dist.toFixed(1) + 'mi' + tccFromLabel() : ''}</div>
     </div>
-    <div class="crowd-bar">${Array.from({length:5},(_,j) => `<span class="${j < st.crowd ? 'on' : ''}"></span>`).join('')}</div>
+    ${st.live ? `<div class="crowd-bar">${Array.from({length:5},(_,j) => `<span class="${j < st.crowd ? 'on' : ''}"></span>`).join('')}</div>` : ''}
   </div>`;
 }
 
 // ─────────────────────────────────────────────────────────────────────────
-// Beach Finder Quiz — match attributes + review-grounded personality blurbs.
-// Profiles built from cross-checked facts (NOAA/NPS/town sites) + real visitor
-// reviews (Tripadvisor/Yelp/Google) mined per beach. side/surf/temp/kids/flats/
-// vibe/park drive the match; blurb is what real beachgoers actually say.
+// Beach Finder Quiz — matching attributes per beach.
+// side/surf/temp/kids/flats/vibe/park/traits are editorial estimates with NO saved
+// source, so they are used only to rank matches and are never shown as facts.
+// Results show only sourced data (name, town, sensor water temp, distance) plus
+// links to the town/NPS sources (tccBeachInfo). Review quotes were removed: none
+// had a saved URL.
 // ─────────────────────────────────────────────────────────────────────────
 const BEACH_DNA = {
-  'nauset-beach':   { side:'ocean', surf:'big', temp:'cold', kids:'ok',   flats:false, vibe:'surf',    park:'paid',    traits:['surf','seals','sharks'],
-    blurb:"The Cape's biggest, baddest surf — a 10-mile wall of waves people come for with boogie boards. Lifeguarded and lively, but cold water, rip currents and white sharks offshore make it one for confident swimmers, not toddlers." },
-  'coast-guard':    { side:'ocean', surf:'big', temp:'cold', kids:'ok',   flats:true,  vibe:'natural',  park:'nps',     traits:['surf','seals','sunrise','sandbar'],
-    blurb:"Routinely ranked one of America's best beaches — wild Atlantic surf, a beloved marsh boardwalk approach, and low-tide sandbars kids build castles on. In summer you park inland and shuttle in. Seals patrol; swim near the guards." },
-  'race-point':     { side:'ocean', surf:'moderate', temp:'cold', kids:'ok', flats:false, vibe:'natural', park:'nps',  traits:['seals','whales','sunset','wild'],
-    blurb:"Land's end. Reviewers watch whales breach and seals bob right from the sand, and the sunsets are huge. Wild, undeveloped, unforgettable — cold rough water and real shark presence, so it's for wandering more than swimming." },
-  'marconi':        { side:'ocean', surf:'big', temp:'cold', kids:'tough',flats:false, vibe:'natural',  park:'nps',     traits:['dunes','surf','seals','sharks','wild'],
-    blurb:"The tallest dunes on the Seashore and a steep staircase down to empty, dramatic Atlantic — 'a serene, untouched paradise' with the best surf of the National Seashore beaches. Icy, rocky entry and the strongest shark signage on the Cape." },
-  'cahoon-hollow':  { side:'ocean', surf:'big', temp:'cold', kids:'ok',   flats:false, vibe:'lively',   park:'paid',    traits:['bar','surf','lively','food'],
-    blurb:"Home of The Beachcomber — the legendary bar on the dune with live bands and a raw bar over the Atlantic. 'It's loud, there are crowds, this is party time.' Young, surf-and-a-beer energy; the $30 lot fills by mid-morning and it's a brutal climb back up." },
-  'newcomb-hollow': { side:'ocean', surf:'big', temp:'cold', kids:'ok',   flats:false, vibe:'natural',  park:'sticker', traits:['surf','seals','sharks','wild','quiet'],
-    blurb:"Wild, dune-backed and the easiest Wellfleet descent — surprisingly gentle surf and a sandbar. It's also the Cape's most shark-conscious beach (site of the 2018 fatality); reviewers rave about the beauty, then heed the 'Be Shark Smart' signs. Resident-sticker parking keeps it local." },
-  'lecount-hollow': { side:'ocean', surf:'big', temp:'cold', kids:'tough',flats:false, vibe:'surf',     park:'sticker', traits:['surf','dunes','quiet','wild'],
-    blurb:"Wellfleet locals' quiet pick — uncommercial, unspoiled dunes and a consistent surf break, 'the spot to avoid the Cahoon crowds.' Steep dune walkway, small resident-sticker lot, cold Atlantic water. For surfers and solitude-seekers." },
-  'long-nook':      { side:'ocean', surf:'big', temp:'cold', kids:'tough',flats:false, vibe:'natural',  park:'sticker', traits:['dunes','surf','quiet','wild'],
-    blurb:"Towering 100-ft dunes, a steep path down and 'the feeling you're on your own private beach.' No lifeguard, a near-unobtainable Truro sticker, cold powerful surf — the difficulty is the point. For rugged solitude-seekers and surfers." },
-  'head-of-meadow': { side:'ocean', surf:'moderate', temp:'cold', kids:'ok', flats:true, vibe:'natural', park:'nps',   traits:['seals','sandbar','quiet','family'],
-    blurb:"The mellow, accessible Outer Cape beach — no punishing dune climb, and low-tide sandbars make calm, kid-friendly shallows with waves 'big enough to boogie-board but not overwhelming.' Famous for seals hauled out by the hundreds. The least-crowded Seashore beach." },
-  'herring-cove':   { side:'bay',   surf:'calm', temp:'warm', kids:'great',flats:false, vibe:'lively',   park:'nps',     traits:['sunset','lgbtq','warm','food'],
-    blurb:"The Seashore's mellow exception — west-facing, calm, warm water and what reviewers call 'the best sunset on the East Coast.' Beloved as Provincetown's iconic LGBTQ+ beach, with a snack-bar pavilion. Rocky entry (bring water shoes), but the gentlest swim of the Outer Cape." },
-  'skaket':         { side:'bay',   surf:'calm', temp:'warm', kids:'great',flats:true,  vibe:'family',   park:'paid',    traits:['sunset','flats','family'],
-    blurb:"The family-and-sunset favorite: walk-a-mile warm flats, tide pools full of hermit crabs, and 'a nightly sunset treat' people clap for. Tiny at high tide and the lot fills by 10:30 — but parking's free after 5, prime sunset time." },
-  'mayflower':      { side:'bay',   surf:'calm', temp:'warm', kids:'great',flats:true,  vibe:'family',   park:'paid',    traits:['sunset','flats','family'],
-    blurb:"The marquee bayside beach — powder-soft sand, the Cape's most famous sunset (people clap), and flats you can walk for miles with the kids. Wildly popular, so the lot's full by 9 and you'll share the sand." },
-  'chapin':         { side:'bay',   surf:'calm', temp:'warm', kids:'ok',   flats:true,  vibe:'natural',  park:'paid',    traits:['flats','sunset','wild','quiet'],
-    blurb:"Mayflower's wild, quieter cousin — undeveloped dunes, endless flats and sunset walks reviewers call 'absolutely spectacular.' No lifeguard, tiny lot, and a tide that races in over the sandbar, so watch kids and dogs closely. A local secret for peace." },
-  'corporation':    { side:'bay',   surf:'calm', temp:'moderate', kids:'great', flats:true, vibe:'family', park:'paid',  traits:['family','food','sunset'],
-    blurb:"The dependable family all-rounder reviewers vote 'best bay beach' — lifeguards, a beloved snack bar, a playground and a protected cove full of hermit crabs. Time low tide for the tide pools; water runs ~10° cooler than the south side and it's wall-to-wall at high tide." },
-  'first-encounter':{ side:'bay',   surf:'calm', temp:'warm', kids:'great',flats:true,  vibe:'natural',  park:'paid',    traits:['sunset','flats','quiet'],
-    blurb:"THE sunset pilgrimage — 'apparently the place to watch a sunset,' where the tide pulls back a mile and the sky 'explodes in pink and purple.' Calm, warm shallow flats and deep history: the site of the Pilgrims' 1620 'First Encounter' with the Nauset. Go to walk the flats at golden hour, not really to swim." },
-  'breakwater':     { side:'bay',   surf:'calm', temp:'warm', kids:'great',flats:true,  vibe:'family',   park:'paid',    traits:['flats','family'],
-    blurb:"Small, easy and right off 6A — the gateway to the famous Brewster Flats, where the water recedes nearly a mile. Warm, shallow, wave-free swimming when the tide's in; tide-pool walking when it's out. 'Mind the tide chart' is the universal advice." },
-  'paines-creek':   { side:'bay',   surf:'calm', temp:'warm', kids:'great',flats:true,  vibe:'natural',  park:'paid',    traits:['sunset','flats','quiet'],
-    blurb:"The quiet local secret — a tidal creek that turns into a kids' 'lazy river' at high tide, crabbing and kayaking, and 'awesome' sunsets with three reflections of the sun. The gatekeeper: only ~15 parking spots, so arrive by 9:30 or you're out." },
-  'sandy-neck':     { side:'bay',   surf:'calm', temp:'warm', kids:'great',flats:true,  vibe:'natural',  park:'paid',    traits:['dunes','flats','wild'],
-    blurb:"A 6-mile barrier beach of giant dunes, marsh trails and bonfire permits, with warm walk-out flats and tide pools at low tide. Reviewers split: magic at low tide ('your own little world'), but rocky at high and greenhead flies bite in July. Wild and family-friendly at once." },
-  'sandwich-town':  { side:'bay',   surf:'calm', temp:'moderate', kids:'ok', flats:true, vibe:'family',  park:'paid',    traits:['boardwalk','sunset'],
-    blurb:"Home of the famous 1,300-ft Sandwich Boardwalk over the marsh — kids leap off it into the creek at high tide, and it's 'the best sunset spot' for photographers. More rocky-and-seaweedy than sandy (water shoes help), no lifeguard — but the boardwalk charm is pure Cape." },
-  'old-silver':     { side:'sound', surf:'calm', temp:'warm', kids:'great',flats:true,  vibe:'family',   park:'paid',    traits:['warm','family','sunset','food'],
-    blurb:"Reviewers call it 'the safest and warmest swimming on the Cape' — a gentle sandbar makes a toddler-perfect wading pool, with golden sunsets. The catch: get in line before 9am or you won't park, and on a nice day you're shoulder-to-shoulder." },
-  'craigville':     { side:'sound', surf:'calm', temp:'warm', kids:'ok',   flats:false, vibe:'lively',   park:'paid',    traits:['lively','warm','food'],
-    blurb:"The big, buzzy 'see-and-be-seen' beach — locals nickname it Muscle Beach. Warm water, snack bars, a young social crowd plus plenty of families. Loud and packed in summer, but that's the fun; ~450 spaces still fill mid-morning." },
-  'ridgevale':      { side:'sound', surf:'calm', temp:'warm', kids:'great',flats:true,  vibe:'family',   park:'paid',    traits:['warm','family','flats'],
-    blurb:"A toddler's paradise and reviewers' 'best family beach in Chatham' — a warm, shallow tidal creek with hermit crabs on one side, open Sound on the other, plus kayak rentals. Two beaches in one; small lot fills early." },
-  'hardings':       { side:'sound', surf:'calm', temp:'warm', kids:'great',flats:true,  vibe:'family',   park:'paid',    traits:['warm','family','sunset'],
-    blurb:"Chatham's easy, spacious pick — two big lots mean you'll almost always get a spot, with warm water, room to spread out and 'maybe the best sunset on the Cape.' The knock: seaweed can pile up on the wrong day. Food trucks in the lot, lifeguards." },
-  'falmouth-heights':{ side:'sound',surf:'calm', temp:'warm', kids:'ok',   flats:false, vibe:'lively',   park:'sticker', traits:['lively','warm','food'],
-    blurb:"A lively town beach with bars and restaurants right across the street (and the Falmouth Road Race finish line). Warm water, Martha's Vineyard views, young-adult energy. The catch reviewers flag: it's sticker-only parking with no day lot, right on a busy road." },
-  'south-cape':     { side:'sound', surf:'calm', temp:'warm', kids:'ok',   flats:false, vibe:'natural',  park:'paid',    traits:['wild','quiet','warm'],
-    blurb:"Wild, undeveloped state-park sand backed by marsh and dunes — over a mile of warm, calm water and blissful quiet, 'a hidden gem used mostly by residents.' Bring everything: little to no food, likely no lifeguard. The anti-crowd beach for nature lovers." },
-  'kalmus':         { side:'sound', surf:'moderate', temp:'warm', kids:'great', flats:false, vibe:'lively', park:'paid', traits:['windsurf','warm','family','food'],
-    blurb:"New England's windsurfing capital — steady wind, boards everywhere and the Nantucket ferries gliding past. The roped-off Lewis Bay side is calm, soft and warm for little kids, with a snack shack reviewers love. Active and breezy; weekdays are quiet." },
-  'veterans-park':  { side:'sound', surf:'calm', temp:'warm', kids:'great',flats:false, vibe:'family',   park:'paid',    traits:['warm','family'],
-    blurb:"Tiny, calm, shallow harbor water with a playground, picnic grills and the JFK Memorial next door — a full-day family park beach in the heart of Hyannis. Reviewers love it for the little ones; bring your own food and come early, the small lot fills fast." },
+  'nauset-beach':   { side:'ocean', surf:'big', temp:'cold', kids:'ok',   flats:false, vibe:'surf',    park:'paid',    traits:['surf','seals','sharks'] },
+  'coast-guard':    { side:'ocean', surf:'big', temp:'cold', kids:'ok',   flats:true,  vibe:'natural',  park:'nps',     traits:['surf','seals','sunrise','sandbar'] },
+  'race-point':     { side:'ocean', surf:'moderate', temp:'cold', kids:'ok', flats:false, vibe:'natural', park:'nps',  traits:['seals','whales','sunset','wild'] },
+  'marconi':        { side:'ocean', surf:'big', temp:'cold', kids:'tough',flats:false, vibe:'natural',  park:'nps',     traits:['dunes','surf','seals','sharks','wild'] },
+  'cahoon-hollow':  { side:'ocean', surf:'big', temp:'cold', kids:'ok',   flats:false, vibe:'lively',   park:'paid',    traits:['bar','surf','lively','food'] },
+  'newcomb-hollow': { side:'ocean', surf:'big', temp:'cold', kids:'ok',   flats:false, vibe:'natural',  park:'sticker', traits:['surf','seals','sharks','wild','quiet'] },
+  'lecount-hollow': { side:'ocean', surf:'big', temp:'cold', kids:'tough',flats:false, vibe:'surf',     park:'sticker', traits:['surf','dunes','quiet','wild'] },
+  'long-nook':      { side:'ocean', surf:'big', temp:'cold', kids:'tough',flats:false, vibe:'natural',  park:'sticker', traits:['dunes','surf','quiet','wild'] },
+  'head-of-meadow': { side:'ocean', surf:'moderate', temp:'cold', kids:'ok', flats:true, vibe:'natural', park:'nps',   traits:['seals','sandbar','quiet','family'] },
+  'herring-cove':   { side:'bay',   surf:'calm', temp:'warm', kids:'great',flats:false, vibe:'lively',   park:'nps',     traits:['sunset','lgbtq','warm','food'] },
+  'skaket':         { side:'bay',   surf:'calm', temp:'warm', kids:'great',flats:true,  vibe:'family',   park:'paid',    traits:['sunset','flats','family'] },
+  'mayflower':      { side:'bay',   surf:'calm', temp:'warm', kids:'great',flats:true,  vibe:'family',   park:'paid',    traits:['sunset','flats','family'] },
+  'chapin':         { side:'bay',   surf:'calm', temp:'warm', kids:'ok',   flats:true,  vibe:'natural',  park:'paid',    traits:['flats','sunset','wild','quiet'] },
+  'corporation':    { side:'bay',   surf:'calm', temp:'moderate', kids:'great', flats:true, vibe:'family', park:'paid',  traits:['family','food','sunset'] },
+  'first-encounter':{ side:'bay',   surf:'calm', temp:'warm', kids:'great',flats:true,  vibe:'natural',  park:'paid',    traits:['sunset','flats','quiet'] },
+  'breakwater':     { side:'bay',   surf:'calm', temp:'warm', kids:'great',flats:true,  vibe:'family',   park:'paid',    traits:['flats','family'] },
+  'paines-creek':   { side:'bay',   surf:'calm', temp:'warm', kids:'great',flats:true,  vibe:'natural',  park:'paid',    traits:['sunset','flats','quiet'] },
+  'sandy-neck':     { side:'bay',   surf:'calm', temp:'warm', kids:'great',flats:true,  vibe:'natural',  park:'paid',    traits:['dunes','flats','wild'] },
+  'sandwich-town':  { side:'bay',   surf:'calm', temp:'moderate', kids:'ok', flats:true, vibe:'family',  park:'paid',    traits:['boardwalk','sunset'] },
+  'old-silver':     { side:'sound', surf:'calm', temp:'warm', kids:'great',flats:true,  vibe:'family',   park:'paid',    traits:['warm','family','sunset','food'] },
+  'craigville':     { side:'sound', surf:'calm', temp:'warm', kids:'ok',   flats:false, vibe:'lively',   park:'paid',    traits:['lively','warm','food'] },
+  'ridgevale':      { side:'sound', surf:'calm', temp:'warm', kids:'great',flats:true,  vibe:'family',   park:'paid',    traits:['warm','family','flats'] },
+  'hardings':       { side:'sound', surf:'calm', temp:'warm', kids:'great',flats:true,  vibe:'family',   park:'paid',    traits:['warm','family','sunset'] },
+  'falmouth-heights':{ side:'sound',surf:'calm', temp:'warm', kids:'ok',   flats:false, vibe:'lively',   park:'sticker', traits:['lively','warm','food'] },
+  'south-cape':     { side:'sound', surf:'calm', temp:'warm', kids:'ok',   flats:false, vibe:'natural',  park:'paid',    traits:['wild','quiet','warm'] },
+  'kalmus':         { side:'sound', surf:'moderate', temp:'warm', kids:'great', flats:false, vibe:'lively', park:'paid', traits:['windsurf','warm','family','food'] },
+  'veterans-park':  { side:'sound', surf:'calm', temp:'warm', kids:'great',flats:false, vibe:'family',   park:'paid',    traits:['warm','family'] },
 };
 
 const QUIZ_Q = [
@@ -2075,23 +2130,6 @@ function scoreBeach(b, a) {
   if (a.extra === 'wild')     { if(b.traits.includes('wild')||b.traits.includes('dunes')||b.vibe==='natural')s+=3; }
   return s;
 }
-function quizWhyChips(b, a) {
-  const why = [];
-  if (a.water==='swim'  && b.temp==='warm' && b.surf==='calm') why.push('Warm & calm ✓');
-  if (a.water==='surf'  && (b.surf==='big'||b.surf==='moderate')) why.push('Real surf ✓');
-  if (a.water==='flats' && b.flats) why.push('Walk-out flats ✓');
-  if ((a.who==='kids'||a.who==='family') && b.kids==='great') why.push('Great for kids ✓');
-  if (a.who==='scene'   && b.vibe==='lively') why.push('Lively scene ✓');
-  if (a.who==='quiet'   && b.vibe==='natural') why.push('Quiet & natural ✓');
-  if (a.extra==='sunset'   && b.traits.includes('sunset')) why.push('Epic sunsets ✓');
-  if (a.extra==='wildlife' && (b.traits.includes('seals')||b.traits.includes('whales'))) why.push('Seals & wildlife ✓');
-  if (a.extra==='food'     && (b.traits.includes('bar')||b.traits.includes('food'))) why.push('Beach bar / food ✓');
-  if (a.extra==='wild'     && (b.traits.includes('wild')||b.traits.includes('dunes'))) why.push('Wild & dunes ✓');
-  if (a.park==='nosticker' && b.park!=='sticker') why.push('Easy parking ✓');
-  if (b.traits.includes('windsurf')) why.push('Windsurfing 🏄');
-  if (b.traits.includes('lgbtq')) why.push('LGBTQ+ beloved 🏳️‍🌈');
-  return why.slice(0, 4);
-}
 function renderQuizResults() {
   gtag && gtag('event', 'beach_quiz_complete', _quizAns);
   document.getElementById('quizProgress').style.display = 'none';
@@ -2118,20 +2156,19 @@ function finishQuizRender(a, beaches, loc) {
   const body = document.getElementById('quizBody');
   body.innerHTML = `
     <div class="quiz-q" style="margin-bottom:6px;">Your beach matches 🏖️</div>
-    <div style="text-align:center; font-size:12px; color:var(--ios-sub); margin:-8px 16px 16px;">Picked for you from real conditions + visitor reviews</div>
+    <div style="text-align:center; font-size:12px; color:var(--ios-sub); margin:-8px 16px 16px;">Matched on beach type and distance</div>
     ${ranked.map((r, i) => {
-      const why = quizWhyChips(r.dna, a);
-      const temp = r.b.water_temp ? `🌊 ${r.b.water_temp}°F` : '';
-      const distTxt = r.dist != null ? `${r.dist.toFixed(1)} mi away` : '';
+      const tag = tccTempTag(r.b);
+      const temp = tag ? `🌊 ${tag}` : '';
+      const distTxt = r.dist != null ? `${r.dist.toFixed(1)} mi${loc === DEFAULT_LOC ? ' from Orleans' : ' away'}` : '';
       const meta = [temp, distTxt].filter(Boolean).join(' · ');
       return `<div class="quiz-result ${i===0?'top':''}">
         <div class="quiz-result-rank">${i===0?'★ Top match':'Match #'+(i+1)}</div>
         <div class="quiz-result-name">${r.b.name}</div>
         <div class="quiz-result-town">${r.b.town}${meta?' · '+meta:''}</div>
-        ${why.length?`<div class="quiz-why">${why.map(w=>`<span>${w}</span>`).join('')}</div>`:''}
-        <div class="quiz-result-blurb">${r.dna.blurb}</div>
+        <div class="quiz-result-blurb">${tccBeachInfo(r.b)}</div>
         <div class="quiz-result-btns">
-          <button onclick="closeModal('quiz'); openBeach('${r.b.slug}')" style="background:var(--cape-navy); color:#fff;">View details & live status</button>
+          <button onclick="closeModal('quiz'); openBeach('${r.b.slug}')" style="background:var(--cape-navy); color:#fff;">View details</button>
         </div>
       </div>`;
     }).join('')}
@@ -2146,12 +2183,13 @@ function openBeach(slug) {
   document.getElementById('beachModalName').textContent = b.name;
   document.getElementById('beachModalTown').textContent = `${b.town} · ${b.region}`;
   document.getElementById('beachModalDetails').innerHTML = `
-    <div class="ios-list-item"><span class="status-dot" style="background:var(--status-${beachStatus(b).code})"></span><div style="flex:1;"><div class="item-title">${beachStatus(b).label}</div><div class="item-sub">${b.water_temp?`🌊 ${b.water_temp}°F${b.water_temp_src?` (nearest sensor: ${b.water_temp_src})`:''} · `:''}${beachStatus(b).fresh}</div></div></div>
+    <div class="ios-list-item"><span class="status-dot" style="background:var(--status-${beachStatus(b).code})"></span><div style="flex:1;"><div class="item-title">${beachStatus(b).label}</div><div class="item-sub">${tccTempTag(b, 'nearest sensor: ') ? `🌊 ${tccTempTag(b, 'nearest sensor: ')} · ` : ''}${beachStatus(b).fresh}</div></div></div>
     <div style="font-size:12px; color:var(--ios-sub); padding:8px 0; line-height:1.5;">
       ${b.sticker_required ? (tccOff() ? '🏷️ Sticker/fee lot in summer · off-season: follow posted signs' : '🏷️ Sticker required') : '✅ No sticker needed'}<br/>
       ${b.restrooms ? (tccOff() ? '🚻 Restrooms (may be closed off-season)' : '🚻 Restrooms') : '— No restrooms'}<br/>
-      ${b.lifeguard ? (tccLifeguardSeason() ? '🛟 Lifeguards on duty in season (daytime)' : '🛟 Lifeguarded late June–Labor Day · none on duty now') : '⚠️ No lifeguard'}<br/>
-      ${b.notes ? '📝 ' + b.notes : ''}
+      ${b.lifeguard ? '🛟 Lifeguarded in season — schedules vary by beach' : '⚠️ No lifeguard'}<br/>
+      ${b.notes ? '📝 ' + b.notes + '<br/>' : ''}
+      ℹ️ ${tccBeachInfo(b)}
     </div>
     ${(beachStatus(b).live || tccOff()) ? '' : `
     <div style="background:linear-gradient(135deg, #e8f6ee 0%, #d7efe1 100%); border-radius:12px; padding:10px 12px; margin-top:2px; display:flex; align-items:center; gap:10px;">
@@ -2272,12 +2310,13 @@ function renderPassport() {
   }
 
   if (!hasPro()) {
+    // Counts come from stamps.json; "100+" only stands in until it loads.
     document.getElementById('passportLockedSection').innerHTML = `
-      <div class="ios-section-title"><span>🔒 75 more · Pro</span></div>
+      <div class="ios-section-title"><span>🔒 ${pro.length ? pro.length + ' more' : 'More stamps'} · Pro</span></div>
       <div style="padding:0 16px;">
         <div class="stamp-grid">${(pro.length > 0 ? pro.slice(0,15) : Array.from({length:15})).map(()=>`<div class="stamp locked-pro">?</div>`).join('')}</div>
       </div>
-      <button class="unlock-cta" onclick="switchTab('pro')">Unlock all 100 stamps + badges · $9.99</button>`;
+      <button class="unlock-cta" onclick="switchTab('pro')">Unlock all ${stamps.length || '100+'} stamps + badges · $9.99</button>`;
     document.getElementById('passportUnlockedSection').innerHTML = '';
   } else {
     document.getElementById('passportLockedSection').innerHTML = '';
@@ -2290,12 +2329,12 @@ function renderPassport() {
 
   const c = state.stamps.length;
   document.getElementById('stampCounter').textContent = c;
-  const total = stamps.length || 100;                 // real collection size (data-driven, not hardcoded)
-  const totalEl = document.getElementById('stampTotal'); if (totalEl) totalEl.textContent = total;
+  const total = stamps.length || 100;                 // progress-bar scale until stamps.json loads
+  const totalEl = document.getElementById('stampTotal'); if (totalEl) totalEl.textContent = stamps.length || '100+';
   const max = hasPro() ? total : FREE_STAMP_LIMIT;
   document.getElementById('stampProgress').style.width = (c / max * 100) + '%';
   const _tier = currentTier(c), _next = nextTier(c);
-  document.getElementById('stampTierLabel').textContent = _tier ? `${_tier.icon} ${_tier.name}` : (state.isPro ? 'Pro · collecting' : tccFree() ? 'Free season · all 100 open' : `Free · max ${FREE_STAMP_LIMIT}`);
+  document.getElementById('stampTierLabel').textContent = _tier ? `${_tier.icon} ${_tier.name}` : (state.isPro ? 'Pro · collecting' : tccFree() ? `Free season · all ${stamps.length || '100+'} open` : `Free · max ${FREE_STAMP_LIMIT}`);
   document.getElementById('stampNextBadge').textContent = _next ? `Next: ${_next.icon} ${_next.name} (${_next.at})` : '🏆 Cape Master!';
   renderTierTrack(c);
   // First-time encouragement when no stamps yet collected
@@ -2362,7 +2401,7 @@ function renderAi() {
   document.getElementById('aiQuestionsLeft').textContent = hasPro() ? (state.isPro ? 'Unlimited' : `Unlimited · free until ${tccFreeLabel()}`) : `${left} free question${left===1?'':'s'} left today`;
 }
 function quickAi(q) {
-  // May be invoked from the Today tab's "Ask a Cape Local" block — make sure the
+  // May be invoked from the Today tab's "Ask the AI Concierge" block — make sure the
   // Concierge screen is actually showing before we send.
   if (!document.getElementById('screen-ai').classList.contains('active')) switchTab('ai');
   document.getElementById('aiInput').value = q;
@@ -2385,7 +2424,7 @@ function buildAiContext() {
       out.push(`CONDITIONS today: air ${c.weather?.temp_high ?? '?'}°F ${c.weather?.desc || ''} (National Weather Service forecast), water ${c.water_temp_source && c.water_temp_f != null ? c.water_temp_f + '°F (' + c.water_temp_source + ')' : 'no current reading'}, sunset ${c.sun?.sunset || '?'} (sunrise-sunset.org)${tides ? `; tides ${tides} (NOAA Chatham station)` : ''}.`);
     }
     const b = d.bridges?.current;
-    if (b?.sagamore) out.push(`BRIDGES now: Sagamore ${b.sagamore.current_delay_min}min (${b.sagamore.current_status})${b.bourne ? `, Bourne ${b.bourne.current_delay_min}min (${b.bourne.current_status})` : ''}. ${b.sagamore.advice || ''}`.trim());
+    if (b?.sagamore) out.push(`BRIDGES now: Sagamore ${b.sagamore.current_delay_min}min (${b.sagamore.current_status})${b.bourne ? `, Bourne ${b.bourne.current_delay_min}min (${b.bourne.current_status})` : ''} (Google Maps traffic delay).`.trim());
     // Restaurants & events before the long beach list so they're never the part that gets trimmed.
     // Sort restaurants nearest-first (when we know the user's location) so location-specific
     // food questions are grounded in real places actually near them.
@@ -2400,7 +2439,7 @@ function buildAiContext() {
     const eats = eatsList.slice(0, 18).map(r => {
       const o = (typeof isOpenNow === 'function') ? isOpenNow(r.hours) : null;
       const st = o === true ? ', OPEN now' : o === false ? ', CLOSED now' : '';
-      return `${r.name} (${r.town}${r.cuisine ? ', ' + r.cuisine : ''}${r.rating ? ', ' + r.rating + '★' : ''}${st}${r.deal ? ', deal: ' + r.deal : ''})`;
+      return `${r.name} (${r.town}${r.cuisine ? ', ' + r.cuisine : ''}${r.rating ? ', ' + r.rating + '★' : ''}${st})`;
     }).join('; ');
     if (eats) out.push(`RESTAURANTS in app${loc ? ' (nearest first)' : ''}, ratings and open/closed from each one's Google listing — list ones marked "OPEN now"; never list any marked "CLOSED now": ${eats}.`);
     const SHORT = { 'Usually has parking': 'usu. open', 'Often busy midday': 'busy midday', 'Often full midday': 'full midday', 'Spots open': 'open NOW', 'Filling up': 'filling NOW', 'Lot full': 'FULL now' };
@@ -2521,103 +2560,24 @@ function renderBridges() {
         <div style="font-size:36px;">🌉</div>
         <div style="flex:1;">
           <div class="item-title">Bridge data updating…</div>
-          <div class="item-sub">Live traffic info will appear here shortly</div>
+          <div class="item-sub">Traffic info will appear here when the feed loads</div>
         </div>
       </div>`;
-    document.getElementById('bridgeHourly').innerHTML = '<div class="ios-list-item"><div class="item-sub">Hourly forecast updating…</div></div>';
-    document.getElementById('bridge7Day').innerHTML = '';
-    document.getElementById('bridgeTips').innerHTML = '';
     return;
   }
-  // Freshness from the file's real update time (the per-bridge "last_check" text is static).
-  const bUpd = Date.parse(state.data.bridges?.updated_at || '');
-  const bAge = isNaN(bUpd) ? null : Math.round((Date.now() - bUpd) / 60000);
-  const bFresh = bAge == null ? 'Live' : bAge < 60 ? `Updated ${Math.max(1, bAge)}m ago` : bAge < 1440 ? `Updated ${Math.round(bAge / 60)}h ago` : 'Updating…';
-  b.sagamore.last_check = bFresh; b.bourne.last_check = bFresh;
-  // TASK9 Lever 4: freshness cues on bridge cards
-  document.getElementById('bridgeCurrent').innerHTML = `
+  // Only the measured delays are shown. The old hourly/weekly "typical" patterns and
+  // "best times to cross" had no source (fixed values carried forward), so they're gone.
+  const card = (x, name) => x ? `
     <div class="bridge-card">
       <div style="font-size:36px;">🌉</div>
       <div style="flex:1;">
-        <div class="item-title">Sagamore Bridge <span class="freshness-label" style="margin-left:4px;">${b.sagamore.last_check || 'Live'}</span></div>
-        <div class="item-sub">${b.sagamore.advice}</div>
-        <div style="font-size:11px; color:var(--ios-sub); margin-top:2px;">Speed: ${b.sagamore.live_speed_mph} mph</div>
+        <div class="item-title">${name} ${tccBridgeAgeLabel()}</div>
+        <div class="item-sub">${tccBridgeLine(x)}</div>
+        <div style="font-size:11px; color:var(--ios-sub); margin-top:2px;">${x.live_speed_mph != null ? `Speed: ${nbEsc(x.live_speed_mph)} mph · ` : ''}Google Maps traffic data</div>
       </div>
-      <div class="bridge-delay ${b.sagamore.current_status==='light'?'light':b.sagamore.current_status==='heavy'?'heavy':'moderate'}">${b.sagamore.current_delay_min}<span style="font-size:14px;">m</span></div>
-    </div>
-    <div class="bridge-card">
-      <div style="font-size:36px;">🌉</div>
-      <div style="flex:1;">
-        <div class="item-title">Bourne Bridge <span class="freshness-label" style="margin-left:4px;">${b.bourne.last_check || 'Live'}</span></div>
-        <div class="item-sub">${b.bourne.advice}</div>
-        <div style="font-size:11px; color:var(--ios-sub); margin-top:2px;">Speed: ${b.bourne.live_speed_mph} mph</div>
-      </div>
-      <div class="bridge-delay ${b.bourne.current_status==='light'?'light':b.bourne.current_status==='heavy'?'heavy':'moderate'}">${b.bourne.current_delay_min}<span style="font-size:14px;">m</span></div>
-    </div>`;
-
-  // The hourly/weekly patterns and "best times" are fixed summer estimates, not live forecasts.
-  // Off-season they'd mislead, so show them only in summer mode, clearly labeled.
-  const hTitle = document.getElementById('bridgeHourlyTitle');
-  if (tccOff()) {
-    if (hTitle) hTitle.style.display = 'none';
-    document.getElementById('bridgeHourly').innerHTML = '<div class="ios-list-item"><div class="item-sub">The delays above are live, measured from Google Maps traffic through the day. Typical summer patterns return in summer mode.</div></div>';
-    document.getElementById('bridge7Day').innerHTML = '';
-    document.getElementById('bridgeTips').innerHTML = '';
-    return;
-  }
-  if (hTitle) hTitle.style.display = '';
-  const hourly = state.data.bridges?.forecast_24h || [];
-  if (!hourly.length) {
-    document.getElementById('bridgeHourly').innerHTML = '<div class="ios-list-item"><div class="item-sub">Hourly forecast updating…</div></div>';
-  } else document.getElementById('bridgeHourly').innerHTML = hourly.map(h => `
-    <div class="ios-list-item">
-      <div style="width:48px; font-weight:700; font-size:14px;">${h.hour}</div>
-      <div style="flex:1;">
-        <div style="display:flex; align-items:center; gap:6px;">
-          <span style="font-size:11px; color:var(--ios-sub); width:60px;">Sagamore</span>
-          <div style="flex:1; height:6px; background:var(--ios-divider); border-radius:3px; overflow:hidden;">
-            <div style="height:100%; width:${Math.min(100, h.sagamore_delay*2)}%; background:${h.sagamore_delay>30?'#FF3B30':h.sagamore_delay>15?'#FF9500':'#34C759'}; border-radius:3px;"></div>
-          </div>
-          <span style="font-size:12px; font-weight:700; width:36px; text-align:right;">${h.sagamore_delay}m</span>
-        </div>
-        <div style="display:flex; align-items:center; gap:6px; margin-top:3px;">
-          <span style="font-size:11px; color:var(--ios-sub); width:60px;">Bourne</span>
-          <div style="flex:1; height:6px; background:var(--ios-divider); border-radius:3px; overflow:hidden;">
-            <div style="height:100%; width:${Math.min(100, h.bourne_delay*2)}%; background:${h.bourne_delay>30?'#FF3B30':h.bourne_delay>15?'#FF9500':'#34C759'}; border-radius:3px;"></div>
-          </div>
-          <span style="font-size:12px; font-weight:700; width:36px; text-align:right;">${h.bourne_delay}m</span>
-        </div>
-      </div>
-    </div>
-  `).join('');
-
-  if (hasPro()) {
-    const week = state.data.bridges?.forecast_7day || [];
-    document.getElementById('bridge7Day').innerHTML = `
-      <div class="ios-section-title"><span>📆 Typical summer week (estimate)</span></div>
-      <div class="ios-list">${week.map(d => `
-        <div class="ios-list-item">
-          <div style="width:40px; font-weight:700;">${d.day}</div>
-          <div style="flex:1;">
-            <div class="item-title">Worst: ${d.worst_delay}m at ${d.worst_hour}</div>
-            <div class="item-sub">Best: ${d.best_delay}m at ${d.best_hour}</div>
-          </div>
-        </div>`).join('')}</div>`;
-    const tips = state.data.bridges?.best_times_to_leave;
-    document.getElementById('bridgeTips').innerHTML = tips ? `
-      <div class="ios-section-title"><span>🚗 Usually-easier times to cross in summer (estimate)</span></div>
-      <div class="ios-list">
-        <div class="ios-list-item"><div style="flex:1;"><div class="item-title">Sundays off-Cape</div><div class="item-sub">${tips.off_cape_sunday}</div></div></div>
-        <div class="ios-list-item"><div style="flex:1;"><div class="item-title">Weekdays off-Cape</div><div class="item-sub">${tips.off_cape_weekday}</div></div></div>
-        <div class="ios-list-item"><div style="flex:1;"><div class="item-title">Fridays on-Cape</div><div class="item-sub">${tips.on_cape_friday}</div></div></div>
-        <div class="ios-list-item"><div style="flex:1;"><div class="item-title">Saturdays on-Cape</div><div class="item-sub">${tips.on_cape_saturday}</div></div></div>
-      </div>` : '';
-  } else {
-    document.getElementById('bridge7Day').innerHTML = `
-      <div class="ios-section-title"><span>🔒 Summer traffic patterns · Pro</span></div>
-      <button class="unlock-cta" onclick="switchTab('pro')">Unlock typical patterns + best times to cross · $9.99</button>`;
-    document.getElementById('bridgeTips').innerHTML = '';
-  }
+      <div class="bridge-delay ${x.current_status==='light'?'light':x.current_status==='heavy'?'heavy':'moderate'}">${nbEsc(x.current_delay_min)}<span style="font-size:14px;">m</span></div>
+    </div>` : '';
+  document.getElementById('bridgeCurrent').innerHTML = card(b.sagamore, 'Sagamore Bridge') + card(b.bourne, 'Bourne Bridge');
 }
 
 // ============ RENDER: CONDITIONS ============
@@ -2689,35 +2649,33 @@ function renderWhales() {
         sightings.forEach(s => {
           const emoji = s.species === 'seal' ? '🦦' : s.species === 'dolphin' ? '🐬' : '🐋';
           const icon = L.divIcon({ html:`<div style="font-size:24px;">${emoji}</div>`, className:'', iconSize:[28,28] });
-          L.marker([s.lat, s.lng], { icon }).addTo(whaleMapInstance).bindPopup(`<b>${s.species.toUpperCase()}</b> × ${s.count}<br>${s.location}<br><i>${s.time_ago}</i>`);
+          const src = /^https?:\/\//i.test(s.source_url || '') ? `<br><a href="${nbEsc(s.source_url)}" target="_blank" rel="noopener">Source</a>` : '';
+          L.marker([s.lat, s.lng], { icon }).addTo(whaleMapInstance).bindPopup(`<b>${nbEsc(String(s.species || '').toUpperCase())}</b> × ${nbEsc(s.count)}<br>${nbEsc(s.location)}<br><i>${nbEsc(tccAgo(s.reported_at, s.time_ago))}</i>${src}`);
         });
       }
     }, 100);
   }
 
+  // Each row links the observation it came from (iNaturalist), and its age is worked out
+  // from reported_at — the feed's "time_ago" text is fixed when the feed is written.
   document.getElementById('whaleList').innerHTML = sightings.map(s => {
     const emoji = s.species === 'seal' ? '🦦' : s.species === 'dolphin' ? '🐬' : s.species === 'shark' ? '🦈' : '🐋';
+    const sp = String(s.species || '');
+    const src = /^https?:\/\//i.test(s.source_url || '') ? s.source_url : '';
+    const who = src ? `<a href="${nbEsc(src)}" target="_blank" rel="noopener" style="color:inherit; text-decoration:underline;">${nbEsc(s.reported_by)}</a>` : nbEsc(s.reported_by);
     return `<div class="ios-list-item">
       <span style="font-size:24px;">${emoji}</span>
       <div style="flex:1;">
-        <div class="item-title">${s.count}× ${s.species.charAt(0).toUpperCase()+s.species.slice(1)} · ${s.location}</div>
-        <div class="item-sub">${s.time_ago} · ${s.reported_by}${s.notes ? ' · ' + s.notes : ''}</div>
+        <div class="item-title">${nbEsc(s.count)}× ${nbEsc(sp.charAt(0).toUpperCase() + sp.slice(1))} · ${nbEsc(s.location)}</div>
+        <div class="item-sub">${nbEsc(tccAgo(s.reported_at, s.time_ago))} · ${who}${s.notes ? ' · ' + nbEsc(s.notes) : ''}</div>
       </div>
     </div>`;
   }).join('') || `<div class="empty-state" style="padding:24px 20px;">
     <div style="font-size:40px; margin-bottom:10px;">🐋</div>
-    <div style="font-weight:700; font-size:15px; color:var(--ios-text); margin-bottom:6px;">No sightings yet today</div>
-    <div style="margin-bottom:16px;">Be the first to spot something! Humpbacks, dolphins, seals — all welcome.</div>
+    <div style="font-weight:700; font-size:15px; color:var(--ios-text); margin-bottom:6px;">No recent sightings</div>
+    <div style="margin-bottom:16px;">Spotted something? Save it here — humpbacks, dolphins, seals.</div>
     <button onclick="openModal('reportSighting')" style="background:var(--cape-navy); color:white; border:none; padding:11px 22px; border-radius:12px; font-weight:700; font-size:14px; cursor:pointer;">Report a sighting</button>
   </div>`;
-
-  document.getElementById('whaleProTease').innerHTML = hasPro() ? `
-    <div class="pro-banner" style="margin:14px 16px;">
-      <div style="font-weight:700; font-size:14px;">🔔 Push alerts ON</div>
-      <div style="font-size:12px; opacity:0.85;">You'll be notified when whales are spotted within 10 mi.</div>
-    </div>` : `
-    <div class="ios-section-title"><span>🔒 Push alerts · Pro</span></div>
-    <button class="unlock-cta" onclick="switchTab('pro')">Get whale alerts within 10mi · $9.99</button>`;
 }
 
 function submitSighting() {
@@ -2748,13 +2706,13 @@ function submitSighting() {
       localStorage.setItem('tcc_sightings', JSON.stringify(state.userSightings));
       if (saveBtn) { saveBtn.disabled = false; saveBtn.textContent = 'Submit sighting'; }
       closeModal('reportSighting');
-      toast('🎉 Sighting submitted!');
+      toast('🎉 Sighting saved on this device');
       if (whaleMapInstance) { whaleMapInstance.remove(); whaleMapInstance = null; }
       renderWhales();
     },
     () => {
       if (saveBtn) { saveBtn.disabled = false; saveBtn.textContent = 'Submit sighting'; }
-      toast('📍 Location needed — enable it so others see where you spotted them.');
+      toast('📍 Location needed — turn it on to place your sighting on the map.');
     },
     { enableHighAccuracy: true, timeout: 8000 }
   );
@@ -3039,15 +2997,15 @@ function nbStampPill(lat,lng,slug){
 // the features that convert. Rotates through the list, one every ~6 items.
 const NB_PROMOS=[
   {id:'ai'},  // rendered with a live time-aware question
-  {id:'quiz',  icon:'🏖️', title:'Find your perfect beach',  sub:'4 quick questions · matched from live conditions + real reviews'},
-  {id:'tonight',icon:'🎟️', title:"What's happening tonight", sub:'Live music, food deals & events near you'},
+  {id:'quiz',  icon:'🏖️', title:'Beach-matching quiz',  sub:'4 quick questions · matched on beach type and distance'},
+  {id:'tonight',icon:'🎟️', title:"What's on", sub:'Music, food & events from local calendars'},
 ];
-// The question people are actually asking themselves right now.
+// A neutral, time-of-day question (the Concierge answers from sourced data and never ranks places).
 function nbPromoQuestion(){
   const h=new Date().getHours();
-  if(h<11) return "Which beach should I hit today?";
-  if(h<16) return "What should we do this afternoon?";
-  return "Where should we eat tonight?";
+  if(h<11) return "What are the water temps today?";
+  if(h<16) return "What's happening this afternoon?";
+  return "What's open for dinner tonight?";
 }
 function tccPromo(id){
   tccT('promo_click',{promo:id});
@@ -3080,10 +3038,11 @@ function nbBuildSequence(){
     groups.forEach(g=>{ g.food.sort((a,b)=>(b.forYou?1:0)-(a.forYou?1:0)); g.live.sort((a,b)=>(b.forYou?1:0)-(a.forYou?1:0)); });
   }
   const seq=[];
-  if(pinned.length){
-    seq.push({type:"pinhead",label:"🎆 4th of July Fireworks"});
-    pinned.forEach(p=>seq.push(p));
-  }
+  // Each pinned event gets a heading with its own title (never a hard-coded one).
+  pinned.forEach(p=>{
+    seq.push({type:"pinhead",label:"📌 " + (p.data.title || "Pinned event")});
+    seq.push(p);
+  });
   groups.forEach((g,gi)=>{
     seq.push({type:"townhead",town:g.town,mi:g.mi});
     if(gi===0 && state.data.bridges?.current) seq.push({type:"bridge"});
@@ -3112,7 +3071,7 @@ function nbRenderItem(it){
     if(p.id==='ai'){
       return `<div class="nb-card nb-ask" onclick="tccPromo('ai')"><div class="nb-head">
         <div class="nb-avatar" style="background:linear-gradient(135deg,#FFD166,#F4A261)">✨</div>
-        <div class="main"><div class="name">Cape Local</div><div class="sub">Instant answers from live data</div></div>
+        <div class="main"><div class="name">AI Concierge</div><div class="sub">Answers from the app's sourced data</div></div>
         <div class="nb-kind">Free</div></div>
         <div class="nb-body"><div class="nb-ask-q">“${nbEsc(nbPromoQuestion())}”</div><div class="nb-ask-cta">Tap to ask →</div></div></div>`;
     }
@@ -3126,19 +3085,19 @@ function nbRenderItem(it){
     return `<div class="nb-townhead"><div class="line"></div><div class="label">${nbEsc(it.town)}<span class="mi">${nbAway(it.mi)}</span></div><div class="line"></div></div>`;
   }
   if(it.type==="bridge"){
-    const c=state.data.bridges.current, s=c.sagamore, b=c.bourne;
-    const adv = (s.current_delay_min<=b.current_delay_min) ? s.advice : b.advice;
+    const c=state.data.bridges.current, s=c.sagamore||{}, b=c.bourne||{};
+    const age=tccBridgeAge();
+    const dir = s.direction==='off_cape' ? 'Off-Cape direction' : s.direction==='on_cape' ? 'On-Cape direction' : 'Sagamore & Bourne';
     return `<div class="nb-card"><div class="nb-head">
       <div class="nb-avatar road">🚗</div>
-      <div class="main"><div class="name">Bridge traffic right now</div><div class="sub">Getting on or off the Cape</div></div>
-      <div class="nb-kind road">Live</div></div>
+      <div class="main"><div class="name">Bridge traffic</div><div class="sub">${dir}</div></div>
+      <div class="nb-kind road">Traffic</div></div>
       <div class="nb-body">
         <div class="nb-stats">
-          <div class="nb-stat"><b>${nbEsc(s.name)}</b>${s.current_delay_min} min · ${nbEsc(s.current_status)}</div>
-          <div class="nb-stat"><b>${nbEsc(b.name)}</b>${b.current_delay_min} min · ${nbEsc(b.current_status)}</div>
+          <div class="nb-stat"><b>${nbEsc(s.name||'Sagamore Bridge')}</b>${nbEsc(s.current_delay_min)} min delay · ${nbEsc(s.current_status)}</div>
+          <div class="nb-stat"><b>${nbEsc(b.name||'Bourne Bridge')}</b>${nbEsc(b.current_delay_min)} min delay · ${nbEsc(b.current_status)}</div>
         </div>
-        <p style="margin-top:9px;">${nbEsc(adv)}</p>
-        <div class="nb-updated"><span class="live"></span>Updated just now</div>
+        <div class="nb-updated">${age.fresh?'<span class="live"></span>':''}${age.label} · Google Maps traffic data</div>
       </div></div>`;
   }
   if(it.type==="beach"){
@@ -3151,8 +3110,8 @@ function nbRenderItem(it){
         ${it.forYou?'<div class="nb-foryou">✨ Picked for you</div>':""}
         <div class="nb-stats">
           <span class="nb-statpill ${st.code}">${st.label}</span>
-          <div class="nb-stat"><b>Water</b>${b.water_temp}°F</div>
-          <div class="nb-stat"><b>Crowd</b>${nbCrowd(st.crowd)}</div>
+          ${tccTempTag(b) ? `<div class="nb-stat"><b>Water</b>${tccTempTag(b)}</div>` : ''}
+          ${st.live ? `<div class="nb-stat"><b>Crowd</b>${nbCrowd(st.crowd)}</div>` : ''}
         </div>
         ${b.notes?`<p style="margin-top:9px;">${nbEsc(b.notes)}</p>`:""}
         ${nbStampPill(b.lat,b.lng,b.slug)}
@@ -3173,38 +3132,43 @@ function nbRenderItem(it){
         ${it.forYou?'<div class="nb-foryou">✨ Picked for you</div>':""}
         ${e.info?`<p>${nbEsc(e.info)}</p>`:""}
         <div class="nb-tags"><span class="nb-tag">🕒 ${nbEsc(e.time)}</span>${e.price?`<span class="nb-tag">${nbEsc(e.price)}</span>`:""}</div>
+        ${tccCredit(e)}
         ${nbStampPill(e.lat,e.lng,null)}
       </div></div>`;
   }
   // food
   const r=it.data;
-  const yelp=`https://www.yelp.com/search?find_desc=${encodeURIComponent(r.name)}&find_loc=${encodeURIComponent(r.town)}%2C+MA`;
+  // Rating, review count and listing all come from Google Places — say so, and link the listing.
+  const onGoogle = r.rating_source==='google';
   const reviews = (r.reviews!=null) ? ` <span class="rev">(${Number(r.reviews).toLocaleString()})</span>` : "";
+  const gListing = r.place_id ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(r.name+' '+r.town+' MA')}&query_place_id=${encodeURIComponent(r.place_id)}` : '';
+  // Analytics label as a JS string literal that survives apostrophes (e.g. "Mac's Shack").
+  const gItem = nbEsc(JSON.stringify(String(r.name||'')));
   // Live open/closed computed on-device from the Google Places weekly schedule (r.hours).
   const openBadge = openNowBadge(r);
   // "Call" when we have a number; otherwise Google Maps (call/hours/directions) so it's never broken.
   const phoneDigits = r.phone ? String(r.phone).replace(/[^0-9+]/g,'') : '';
   const callBtn = phoneDigits
-    ? `<a class="nb-btn-soft" href="tel:${phoneDigits}" onclick="gtag('event','call_click',{item:'${nbEsc(r.name)}',location:'app_nearby'})">📞 Call</a>`
-    : `<a class="nb-btn-soft" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(r.name+' '+r.town+' MA')}${r.place_id?`&query_place_id=${encodeURIComponent(r.place_id)}`:''}" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'maps',item:'${nbEsc(r.name)}',location:'app_nearby'})">📍 Directions</a>`;
+    ? `<a class="nb-btn-soft" href="tel:${phoneDigits}" onclick="gtag('event','call_click',{item:${gItem},location:'app_nearby'})">📞 Call</a>`
+    : `<a class="nb-btn-soft" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(r.name+' '+r.town+' MA')}${r.place_id?`&query_place_id=${encodeURIComponent(r.place_id)}`:''}" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'maps',item:${gItem},location:'app_nearby'})">📍 Directions</a>`;
   const tags = Array.isArray(r.tags) ? r.tags.slice(0,3) : [];
-  const siteBtn = r.website ? `<a class="nb-btn-primary" href="${nbEsc(r.website)}" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'website',item:'${nbEsc(r.name)}',location:'app_nearby'})">Website</a>` : "";
+  const siteBtn = r.website ? `<a class="nb-btn-primary" href="${nbEsc(r.website)}" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'website',item:${gItem},location:'app_nearby'})">Website</a>` : "";
+  const reviewsBtn = gListing ? `<a class="${siteBtn?'nb-btn-soft':'nb-btn-primary'}" href="${gListing}" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'google_reviews',item:${gItem},location:'app_nearby'})">Google reviews</a>` : "";
   const realPhoto = r.photo ? (r.photo.startsWith('http') ? r.photo : ASSET_BASE + r.photo) : '';
   const cov = cardCover(realPhoto, 'food');
   return `<div class="nb-card">
     <div class="nb-photo" style="${cov.style}">${cov.icon}<span class="nb-dist">${nbMiLabel(it.mi)}</span>${r.price?`<span class="nb-price">${nbEsc(r.price)}</span>`:""}${openBadge}</div>
     <div class="nb-head">
       <div class="nb-avatar food">🍴</div>
-      <div class="main"><div class="name">${nbEsc(r.name)}</div><div class="sub">${nbEsc(r.town)} · ${nbEsc(r.cuisine)}${r.rating!=null?` · ⭐ ${r.rating}${reviews}`:''}</div></div>
+      <div class="main"><div class="name">${nbEsc(r.name)}</div><div class="sub">${nbEsc(r.town)} · ${nbEsc(r.cuisine)}${r.rating!=null && onGoogle?` · ⭐ ${nbEsc(r.rating)} on Google${reviews}`:''}</div></div>
       <div class="nb-kind food">Eat</div></div>
     <div class="nb-body">
       ${it.forYou?'<div class="nb-foryou">✨ Picked for you</div>':""}
       <p>${nbEsc(r.desc)}</p>
-      ${r.deal?`<div class="nb-deal">🔥 ${nbEsc(r.deal)}</div>`:""}
       ${tags.length?`<div class="nb-tags">${tags.map(t=>`<span class="nb-tag">${nbEsc(t)}</span>`).join("")}</div>`:""}
       <div class="nb-actions">
         ${siteBtn}
-        <a class="${siteBtn?'nb-btn-soft':'nb-btn-primary'}" href="${yelp}" target="_blank" rel="noopener" onclick="gtag('event','affiliate_click',{type:'yelp',item:'${nbEsc(r.name)}',location:'app_nearby'})">Reviews</a>
+        ${reviewsBtn}
         ${callBtn}
       </div>
       ${nbStampPill(r.lat,r.lng,r.id)}
@@ -3564,10 +3528,10 @@ let _tourIdx = 0;
 const TOUR_STEPS = [
   // Each step must name a tab that exists in the tab bar — renderTourStep() bails out of
   // the whole tour if a step's .tab-btn is missing.
-  { tab: 'events',  title: '📅 Events',      text: "Everything happening on Cape Cod — music, food, art and festivals. Filter by what you're into." },
-  { tab: 'today',   title: '⚡ Today',       text: "Your daily Cape briefing: nearest beaches, live bridge delays, tonight's specials and tides." },
-  { tab: 'beaches', title: '🏖️ Beaches',     text: 'Live water temps, real-time parking, and a 30-second quiz that finds your perfect beach.' },
-  { tab: 'ai',      title: '✨ Ask a Local', text: 'Your Cape Cod guide — ask anything: best beach today, lobster rolls, sunset spots.' },
+  { tab: 'events',  title: '📅 Events',      text: "Upcoming Cape Cod events from local calendars — music, food, art and festivals. Filter by what you're into." },
+  { tab: 'today',   title: '⚡ Today',       text: "Your daily Cape briefing: nearest beaches, current bridge delays, today's events and tides." },
+  { tab: 'beaches', title: '🏖️ Beaches',     text: 'Water temps from the nearest sensors, parking reports from beachgoers, and a 4-question beach-matching quiz.' },
+  { tab: 'ai',      title: '✨ AI Concierge', text: "Ask the AI Concierge — answers from the app's sourced data on beaches, tides, bridges, events and restaurants." },
   { tab: 'more',    title: '··· More',       text: 'Everything else lives here — your Near You feed, the passport, the Bridge Oracle, tides, whale sightings, lighthouse tours, and Cape Cod Pro.' },
 ];
 function replayTour() {            // from the More menu — let anyone re-watch it
@@ -3678,7 +3642,7 @@ async function initPushUI() {
     const reg = await navigator.serviceWorker.ready;
     if (await reg.pushManager.getSubscription()) { localStorage.setItem('tcc_push_on', '1'); return; }
     el.innerHTML = `<div class="push-prompt"><span style="font-size:22px;">🔔</span>
-      <div style="flex:1;"><strong style="font-size:13px;">Get Cape alerts</strong><div style="font-size:11px; color:var(--ios-sub);">Whales spotted, beaches filling up, tonight's events</div></div>
+      <div style="flex:1;"><strong style="font-size:13px;">Turn on notifications</strong><div style="font-size:11px; color:var(--ios-sub);">Messages from the Totally Cape Cod team</div></div>
       <button class="push-on-btn" onclick="enableCapePush()">Turn on</button>
       <button onclick="dismissPush()" style="background:none; border:none; font-size:18px; color:var(--ios-sub); cursor:pointer;" aria-label="Dismiss">×</button></div>`;
   } catch (e) {}
@@ -3689,7 +3653,7 @@ function dismissPush() {
 }
 async function enableCapePush() {
   try {
-    if (await Notification.requestPermission() !== 'granted') { toast('Alerts not enabled'); return; }
+    if (await Notification.requestPermission() !== 'granted') { toast('Notifications not turned on'); return; }
     const reg = await navigator.serviceWorker.ready;
     const sub = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: urlB64ToUint8Array(_pushPublicKey) });
     await fetch('/.netlify/functions/push-subscribe', {
@@ -3698,9 +3662,9 @@ async function enableCapePush() {
     });
     localStorage.setItem('tcc_push_on', '1');
     const el = document.getElementById('pushPrompt'); if (el) el.innerHTML = '';
-    toast('🔔 Cape alerts on!');
+    toast('🔔 Notifications on');
     try { gtag('event', 'push_subscribe'); } catch (e) {}
-  } catch (e) { toast('Could not enable alerts'); }
+  } catch (e) { toast('Could not turn on notifications'); }
 }
 
 function checkInstall() {
@@ -3728,7 +3692,7 @@ function checkInstall() {
   banner.dataset.ready = '1';
 
   if (isIos) {
-    textEl.innerHTML = '<strong>Add to your Home Screen</strong><br/><span style="color:var(--ios-sub);">Full-screen + Cape alerts. <button onclick="openModal(\'a2hs\')" style="background:none; border:none; color:var(--cape-navy); font-weight:800; text-decoration:underline; padding:0; font-size:12px; cursor:pointer; font-family:inherit;">Show me how →</button></span>';
+    textEl.innerHTML = '<strong>Add to your Home Screen</strong><br/><span style="color:var(--ios-sub);">Opens full-screen, like an app. <button onclick="openModal(\'a2hs\')" style="background:none; border:none; color:var(--cape-navy); font-weight:800; text-decoration:underline; padding:0; font-size:12px; cursor:pointer; font-family:inherit;">Show me how →</button></span>';
     setTimeout(() => banner.classList.add('show'), 2000);
   } else if (isAndroid) {
     if (_deferredInstallPrompt) {
@@ -3747,7 +3711,7 @@ function checkInstall() {
       setTimeout(() => banner.classList.add('show'), 2000);
     } else {
       // Fallback: manual instructions (Samsung Browser, Firefox, etc.)
-      textEl.innerHTML = '<strong>Install the App</strong><br/><span style="color:var(--ios-sub);">Full-screen + Cape alerts. <button onclick="openModal(\'a2hsAndroid\')" style="background:none; border:none; color:var(--cape-navy); font-weight:800; text-decoration:underline; padding:0; font-size:12px; cursor:pointer; font-family:inherit;">Show me how →</button></span>';
+      textEl.innerHTML = '<strong>Install the App</strong><br/><span style="color:var(--ios-sub);">Opens full-screen, like an app. <button onclick="openModal(\'a2hsAndroid\')" style="background:none; border:none; color:var(--cape-navy); font-weight:800; text-decoration:underline; padding:0; font-size:12px; cursor:pointer; font-family:inherit;">Show me how →</button></span>';
       setTimeout(() => banner.classList.add('show'), 2000);
     }
   }
@@ -3761,6 +3725,7 @@ function dismissInstall() {
 
 // ============ INIT ============
 function renderAll() {
+  try { tccPaintCounts(); } catch (e) {}
   renderToday();
   renderPro();
   // Events is the landing tab (ads promise "what's on tonight" — match it), so it has

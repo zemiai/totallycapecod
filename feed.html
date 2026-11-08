@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#7BBCD0" />
 <title>Near You — Live Cape Cod Feed | Totally Cape Cod</title>
-<meta name="description" content="A live, scrollable feed of the best restaurants, beaches, events, and conditions near you on Cape Cod — sorted by what's closest." />
+<meta name="description" content="A scrollable feed of restaurants, beaches, events and conditions near you on Cape Cod, sorted by what's closest." />
 <meta name="robots" content="index, follow" />
 <meta property="og:title" content="Near You — Live Cape Cod Feed" />
-<meta property="og:description" content="Restaurants, beaches, events and live conditions near you on Cape Cod." />
+<meta property="og:description" content="Restaurants, beaches, events and conditions near you on Cape Cod, sorted by distance." />
 <meta property="og:url" content="https://totallycapecod.com/feed.html" />
 <meta property="og:image" content="https://totallycapecod.com/og-image.png" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0YM9WQLWK"></script>
@@ -178,7 +178,7 @@
 <!-- Footer -->
 <footer class="site-footer">
   <div class="footer-inner">
-    <div><div class="footer-brand">Totally Cape Cod</div><p class="footer-desc">The unofficial guide to the best of Cape Cod.</p></div>
+    <div><div class="footer-brand">Totally Cape Cod</div><p class="footer-desc">Cape Cod beaches, events and eats, linked to their sources.</p></div>
     <div class="footer-links"><div class="footer-heading">Explore</div><a href="/feed.html">Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Restaurants</a><a href="/experiences.html">Experiences</a></div>
     <div class="footer-links"><div class="footer-heading">Plan</div><a href="/guides/">Cape Cod Guides</a><a href="/itinerary.html">Itinerary Builder</a><a href="/app/">Get the App</a><a href="/submit.html">List Your Business</a></div>
   </div>
@@ -186,13 +186,14 @@
 </footer>
 
 <script>
-// Honest beach labels: typical patterns (summer) or off-season — never the static seed
-// "spots"/"just now" text, which isn't a live reading. Season switch: data/season.json.
-function tccOffFeed(){ return !!(window.TCCSeason && TCCSeason.isOff()); }
-function beachTypical(b){
-  if (tccOffFeed()) return 'Off-season · quiet';
-  return ({open:'Usually has parking', mid:'Often busy midday', full:'Often full midday'})[b.status] || 'Check before you go';
-}
+// Beach cards show only the water temperature, its sensor and its age — never the static
+// seed parking/crowd values in data/beaches.json, which aren't readings.
+// Station pages for each sensor name used in data/beaches.json:
+const SENSOR_LINKS={
+  "Woods Hole":"https://tidesandcurrents.noaa.gov/stationhome.html?id=8447930",
+  "Nantucket Sound buoy":"https://www.ndbc.noaa.gov/station_page.php?station=44020",
+  "Cape Cod Bay buoy":"https://www.ndbc.noaa.gov/station_page.php?station=44090"
+};
 function tempAgeMin(b){ const t = Date.parse(b && b.water_temp_at || ''); return isNaN(t) ? null : Math.max(0, Math.round((Date.now() - t) / 60000)); }
 function tempFresh(b){ const m = tempAgeMin(b); return m != null && m < 360; }
 function tempAge(b){ const m = tempAgeMin(b); if (m == null) return ''; return m < 60 ? m + 'm ago' : m < 1440 ? Math.round(m / 60) + 'h ago' : Math.round(m / 1440) + 'd ago'; }
@@ -346,8 +347,6 @@ function buildSequence(){
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
 function ageMin(iso){ const t=Date.parse(iso||''); return isNaN(t)?null:Math.max(0,Math.round((Date.now()-t)/60000)); }
 function ageText(m){ return m==null?'time unknown':(m<60?m+' min ago':m<1440?Math.round(m/60)+' h ago':Math.round(m/1440)+' days ago'); }
-function crowdDots(n){let h='<span class="crowd-dots">';for(let i=1;i<=5;i++)h+=`<i class="${i<=n?'on':''}"></i>`;h+='</span>';return h;}
-const STATUS_LABEL={open:"Wide open",mid:"Filling up",full:"Lot full"};
 
 function renderItem(it){
   if(it.type==="townhead"){
@@ -357,15 +356,15 @@ function renderItem(it){
     const s=BRIDGES.sagamore,b=BRIDGES.bourne;
     return `<div class="post"><div class="post-head">
       <div class="avatar road">🚗</div>
-      <div class="ph-main"><div class="name">Bridge traffic right now</div><div class="sub">Getting on or off the Cape</div></div>
+      <div class="ph-main"><div class="name">Bridge traffic leaving the Cape</div><div class="sub">Extra minutes from traffic, per Google Maps</div></div>
       <div class="kind-pill kp-road">${(ageMin(BRIDGES_AT)??1e9)<=90?'Live':'Traffic'}</div></div>
       <div class="post-body">
         <div class="stat-grid">
-          <div class="stat"><b>${esc(s.name)}</b>${s.delay} min · ${esc(s.status)}</div>
-          <div class="stat"><b>${esc(b.name)}</b>${b.delay} min · ${esc(b.status)}</div>
+          <div class="stat"><b>${esc(s.name)}</b>${s.delay?s.delay+' min added':'No added delay'}</div>
+          <div class="stat"><b>${esc(b.name)}</b>${b.delay?b.delay+' min added':'No added delay'}</div>
         </div>
-        <p style="margin-top:10px;">${(ageMin(BRIDGES_AT)??1e9)<=180?esc(s.delay<=b.delay?s.advice:b.advice):'This reading is a few hours old — check current traffic before you go.'}</p>
-        <div class="updated">${(ageMin(BRIDGES_AT)??1e9)<=90?'<span class="live-dot"></span>':''}Updated ${ageText(ageMin(BRIDGES_AT))}</div>
+        ${(ageMin(BRIDGES_AT)??1e9)>180?'<p style="margin-top:10px;">This reading is a few hours old — check current traffic before you go.</p>':''}
+        <div class="updated">${(ageMin(BRIDGES_AT)??1e9)<=90?'<span class="live-dot"></span>':''}Google Maps traffic · updated ${ageText(ageMin(BRIDGES_AT))}</div>
       </div></div>`;
   }
   if(it.type==="beach"){
@@ -375,7 +374,7 @@ function renderItem(it){
       <div class="ph-main"><div class="name">${esc(b.name)}</div><div class="sub">${esc(b.town)} · ${miLabel(it.mi)} away</div></div>
       <div class="kind-pill kp-beach">Beach</div></div>
       <div class="post-body">
-        ${b.water_temp?`<div class="stat-grid"><div class="stat"><b>Water</b>${b.water_temp}°F${b.water_temp_src?` · nearest sensor: ${esc(b.water_temp_src)}`:''}</div></div>`:''}
+        ${b.water_temp?`<div class="stat-grid"><div class="stat"><b>Water</b>${b.water_temp}°F${b.water_temp_src?` · nearest sensor: ${SENSOR_LINKS[b.water_temp_src]?`<a href="${SENSOR_LINKS[b.water_temp_src]}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">${esc(b.water_temp_src)}</a>`:esc(b.water_temp_src)}`:''}</div></div>`:''}
         ${b.notes?`<p style="margin-top:10px;">${esc(b.notes)}</p>`:""}
         ${tempAge(b)?`<div class="updated">${tempFresh(b)?'<span class="live-dot"></span>':''}Water temp updated ${tempAge(b)}</div>`:""}
       </div></div>`;
@@ -403,8 +402,8 @@ function renderItem(it){
   const reviews = (r.reviews!=null) ? ` <span class="rev">(${r.reviews.toLocaleString()})</span>` : "";
   // Live open/closed computed on-device from the Google Places weekly schedule (r.hours).
   const open = isOpenNow(r.hours);
-  const openBadge = open===true ? `<span class="open-badge open">● Open now</span>`
-                  : open===false ? `<span class="open-badge closed">● Closed</span>` : "";
+  const openBadge = open===true ? `<span class="open-badge open">● Open now, per Google hours</span>`
+                  : open===false ? `<span class="open-badge closed">● Closed, per Google hours</span>` : "";
   // "Call" when we have a number; else Google Maps so the button is never broken.
   const phoneDigits = r.phone ? String(r.phone).replace(/[^0-9+]/g,'') : '';
   const callBtn = phoneDigits
@@ -417,7 +416,7 @@ function renderItem(it){
     <div class="post-photo" style="background-image:url('${photoFor(r)}')"><span class="dist-badge">${miLabel(it.mi)}</span><span class="price-badge">${esc(r.price)}</span>${openBadge}</div>
     <div class="post-head">
       <div class="avatar food">🍴</div>
-      <div class="ph-main"><div class="name">${esc(r.name)}</div><div class="sub">${esc(r.town)} · ${esc(r.cuisine)} · ⭐ ${r.rating}${reviews}</div></div>
+      <div class="ph-main"><div class="name">${esc(r.name)}</div><div class="sub">${esc(r.town)} · ${esc(r.cuisine)}${r.rating!=null?` · ⭐ ${r.rating} on Google${reviews}`:''}</div></div>
       <div class="kind-pill kp-food">Eat</div></div>
     <div class="post-body">
       <p>${esc(r.desc)}</p>
