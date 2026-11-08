@@ -17,7 +17,7 @@
 <title>Totally Cape Cod — Live Beaches, Tides, Bridge Traffic & Events</title>
 
 <!-- SEO: discovery + rich snippets -->
-<meta name="description" content="Never waste a day on Cape Cod. The real-time app: which beach isn't full, the water temp, bridge traffic before you cross, and what's happening tonight — live, in your pocket." />
+<meta name="description" content="Cape Cod app: beach water temperatures, NOAA tides, current Sagamore and Bourne bridge delays, parking reports from beachgoers, and upcoming events from local calendars." />
 <meta name="keywords" content="Cape Cod, Cape Cod app, beaches, tides, things to do, restaurants, Provincetown, Wellfleet, Chatham, bridge traffic, Sagamore, Bourne" />
 <link rel="canonical" href="https://totallycapecod.com/" />
 
@@ -25,14 +25,14 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://totallycapecod.com/" />
 <meta property="og:title" content="Totally Cape Cod — Live Beaches, Tides & Events" />
-<meta property="og:description" content="Live Cape Cod intel: beach parking, water temp, tides, bridge delays, lighthouse audio tours, 100+ stamp passport." />
+<meta property="og:description" content="Cape Cod water temps, tides, bridge delays, events, beachgoer parking reports, lighthouse audio tours and a 100+ stamp passport." />
 <meta property="og:site_name" content="Totally Cape Cod" />
 <meta property="og:image" content="https://totallycapecod.com/og-image.png" />
 
 <!-- Twitter/X card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Totally Cape Cod" />
-<meta name="twitter:description" content="Live Cape Cod intel: beaches, tides, bridges, events, stamps." />
+<meta name="twitter:description" content="Cape Cod beaches, tides, bridge delays, events and stamps." />
 <meta name="twitter:image" content="https://totallycapecod.com/og-image.png" />
 
 <!-- Schema.org structured data — helps Google understand it's an app -->
@@ -47,10 +47,9 @@
   "offers": {
     "@type": "Offer",
     "price": "0",
-    "priceCurrency": "USD",
-    "description": "Free with optional $9.99 lifetime Pro upgrade"
+    "priceCurrency": "USD"
   },
-  "description": "Cape Cod travel app with live beach intel, tides, bridge traffic forecasts, lighthouse audio tours, daily events, and a 100+ stamp Cape passport."
+  "description": "Cape Cod travel app with beach water temperatures, tides, current bridge traffic, lighthouse audio tours, upcoming events, and a 100+ stamp Cape passport."
 }
 </script>
 
@@ -483,13 +482,13 @@
 
 <aside class="desktop-aside">
   <div class="da-logo"><img src="/icon-512.png" alt="Totally Cape Cod" style="height:72px; width:auto; display:block;" /></div>
-  <h1 class="da-head">Never waste a day on Cape Cod</h1>
-  <p class="da-sub">The real-time Cape app — which beach isn't full, the water temp, bridge traffic before you cross, and what's happening tonight.</p>
+  <h1 class="da-head">Plan your Cape Cod day</h1>
+  <p class="da-sub">Beach water temps, tides, current bridge delays, parking reports from beachgoers and upcoming events — in one app.</p>
   <ul class="da-list">
-    <li class="s-summer"><span>🏖️</span> Live beach parking, crowds &amp; water temps</li>
-    <li class="s-off"><span>🏖️</span> Water temps &amp; tides for 27 Cape beaches</li>
+    <li class="s-summer"><span>🏖️</span> Beach parking reports from beachgoers (last 3 hours) &amp; water temps</li>
+    <li class="s-off"><span>🏖️</span> Water temps for <span data-count="beaches">27</span> Cape beaches, plus NOAA tides</li>
     <li><span>🚗</span> Sagamore &amp; Bourne bridge traffic, before you leave</li>
-    <li><span>🎵</span> What's happening tonight — music, food &amp; events</li>
+    <li><span>🎵</span> Upcoming music, food &amp; events from local calendars</li>
     <li class="s-summer"><span>🎫</span> A 100+ stamp summer passport</li>
     <li class="s-off"><span>🎫</span> A 100+ stamp Cape passport</li>
   </ul>
@@ -555,7 +554,7 @@
       <div id="pushPrompt"></div>
 
       <!-- Off-season: one honest line up top (season switch — data/season.json) -->
-      <div class="season-note s-off">🍂 <strong>Off-season on the Cape.</strong> Beaches are quiet and no lifeguards are on duty, and many seasonal spots are closed or on shorter hours — <a href="#" onclick="switchTab('nearby'); return false;" style="color:inherit; font-weight:700;">Near You</a> shows which restaurants are open right now.</div>
+      <div class="season-note s-off">🍂 <strong>Off-season on the Cape.</strong> Lifeguards work summer schedules set by each town and the National Seashore (late June to early September at the Seashore) — see the <a href="https://capecod.gov/2024/05/24/barnstable-countys-guide-to-getting-beach-parking-stickers-on-cape-cod-a-breakdown-for-15-towns-and-the-cape-cod-national-seashore-2024" target="_blank" rel="noopener" style="color:inherit;">Barnstable County beach guide (2024)</a> and the <a href="https://home.nps.gov/thingstodo/beachrelaxation.htm" target="_blank" rel="noopener" style="color:inherit;">National Park Service</a>.<span id="offClosedNote"></span> <a href="#" onclick="switchTab('nearby'); return false;" style="color:inherit; font-weight:700;">Near You</a> shows open or closed from each restaurant's Google hours.</div>
 
       <!-- Summer: lead with the "is today ruined?" decisions: parking + bridge before everything else.
            Off-season: applyTodayLayout() moves this block below the events/tides sections. -->
@@ -566,7 +565,7 @@
         <span class="quiz-cta-emoji">🏖️</span>
         <div style="flex:1;">
           <div class="quiz-cta-title">Not sure where to go?</div>
-          <div class="quiz-cta-sub">Take the 30-sec quiz — find your perfect beach</div>
+          <div class="quiz-cta-sub">Answer 4 quick questions — matched on beach type and distance</div>
         </div>
         <span class="quiz-cta-arrow">→</span>
       </div>
@@ -574,16 +573,17 @@
 
       <div class="ios-section-title" id="todayBridgeTitle">
         <span>🌉 Bridge Now</span>
-        <button onclick="switchTab('bridges')">Forecast →</button>
+        <button onclick="switchTab('bridges')">Details →</button>
       </div>
       <div id="todayBridges"></div>
 
-      <!-- Ask a Cape Local — surface the Concierge where intent is highest -->
+      <!-- Ask the AI Concierge — surface it where intent is highest -->
       <div id="todayConcierge"></div>
 
-      <!-- 🔥 Tonight on the Cape — real-time restaurant specials + tonight's food/music (owner's edge) -->
+      <!-- Today on the Cape — only events whose listing says they start today, each credited to its source.
+           No restaurant deals: none has a saved source. -->
       <div class="ios-section-title" id="todaySpecialsTitle" style="display:none;">
-        <span>🔥 Tonight on the Cape</span>
+        <span>📅 Today on the Cape</span>
         <button onclick="switchTab('events')">More →</button>
       </div>
       <div class="specials-rail" id="todaySpecials"></div>
@@ -607,7 +607,7 @@
     <!-- ===== EVENTS ===== -->
     <div class="screen active" id="screen-events">
       <div class="ios-large-title">What's Happening</div>
-      <div class="ios-subhead" id="eventsSubhead">Today's deals, music & free events</div>
+      <div class="ios-subhead" id="eventsSubhead">Upcoming events from local calendars</div>
       <div class="filter-chips" id="eventFilters"></div>
       <div id="eventsList"></div>
       <div id="eventsUnlockCta"></div>
@@ -620,8 +620,8 @@
       <div class="quiz-cta" onclick="startBeachQuiz()">
         <span class="quiz-cta-emoji">🏖️</span>
         <div style="flex:1;">
-          <div class="quiz-cta-title">Find your perfect beach</div>
-          <div class="quiz-cta-sub">Answer 4 quick questions — matched from live conditions + real reviews</div>
+          <div class="quiz-cta-title">Beach-matching quiz</div>
+          <div class="quiz-cta-sub">Answer 4 quick questions — matched on beach type and distance</div>
         </div>
         <span class="quiz-cta-arrow">→</span>
       </div>
@@ -636,7 +636,7 @@
     <!-- ===== PASSPORT ===== -->
     <div class="screen" id="screen-passport">
       <div class="ios-large-title">Passport</div>
-      <div class="ios-subhead"><strong style="color:var(--cape-navy);" id="stampCounter">0</strong> of <span id="stampTotal">100</span> stamps · <span data-season-label>Summer 2026</span></div>
+      <div class="ios-subhead"><strong style="color:var(--cape-navy);" id="stampCounter">0</strong> of <span id="stampTotal">100+</span> stamps · <span data-season-label>Summer 2026</span></div>
       <!-- TASK9 Lever 4: streak banner in passport (populated by renderPassport) -->
       <div id="passportStreakBanner"></div>
       <div style="padding:0 20px 12px;">
@@ -661,20 +661,20 @@
     <!-- ===== AI ===== -->
     <div class="screen" id="screen-ai" style="display:none;">
       <div class="ios-large-title">Concierge</div>
-      <div class="ios-subhead">Your Cape Cod local guide · <strong style="color:var(--status-mid);" id="aiQuestionsLeft">1 free/day</strong></div>
+      <div class="ios-subhead">AI Concierge — answers from the app's sourced data · <strong style="color:var(--status-mid);" id="aiQuestionsLeft">1 free/day</strong></div>
       <div class="filter-chips">
-        <div class="chip" onclick="quickAi('best beach today')">Best beach</div>
+        <div class="chip" onclick="quickAi('water temps today')">Water temps</div>
         <div class="chip" onclick="quickAi('lobster roll')">Lobster</div>
         <div class="chip" onclick="quickAi('rainy day with kids')">Rainy day</div>
         <div class="chip" onclick="quickAi('sunset tonight')">Sunset</div>
         <div class="chip" onclick="quickAi('live music tonight')">Music</div>
       </div>
       <div class="ai-conv" id="aiConv">
-        <div class="ai-bubble-ai">👋 Hi! I'm your Cape Cod local guide. Ask me anything about today on the Cape.</div>
+        <div class="ai-bubble-ai">👋 Hi! I'm the AI Concierge. I answer from the app's sourced data: beaches, tides, bridges, events and restaurants.</div>
         <div id="aiStarters" class="ai-starters">
-          <div class="ai-starters-label">Popular right now</div>
-          <button class="ai-starter" onclick="quickAi('What is the best beach today?')"><span>🏖️</span> What's the best beach today?</button>
-          <button class="ai-starter" onclick="quickAi('Where is the best lobster roll near me?')"><span>🦞</span> Best lobster roll near me?</button>
+          <div class="ai-starters-label">Try asking</div>
+          <button class="ai-starter" onclick="quickAi('What are the water temperatures at the beaches today?')"><span>🏖️</span> What are today's water temps?</button>
+          <button class="ai-starter" onclick="quickAi('Where can I get a lobster roll near me?')"><span>🦞</span> Lobster rolls near me?</button>
           <button class="ai-starter" onclick="quickAi('What is happening on the Cape tonight?')"><span>🎶</span> What's happening tonight?</button>
           <button class="ai-starter" onclick="quickAi('Rainy day with kids — what should we do?')"><span>☔</span> Rainy day with kids?</button>
         </div>
@@ -688,12 +688,8 @@
     <!-- ===== BRIDGES ===== -->
     <div class="screen" id="screen-bridges">
       <div class="ios-large-title">Bridge Oracle</div>
-      <div class="ios-subhead">Live delays from Google Maps traffic + typical patterns</div>
+      <div class="ios-subhead">Current delays, calculated from Google Maps traffic data</div>
       <div id="bridgeCurrent"></div>
-      <div class="ios-section-title" id="bridgeHourlyTitle"><span>📅 Typical busy summer day, by hour (estimate)</span></div>
-      <div class="ios-list" id="bridgeHourly"></div>
-      <div id="bridge7Day"></div>
-      <div id="bridgeTips"></div>
     </div>
 
     <!-- ===== CONDITIONS ===== -->
@@ -713,7 +709,7 @@
     <div class="screen" id="screen-whales">
       <div class="ios-large-title">Whale Spotter</div>
       <div class="ios-subhead">Recent sightings + your reports</div>
-      <div class="season-note s-off">🐋 <strong>Off-season is right whale season.</strong> In 2025–26, endangered North Atlantic right whales were sighted in Cape Cod Bay from late November to early May, peaking in March (Mass. Division of Marine Fisheries). Whale-watch boats run seasonally — check the operator's schedule.</div>
+      <div class="season-note s-off">🐋 <strong>Right whales in Cape Cod Bay.</strong> In 2025–26, endangered North Atlantic right whales were sighted in Cape Cod Bay from late November to early May, peaking in March (<a href="https://www.mass.gov/news/north-atlantic-right-whales-in-coastal-massachusetts-the-20252026-season" target="_blank" rel="noopener" style="color:inherit;">Mass. Division of Marine Fisheries</a>). For whale-watch trips, check the operator's schedule.</div>
       <div class="ios-section-title"><span>📍 Sightings map</span></div>
       <div class="map-container"><div id="whaleMap"></div></div>
       <div class="ios-section-title">
@@ -721,13 +717,12 @@
         <button onclick="openModal('reportSighting')">+ Report</button>
       </div>
       <div class="ios-list" id="whaleList"></div>
-      <div id="whaleProTease"></div>
     </div>
 
     <!-- ===== LIGHTHOUSES ===== -->
     <div class="screen" id="screen-lighthouses">
       <div class="ios-large-title">Lighthouses</div>
-      <div class="ios-subhead">12 self-guided audio tours · narrated free in-app</div>
+      <div class="ios-subhead"><span data-count="lighthouses">12</span> self-guided audio tours · read aloud in the app</div>
       <div class="ios-section-title"><span>📍 Map</span></div>
       <div class="map-container"><div id="lighthouseMap"></div></div>
       <div class="ios-section-title"><span>🗼 Tours</span></div>
@@ -745,11 +740,11 @@
         </div>
         <div class="ios-section-title" style="padding-left:0;"><span>Unlocked for you</span></div>
         <div style="background:white; border-radius:14px; padding:16px; box-shadow:0 1px 3px rgba(0,0,0,0.04);">
-          <div style="padding:5px 0;">✅ All 27 beaches</div>
+          <div style="padding:5px 0;">✅ All <span data-count="beaches">27</span> beaches</div>
           <div style="padding:5px 0;">✅ Every event, every filter</div>
-          <div style="padding:5px 0;">✅ All 100 passport stamps + badges</div>
+          <div style="padding:5px 0;">✅ All <span data-count="stamps">100+</span> passport stamps + badges</div>
           <div style="padding:5px 0;">✅ Unlimited AI Concierge</div>
-          <div style="padding:5px 0;">✅ Bridge traffic patterns + 7-day tide &amp; weather forecasts</div>
+          <div style="padding:5px 0;">✅ 7-day tide &amp; weather forecasts</div>
           <div style="padding:5px 0;">✅ All lighthouse audio tours</div>
         </div>
         <div style="text-align:center; color:var(--ios-sub); font-size:12px; margin-top:14px; line-height:1.5;">Already bought Pro? It's yours for life — nothing changes.<br/>
@@ -763,22 +758,16 @@
           <!-- Trust line: one-time, lifetime, no subscription -->
           <div style="opacity:0.9; font-size:12px; margin-top:6px; letter-spacing:0.02em;">One-time payment · yours forever · no subscription · restore anytime</div>
           <div class="font-display" style="font-weight:900; font-size:52px; margin-top:16px; color:#E8B973;">$9.99</div>
-          <!-- Price anchor: relatability framing -->
-          <div style="opacity:0.85; font-size:12px; margin-top:2px;"><span class="s-summer">Less than a single beach parking fee</span><span class="s-off">Less than a lobster roll</span> — once, forever.</div>
-          <div style="opacity:0.65; font-size:11px; margin-top:4px;">30-day money-back guarantee</div>
         </div>
         <div style="padding:20px 20px 14px;">
           <!-- Lead with highest-value outcomes first -->
-          <div class="benefit-row s-summer"><span class="icon">🏖️</span><div><strong>All 27 beaches — live parking &amp; water temp</strong><div style="font-size:12px; color:var(--ios-sub); margin-top:1px;">Never drive to a full lot again</div></div></div>
-          <div class="benefit-row s-off"><span class="icon">🏖️</span><div><strong>All 27 beaches — water temps &amp; tides</strong><div style="font-size:12px; color:var(--ios-sub); margin-top:1px;">Plan off-season beach walks around the tide</div></div></div>
-          <div class="benefit-row"><span class="icon">🌉</span><div><strong>Bridge traffic patterns</strong><div style="font-size:12px; color:var(--ios-sub); margin-top:1px;">Typical summer busy times + easier times to cross</div></div></div>
+          <div class="benefit-row s-summer"><span class="icon">🏖️</span><div><strong>All <span data-count="beaches">27</span> beaches — water temps &amp; parking reports</strong><div style="font-size:12px; color:var(--ios-sub); margin-top:1px;">Parking reports from beachgoers, when someone has reported in the last 3 hours</div></div></div>
+          <div class="benefit-row s-off"><span class="icon">🏖️</span><div><strong>All <span data-count="beaches">27</span> beaches — water temps &amp; tides</strong><div style="font-size:12px; color:var(--ios-sub); margin-top:1px;">Plan off-season beach walks around the tide</div></div></div>
           <div class="benefit-row"><span class="icon">⚡</span><div><strong>Unlimited events — music, food, art &amp; more</strong><div style="font-size:12px; color:var(--ios-sub); margin-top:1px;">Filter by category · nothing hidden</div></div></div>
-          <div class="benefit-row"><span class="icon">🎫</span><div><strong>All 100 passport stamps + milestone badges</strong><div style="font-size:12px; color:var(--ios-sub); margin-top:1px;"><span class="s-summer">The full Cape summer challenge</span><span class="s-off">The full Cape challenge — any season</span></div></div></div>
+          <div class="benefit-row"><span class="icon">🎫</span><div><strong>All <span data-count="stamps">100+</span> passport stamps + milestone badges</strong><div style="font-size:12px; color:var(--ios-sub); margin-top:1px;"><span class="s-summer">The full Cape summer challenge</span><span class="s-off">The full Cape challenge — any season</span></div></div></div>
           <div class="benefit-row"><span class="icon">🤖</span><strong>Unlimited AI Concierge</strong></div>
-          <div class="benefit-row"><span class="icon">🐋</span><strong>Whale alerts within 10 miles</strong></div>
-          <div class="benefit-row"><span class="icon">💡</span><strong>All 12 lighthouse audio tours</strong></div>
+          <div class="benefit-row"><span class="icon">💡</span><strong>All <span data-count="lighthouses">12</span> lighthouse audio tours</strong></div>
           <div class="benefit-row"><span class="icon">🌊</span><strong>7-day tide &amp; sunset forecast</strong></div>
-          <div class="benefit-row"><span class="icon">🚫</span><strong>No ads · ever</strong></div>
         </div>
         <!-- Social proof — honest, local -->
         <div style="margin:0 20px 16px; padding:12px 14px; background:var(--cape-cream); border-radius:12px; border:1px solid var(--cape-sand); font-size:12px; color:var(--cape-brown-dark); text-align:center; line-height:1.5;">
@@ -787,7 +776,7 @@
         </div>
         <div style="padding:0 20px 20px;">
           <button onclick="openModal('purchase')" style="width:100%; background:linear-gradient(135deg,#C99A4A 0%,#A77C30 100%); color:white; border:none; padding:15px; border-radius:14px; font-weight:800; font-size:15px; box-shadow:0 6px 16px rgba(167,124,48,0.35); cursor:pointer; font-family:inherit;">Unlock Cape Cod Pro — $9.99</button>
-          <div style="text-align:center; color:var(--ios-sub); font-size:11px; margin-top:10px;">🔒 Secure checkout via Stripe · 30-day guarantee</div>
+          <div style="text-align:center; color:var(--ios-sub); font-size:11px; margin-top:10px;">🔒 Secure checkout via Stripe</div>
           <div style="text-align:center; margin-top:14px;">
             <button onclick="openModal('restorePurchase')" style="background:none; border:none; color:var(--cape-navy); font-size:13px; font-weight:600; text-decoration:underline; cursor:pointer; padding:4px 0;">Already purchased? Restore access</button>
           </div>

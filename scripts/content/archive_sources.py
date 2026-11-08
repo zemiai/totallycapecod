@@ -26,7 +26,8 @@ ROOT = Path(__file__).resolve().parents[2]
 EVIDENCE = ROOT / "content" / "evidence"
 UA = "TotallyCapeCod-References/1.0 (+https://totallycapecod.com/guides/standards/)"
 SKIP = re.compile(r"^https?://(www\.|m\.)?facebook\.com/", re.I)   # login wall: nothing useful to archive
-PAUSE = 10
+PAUSE = 8
+BUDGET_S = 20 * 60          # stop starting new captures after 20 minutes (the job times out at 30)
 
 
 def snapshot_url(r: requests.Response, url: str) -> str | None:
@@ -39,10 +40,24 @@ def snapshot_url(r: requests.Response, url: str) -> str | None:
     return f"https://web.archive.org/web/{m.group(1)}/{url}" if m else None
 
 
+def recent_snapshot(url: str, max_age_days: int = 3) -> str | None:
+    """Reuse a capture made in the last few days (e.g. by a run that timed out)."""
+    try:
+        r = requests.get("https://archive.org/wayback/available", params={"url": url},
+                         headers={"User-Agent": UA}, timeout=30)
+        snap = (r.json().get("archived_snapshots") or {}).get("closest") or {}
+        ts = snap.get("timestamp", "")
+        if snap.get("available") and ts and time.time() - time.mktime(time.strptime(ts[:8], "%Y%m%d")) < max_age_days * 86400:
+            return f"https://web.archive.org/web/{ts}/{url}"
+    except Exception:
+        pass
+    return None
+
+
 def save(url: str) -> tuple[str | None, int]:
     try:
         r = requests.get(f"https://web.archive.org/save/{url}", headers={"User-Agent": UA},
-                         timeout=180, allow_redirects=False)
+                         timeout=90, allow_redirects=False)
     except requests.RequestException as e:
         print(f"  ! {url}: {e}")
         return None, 0
@@ -50,8 +65,9 @@ def save(url: str) -> tuple[str | None, int]:
 
 
 def main(argv: list[str]) -> int:
-    limit = int(argv[argv.index("--limit") + 1]) if "--limit" in argv else 30
+    limit = int(argv[argv.index("--limit") + 1]) if "--limit" in argv else 40
     done = 0
+    start = time.time()
     for f in sorted(EVIDENCE.glob("*.json")):
         data = json.loads(f.read_text(encoding="utf-8"))
         changed = False
@@ -64,15 +80,18 @@ def main(argv: list[str]) -> int:
                     s["archive_note"] = "not archivable (login wall)"
                     changed = True
                 continue
-            if done >= limit:
+            if done >= limit or time.time() - start > BUDGET_S:
                 break
-            snap, code = save(url)
+            snap, code = (recent_snapshot(url), 200)
+            if not snap:
+                snap, code = save(url)
             done += 1
             print(f"  {code} {url} -> {snap or '-'}")
             if snap:
                 s["archived"] = snap
                 s.pop("archive_note", None)
                 changed = True
+                f.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")  # keep progress
             if code == 429:
                 print("rate-limited by the Archive; stopping until the next run")
                 limit = done
