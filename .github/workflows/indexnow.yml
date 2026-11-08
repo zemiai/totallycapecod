@@ -1,0 +1,50 @@
+name: "indexnow ping"
+
+# Tells Bing and the other IndexNow engines (Yandex, Seznam, Naver, Yep) which pages
+# changed, once Netlify has deployed them (scripts/indexnow.py). Google doesn't use
+# IndexNow; it reads sitemap.xml. Data-only commits never trigger this. Guides published
+# by the content writer ping from that workflow instead, because pushes made with the
+# Actions token don't start other workflows.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**.html"
+      - "sitemap.xml"
+      - "!data/**"
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: "Space-separated URLs to submit (blank = every URL in sitemap.xml)"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Submit changed pages
+        continue-on-error: true
+        env:
+          EVENT: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+          AFTER: ${{ github.sha }}
+          URLS: ${{ github.event.inputs.urls }}
+        run: |
+          if [ "$EVENT" = "workflow_dispatch" ]; then
+            if [ -n "$URLS" ]; then python3 scripts/indexnow.py --wait $URLS; else python3 scripts/indexnow.py --wait --all; fi
+          else
+            python3 scripts/indexnow.py --wait --changed "$BEFORE" "$AFTER"
+          fi

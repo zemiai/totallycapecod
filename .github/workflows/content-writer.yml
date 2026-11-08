@@ -63,7 +63,15 @@ jobs:
           msg="[content] $(cat .content_commit_msg 2>/dev/null || echo 'guide update')"
           git commit -m "$msg"
           for i in 1 2 3 4 5; do
-            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              touch .published
+              exit 0
+            fi
             sleep $((i * 5))
           done
           exit 1
+      - name: Tell Bing and other IndexNow engines
+        if: github.event.inputs.dry_run != '1'
+        continue-on-error: true
+        run: |
+          if [ -f .published ]; then python3 scripts/indexnow.py --wait --changed HEAD~1 HEAD; else echo "nothing published"; fi
