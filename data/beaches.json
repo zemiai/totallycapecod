@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "updated_at": "2026-11-08T17:54:31Z",
-  "_hermes_note": "Hermes should update this file with current parking/crowd data. Status: 'open' | 'mid' | 'full'. Crowd: 1-5. Reset daily.",
+  "_hermes_note": "Facility flags (lifeguard, restrooms, sticker_required) and notes come from the pages in source_url/sources, checked on source_checked; null means no official source confirmed it, so show nothing rather than yes or no. lifeguard true = a lifeguarded beach in season per the source, not that guards are on duty now. sticker_required is true only when a town sticker is the only way to park in season (no daily pass); the parking rule itself is in notes. status and crowd are old placeholder values kept only because code still reads them: never show or post them as observations (live lot status comes only from beachgoer reports). water_temp, water_temp_at and water_temp_src are written by scripts/update_beaches.py; water_temp_src_id is the station ID for water_temp_src.",
   "beaches": [
     {
       "slug": "nauset-beach",
@@ -13,13 +13,21 @@
       "status": "open",
       "crowd": 2,
       "water_temp": 56,
-      "sticker_required": true,
+      "sticker_required": false,
       "restrooms": true,
       "lifeguard": true,
-      "updated": "just now",
-      "notes": "",
+      "notes": "Orleans beach sticker or daily parking pass required in season (2026: weekends from May 23, then daily June 20 to Sept 7). Daily passes are sold at the beach.",
+      "source_url": "https://www.orleansma.gov/DocumentCenter/View/2737/Resident-and-Non-Resident-Parking",
+      "sources": [
+        "https://www.orleansma.gov/DocumentCenter/View/2737/Resident-and-Non-Resident-Parking",
+        "https://www.orleansma.gov/Archive.aspx?ADID=452",
+        "https://www.orleansma.gov/DocumentCenter/View/1462/Orleans-Outer-Beach-Management-Plan-Final-January-2016-PDF",
+        "https://capecod.gov/2024/05/24/barnstable-countys-guide-to-getting-beach-parking-stickers-on-cape-cod-a-breakdown-for-15-towns-and-the-cape-cod-national-seashore-2024"
+      ],
+      "source_checked": "2026-11-08",
       "water_temp_at": "2026-11-08T17:54:31Z",
-      "water_temp_src": "Cape Cod Bay buoy"
+      "water_temp_src": "Cape Cod Bay buoy",
+      "water_temp_src_id": "NDBC 44090"
     },
     {
       "slug": "coast-guard",
@@ -34,10 +42,19 @@
       "sticker_required": false,
       "restrooms": true,
       "lifeguard": true,
-      "updated": "just now",
-      "notes": "Mid-June to Labor Day: park at Little Creek and take the shuttle",
+      "notes": "Memorial Day to mid-September: main parking is at Little Creek on Nauset Road, with an open-air shuttle to the beach; in summer the small beach lot is for local residents and vehicles with handicap placards. National Seashore entrance fee or pass in season.",
+      "source_url": "https://www.nps.gov/places/coast-guard-beach.htm",
+      "sources": [
+        "https://www.nps.gov/places/coast-guard-beach.htm",
+        "https://www.nps.gov/caco/planyourvisit/hours.htm",
+        "https://www.nps.gov/thingstodo/beachrelaxation.htm",
+        "https://www.nps.gov/caco/planyourvisit/fees.htm",
+        "https://www.nps.gov/caco/learn/management/advisory-commission-meeting-september-15-2025.htm"
+      ],
+      "source_checked": "2026-11-08",
       "water_temp_at": "2026-11-08T17:54:31Z",
-      "water_temp_src": "Cape Cod Bay buoy"
+      "water_temp_src": "Cape Cod Bay buoy",
+      "water_temp_src_id": "NDBC 44090"
     },
     {
       "slug": "race-point",
@@ -51,11 +68,19 @@
       "water_temp": 56,
       "sticker_required": false,
       "restrooms": true,
-      "lifeguard": true,
-      "updated": "just now",
-      "notes": "",
+      "lifeguard": null,
+      "notes": "National Seashore entrance fee or pass in season. NPS notes say Race Point had no lifeguards in 2025 while the other five Seashore beaches did; check with NPS for the current season.",
+      "source_url": "https://www.nps.gov/places/race-point-beach.htm",
+      "sources": [
+        "https://www.nps.gov/places/race-point-beach.htm",
+        "https://www.nps.gov/caco/planyourvisit/hours.htm",
+        "https://www.nps.gov/caco/learn/management/advisory-commission-meeting-september-15-2025.htm",
+        "https://www.nps.gov/caco/planyourvisit/fees.htm"
+      ],
+      "source_checked": "2026-11-08",
       "water_temp_at": "2026-11-08T17:54:31Z",
-      "water_temp_src": "Cape Cod Bay buoy"
+      "water_temp_src": "Cape Cod Bay buoy",
+      "water_temp_src_id": "NDBC 44090"
     },
     {
       "slug": "marconi",
@@ -70,10 +95,19 @@
       "sticker_required": false,
       "restrooms": true,
       "lifeguard": true,
-      "updated": "just now",
-      "notes": "NPS pass or fee",
+      "notes": "National Seashore entrance fee or pass in season. A stairway leads down the bluff, about 50 feet high here, to the beach.",
+      "source_url": "https://www.nps.gov/places/marconi-beach.htm",
+      "sources": [
+        "https://www.nps.gov/places/marconi-beach.htm",
+        "https://www.nps.gov/caco/planyourvisit/hours.htm",
+        "https://www.nps.gov/thingstodo/beachrelaxation.htm",
+        "https://www.nps.gov/caco/planyourvisit/fees.htm",
+        "https://www.nps.gov/caco/learn/management/advisory-commission-meeting-september-15-2025.htm"
+      ],
+      "source_checked": "2026-11-08",
       "water_temp_at": "2026-11-08T17:54:31Z",
-      "water_temp_src": "Cape Cod Bay buoy"
+      "water_temp_src": "Cape Cod Bay buoy",
+      "water_temp_src_id": "NDBC 44090"
     },
     {
       "slug": "mayflower",
@@ -85,13 +119,21 @@
       "status": "mid",
       "crowd": 4,
       "water_temp": 56,
-      "sticker_required": true,
+      "sticker_required": false,
       "restrooms": true,
-      "lifeguard": true,
-      "updated": "just now",
-      "notes": "Tidal flats at low tide",
+      "lifeguard": null,
+      "notes": "Dennis daily beach pass (sold at the beach) or Dennis beach sticker in season.",
+      "source_url": "https://www.town.dennis.ma.us/740/Daily-Beach-Pass",
+      "sources": [
+        "https://www.town.dennis.ma.us/740/Daily-Beach-Pass",
+        "https://www.town.dennis.ma.us/449/Beach-Rules-Regulations",
+        "https://www.town.dennis.ma.us/DocumentCenter/View/846/Beach-Maps-PDF",
+        "https://capecod.gov/2024/05/24/barnstable-countys-guide-to-getting-beach-parking-stickers-on-cape-cod-a-breakdown-for-15-towns-and-the-cape-cod-national-seashore-2024"
+      ],
+      "source_checked": "2026-11-08",
       "water_temp_at": "2026-11-08T17:54:31Z",
-      "water_temp_src": "Cape Cod Bay buoy"
+      "water_temp_src": "Cape Cod Bay buoy",
+      "water_temp_src_id": "NDBC 44090"
     },
     {
       "slug": "old-silver",
@@ -103,13 +145,19 @@
       "status": "full",
       "crowd": 5,
       "water_temp": 58,
-      "sticker_required": true,
+      "sticker_required": false,
       "restrooms": true,
       "lifeguard": true,
-      "updated": "just now",
-      "notes": "Calm bay water",
+      "notes": "Buzzards Bay beach with a public lot (daily pass) and a separate residents-only sticker lot. Bathhouse with restrooms, showers and a concession.",
+      "source_url": "https://www.falmouthma.gov/DocumentCenter/View/22170/Active-Beach-Management-Plan-Town-of-Falmouth-MA-August-2026",
+      "sources": [
+        "https://www.falmouthma.gov/DocumentCenter/View/22170/Active-Beach-Management-Plan-Town-of-Falmouth-MA-August-2026",
+        "https://www.falmouthma.gov/151/Beach"
+      ],
+      "source_checked": "2026-11-08",
       "water_temp_at": "2026-11-08T17:54:31Z",
-      "water_temp_src": "Woods Hole"
+      "water_temp_src": "Woods Hole",
+      "water_temp_src_id": "NOAA CO-OPS 8447930"
     },
     {
       "slug": "skaket",
@@ -121,13 +169,20 @@
       "status": "open",
       "crowd": 1,
       "water_temp": 56,
-      "sticker_required": true,
+      "sticker_required": false,
       "restrooms": true,
       "lifeguard": true,
-      "updated": "just now",
-      "notes": "Bayside · low-tide flats stretch a half-mile",
+      "notes": "Orleans beach sticker or daily parking pass required in season (2026: weekends from May 23, then daily June 20 to Sept 7). Daily passes are sold at the beach.",
+      "source_url": "https://www.orleansma.gov/DocumentCenter/View/2737/Resident-and-Non-Resident-Parking",
+      "sources": [
+        "https://www.orleansma.gov/DocumentCenter/View/2737/Resident-and-Non-Resident-Parking",
+        "https://www.orleansma.gov/Archive.aspx?ADID=452",
+        "https://capecod.gov/2024/05/24/barnstable-countys-guide-to-getting-beach-parking-stickers-on-cape-cod-a-breakdown-for-15-towns-and-the-cape-cod-national-seashore-2024"
+      ],
+      "source_checked": "2026-11-08",
       "water_temp_at": "2026-11-08T17:54:31Z",
-      "water_temp_src": "Cape Cod Bay buoy"
+      "water_temp_src": "Cape Cod Bay buoy",
+      "water_temp_src_id": "NDBC 44090"
     },
     {
       "slug": "craigville",
@@ -142,10 +197,16 @@
       "sticker_required": false,
       "restrooms": true,
       "lifeguard": true,
-      "updated": "just now",
-      "notes": "Family-friendly, snack bar",
+      "notes": "Bathhouse and outdoor shower; snack bars are across the street. Parking needs a daily pass or a Barnstable permit. Town's posted lifeguard schedule: weekends from Memorial Day to mid-June, then daily mid-June to mid-August.",
+      "source_url": "https://barnstablema.myrec.com/info/facilities/details.aspx?FacilityID=14758",
+      "sources": [
+        "https://barnstablema.myrec.com/info/facilities/details.aspx?FacilityID=14758",
+        "https://barnstablema.myrec.com/forms/5953_2026_beach_information.pdf"
+      ],
+      "source_checked": "2026-11-08",
       "water_temp_at": "2026-11-08T17:54:31Z",
-      "water_temp_src": "Nantucket Sound buoy"
+      "water_temp_src": "Nantucket Sound buoy",
+      "water_temp_src_id": "NDBC 44020"
     },
     {
       "slug": "cahoon-hollow",
@@ -157,13 +218,21 @@
       "status": "full",
       "crowd": 5,
       "water_temp": 56,
-      "sticker_required": true,
-      "restrooms": true,
+      "sticker_required": false,
+      "restrooms": null,
       "lifeguard": true,
-      "updated": "just now",
-      "notes": "The Beachcomber is here",
+      "notes": "Wellfleet's beach access map marks this town lot as fee-only (no sticker) in season.",
+      "source_url": "https://www.wellfleet-ma.gov/DocumentCenter/View/4109/Wellfleet-Parking-Map",
+      "sources": [
+        "https://www.wellfleet-ma.gov/DocumentCenter/View/4109/Wellfleet-Parking-Map",
+        "https://www.wellfleet-ma.gov/DocumentCenter/View/5322/wellfleet_town_report_2023_final-proof",
+        "https://www.wellfleet-ma.gov/DocumentCenter/View/5877/Fincomm-Budget-Book---V3-5-5-2026PDF",
+        "https://www.wellfleet-ma.gov/196/Beaches"
+      ],
+      "source_checked": "2026-11-08",
       "water_temp_at": "2026-11-08T17:54:31Z",
-      "water_temp_src": "Cape Cod Bay buoy"
+      "water_temp_src": "Cape Cod Bay buoy",
+      "water_temp_src_id": "NDBC 44090"
     },
     {
       "slug": "sandy-neck",
@@ -175,13 +244,21 @@
       "status": "open",
       "crowd": 1,
       "water_temp": 56,
-      "sticker_required": true,
+      "sticker_required": false,
       "restrooms": true,
       "lifeguard": true,
-      "updated": "just now",
-      "notes": "6 miles of beach + dunes",
+      "notes": "4,700-acre barrier beach of dunes, maritime forest and marsh. Bathhouse, outdoor shower and snack bar at the public beach; parking needs a daily pass or a Barnstable or Sandwich beach permit. Town's posted lifeguard schedule: weekends from Memorial Day to mid-June, then daily mid-June to mid-August.",
+      "source_url": "https://barnstablema.myrec.com/info/facilities/details.aspx?FacilityID=14818",
+      "sources": [
+        "https://barnstablema.myrec.com/info/facilities/details.aspx?FacilityID=14818",
+        "https://www.barnstable.gov/SandyNeckPark/Default.aspx",
+        "https://townofbarnstable.us/SandyNeckPark/publicbeach/publichome.aspx",
+        "https://barnstablema.myrec.com/forms/5953_2026_beach_information.pdf"
+      ],
+      "source_checked": "2026-11-08",
       "water_temp_at": "2026-11-08T17:54:31Z",
-      "water_temp_src": "Cape Cod Bay buoy"
+      "water_temp_src": "Cape Cod Bay buoy",
+      "water_temp_src_id": "NDBC 44090"
     },
     {
       "slug": "newcomb-hollow",
@@ -194,12 +271,21 @@
       "crowd": 3,
       "water_temp": 56,
       "sticker_required": true,
-      "restrooms": true,
+      "restrooms": null,
       "lifeguard": true,
-      "updated": "just now",
-      "notes": "Less crowded outer cape gem",
+      "notes": "Wellfleet beach sticker required in season; the town's beach access map shows this lot as sticker-only.",
+      "source_url": "https://www.wellfleet-ma.gov/DocumentCenter/View/4109/Wellfleet-Parking-Map",
+      "sources": [
+        "https://www.wellfleet-ma.gov/DocumentCenter/View/4109/Wellfleet-Parking-Map",
+        "https://www.wellfleet-ma.gov/DocumentCenter/View/4025/Parking-Rules-in-Wellfleet",
+        "https://www.wellfleet-ma.gov/196/Beaches",
+        "https://www.wellfleet-ma.gov/DocumentCenter/View/5322/wellfleet_town_report_2023_final-proof",
+        "https://www.wellfleet-ma.gov/DocumentCenter/View/5877/Fincomm-Budget-Book---V3-5-5-2026PDF"
+      ],
+      "source_checked": "2026-11-08",
       "water_temp_at": "2026-11-08T17:54:31Z",
-      "water_temp_src": "Cape Cod Bay buoy"
+      "water_temp_src": "Cape Cod Bay buoy",
+      "water_temp_src_id": "NDBC 44090"
     },
     {
       "slug": "lecount-hollow",
@@ -212,12 +298,20 @@
       "crowd": 2,
       "water_temp": 56,
       "sticker_required": true,
-      "restrooms": true,
+      "restrooms": null,
       "lifeguard": true,
-      "updated": "just now",
-      "notes": "",
+      "notes": "The Maguire Landing lot is limited to Wellfleet resident stickers from the third week in June through Labor Day.",
+      "source_url": "https://www.wellfleet-ma.gov/196/Beaches",
+      "sources": [
+        "https://www.wellfleet-ma.gov/196/Beaches",
+        "https://www.wellfleet-ma.gov/DocumentCenter/View/4109/Wellfleet-Parking-Map",
+        "https://www.wellfleet-ma.gov/DocumentCenter/View/5322/wellfleet_town_report_2023_final-proof",
+        "https://www.wellfleet-ma.gov/DocumentCenter/View/5877/Fincomm-Budget-Book---V3-5-5-2026PDF"
+      ],
+      "source_checked": "2026-11-08",
       "water_temp_at": "2026-11-08T17:54:31Z",
-      "water_temp_src": "Cape Cod Bay buoy"
+      "water_temp_src": "Cape Cod Bay buoy",
+      "water_temp_src_id": "NDBC 44090"
     },
     {
       "slug": "herring-cove",
@@ -232,10 +326,19 @@
       "sticker_required": false,
       "restrooms": true,
       "lifeguard": true,
-      "updated": "just now",
-      "notes": "Famous P-Town sunset",
+      "notes": "The National Seashore's only beach on the Cape Cod Bay side. Snack bar in summer. National Seashore entrance fee or pass in season.",
+      "source_url": "https://www.nps.gov/places/herring-cove-beach.htm",
+      "sources": [
+        "https://www.nps.gov/places/herring-cove-beach.htm",
+        "https://www.nps.gov/caco/planyourvisit/hours.htm",
+        "https://www.nps.gov/thingstodo/beachrelaxation.htm",
+        "https://www.nps.gov/caco/planyourvisit/fees.htm",
+        "https://www.nps.gov/caco/learn/management/advisory-commission-meeting-september-15-2025.htm"
+      ],
+      "source_checked": "2026-11-08",
       "water_temp_at": "2026-11-08T17:54:31Z",
-      "water_temp_src": "Cape Cod Bay buoy"
+      "water_temp_src": "Cape Cod Bay buoy",
+      "water_temp_src_id": "NDBC 44090"
     },
     {
       "slug": "long-nook",
@@ -248,12 +351,18 @@
       "crowd": 4,
       "water_temp": 56,
       "sticker_required": true,
-      "restrooms": false,
+      "restrooms": true,
       "lifeguard": false,
-      "updated": "just now",
-      "notes": "Small lot",
+      "notes": "Truro beach sticker required in season (no daily passes); 60 parking spaces. Reached by a steep 50- to 70-foot path down the dune. Portable toilet in season.",
+      "source_url": "https://www.truro-ma.gov/208/Longnook-Beach",
+      "sources": [
+        "https://www.truro-ma.gov/208/Longnook-Beach",
+        "https://www.truro-ma.gov/176/Beaches-of-Truro"
+      ],
+      "source_checked": "2026-11-08",
       "water_temp_at": "2026-11-08T17:54:31Z",
-      "water_temp_src": "Cape Cod Bay buoy"
+      "water_temp_src": "Cape Cod Bay buoy",
+      "water_temp_src_id": "NDBC 44090"
     },
     {
       "slug": "sandwich-town",
@@ -265,13 +374,19 @@
       "status": "open",
       "crowd": 1,
       "water_temp": 56,
-      "sticker_required": true,
+      "sticker_required": false,
       "restrooms": true,
-      "lifeguard": true,
-      "updated": "just now",
-      "notes": "Boardwalk + bay",
+      "lifeguard": false,
+      "notes": "Listed by the town as Town Neck Beach/Boardwalk. In season: a day or weekly pass at the bay-beach gate, or a Sandwich sticker. Sandwich lists Snake Pond and Peters Pond as its guarded beaches.",
+      "source_url": "https://www.sandwichmass.org/168/Beaches",
+      "sources": [
+        "https://www.sandwichmass.org/168/Beaches",
+        "https://capecod.gov/2024/05/24/barnstable-countys-guide-to-getting-beach-parking-stickers-on-cape-cod-a-breakdown-for-15-towns-and-the-cape-cod-national-seashore-2024"
+      ],
+      "source_checked": "2026-11-08",
       "water_temp_at": "2026-11-08T17:54:31Z",
-      "water_temp_src": "Cape Cod Bay buoy"
+      "water_temp_src": "Cape Cod Bay buoy",
+      "water_temp_src_id": "NDBC 44090"
     },
     {
       "slug": "chapin",
@@ -283,13 +398,19 @@
       "status": "open",
       "crowd": 2,
       "water_temp": 56,
-      "sticker_required": true,
-      "restrooms": true,
-      "lifeguard": false,
-      "updated": "just now",
-      "notes": "4WD beach access",
+      "sticker_required": false,
+      "restrooms": null,
+      "lifeguard": null,
+      "notes": "Dennis daily beach pass (sold at the beach) or Dennis beach sticker in season.",
+      "source_url": "https://www.town.dennis.ma.us/740/Daily-Beach-Pass",
+      "sources": [
+        "https://www.town.dennis.ma.us/740/Daily-Beach-Pass",
+        "https://www.town.dennis.ma.us/449/Beach-Rules-Regulations"
+      ],
+      "source_checked": "2026-11-08",
       "water_temp_at": "2026-11-08T17:54:31Z",
-      "water_temp_src": "Cape Cod Bay buoy"
+      "water_temp_src": "Cape Cod Bay buoy",
+      "water_temp_src_id": "NDBC 44090"
     },
     {
       "slug": "corporation",
@@ -301,13 +422,21 @@
       "status": "open",
       "crowd": 1,
       "water_temp": 56,
-      "sticker_required": true,
+      "sticker_required": false,
       "restrooms": true,
-      "lifeguard": true,
-      "updated": "just now",
-      "notes": "Bayside, family-friendly",
+      "lifeguard": null,
+      "notes": "Cape Cod Bay beach. Dennis daily beach pass (sold at the beach) or Dennis beach sticker in season.",
+      "source_url": "https://www.town.dennis.ma.us/740/Daily-Beach-Pass",
+      "sources": [
+        "https://www.town.dennis.ma.us/740/Daily-Beach-Pass",
+        "https://www.town.dennis.ma.us/449/Beach-Rules-Regulations",
+        "https://www.town.dennis.ma.us/DocumentCenter/View/846/Beach-Maps-PDF",
+        "https://capecod.gov/2024/05/24/barnstable-countys-guide-to-getting-beach-parking-stickers-on-cape-cod-a-breakdown-for-15-towns-and-the-cape-cod-national-seashore-2024"
+      ],
+      "source_checked": "2026-11-08",
       "water_temp_at": "2026-11-08T17:54:31Z",
-      "water_temp_src": "Cape Cod Bay buoy"
+      "water_temp_src": "Cape Cod Bay buoy",
+      "water_temp_src_id": "NDBC 44090"
     },
     {
       "slug": "first-encounter",
@@ -319,13 +448,20 @@
       "status": "open",
       "crowd": 2,
       "water_temp": 56,
-      "sticker_required": true,
+      "sticker_required": false,
       "restrooms": true,
       "lifeguard": false,
-      "updated": "just now",
-      "notes": "Bayside beach; Eastham sticker or daily pass in season",
+      "notes": "Bay beach. Eastham beach sticker or daily pass required June 20 to Sept 7 in 2026; daily passes are sold here (cash or check only).",
+      "source_url": "https://www.eastham-ma.gov/410/Beach-Parking-Daily-Passes",
+      "sources": [
+        "https://www.eastham-ma.gov/410/Beach-Parking-Daily-Passes",
+        "https://www.eastham-ma.gov/Archive.aspx?ADID=219",
+        "https://capecod.gov/2024/05/24/barnstable-countys-guide-to-getting-beach-parking-stickers-on-cape-cod-a-breakdown-for-15-towns-and-the-cape-cod-national-seashore-2024"
+      ],
+      "source_checked": "2026-11-08",
       "water_temp_at": "2026-11-08T17:54:31Z",
-      "water_temp_src": "Cape Cod Bay buoy"
+      "water_temp_src": "Cape Cod Bay buoy",
+      "water_temp_src_id": "NDBC 44090"
     },
     {
       "slug": "ridgevale",
@@ -337,13 +473,20 @@
       "status": "mid",
       "crowd": 3,
       "water_temp": 57,
-      "sticker_required": true,
+      "sticker_required": false,
       "restrooms": true,
       "lifeguard": true,
-      "updated": "just now",
-      "notes": "Calm, family-perfect",
+      "notes": "Lifeguards and portable bathrooms. In season, a Chatham beach sticker or a non-resident beach pass (daily, weekly or seasonal) is required.",
+      "source_url": "https://www.chatham-ma.gov/Facilities/Facility/Details/Ridgevale-Beach-11",
+      "sources": [
+        "https://www.chatham-ma.gov/Facilities/Facility/Details/Ridgevale-Beach-11",
+        "https://www.chatham-ma.gov/943/Beach-Parking-Information",
+        "https://www.chatham-ma.gov/311/Sticker-Office"
+      ],
+      "source_checked": "2026-11-08",
       "water_temp_at": "2026-11-08T17:54:31Z",
-      "water_temp_src": "Nantucket Sound buoy"
+      "water_temp_src": "Nantucket Sound buoy",
+      "water_temp_src_id": "NDBC 44020"
     },
     {
       "slug": "hardings",
@@ -355,13 +498,20 @@
       "status": "mid",
       "crowd": 3,
       "water_temp": 57,
-      "sticker_required": true,
+      "sticker_required": false,
       "restrooms": true,
       "lifeguard": true,
-      "updated": "just now",
-      "notes": "Long beach, less crowded",
+      "notes": "Lifeguards, restrooms and a snack mobile. In season, a Chatham beach sticker or a non-resident beach pass (daily, weekly or seasonal) is required.",
+      "source_url": "https://www.chatham-ma.gov/Facilities/Facility/Details/Hardings-Beach-8",
+      "sources": [
+        "https://www.chatham-ma.gov/Facilities/Facility/Details/Hardings-Beach-8",
+        "https://www.chatham-ma.gov/943/Beach-Parking-Information",
+        "https://www.chatham-ma.gov/311/Sticker-Office"
+      ],
+      "source_checked": "2026-11-08",
       "water_temp_at": "2026-11-08T17:54:31Z",
-      "water_temp_src": "Nantucket Sound buoy"
+      "water_temp_src": "Nantucket Sound buoy",
+      "water_temp_src_id": "NDBC 44020"
     },
     {
       "slug": "paines-creek",
@@ -373,13 +523,18 @@
       "status": "open",
       "crowd": 1,
       "water_temp": 56,
-      "sticker_required": true,
+      "sticker_required": false,
       "restrooms": true,
       "lifeguard": false,
-      "updated": "just now",
-      "notes": "Creek + paddle, calm bay",
+      "notes": "Brewster beach parking permit required June 15 through Labor Day weekend; visitors can buy a one-day or season permit online. Portable toilet from Memorial Day to the October holiday weekend.",
+      "source_url": "https://www.brewster-ma.gov/763/Beach-Information",
+      "sources": [
+        "https://www.brewster-ma.gov/763/Beach-Information"
+      ],
+      "source_checked": "2026-11-08",
       "water_temp_at": "2026-11-08T17:54:31Z",
-      "water_temp_src": "Cape Cod Bay buoy"
+      "water_temp_src": "Cape Cod Bay buoy",
+      "water_temp_src_id": "NDBC 44090"
     },
     {
       "slug": "breakwater",
@@ -391,13 +546,18 @@
       "status": "open",
       "crowd": 2,
       "water_temp": 56,
-      "sticker_required": true,
-      "restrooms": true,
+      "sticker_required": false,
+      "restrooms": null,
       "lifeguard": false,
-      "updated": "just now",
-      "notes": "",
+      "notes": "Brewster lists portable toilets at Breakwater (Upper) Beach but not at Breakwater Landing. Brewster beach parking permit required June 15 through Labor Day weekend; visitors can buy a one-day or season permit online.",
+      "source_url": "https://www.brewster-ma.gov/763/Beach-Information",
+      "sources": [
+        "https://www.brewster-ma.gov/763/Beach-Information"
+      ],
+      "source_checked": "2026-11-08",
       "water_temp_at": "2026-11-08T17:54:31Z",
-      "water_temp_src": "Cape Cod Bay buoy"
+      "water_temp_src": "Cape Cod Bay buoy",
+      "water_temp_src_id": "NDBC 44090"
     },
     {
       "slug": "falmouth-heights",
@@ -412,10 +572,16 @@
       "sticker_required": true,
       "restrooms": true,
       "lifeguard": true,
-      "updated": "just now",
-      "notes": "Walking distance to bars",
+      "notes": "Sticker-only lot (60 spaces). Portable restrooms, a seasonal shower tower and a mobile food concession.",
+      "source_url": "https://www.falmouthma.gov/DocumentCenter/View/22170/Active-Beach-Management-Plan-Town-of-Falmouth-MA-August-2026",
+      "sources": [
+        "https://www.falmouthma.gov/DocumentCenter/View/22170/Active-Beach-Management-Plan-Town-of-Falmouth-MA-August-2026",
+        "https://www.falmouthma.gov/151/Beach"
+      ],
+      "source_checked": "2026-11-08",
       "water_temp_at": "2026-11-08T17:54:31Z",
-      "water_temp_src": "Woods Hole"
+      "water_temp_src": "Woods Hole",
+      "water_temp_src_id": "NOAA CO-OPS 8447930"
     },
     {
       "slug": "south-cape",
@@ -429,11 +595,17 @@
       "water_temp": 58,
       "sticker_required": false,
       "restrooms": true,
-      "lifeguard": true,
-      "updated": "just now",
-      "notes": "State park, birding",
+      "lifeguard": null,
+      "notes": "Mass DCR state park with a daily parking fee June 13 to Sept 7. Mashpee's town beach at South Cape needs a Mashpee sticker or weekly pass in summer.",
+      "source_url": "https://www.mass.gov/locations/south-cape-beach-state-park",
+      "sources": [
+        "https://www.mass.gov/locations/south-cape-beach-state-park",
+        "https://www.mashpeema.gov/DocumentCenter/View/4926"
+      ],
+      "source_checked": "2026-11-08",
       "water_temp_at": "2026-11-08T17:54:31Z",
-      "water_temp_src": "Woods Hole"
+      "water_temp_src": "Woods Hole",
+      "water_temp_src_id": "NOAA CO-OPS 8447930"
     },
     {
       "slug": "kalmus",
@@ -445,13 +617,19 @@
       "status": "mid",
       "crowd": 3,
       "water_temp": 57,
-      "sticker_required": true,
+      "sticker_required": false,
       "restrooms": true,
       "lifeguard": true,
-      "updated": "just now",
-      "notes": "Best for windsurfing",
+      "notes": "Bathhouse, outdoor showers and a snack bar. Parking needs a daily pass or a Barnstable permit. Town's posted lifeguard schedule: weekends from Memorial Day to mid-June, then daily mid-June to mid-August.",
+      "source_url": "https://barnstablema.myrec.com/info/facilities/details.aspx?FacilityID=14756",
+      "sources": [
+        "https://barnstablema.myrec.com/info/facilities/details.aspx?FacilityID=14756",
+        "https://barnstablema.myrec.com/forms/5953_2026_beach_information.pdf"
+      ],
+      "source_checked": "2026-11-08",
       "water_temp_at": "2026-11-08T17:54:31Z",
-      "water_temp_src": "Nantucket Sound buoy"
+      "water_temp_src": "Nantucket Sound buoy",
+      "water_temp_src_id": "NDBC 44020"
     },
     {
       "slug": "veterans-park",
@@ -466,10 +644,16 @@
       "sticker_required": false,
       "restrooms": true,
       "lifeguard": true,
-      "updated": "just now",
-      "notes": "Walk to Main St",
+      "notes": "Bathhouse and outdoor shower. Parking needs a daily pass or a Barnstable permit. Town's posted lifeguard schedule: weekends from Memorial Day to mid-June, then daily mid-June to mid-August.",
+      "source_url": "https://barnstablema.myrec.com/info/facilities/details.aspx?FacilityID=14751",
+      "sources": [
+        "https://barnstablema.myrec.com/info/facilities/details.aspx?FacilityID=14751",
+        "https://barnstablema.myrec.com/forms/5953_2026_beach_information.pdf"
+      ],
+      "source_checked": "2026-11-08",
       "water_temp_at": "2026-11-08T17:54:31Z",
-      "water_temp_src": "Nantucket Sound buoy"
+      "water_temp_src": "Nantucket Sound buoy",
+      "water_temp_src_id": "NDBC 44020"
     },
     {
       "slug": "head-of-meadow",
@@ -484,10 +668,20 @@
       "sticker_required": false,
       "restrooms": true,
       "lifeguard": true,
-      "updated": "just now",
-      "notes": "NPS beach, big surf",
+      "notes": "National Seashore lot: entrance fee or pass in season. The Town of Truro runs a separate lot here (Truro sticker or daily pass; town lifeguards in season). The wreck of the Frances (1872) may be visible at low tide.",
+      "source_url": "https://www.nps.gov/places/head-of-the-meadow-beach.htm",
+      "sources": [
+        "https://www.nps.gov/places/head-of-the-meadow-beach.htm",
+        "https://www.nps.gov/caco/planyourvisit/hours.htm",
+        "https://www.nps.gov/thingstodo/beachrelaxation.htm",
+        "https://www.nps.gov/caco/planyourvisit/fees.htm",
+        "https://www.nps.gov/caco/learn/management/advisory-commission-meeting-september-15-2025.htm",
+        "https://www.truro-ma.gov/207/Head-of-the-Meadow-Beach"
+      ],
+      "source_checked": "2026-11-08",
       "water_temp_at": "2026-11-08T17:54:31Z",
-      "water_temp_src": "Cape Cod Bay buoy"
+      "water_temp_src": "Cape Cod Bay buoy",
+      "water_temp_src_id": "NDBC 44090"
     }
   ]
 }

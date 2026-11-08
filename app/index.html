@@ -1507,6 +1507,11 @@ const TCC_SRC = {
 };
 function tccBeachInfo(b) {
   const a = (url, text) => `<a href="${url}" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="color:inherit; text-decoration:underline;">${text}</a>`;
+  if (b && b.source_url) {
+    let host = b.source_url;
+    try { host = new URL(b.source_url).hostname.replace(/^www\./, ''); } catch (e) {}
+    return `Source: ${a(b.source_url, host)}${b.source_checked ? ` (checked ${b.source_checked})` : ''}. Rules and schedules change, so check it before you go.`;
+  }
   if (b && TCC_NPS_BEACHES.includes(b.slug)) {
     return `Part of Cape Cod National Seashore. Check the ${a(TCC_SRC.nps, 'National Park Service page')} for parking, fees and lifeguard schedules.`;
   }
@@ -2190,9 +2195,9 @@ function openBeach(slug) {
   document.getElementById('beachModalDetails').innerHTML = `
     <div class="ios-list-item"><span class="status-dot" style="background:var(--status-${beachStatus(b).code})"></span><div style="flex:1;"><div class="item-title">${beachStatus(b).label}</div><div class="item-sub">${tccTempTag(b, 'nearest sensor: ') ? `🌊 ${tccTempTag(b, 'nearest sensor: ')} · ` : ''}${beachStatus(b).fresh}</div></div></div>
     <div style="font-size:12px; color:var(--ios-sub); padding:8px 0; line-height:1.5;">
-      ${b.sticker_required ? (tccOff() ? '🏷️ Sticker/fee lot in summer · off-season: follow posted signs' : '🏷️ Sticker required') : '✅ No sticker needed'}<br/>
-      ${b.restrooms ? (tccOff() ? '🚻 Restrooms (may be closed off-season)' : '🚻 Restrooms') : '— No restrooms'}<br/>
-      ${b.lifeguard ? '🛟 Lifeguarded in season — schedules vary by beach' : '⚠️ No lifeguard'}<br/>
+      ${b.sticker_required === true ? '🏷️ Resident/sticker parking only (in season)<br/>' : ''}
+      ${b.restrooms === true ? (tccOff() ? '🚻 Restrooms (may be closed off-season)' : '🚻 Restrooms') + '<br/>' : b.restrooms === false ? '— No restrooms<br/>' : ''}
+      ${b.lifeguard === true ? '🛟 Lifeguarded in season — schedules vary by beach<br/>' : b.lifeguard === false ? '⚠️ No lifeguard<br/>' : ''}
       ${b.notes ? '📝 ' + b.notes + '<br/>' : ''}
       ℹ️ ${tccBeachInfo(b)}
     </div>
@@ -2777,9 +2782,15 @@ function openLighthouse(slug) {
   if (!l) return;
   currentLighthouse = l;
   document.getElementById('lhName').textContent = l.name;
-  document.getElementById('lhMeta').textContent = `${l.town} · Built ${l.built}`;
+  document.getElementById('lhMeta').textContent = `${l.town} · Current tower ${l.built}` +
+    (l.station_established && l.station_established !== l.built ? ` · Station est. ${l.station_established}` : '');
   document.getElementById('lhDuration').textContent = `${l.duration_min} min audio tour`;
-  document.getElementById('lhTranscript').innerHTML = l.script.replace(/\.\s+/g, '.<br><br>');
+  const srcs = (l.sources || []).map(u => {
+    let host = u; try { host = new URL(u).hostname.replace(/^www\./, ''); } catch (e) {}
+    return `<a href="${u}" target="_blank" rel="noopener">${host}</a>`;
+  });
+  document.getElementById('lhTranscript').innerHTML = l.script.replace(/\.\s+/g, '.<br><br>') +
+    (srcs.length ? `<div style="font-size:12px; color:var(--ios-sub); margin-top:12px;">Sources: ${srcs.join(' · ')}${l.source_checked ? ` (checked ${l.source_checked})` : ''}</div>` : '');
   document.getElementById('lhPlayBtn').textContent = '▶';
   document.getElementById('lhProgress').style.width = '0%';
   openModal('lighthouse');
