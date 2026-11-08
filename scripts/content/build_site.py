@@ -217,7 +217,7 @@ NAV = ('<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" cl
        '<a href="/events">Events</a><a href="/guides/">Guides</a><a href="/app/">📱 Open the App</a></div></div>')
 
 FOOTER = ('<footer class="site-footer"><div class="footer-inner"><div><div class="footer-brand">Totally Cape Cod</div>'
-          '<p class="footer-desc">The unofficial guide to the best of Cape Cod.</p></div>'
+          '<p class="footer-desc">Cape Cod beaches, events and eats, linked to their sources.</p></div>'
           '<div class="footer-links"><div class="footer-heading">Explore</div><a href="/beaches.html">Beaches</a><a href="/eats.html">Restaurants</a>'
           '<a href="/events">Events</a><a href="/experiences.html">Experiences</a>'
           '<a href="/best-beaches-2026.html">Best beaches 2026</a><a href="/hidden-gems.html">Hidden gems</a><a href="/photos.html">Cape Cod photos</a></div>'

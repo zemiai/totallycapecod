@@ -164,9 +164,10 @@ def main() -> None:
             slide(ROOT / pics[i]["file"], event_slide_texts(e), p)
             parts.append(p)
         outro = tmp / "s9.mp4"
+        # Outro lists only what the site actually has (no "live"/"free" claims that go stale).
         slide(ROOT / pics[-1]["file"], [("totallycapecod.com", 72, H - 720, FONT),
-                         ("live events · water temps" if is_offseason() else "live events · beach parking", 46, H - 610, FONT_REG),
-                         ("bridge delays · free", 46, H - 540, FONT_REG)], outro)
+                         ("events · water temps" if is_offseason() else "events · beach reports", 46, H - 610, FONT_REG),
+                         ("bridge delays · tides", 46, H - 540, FONT_REG)], outro)
         parts.append(outro)
 
         concat = tmp / "list.txt"
@@ -177,7 +178,12 @@ def main() -> None:
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
 
-    lines = [hook, ""] + [f"• {e.get('title','')[:60]} — {e.get('venue') or e.get('town','')}" for e in evs]
+    # Credit each event's organizer/listing source (the same credit the site shows).
+    def event_line(e: dict) -> str:
+        where = e.get("venue") or e.get("town", "")
+        credit = (e.get("credit") or e.get("source") or "").strip()
+        return f"• {e.get('title','')[:60]} — {where}" + (f" (via {credit})" if credit else "")
+    lines = [hook, ""] + [event_line(e) for e in evs]
     tags = "#CapeCod #CapeCodLife #CapeCodEvents #ThingsToDoCapeCod"
     credit = reel_credits(pics)
     credit_block = f"\n\n{credit}" if credit else ""

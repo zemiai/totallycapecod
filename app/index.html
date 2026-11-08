@@ -1361,6 +1361,11 @@ async function loadData() {
     const key = files[i] === 'ai-knowledge' ? 'aiKnowledge' : files[i];
     state.data[key] = r.status === 'fulfilled' ? r.value : null;
   });
+  // Retired stamps (closed places, or places we couldn't confirm exist) stay in the file so
+  // collected IDs keep working, but they're never shown or counted.
+  if (Array.isArray(state.data.stamps?.stamps)) {
+    state.data.stamps.stamps = state.data.stamps.stamps.filter(s => !s.retired);
+  }
   // Crowdsourced live beach reports — a Netlify function, not GitHub raw. Empty {} until
   // beachgoers report (and on local/preview where the function isn't running).
   state.data.beachLive = (await beachLiveP) || {};
@@ -2350,7 +2355,16 @@ function openStamp(slug) {
   document.getElementById('stampModalIcon').textContent = s.icon;
   document.getElementById('stampModalName').textContent = s.name;
   document.getElementById('stampModalTown').textContent = s.town;
-  document.getElementById('stampModalDesc').textContent = s.desc;
+  const descEl = document.getElementById('stampModalDesc');
+  descEl.textContent = s.desc || '';
+  if (s.source_url) {
+    let host = s.source_url;
+    try { host = new URL(s.source_url).hostname.replace(/^www\./, ''); } catch (e) {}
+    const src = document.createElement('div');
+    src.style.cssText = 'font-size:12px; margin-top:8px; color:var(--ios-sub);';
+    src.innerHTML = `Source: <a href="${s.source_url}" target="_blank" rel="noopener">${host}</a>${s.source_checked ? ` · checked ${s.source_checked}` : ''}`;
+    descEl.appendChild(src);
+  }
   const earned = state.stamps.includes(s.slug);
   const btn = document.getElementById('stampModalBtn');
   if (earned) {
@@ -3152,7 +3166,7 @@ function nbRenderItem(it){
     ? `<a class="nb-btn-soft" href="tel:${phoneDigits}" onclick="gtag('event','call_click',{item:${gItem},location:'app_nearby'})">📞 Call</a>`
     : `<a class="nb-btn-soft" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(r.name+' '+r.town+' MA')}${r.place_id?`&query_place_id=${encodeURIComponent(r.place_id)}`:''}" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'maps',item:${gItem},location:'app_nearby'})">📍 Directions</a>`;
   const tags = Array.isArray(r.tags) ? r.tags.slice(0,3) : [];
-  const siteBtn = r.website ? `<a class="nb-btn-primary" href="${nbEsc(r.website)}" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'website',item:${gItem},location:'app_nearby'})">Website</a>` : "";
+  const siteBtn = (r.website && !r.website_hidden) ? `<a class="nb-btn-primary" href="${nbEsc(r.website)}" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'website',item:${gItem},location:'app_nearby'})">Website</a>` : "";
   const reviewsBtn = gListing ? `<a class="${siteBtn?'nb-btn-soft':'nb-btn-primary'}" href="${gListing}" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'google_reviews',item:${gItem},location:'app_nearby'})">Google reviews</a>` : "";
   const realPhoto = r.photo ? (r.photo.startsWith('http') ? r.photo : ASSET_BASE + r.photo) : '';
   const cov = cardCover(realPhoto, 'food');
@@ -3164,7 +3178,7 @@ function nbRenderItem(it){
       <div class="nb-kind food">Eat</div></div>
     <div class="nb-body">
       ${it.forYou?'<div class="nb-foryou">✨ Picked for you</div>':""}
-      <p>${nbEsc(r.desc)}</p>
+      <p>${nbEsc(r.desc)}${r.desc_source ? ` <a href="${nbEsc(r.desc_source)}" target="_blank" rel="noopener" style="font-size:12px;">Source</a>` : ''}</p>
       ${tags.length?`<div class="nb-tags">${tags.map(t=>`<span class="nb-tag">${nbEsc(t)}</span>`).join("")}</div>`:""}
       <div class="nb-actions">
         ${siteBtn}

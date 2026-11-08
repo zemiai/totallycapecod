@@ -1,4 +1,4 @@
-"""Build /photos.html from data/photos.json — local photographers' work, used with permission.
+"""Build /photos.html from data/photos.json — photographers' work used with permission, plus NPS public-domain photos.
 
 Every photo is credited to the photographer, links to the original post, and the page
 pushes visitors to the photographer's own page/portfolio. Run after editing photos.json:
@@ -63,8 +63,18 @@ def main() -> None:
 
     ld = {"@context": "https://schema.org", "@type": "CollectionPage", "name": "Cape Cod Photos",
           "url": f"{SITE}/photos.html", "hasPart": ld_images}
+    # Name the photographers actually featured (from data/photos.json) instead of a generic claim.
+    shown = {x["photographer"] for x in data["photos"] if x.get("gallery", True)}
+    perm = [p["name"] for pid, p in pgs.items() if pid in shown and p.get("license") != "public-domain"]
+    has_pd = any(p.get("license") == "public-domain" for pid, p in pgs.items() if pid in shown)
+    who_perm = perm[0] if len(perm) == 1 else (", ".join(perm[:-1]) + " and " + perm[-1] if perm else "")
     title = "Cape Cod Photos: Lighthouses, Dunes & Beaches | Totally Cape Cod"
-    desc = "Cape Cod scenery from local photographers (shared with permission) and the National Park Service (public domain), each credited and linked to the original."
+    desc = ("Cape Cod scenery " + (f"from {who_perm} (shared with permission)" if who_perm else "")
+            + (" and " if who_perm and has_pd else "") + ("from the National Park Service (public domain)" if has_pd else "")
+            + ", each credited and linked to the original.")
+    hero_sub = ("Cape Cod scenery" + (f" shared with permission by {who_perm}" if who_perm else "")
+                + (", plus public-domain photos from the National Park Service" if has_pd else "")
+                + ". Tap any photo to see the original.")
     page = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -109,14 +119,14 @@ def main() -> None:
 <nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/app/">📱 App</a></div><button class="nav-mobile-toggle" onclick="toggleMobileMenu()">☰</button></div></nav>
 <div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()"><a href="/">Home</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/app/">📱 Open the App</a></div></div>
 
-<section class="hero" style="min-height:40vh;"><div class="hero-overlay"></div><div class="hero-content" style="padding-top:84px;max-width:860px;"><div class="hero-badge">📸 Real Cape Cod scenery</div><h1 class="hero-title">Cape Cod Photos</h1><p class="hero-subtitle">Real Cape Cod scenery, shared with permission by local photographers, plus public-domain photos from the National Park Service. Tap any photo to see the original.</p></div></section>
+<section class="hero" style="min-height:40vh;"><div class="hero-overlay"></div><div class="hero-content" style="padding-top:84px;max-width:860px;"><div class="hero-badge">📸 Real Cape Cod scenery</div><h1 class="hero-title">Cape Cod Photos</h1><p class="hero-subtitle">{esc(hero_sub)}</p></div></section>
 
 <div class="content-wrap">
 {"".join(sections)}
-<section class="section"><div class="card" style="padding:22px;text-align:center;"><h3 style="font-family:'Fraunces',serif;font-weight:900;margin:0 0 6px;">Photograph the Cape?</h3><p style="color:var(--text-secondary);margin:0 0 12px;">We feature local photographers with full credit and a link back, and only with your permission.</p><a class="btn btn-primary" href="/contact.html">Get in touch →</a></div></section>
+<section class="section"><div class="card" style="padding:22px;text-align:center;"><h3 style="font-family:'Fraunces',serif;font-weight:900;margin:0 0 6px;">Photograph the Cape?</h3><p style="color:var(--text-secondary);margin:0 0 12px;">We use photos only with the photographer's permission, and we credit every photographer by name with a link back.</p><a class="btn btn-primary" href="/contact.html">Get in touch →</a></div></section>
 </div>
 
-<footer class="site-footer"><div class="footer-inner"><div><div class="footer-brand">Totally Cape Cod</div><p class="footer-desc">The unofficial guide to the best of Cape Cod.</p></div><div class="footer-links"><div class="footer-heading">Explore</div><a href="/beaches.html">Beaches</a><a href="/eats.html">Restaurants</a><a href="/events">Events</a><a href="/photos.html">Photos</a></div><div class="footer-links"><div class="footer-heading">Guides</div><a href="/guides/">All guides</a><a href="/guides/standards/">How we fact-check</a><a href="/contact.html">Report an error</a></div></div><div class="footer-bottom">© 2026 Totally Cape Cod. Photos © their photographers, used with permission; National Park Service photos are public domain.</div></footer>
+<footer class="site-footer"><div class="footer-inner"><div><div class="footer-brand">Totally Cape Cod</div><p class="footer-desc">Cape Cod beaches, events and eats, linked to their sources.</p></div><div class="footer-links"><div class="footer-heading">Explore</div><a href="/beaches.html">Beaches</a><a href="/eats.html">Restaurants</a><a href="/events">Events</a><a href="/photos.html">Photos</a></div><div class="footer-links"><div class="footer-heading">Guides</div><a href="/guides/">All guides</a><a href="/guides/standards/">How we fact-check</a><a href="/contact.html">Report an error</a></div></div><div class="footer-bottom">© 2026 Totally Cape Cod. Photos © their photographers, used with permission; National Park Service photos are public domain.</div></footer>
 <script>function toggleMobileMenu(){{document.getElementById('mobileMenu').classList.toggle('show');}}</script>
 </body>
 </html>
