@@ -15,10 +15,11 @@
       "rating": 4.8,
       "tags": [
         "seafood",
-        "lobster",
-        "fine"
+        "lobster"
       ],
-      "desc": "Iconic waterfront since 1979 \u2014 lobster rolls, clam chowder, harbor views.",
+      "desc": "Seafood restaurant at 321 Commercial Street with two waterfront dining rooms on Provincetown Harbor. Run by the McNulty family since 1979.",
+      "desc_source": "https://www.ptownlobsterpot.com/our-story",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJodQ3d3yn_IkRaL3U202uvJ0",
       "photo": "data/eats-photos/the-lobster-pot.jpg",
       "reviews": 11055,
@@ -115,13 +116,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 11:30 AM – 9:00 PM",
+        "Tuesday: 11:30 AM – 9:00 PM",
+        "Wednesday: 11:30 AM – 9:00 PM",
+        "Thursday: 11:30 AM – 9:00 PM",
+        "Friday: 11:30 AM – 9:00 PM",
+        "Saturday: 11:30 AM – 9:00 PM",
+        "Sunday: 11:30 AM – 9:00 PM"
       ]
     },
     {
@@ -134,10 +135,11 @@
       "price": "$$$",
       "rating": 4.6,
       "tags": [
-        "fine",
         "seafood"
       ],
-      "desc": "Oceanfront dining with a legendary martini list. A P-town institution.",
+      "desc": "Waterfront restaurant at 429 Commercial Street in Provincetown. Founded in 1964 and at this address since 1993.",
+      "desc_source": "http://mewsptown.com/about.php",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJW79HTmWn_IkRzPfkuTK9RLI",
       "photo": "data/eats-photos/the-mews-restaurant-cafe.jpg",
       "reviews": 810,
@@ -211,11 +213,11 @@
       ],
       "hours_text": [
         "Monday: Closed",
-        "Tuesday: 5:00\u2009\u2013\u20098:30\u202fPM",
-        "Wednesday: 5:00\u2009\u2013\u20098:30\u202fPM",
-        "Thursday: 5:00\u2009\u2013\u20098:30\u202fPM",
-        "Friday: 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Tuesday: 5:00 – 8:30 PM",
+        "Wednesday: 5:00 – 8:30 PM",
+        "Thursday: 5:00 – 8:30 PM",
+        "Friday: 5:00 – 9:00 PM",
+        "Saturday: 5:00 – 9:00 PM",
         "Sunday: Closed"
       ]
     },
@@ -228,17 +230,17 @@
       "cuisine": "Fine Dining",
       "price": "$$$",
       "rating": 4.5,
-      "tags": [
-        "fine"
-      ],
-      "desc": "Sunset dining right on the water. A splurge that earns it.",
+      "tags": [],
+      "desc": "Inn and restaurant on Provincetown Harbor, in a building that dates to 1805.",
+      "desc_source": "https://theredinn.com/about/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJsQWvzmJY-4kRpvSkHnaWXYc",
       "photo": "data/eats-photos/the-red-inn.jpg",
       "reviews": 793,
       "website": "http://theredinn.com/",
       "rating_source": "google",
       "enriched_at": "2026-11-02T20:08:13Z",
-      "deal": "Raw Bar Happy Hour \u00b7 Fri\u2013Sun 2\u20134:30pm",
+      "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(508) 487-7334",
       "hours": [
@@ -328,13 +330,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 4:00\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 4:00\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 4:00\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 4:00\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 2:00\u2009\u2013\u200910:00\u202fPM",
-        "Saturday: 2:00\u2009\u2013\u200910:00\u202fPM",
-        "Sunday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM"
+        "Monday: 4:00 – 9:00 PM",
+        "Tuesday: 4:00 – 9:00 PM",
+        "Wednesday: 4:00 – 9:00 PM",
+        "Thursday: 4:00 – 9:00 PM",
+        "Friday: 2:00 – 10:00 PM",
+        "Saturday: 2:00 – 10:00 PM",
+        "Sunday: 11:00 AM – 10:00 PM"
       ]
     },
     {
@@ -351,7 +353,9 @@
         "clam",
         "casual"
       ],
-      "desc": "Beachfront counter \u2014 go for the lobster roll and frozen ros\u00e9.",
+      "desc": "Counter-service seafood eatery at 225 Commercial Street in Provincetown, with seating facing Cape Cod Bay. No reservations; dogs welcome.",
+      "desc_source": "https://www.thecanteenptown.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJy0gAcH6n_IkR2t0LvOv8TYE",
       "photo": "data/eats-photos/the-canteen.jpg",
       "reviews": 2463,
@@ -448,13 +452,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00\u202fAM\u2009\u2013\u20094:00\u202fPM",
-        "Tuesday: 11:00\u202fAM\u2009\u2013\u20094:00\u202fPM",
-        "Wednesday: 11:00\u202fAM\u2009\u2013\u20094:00\u202fPM",
-        "Thursday: 11:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
-        "Friday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Saturday: 10:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Sunday: 10:00\u202fAM\u2009\u2013\u20097:00\u202fPM"
+        "Monday: 11:00 AM – 4:00 PM",
+        "Tuesday: 11:00 AM – 4:00 PM",
+        "Wednesday: 11:00 AM – 4:00 PM",
+        "Thursday: 11:00 AM – 7:00 PM",
+        "Friday: 11:00 AM – 8:00 PM",
+        "Saturday: 10:00 AM – 8:00 PM",
+        "Sunday: 10:00 AM – 7:00 PM"
       ]
     },
     {
@@ -470,7 +474,9 @@
         "pizza",
         "casual"
       ],
-      "desc": "Late-night Commercial Street slice. The after-bar ritual.",
+      "desc": "Pizza shop at 190 Commercial Street in Provincetown, selling thin-crust slices since 1971. Cash only.",
+      "desc_source": "https://spirituspizza.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJESmjOn6n_IkRqfSl9ckjvJI",
       "photo": "data/eats-photos/spiritus-pizza.jpg",
       "reviews": 1213,
@@ -567,13 +573,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u20092:00\u202fAM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u20092:00\u202fAM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u20092:00\u202fAM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u20092:00\u202fAM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u20092:00\u202fAM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u20092:00\u202fAM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u20092:00\u202fAM"
+        "Monday: 11:30 AM – 2:00 AM",
+        "Tuesday: 11:30 AM – 2:00 AM",
+        "Wednesday: 11:30 AM – 2:00 AM",
+        "Thursday: 11:30 AM – 2:00 AM",
+        "Friday: 11:30 AM – 2:00 AM",
+        "Saturday: 11:30 AM – 2:00 AM",
+        "Sunday: 11:30 AM – 2:00 AM"
       ]
     },
     {
@@ -589,7 +595,9 @@
         "breakfast",
         "casual"
       ],
-      "desc": "Build a beach picnic with their famous sandwiches.",
+      "desc": "Provincetown corner store and deli with an on-site bakery, prepared foods and made-to-order breakfast and lunch sandwiches.",
+      "desc_source": "https://farlandprovisions.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJuUiYUXqn_IkRZwCKh3bEfXw",
       "photo": "data/eats-photos/far-land-provisions.jpg",
       "reviews": 624,
@@ -686,13 +694,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 8:00\u202fAM\u2009\u2013\u20096:00\u202fPM",
-        "Tuesday: 8:00\u202fAM\u2009\u2013\u20096:00\u202fPM",
-        "Wednesday: 8:00\u202fAM\u2009\u2013\u20096:00\u202fPM",
-        "Thursday: 8:00\u202fAM\u2009\u2013\u20096:00\u202fPM",
-        "Friday: 8:00\u202fAM\u2009\u2013\u20096:00\u202fPM",
-        "Saturday: 8:00\u202fAM\u2009\u2013\u20096:00\u202fPM",
-        "Sunday: 8:00\u202fAM\u2009\u2013\u20096:00\u202fPM"
+        "Monday: 8:00 AM – 6:00 PM",
+        "Tuesday: 8:00 AM – 6:00 PM",
+        "Wednesday: 8:00 AM – 6:00 PM",
+        "Thursday: 8:00 AM – 6:00 PM",
+        "Friday: 8:00 AM – 6:00 PM",
+        "Saturday: 8:00 AM – 6:00 PM",
+        "Sunday: 8:00 AM – 6:00 PM"
       ]
     },
     {
@@ -705,10 +713,11 @@
       "price": "$$",
       "rating": 4.3,
       "tags": [
-        "bar",
-        "fine"
+        "bar"
       ],
-      "desc": "Wine flights and live music under the trees. Food trucks on site.",
+      "desc": "Winery and distillery (South Hollow Spirits) at 11 Shore Road (Route 6A) in North Truro, with a tasting room in a restored 1830s farmhouse.",
+      "desc_source": "https://trurovineyardsofcapecod.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJ8RlHtHWg_IkRBxpMWI8Z82w",
       "photo": "data/eats-photos/truro-vineyards.jpg",
       "reviews": 640,
@@ -805,13 +814,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Tuesday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Wednesday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Thursday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Friday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Saturday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Sunday: 12:00\u2009\u2013\u20095:00\u202fPM"
+        "Monday: 11:00 AM – 5:00 PM",
+        "Tuesday: 11:00 AM – 5:00 PM",
+        "Wednesday: 11:00 AM – 5:00 PM",
+        "Thursday: 11:00 AM – 5:00 PM",
+        "Friday: 11:00 AM – 5:00 PM",
+        "Saturday: 11:00 AM – 5:00 PM",
+        "Sunday: 12:00 – 5:00 PM"
       ]
     },
     {
@@ -824,10 +833,11 @@
       "price": "$$$",
       "rating": 4.7,
       "tags": [
-        "fine",
         "seafood"
       ],
-      "desc": "A former blacksmith shop turned buzzy bistro. Famous fish tacos.",
+      "desc": "Truro bistro in a former blacksmith shop, serving seafood dishes.",
+      "desc_source": "https://www.blackfishtruro.com/about/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJU_F0ddhf-4kRUstz0hsHeCs",
       "photo": "data/eats-photos/blackfish.jpg",
       "reviews": 276,
@@ -902,11 +912,11 @@
       "hours_text": [
         "Monday: Closed",
         "Tuesday: Closed",
-        "Wednesday: 5:00\u2009\u2013\u200910:00\u202fPM",
-        "Thursday: 5:00\u2009\u2013\u200910:00\u202fPM",
-        "Friday: 5:00\u2009\u2013\u200910:00\u202fPM",
-        "Saturday: 5:00\u2009\u2013\u200910:00\u202fPM",
-        "Sunday: 5:00\u2009\u2013\u200910:00\u202fPM"
+        "Wednesday: 5:00 – 10:00 PM",
+        "Thursday: 5:00 – 10:00 PM",
+        "Friday: 5:00 – 10:00 PM",
+        "Saturday: 5:00 – 10:00 PM",
+        "Sunday: 5:00 – 10:00 PM"
       ]
     },
     {
@@ -922,7 +932,9 @@
         "italian",
         "casual"
       ],
-      "desc": "Family Italian-American with a raw bar. Reliable Route 6 classic.",
+      "desc": "Italian restaurant in North Truro, open since 1988, with house-made pasta, local seafood and New Haven-style pizza.",
+      "desc_source": "https://montanos.com/new-england-seafare-and-italian-cuisine/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJASNnJmKg_IkRhAUJwk7L1jU",
       "photo": "data/eats-photos/montanos.jpg",
       "reviews": 1023,
@@ -1019,13 +1031,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 4:30\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 4:30\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 4:30\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 4:30\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 4:30\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 4:30\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 4:30\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 4:30 – 9:00 PM",
+        "Tuesday: 4:30 – 9:00 PM",
+        "Wednesday: 4:30 – 9:00 PM",
+        "Thursday: 4:30 – 9:00 PM",
+        "Friday: 4:30 – 9:00 PM",
+        "Saturday: 4:30 – 9:00 PM",
+        "Sunday: 4:30 – 9:00 PM"
       ]
     },
     {
@@ -1038,17 +1050,18 @@
       "price": "$$",
       "rating": 4.5,
       "tags": [
-        "seafood",
-        "fine"
+        "seafood"
       ],
-      "desc": "Raw bar and sushi in a building topped by a boat. Oysters galore.",
+      "desc": "Mac's Seafood restaurant in Wellfleet with a raw bar and sushi. No reservations.",
+      "desc_source": "https://macsseafood.com/restaurant/macs-shack-wellfleet/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJz9aI9Ehn-4kR5tpTPtkA_6g",
       "photo": "data/eats-photos/macs-shack.jpg",
       "reviews": 1341,
       "website": "http://www.macsseafood.com/",
       "rating_source": "google",
       "enriched_at": "2026-11-02T20:08:18Z",
-      "deal": "Thursdays: All-You-Can-Eat Fish & Chips",
+      "deal": null,
       "business_status": "CLOSED_TEMPORARILY",
       "phone": "(508) 349-6333",
       "hours": [
@@ -1138,13 +1151,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u20099:30\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u20099:30\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 11:30 AM – 9:00 PM",
+        "Tuesday: 11:30 AM – 9:00 PM",
+        "Wednesday: 11:30 AM – 9:00 PM",
+        "Thursday: 11:30 AM – 9:00 PM",
+        "Friday: 11:30 AM – 9:30 PM",
+        "Saturday: 11:30 AM – 9:30 PM",
+        "Sunday: 11:30 AM – 9:00 PM"
       ]
     },
     {
@@ -1161,14 +1174,16 @@
         "clam",
         "lobster"
       ],
-      "desc": "Order at the counter, eat on the harbor as the fleet comes in.",
+      "desc": "Mac's clam shack and seafood market on Wellfleet Harbor, with counter service, picnic tables on the beach and an ice cream counter.",
+      "desc_source": "https://macsseafood.com/restaurant/macs-on-the-pier-wellfleet/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJ7xYExUZn-4kRjghulFODehE",
       "photo": "data/eats-photos/macs-seafood.jpg",
       "reviews": 981,
       "website": "http://www.macsseafood.com/",
       "rating_source": "google",
       "enriched_at": "2026-11-02T20:08:19Z",
-      "deal": "Thu: All-You-Can-Eat Fish & Chips \u00b7 Daily Happy Hour",
+      "deal": null,
       "business_status": "CLOSED_TEMPORARILY",
       "phone": "(508) 349-9611",
       "hours": [
@@ -1258,13 +1273,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00\u202fAM\u2009\u2013\u20094:00\u202fPM",
-        "Tuesday: 11:00\u202fAM\u2009\u2013\u20094:00\u202fPM",
-        "Wednesday: 11:00\u202fAM\u2009\u2013\u20094:00\u202fPM",
-        "Thursday: 11:00\u202fAM\u2009\u2013\u20094:00\u202fPM",
-        "Friday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-        "Saturday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-        "Sunday: 11:00\u202fAM\u2009\u2013\u20094:00\u202fPM"
+        "Monday: 11:00 AM – 4:00 PM",
+        "Tuesday: 11:00 AM – 4:00 PM",
+        "Wednesday: 11:00 AM – 4:00 PM",
+        "Thursday: 11:00 AM – 4:00 PM",
+        "Friday: 11:00 AM – 7:30 PM",
+        "Saturday: 11:00 AM – 7:30 PM",
+        "Sunday: 11:00 AM – 4:00 PM"
       ]
     },
     {
@@ -1280,7 +1295,7 @@
         "bakery",
         "breakfast"
       ],
-      "desc": "French-trained pastry. Croissants that ruin all other croissants.",
+      "desc": "French bakery and bistro in Wellfleet.",
       "place_id": "ChIJIUDvpsJm-4kR4v5PsqeD53c",
       "photo": "data/eats-photos/pb-boulangerie-bistro.jpg",
       "reviews": 1484,
@@ -1333,9 +1348,9 @@
         "Tuesday: Closed",
         "Wednesday: Closed",
         "Thursday: Closed",
-        "Friday: 5:00\u2009\u2013\u20098:00\u202fPM",
-        "Saturday: 5:00\u2009\u2013\u20098:00\u202fPM",
-        "Sunday: 5:00\u2009\u2013\u20098:00\u202fPM"
+        "Friday: 5:00 – 8:00 PM",
+        "Saturday: 5:00 – 8:00 PM",
+        "Sunday: 5:00 – 8:00 PM"
       ]
     },
     {
@@ -1351,14 +1366,16 @@
         "seafood",
         "casual"
       ],
-      "desc": "Locals' joint over Duck Creek \u2014 oysters they pull themselves.",
+      "desc": "Seafood restaurant at 50 Kendrick Avenue on Wellfleet Harbor, run by one family since 1964.",
+      "desc_source": "https://wellfleetoyster.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJ8WaihEZn-4kRmrPqBtMsAuw",
       "photo": "data/eats-photos/the-bookstore-restaurant.jpg",
       "reviews": 1327,
       "website": "http://www.wellfleetoyster.com/",
       "rating_source": "google",
       "enriched_at": "2026-11-02T20:08:21Z",
-      "deal": "Happy Hour & Small Plates daily",
+      "deal": null,
       "business_status": "CLOSED_TEMPORARILY",
       "phone": "(508) 349-3154",
       "hours": [
@@ -1424,13 +1441,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u20098:00\u202fPM",
+        "Monday: 11:30 AM – 8:00 PM",
         "Tuesday: Closed",
         "Wednesday: Closed",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u20095:00\u202fPM"
+        "Thursday: 11:30 AM – 8:00 PM",
+        "Friday: 11:30 AM – 8:00 PM",
+        "Saturday: 11:30 AM – 8:00 PM",
+        "Sunday: 11:30 AM – 5:00 PM"
       ]
     },
     {
@@ -1447,7 +1464,9 @@
         "seafood",
         "casual"
       ],
-      "desc": "Beach bar on the dunes at Cahoon Hollow. Live bands + raw bar.",
+      "desc": "Beach bar and seafood restaurant at Cahoon Hollow Beach in Wellfleet, with a raw bar and live bands and DJs.",
+      "desc_source": "https://thebeachcomber.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJsTPAsDBh-4kRTRNYmi0VutM",
       "photo": "data/eats-photos/the-beachcomber.jpg",
       "reviews": 1531,
@@ -1467,10 +1486,10 @@
       "cuisine": "American",
       "price": "$$",
       "rating": 4.6,
-      "tags": [
-        "fine"
-      ],
-      "desc": "Porch dining in a sea-captain's house downtown. Brunch + dinner.",
+      "tags": [],
+      "desc": "Restaurant at 316 Main Street in downtown Wellfleet with indoor, outdoor and upstairs seating. First come, first served; reservations only for groups of six or more.",
+      "desc_source": "https://www.winslowstavern.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJLRp6WEln-4kRE67FE3YNH5Q",
       "photo": "data/eats-photos/winslows-tavern.jpg",
       "reviews": 524,
@@ -1558,10 +1577,10 @@
         "Monday: Closed",
         "Tuesday: Closed",
         "Wednesday: Closed",
-        "Thursday: 5:00\u2009\u2013\u20098:30\u202fPM",
-        "Friday: 5:00\u2009\u2013\u20098:30\u202fPM",
-        "Saturday: 12:00\u2009\u2013\u20093:00\u202fPM, 5:00\u2009\u2013\u20098:30\u202fPM",
-        "Sunday: 12:00\u2009\u2013\u20093:00\u202fPM, 5:00\u2009\u2013\u20098:00\u202fPM"
+        "Thursday: 5:00 – 8:30 PM",
+        "Friday: 5:00 – 8:30 PM",
+        "Saturday: 12:00 – 3:00 PM, 5:00 – 8:30 PM",
+        "Sunday: 12:00 – 3:00 PM, 5:00 – 8:00 PM"
       ]
     },
     {
@@ -1578,7 +1597,9 @@
         "lobster",
         "clam"
       ],
-      "desc": "The standard for lobster rolls. Mini golf, ice cream, epic onion rings.",
+      "desc": "Lobster and clam bar at 3580 Route 6 in Eastham, with mini golf.",
+      "desc_source": "https://arnoldsrestaurant.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJF_rbJ5Ro-4kR42xAbKaKQf8",
       "photo": "data/eats-photos/arnolds-lobster-clam-bar.jpg",
       "reviews": 2174,
@@ -1651,13 +1672,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 4:00\u2009\u2013\u20098:00\u202fPM",
+        "Monday: 4:00 – 8:00 PM",
         "Tuesday: Closed",
         "Wednesday: Closed",
-        "Thursday: 4:00\u2009\u2013\u20098:00\u202fPM",
-        "Friday: 4:00\u2009\u2013\u20098:00\u202fPM",
-        "Saturday: 4:00\u2009\u2013\u20098:00\u202fPM",
-        "Sunday: 4:00\u2009\u2013\u20098:00\u202fPM"
+        "Thursday: 4:00 – 8:00 PM",
+        "Friday: 4:00 – 8:00 PM",
+        "Saturday: 4:00 – 8:00 PM",
+        "Sunday: 4:00 – 8:00 PM"
       ]
     },
     {
@@ -1675,7 +1696,9 @@
         "fried",
         "ice cream"
       ],
-      "desc": "Fried seafood, lobster rolls & soft-serve \u2014 the Wellfleet favorite's new Eastham spot (former Friendly Fisherman).",
+      "desc": "Eastham location of PJ's, at 4580 State Highway. The family-owned seafood restaurant dates to 1971; the original is in Wellfleet.",
+      "desc_source": "https://www.pjscapecod.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJP5POe0Vp-4kRImkfiiia3pg",
       "photo": "data/eats-photos/pjs-eastham.jpg",
       "reviews": 14,
@@ -1760,13 +1783,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u20098:00\u202fPM",
+        "Monday: 11:30 AM – 8:00 PM",
         "Tuesday: Closed",
-        "Wednesday: 4:00\u2009\u2013\u20098:00\u202fPM",
-        "Thursday: 4:00\u2009\u2013\u20098:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u20098:00\u202fPM"
+        "Wednesday: 4:00 – 8:00 PM",
+        "Thursday: 4:00 – 8:00 PM",
+        "Friday: 11:30 AM – 8:00 PM",
+        "Saturday: 11:30 AM – 8:00 PM",
+        "Sunday: 11:30 AM – 8:00 PM"
       ]
     },
     {
@@ -1783,7 +1806,9 @@
         "bakery",
         "coffee"
       ],
-      "desc": "A Cape Sunday tradition \u2014 hand-cut donuts and a buzzing counter.",
+      "desc": "Takeout bakery and coffee shop at 4295 US-6 in Eastham, with hand-cut donuts, muffins and pastries made each morning.",
+      "desc_source": "https://www.theholecapecod.com/eastham-bakery",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJU8uagpto-4kR9tJNdnHbz3Y",
       "photo": "data/eats-photos/hole-in-one-donuts.jpg",
       "reviews": 708,
@@ -1880,13 +1905,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 6:00\u202fAM\u2009\u2013\u20092:00\u202fPM",
-        "Tuesday: 6:00\u202fAM\u2009\u2013\u20092:00\u202fPM",
-        "Wednesday: 6:00\u202fAM\u2009\u2013\u20092:00\u202fPM",
-        "Thursday: 6:00\u202fAM\u2009\u2013\u20092:00\u202fPM",
-        "Friday: 6:00\u202fAM\u2009\u2013\u20092:00\u202fPM",
-        "Saturday: 6:00\u202fAM\u2009\u2013\u20092:00\u202fPM",
-        "Sunday: 6:00\u202fAM\u2009\u2013\u20092:00\u202fPM"
+        "Monday: 6:00 AM – 2:00 PM",
+        "Tuesday: 6:00 AM – 2:00 PM",
+        "Wednesday: 6:00 AM – 2:00 PM",
+        "Thursday: 6:00 AM – 2:00 PM",
+        "Friday: 6:00 AM – 2:00 PM",
+        "Saturday: 6:00 AM – 2:00 PM",
+        "Sunday: 6:00 AM – 2:00 PM"
       ]
     },
     {
@@ -1903,7 +1928,9 @@
         "breakfast",
         "casual"
       ],
-      "desc": "Diner breakfasts and pizza by the rail trail. Cyclists' refuel stop.",
+      "desc": "Family-owned tavern and pizzeria in North Eastham serving breakfast, pizza, seafood and burgers.",
+      "desc_source": "https://www.fairwaycapecod.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJyZ3QDpto-4kRcxu__Arx9X4",
       "photo": "data/eats-photos/fairway-restaurant-pizzeria.jpg",
       "reviews": 796,
@@ -1911,6 +1938,8 @@
       "rating_source": "google",
       "enriched_at": "2026-11-02T20:08:25Z",
       "deal": "Weekly breakfast & dinner specials",
+      "deal_source": "https://www.fairwaycapecod.com/weekly-specials",
+      "deal_checked": "2026-11-08",
       "business_status": "OPERATIONAL",
       "phone": "(508) 255-3893",
       "hours": [
@@ -2084,13 +2113,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 6:30\u202fAM\u2009\u2013\u200912:00\u202fPM, 4:00\u2009\u2013\u20098:00\u202fPM",
-        "Tuesday: 6:30\u202fAM\u2009\u2013\u200912:00\u202fPM, 4:00\u2009\u2013\u20098:00\u202fPM",
-        "Wednesday: 6:30\u202fAM\u2009\u2013\u200912:00\u202fPM, 4:00\u2009\u2013\u20098:00\u202fPM",
-        "Thursday: 6:30\u202fAM\u2009\u2013\u200912:00\u202fPM, 4:00\u2009\u2013\u20098:00\u202fPM",
-        "Friday: 6:30\u202fAM\u2009\u2013\u200912:00\u202fPM, 4:00\u2009\u2013\u20098:00\u202fPM",
-        "Saturday: 6:30\u202fAM\u2009\u2013\u200912:00\u202fPM, 4:00\u2009\u2013\u20098:00\u202fPM",
-        "Sunday: 6:30\u202fAM\u2009\u2013\u200912:00\u202fPM, 4:00\u2009\u2013\u20098:00\u202fPM"
+        "Monday: 6:30 AM – 12:00 PM, 4:00 – 8:00 PM",
+        "Tuesday: 6:30 AM – 12:00 PM, 4:00 – 8:00 PM",
+        "Wednesday: 6:30 AM – 12:00 PM, 4:00 – 8:00 PM",
+        "Thursday: 6:30 AM – 12:00 PM, 4:00 – 8:00 PM",
+        "Friday: 6:30 AM – 12:00 PM, 4:00 – 8:00 PM",
+        "Saturday: 6:30 AM – 12:00 PM, 4:00 – 8:00 PM",
+        "Sunday: 6:30 AM – 12:00 PM, 4:00 – 8:00 PM"
       ]
     },
     {
@@ -2106,7 +2135,9 @@
         "casual",
         "icecream"
       ],
-      "desc": "Modern clam-shack \u2014 smash burgers, lobster rolls, frappes.",
+      "desc": "Burgers, lobster and clam rolls, onion rings and shakes at 5 Route 6A in Orleans; there is also a Hyannis location.",
+      "desc_source": "https://theknackcapecod.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJlTr32Wtp-4kRCvibwRfSGS0",
       "photo": "data/eats-photos/the-knack.jpg",
       "reviews": 1581,
@@ -2203,13 +2234,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Tuesday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Wednesday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Thursday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Friday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Saturday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Sunday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM"
+        "Monday: 11:00 AM – 8:00 PM",
+        "Tuesday: 11:00 AM – 8:00 PM",
+        "Wednesday: 11:00 AM – 8:00 PM",
+        "Thursday: 11:00 AM – 8:00 PM",
+        "Friday: 11:00 AM – 8:00 PM",
+        "Saturday: 11:00 AM – 8:00 PM",
+        "Sunday: 11:00 AM – 8:00 PM"
       ]
     },
     {
@@ -2226,7 +2257,9 @@
         "breakfast",
         "icecream"
       ],
-      "desc": "Coffee, cinnamon buns, and house chocolates. Orleans' morning HQ.",
+      "desc": "Café and chocolate shop in Orleans from the makers of The Chocolate Sparrow (est. 1989), serving coffee drinks, desserts and its own hand-dipped chocolates.",
+      "desc_source": "https://hotchocolatesparrow.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJK9c7g3xp-4kRDsUKuAzChYk",
       "photo": "data/eats-photos/hot-chocolate-sparrow.jpg",
       "reviews": 1847,
@@ -2323,13 +2356,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 6:30\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Tuesday: 6:30\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Wednesday: 6:30\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Thursday: 6:30\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Friday: 6:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 6:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 6:30\u202fAM\u2009\u2013\u20098:00\u202fPM"
+        "Monday: 6:30 AM – 8:00 PM",
+        "Tuesday: 6:30 AM – 8:00 PM",
+        "Wednesday: 6:30 AM – 8:00 PM",
+        "Thursday: 6:30 AM – 8:00 PM",
+        "Friday: 6:30 AM – 9:00 PM",
+        "Saturday: 6:30 AM – 9:00 PM",
+        "Sunday: 6:30 AM – 8:00 PM"
       ]
     },
     {
@@ -2345,7 +2378,9 @@
         "bar",
         "casual"
       ],
-      "desc": "Quintessential Cape tavern since 1969 \u2014 chowder, burgers, ceiling signs.",
+      "desc": "Orleans pub on Route 6A, with local business signs hung from the ceiling.",
+      "desc_source": "https://land-ho.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJ36GSqHxp-4kR718dguVV9VA",
       "photo": "data/eats-photos/land-ho.jpg",
       "reviews": 1249,
@@ -2430,13 +2465,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
+        "Monday: 11:30 AM – 11:00 PM",
         "Tuesday: Closed",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM"
+        "Wednesday: 11:30 AM – 11:00 PM",
+        "Thursday: 11:30 AM – 11:00 PM",
+        "Friday: 11:30 AM – 11:00 PM",
+        "Saturday: 11:30 AM – 11:00 PM",
+        "Sunday: 11:30 AM – 11:00 PM"
       ]
     },
     {
@@ -2449,10 +2484,11 @@
       "price": "$$",
       "rating": 4.5,
       "tags": [
-        "fine",
         "seafood"
       ],
-      "desc": "Downtown bistro \u2014 wood-grilled fish and a lively bar scene.",
+      "desc": "Restaurant and bar at 28 Main Street in downtown Orleans, focused on local seafood and steaks, in a 19th-century building with tin ceilings and a mahogany bar.",
+      "desc_source": "https://mahoneysatlantic.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJjaBSXXtp-4kRuVTVS_9LV4o",
       "photo": "data/eats-photos/mahoneys-atlantic-bar-grill.jpg",
       "reviews": 473,
@@ -2537,12 +2573,12 @@
         }
       ],
       "hours_text": [
-        "Monday: 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Monday: 5:00 – 9:00 PM",
+        "Tuesday: 5:00 – 9:00 PM",
+        "Wednesday: 5:00 – 9:00 PM",
+        "Thursday: 5:00 – 9:00 PM",
+        "Friday: 5:00 – 9:00 PM",
+        "Saturday: 5:00 – 9:00 PM",
         "Sunday: Closed"
       ]
     },
@@ -2556,10 +2592,11 @@
       "price": "$$",
       "rating": 4.4,
       "tags": [
-        "seafood",
-        "fine"
+        "seafood"
       ],
-      "desc": "Tiny, beloved, no-reservations \u2014 some of the best seafood on the Cape.",
+      "desc": "Seafood bistro on Route 6A in Brewster, established in 1982, with a seasonal menu. No reservations; call-ahead seating.",
+      "desc_source": "https://www.brewsterfishhousecapecod.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJQTh4CspB-4kRBKxY6fqmNyA",
       "photo": "data/eats-photos/brewster-fish-house.jpg",
       "reviews": 505,
@@ -2634,11 +2671,11 @@
       "hours_text": [
         "Monday: Closed",
         "Tuesday: Closed",
-        "Wednesday: 12:00\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 12:00\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 12:00\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 12:00\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 12:00\u2009\u2013\u20099:00\u202fPM"
+        "Wednesday: 12:00 – 9:00 PM",
+        "Thursday: 12:00 – 9:00 PM",
+        "Friday: 12:00 – 9:00 PM",
+        "Saturday: 12:00 – 9:00 PM",
+        "Sunday: 12:00 – 9:00 PM"
       ]
     },
     {
@@ -2655,14 +2692,16 @@
         "clam",
         "icecream"
       ],
-      "desc": "Roadside classic on 6A. Fried clams and soft serve since 1948.",
+      "desc": "Clam shack at 3260 Main Street (Route 6A) in Brewster, in business since 1948, serving fried clams, fried seafood, burgers and ice cream, with beer and wine.",
+      "desc_source": "https://cobies.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJUWftWw1q-4kRO3im9FLixlQ",
       "photo": "data/eats-photos/cobies-clam-shack.jpg",
       "reviews": 950,
       "website": "https://cobies.com/",
       "rating_source": "google",
       "enriched_at": "2026-11-02T20:08:30Z",
-      "deal": "Daily specials on the board",
+      "deal": null,
       "business_status": "CLOSED_TEMPORARILY",
       "phone": "(508) 896-7021",
       "hours": [
@@ -2752,13 +2791,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-        "Tuesday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-        "Wednesday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-        "Thursday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-        "Friday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-        "Saturday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM",
-        "Sunday: 11:00\u202fAM\u2009\u2013\u20097:30\u202fPM"
+        "Monday: 11:00 AM – 7:30 PM",
+        "Tuesday: 11:00 AM – 7:30 PM",
+        "Wednesday: 11:00 AM – 7:30 PM",
+        "Thursday: 11:00 AM – 7:30 PM",
+        "Friday: 11:00 AM – 7:30 PM",
+        "Saturday: 11:00 AM – 7:30 PM",
+        "Sunday: 11:00 AM – 7:30 PM"
       ]
     },
     {
@@ -2775,14 +2814,16 @@
         "clam",
         "casual"
       ],
-      "desc": "Order-at-the-window family spot \u2014 fried seafood and lobster dinners.",
+      "desc": "Clam shack at 2689 Main Street (Route 6A) in Brewster serving fried clams, chowder, lobster rolls, onion rings and ice cream. Dine in or take out.",
+      "desc_source": "https://jt-seafood.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJ1bgKN9pB-4kR91k6aRxf7hw",
       "photo": "data/eats-photos/jts-seafood.jpg",
       "reviews": 941,
       "website": "http://www.jt-seafood.com/",
       "rating_source": "google",
       "enriched_at": "2026-11-02T20:08:30Z",
-      "deal": "Cash-discount pricing \u00b7 Kids specials",
+      "deal": null,
       "business_status": "CLOSED_TEMPORARILY",
       "phone": "(508) 896-3355",
       "hours": [
@@ -2872,13 +2913,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Tuesday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Wednesday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Thursday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Friday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Saturday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Sunday: 11:00\u202fAM\u2009\u2013\u20097:00\u202fPM"
+        "Monday: 11:00 AM – 8:00 PM",
+        "Tuesday: 11:00 AM – 8:00 PM",
+        "Wednesday: 11:00 AM – 8:00 PM",
+        "Thursday: 11:00 AM – 8:00 PM",
+        "Friday: 11:00 AM – 8:00 PM",
+        "Saturday: 11:00 AM – 8:00 PM",
+        "Sunday: 11:00 AM – 7:00 PM"
       ]
     },
     {
@@ -2890,10 +2931,10 @@
       "cuisine": "French",
       "price": "$$$",
       "rating": 4.4,
-      "tags": [
-        "fine"
-      ],
-      "desc": "Special-occasion French prix-fixe in a 1689 estate. The big splurge.",
+      "tags": [],
+      "desc": "French restaurant in Brewster with a separate bistro and bar (Chill's), in business since 1976.",
+      "desc_source": "https://www.chillingsworth.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJFQ355c5B-4kRWW8WepUu9Kc",
       "photo": "data/eats-photos/chillingsworth.jpg",
       "reviews": 174,
@@ -2945,9 +2986,9 @@
         "Monday: Closed",
         "Tuesday: Closed",
         "Wednesday: Closed",
-        "Thursday: 5:00\u2009\u2013\u20098:00\u202fPM",
-        "Friday: 5:00\u2009\u2013\u20098:00\u202fPM",
-        "Saturday: 5:00\u2009\u2013\u20098:00\u202fPM",
+        "Thursday: 5:00 – 8:00 PM",
+        "Friday: 5:00 – 8:00 PM",
+        "Saturday: 5:00 – 8:00 PM",
         "Sunday: Closed"
       ]
     },
@@ -2964,7 +3005,9 @@
         "coffee",
         "breakfast"
       ],
-      "desc": "Craft roaster with a sunlit cafe. Best pour-over on the Mid-Cape.",
+      "desc": "Brewster coffee house run by Snowy Owl Coffee Roasters, which also has a roastery in Sandwich and an espresso bar in Chatham.",
+      "desc_source": "https://socoffee.co/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJi4mIeNBB-4kRDjHIj-LlGfI",
       "photo": "data/eats-photos/snowy-owl-coffee-roasters.jpg",
       "reviews": 1007,
@@ -3061,13 +3104,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 6:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Tuesday: 6:30\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Wednesday: 6:30\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Thursday: 6:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Friday: 6:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Saturday: 6:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Sunday: 6:30\u202fAM\u2009\u2013\u200910:00\u202fPM"
+        "Monday: 6:30 AM – 10:00 PM",
+        "Tuesday: 6:30 AM – 5:00 PM",
+        "Wednesday: 6:30 AM – 5:00 PM",
+        "Thursday: 6:30 AM – 10:00 PM",
+        "Friday: 6:30 AM – 10:00 PM",
+        "Saturday: 6:30 AM – 10:00 PM",
+        "Sunday: 6:30 AM – 10:00 PM"
       ]
     },
     {
@@ -3080,10 +3123,11 @@
       "price": "$$$",
       "rating": 4.4,
       "tags": [
-        "fine",
         "seafood"
       ],
-      "desc": "Refined coastal dining in a sea-captain's house. Quietly excellent.",
+      "desc": "American restaurant in a 19th-century sea captain's house at 31 Sea Street in Harwich Port, with a menu built on local seafood. Chef-owner: Douglas Ramler.",
+      "desc_source": "https://www.capeseagrille.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJMz21fEA--4kR8UwqnQMPtHY",
       "photo": "data/eats-photos/cape-sea-grille.jpg",
       "reviews": 328,
@@ -3146,10 +3190,10 @@
       "hours_text": [
         "Monday: Closed",
         "Tuesday: Closed",
-        "Wednesday: 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 5:00\u2009\u2013\u20099:00\u202fPM",
+        "Wednesday: 5:00 – 9:00 PM",
+        "Thursday: 5:00 – 9:00 PM",
+        "Friday: 5:00 – 9:00 PM",
+        "Saturday: 5:00 – 9:00 PM",
         "Sunday: Closed"
       ]
     },
@@ -3166,7 +3210,9 @@
         "seafood",
         "bar"
       ],
-      "desc": "Harbor-view deck \u2014 sunset cocktails and twin lobsters.",
+      "desc": "Seafood restaurant on Route 28 in Harwich Port, overlooking Saquatucket Harbor next to the Nantucket ferry. No reservations.",
+      "desc_source": "https://www.braxrestaurant.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJrYMydbU_-4kRVU3vQ6IURfk",
       "photo": "data/eats-photos/brax-landing.jpg",
       "reviews": 2432,
@@ -3263,13 +3309,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u20099:30\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u20099:30\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u20099:30\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u20098:30\u202fPM"
+        "Monday: 11:30 AM – 9:00 PM",
+        "Tuesday: 11:30 AM – 9:00 PM",
+        "Wednesday: 11:30 AM – 9:00 PM",
+        "Thursday: 11:30 AM – 9:30 PM",
+        "Friday: 11:30 AM – 9:30 PM",
+        "Saturday: 11:30 AM – 9:30 PM",
+        "Sunday: 11:30 AM – 8:30 PM"
       ]
     },
     {
@@ -3282,10 +3328,11 @@
       "price": "$$",
       "rating": 4.6,
       "tags": [
-        "italian",
-        "fine"
+        "italian"
       ],
-      "desc": "Romantic, candle-lit Tuscan. Reservations a must in summer.",
+      "desc": "Tuscan-style Italian restaurant at 4 Depot Road in Harwich, open year-round. Reservations recommended.",
+      "desc_source": "https://www.bucastuscanroadhouse.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJ7aRrLngV-4kRE50oMq39X_M",
       "photo": "data/eats-photos/bucas-tuscan-roadhouse.jpg",
       "reviews": 600,
@@ -3382,13 +3429,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 4:30\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 4:30\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 4:30\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 4:30\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 4:30\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 4:30\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 4:30\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 4:30 – 9:00 PM",
+        "Tuesday: 4:30 – 9:00 PM",
+        "Wednesday: 4:30 – 9:00 PM",
+        "Thursday: 4:30 – 9:00 PM",
+        "Friday: 4:30 – 9:00 PM",
+        "Saturday: 4:30 – 9:00 PM",
+        "Sunday: 4:30 – 9:00 PM"
       ]
     },
     {
@@ -3401,10 +3448,11 @@
       "price": "$$$",
       "rating": 4.5,
       "tags": [
-        "seafood",
-        "fine"
+        "seafood"
       ],
-      "desc": "Tucked off Main Street \u2014 bouillabaisse and oysters in a buzzy room.",
+      "desc": "Seafood restaurant at 15 Chatham Bars Avenue in Chatham, serving lunch and dinner. Dinner reservations are taken by phone only.",
+      "desc_source": "https://www.theimpudentoyster.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJyRMiwJ8U-4kR1Q2QAT9XbbE",
       "photo": "data/eats-photos/the-impudent-oyster.jpg",
       "reviews": 837,
@@ -3585,13 +3633,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u20092:45\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u20092:45\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u20092:45\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u20092:45\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u20092:45\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u20092:45\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u20092:45\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 11:30 AM – 2:45 PM, 5:00 – 9:00 PM",
+        "Tuesday: 11:30 AM – 2:45 PM, 5:00 – 9:00 PM",
+        "Wednesday: 11:30 AM – 2:45 PM, 5:00 – 9:00 PM",
+        "Thursday: 11:30 AM – 2:45 PM, 5:00 – 9:00 PM",
+        "Friday: 11:30 AM – 2:45 PM, 5:00 – 9:00 PM",
+        "Saturday: 11:30 AM – 2:45 PM, 5:00 – 9:00 PM",
+        "Sunday: 11:30 AM – 2:45 PM, 5:00 – 9:00 PM"
       ]
     },
     {
@@ -3608,7 +3656,9 @@
         "lobster",
         "clam"
       ],
-      "desc": "Lobster rolls on the pier, watching seals and the fishing fleet.",
+      "desc": "Fish market and kitchen on the Chatham Fish Pier (45 Barcliff Avenue Extension) that buys from local fishermen; its Cook & Crack service steams and cracks lobsters.",
+      "desc_source": "https://www.chathampierfishmkt.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJESlJs1kT-4kRp-7l4_nJEpo",
       "photo": "data/eats-photos/chatham-pier-fish-market.jpg",
       "reviews": 2604,
@@ -3705,13 +3755,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 10:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
-        "Tuesday: 10:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
-        "Wednesday: 10:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
-        "Thursday: 10:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
-        "Friday: 10:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
-        "Saturday: 10:00\u202fAM\u2009\u2013\u20097:00\u202fPM",
-        "Sunday: 10:00\u202fAM\u2009\u2013\u20097:00\u202fPM"
+        "Monday: 10:00 AM – 7:00 PM",
+        "Tuesday: 10:00 AM – 7:00 PM",
+        "Wednesday: 10:00 AM – 7:00 PM",
+        "Thursday: 10:00 AM – 7:00 PM",
+        "Friday: 10:00 AM – 7:00 PM",
+        "Saturday: 10:00 AM – 7:00 PM",
+        "Sunday: 10:00 AM – 7:00 PM"
       ]
     },
     {
@@ -3728,7 +3778,9 @@
         "seafood",
         "casual"
       ],
-      "desc": "Townie tavern and raw bar. Loud, fun, and always packed.",
+      "desc": "Pub and restaurant at 487 Main Street in downtown Chatham, open year-round, with a calendar of live music and events.",
+      "desc_source": "https://www.thesquire.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJXQgSsJ8U-4kRwgW48kJcLUc",
       "photo": "data/eats-photos/the-chatham-squire.jpg",
       "reviews": 1934,
@@ -3825,13 +3877,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u20091:00\u202fAM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u20091:00\u202fAM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u20091:00\u202fAM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u20091:00\u202fAM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u20091:00\u202fAM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u20091:00\u202fAM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u20091:00\u202fAM"
+        "Monday: 11:30 AM – 1:00 AM",
+        "Tuesday: 11:30 AM – 1:00 AM",
+        "Wednesday: 11:30 AM – 1:00 AM",
+        "Thursday: 11:30 AM – 1:00 AM",
+        "Friday: 11:30 AM – 1:00 AM",
+        "Saturday: 11:30 AM – 1:00 AM",
+        "Sunday: 11:30 AM – 1:00 AM"
       ]
     },
     {
@@ -3843,10 +3895,10 @@
       "cuisine": "Mediterranean",
       "price": "$$",
       "rating": 4.7,
-      "tags": [
-        "fine"
-      ],
-      "desc": "Wood-fired Mediterranean with a sleek bar. Brunch is a scene.",
+      "tags": [],
+      "desc": "Bistro and bar at 907 Main Street in Chatham serving native seafood and wood-fired thin-crust pizza.",
+      "desc_source": "https://www.delmarbistro.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJgWiEAb0U-4kREzJF1SX5viU",
       "photo": "data/eats-photos/del-mar-bar-bistro.jpg",
       "reviews": 490,
@@ -3920,11 +3972,11 @@
       ],
       "hours_text": [
         "Monday: Closed",
-        "Tuesday: 5:00\u2009\u2013\u20098:30\u202fPM",
-        "Wednesday: 5:00\u2009\u2013\u20098:30\u202fPM",
-        "Thursday: 5:00\u2009\u2013\u20098:30\u202fPM",
-        "Friday: 5:00\u2009\u2013\u20098:45\u202fPM",
-        "Saturday: 5:00\u2009\u2013\u20098:45\u202fPM",
+        "Tuesday: 5:00 – 8:30 PM",
+        "Wednesday: 5:00 – 8:30 PM",
+        "Thursday: 5:00 – 8:30 PM",
+        "Friday: 5:00 – 8:45 PM",
+        "Saturday: 5:00 – 8:45 PM",
         "Sunday: Closed"
       ]
     },
@@ -3941,7 +3993,9 @@
         "breakfast",
         "brunch"
       ],
-      "desc": "Breakfast on the airfield \u2014 watch small planes over your hash.",
+      "desc": "Breakfast spot at Chatham Municipal Airport, 240 George Ryder Road.",
+      "desc_source": "https://hangarbchatham.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJITYtwcIU-4kRBV-9WAl6ohs",
       "photo": "data/eats-photos/hangar-b-eatery.jpg",
       "reviews": 571,
@@ -4027,17 +4081,17 @@
       ],
       "hours_text": [
         "Monday: Closed",
-        "Tuesday: 5:00\u2009\u2013\u20098:00\u202fPM",
-        "Wednesday: 8:00\u202fAM\u2009\u2013\u20091:00\u202fPM",
-        "Thursday: 8:00\u202fAM\u2009\u2013\u20091:00\u202fPM",
-        "Friday: 8:00\u202fAM\u2009\u2013\u20091:00\u202fPM",
-        "Saturday: 8:00\u202fAM\u2009\u2013\u20091:00\u202fPM",
-        "Sunday: 8:00\u202fAM\u2009\u2013\u20091:00\u202fPM"
+        "Tuesday: 5:00 – 8:00 PM",
+        "Wednesday: 8:00 AM – 1:00 PM",
+        "Thursday: 8:00 AM – 1:00 PM",
+        "Friday: 8:00 AM – 1:00 PM",
+        "Saturday: 8:00 AM – 1:00 PM",
+        "Sunday: 8:00 AM – 1:00 PM"
       ]
     },
     {
       "id": "sesuit-harbor-cafe",
-      "name": "Sesuit Harbor Caf\u00e9",
+      "name": "Sesuit Harbor Café",
       "town": "East Dennis",
       "lat": 41.7561,
       "lng": -70.1542,
@@ -4049,7 +4103,9 @@
         "lobster",
         "clam"
       ],
-      "desc": "BYOB sleeper hit \u2014 picnic tables right on the harbor. Cash only.",
+      "desc": "Family-owned clam shack at 357 Sesuit Neck Road in Dennis, with outdoor dining overlooking Northside Marina and Cape Cod Bay.",
+      "desc_source": "https://sesuit-harbor-cafe.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJXcNTwkhH-4kR2dPePD7qdbk",
       "photo": "data/eats-photos/sesuit-harbor-cafe.jpg",
       "reviews": 2688,
@@ -4146,13 +4202,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 7:00\u202fAM\u2009\u2013\u20092:30\u202fPM",
-        "Tuesday: 7:00\u202fAM\u2009\u2013\u20092:30\u202fPM",
-        "Wednesday: 7:00\u202fAM\u2009\u2013\u20092:30\u202fPM",
-        "Thursday: 7:00\u202fAM\u2009\u2013\u20092:30\u202fPM",
-        "Friday: 7:00\u202fAM\u2009\u2013\u20092:30\u202fPM",
-        "Saturday: 7:00\u202fAM\u2009\u2013\u20092:30\u202fPM",
-        "Sunday: 7:00\u202fAM\u2009\u2013\u20092:30\u202fPM"
+        "Monday: 7:00 AM – 2:30 PM",
+        "Tuesday: 7:00 AM – 2:30 PM",
+        "Wednesday: 7:00 AM – 2:30 PM",
+        "Thursday: 7:00 AM – 2:30 PM",
+        "Friday: 7:00 AM – 2:30 PM",
+        "Saturday: 7:00 AM – 2:30 PM",
+        "Sunday: 7:00 AM – 2:30 PM"
       ]
     },
     {
@@ -4165,11 +4221,11 @@
       "price": "$$",
       "rating": 4.3,
       "tags": [
-        "seafood",
-        "breakfast",
-        "brunch"
+        "seafood"
       ],
-      "desc": "Water-view booths \u2014 Sunday brunch and big seafood plates.",
+      "desc": "Restaurant at 28 Bridge Street in East Dennis, overlooking the Sesuit Creek marsh; serves seafood, meats and salads.",
+      "desc_source": "https://themarshside.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJRUdBwFtH-4kR3DPpwanHNVI",
       "photo": "data/eats-photos/marshside.jpg",
       "reviews": 1255,
@@ -4244,11 +4300,11 @@
       "hours_text": [
         "Monday: Closed",
         "Tuesday: Closed",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u20098:30\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u20098:30\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u20098:00\u202fPM"
+        "Wednesday: 11:30 AM – 8:00 PM",
+        "Thursday: 11:30 AM – 8:00 PM",
+        "Friday: 11:30 AM – 8:30 PM",
+        "Saturday: 11:30 AM – 8:30 PM",
+        "Sunday: 11:30 AM – 8:00 PM"
       ]
     },
     {
@@ -4263,7 +4319,9 @@
       "tags": [
         "icecream"
       ],
-      "desc": "Homemade ice cream in an old schoolhouse. Don't skip the frozen pudding.",
+      "desc": "Ice cream parlor, open since 1976, that makes its ice cream in small batches; the shop is in a renovated barn.",
+      "desc_source": "https://sundaeschool.com/about-us/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJp_W0-aM--4kR9A0AW7GJWjM",
       "photo": "data/eats-photos/sundae-school.jpg",
       "reviews": 1325,
@@ -4293,7 +4351,7 @@
         "Wednesday: Closed",
         "Thursday: Closed",
         "Friday: Closed",
-        "Saturday: 3:30\u2009\u2013\u20098:30\u202fPM",
+        "Saturday: 3:30 – 8:30 PM",
         "Sunday: Closed"
       ]
     },
@@ -4311,7 +4369,9 @@
         "clam",
         "icecream"
       ],
-      "desc": "Fried-clam shack with soft serve. A 6A summer rite of passage.",
+      "desc": "Clam shack at 219 Main Street (Route 6A) in Dennis serving fish and chips, native fried clams, lobster rolls and soft serve.",
+      "desc_source": "https://www.captainfrosty.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJnd9admA4-4kRjHekQDYEgGA",
       "photo": "data/eats-photos/captain-frostys.jpg",
       "reviews": 981,
@@ -4396,14 +4456,16 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u20098:00\u202fPM",
+        "Monday: 11:30 AM – 8:00 PM",
         "Tuesday: Closed",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u20098:00\u202fPM"
-      ]
+        "Wednesday: 11:30 AM – 8:00 PM",
+        "Thursday: 11:30 AM – 8:00 PM",
+        "Friday: 11:30 AM – 8:00 PM",
+        "Saturday: 11:30 AM – 8:00 PM",
+        "Sunday: 11:30 AM – 8:00 PM"
+      ],
+      "website_hidden": true,
+      "website_hidden_reason": "site showed injected spam text when checked 2026-11-08"
     },
     {
       "id": "scargo-cafe",
@@ -4414,10 +4476,10 @@
       "cuisine": "American",
       "price": "$$",
       "rating": 4.7,
-      "tags": [
-        "fine"
-      ],
-      "desc": "Pre-theater dining across from the Cape Playhouse. Warm and reliable.",
+      "tags": [],
+      "desc": "Restaurant at 799 Main Street (Route 6A) in Dennis, open since 1987, serving lunch and dinner.",
+      "desc_source": "https://www.scargocafe.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJmRGrxIA4-4kRpTy_Ms-Jc0c",
       "photo": "data/eats-photos/scargo-cafe.jpg",
       "reviews": 1414,
@@ -4514,13 +4576,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 11:00 AM – 9:00 PM",
+        "Tuesday: 11:00 AM – 9:00 PM",
+        "Wednesday: 11:00 AM – 9:00 PM",
+        "Thursday: 11:00 AM – 9:00 PM",
+        "Friday: 11:00 AM – 9:00 PM",
+        "Saturday: 11:00 AM – 9:00 PM",
+        "Sunday: 11:00 AM – 9:00 PM"
       ]
     },
     {
@@ -4537,7 +4599,9 @@
         "clam",
         "icecream"
       ],
-      "desc": "Since 1953 \u2014 whole-belly clams and onion rings by the bucket.",
+      "desc": "Seafood restaurant at 961 Main Street in West Dennis serving fried clams, shrimp, lobster rolls and seafood platters.",
+      "desc_source": "https://www.kreamnkone.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJXQSoj1I5-4kRtvuo6aNpePw",
       "photo": "data/eats-photos/kream-n-kone.jpg",
       "reviews": 2188,
@@ -4634,13 +4698,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 11:00 AM – 9:00 PM",
+        "Tuesday: 11:00 AM – 9:00 PM",
+        "Wednesday: 11:00 AM – 9:00 PM",
+        "Thursday: 11:00 AM – 9:00 PM",
+        "Friday: 11:00 AM – 9:00 PM",
+        "Saturday: 11:00 AM – 9:00 PM",
+        "Sunday: 11:00 AM – 9:00 PM"
       ]
     },
     {
@@ -4657,14 +4721,18 @@
         "bar",
         "casual"
       ],
-      "desc": "Award-winning clam chowder. Marsh-view pub the locals swear by.",
+      "desc": "Pub at 668 Route 28 in West Yarmouth serving New England fare and clam chowder since 1981. No reservations.",
+      "desc_source": "https://www.captainparkers.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJSYT6QGw6-4kRwrG7_q_Irko",
       "photo": "data/eats-photos/captain-parkers-pub.jpg",
       "reviews": 3897,
       "website": "https://www.captainparkers.com/",
       "rating_source": "google",
       "enriched_at": "2026-11-02T20:08:43Z",
-      "deal": "Specials Fri/Sat after 4pm + all day Sun",
+      "deal": "Prime rib dinner Fri & Sat after 4 pm and all day Sun, while supplies last",
+      "deal_source": "https://www.captainparkers.com/promotions/",
+      "deal_checked": "2026-11-08",
       "business_status": "OPERATIONAL",
       "phone": "(508) 771-4266",
       "hours": [
@@ -4754,13 +4822,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 11:30 AM – 9:00 PM",
+        "Tuesday: 11:30 AM – 9:00 PM",
+        "Wednesday: 11:30 AM – 9:00 PM",
+        "Thursday: 11:30 AM – 9:00 PM",
+        "Friday: 11:30 AM – 9:00 PM",
+        "Saturday: 11:30 AM – 9:00 PM",
+        "Sunday: 11:30 AM – 9:00 PM"
       ]
     },
     {
@@ -4776,7 +4844,7 @@
         "breakfast",
         "brunch"
       ],
-      "desc": "Gingerbread Victorian \u2014 English tea, scones, and full breakfast.",
+      "desc": "British tearoom in Yarmouth Port.",
       "place_id": "ChIJm-ji0LY3-4kRgqfBrplm8uQ",
       "photo": "data/eats-photos/the-optimist-cafe.jpg",
       "reviews": 358,
@@ -4873,13 +4941,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 7:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Tuesday: 7:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Wednesday: 7:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Thursday: 7:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Friday: 7:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Saturday: 7:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Sunday: 7:00\u202fAM\u2009\u2013\u20095:00\u202fPM"
+        "Monday: 7:00 AM – 5:00 PM",
+        "Tuesday: 7:00 AM – 5:00 PM",
+        "Wednesday: 7:00 AM – 5:00 PM",
+        "Thursday: 7:00 AM – 5:00 PM",
+        "Friday: 7:00 AM – 5:00 PM",
+        "Saturday: 7:00 AM – 5:00 PM",
+        "Sunday: 7:00 AM – 5:00 PM"
       ]
     },
     {
@@ -4891,10 +4959,10 @@
       "cuisine": "Japanese / Sushi",
       "price": "$$",
       "rating": 4.6,
-      "tags": [
-        "fine"
-      ],
-      "desc": "Hidden-gem sushi behind a garden gate. Freshest fish on the Cape.",
+      "tags": [],
+      "desc": "Japanese and sushi restaurant at 157 Route 6A in Yarmouth Port.",
+      "desc_source": "https://www.inaho-sushi.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJDTUWB2U3-4kRi6wMdBwJq7E",
       "photo": "data/eats-photos/inaho.jpg",
       "reviews": 397,
@@ -4968,11 +5036,11 @@
       ],
       "hours_text": [
         "Monday: Closed",
-        "Tuesday: 4:30\u2009\u2013\u20099:30\u202fPM",
-        "Wednesday: 4:30\u2009\u2013\u20099:30\u202fPM",
-        "Thursday: 4:30\u2009\u2013\u20099:30\u202fPM",
-        "Friday: 4:30\u2009\u2013\u200910:00\u202fPM",
-        "Saturday: 4:30\u2009\u2013\u200910:00\u202fPM",
+        "Tuesday: 4:30 – 9:30 PM",
+        "Wednesday: 4:30 – 9:30 PM",
+        "Thursday: 4:30 – 9:30 PM",
+        "Friday: 4:30 – 10:00 PM",
+        "Saturday: 4:30 – 10:00 PM",
         "Sunday: Closed"
       ]
     },
@@ -4990,7 +5058,7 @@
         "clam",
         "breakfast"
       ],
-      "desc": "Sea-view deck over Nantucket Sound. Chowder and big breakfasts.",
+      "desc": "Seafood restaurant in South Yarmouth.",
       "place_id": "ChIJL0XVN0M6-4kR7Bu3nfVP5tA",
       "photo": "data/eats-photos/skipper-chowder-house.jpg",
       "reviews": 4118,
@@ -5087,13 +5155,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Tuesday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Wednesday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Thursday: 11:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Friday: 11:00\u202fAM\u2009\u2013\u200911:00\u202fPM",
-        "Saturday: 11:00\u202fAM\u2009\u2013\u200911:00\u202fPM",
-        "Sunday: 11:00\u202fAM\u2009\u2013\u200911:00\u202fPM"
+        "Monday: 11:00 AM – 10:00 PM",
+        "Tuesday: 11:00 AM – 10:00 PM",
+        "Wednesday: 11:00 AM – 10:00 PM",
+        "Thursday: 11:00 AM – 10:00 PM",
+        "Friday: 11:00 AM – 11:00 PM",
+        "Saturday: 11:00 AM – 11:00 PM",
+        "Sunday: 11:00 AM – 11:00 PM"
       ]
     },
     {
@@ -5108,7 +5176,9 @@
       "tags": [
         "icecream"
       ],
-      "desc": "Since 1934 \u2014 the Cape's most legendary scoop. Get the peanut butter cup.",
+      "desc": "Ice cream shop at 360 South Main Street in Centerville that has made its own ice cream since 1934.",
+      "desc_source": "https://www.fourseasicecream.com/history",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJH7OPbCUy-4kR4xtlrE38Ps0",
       "photo": "data/eats-photos/four-seas-ice-cream.jpg",
       "reviews": 857,
@@ -5150,8 +5220,8 @@
         "Wednesday: Closed",
         "Thursday: Closed",
         "Friday: Closed",
-        "Saturday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM",
-        "Sunday: 11:00\u202fAM\u2009\u2013\u20095:00\u202fPM"
+        "Saturday: 11:00 AM – 5:00 PM",
+        "Sunday: 11:00 AM – 5:00 PM"
       ]
     },
     {
@@ -5165,10 +5235,11 @@
       "rating": 4.4,
       "tags": [
         "bakery",
-        "breakfast",
-        "fine"
+        "breakfast"
       ],
-      "desc": "Artisan bakery by day, candle-lit bistro by night. Worth the detour.",
+      "desc": "Bakery, café and restaurant at 15 Hinckley Road in Hyannis. The bakery opened on Cape Cod in 1992.",
+      "desc_source": "https://www.paindavignon.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJYV6ymyAx-4kRosnJ85uliGg",
       "photo": "data/eats-photos/pain-davignon.jpg",
       "reviews": 1381,
@@ -5313,13 +5384,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 8:00\u202fAM\u2009\u2013\u20093:00\u202fPM",
-        "Tuesday: 8:00\u202fAM\u2009\u2013\u20093:00\u202fPM",
-        "Wednesday: 8:00\u202fAM\u2009\u2013\u20093:00\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 8:00\u202fAM\u2009\u2013\u20093:00\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 8:00\u202fAM\u2009\u2013\u20093:00\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 10:00\u202fAM\u2009\u2013\u20093:00\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 10:00\u202fAM\u2009\u2013\u20093:00\u202fPM"
+        "Monday: 8:00 AM – 3:00 PM",
+        "Tuesday: 8:00 AM – 3:00 PM",
+        "Wednesday: 8:00 AM – 3:00 PM, 5:00 – 9:00 PM",
+        "Thursday: 8:00 AM – 3:00 PM, 5:00 – 9:00 PM",
+        "Friday: 8:00 AM – 3:00 PM, 5:00 – 9:00 PM",
+        "Saturday: 10:00 AM – 3:00 PM, 5:00 – 9:00 PM",
+        "Sunday: 10:00 AM – 3:00 PM"
       ]
     },
     {
@@ -5336,7 +5407,9 @@
         "bar",
         "clam"
       ],
-      "desc": "Fried clams on a dock deck as the boats slide by. Summer-only.",
+      "desc": "Seasonal seafood restaurant over Hyannis Harbor, steps from the Steamship Authority ferry terminal. Its website says the 2026 season ended on Oct. 12.",
+      "desc_source": "https://www.baxterscapecod.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJ101rYPow-4kR0jA52E9LmgU",
       "photo": "data/eats-photos/baxters-boathouse.jpg",
       "reviews": 1400,
@@ -5400,10 +5473,10 @@
         "Monday: Closed",
         "Tuesday: Closed",
         "Wednesday: Closed",
-        "Thursday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 11:00\u202fAM\u2009\u2013\u20098:30\u202fPM"
+        "Thursday: 11:00 AM – 9:00 PM",
+        "Friday: 11:00 AM – 9:00 PM",
+        "Saturday: 11:00 AM – 9:00 PM",
+        "Sunday: 11:00 AM – 8:30 PM"
       ]
     },
     {
@@ -5419,7 +5492,9 @@
         "seafood",
         "bar"
       ],
-      "desc": "Marina sunset spot \u2014 frozen drinks and lobster over the harbor.",
+      "desc": "Seafood restaurant at 11 Arlington Street in West Yarmouth, overlooking Hyannis Harbor, with decks and the Wheelhouse Bar.",
+      "desc_source": "https://www.tugboatscapecod.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJpa7OFG_X5IkRBqKlYp5W_to",
       "photo": "data/eats-photos/tugboats.jpg",
       "reviews": 1470,
@@ -5483,10 +5558,10 @@
         "Monday: Closed",
         "Tuesday: Closed",
         "Wednesday: Closed",
-        "Thursday: 4:00\u2009\u2013\u200911:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u200911:30\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u200911:30\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM"
+        "Thursday: 4:00 – 11:00 PM",
+        "Friday: 11:30 AM – 11:30 PM",
+        "Saturday: 11:30 AM – 11:30 PM",
+        "Sunday: 11:30 AM – 11:00 PM"
       ]
     },
     {
@@ -5502,7 +5577,9 @@
         "seafood",
         "bar"
       ],
-      "desc": "Across from the ferries \u2014 chowder, raw bar, easy harbor views.",
+      "desc": "Waterfront restaurant at 165 Ocean Street on Hyannis Harbor serving seafood, burgers and prime beef; lunch, dinner and Sunday brunch.",
+      "desc_source": "https://www.blackcattavern.com/black-cat-tavern/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJZbVzxPsw-4kR7HGC42e1Xbo",
       "photo": "data/eats-photos/the-black-cat-tavern.jpg",
       "reviews": 2727,
@@ -5599,13 +5676,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u20099:30\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u20099:30\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 11:30 AM – 9:00 PM",
+        "Tuesday: 11:30 AM – 9:00 PM",
+        "Wednesday: 11:30 AM – 9:00 PM",
+        "Thursday: 11:30 AM – 9:00 PM",
+        "Friday: 11:30 AM – 9:30 PM",
+        "Saturday: 11:30 AM – 9:30 PM",
+        "Sunday: 11:30 AM – 9:00 PM"
       ]
     },
     {
@@ -5617,10 +5694,10 @@
       "cuisine": "American",
       "price": "$$$",
       "rating": 4.5,
-      "tags": [
-        "fine"
-      ],
-      "desc": "Sleek village bistro \u2014 small plates and a buzzy bar crowd.",
+      "tags": [],
+      "desc": "New American bistro and bar at 825 Main Street in Osterville, established in 2002.",
+      "desc_source": "https://www.fivebaysbistro.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJ80_axYAy-4kR5ZFGO8OjN-Y",
       "photo": "data/eats-photos/five-bays-bistro.jpg",
       "reviews": 166,
@@ -5717,13 +5794,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 4:30\u2009\u2013\u20099:30\u202fPM",
-        "Tuesday: 4:30\u2009\u2013\u20099:30\u202fPM",
-        "Wednesday: 4:30\u2009\u2013\u20099:30\u202fPM",
-        "Thursday: 4:30\u2009\u2013\u20099:30\u202fPM",
-        "Friday: 4:00\u2009\u2013\u200910:00\u202fPM",
-        "Saturday: 4:30\u2009\u2013\u200910:00\u202fPM",
-        "Sunday: 4:30\u2009\u2013\u20099:30\u202fPM"
+        "Monday: 4:30 – 9:30 PM",
+        "Tuesday: 4:30 – 9:30 PM",
+        "Wednesday: 4:30 – 9:30 PM",
+        "Thursday: 4:30 – 9:30 PM",
+        "Friday: 4:00 – 10:00 PM",
+        "Saturday: 4:30 – 10:00 PM",
+        "Sunday: 4:30 – 9:30 PM"
       ]
     },
     {
@@ -5736,10 +5813,11 @@
       "price": "$$",
       "rating": 4.3,
       "tags": [
-        "seafood",
-        "fine"
+        "seafood"
       ],
-      "desc": "Harborside dining with live piano. Sunset over Barnstable Harbor.",
+      "desc": "Seafood restaurant at 273 Millway on Barnstable Harbor, open mid-May to mid-October. No reservations.",
+      "desc_source": "https://www.mattakeese.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJJbLuNuY2-4kRSYcxTtRdQfA",
       "photo": "data/eats-photos/mattakeese-wharf.jpg",
       "reviews": 995,
@@ -5836,13 +5914,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 11:30 AM – 9:00 PM",
+        "Tuesday: 11:30 AM – 9:00 PM",
+        "Wednesday: 11:30 AM – 9:00 PM",
+        "Thursday: 11:30 AM – 9:00 PM",
+        "Friday: 11:30 AM – 9:00 PM",
+        "Saturday: 11:30 AM – 9:00 PM",
+        "Sunday: 11:30 AM – 9:00 PM"
       ]
     },
     {
@@ -5855,10 +5933,11 @@
       "price": "$$",
       "rating": 4.1,
       "tags": [
-        "casual",
         "bar"
       ],
-      "desc": "Village tavern in historic 6A \u2014 burgers, comfort food, and a patio.",
+      "desc": "Tuscan restaurant at 3176 Main Street in Barnstable Village; its website now uses the name Barnstable Tuscan Cuisine.",
+      "desc_source": "https://barnstabletuscancuisine.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJmyyNDWs3-4kR55XrBovJ_F0",
       "photo": "data/eats-photos/barnstable-restaurant-tavern.jpg",
       "reviews": 275,
@@ -5932,11 +6011,11 @@
       ],
       "hours_text": [
         "Monday: Closed",
-        "Tuesday: 4:00\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 4:00\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 4:00\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 4:00\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 4:00\u2009\u2013\u20099:00\u202fPM",
+        "Tuesday: 4:00 – 9:00 PM",
+        "Wednesday: 4:00 – 9:00 PM",
+        "Thursday: 4:00 – 9:00 PM",
+        "Friday: 4:00 – 9:00 PM",
+        "Saturday: 4:00 – 9:00 PM",
         "Sunday: Closed"
       ]
     },
@@ -5949,10 +6028,10 @@
       "cuisine": "French",
       "price": "$$",
       "rating": 4.6,
-      "tags": [
-        "fine"
-      ],
-      "desc": "Mashpee Commons brasserie \u2014 escargot, steak frites, lively bar.",
+      "tags": [],
+      "desc": "French bistro at 10 Market Street in Mashpee Commons, run by chef-owner Frederic Feufeu.",
+      "desc_source": "https://www.bleurestaurant.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJ2-jM1kTS5IkRZw3Nmpqs8Vs",
       "photo": "data/eats-photos/bleu.jpg",
       "reviews": 726,
@@ -6133,13 +6212,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u20093:30\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u20093:30\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u20093:30\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u20093:30\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u20093:30\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u20093:30\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u20093:00\u202fPM, 5:00\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 11:30 AM – 3:30 PM, 5:00 – 9:00 PM",
+        "Tuesday: 11:30 AM – 3:30 PM, 5:00 – 9:00 PM",
+        "Wednesday: 11:30 AM – 3:30 PM, 5:00 – 9:00 PM",
+        "Thursday: 11:30 AM – 3:30 PM, 5:00 – 9:00 PM",
+        "Friday: 11:30 AM – 3:30 PM, 5:00 – 9:00 PM",
+        "Saturday: 11:30 AM – 3:30 PM, 5:00 – 9:00 PM",
+        "Sunday: 11:30 AM – 3:00 PM, 5:00 – 9:00 PM"
       ]
     },
     {
@@ -6152,10 +6231,11 @@
       "price": "$$",
       "rating": 4.2,
       "tags": [
-        "italian",
-        "fine"
+        "italian"
       ],
-      "desc": "Tuscan trattoria at the Commons \u2014 handmade pasta, wood-grilled.",
+      "desc": "Italian restaurant at 17 Steeple Street in Mashpee Commons.",
+      "desc_source": "https://www.siena.us/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJpWAM00TS5IkRNvSMgOXjQ6M",
       "photo": "data/eats-photos/siena.jpg",
       "reviews": 537,
@@ -6252,13 +6332,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 12:00\u2009\u2013\u20098:00\u202fPM",
-        "Tuesday: 12:00\u2009\u2013\u20098:00\u202fPM",
-        "Wednesday: 12:00\u2009\u2013\u20098:00\u202fPM",
-        "Thursday: 12:00\u2009\u2013\u20098:00\u202fPM",
-        "Friday: 12:00\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 12:00\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 12:00\u2009\u2013\u20098:00\u202fPM"
+        "Monday: 12:00 – 8:00 PM",
+        "Tuesday: 12:00 – 8:00 PM",
+        "Wednesday: 12:00 – 8:00 PM",
+        "Thursday: 12:00 – 8:00 PM",
+        "Friday: 12:00 – 9:00 PM",
+        "Saturday: 12:00 – 9:00 PM",
+        "Sunday: 12:00 – 8:00 PM"
       ]
     },
     {
@@ -6271,10 +6351,11 @@
       "price": "$$",
       "rating": 4.3,
       "tags": [
-        "fine",
         "bar"
       ],
-      "desc": "Mediterranean small plates and a generous wine-by-the-glass list.",
+      "desc": "Café and wine bar in Mashpee serving Mediterranean-style food, with wines by the glass.",
+      "desc_source": "https://www.trevicafe.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJHWiTzUTS5IkR-Eejy9GpdeI",
       "photo": "data/eats-photos/trevi-cafe-wine-bar.jpg",
       "reviews": 261,
@@ -6360,12 +6441,12 @@
       ],
       "hours_text": [
         "Monday: Closed",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u20098:00\u202fPM"
+        "Tuesday: 11:30 AM – 8:00 PM",
+        "Wednesday: 11:30 AM – 8:00 PM",
+        "Thursday: 11:30 AM – 8:00 PM",
+        "Friday: 11:30 AM – 9:00 PM",
+        "Saturday: 11:30 AM – 9:00 PM",
+        "Sunday: 11:30 AM – 8:00 PM"
       ]
     },
     {
@@ -6380,7 +6461,9 @@
       "tags": [
         "icecream"
       ],
-      "desc": "Cave-themed parlor with wild flavors. A kid (and adult) favorite.",
+      "desc": "Ice cream parlour at 22 Falmouth Road in Mashpee; the menu includes sundaes, cakes and pies.",
+      "desc_source": "https://www.polarcave.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJ7dM4-Z7S5IkRgbMe8eRzneQ",
       "photo": "data/eats-photos/polar-cave-ice-cream.jpg",
       "reviews": 615,
@@ -6444,10 +6527,10 @@
         "Monday: Closed",
         "Tuesday: Closed",
         "Wednesday: Closed",
-        "Thursday: 4:01\u2009\u2013\u20098:32\u202fPM",
-        "Friday: 4:02\u2009\u2013\u20099:03\u202fPM",
-        "Saturday: 2:02\u2009\u2013\u20099:32\u202fPM",
-        "Sunday: 2:03\u2009\u2013\u20098:31\u202fPM"
+        "Thursday: 4:01 – 8:32 PM",
+        "Friday: 4:02 – 9:03 PM",
+        "Saturday: 2:02 – 9:32 PM",
+        "Sunday: 2:03 – 8:31 PM"
       ]
     },
     {
@@ -6459,17 +6542,19 @@
       "cuisine": "Fine Dining",
       "price": "$$",
       "rating": 4.6,
-      "tags": [
-        "fine"
-      ],
-      "desc": "Dinner in a converted church \u2014 stained glass and refined plates.",
+      "tags": [],
+      "desc": "Bistro at the Belfry Inn in Sandwich Village, in former church buildings.",
+      "desc_source": "https://www.belfryinn.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJ6-j7NbPL5IkRoMtS3rDq8o4",
       "photo": "data/eats-photos/the-belfry-inn-bistro.jpg",
       "reviews": 301,
       "website": "https://www.belfryinn.com/?utm_source=google&utm_medium+GBP",
       "rating_source": "google",
       "enriched_at": "2026-11-02T20:08:55Z",
-      "deal": "Prix-Fixe Menu available",
+      "deal": "Three-course prix-fixe dinner, $65 (Wed-Sun from 4:30 pm)",
+      "deal_source": "https://www.belfryinn.com/bistro-menus/prix-fixe-menu",
+      "deal_checked": "2026-11-08",
       "business_status": "OPERATIONAL",
       "phone": "(508) 888-8550"
     },
@@ -6487,7 +6572,9 @@
         "clam",
         "casual"
       ],
-      "desc": "Family fried-seafood institution by the canal. Order at the counter.",
+      "desc": "Seafood Sam's location at 6 Coast Guard Road in Sandwich; the other is in Falmouth.",
+      "desc_source": "https://www.seafoodsams.com/locations",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJdSsM4UbK5IkRFmoQie9jh2Y",
       "photo": "data/eats-photos/seafood-sams.jpg",
       "reviews": 2390,
@@ -6584,13 +6671,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Tuesday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Wednesday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Thursday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Friday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Saturday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Sunday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM"
+        "Monday: 11:00 AM – 8:00 PM",
+        "Tuesday: 11:00 AM – 8:00 PM",
+        "Wednesday: 11:00 AM – 8:00 PM",
+        "Thursday: 11:00 AM – 8:00 PM",
+        "Friday: 11:00 AM – 8:00 PM",
+        "Saturday: 11:00 AM – 8:00 PM",
+        "Sunday: 11:00 AM – 8:00 PM"
       ]
     },
     {
@@ -6606,7 +6693,9 @@
         "breakfast",
         "coffee"
       ],
-      "desc": "Proper English tea and savory pies in a 1740s carriage house.",
+      "desc": "Tea room and wine bar at 1 Water Street in Sandwich.",
+      "desc_source": "https://www.thedunbarhouse.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJoSmV4rTL5IkREmNIFKY8wCg",
       "photo": "data/eats-photos/the-dunbar-tea-room.jpg",
       "reviews": 618,
@@ -6614,6 +6703,8 @@
       "rating_source": "google",
       "enriched_at": "2026-11-02T20:08:56Z",
       "deal": "Sunday brunch specials",
+      "deal_source": "https://www.thedunbarhouse.com/",
+      "deal_checked": "2026-11-08",
       "business_status": "OPERATIONAL",
       "phone": "(508) 833-2485",
       "hours": [
@@ -6679,13 +6770,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00\u202fAM\u2009\u2013\u20094:00\u202fPM",
+        "Monday: 11:00 AM – 4:00 PM",
         "Tuesday: Closed",
         "Wednesday: Closed",
-        "Thursday: 11:00\u202fAM\u2009\u2013\u20094:00\u202fPM",
-        "Friday: 11:00\u202fAM\u2009\u2013\u20094:00\u202fPM",
-        "Saturday: 11:00\u202fAM\u2009\u2013\u20094:00\u202fPM",
-        "Sunday: 10:00\u202fAM\u2009\u2013\u20092:00\u202fPM"
+        "Thursday: 11:00 AM – 4:00 PM",
+        "Friday: 11:00 AM – 4:00 PM",
+        "Saturday: 11:00 AM – 4:00 PM",
+        "Sunday: 10:00 AM – 2:00 PM"
       ]
     },
     {
@@ -6698,10 +6789,11 @@
       "price": "$$",
       "rating": 4.4,
       "tags": [
-        "seafood",
-        "fine"
+        "seafood"
       ],
-      "desc": "Floor-to-ceiling marina views and their own seafood market downstairs.",
+      "desc": "Seafood restaurant and adjacent seafood market at 20 Freezer Road in Sandwich, owned by two commercial-fishermen brothers.",
+      "desc_source": "https://www.fvcapecod.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJ_UjXijjK5IkRVuu5S6OysN4",
       "photo": "data/eats-photos/fishermens-view.jpg",
       "reviews": 1706,
@@ -6798,13 +6890,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 8:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Tuesday: 8:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Wednesday: 8:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Thursday: 8:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Friday: 8:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Saturday: 8:00\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Sunday: 8:00\u202fAM\u2009\u2013\u200910:00\u202fPM"
+        "Monday: 8:00 AM – 10:00 PM",
+        "Tuesday: 8:00 AM – 10:00 PM",
+        "Wednesday: 8:00 AM – 10:00 PM",
+        "Thursday: 8:00 AM – 10:00 PM",
+        "Friday: 8:00 AM – 10:00 PM",
+        "Saturday: 8:00 AM – 10:00 PM",
+        "Sunday: 8:00 AM – 10:00 PM"
       ]
     },
     {
@@ -6817,10 +6909,11 @@
       "price": "$$",
       "rating": 4.4,
       "tags": [
-        "italian",
-        "fine"
+        "italian"
       ],
-      "desc": "Main Street favorite \u2014 generous Italian, always a wait, always worth it.",
+      "desc": "Italian and Mediterranean restaurant at 237 Main Street in Falmouth, opened in 2002 by Mark and Cynthia Cilfone.",
+      "desc_source": "https://www.lacucinasulmare.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJbew7M3nX5IkRaiEn4pmd-LY",
       "photo": "data/eats-photos/la-cucina-sul-mare.jpg",
       "reviews": 974,
@@ -6917,13 +7010,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 4:00\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Sunday: 10:30\u202fAM\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 4:00 – 9:00 PM",
+        "Tuesday: 11:30 AM – 9:00 PM",
+        "Wednesday: 11:30 AM – 9:00 PM",
+        "Thursday: 11:30 AM – 9:00 PM",
+        "Friday: 11:30 AM – 10:00 PM",
+        "Saturday: 11:30 AM – 10:00 PM",
+        "Sunday: 10:30 AM – 9:00 PM"
       ]
     },
     {
@@ -6939,7 +7032,9 @@
         "casual",
         "bar"
       ],
-      "desc": "Cozy Main Street standby \u2014 chowder, burgers, and a friendly bar.",
+      "desc": "Falmouth restaurant serving seafood and steaks. It has been the Quarterdeck since 1967; much of the interior was salvaged from a Falmouth Harbor boatyard.",
+      "desc_source": "https://www.qdfalmouth.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJray96n7X5IkRytdEb7lU_pM",
       "photo": "data/eats-photos/the-quarterdeck.jpg",
       "reviews": 1496,
@@ -7036,18 +7131,18 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM"
+        "Monday: 11:30 AM – 9:00 PM",
+        "Tuesday: 11:30 AM – 9:00 PM",
+        "Wednesday: 11:30 AM – 9:00 PM",
+        "Thursday: 11:30 AM – 9:00 PM",
+        "Friday: 11:30 AM – 9:00 PM",
+        "Saturday: 11:30 AM – 9:00 PM",
+        "Sunday: 11:30 AM – 9:00 PM"
       ]
     },
     {
       "id": "anejo-mexican-bistro",
-      "name": "A\u00f1ejo Mexican Bistro",
+      "name": "Añejo Mexican Bistro",
       "town": "Falmouth",
       "lat": 41.5522,
       "lng": -70.6153,
@@ -7058,7 +7153,9 @@
         "mexican",
         "bar"
       ],
-      "desc": "Tequila bar and modern Mexican. Guac and margaritas on Main Street.",
+      "desc": "Mexican bistro at 188 Main Street in Falmouth, the first of Añejo's three locations, with tequila flights and margaritas.",
+      "desc_source": "https://www.anejo.cc/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJ97ZkuH7X5IkR7YV-F8cGkKg",
       "photo": "data/eats-photos/anejo-mexican-bistro.jpg",
       "reviews": 1954,
@@ -7066,6 +7163,8 @@
       "rating_source": "google",
       "enriched_at": "2026-11-02T20:08:59Z",
       "deal": "Sunday brunch specials & cocktails",
+      "deal_source": "https://www.anejo.cc/",
+      "deal_checked": "2026-11-08",
       "business_status": "OPERATIONAL",
       "phone": "(508) 388-7631",
       "hours": [
@@ -7155,13 +7254,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
-        "Wednesday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u200911:00\u202fPM",
-        "Sunday: 10:30\u202fAM\u2009\u2013\u200911:00\u202fPM"
+        "Monday: 11:30 AM – 11:00 PM",
+        "Tuesday: 11:30 AM – 11:00 PM",
+        "Wednesday: 11:30 AM – 11:00 PM",
+        "Thursday: 11:30 AM – 11:00 PM",
+        "Friday: 11:30 AM – 11:00 PM",
+        "Saturday: 11:30 AM – 11:00 PM",
+        "Sunday: 10:30 AM – 11:00 PM"
       ]
     },
     {
@@ -7177,7 +7276,9 @@
         "seafood",
         "bar"
       ],
-      "desc": "Waterfront tavern on Eel Pond \u2014 oysters and a historic back bar.",
+      "desc": "Waterfront restaurant and bar at 77 Water Street in Woods Hole, open since 1939: clam chowder, fish and chips, lobster rolls and oysters.",
+      "desc_source": "https://www.thecaptainkidd.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJC48OtYDY5IkRvHRmHs9Hxrc",
       "photo": "data/eats-photos/the-captain-kidd.jpg",
       "reviews": 732,
@@ -7262,13 +7363,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:30\u202fAM\u2009\u2013\u200910:30\u202fPM",
-        "Tuesday: 11:30\u202fAM\u2009\u2013\u200910:30\u202fPM",
+        "Monday: 11:30 AM – 10:30 PM",
+        "Tuesday: 11:30 AM – 10:30 PM",
         "Wednesday: Closed",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u200910:30\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u200912:30\u202fAM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u200912:30\u202fAM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u200910:30\u202fPM"
+        "Thursday: 11:30 AM – 10:30 PM",
+        "Friday: 11:30 AM – 12:30 AM",
+        "Saturday: 11:30 AM – 12:30 AM",
+        "Sunday: 11:30 AM – 10:30 PM"
       ]
     },
     {
@@ -7284,7 +7385,9 @@
         "mexican",
         "casual"
       ],
-      "desc": "Fish tacos by the ferry dock. Quick, fresh, and fun.",
+      "desc": "Taqueria at 6 Luscombe Avenue in Woods Hole, near the Martha's Vineyard ferry: tacos, including lobster tacos, burritos and bowls.",
+      "desc_source": "https://quicksholetaqueria.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJe_Qzp4DY5IkRI25HHoX5hIs",
       "photo": "data/eats-photos/quicks-hole-taqueria.jpg",
       "reviews": 335,
@@ -7369,13 +7472,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Tuesday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
+        "Monday: 11:00 AM – 8:00 PM",
+        "Tuesday: 11:00 AM – 8:00 PM",
         "Wednesday: Closed",
-        "Thursday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Friday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Saturday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM",
-        "Sunday: 11:00\u202fAM\u2009\u2013\u20098:00\u202fPM"
+        "Thursday: 11:00 AM – 8:00 PM",
+        "Friday: 11:00 AM – 8:00 PM",
+        "Saturday: 11:00 AM – 8:00 PM",
+        "Sunday: 11:00 AM – 8:00 PM"
       ]
     },
     {
@@ -7392,7 +7495,7 @@
         "breakfast",
         "coffee"
       ],
-      "desc": "French bakers, line out the door \u2014 baguettes, tarts, croissants.",
+      "desc": "French bakery in Falmouth.",
       "place_id": "ChIJZ7-sMHnX5IkRgLmGtLoQQBE",
       "photo": "data/eats-photos/maison-villatte.jpg",
       "reviews": 1204,
@@ -7467,11 +7570,11 @@
       "hours_text": [
         "Monday: Closed",
         "Tuesday: Closed",
-        "Wednesday: 7:00\u202fAM\u2009\u2013\u20096:00\u202fPM",
-        "Thursday: 7:00\u202fAM\u2009\u2013\u20096:00\u202fPM",
-        "Friday: 7:00\u202fAM\u2009\u2013\u20096:00\u202fPM",
-        "Saturday: 7:00\u202fAM\u2009\u2013\u20096:00\u202fPM",
-        "Sunday: 7:00\u202fAM\u2009\u2013\u20096:00\u202fPM"
+        "Wednesday: 7:00 AM – 6:00 PM",
+        "Thursday: 7:00 AM – 6:00 PM",
+        "Friday: 7:00 AM – 6:00 PM",
+        "Saturday: 7:00 AM – 6:00 PM",
+        "Sunday: 7:00 AM – 6:00 PM"
       ]
     },
     {
@@ -7485,10 +7588,11 @@
       "rating": 4.3,
       "tags": [
         "seafood",
-        "bar",
-        "fine"
+        "bar"
       ],
-      "desc": "Summer-only harbor legend \u2014 mudslides and lobster on Red Brook Harbor.",
+      "desc": "Restaurant aboard a converted railroad barge on Red Brook Harbor in Cataumet (Bourne), open since 1966. Reservations by phone only.",
+      "desc_source": "https://www.chartroomcapecod.com/cataumet-history",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJO_JZ0fbP5IkR0UhnYQRBxb0",
       "photo": "data/eats-photos/the-chart-room.jpg",
       "reviews": 909,
@@ -7561,13 +7665,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00\u202fAM\u2009\u2013\u20094:00\u202fPM",
+        "Monday: 11:00 AM – 4:00 PM",
         "Tuesday: Closed",
         "Wednesday: Closed",
-        "Thursday: 11:30\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Saturday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM",
-        "Sunday: 11:30\u202fAM\u2009\u2013\u200910:00\u202fPM"
+        "Thursday: 11:30 AM – 9:00 PM",
+        "Friday: 11:30 AM – 10:00 PM",
+        "Saturday: 11:30 AM – 10:00 PM",
+        "Sunday: 11:30 AM – 10:00 PM"
       ]
     },
     {
@@ -7579,10 +7683,10 @@
       "cuisine": "Cambodian",
       "price": "$$",
       "rating": 4.7,
-      "tags": [
-        "fine"
-      ],
-      "desc": "Beloved Southeast-Asian kitchen \u2014 curries and pho near the bridge.",
+      "tags": [],
+      "desc": "Cambodian restaurant in Bourne that also serves sushi, in business on Cape Cod since 1989.",
+      "desc_source": "https://stircrazycapecod.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJY8306AXP5IkRjEtrlXdwfGM",
       "photo": "data/eats-photos/stir-crazy.jpg",
       "reviews": 485,
@@ -7679,13 +7783,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 3:00\u2009\u2013\u20098:30\u202fPM",
-        "Tuesday: 3:00\u2009\u2013\u20098:30\u202fPM",
-        "Wednesday: 3:00\u2009\u2013\u20098:30\u202fPM",
-        "Thursday: 3:00\u2009\u2013\u20098:30\u202fPM",
-        "Friday: 3:00\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 3:00\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 3:00\u2009\u2013\u20098:30\u202fPM"
+        "Monday: 3:00 – 8:30 PM",
+        "Tuesday: 3:00 – 8:30 PM",
+        "Wednesday: 3:00 – 8:30 PM",
+        "Thursday: 3:00 – 8:30 PM",
+        "Friday: 3:00 – 9:00 PM",
+        "Saturday: 3:00 – 9:00 PM",
+        "Sunday: 3:00 – 8:30 PM"
       ]
     },
     {
@@ -7701,14 +7805,18 @@
         "italian",
         "casual"
       ],
-      "desc": "Buzzards Bay Italian-American since 1936. Sunday-gravy comfort.",
+      "desc": "Family-run Italian restaurant at 253 Main Street in Buzzards Bay, also serving seafood, steaks and chops.",
+      "desc_source": "https://www.mezzalunarestaurant.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJD_-pmLnI5IkR9FBcmV14fSs",
       "photo": "data/eats-photos/mezza-luna.jpg",
       "reviews": 1535,
       "website": "http://www.mezzalunarestaurant.com/",
       "rating_source": "google",
       "enriched_at": "2026-11-02T20:09:04Z",
-      "deal": "Wed & Sat Prime Rib Special \u00b7 weekday lunch specials",
+      "deal": "Prime rib special Wed & Sat after 4 pm",
+      "deal_source": "https://www.mezzalunarestaurant.com/",
+      "deal_checked": "2026-11-08",
       "business_status": "OPERATIONAL",
       "phone": "(508) 759-4667",
       "hours": [
@@ -7798,13 +7906,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 11:00\u202fAM\u2009\u2013\u20098:30\u202fPM",
-        "Tuesday: 11:00\u202fAM\u2009\u2013\u20098:30\u202fPM",
-        "Wednesday: 11:00\u202fAM\u2009\u2013\u20098:30\u202fPM",
-        "Thursday: 11:00\u202fAM\u2009\u2013\u20098:30\u202fPM",
-        "Friday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 11:00\u202fAM\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 12:00\u2009\u2013\u20098:00\u202fPM"
+        "Monday: 11:00 AM – 8:30 PM",
+        "Tuesday: 11:00 AM – 8:30 PM",
+        "Wednesday: 11:00 AM – 8:30 PM",
+        "Thursday: 11:00 AM – 8:30 PM",
+        "Friday: 11:00 AM – 9:00 PM",
+        "Saturday: 11:00 AM – 9:00 PM",
+        "Sunday: 12:00 – 8:00 PM"
       ]
     },
     {
@@ -7818,17 +7926,16 @@
       "rating": 4.4,
       "tags": [
         "seafood",
-        "fine",
         "bar"
       ],
-      "desc": "Fresh local seafood, Caribbean-inspired plates & hand-cut steaks on Route 6. Open 7 days.",
+      "desc": "Seafood and steak restaurant in Eastham.",
       "place_id": "ChIJ_RZsU-lp-4kRMwx9d21wYAI",
       "photo": "data/eats-photos/the-brickhouse-restaurant.jpg",
       "reviews": 720,
       "website": "https://brickhouseeastham.com/",
       "rating_source": "google",
       "enriched_at": "2026-11-02T20:09:05Z",
-      "deal": "Early Bird daily \u00b7 Wed Prime Rib Night \u00b7 Half-Off App Night",
+      "deal": null,
       "business_status": "OPERATIONAL",
       "phone": "(774) 801-2475",
       "hours": [
@@ -7918,13 +8025,13 @@
         }
       ],
       "hours_text": [
-        "Monday: 4:00\u2009\u2013\u20098:30\u202fPM",
-        "Tuesday: 4:00\u2009\u2013\u20098:30\u202fPM",
-        "Wednesday: 4:00\u2009\u2013\u20098:30\u202fPM",
-        "Thursday: 4:00\u2009\u2013\u20098:30\u202fPM",
-        "Friday: 4:00\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 4:00\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 4:00\u2009\u2013\u20098:30\u202fPM"
+        "Monday: 4:00 – 8:30 PM",
+        "Tuesday: 4:00 – 8:30 PM",
+        "Wednesday: 4:00 – 8:30 PM",
+        "Thursday: 4:00 – 8:30 PM",
+        "Friday: 4:00 – 9:00 PM",
+        "Saturday: 4:00 – 9:00 PM",
+        "Sunday: 4:00 – 8:30 PM"
       ]
     },
     {
@@ -7937,11 +8044,11 @@
       "price": "$",
       "tags": [
         "brewery",
-        "beer",
-        "tours",
-        "local"
+        "beer"
       ],
-      "desc": "The Cape's original craft brewery \u2014 taproom, brewery tours, food trucks & a family-friendly beer garden.",
+      "desc": "Brewery founded in 2004 at 1336 Phinney's Lane in Hyannis, with an indoor taproom and an outdoor beer garden open May to November.",
+      "desc_source": "https://capecodbeer.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJS0j_9zcx-4kRkxYWPNWtsCg",
       "business_status": "OPERATIONAL",
       "rating": 4.6,
@@ -8003,10 +8110,10 @@
         "Monday: Closed",
         "Tuesday: Closed",
         "Wednesday: Closed",
-        "Thursday: 4:00\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 4:00\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 12:00\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 12:00\u2009\u2013\u20095:00\u202fPM"
+        "Thursday: 4:00 – 9:00 PM",
+        "Friday: 4:00 – 9:00 PM",
+        "Saturday: 12:00 – 9:00 PM",
+        "Sunday: 12:00 – 5:00 PM"
       ],
       "photo": "data/eats-photos/cape-cod-beer.jpg",
       "enriched_at": "2026-11-02T20:09:05Z"
@@ -8022,10 +8129,11 @@
       "tags": [
         "brewery",
         "beer",
-        "games",
         "casual"
       ],
-      "desc": "Orleans taproom with house brews, wood-fired pizza, arcade games and a big outdoor yard.",
+      "desc": "Orleans brewery at 28 West Road, with a food menu and live music in summer.",
+      "desc_source": "https://hogislandbeerco.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJPXHhG9Vr-4kR0XkMsG-CG-U",
       "business_status": "OPERATIONAL",
       "rating": 4.0,
@@ -8087,10 +8195,10 @@
         "Monday: Closed",
         "Tuesday: Closed",
         "Wednesday: Closed",
-        "Thursday: 12:00\u2009\u2013\u20098:00\u202fPM",
-        "Friday: 12:00\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 12:00\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 12:00\u2009\u2013\u20098:00\u202fPM"
+        "Thursday: 12:00 – 8:00 PM",
+        "Friday: 12:00 – 9:00 PM",
+        "Saturday: 12:00 – 9:00 PM",
+        "Sunday: 12:00 – 8:00 PM"
       ],
       "photo": "data/eats-photos/hog-island-beer.jpg",
       "enriched_at": "2026-11-02T20:09:06Z"
@@ -8105,11 +8213,11 @@
       "price": "$$",
       "tags": [
         "brewery",
-        "beer",
-        "lawn",
-        "family"
+        "beer"
       ],
-      "desc": "Lakeside-vibe taproom off Route 130 \u2014 rotating taps, food trucks and a huge lawn for kids & dogs.",
+      "desc": "Brewery and beer garden in Mashpee with food, craft beer, live music and comedy nights.",
+      "desc_source": "https://www.naukabout.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJyfarW4PN5IkRx42RnX6NmGc",
       "business_status": "OPERATIONAL",
       "rating": 4.6,
@@ -8171,10 +8279,10 @@
         "Monday: Closed",
         "Tuesday: Closed",
         "Wednesday: Closed",
-        "Thursday: 3:00\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 3:00\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 12:00\u2009\u2013\u20099:00\u202fPM",
-        "Sunday: 12:00\u2009\u2013\u20096:00\u202fPM"
+        "Thursday: 3:00 – 9:00 PM",
+        "Friday: 3:00 – 9:00 PM",
+        "Saturday: 12:00 – 9:00 PM",
+        "Sunday: 12:00 – 6:00 PM"
       ],
       "photo": "data/eats-photos/naukabout-brewery.jpg",
       "enriched_at": "2026-11-02T20:09:07Z"
@@ -8190,10 +8298,9 @@
       "tags": [
         "brewery",
         "beer",
-        "local",
         "casual"
       ],
-      "desc": "Small-batch neighborhood brewery on West Main \u2014 fresh IPAs and a laid-back locals' taproom.",
+      "desc": "Brewery in Hyannis.",
       "place_id": "ChIJL-09ZnUx-4kRiPiFKo4F954",
       "business_status": "OPERATIONAL",
       "rating": 4.6,
@@ -8255,10 +8362,10 @@
         "Monday: Closed",
         "Tuesday: Closed",
         "Wednesday: Closed",
-        "Thursday: 4:00\u2009\u2013\u20098:00\u202fPM",
-        "Friday: 4:00\u2009\u2013\u20098:00\u202fPM",
-        "Saturday: 12:00\u2009\u2013\u20096:00\u202fPM",
-        "Sunday: 12:00\u202fPM\u2009\u2013\u200912:00\u202fAM"
+        "Thursday: 4:00 – 8:00 PM",
+        "Friday: 4:00 – 8:00 PM",
+        "Saturday: 12:00 – 6:00 PM",
+        "Sunday: 12:00 PM – 12:00 AM"
       ],
       "photo": "data/eats-photos/barnstable-brewing.jpg",
       "enriched_at": "2026-11-02T20:09:08Z"
@@ -8274,10 +8381,11 @@
       "tags": [
         "brewery",
         "beer",
-        "local",
         "casual"
       ],
-      "desc": "Falmouth's ocean-inspired brewery \u2014 crisp lagers and hazy IPAs a short walk from Main Street.",
+      "desc": "Brewery taproom at 661 Main Street in Falmouth. There is no kitchen: snacks are sold and outside food is allowed. Leashed dogs are welcome.",
+      "desc_source": "https://www.aquaticbrewing.com/visit-us",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJz4ApqoHX5IkRlxODX5yhZ8k",
       "business_status": "OPERATIONAL",
       "rating": 4.8,
@@ -8349,11 +8457,11 @@
       "hours_text": [
         "Monday: Closed",
         "Tuesday: Closed",
-        "Wednesday: 4:00\u2009\u2013\u20097:00\u202fPM",
-        "Thursday: 4:00\u2009\u2013\u20099:00\u202fPM",
-        "Friday: 2:00\u2009\u2013\u20098:00\u202fPM",
-        "Saturday: 12:00\u2009\u2013\u20098:00\u202fPM",
-        "Sunday: 12:00\u2009\u2013\u20096:00\u202fPM"
+        "Wednesday: 4:00 – 7:00 PM",
+        "Thursday: 4:00 – 9:00 PM",
+        "Friday: 2:00 – 8:00 PM",
+        "Saturday: 12:00 – 8:00 PM",
+        "Sunday: 12:00 – 6:00 PM"
       ],
       "photo": "data/eats-photos/aquatic-brewing.jpg",
       "enriched_at": "2026-11-02T20:09:08Z"
@@ -8368,11 +8476,11 @@
       "price": "$$",
       "tags": [
         "brewery",
-        "beer",
-        "garden",
-        "family"
+        "beer"
       ],
-      "desc": "Farmhouse brewery & beer garden on the Falmouth Highway \u2014 island ales, live music weekends.",
+      "desc": "Brewery taproom at 876 East Falmouth Highway, off Route 28 next to Mahoney's garden center, serving pretzels, charcuterie and pizza.",
+      "desc_source": "https://badmarthabeer.com/falmouth-brewery/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJ5VZauePR5IkRc38ECZdzCzs",
       "business_status": "OPERATIONAL",
       "rating": 4.4,
@@ -8455,16 +8563,18 @@
         }
       ],
       "hours_text": [
-        "Monday: 12:00\u2009\u2013\u20094:00\u202fPM",
+        "Monday: 12:00 – 4:00 PM",
         "Tuesday: Closed",
-        "Wednesday: 3:00\u2009\u2013\u20098:00\u202fPM",
-        "Thursday: 3:00\u2009\u2013\u20098:30\u202fPM",
-        "Friday: 12:00\u2009\u2013\u20099:00\u202fPM",
-        "Saturday: 12:00\u2009\u2013\u20098:00\u202fPM",
-        "Sunday: 12:00\u2009\u2013\u20097:00\u202fPM"
+        "Wednesday: 3:00 – 8:00 PM",
+        "Thursday: 3:00 – 8:30 PM",
+        "Friday: 12:00 – 9:00 PM",
+        "Saturday: 12:00 – 8:00 PM",
+        "Sunday: 12:00 – 7:00 PM"
       ],
       "photo": "data/eats-photos/bad-martha-falmouth.jpg",
-      "enriched_at": "2026-11-02T20:09:09Z"
+      "enriched_at": "2026-11-02T20:09:09Z",
+      "website_hidden": true,
+      "website_hidden_reason": "site showed injected spam text when checked 2026-11-08"
     },
     {
       "id": "devils-purse-brewing",
@@ -8477,10 +8587,11 @@
       "tags": [
         "brewery",
         "beer",
-        "taproom",
-        "local"
+        "taproom"
       ],
-      "desc": "South Dennis craft brewery in a converted warehouse \u2014 clean lagers, kolsch and hazy IPAs poured in a laid-back taproom.",
+      "desc": "Brewery in South Dennis, home of Handline Kölsch.",
+      "desc_source": "https://www.devilspurse.com/",
+      "desc_checked": "2026-11-08",
       "place_id": "ChIJVcIwstM--4kRWD-EXt0MgSs",
       "business_status": "OPERATIONAL",
       "rating": 4.6,
@@ -8542,10 +8653,10 @@
         "Monday: Closed",
         "Tuesday: Closed",
         "Wednesday: Closed",
-        "Thursday: 12:00\u2009\u2013\u20096:00\u202fPM",
-        "Friday: 12:00\u2009\u2013\u20096:00\u202fPM",
-        "Saturday: 12:00\u2009\u2013\u20096:00\u202fPM",
-        "Sunday: 12:00\u2009\u2013\u20096:00\u202fPM"
+        "Thursday: 12:00 – 6:00 PM",
+        "Friday: 12:00 – 6:00 PM",
+        "Saturday: 12:00 – 6:00 PM",
+        "Sunday: 12:00 – 6:00 PM"
       ],
       "photo": "data/eats-photos/devils-purse-brewing.jpg",
       "enriched_at": "2026-11-02T20:09:10Z"

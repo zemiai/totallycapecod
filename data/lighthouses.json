@@ -1,79 +1,126 @@
 {
   "version": "1.0",
-  "updated_at": "2026-05-17T00:00:00Z",
-  "_hermes_note": "Static content. Audio is generated client-side via browser SpeechSynthesis API (free). Optionally Hermes can pre-render MP3s via ElevenLabs and set audio_url.",
+  "updated_at": "2026-11-08T21:02:29Z",
+  "_hermes_note": "Static content, read aloud as narrated tours (browser SpeechSynthesis, or an MP3 in audio_url if one is generated). Every fact in a script comes from that lighthouse's sources, checked on source_checked: NPS and USFWS pages, the U.S. Coast Guard Light List (Vol. 1, corrected through Nov. 4, 2026), USCG Historian's Office pages, NPS National Register nominations, Navy history pages and the managing organizations' own pages. built = year the current tower was built or first lit; station_established = year the first light station at the site was established. Re-check the sources before editing a script, and regenerate any MP3 (FORCE=1) after a script changes. duration_min is the narration length estimated at about 150 words a minute. lat/lng are the Light List positions for the nine lights it lists; Monomoy Point, Stage Harbor (old tower) and Three Sisters positions are unverified.",
   "lighthouses": [
     {
       "slug": "nauset-light",
       "name": "Nauset Light",
       "town": "Eastham",
-      "lat": 41.8597,
-      "lng": -69.9525,
+      "lat": 41.86,
+      "lng": -69.9533,
       "built": 1877,
+      "station_established": 1838,
       "is_free": true,
-      "duration_min": 6,
+      "duration_min": 2,
       "audio_url": null,
-      "script": "Welcome to Nauset Light. You're standing in front of one of the most photographed lighthouses in America. This forty-eight-foot red and white tower wasn't always here. It was originally built in 1877 in Chatham, then moved here in 1923 when its sister light in Chatham was no longer needed. In 1996, with the Atlantic eroding the cliff at over three feet per year, the entire lighthouse was moved 336 feet inland to save it from the sea. Notice the distinctive red top and white bottom — that color scheme inspired the Cape Cod Potato Chips logo. The lighthouse keeper's house, just behind you, was also moved. Today, the light flashes alternating red and white every five seconds, and is visible for twenty-three nautical miles. Walk around to the ocean side and look at the cliff edge — that's where this lighthouse was just thirty years ago. Now look at the eroding bluff and imagine where it'll be thirty years from now."
+      "script": "Welcome to Nauset Light in Eastham. This tower is 48 feet tall, made of cast iron with a brick lining, and it was built in 1877, but not here. It first stood in Chatham, as one of a pair of twin lighthouses. In 1923, Eastham's last small wooden lighthouse was retired, and Chatham's north tower was taken apart, moved here, and rebuilt about 200 feet from the edge of the cliff. In the 1940s its top half was painted red, to make it easier to pick out by day. In 1981 its Fresnel lens was replaced with two rotating aerobeacons, and the signal became one red and one white flash, five seconds apart. The cliff kept wearing away. By November 1996, less than 35 feet of ground was left between the lighthouse and the edge, so the tower was moved in one piece, about 300 feet, to a new site across the road. The Coast Guard's Light List still includes Nauset Light as a private aid to navigation, lit around the clock, its light 120 feet above the water. The National Park Service says the Nauset Light Preservation Society maintains the lighthouse and offers tours from late spring through early fall. A short walk from the parking lot are the Three Sisters, the wooden lighthouses that came before this one.",
+      "sources": [
+        "https://www.nps.gov/places/nauset-light.htm",
+        "https://www.nps.gov/places/nauset-light-beach.htm",
+        "https://www.history.uscg.mil/Browse-by-Topic/Assets/Land/All/Article/1963527/nauset-lighthouse/",
+        "https://www.navcen.uscg.gov/sites/default/files/pdf/lightLists/weeklyUpdates/v1d01WeeklyChanges.pdf"
+      ],
+      "source_checked": "2026-11-08"
     },
     {
       "slug": "highland-light",
       "name": "Highland Light",
       "town": "Truro",
-      "lat": 42.0394,
-      "lng": -70.0617,
-      "built": 1797,
+      "lat": 42.0395,
+      "lng": -70.0609,
+      "built": 1857,
+      "station_established": 1797,
       "is_free": false,
-      "duration_min": 7,
+      "duration_min": 2,
       "audio_url": null,
-      "script": "Highland Light, also called Cape Cod Light, is the oldest and tallest lighthouse on Cape Cod. The first wooden tower was built here in 1797, commissioned by George Washington himself. The current brick structure dates to 1857. Henry David Thoreau visited Highland Light multiple times in the 1850s and wrote about it in his book Cape Cod, saying — quote — 'A man may stand there and put all America behind him.' For 200 years this light has been the first thing transatlantic sailors saw approaching America from Europe. In 1996, like its neighbor Nauset Light, Highland Light was moved 450 feet inland to save it from the eroding cliff. The lighthouse keepers used 18 pieces of soap to lubricate the steel beams that carried the lighthouse along its tracks. The light flashes white every five seconds, visible twenty-three nautical miles out to sea. The Highland House Museum, in the keeper's quarters, is open seasonally and worth a visit."
+      "script": "Highland Light, also called Cape Cod Light, stands in North Truro, inside Cape Cod National Seashore. The National Park Service calls it the first lighthouse on Cape Cod. Commissioned by George Washington, the light station was established in 1797, the 20th in the United States. Its first tower was wooden, 45 feet tall, and stood more than 500 feet from the edge of a 125-foot clay cliff. A brick lighthouse replaced it in 1831, and in 1857 the tower you see today, 66 feet of brick, was built along with the keeper's house. By the early 1990s, erosion had brought the cliff edge to about 100 feet away. With money raised by the Truro Historical Society, plus state and federal grants, the station was moved 450 feet back from the edge. After an 18-day move, the light was relit on November 3, 1996, and it is still an active aid to navigation. The Coast Guard's Light List gives it one white flash every five seconds, 170 feet above the water, with a range of 14 nautical miles. Henry David Thoreau visited Highland Light several times in the 1850s. In his book Cape Cod, he climbed into the lantern and found 'a neat building, with everything in apple-pie order.' The book closes with a line about this shore: 'A man may stand there and put all America behind him.' The Park Service says the keeper's house now holds museum exhibits and a gift shop, and that staff give tours of the tower.",
+      "sources": [
+        "https://www.nps.gov/places/highland-light.htm",
+        "https://www.history.uscg.mil/Browse-by-Topic/Assets/Land/All/Article/2008543/highland-light/",
+        "https://www.navcen.uscg.gov/sites/default/files/pdf/lightLists/weeklyUpdates/v1d01WeeklyChanges.pdf",
+        "https://www.gutenberg.org/ebooks/34392"
+      ],
+      "source_checked": "2026-11-08"
     },
     {
       "slug": "race-point-light",
       "name": "Race Point Light",
       "town": "Provincetown",
-      "lat": 42.0639,
-      "lng": -70.2433,
-      "built": 1816,
+      "lat": 42.0623,
+      "lng": -70.243,
+      "built": 1876,
+      "station_established": 1816,
       "is_free": false,
-      "duration_min": 7,
+      "duration_min": 1,
       "audio_url": null,
-      "script": "You've made it to Race Point Light, at the tip of Cape Cod. To get here you walked or four-wheeled along almost two miles of beach — this is one of the most remote and beautiful lighthouses on the East Coast. The original tower was built in 1816 of rough stone. It was rebuilt in iron in 1876, which is what you see today. Race Point is named for the strong cross-currents — the race — that meet off this point, where the Cape Bay and the Atlantic Ocean collide. Countless ships have wrecked here, which is why the lighthouse was so badly needed. The keeper's house is now a vacation rental — yes, you can actually stay overnight in the keeper's quarters. Bookings are made through the Cape Cod Chapter of the American Lighthouse Foundation. The light flashes white every ten seconds. From here, on a clear day, you can see Boston's skyline forty miles to the north."
+      "script": "This is Race Point Light in Provincetown. In 1816 a rubblestone lighthouse was built here. It was the third light on Cape Cod, and it housed one of the first rotating beacons. In 1876 an iron tower lined with brick replaced the stone one, and that is the tower you see today. The original keeper's house was torn down and rebuilt at the same time, and the larger keeper's house was taken down in 1960. Race Point Light is still an active aid to navigation. The Coast Guard's Light List gives it one white flash every ten seconds, 41 feet above the water, with a range of 14 nautical miles. The National Park Service says nearby Race Point Beach, at the northernmost point on Cape Cod, has swift currents and deeper water close to shore.",
+      "sources": [
+        "https://www.history.uscg.mil/Browse-by-Topic/Assets/Land/All/Article/1983202/race-point-light/",
+        "https://www.navcen.uscg.gov/sites/default/files/pdf/lightLists/weeklyUpdates/v1d01WeeklyChanges.pdf",
+        "https://www.nps.gov/places/race-point-beach.htm"
+      ],
+      "source_checked": "2026-11-08"
     },
     {
       "slug": "long-point-light",
       "name": "Long Point Light",
       "town": "Provincetown",
-      "lat": 42.0344,
-      "lng": -70.1689,
-      "built": 1827,
+      "lat": 42.0331,
+      "lng": -70.1687,
+      "built": 1875,
+      "station_established": 1827,
       "is_free": false,
-      "duration_min": 5,
+      "duration_min": 2,
       "audio_url": null,
-      "script": "Long Point Light sits at the very curl of Cape Cod's hooked tip — the southernmost point of Provincetown. You can only reach this lighthouse by boat or by a long walk across the sand spit at low tide. The current tower, built in 1875, replaced an 1827 original. Before lighthouses, this point was home to a small fishing village of about two hundred people, which was eventually abandoned when fishing methods changed. During the Civil War, two earthworks called Fort Useless and Fort Ridiculous were built nearby. They were never used in combat. The light flashes green every four seconds. From here you can see across Provincetown Harbor to the Pilgrim Monument."
+      "script": "Long Point Light stands on Long Point, on the southwest side of the entrance to Provincetown Harbor. A light was first shown at the end of this sand spit in 1827. The present square brick tower was built in 1875, and the light was automated in 1952. In 1845, according to the lighthouse's National Register nomination, 200 people lived on Long Point, which then had a fishery, salt works and windmills. Just before the Civil War, those buildings were moved by barge to Provincetown. During the war, two forts were built next to the light station, known as Fort Useless and Fort Harmless. Long Point Light works in tandem with Wood End Light, to the west. The Coast Guard's Light List gives it an occulting green light, a green light that goes dark briefly every four seconds, 36 feet above the water, with a range of 8 nautical miles. It also has a fog horn.",
+      "sources": [
+        "https://www.history.uscg.mil/Browse-by-Topic/Assets/Land/All/Article/1956368/long-point-light-station-ma/",
+        "https://npgallery.nps.gov/GetAsset/3e38f7c1-f7f7-4019-8b66-e0e6795bce4d",
+        "https://www.navcen.uscg.gov/sites/default/files/pdf/lightLists/weeklyUpdates/v1d01WeeklyChanges.pdf"
+      ],
+      "source_checked": "2026-11-08"
     },
     {
       "slug": "wood-end-light",
       "name": "Wood End Light",
       "town": "Provincetown",
-      "lat": 42.0214,
-      "lng": -70.1933,
-      "built": 1872,
+      "lat": 42.0213,
+      "lng": -70.1935,
+      "built": 1873,
+      "station_established": 1864,
       "is_free": false,
-      "duration_min": 5,
+      "duration_min": 2,
       "audio_url": null,
-      "script": "Wood End Light is the middle of Provincetown's three lighthouses. To reach it, you walk across the Provincetown breakwater — about a mile of granite stones laid across the marsh. It's a fun walk but watch your footing. Wood End was built in 1872 to mark the dangerous shoals on the bay side of Provincetown. It's a thirty-nine-foot square brick tower, automated in 1961. The light flashes red every ten seconds. In 1927, the submarine S-4 collided with a Coast Guard cutter just off Wood End — forty crew members were trapped underwater, and the tragic story dominated national news for days. A memorial plaque can be found nearby."
+      "script": "Wood End Light stands on the southern shore of the arm of Cape Cod, across the harbor from Provincetown. The U.S. government acquired this land in 1864 and put up a white pyramidal tower. The square brick tower you see now, 38 feet tall, was built in 1873. In 1911 a stone breakwater was built across Provincetown Harbor, giving access between the town and the light at low tide; if you came that way, watch your footing on the way back. The keeper's house was torn down in 1961, when the light was fully automated, and in 1981 the light was converted to solar power. The Coast Guard's Light List gives it one red flash every ten seconds, 45 feet above the water. On December 17, 1927, the Navy submarine S-4 sank off Provincetown after the Coast Guard vessel Paulding rammed it; the Coast Guard's history office places the collision half a mile south of this lighthouse. Six men survived the sinking and were trapped inside, tapping messages to divers in Morse code, but bad weather defeated every attempt to rescue them. All 40 crewmen were lost.",
+      "sources": [
+        "https://www.history.uscg.mil/Browse-by-Topic/Assets/Land/All/Article/1997449/wood-end-lighthouse/",
+        "https://npgallery.nps.gov/GetAsset/4d5936e4-f7cb-48aa-b3b4-65e300a2bd58",
+        "https://www.navcen.uscg.gov/sites/default/files/pdf/lightLists/weeklyUpdates/v1d01WeeklyChanges.pdf",
+        "https://www.history.navy.mil/about-us/leadership/director/directors-corner/h-grams/h-gram-019/h-019-3.html",
+        "https://www.history.navy.mil/research/histories/ship-histories/danfs/s/s-4.html"
+      ],
+      "source_checked": "2026-11-08"
     },
     {
       "slug": "chatham-light",
       "name": "Chatham Light",
       "town": "Chatham",
-      "lat": 41.6708,
-      "lng": -69.9508,
-      "built": 1808,
+      "lat": 41.6713,
+      "lng": -69.9502,
+      "built": 1877,
+      "station_established": 1808,
       "is_free": false,
-      "duration_min": 6,
+      "duration_min": 2,
       "audio_url": null,
-      "script": "Chatham Light stands guard over Chatham Harbor. The first lighthouse here was twin towers built in 1808 — but the south tower was moved to Eastham in 1923 to become Nauset Light, which is why these two lighthouses look identical. The current Chatham tower dates to 1877. From the bluff just below the lighthouse, you have one of the best views on Cape Cod. Look out to the Atlantic and you'll see the dramatic break in the barrier beach caused by the famous 1987 storm — a 13-foot storm surge punched a new inlet right through Nauset Beach. The Coast Guard station next door is still active. The light flashes white every four seconds. If you're here at sunset, walk to the lighthouse lawn — it's one of the great unsung Cape Cod sunset spots."
+      "script": "Chatham Light began in 1808 as a pair of twin lights, two 40-foot wooden towers. Brick towers replaced them in 1841, and in 1877 new cast-iron towers with brick linings were first lit. In 1923 the north tower was moved to Eastham, where it stands today as Nauset Light. That ended 115 years of twin lights at Chatham. In 1969 the lantern and Fresnel lens here were removed and a modern optic installed, and in 1982 the light was automated. The Coast Guard's Light List gives Chatham Light two white flashes every ten seconds, 80 feet above the water, with a range of 14 nautical miles. The shoreline off Chatham keeps changing. In 1987 a storm cut a new inlet through North Beach, the barrier beach off Chatham. NASA, which has followed this coast in USGS-NASA Landsat satellite images since 1984, counts it as the first of three major breaches in about 30 years.",
+      "sources": [
+        "https://www.history.uscg.mil/Browse-by-Topic/Assets/Land/All/Article/1912577/chatham-lighthouse/",
+        "https://www.nps.gov/places/nauset-light.htm",
+        "https://www.navcen.uscg.gov/sites/default/files/pdf/lightLists/weeklyUpdates/v1d01WeeklyChanges.pdf",
+        "https://svs.gsfc.nasa.gov/11587"
+      ],
+      "source_checked": "2026-11-08"
     },
     {
       "slug": "monomoy-point-light",
@@ -82,10 +129,17 @@
       "lat": 41.5511,
       "lng": -70.0017,
       "built": 1849,
+      "station_established": 1823,
       "is_free": false,
-      "duration_min": 5,
+      "duration_min": 2,
       "audio_url": null,
-      "script": "Monomoy Point Light, also called Monomoy Island Light, is one of the most remote lighthouses in the United States. You can only reach it by boat or guided tour through the Monomoy National Wildlife Refuge. The forty-foot red iron tower was built in 1849. The light was decommissioned in 1923 when the keepers were withdrawn, but the structure remains. The island around it is home to thousands of seals, plus migrating shorebirds. Recently, the Monomoy Lighthouse has been undergoing restoration. The wildlife refuge surrounding it is one of the most pristine ecosystems on the East Coast."
+      "script": "Monomoy Point Light stands on South Monomoy Island, in Monomoy National Wildlife Refuge. The refuge says its offshore islands are reached only by boat, and that it does not run a public boat service. The light station was first built in 1823. The current tower was first lit in 1849, and the Coast Guard's history office says it was one of the first cast-iron lighthouses in America; it was painted red in 1882. The light was deactivated in 1923. The station, with its lighthouse, keeper's house and small oil house, is listed on the National Register of Historic Places, and the U.S. Fish and Wildlife Service manages it with a nonprofit partner. The refuge was established in 1944 to provide habitat for migratory birds. The Fish and Wildlife Service says South Monomoy has the largest gray seal haul-out site on the U.S. Atlantic coast, that 30,000 to 50,000 seals rely on the refuge's lands and waters, and that the refuge supports the largest nesting colony of common terns on the Atlantic seaboard.",
+      "sources": [
+        "https://www.history.uscg.mil/Browse-by-Topic/Assets/Land/All/Article/1963369/monomoy-light/",
+        "https://www.fws.gov/refuge/monomoy/about-us",
+        "https://www.fws.gov/refuge/monomoy/visit-us"
+      ],
+      "source_checked": "2026-11-08"
     },
     {
       "slug": "stage-harbor-light",
@@ -94,10 +148,16 @@
       "lat": 41.6533,
       "lng": -69.9842,
       "built": 1880,
+      "station_established": 1880,
       "is_free": false,
-      "duration_min": 5,
+      "duration_min": 1,
       "audio_url": null,
-      "script": "Stage Harbor Light, sometimes called Hardings Beach Light, marks the entrance to Stage Harbor in Chatham. It was built in 1880 and operated until 1933. The light is on private property today and can only be viewed from Hardings Beach. The forty-eight-foot iron tower remains in good condition. Stage Harbor was one of Chatham's most important fishing ports in the late 1800s — the lighthouse made night entry safe for the fishing fleet returning home."
+      "script": "Stage Harbor Light in Chatham was built and first lit in 1880: a cast-iron tower fitted with a fourth-order Fresnel lens. It was discontinued in 1933 and replaced by a skeleton tower, and the Coast Guard's history office now lists the old tower as standing without its lantern. Today the Coast Guard's Light List includes an active Stage Harbor Light on a modular tower, with one white flash every six seconds, 28 feet above the water.",
+      "sources": [
+        "https://www.history.uscg.mil/Browse-by-Topic/Assets/Land/All/Article/1991108/stage-harbor-lighthouse",
+        "https://www.navcen.uscg.gov/sites/default/files/pdf/lightLists/weeklyUpdates/v1d01WeeklyChanges.pdf"
+      ],
+      "source_checked": "2026-11-08"
     },
     {
       "slug": "three-sisters",
@@ -105,47 +165,75 @@
       "town": "Eastham",
       "lat": 41.8567,
       "lng": -69.9622,
-      "built": 1838,
+      "built": 1892,
+      "station_established": 1838,
       "is_free": false,
-      "duration_min": 5,
+      "duration_min": 2,
       "audio_url": null,
-      "script": "The Three Sisters of Nauset is unique among Cape Cod lighthouses — there are three small towers grouped together, just inland from Nauset Light. Built in 1838, the original three lighthouses stood as triplets on the cliff edge. The triple light was distinctive and easy for sailors to identify from far at sea. Erosion forced them to be moved back from the cliff multiple times. Eventually they were taken down, sold off, and used as garages and outbuildings for decades. In 1989, the National Park Service tracked down all three original wooden towers and restored them to their current location, just a short walk from the parking lot at Nauset Light. They're decommissioned, but they're a wonderful piece of preserved history."
+      "script": "These are the Three Sisters of Nauset. In 1836, Eastham residents worried about loved ones at sea petitioned for a lighthouse, and the Boston Marine Society recommended one to Congress. Congress granted $10,000, and the contract went to the lowest bidder, Winslow Lewis, for $6,549. Three brick towers, each 15 feet high, were built, and the light station was established in 1838. From the sea, the National Park Service says, they looked like women in white dresses with black hats, which earned them their nickname. The brick towers deteriorated and the shore kept changing, and in 1892 they were replaced by three movable wooden towers, built 30 feet farther inland. Those wooden towers, 22 feet tall plus a 7-foot lantern, are the ones in front of you. In 1911 the center tower was moved back and attached to the keeper's house, and the other two were set aside. They were sold at auction for $3.50, moved to Cable Road, and joined into the Twin Lights Cottage, used as a summer cottage and a dance studio. In 1923 the last wooden tower was replaced by one of Chatham's twin towers, today's Nauset Light, and it too was sold and made into a cottage. The National Park Service bought two of the towers in 1965 and the third in 1975, restored them through the 1980s, and opened the site for its first public tour in 1989.",
+      "sources": [
+        "https://www.nps.gov/places/three-sisters-lighthouses.htm",
+        "https://www.nps.gov/caco/learn/historyculture/the-three-sisters-lighthouses.htm",
+        "https://www.history.uscg.mil/Browse-by-Topic/Assets/Land/All/Article/1963524/three-sisters-of-nauset-lighthouses/",
+        "https://www.nps.gov/places/nauset-light-beach.htm"
+      ],
+      "source_checked": "2026-11-08"
     },
     {
       "slug": "sandy-neck-light",
       "name": "Sandy Neck Light",
       "town": "Barnstable",
-      "lat": 41.7261,
-      "lng": -70.2814,
-      "built": 1827,
+      "lat": 41.7228,
+      "lng": -70.2811,
+      "built": 1857,
+      "station_established": 1827,
       "is_free": false,
-      "duration_min": 5,
+      "duration_min": 1,
       "audio_url": null,
-      "script": "Sandy Neck Light marks the western entrance to Barnstable Harbor. The original wooden tower was built in 1827. The current brick lighthouse dates to 1857. To reach it, you walk about four miles down the Sandy Neck barrier beach — a serious but rewarding hike. The lighthouse was decommissioned in 1931 and the keeper's house is now private property. In 2007, after years of being dark, the light was reactivated as a private aid to navigation. The beach approach is gorgeous, with cottages that are some of the oldest continuously occupied summer homes on Cape Cod."
+      "script": "Sandy Neck Light stands at the entrance to Barnstable Harbor. The first lighthouse here, built in 1827 with a $3,500 appropriation from Congress, was part of the keeper's house. The current brick tower was built in 1857. The lighthouse was taken out of service in 1931 and replaced by a skeleton tower, which was itself discontinued in 1952, and in 1933 the property was sold into private ownership. The lantern room was restored in 2007. Today the Coast Guard's Light List includes Sandy Neck Light as a private aid to navigation, with one white flash every six seconds. The Town of Barnstable says the barrier beach around it has developed over thousands of years into 4,700 acres of dunes, maritime forests and marshes.",
+      "sources": [
+        "https://www.history.uscg.mil/Browse-by-Topic/Assets/Land/All/Article/1988545/sandy-neck-lighthouse/",
+        "https://www.navcen.uscg.gov/sites/default/files/pdf/lightLists/weeklyUpdates/v1d01WeeklyChanges.pdf",
+        "https://www.barnstable.gov/SandyNeckPark/Default.aspx"
+      ],
+      "source_checked": "2026-11-08"
     },
     {
       "slug": "nobska-light",
       "name": "Nobska Point Light",
       "town": "Falmouth",
-      "lat": 41.5161,
-      "lng": -70.6553,
-      "built": 1828,
+      "lat": 41.5158,
+      "lng": -70.6551,
+      "built": 1876,
+      "station_established": 1828,
       "is_free": false,
-      "duration_min": 6,
+      "duration_min": 2,
       "audio_url": null,
-      "script": "Nobska Point Light watches over the entrance to Vineyard Sound, where ferries cross to Martha's Vineyard daily. The current forty-foot iron tower dates to 1876. From here on a clear day, you can see Martha's Vineyard four miles south, and the Elizabeth Islands stretching west. The light flashes white every six seconds, with red sectors warning of dangerous shoals. The keeper's house is now used by the U.S. Coast Guard. Nobska is one of the most accessible Cape Cod lighthouses — you can drive right up to it. There's a parking lot, picnic area, and the views of the sound are spectacular. Many photographers consider this the most photogenic Cape Cod lighthouse."
+      "script": "Nobska Point Light stands on Nobska Point in Falmouth. The first lighthouse here was built in 1828. The current 40-foot tower, iron with a brick lining, was cast in sections in Chelsea, Massachusetts, shipped to Woods Hole, and first lit in 1876. A second keeper's house was added in 1907, and the light was automated in 1985, when the last keeper left. The Coast Guard's Light List gives Nobska one white flash every six seconds, 87 feet above the water, with a range of 13 nautical miles, and a red sector that covers Hedge Fence and L'Hommedieu Shoal. The light and its fog horn are still active aids to navigation. The Coast Guard licensed the Town of Falmouth to care for the light, and the Friends of Nobska Light, who partnered with the town, run a museum here. The Friends say the grounds are open from dawn to dusk year-round and that parking is very limited.",
+      "sources": [
+        "https://www.history.uscg.mil/Browse-by-Topic/Assets/Land/All/Article/1968986/nobska-point-light/",
+        "https://www.navcen.uscg.gov/sites/default/files/pdf/lightLists/weeklyUpdates/v1d01WeeklyChanges.pdf",
+        "https://friendsofnobska.org/faqs"
+      ],
+      "source_checked": "2026-11-08"
     },
     {
       "slug": "cleveland-east-ledge",
       "name": "Cleveland East Ledge Light",
       "town": "Bourne",
-      "lat": 41.6011,
-      "lng": -70.7144,
+      "lat": 41.631,
+      "lng": -70.6942,
       "built": 1943,
+      "station_established": 1943,
       "is_free": false,
-      "duration_min": 4,
+      "duration_min": 2,
       "audio_url": null,
-      "script": "Cleveland East Ledge Light is the youngest of Cape Cod's lighthouses, built in 1943. Unlike the rest, it's not on land — it sits on a concrete caisson out in Buzzards Bay, marking the entrance to the Cape Cod Canal. The seventy-foot tower was named for the ledge it stands on, which itself was named for President Grover Cleveland, who liked to fish in these waters. The light is fully automated and operates year-round. It can only be viewed from boats or from the shore in Falmouth or Bourne. The light flashes white every ten seconds."
+      "script": "Cleveland East Ledge Light stands in Buzzards Bay by the Cleveland Ledge Channel. The Coast Guard's history office says the name honors President Grover Cleveland, who used to fish in the area. The State of Massachusetts began building the lighthouse in 1940 and turned the project over to the federal government, the Coast Guard, in 1941. Slowed by World War II, it was finished in 1943, and the history office calls it the only lighthouse in Massachusetts built by the Coast Guard. It is a reinforced concrete tower and dwelling on a concrete and rock caisson. A hurricane in 1944 knocked loose a glass-block skylight and let water flow through the building. In 1978 its fourth-order Fresnel lens was replaced and the light was automated. Today the Light List describes a white cylindrical tower and dwelling on a red caisson, with one white flash every ten seconds, 74 feet above the water, and a range of 14 nautical miles.",
+      "sources": [
+        "https://www.history.uscg.mil/Browse-by-Topic/Assets/Land/All/Article/1912743/cleveland-ledge-lighthouse/",
+        "https://www.navcen.uscg.gov/sites/default/files/pdf/lightLists/weeklyUpdates/v1d01WeeklyChanges.pdf"
+      ],
+      "source_checked": "2026-11-08"
     }
   ]
 }

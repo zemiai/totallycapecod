@@ -72,7 +72,8 @@
   }
   function isFree() { return !!freeUntil && todayET() < freeUntil; }
   function freeUntilLabel() {
-    // The last free day, e.g. free_until 2027-05-22 → "May 21"
+    // The last free day, e.g. free_until 2027-05-22 → "May 21"; '' when there's no free period
+    if (!freeUntil) return '';
     var d = new Date(freeUntil + 'T12:00:00Z'); d.setUTCDate(d.getUTCDate() - 1);
     return new Intl.DateTimeFormat('en-US', { timeZone: 'UTC', month: 'long', day: 'numeric' }).format(d);
   }

@@ -4,17 +4,17 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#4A90A4" />
-<title>Cape Cod Beach Conditions Today — Live Water Temps &amp; Parking Guide</title>
-<meta name="description" content="Live Cape Cod water temperatures by beach, plus typical summer parking and crowd patterns, lifeguard and sticker info for 20+ beaches. Live, crowdsourced parking reports in the app." />
+<title>Cape Cod Beach Conditions Today — Water Temps by Beach</title>
+<meta name="description" content="Cape Cod water temperatures by beach, from the nearest of three sensors, with the sensor and the time each reading was checked. Beachgoer parking reports are in the app." />
 <link rel="canonical" href="https://totallycapecod.com/cape-cod-beach-conditions-today.html" />
-<meta property="og:title" content="Cape Cod Beach Conditions Today — Live Water Temps &amp; Parking Guide" />
-<meta property="og:description" content="Live Cape Cod water temperatures by beach, plus typical summer parking and crowd patterns, lifeguard and sticker info for 20+ beaches. Live, crowdsourced parking reports in the app." />
+<meta property="og:title" content="Cape Cod Beach Conditions Today — Water Temps by Beach" />
+<meta property="og:description" content="Cape Cod water temperatures by beach, from the nearest of three sensors, with the sensor and the time each reading was checked. Beachgoer parking reports are in the app." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://totallycapecod.com/cape-cod-beach-conditions-today.html" />
 <meta property="og:image" content="https://totallycapecod.com/og-image.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Cape Cod Beach Conditions Today — Live Water Temps &amp; Parking Guide" />
-<meta name="twitter:description" content="Live Cape Cod water temperatures by beach, plus typical summer parking and crowd patterns, lifeguard and sticker info for 20+ beaches. Live, crowdsourced parking reports in the app." />
+<meta name="twitter:title" content="Cape Cod Beach Conditions Today — Water Temps by Beach" />
+<meta name="twitter:description" content="Cape Cod water temperatures by beach, from the nearest of three sensors, with the sensor and the time each reading was checked. Beachgoer parking reports are in the app." />
 <meta name="twitter:image" content="https://totallycapecod.com/og-image.png" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0YM9WQLWK"></script>
 <script>
@@ -49,11 +49,11 @@
   .table-wrap { overflow-x:auto; border-radius:var(--radius-md); box-shadow:var(--shadow-sm); background:white; }
   .updated-line { font-size:12px; color:var(--text-secondary); text-align:right; margin-top:8px; }
   .icon-bool { font-size:15px; }
+  .sensor-link { color:inherit; text-decoration:underline; }
+  .reading-meta { font-size:12px; color:var(--text-secondary); }
   @media(max-width:600px){
-    .conditions-table th:nth-child(5),
-    .conditions-table td:nth-child(5),
-    .conditions-table th:nth-child(6),
-    .conditions-table td:nth-child(6){ display:none; }
+    .conditions-table th:nth-child(4),
+    .conditions-table td:nth-child(4){ display:none; }
   }
 </style>
 </head>
@@ -91,24 +91,28 @@
 <section class="hero" style="min-height:40vh;">
   <div class="hero-overlay"></div>
   <div class="hero-content" style="padding-top:80px;">
-    <div class="hero-badge">Live Water Temps</div>
+    <div class="hero-badge">Water Temps by Beach</div>
     <h1 class="hero-title" style="font-size:clamp(28px,5vw,52px);">Cape Cod Beach <span class="script">Conditions</span> Today</h1>
-    <p class="hero-subtitle">Live water temps by beach · typical parking &amp; crowds · report live in the app</p>
+    <p class="hero-subtitle">Water temps by beach, from the nearest sensor · parking reports in the app</p>
   </div>
 </section>
 
 <section class="section page-wrap">
 
   <p class="s-off" style="font-size:15px; line-height:1.7; color:var(--text); margin:0 0 16px; max-width:760px; background:#FFF6E5; border:1px solid #F1DFB8; border-radius:12px; padding:12px 14px;">
-    🍂 <strong>It's the off-season.</strong> No lifeguards are on duty — Cape lifeguard seasons run roughly from mid- to late June
-    through Labor Day — and beach sticker and fee rules are mainly a summer thing (they vary by town, so follow posted signs).
-    Water temperatures below are still live from NOAA and Cape buoys.
+    🍂 <strong>It's the off-season.</strong> At the six Cape Cod National Seashore beaches, lifeguards are typically on duty only
+    from late June through Labor Day, and apart from the Salt Pond and Province Lands visitor centers, park restrooms are
+    open seasonally (<a href="https://www.nps.gov/caco/planyourvisit/hours.htm" target="_blank" rel="noopener">National Park Service</a>).
+    Town beaches set their own seasons, so check the town and follow posted signs.
   </p>
-  <p class="s-summer" style="font-size:15px; line-height:1.7; color:var(--text); margin:0 0 28px; max-width:760px;">
-    Parking fills fast on summer days — especially at National Seashore beaches like Coast Guard and Race Point.
-    This page shows the <strong>live water temperature</strong> at 20+ Cape Cod beaches (from NOAA and Cape buoys), plus the
-    <strong>typical</strong> parking and crowd pattern for each. For real-time, crowdsourced parking — updated as beachgoers
-    report from the sand — open the app. Bookmark this before you head out.
+  <p style="font-size:15px; line-height:1.7; color:var(--text); margin:0 0 28px; max-width:760px;">
+    Each beach shows the latest water temperature from its nearest working sensor —
+    <a href="https://tidesandcurrents.noaa.gov/stationhome.html?id=8447930" target="_blank" rel="noopener">NOAA's Woods Hole station</a>,
+    <a href="https://www.ndbc.noaa.gov/station_page.php?station=44020" target="_blank" rel="noopener">NOAA buoy 44020 in Nantucket Sound</a> or
+    <a href="https://www.ndbc.noaa.gov/station_page.php?station=44090" target="_blank" rel="noopener">buoy 44090 in Cape Cod Bay</a>
+    (Woods Hole Group/NERACOOS) — with the time we checked it. There's no sensor on the ocean side, so Atlantic-facing beaches
+    show the Cape Cod Bay reading and the water there may differ.
+    <span class="s-summer">For parking, the app shows reports from other beachgoers, kept for 3 hours after they're posted.</span>
   </p>
 
   <div id="beachData">
@@ -127,7 +131,7 @@
   <div style="margin-top:40px; background:var(--sand-light); border-radius:var(--radius-lg); padding:32px; text-align:center;">
     <p style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--warm-brown-soft); margin:0 0 10px;">Get it live on your phone</p>
     <h2 style="font-family:'Fraunces',serif; font-weight:900; font-size:26px; margin:0 0 8px; color:var(--warm-brown);">Open the Totally Cape Cod App</h2>
-    <p style="color:var(--text-secondary); font-size:14px; margin:0 0 20px;">Real-time beaches, bridge traffic, tides &amp; tonight's events — all in one place.</p>
+    <p style="color:var(--text-secondary); font-size:14px; margin:0 0 20px;">Water temps, bridge traffic, tides &amp; tonight's events — all in one place.</p>
     <a href="/app/" class="btn btn-primary" onclick="gtag('event','cta_click',{page:'beach-conditions',location:'bottom'})">Open the App →</a>
   </div>
 
@@ -137,7 +141,7 @@
   <div class="footer-inner">
     <div>
       <div class="footer-brand">Totally Cape Cod</div>
-      <p class="footer-desc">The unofficial guide to the best of Cape Cod.</p>
+      <p class="footer-desc">Cape Cod beaches, events and eats, linked to their sources.</p>
     </div>
     <div class="footer-links">
       <div class="footer-heading">Explore</div>
@@ -162,18 +166,21 @@ function toggleMobileMenu(){document.getElementById('mobileMenu').classList.togg
 
 const DATA_URL = 'https://raw.githubusercontent.com/zemiai/totallycapecod/main/data/beaches.json';
 
-function crowdDots(n) {
-  let html = '<span class="crowd-dots">';
-  for (let i = 1; i <= 5; i++) {
-    html += '<span class="crowd-dot ' + (i <= n ? 'dot-filled' : 'dot-empty') + '"></span>';
-  }
-  return html + '</span>';
+// Station pages for each sensor name used in data/beaches.json
+const SENSOR_LINKS = {
+  'Woods Hole': 'https://tidesandcurrents.noaa.gov/stationhome.html?id=8447930',
+  'Nantucket Sound buoy': 'https://www.ndbc.noaa.gov/station_page.php?station=44020',
+  'Cape Cod Bay buoy': 'https://www.ndbc.noaa.gov/station_page.php?station=44090'
+};
+function sensorHtml(src) {
+  if (!src) return '—';
+  const url = SENSOR_LINKS[src];
+  return url ? '<a class="sensor-link" href="' + url + '" target="_blank" rel="noopener">' + src + '</a>' : src;
 }
-
-function statusBadge(s) {
-  const map = { open: ['status-open','Open'], mid: ['status-mid','Filling'], full: ['status-full','Full'] };
-  const cfg = map[s] || ['status-open', s];
-  return '<span class="status-badge ' + cfg[0] + '">' + cfg[1] + '</span>';
+function fmtDateTime(iso) {
+  const d = new Date(iso);
+  if (isNaN(d)) return 'time unknown';
+  return d.toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
 }
 
 async function loadData() {
@@ -185,23 +192,16 @@ async function loadData() {
     const beaches = data.beaches || [];
     if (!beaches.length) throw new Error('No beach data');
 
-    const OFF = !!(window.TCCSeason && TCCSeason.isOff());
     const rows = beaches.map(function(b) {
       return '<tr>' +
         '<td><strong>' + b.name + '</strong></td>' +
         '<td>' + b.town + '</td>' +
-        '<td>' + (OFF ? '<span class="status-badge" style="background:#eee;color:#555;">Off-season</span>' : statusBadge(b.status)) + '</td>' +
-        '<td>' + (OFF ? '<span style="color:var(--text-secondary);">Quiet</span>' : crowdDots(b.crowd || 0)) + '</td>' +
         '<td><span class="temp-badge">' + (b.water_temp ? b.water_temp + '°F' : '—') + '</span></td>' +
-        '<td>' +
-          (b.lifeguard ? '<span class="icon-bool" title="' + (OFF ? 'Lifeguarded in summer (none on duty now)' : 'Lifeguarded beach (summer)') + '">🏊</span> ' : '') +
-          (b.restrooms ? '<span class="icon-bool" title="Restrooms">🚻</span> ' : '') +
-          (b.sticker_required ? '<span class="icon-bool" title="Sticker required">🅿️</span>' : '') +
-        '</td>' +
+        '<td><span class="reading-meta">' + sensorHtml(b.water_temp_src) + (b.water_temp_at ? ' · checked ' + fmtDateTime(b.water_temp_at) : '') + '</span></td>' +
       '</tr>';
     }).join('');
 
-    const updatedAt = data.updated_at ? new Date(data.updated_at).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}) : 'recently';
+    const updatedAt = data.updated_at ? fmtDateTime(data.updated_at) : 'unknown';
 
     container.innerHTML =
       '<div class="table-wrap">' +
@@ -209,15 +209,13 @@ async function loadData() {
           '<thead><tr>' +
             '<th>Beach</th>' +
             '<th>Town</th>' +
-            '<th>Typical Parking</th>' +
-            '<th>Usual Crowd</th>' +
             '<th>🌊 Water Temp</th>' +
-            '<th>Amenities</th>' +
+            '<th>Nearest sensor</th>' +
           '</tr></thead>' +
           '<tbody>' + rows + '</tbody>' +
         '</table>' +
       '</div>' +
-      '<p class="updated-line">Last updated: ' + updatedAt + ' · <a href="/app/">Full conditions in the app →</a></p>';
+      '<p class="updated-line">Data file updated: ' + updatedAt + ' · <a href="/app/">More in the app →</a></p>';
 
   } catch (e) {
     console.error(e);

@@ -9,7 +9,7 @@
 <meta name="description" content="Live Cape Cod beach water temps, bridge traffic, tides, events and restaurants — plan a Cape Cod trip in any season with Totally Cape Cod." />
 <meta name="keywords" content="Cape Cod, beaches, things to do, restaurants, events, bridge traffic, Provincetown, Chatham, Wellfleet" />
 <meta property="og:title" content="Totally Cape Cod — Live Beaches, Bridge Traffic &amp; Things to Do" />
-<meta property="og:description" content="The best beaches, hidden gems, restaurants, and events on Cape Cod." />
+<meta property="og:description" content="Cape Cod beaches, restaurants and events, with water temps, tides and bridge traffic." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://totallycapecod.com/" />
 <link rel="canonical" href="https://totallycapecod.com/welcome" />
@@ -285,7 +285,7 @@
 <section class="hero">
   <div class="hero-overlay"></div>
   <div class="hero-content" style="padding-top: 80px;">
-    <div class="hero-badge">🟢 Live now · <span data-season-label>Summer 2026</span></div>
+    <div class="hero-badge">📍 <span data-season-label>Cape Cod</span></div>
     <h1 class="hero-title">Never waste a day on <span class="script">Cape Cod</span></h1>
     <p class="hero-subtitle"><span class="s-summer">Beach reports, bridge delays, water temps and tonight's events — updated through the day. Know before you drive.</span><span class="s-off">Live bridge delays, water temps, tides and tonight's events — updated through the day. Know before you drive.</span></p>
     <div class="hero-buttons">
@@ -301,7 +301,7 @@
   // Summer-only copy test (beach-lot wording) — skipped in the off-season.
   if (window.tccAB && tccAB.hero_copy === 'live_now' && !(window.TCCSeason && TCCSeason.isOff())) {
     document.querySelector('.hero-title').innerHTML = 'Cape Cod, <span class="script">live</span> right now';
-    document.querySelector('.hero-subtitle').textContent = 'Which beach lots have space, how backed up the bridges are, what\u2019s on tonight \u2014 see it all before you leave the house.';
+    document.querySelector('.hero-subtitle').textContent = 'Beach parking reports from other beachgoers, bridge delays from Google Maps, what\u2019s on tonight \u2014 check before you leave the house.';
   }
 </script>
 
@@ -310,18 +310,18 @@
 <!-- Outcome-first value band: understand the value in 5 seconds, then one clear action -->
 <section class="section page-wrap" style="padding-top: 16px;">
   <div class="section-header">
-    <div class="section-label">Your local friend on Cape Cod</div>
-    <h2 class="section-title">Everything you need for the perfect Cape day</h2>
-    <p class="section-subtitle">One free app. Real-time. Built by locals.</p>
+    <div class="section-label">In the app</div>
+    <h2 class="section-title">What the free app does</h2>
+    <p class="section-subtitle">One free web app, updated through the day.</p>
   </div>
   <div class="outcomes-grid">
-    <div class="outcome s-summer"><span class="ic">🏖️</span><div><strong>Find open beach parking</strong><p>See which lots have spots before you drive — never circle for an hour.</p></div></div>
-    <div class="outcome s-off"><span class="ic">🏖️</span><div><strong>Plan a beach walk</strong><p>Live water temps and today's tide times for 27 Cape beaches.</p></div></div>
-    <div class="outcome"><span class="ic">🌉</span><div><strong>Beat the bridge</strong><p>Live Sagamore &amp; Bourne delays, so you cross at the right time.</p></div></div>
-    <div class="outcome"><span class="ic">🦞</span><div><strong>Find tonight's dinner</strong><p>What's open near you right now — lobster rolls, shacks &amp; specials.</p></div></div>
-    <div class="outcome"><span class="ic">👧</span><div><strong>Keep the kids busy</strong><p>Today's events, tide-pool beaches &amp; a 100-stamp <span class="s-summer">summer</span><span class="s-off">Cape</span> passport.</p></div></div>
-    <div class="outcome"><span class="ic">💬</span><div><strong>Ask a local anything</strong><p>An AI Cape guide that answers from live, on-the-ground conditions.</p></div></div>
-    <div class="outcome"><span class="ic">☀️</span><div><strong>Never waste a vacation day</strong><p>Real-time water temps, weather &amp; conditions across the whole Cape.</p></div></div>
+    <div class="outcome s-summer"><span class="ic">🏖️</span><div><strong>Check beach parking reports</strong><p>Parking reports from other beachgoers, shown for 3 hours after they're posted.</p></div></div>
+    <div class="outcome s-off"><span class="ic">🏖️</span><div><strong>Plan a beach walk</strong><p>Water temps from three sensors and today's tides from NOAA's Chatham station, for 27 mapped beaches.</p></div></div>
+    <div class="outcome"><span class="ic">🌉</span><div><strong>Check the bridges</strong><p>Sagamore &amp; Bourne delays from Google Maps traffic, checked about every hour through the day.</p></div></div>
+    <div class="outcome"><span class="ic">🦞</span><div><strong>Find dinner</strong><p>What's open near you, going by Google's listed hours — lobster rolls, clam shacks and more.</p></div></div>
+    <div class="outcome"><span class="ic">👧</span><div><strong>Keep the kids busy</strong><p>Today's events and a 110-stamp <span class="s-summer">summer</span><span class="s-off">Cape</span> passport.</p></div></div>
+    <div class="outcome"><span class="ic">💬</span><div><strong>Ask the AI guide</strong><p>An AI assistant that answers from the app's current data, like water temps, events and bridge traffic.</p></div></div>
+    <div class="outcome"><span class="ic">☀️</span><div><strong>Check the water</strong><p>Water temps from the nearest of three sensors, with the time each was checked.</p></div></div>
   </div>
   <div style="text-align:center; margin-top:30px;">
     <a href="/app/" class="btn btn-primary btn-lg" onclick="gtag('event','click',{event_category:'outcomes',event_label:'open_app'})">Open the Free App →</a>
@@ -345,7 +345,7 @@
       <div class="overlay"></div>
       <div class="content">
         <h3>Beaches</h3>
-        <p>27 mapped with live conditions</p>
+        <p>27 mapped, with water temps</p>
       </div>
     </a>
     <a href="/eats.html" class="directory-tile" onclick="gtag('event','click',{event_category:'directory',event_label:'eats'})">
@@ -379,8 +379,8 @@
 <section class="section page-wrap">
   <div class="section-header">
     <div class="section-label">Start Here</div>
-    <h2 class="section-title">Local Favorites</h2>
-    <p class="section-subtitle">A few Cape classics worth your time.</p>
+    <h2 class="section-title">Featured Spots</h2>
+    <p class="section-subtitle">Each with a link to its source.</p>
   </div>
 
   <div class="grid-3">
@@ -391,7 +391,7 @@
       <div class="card-body">
         <h3 class="card-title">Race Point Beach</h3>
         <p class="card-sub">Provincetown · Cape Cod National Seashore</p>
-        <p style="font-size: 13px; color: var(--text-secondary); margin-top: 8px; line-height: 1.5;">Wide dunes, soft sand and big sunsets at the tip of the Cape. Cold Atlantic water with swift currents.</p>
+        <p style="font-size: 13px; color: var(--text-secondary); margin-top: 8px; line-height: 1.5;">National Seashore beach at the northernmost point on Cape Cod. The Park Service notes swift currents and deeper water close to shore. <a href="https://www.nps.gov/places/race-point-beach.htm" target="_blank" rel="noopener">Source: NPS ↗</a></p>
       </div>
       <div class="card-footer">
         <span style="font-size: 13px; color: var(--text-secondary);">📍 Outer Cape</span>
@@ -405,11 +405,11 @@
       </div>
       <div class="card-body">
         <h3 class="card-title">The Lobster Pot</h3>
-        <p class="card-sub">Provincetown · Since 1979</p>
-        <p style="font-size: 13px; color: var(--text-secondary); margin-top: 8px; line-height: 1.5;">Waterfront Provincetown seafood landmark, run by the McNulty family since 1979. Lobster rolls and harbor views.</p>
+        <p class="card-sub">Provincetown · Seafood</p>
+        <p style="font-size: 13px; color: var(--text-secondary); margin-top: 8px; line-height: 1.5;">Run by the McNulty family since 1979, with views of Provincetown Harbor, according to the restaurant. Seasonal — check its site for dates. <a href="https://www.ptownlobsterpot.com/our-story" target="_blank" rel="noopener">Source: The Lobster Pot ↗</a></p>
       </div>
       <div class="card-footer">
-        <span style="font-size: 13px; color: var(--text-secondary);">$$$ · Seafood</span>
+        <span style="font-size: 13px; color: var(--text-secondary);">🦐 Provincetown</span>
         <a href="/eats.html" class="btn btn-sm btn-navy" onclick="gtag('event','click',{event_category:'featured',event_label:'lobster_pot'})">View</a>
       </div>
     </div>
@@ -420,11 +420,11 @@
       </div>
       <div class="card-body">
         <h3 class="card-title">Whale Watch Tour</h3>
-        <p class="card-sub">Provincetown · 3–4 hours · Seasonal</p>
-        <p style="font-size: 13px; color: var(--text-secondary); margin-top: 8px; line-height: 1.5;">Trips out to Stellwagen Bank, which several national and international polls list among the world's top ten whale-watching sites, according to NOAA.</p>
+        <p class="card-sub">Provincetown · Dolphin Fleet trips run 3–4 hours, April–October (<a href="https://whalewatch.com/information/terms-conditions/" target="_blank" rel="noopener">Dolphin Fleet ↗</a>)</p>
+        <p style="font-size: 13px; color: var(--text-secondary); margin-top: 8px; line-height: 1.5;">Trips to Stellwagen Bank, which NOAA says is “routinely ranked among the world's top-10 whale-watching destinations.” <a href="https://oceanservice.noaa.gov/ocean/sanctuaries/stellwagen.html" target="_blank" rel="noopener">Source: NOAA ↗</a></p>
       </div>
       <div class="card-footer">
-        <span style="font-size: 13px; color: var(--text-secondary);">$$ · Family</span>
+        <span style="font-size: 13px; color: var(--text-secondary);">🐋 Seasonal</span>
         <a href="/experiences.html" class="btn btn-sm btn-navy" onclick="gtag('event','click',{event_category:'featured',event_label:'whale_watch'})">View</a>
       </div>
     </div>
@@ -436,7 +436,7 @@
   <div class="affiliate-band">
     <div>
       <div class="label">Book Your Stay</div>
-      <div class="title">Hotels & rentals near the best Cape Cod beaches</div>
+      <div class="title">Hotels & rentals on Cape Cod</div>
     </div>
     <a href="https://www.booking.com/searchresults.html?ss=Cape+Cod" target="_blank" rel="noopener" class="btn btn-sm btn-navy" onclick="gtag('event','affiliate_click',{event_category:'booking',event_label:'homepage_banner'})">Search on Booking.com →</a>
   </div>
@@ -446,16 +446,16 @@
 <section class="section page-wrap">
   <div class="section-header">
     <div class="section-label">Guides</div>
-    <h2 class="section-title">Plan like a local</h2>
-    <p class="section-subtitle">Guides to the Cape's best spots, with the rules and details that matter. New guides are checked line by line against their sources.</p>
+    <h2 class="section-title">Cape Cod guides</h2>
+    <p class="section-subtitle">Beaches, events and wildlife, with the rules and details that matter. New guides are checked line by line against their sources.</p>
   </div>
 
   <div class="grid-2">
     <a href="/best-beaches-2026.html" class="card" style="text-decoration: none;" onclick="gtag('event','click',{event_category:'seo',event_label:'best_beaches'})">
       <div style="padding: 28px;">
         <div style="font-size: 32px; margin-bottom: 12px;">🏝️</div>
-        <h3 style="font-family: 'Fraunces', serif; font-weight: 900; font-size: 22px; margin: 0 0 8px; color: var(--warm-brown);">Best Beaches 2026</h3>
-        <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin: 0;">Cape Cod beaches by region, with the parking and dog rules that trip visitors up.</p>
+        <h3 style="font-family: 'Fraunces', serif; font-weight: 900; font-size: 22px; margin: 0 0 8px; color: var(--warm-brown);">Beaches by Region 2026</h3>
+        <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin: 0;">Cape Cod beaches by region, with parking and dog rules linked to the town or the Park Service.</p>
       </div>
     </a>
     <a href="/guides/cape-cod-holiday-events-2026/" class="card" style="text-decoration: none;" onclick="gtag('event','click',{event_category:'seo',event_label:'holiday_guide'})">
@@ -468,8 +468,8 @@
     <a href="/hidden-gems.html" class="card" style="text-decoration: none;" onclick="gtag('event','click',{event_category:'seo',event_label:'hidden_gems'})">
       <div style="padding: 28px;">
         <div style="font-size: 32px; margin-bottom: 12px;">🗺️</div>
-        <h3 style="font-family: 'Fraunces', serif; font-weight: 900; font-size: 22px; margin: 0 0 8px; color: var(--warm-brown);">Hidden Gems</h3>
-        <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin: 0;">Quieter beaches, wild walks and sunset stops that reward a small detour.</p>
+        <h3 style="font-family: 'Fraunces', serif; font-weight: 900; font-size: 22px; margin: 0 0 8px; color: var(--warm-brown);">Cape Cod Detours</h3>
+        <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin: 0;">Ballston Beach, Paine's Creek Beach and the Great Island Trail, with parking, dog and tide rules linked to their sources.</p>
       </div>
     </a>
     <a href="/guides/whales-and-seals-cape-cod-winter/" class="card" style="text-decoration: none;" onclick="gtag('event','click',{event_category:'seo',event_label:'whales_seals_guide'})">
@@ -533,7 +533,7 @@
     <div style="position: relative; z-index: 1;">
       <div style="font-size: 48px; margin-bottom: 16px;">📱</div>
       <h2 style="font-family: 'Fraunces', serif; font-weight: 900; font-size: 32px; color: var(--warm-brown); margin: 0 0 12px;">Get the App</h2>
-      <p style="font-size: 16px; color: var(--warm-brown-soft); max-width: 480px; margin: 0 auto 24px; line-height: 1.6;">Live beach conditions, tide times, and the Cape Cod Passport — all in your pocket. Add to your homescreen for the full experience.</p>
+      <p style="font-size: 16px; color: var(--warm-brown-soft); max-width: 480px; margin: 0 auto 24px; line-height: 1.6;">Water temps, tide times and the Cape Cod Passport — all in your pocket. Add to your homescreen for the full experience.</p>
       <a href="/app/" class="btn btn-primary" onclick="gtag('event','click',{event_category:'app',event_label:'download'})">Open the App 🎯</a>
     </div>
   </div>
@@ -543,8 +543,8 @@
 <section class="section page-wrap">
   <div class="revenue-band">
     <div style="font-size: 12px; font-weight: 700; color: var(--coral-soft); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px;">For Businesses</div>
-    <h2 style="font-family: 'Fraunces', serif; font-weight: 900; font-size: 28px; color: var(--warm-brown); margin: 0 0 12px;">Get Discovered This Summer</h2>
-    <p style="font-size: 16px; color: var(--warm-brown-soft); max-width: 560px; margin: 0 auto 28px; line-height: 1.6;">List your restaurant, hotel, tour, or shop on Totally Cape Cod and reach thousands of visitors planning their summer.</p>
+    <h2 style="font-family: 'Fraunces', serif; font-weight: 900; font-size: 28px; color: var(--warm-brown); margin: 0 0 12px;">List Your Business</h2>
+    <p style="font-size: 16px; color: var(--warm-brown-soft); max-width: 560px; margin: 0 auto 28px; line-height: 1.6;">List your restaurant, hotel, tour or shop on Totally Cape Cod. Paid listings are labeled “Sponsored.”</p>
 
     <div class="grid-3" style="max-width: 800px; margin: 0 auto;">
       <div class="sponsor-tier">
@@ -559,15 +559,13 @@
         </ul>
       </div>
       <div class="sponsor-tier featured">
-        <div style="font-size: 11px; font-weight: 700; color: white; background: var(--coral-soft); padding: 4px 12px; border-radius: 999px; display: inline-block; margin-bottom: 8px;">Most Popular</div>
         <div style="font-family: 'Fraunces', serif; font-weight: 900; font-size: 36px; color: var(--warm-brown); margin-bottom: 4px;">$299</div>
         <div style="font-size: 14px; color: var(--text-secondary); margin-bottom: 16px;">/season</div>
         <div style="font-weight: 700; font-size: 16px; color: var(--warm-brown); margin-bottom: 12px;">Featured</div>
         <ul style="list-style: none; padding: 0; margin: 0; font-size: 13px; color: var(--text-secondary); line-height: 2;">
           <li>✅ Everything in Basic</li>
-          <li>✅ Priority placement</li>
           <li>✅ Up to 5 photos</li>
-          <li>✅ "Editor's Pick" badge</li>
+          <li>✅ “Sponsored” badge</li>
           <li>✅ Social shoutout</li>
         </ul>
       </div>
@@ -596,7 +594,7 @@
   <div class="footer-inner">
     <div>
       <div class="footer-brand">Totally Cape Cod</div>
-      <p class="footer-desc">The unofficial guide to the best of Cape Cod. Built with 🦐 by people who love the Cape.</p>
+      <p class="footer-desc">Cape Cod beaches, events and eats, linked to their sources.</p>
     </div>
     <div class="footer-links">
       <div class="footer-heading">Explore</div>
@@ -620,11 +618,11 @@
 <!-- Email Capture Popup -->
 <div class="email-popup" id="emailPopup">
   <button class="close" onclick="closeEmailPopup()">&times;</button>
-  <h3>Get the Free Cape Cod Guide</h3>
-  <p>Hidden beaches, best lobster rolls, and secret sunsets — delivered to your inbox.</p>
+  <h3>Get Cape Cod updates by email</h3>
+  <p>New guides and Cape Cod updates, sent to your inbox.</p>
   <form onsubmit="handleEmailSubmit(event)" style="display: flex; gap: 8px;">
     <input type="email" id="popupEmail" placeholder="your@email.com" required style="flex: 1; padding: 10px 14px; border: 1.5px solid var(--divider); border-radius: 12px; font-size: 14px;" />
-    <button type="submit" class="btn btn-primary" style="padding: 10px 18px; font-size: 13px;">Send</button>
+    <button type="submit" class="btn btn-primary" style="padding: 10px 18px; font-size: 13px;">Sign up</button>
   </form>
 </div>
 
@@ -650,21 +648,26 @@ function closeEmailPopup() {
 async function handleEmailSubmit(e) {
   e.preventDefault();
   const email = document.getElementById('popupEmail').value;
-  
+  let ok = false;
   try {
-    await fetch('/.netlify/functions/email-capture', {
+    const res = await fetch('/.netlify/functions/email-capture', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, source: 'homepage_popup', url: location.href, timestamp: new Date().toISOString() })
     });
+    ok = res.ok;
   } catch (err) {
-    // Silently fail
+    ok = false;
   }
-  
-  localStorage.setItem('tcc_email_captured', 'true');
+  // Only say "subscribed" when the signup actually went through.
+  if (!ok) {
+    alert('Sorry — that didn\'t go through. Please try again in a moment.');
+    return;
+  }
+  try { localStorage.setItem('tcc_email_captured', 'true'); } catch (err) {}
   document.getElementById('emailPopup').classList.remove('show');
   gtag('event', 'generate_lead', { method: 'homepage_popup' });
-  alert('Thanks! Check your inbox for the guide.');
+  alert('You\'re subscribed.');
 }
 </script>
 

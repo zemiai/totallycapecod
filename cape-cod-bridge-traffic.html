@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#4A90A4" />
 <title>Cape Cod Bridge Traffic Right Now (Sagamore &amp; Bourne)</title>
-<meta name="description" content="Live Cape Cod bridge traffic: current delays on Sagamore and Bourne bridges, best times to leave today, and a 24-hour forecast to beat the backup." />
+<meta name="description" content="Cape Cod bridge traffic: current delays leaving the Cape over the Sagamore and Bourne bridges, from Google Maps traffic, checked about every hour through the day." />
 <link rel="canonical" href="https://totallycapecod.com/cape-cod-bridge-traffic.html" />
 <meta property="og:title" content="Cape Cod Bridge Traffic Right Now (Sagamore &amp; Bourne)" />
-<meta property="og:description" content="Live Cape Cod bridge traffic: current delays on Sagamore and Bourne bridges, best times to leave today, and a 24-hour forecast to beat the backup." />
+<meta property="og:description" content="Cape Cod bridge traffic: current delays leaving the Cape over the Sagamore and Bourne bridges, from Google Maps traffic, checked about every hour through the day." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://totallycapecod.com/cape-cod-bridge-traffic.html" />
 <meta property="og:image" content="https://totallycapecod.com/og-image.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Cape Cod Bridge Traffic Right Now (Sagamore &amp; Bourne)" />
-<meta name="twitter:description" content="Live Cape Cod bridge traffic: current delays on Sagamore and Bourne bridges, best times to leave today, and a 24-hour forecast to beat the backup." />
+<meta name="twitter:description" content="Cape Cod bridge traffic: current delays leaving the Cape over the Sagamore and Bourne bridges, from Google Maps traffic, checked about every hour through the day." />
 <meta name="twitter:image" content="https://totallycapecod.com/og-image.png" />
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0YM9WQLWK"></script>
 <script>
@@ -97,20 +97,21 @@
   <div class="hero-content" style="padding-top:80px;">
     <div class="hero-badge">Live Traffic</div>
     <h1 class="hero-title" style="font-size:clamp(24px,4.5vw,48px);">Cape Cod Bridge <span class="script">Traffic</span> Right Now</h1>
-    <p class="hero-subtitle">Sagamore &amp; Bourne Bridge — live delays from Google Maps traffic</p>
+    <p class="hero-subtitle">Sagamore &amp; Bourne — delays leaving the Cape, from Google Maps traffic</p>
   </div>
 </section>
 
 <section class="section page-wrap">
 
   <p style="font-size:15px; line-height:1.7; color:var(--text); margin:0 0 28px; max-width:760px;">
-    The Sagamore and Bourne bridges are the two highway bridges over the Cape Cod Canal. This page pulls live speed and
-    delay data for both from Google Maps traffic through the day, and in summer adds typical busy-day patterns (estimates)
-    to help you pick a departure window.
+    The Sagamore and Bourne bridges are the two highway bridges over the Cape Cod Canal. This page shows Google Maps traffic
+    for the off-Cape direction (leaving the Cape) of each bridge, checked about every hour through the day: the extra minutes
+    traffic adds to the crossing, per Google Maps, and the average speed over the measured stretch.
+    We don't measure the on-Cape direction, so check a live traffic map if you're heading onto the Cape.
   </p>
 
   <div id="bridgeData">
-    <div class="loading-msg">⏳ Loading live bridge traffic…</div>
+    <div class="loading-msg">⏳ Loading bridge traffic…</div>
   </div>
 
   <div style="margin-top:40px; padding:24px; background:var(--sea-mist); border-radius:var(--radius-md); text-align:center;">
@@ -125,7 +126,7 @@
   <div style="margin-top:40px; background:var(--sand-light); border-radius:var(--radius-lg); padding:32px; text-align:center;">
     <p style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--warm-brown-soft); margin:0 0 10px;">Get it live on your phone</p>
     <h2 style="font-family:'Fraunces',serif; font-weight:900; font-size:26px; margin:0 0 8px; color:var(--warm-brown);">Open the Totally Cape Cod App</h2>
-    <p style="color:var(--text-secondary); font-size:14px; margin:0 0 20px;">Real-time beaches, bridge traffic, tides &amp; tonight's events — all in one place.</p>
+    <p style="color:var(--text-secondary); font-size:14px; margin:0 0 20px;">Water temps, bridge traffic, tides &amp; tonight's events — all in one place.</p>
     <a href="/app/" class="btn btn-primary" onclick="gtag('event','cta_click',{page:'bridge-traffic',location:'bottom'})">Open the App →</a>
   </div>
 
@@ -135,7 +136,7 @@
   <div class="footer-inner">
     <div>
       <div class="footer-brand">Totally Cape Cod</div>
-      <p class="footer-desc">The unofficial guide to the best of Cape Cod.</p>
+      <p class="footer-desc">Cape Cod beaches, events and eats, linked to their sources.</p>
     </div>
     <div class="footer-links">
       <div class="footer-heading">Explore</div>
@@ -166,24 +167,22 @@ function delayClass(min) {
   return '';
 }
 
-function bridgeCard(b, delay) {
-  var cls = delayClass(delay);
-  var delayText = delay === 0 ? 'No delay' : delay + ' min';
-  return '<div class="bridge-card ' + cls + '">' +
-    '<div class="bridge-name">' + b.name + '</div>' +
-    '<div class="bridge-delay ' + cls + '">' + delayText + '</div>' +
-    '<div class="bridge-label">Current delay</div>' +
-    '<div class="bridge-advice">' + (b.advice || '') + '</div>' +
-    '<div class="bridge-speed">🚗 ' + (b.live_speed_mph || '—') + ' mph · free-flow ' + (b.free_flow_mph || '—') + ' mph · checked ' + (window.__bridgeChecked || 'recently') + '</div>' +
-  '</div>';
+function fmtDateTime(iso) {
+  var d = new Date(iso);
+  if (isNaN(d)) return 'time unknown';
+  return d.toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
 }
 
-function forecastBar(delay) {
+function bridgeCard(b, delay, checked) {
   var cls = delayClass(delay);
-  var pct = Math.min(100, (delay / 60) * 100);
-  return '<div class="delay-bar-wrap">' +
-    '<div class="delay-bar ' + cls + '" style="width:' + pct + 'px;max-width:120px;"></div>' +
-    '<span>' + (delay === 0 ? 'No delay' : delay + ' min') + '</span>' +
+  var delayText = delay === 0 ? 'No added delay' : delay + ' min';
+  return '<div class="bridge-card ' + cls + '">' +
+    '<div class="bridge-name">' + (b.name || 'Bridge') + '</div>' +
+    '<div class="bridge-label" style="margin-bottom:0;">Leaving the Cape</div>' +
+    '<div class="bridge-delay ' + cls + '">' + delayText + '</div>' +
+    '<div class="bridge-label">Extra minutes from traffic, per Google Maps</div>' +
+    '<div class="bridge-speed">🚗 Average speed on the measured stretch: ' + (b.live_speed_mph != null ? b.live_speed_mph + ' mph' : '—') + '</div>' +
+    '<div class="bridge-speed">Source: Google Maps traffic · checked ' + checked + '</div>' +
   '</div>';
 }
 
@@ -196,63 +195,22 @@ async function loadData() {
     var cur = data.current || {};
     var sag = cur.sagamore || {};
     var bou = cur.bourne || {};
-    var forecast = data.forecast_24h || [];
-    var bestTimes = data.best_times_to_leave || {};
-    var updatedAt = data.updated_at ? new Date(data.updated_at).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}) : 'recently';
-    window.__bridgeChecked = updatedAt;   // real update time (the per-bridge text field is static)
-    var OFF = !!(window.TCCSeason && TCCSeason.isOff());
-
-    var forecastRows = forecast.map(function(f) {
-      return '<tr>' +
-        '<td><strong>' + f.hour + '</strong></td>' +
-        '<td>' + forecastBar(f.sagamore_delay) + '</td>' +
-        '<td>' + forecastBar(f.bourne_delay) + '</td>' +
-      '</tr>';
-    }).join('');
-
-    var bestKeys = [
-      ['off_cape_sunday', 'Leaving Cape — Sunday'],
-      ['off_cape_weekday', 'Leaving Cape — Weekday'],
-      ['on_cape_friday', 'Arriving Cape — Friday'],
-      ['on_cape_saturday', 'Arriving Cape — Saturday']
-    ];
-
-    var bestCardsHtml = bestKeys.map(function(pair) {
-      var key = pair[0], label = pair[1];
-      return '<div class="best-time-card">' +
-        '<div class="best-time-label">' + label + '</div>' +
-        '<div class="best-time-value">' + (bestTimes[key] || '—') + '</div>' +
-      '</div>';
-    }).join('');
+    var checked = data.updated_at ? fmtDateTime(data.updated_at) : 'time unknown';
+    var stale = data.updated_at && (Date.now() - new Date(data.updated_at).getTime()) > 3 * 3600000;
 
     container.innerHTML =
+      (stale ? '<p class="updated-line" style="margin:0 0 12px;"><strong>This reading is more than 3 hours old</strong> — check a live traffic map before you go.</p>' : '') +
       '<div class="bridge-grid">' +
-        bridgeCard(sag, sag.current_delay_min || 0) +
-        bridgeCard(bou, bou.current_delay_min || 0) +
+        bridgeCard(sag, sag.current_delay_min || 0, checked) +
+        bridgeCard(bou, bou.current_delay_min || 0, checked) +
       '</div>' +
-
-      (OFF ? '<p class="updated-line">Delays above are live, measured from Google Maps traffic through the day. The typical summer patterns we show in summer are hidden for the off-season.</p>' :
-      '<h2 class="section-label">Typical Busy Summer Day, by Hour (estimate)</h2>' +
-      '<div style="overflow-x:auto;background:white;border-radius:var(--radius-md);box-shadow:var(--shadow-sm);">' +
-        '<table class="forecast-table">' +
-          '<thead><tr>' +
-            '<th>Hour</th>' +
-            '<th>Sagamore Delay</th>' +
-            '<th>Bourne Delay</th>' +
-          '</tr></thead>' +
-          '<tbody>' + forecastRows + '</tbody>' +
-        '</table>' +
-      '</div>' +
-
-      '<h2 class="section-label">Usually-Easier Times to Cross in Summer (estimate)</h2>' +
-      '<div class="best-times-grid">' + bestCardsHtml + '</div>') +
-      '<p class="updated-line">Last updated: ' + updatedAt + ' · <a href="/app/">Live bridge data in the app →</a></p>';
+      '<p class="updated-line">Last checked: ' + checked + ' · <a href="/app/">Bridge traffic in the app →</a></p>';
 
   } catch (e) {
     console.error(e);
     container.innerHTML = '<div class="error-msg">' +
-      '<strong>Unable to load live bridge traffic right now.</strong><br>' +
-      'Please try refreshing or <a href="/app/">open the app</a> for live data.' +
+      '<strong>Unable to load bridge traffic right now.</strong><br>' +
+      'Please try refreshing or <a href="/app/">open the app</a>.' +
     '</div>';
   }
 }

@@ -217,10 +217,10 @@ NAV = ('<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" cl
        '<a href="/events">Events</a><a href="/guides/">Guides</a><a href="/app/">📱 Open the App</a></div></div>')
 
 FOOTER = ('<footer class="site-footer"><div class="footer-inner"><div><div class="footer-brand">Totally Cape Cod</div>'
-          '<p class="footer-desc">The unofficial guide to the best of Cape Cod.</p></div>'
+          '<p class="footer-desc">Cape Cod beaches, events and eats, linked to their sources.</p></div>'
           '<div class="footer-links"><div class="footer-heading">Explore</div><a href="/beaches.html">Beaches</a><a href="/eats.html">Restaurants</a>'
           '<a href="/events">Events</a><a href="/experiences.html">Experiences</a>'
-          '<a href="/best-beaches-2026.html">Best beaches 2026</a><a href="/hidden-gems.html">Hidden gems</a><a href="/photos.html">Cape Cod photos</a></div>'
+          '<a href="/best-beaches-2026.html">Beaches by region</a><a href="/hidden-gems.html">Cape Cod detours</a><a href="/photos.html">Cape Cod photos</a></div>'
           '<div class="footer-links"><div class="footer-heading">Guides</div><a href="/guides/">All guides</a>'
           '<a href="/guides/standards/">How we fact-check</a><a href="/contact.html">Report an error</a></div></div>'
           '<div class="footer-bottom">© 2026 Totally Cape Cod. Affiliate links help keep this guide free.</div></footer>'
@@ -499,7 +499,7 @@ Plans change and mistakes happen. If you spot something wrong or out of date, [t
 
 ## Independence
 
-Events, places and businesses are never included because someone paid for it.
+Nothing in our guides is there because someone paid for it. Paid listings elsewhere on the site are labeled "Sponsored."
 """
 
 
