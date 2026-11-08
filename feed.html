@@ -345,6 +345,12 @@ function buildSequence(){
 
 /* ---- Renderers ---- */
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+// "Source: example.com" link for a blurb's desc_source URL (from data/eats.json), when it has one.
+function srcLink(u){
+  if(!u || !/^https?:\/\//.test(u)) return '';
+  let host=''; try{ host=new URL(u).hostname.replace(/^www\./,''); }catch(_){ return ''; }
+  return `<div class="updated">Source: <a href="${esc(u)}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">${esc(host)}</a></div>`;
+}
 function ageMin(iso){ const t=Date.parse(iso||''); return isNaN(t)?null:Math.max(0,Math.round((Date.now()-t)/60000)); }
 function ageText(m){ return m==null?'time unknown':(m<60?m+' min ago':m<1440?Math.round(m/60)+' h ago':Math.round(m/1440)+' days ago'); }
 
@@ -409,7 +415,8 @@ function renderItem(it){
   const callBtn = phoneDigits
     ? `<a class="a-book" href="tel:${phoneDigits}" onclick="gtag('event','call_click',{item:'${esc(r.name)}',location:'feed'})">📞 Call</a>`
     : `<a class="a-book" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(r.name+' '+r.town+' MA')}${r.place_id?`&query_place_id=${encodeURIComponent(r.place_id)}`:''}" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'maps',item:'${esc(r.name)}',location:'feed'})">📍 Directions</a>`;
-  const siteBtn = r.website
+  // Skip sites flagged in data/eats.json (website_hidden), e.g. ones showing injected spam.
+  const siteBtn = (r.website && !r.website_hidden)
     ? `<a class="a-view" href="${esc(r.website)}" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'website',item:'${esc(r.name)}',location:'feed'})">Website</a>`
     : "";
   return `<div class="post">
@@ -420,6 +427,7 @@ function renderItem(it){
       <div class="kind-pill kp-food">Eat</div></div>
     <div class="post-body">
       <p>${esc(r.desc)}</p>
+      ${srcLink(r.desc_source)}
       <div class="tags">${r.tags.slice(0,3).map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div>
       <div class="actions">
         ${siteBtn}

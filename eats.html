@@ -130,7 +130,7 @@ function renderEats(){
         ${closed?'<div class="meta" style="color:#B45309;font-weight:700;">Google lists this as temporarily closed — check before you go</div>':''}
         <div class="tags">${r.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
         ${r.desc?`<p style="font-size:13px;color:var(--text-secondary);margin:0 0 6px;line-height:1.5;">${esc(r.desc)}</p>`:''}
-        ${r.src?`<p class="src">Source: <a href="${esc(r.src.url)}" target="_blank" rel="noopener">${esc(r.src.label)} ↗</a></p>`:(L.website?`<p class="src"><a href="${esc(L.website)}" target="_blank" rel="noopener">Restaurant website ↗</a></p>`:'')}
+        ${r.src?`<p class="src">Source: <a href="${esc(r.src.url)}" target="_blank" rel="noopener">${esc(r.src.label)} ↗</a></p>`:((L.website&&!L.website_hidden)?`<p class="src"><a href="${esc(L.website)}" target="_blank" rel="noopener">Restaurant website ↗</a></p>`:'')}
         <div class="actions">
           <a href="https://www.yelp.com/search?find_desc=${encodeURIComponent(r.name)}&find_loc=${encodeURIComponent(r.town)}%2C+MA" target="_blank" rel="noopener" class="btn-view" onclick="gtag('event','affiliate_click',{type:'yelp',item:'${esc(r.name)}',location:'eats_card'})">Reviews</a>
           <a href="https://www.opentable.com/s?term=${encodeURIComponent(r.name)}&metroId=66" target="_blank" rel="noopener" class="btn-book" onclick="gtag('event','affiliate_click',{type:'opentable',item:'${esc(r.name)}',location:'eats_card'})">Reserve</a>

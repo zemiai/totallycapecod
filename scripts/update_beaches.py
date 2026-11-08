@@ -42,13 +42,13 @@ def fetch_coops(station: str):
         r = requests.get(
             "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter",
             params={"date": "latest", "station": station, "product": "water_temperature",
-                    "units": "english", "time_zone": "lst", "format": "json"},
+                    "units": "english", "time_zone": "gmt", "format": "json"},
             headers=HEADERS, timeout=20,
         )
         r.raise_for_status()
         data = r.json().get("data", [])
-        if data:
-            return round(float(data[0]["v"]))
+        if data:   # "t" is the sensor's own observation time (UTC with time_zone=gmt)
+            return round(float(data[0]["v"])), data[0]["t"].replace(" ", "T") + ":00Z"
     except Exception as e:
         print(f"[hermes] coops {station} water_temp failed: {e}", file=sys.stderr)
     return None
@@ -71,8 +71,8 @@ def fetch_ndbc(buoy: str):
             cols = row.split()
             if len(cols) > wi:
                 v = cols[wi]
-                if v not in ("MM", "999.0", "99.0", "999"):
-                    return round(float(v) * 9 / 5 + 32)
+                if v not in ("MM", "999.0", "99.0", "999"):   # YY MM DD hh mm are UTC
+                    return round(float(v) * 9 / 5 + 32), f"{cols[0]}-{cols[1]}-{cols[2]}T{cols[3]}:{cols[4]}:00Z"
     except Exception as e:
         print(f"[hermes] ndbc {buoy} water_temp failed: {e}", file=sys.stderr)
     return None
@@ -92,10 +92,11 @@ def main() -> None:
 
     readings = []
     for s in SOURCES:
-        t = fetch_coops(s["id"]) if s["kind"] == "coops" else fetch_ndbc(s["id"])
+        got = fetch_coops(s["id"]) if s["kind"] == "coops" else fetch_ndbc(s["id"])
+        t, observed = got if got else (None, None)
         if t is not None and 32 <= t <= 90:  # sanity bound
-            readings.append({**s, "tempF": t})
-            print(f"[hermes] {s['name']}: {t}°F")
+            readings.append({**s, "tempF": t, "observed": observed})
+            print(f"[hermes] {s['name']}: {t}°F (observed {observed})")
 
     now = now_iso()
     updated = 0
@@ -104,8 +105,9 @@ def main() -> None:
             continue
         best = min(readings, key=lambda r: miles(b["lat"], b["lng"], r["lat"], r["lng"]))
         b["water_temp"] = best["tempF"]
-        b["water_temp_at"] = now
+        b["water_temp_at"] = best.get("observed") or now      # when the sensor took the reading
         b["water_temp_src"] = best["name"]
+        b["water_temp_src_id"] = f'{"NOAA CO-OPS" if best["kind"] == "coops" else "NDBC"} {best["id"]}'
         updated += 1
         # NOTE: status / spots_text / crowd are intentionally NOT set here — they come from
         # real user reports (crowdsourced via netlify/functions/beach-report.js). We no longer
