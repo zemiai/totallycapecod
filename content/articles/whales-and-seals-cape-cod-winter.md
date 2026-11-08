@@ -5,7 +5,7 @@ slug: whales-and-seals-cape-cod-winter
 kicker: "Winter wildlife"
 description: "When right whales visit Cape Cod Bay, where to see seals, the 500-yard whale law, seal distances, and who to call about stranded seals or sea turtles."
 date: 2026-10-26
-updated: 2026-10-26
+updated: 2026-11-08
 author: versel-johnson
 cluster: wildlife
 keywords:
@@ -185,11 +185,6 @@ sources:
     publisher: "Mass Audubon, Wellfleet Bay Wildlife Sanctuary"
     url: "https://www.massaudubon.org/places-to-explore/wildlife-sanctuaries/wellfleet-bay/projects/sea-turtles"
     accessed: 2026-10-26
-  - id: 32
-    title: "Sea Turtle Open House at Wellfleet Bay"
-    publisher: "Mass Audubon, Wellfleet Bay Wildlife Sanctuary"
-    url: "https://www.massaudubon.org/places-to-explore/wildlife-sanctuaries/wellfleet-bay/news/sea-turtle-open-house-2026"
-    accessed: 2026-10-26
 ---
 
 The off-season is wildlife season on Cape Cod. North Atlantic right whales, which are critically endangered, typically arrive in Cape Cod Bay in early winter, and many stay through mid-May [1]. Gray seals live on the Cape year-round [17], and NOAA says harbor seals are here seasonally, from September through late May [16].
@@ -292,8 +287,6 @@ If you find one on the beach, Mass Audubon asks you to:
 - **Call the Wellfleet Bay hotline** at 508-349-2615, option 2, for instructions [31].
 
 It's illegal under state and federal law to harass sea turtles or transport them without a permit [31].
-
-**Learn more in person:** Mass Audubon's Wellfleet Bay Wildlife Sanctuary hosts an all-ages Sea Turtle Open House on Saturday, November 7, 2026, from 11 AM to 3 PM. It's free for Mass Audubon members and included with regular sanctuary admission; special programs cost extra [32].
 
 ## Seals and sharks
 

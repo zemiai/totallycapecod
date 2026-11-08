@@ -174,16 +174,17 @@ def md_to_html(md: str, slug: str) -> str:
 
 NAV = ('<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a>'
        '<div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a>'
-       '<a href="/events.html">Events</a><a href="/guides/">Guides</a><a href="/app/">📱 App</a></div>'
+       '<a href="/events">Events</a><a href="/guides/">Guides</a><a href="/app/">📱 App</a></div>'
        '<button class="nav-mobile-toggle" onclick="toggleMobileMenu()">☰</button></div></nav>'
        '<div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()">'
        '<a href="/">Home</a><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a>'
-       '<a href="/events.html">Events</a><a href="/guides/">Guides</a><a href="/app/">📱 Open the App</a></div></div>')
+       '<a href="/events">Events</a><a href="/guides/">Guides</a><a href="/app/">📱 Open the App</a></div></div>')
 
 FOOTER = ('<footer class="site-footer"><div class="footer-inner"><div><div class="footer-brand">Totally Cape Cod</div>'
           '<p class="footer-desc">The unofficial guide to the best of Cape Cod.</p></div>'
           '<div class="footer-links"><div class="footer-heading">Explore</div><a href="/beaches.html">Beaches</a><a href="/eats.html">Restaurants</a>'
-          '<a href="/events.html">Events</a><a href="/experiences.html">Experiences</a></div>'
+          '<a href="/events">Events</a><a href="/experiences.html">Experiences</a>'
+          '<a href="/best-beaches-2026.html">Best beaches 2026</a><a href="/hidden-gems.html">Hidden gems</a><a href="/photos.html">Cape Cod photos</a></div>'
           '<div class="footer-links"><div class="footer-heading">Guides</div><a href="/guides/">All guides</a>'
           '<a href="/guides/standards/">How we fact-check</a><a href="/contact.html">Report an error</a></div></div>'
           '<div class="footer-bottom">© 2026 Totally Cape Cod. Affiliate links help keep this guide free.</div></footer>'
@@ -504,7 +505,9 @@ def build_sitemap(articles: list, authors: dict) -> str:
         dirty = set()
     for loc, e in entries.items():
         rel = loc.replace(SITE + "/", "")
-        fname = "app/index.html" if rel in ("", "app/") else rel
+        fname = "app/index.html" if rel in ("", "app/") else "index.html" if rel == "welcome" else rel
+        if fname and not (ROOT / fname).is_file() and (ROOT / f"{fname}.html").is_file():
+            fname = f"{fname}.html"  # extensionless canonical (e.g. /events) served from events.html
         f = ROOT / fname
         lm = git_lastmod(f) if f.exists() else None
         if fname in dirty:

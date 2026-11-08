@@ -61,7 +61,7 @@ search volumes.
 | Holidays | cape cod christmas events 2026, christmas stroll, falmouth christmas parade, gardens aglow, holly folly | /guides/cape-cod-holiday-events-2026/ ✅ |
 | Live data (our moat) | sagamore bridge traffic (right now), bourne bridge traffic, cape cod traffic, best time to cross | /cape-cod-bridge-traffic.html + bridge guide (queued) |
 | Live data | cape cod water temperature, beach conditions today | existing live pages |
-| Events | cape cod events this weekend / today / this week, events calendar | /events.html (now live + sourced) |
+| Events | cape cod events this weekend / today / this week, events calendar | /events (now live + sourced) |
 | Seasons | cape cod in november … april, cape cod in winter, weather by month, best time to visit | monthly guides (queued, each in its season window) |
 | Planning | is cape cod worth visiting (top autocomplete phrase), how many days, is cape cod an island, is cape cod expensive | queued |
 | Wildlife | right whales cape cod bay, where to see seals, whale watching, cold-stunned sea turtles | /guides/whales-and-seals-cape-cod-winter/ ✅ |

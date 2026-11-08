@@ -82,7 +82,7 @@ House rules (non-negotiable — a real person's name is on every guide):
 - Credit organizers by name. Prefer "according to <organizer>" for anything that could change.
 - Plain, helpful, local tone. Short paragraphs. Use ## headings. Bullet lists for schedules.
 - Advice that contains no facts (e.g. "confirm before you drive") needs no citation and must not contain numbers or dates.
-- You may link to these Totally Cape Cod pages where relevant (no citation needed): /events.html (live events),
+- You may link to these Totally Cape Cod pages where relevant (no citation needed): /events (live events),
   /cape-cod-bridge-traffic.html (live bridge delays), /cape-cod-water-temperature-today.html (water temps),
   /cape-cod-beach-conditions-today.html, /app/ (free app), /guides/ (more guides).
 - For event-heavy topics you may add a live events list with this exact shortcode on its own line:

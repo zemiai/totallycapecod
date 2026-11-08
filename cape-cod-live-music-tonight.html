@@ -62,7 +62,7 @@
       <a href="/eats.html">Eats</a>
       <a href="/stays.html">Stays</a>
       <a href="/experiences.html">Experiences</a>
-      <a href="/events.html">What's Happening</a>
+      <a href="/events">What's Happening</a>
       <a href="/guides/">Guides</a><a href="/app/">📱 App</a>
     </div>
     <button class="nav-mobile-toggle" onclick="toggleMobileMenu()">☰</button>
@@ -76,7 +76,7 @@
     <a href="/eats.html">Eats</a>
     <a href="/stays.html">Stays</a>
     <a href="/experiences.html">Experiences</a>
-    <a href="/events.html">What's Happening</a>
+    <a href="/events">What's Happening</a>
     <a href="/itinerary.html">Plan My Trip</a>
     <a href="/guides/">Guides</a><a href="/app/">📱 Open the App</a>
   </div>
@@ -222,14 +222,14 @@ async function loadData() {
       html += '<h2 class="section-heading">🍽️ Food &amp; Drink Events</h2>';
       html += '<div class="events-grid">' + foodEvents.map(function(e){ return eventCard(e,'food'); }).join('') + '</div>';
     }
-    html += '<p class="updated-line">Events feed updated: ' + updatedAt + ' · <a href="/events.html">See all Cape Cod events →</a></p>';
+    html += '<p class="updated-line">Events feed updated: ' + updatedAt + ' · <a href="/events">See all Cape Cod events →</a></p>';
     container.innerHTML = html;
 
   } catch (e) {
     console.error(e);
     container.innerHTML = '<div class="error-msg">' +
       '<strong>Unable to load live music events right now.</strong><br>' +
-      'Please try refreshing or <a href="/events.html">view all events</a>.' +
+      'Please try refreshing or <a href="/events">view all events</a>.' +
     '</div>';
   }
 }
