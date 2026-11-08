@@ -212,25 +212,20 @@ def fmt_beach_pick():
     if not opens:
         return fmt_tonight()
     cond = (load("conditions.json") or {}).get("today") or {}
-    water = cond.get("water_temp_f")
+    water = cond.get("water_temp_f") if cond.get("water_temp_source") else None
+    if not live_open:
+        # Only real beachgoer reports justify naming a beach "with room". Without one we
+        # post sourced readings instead of guessing (owner's rule: nothing made up).
+        return fmt_water_temps()
     b = opens[0]
-    if live_open:
-        hook = rotate([f"Reported just now: {b.get('name')} has spots.",
-                       f"Skip the circling — beachgoers say {b.get('name')} has room right now."])
-        detail = (b.get("town") or "") + " · live report from the app"
-    else:   # typical pattern only — no "right now" claims
-        hook = rotate([f"Locals' move today: {b.get('name')}.",
-                       f"If you only hit one beach today, make it {b.get('name')}.",
-                       f"Usually an easier lot: {b.get('name')}."])
-        detail = (b.get("town") or "") + " · usually has parking — check live reports before you drive"
-    lines = [f"🏖️ {hook}", ""]
-    if detail.strip():
-        lines.append(detail)
+    hook = rotate([f"Reported just now: {b.get('name')} has spots.",
+                   f"Beachgoers report room at {b.get('name')} right now."])
+    lines = [f"🏖️ {hook}", "", (b.get("town") or "") + " · live report from app users"]
     if water:
-        lines.append(f"🌊 Water's {water}° today.")
+        lines.append(f"🌊 Water {water}°F ({cond.get('water_temp_source')}).")
     if len(opens) > 1:
-        lines.append(f"Backup: {opens[1].get('name')}, {opens[1].get('town','')}.")
-    lines += ["", "Live lot status for all 27 beaches on the app — check before you drive."]
+        lines.append(f"Also reported with room: {opens[1].get('name')}, {opens[1].get('town','')}.")
+    lines += ["", f"Live lot reports for {len(beaches)} beaches on the app — check before you drive."]
     tags = base_tags() + ["#CapeCodBeaches", hashtag(b.get("town", "CapeCod"))]
     return lines, photo_for("beach"), "beach_pick", tags
 
@@ -242,6 +237,27 @@ def temp_is_fresh(b: dict, hours: int = 6) -> bool:
         return False
     return (datetime.now(ET) - at).total_seconds() < hours * 3600
 
+WATER_SENSORS = {"Cape Cod Bay buoy": "NOAA buoy 44090", "Nantucket Sound buoy": "NOAA buoy 44020",
+                 "Woods Hole": "NOAA station 8447930"}
+
+def fmt_water_temps():
+    """Current water temperatures from the sensors the app uses, each named."""
+    beaches = (load("beaches.json") or {}).get("beaches") or []
+    seen = {}
+    for b in beaches:
+        src = b.get("water_temp_src")
+        if src and b.get("water_temp") and temp_is_fresh(b) and src not in seen:
+            seen[src] = b["water_temp"]
+    if not seen:
+        return fmt_tonight()
+    lines = ["🌊 Cape Cod water temperatures right now:", ""]
+    for src, temp in seen.items():
+        lines.append(f"• {src} ({WATER_SENSORS.get(src, 'NOAA')}): {temp}°F")
+    lines += ["", "Each beach in the app shows the reading from its nearest sensor.",
+              f"Live readings for {len(beaches)} beaches on the app."]
+    tags = base_tags() + ["#CapeCodBeaches"]
+    return lines, photo_for("beach"), "water_temps", tags
+
 def fmt_beach_walk():
     """Off-season Monday: one beach for a walk, with today's real water temp + tides."""
     beaches = (load("beaches.json") or {}).get("beaches") or []
@@ -252,18 +268,18 @@ def fmt_beach_walk():
     sset = (cond.get("sun") or {}).get("sunset")
     tides = ", ".join(f"{'High' if t.get('type') == 'high' else 'Low'} {t.get('time')}"
                       for t in (cond.get("tides") or [])[:4] if t.get("time"))
-    hook = rotate([f"Off-season beach walk of the week: {b.get('name')}.",
-                   f"The Cape's best-kept secret is {now_et().strftime('%B')}. This week: {b.get('name')}.",
-                   f"Quiet lot, open sand: {b.get('name')}, {b.get('town', '')}."])
+    hook = rotate([f"Beach walk of the week: {b.get('name')}.",
+                   f"This week's beach: {b.get('name')}, {b.get('town', '')}.",
+                   f"Off-season beach walk: {b.get('name')}."])
     lines = [f"🍂 {hook}", "", f"📍 {b.get('name')} — {b.get('town', '')}"]
     if b.get("water_temp") and temp_is_fresh(b):
-        lines.append(f"🌊 Water {b['water_temp']}° right now (nearest NOAA/buoy reading)")
+        src = b.get("water_temp_src") or "nearest sensor"
+        lines.append(f"🌊 Water {b['water_temp']}°F right now ({src} reading)")
     if tides:
-        lines.append(f"↕️ Tides today: {tides}")
+        lines.append(f"↕️ Tides today at Chatham (NOAA): {tides}")
     if sset:
-        lines.append(f"🌅 Sunset {sset}")
-    lines += ["", "No lifeguards this time of year — enjoy it from the sand. 🧥",
-              "Live water temps + tides for 27 beaches on the app."]
+        lines.append(f"🌅 Sunset {sset} (sunrise-sunset.org)")
+    lines += ["", f"Live water temps + tides for {len(beaches)} beaches on the app."]
     tags = base_tags() + ["#CapeCodBeaches", hashtag(b.get("town", "CapeCod"))]
     return lines, photo_for("beach"), "beach_walk", tags
 
@@ -276,7 +292,7 @@ def fmt_open_ask():
              "What's your favorite spot that stays open all winter? Coffee, chowder, "
              "breakfast, a bar with a fireplace — drop the name and town. 👇",
              "",
-             "We'll check the best answers and add them to our off-season guide — with credit to you."]
+             "We'll verify answers before anything goes on the site, and credit you if it does."]
     tags = base_tags() + ["#CapeCodOffSeason", "#CapeCodEats"]
     return lines, photo_for("town", salt=1), "open_ask", tags
 
@@ -287,7 +303,6 @@ def fmt_report_ask():
     if is_offseason():
         return fmt_open_ask()
     beaches = (load("beaches.json") or {}).get("beaches") or []
-    picks = sorted(beaches, key=lambda b: b.get("crowd", 3), reverse=True)[:3]
     hook = rotate(["🙏 Cape crowd, do a stranger a solid this morning:",
                    "🙏 One tap from your beach chair helps the whole Cape:",
                    "🙏 Beach-day favor — takes literally ten seconds:"])
@@ -297,10 +312,7 @@ def fmt_report_ask():
              "",
              "Somebody circling with hot kids in the back seat sees your report "
              "before they waste the drive. Next weekend, someone does it for you."]
-    if picks:
-        names = " · ".join(f"{b.get('name')}" for b in picks if b.get("name"))
-        lines += ["", f"Busiest lots most Saturdays: {names} — reports from those help most."]
-    lines += ["", "Live lot status for all 27 beaches is free on the app."]
+    lines += ["", f"Live lot reports for {len(beaches)} beaches are free on the app."]
     tags = base_tags() + ["#CapeCodBeaches", "#CapeCodTips"]
     return lines, photo_for("beach", salt=1), "report_ask", tags
 
@@ -309,16 +321,16 @@ def fmt_tonight():
     evs = evening_events(today, 3)
     if not evs:
         return fmt_sunset()
-    hook = rotate(["Don't say there's nothing to do tonight:",
-                   "Tonight on the Cape — three good calls:",
-                   "Your evening, sorted:"])
+    hook = rotate(["Tonight on the Cape:",
+                   "On tonight, from the organizers' own listings:",
+                   "Tonight's events:"])
     lines = [f"🎟️ {hook}", ""]
     towns = []
     for e in evs:
         lines.append(ev_line(e))
         if e.get("town"):
             towns.append(e["town"])
-    lines += ["", "Full list — every town, every night — on the app."]
+    lines += ["", "Times are from each organizer's listing. Full list, with links to every listing, on the app."]
     tags = base_tags() + ["#CapeCodEvents"] + [hashtag(t) for t in dict.fromkeys(towns)][:2]
     return lines, photo_for("events"), "tonight", tags
 
@@ -352,31 +364,67 @@ def fmt_question():
     tags = base_tags() + ["#CapeCodDebate"]
     return lines, photo_for(kind, salt=3), "question", tags
 
-# Locals-only spots (sourced from hidden-gems.html; keep the two in sync).
-GEMS = [
-    ("Ballston Beach", "Truro", "a smaller lot, fewer people, and waves instead of Bluetooth speakers", "late afternoon into sunset"),
-    ("Great Pond", "Truro", "beach energy without the Atlantic chill — calm, pretty, perfect with a book", "early morning on hot days"),
-    ("Paine's Creek Beach", "Brewster", "marsh, light, and quiet — the kind of place that makes you whisper", "45 minutes before sunset"),
-    ("Jeremy Point Trail", "Wellfleet", "a wild walk to a remote point that feels gloriously far from everything", "low-tide windows"),
-    ("Long Point Lighthouse", "Provincetown", "the walk out IS the experience — water, sky, and that perfect Cape weirdness", "morning or late day"),
-    ("Herring River Overlook", "Wellfleet", "a tiny detour that pays off with huge golden-hour light and zero chaos", "golden hour"),
-    ("The quiet side of Chatham", "Chatham", "skip the main drag — harbor nooks and a softer, slower Chatham", "late afternoon"),
-    ("Marconi Beach trails", "Wellfleet", "everyone knows the beach; the cliff and dune paths are where the wow happens", "any breezy day"),
-    ("Old Colony Rail Trail", "Lower Cape", "not every gem is a beach — this stretch lets you actually notice the Cape", "early mornings"),
+# Sourced facts from our fact-checked guides (owner's rule, Nov 8, 2026: we only pass along
+# what we can verify, and we name the source in the post). Each entry:
+#   (text, source, active_from, active_to)
+# Dates are "MM-DD" for yearly windows (may wrap the new year) or "YYYY-MM-DD" for one-off
+# dated facts; None means always. Keep the wording identical in substance to the guides.
+GUIDE_FACTS = [
+    ("🐋 Right whale rule: federal regulations prohibit approaching or staying within 500 yards "
+     "(1,500 feet) of a North Atlantic right whale. It applies to boats and aircraft, including "
+     "drones, and to people on surfboards, kayaks, jet skis and other watercraft.",
+     "NOAA Fisheries", None, None),
+    ("🦭 Watching seals? NOAA's guideline is to stay at least 150 feet (50 yards) away and limit "
+     "your viewing to 30 minutes or less. Feeding seals is against the law.",
+     "NOAA Fisheries", None, None),
+    ("🚨 Stranded, injured or entangled marine animal on Cape Cod or in southeastern Massachusetts? "
+     "Don't try to rescue it on your own. Call the International Fund for Animal Welfare (IFAW) at "
+     "(508) 743-9548.",
+     "NOAA Fisheries", None, None),
+    ("🐢 Found a sea turtle on the beach in late fall? It may be cold-stunned, not dead. Mass Audubon "
+     "asks you to move it above the high tide line, cover it completely with seaweed or wrack (never "
+     "sand), mark the spot and call the Wellfleet Bay hotline at 508-349-2615, option 2.",
+     "Mass Audubon, Wellfleet Bay Wildlife Sanctuary", "11-01", "01-15"),
+    ("🦭 Gray seal pups: in this area, at colonies such as Monomoy Island, females give birth to a "
+     "single white-coated pup from late December to mid-February.",
+     "Center for Coastal Studies", "12-01", "02-15"),
+    ("🐋 North Atlantic right whales typically arrive in Cape Cod Bay in early winter, and many stay "
+     "through mid-May.",
+     "Center for Coastal Studies", "11-15", "05-15"),
+    ("🎄 The Pilgrim Monument is lit for the season on Thanksgiving Eve, Wednesday, Nov. 25. The free "
+     "Annual Lighting On The Hill runs 4–5:30 PM, and the switch is thrown at 5 PM.",
+     "Pilgrim Monument and Provincetown Museum", "2026-11-08", "2026-11-25"),
+    ("🎄 Holly Folly runs all four December weekends in Provincetown this year: Dec. 4–6, 11–13, "
+     "18–20 and 25–27.",
+     "Provincetown Business Guild", "2026-11-08", "2026-12-26"),
+    ("🎄 Falmouth Holidays by the Sea (tentative schedule): the Village Holiday Stroll is Saturday, "
+     "Dec. 5, 4–8 PM, and the 63rd Christmas Parade is Sunday, Dec. 6, at noon.",
+     "Falmouth Chamber of Commerce", "2026-11-08", "2026-12-05"),
+    ("🎄 Chatham's Christmas by the Sea is Friday–Sunday, Dec. 11–13, starting with a Friday night "
+     "Christmas stroll and tree lighting on Main Street.",
+     "Chatham Chamber of Commerce", "2026-11-08", "2026-12-11"),
+    ("🎄 Sandwich's annual Village Stroll goes town-wide this year: Sunday, Dec. 13, 11 AM–4 PM.",
+     "Sandwich Chamber of Commerce", "2026-11-08", "2026-12-13"),
 ]
 
-def fmt_gem():
-    name, town, why, when = rotate(GEMS)
-    hook = rotate(["Locals would prefer we didn't post this one:",
-                   "A Cape spot that never makes the guidebooks:",
-                   "Hidden gem of the week:"], salt=1)
-    lines = [f"🤫 {hook}", "",
-             f"📍 {name} — {town}",
-             f"{why[0].upper()}{why[1:]}.",
-             f"Best time: {when}.", "",
-             "Save this for your next trip. More locals-only spots on the app."]
-    tags = base_tags() + ["#HiddenGem", hashtag(town)]
-    return lines, photo_for("gem"), "gem", tags
+def _fact_active(start, end, today) -> bool:
+    if not start or not end:
+        return True
+    if len(start) == 10:                                   # one-off dated fact
+        return start <= today.strftime("%Y-%m-%d") <= end
+    md = today.strftime("%m-%d")                           # yearly window, may wrap
+    return start <= md <= end if start <= end else (md >= start or md <= end)
+
+def fmt_guide_fact():
+    today = now_et()
+    facts = [f for f in GUIDE_FACTS if _fact_active(f[2], f[3], today)]
+    if not facts:
+        return fmt_sunset()
+    text, source, _, _ = rotate(facts)
+    lines = [text, "", f"Source: {source}.",
+             "Our guides, with every source linked, are on totallycapecod.com."]
+    tags = base_tags() + (["#CapeCodHolidays"] if text.startswith("🎄") else ["#CapeCodWildlife"])
+    return lines, photo_for("beach"), "guide_fact", tags
 
 def fmt_weekend():
     today = now_et()
@@ -386,9 +434,9 @@ def fmt_weekend():
     sun_evs = [e for e in events_on(sun) if plausible_time(e)][:6]
     if len(sat_evs) + len(sun_evs) < 3:
         return fmt_tonight()
-    lines = [rotate(["🗓️ THE CAPE THIS WEEKEND — save this list:",
-                     "🗓️ Your Cape Cod weekend, planned in one post:",
-                     "🗓️ Everything worth leaving the beach for this weekend:"]), ""]
+    lines = [rotate(["🗓️ This weekend on the Cape, from the organizers' own listings:",
+                     "🗓️ Your Cape Cod weekend events:",
+                     "🗓️ On this weekend on Cape Cod:"]), ""]
     towns = []
     for label, evs in (("SATURDAY", sat_evs), ("SUNDAY", sun_evs)):
         if not evs:
@@ -399,6 +447,7 @@ def fmt_weekend():
             if e.get("town"):
                 towns.append(e["town"])
         lines.append("")
+    lines.append("Times are from each organizer's listing; links for every event are on the app.")
     lines.append("Share this with whoever you're dragging along. 🦞")
     tags = base_tags() + ["#CapeCodEvents", "#ThingsToDoCapeCod"] + \
         [hashtag(t) for t in dict.fromkeys(towns)][:2]
@@ -412,9 +461,9 @@ def fmt_spotlight():
     if not pick:
         return fmt_beach_pick()
     t = (pick.get("time") or "").split("·")[-1].strip()
-    lines = [rotate([f"Today's the day: {pick.get('title')}.",
-                     f"If you're near {pick.get('town','the Cape')} today — {pick.get('title')}.",
-                     f"Worth the drive today: {pick.get('title')}."]), ""]
+    lines = [rotate([f"Today: {pick.get('title')}.",
+                     f"If you're near {pick.get('town','the Cape')} today: {pick.get('title')}.",
+                     f"On today: {pick.get('title')}."]), ""]
     where = " · ".join(x for x in (pick.get("venue"), pick.get("town"), t) if x)
     if where:
         lines.append(f"📍 {where}")
@@ -422,7 +471,7 @@ def fmt_spotlight():
         lines.append(pick["info"])
     if pick.get("price"):
         lines.append(f"🎟️ {pick['price']}")
-    lines += ["", "More happening today on the app."]
+    lines += ["", "Details are from the organizer's listing. More happening today on the app."]
     kind = "family" if pick.get("category") == "family" else "events"
     tags = base_tags() + ["#CapeCodEvents", hashtag(pick.get("town", "CapeCod"))]
     return lines, photo_for(kind, salt=2), "spotlight", tags
@@ -430,21 +479,21 @@ def fmt_spotlight():
 def fmt_sunset():
     cond = (load("conditions.json") or {}).get("today") or {}
     sun = cond.get("sun") or {}
-    spot = sun.get("best_sunset_spot") or {}
-    sset = sun.get("sunset") or "tonight"
-    name = spot.get("name", "Rock Harbor")
-    town = spot.get("town", "Orleans")
-    hook = rotate([f"Tonight's sunset call: {name}.",
-                   f"Golden hour homework: be at {name} by {sset}.",
-                   f"The Cape shows off at {sset} tonight. Best seat: {name}."])
-    lines = [f"🌅 {hook}", "", f"📍 {name}, {town} · sunset {sset}"]
+    sset = sun.get("sunset")
+    if not sset:
+        return fmt_tonight()
+    hook = rotate([f"Sunset tonight on Cape Cod: {sset}.",
+                   f"Golden hour tonight: the sun sets at {sset}.",
+                   f"Tonight's sunset: {sset}."])
+    lines = [f"🌅 {hook}", "", "Sunset time: sunrise-sunset.org."]
     wx = cond.get("weather") or {}
     if wx.get("condition"):
-        lines.append(f"{wx.get('icon','')} {wx['condition']}, high {wx.get('temp_high','?')}°".strip())
+        lines.append(f"{wx.get('icon','')} {wx['condition']}, high {wx.get('temp_high','?')}° "
+                     "(National Weather Service forecast)".strip())
     lines += ["", rotate(["Tag the person you'd watch it with.",
-                          "Bring a sweatshirt. Thank us later.",
+                          "Where are you watching from? Tell us in the comments.",
                           "Photos in the comments, please. 📸"], salt=2)]
-    tags = base_tags() + ["#CapeCodSunset", hashtag(town)]
+    tags = base_tags() + ["#CapeCodSunset"]
     return lines, photo_for("sunset"), "sunset", tags
 
 def fmt_evening():
@@ -476,7 +525,7 @@ def fmt_evening():
 # Saturday = report_ask: peak beach morning, when a lot report helps the most people.
 # (fmt_spotlight still runs via the weekend/evening slots' event coverage.)
 MORNING_FORMATS = {0: fmt_beach_pick, 1: fmt_tonight, 2: fmt_question,
-                   3: fmt_gem, 4: fmt_weekend, 5: fmt_report_ask, 6: fmt_sunset}
+                   3: fmt_guide_fact, 4: fmt_weekend, 5: fmt_report_ask, 6: fmt_sunset}
 
 # --------------------------------------------------------- photos for posts --
 # House rule (Oct 2026): posts use ONLY real Cape Cod scenery with NO people in the shot.

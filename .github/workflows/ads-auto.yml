@@ -1,21 +1,14 @@
-name: "ads automation"
+name: "daily metrics"
 
-# Two jobs, both inert until FB_ADS_TOKEN + FB_AD_ACCOUNT_ID secrets exist:
-#   - daily 10:00 UTC: pull last-7-day ad performance into data/.ads_report.json
-#     (fails RED if the token has expired, so you get a GitHub email)
-#   - Friday 14:00 UTC (10 AM ET): auto-boost the morning weekend-roundup post
-#     ($5/day x 3 days, mid-Cape 30mi radius). Created PAUSED unless the repo
-#     variable AUTO_BOOST_LIVE=1 is set — see SETUP_FACEBOOK.md.
+# Daily 10:00 UTC: Search Console, GA4 and Stripe numbers into data/metrics.json and the
+# ranking trend into data/gsc_history.json (scripts/update_metrics.py).
+#
+# No paid ads (owner's decision, Nov 8, 2026): the Friday Meta boost and the daily ad
+# report were removed. scripts/boost_post.py, ads_report.py and launch_ads.py are unused.
 on:
   schedule:
     - cron: "0 10 * * *"
-    - cron: "0 14 * * 5"
   workflow_dispatch:
-    inputs:
-      job:
-        description: "Which job: report or boost (blank = report)"
-        required: false
-        default: "report"
 
 permissions:
   contents: write
@@ -34,41 +27,23 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install requests google-auth
-      - name: Daily performance report
-        if: github.event.schedule != '0 14 * * 5' && github.event.inputs.job != 'boost'
-        run: python scripts/ads_report.py
-        env:
-          FB_ADS_TOKEN: ${{ secrets.FB_ADS_TOKEN }}
-          FB_AD_ACCOUNT_ID: ${{ secrets.FB_AD_ACCOUNT_ID }}
       - name: Google auth (keyless — GitHub OIDC → tcc-metrics service account)
-        if: github.event.schedule != '0 14 * * 5' && github.event.inputs.job != 'boost'
         continue-on-error: true
         uses: google-github-actions/auth@v2
         with:
           workload_identity_provider: projects/107969132506/locations/global/workloadIdentityPools/github/providers/github-repo
           service_account: tcc-metrics@totally-capecod.iam.gserviceaccount.com
-      - name: Business metrics (ads + stripe + ga4 + search console)
-        if: github.event.schedule != '0 14 * * 5' && github.event.inputs.job != 'boost'
+      - name: Business metrics (search console + ga4 + stripe)
         run: python scripts/update_metrics.py
         env:
-          FB_ADS_TOKEN: ${{ secrets.FB_ADS_TOKEN }}
-          FB_AD_ACCOUNT_ID: ${{ secrets.FB_AD_ACCOUNT_ID }}
           STRIPE_REPORTING_KEY: ${{ secrets.STRIPE_REPORTING_KEY }}
           GOOGLE_SA_KEY: ${{ secrets.GOOGLE_SA_KEY }}
           GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
-      - name: Friday boost of the weekend roundup
-        if: github.event.schedule == '0 14 * * 5' || github.event.inputs.job == 'boost'
-        run: python scripts/boost_post.py
-        env:
-          FB_ADS_TOKEN: ${{ secrets.FB_ADS_TOKEN }}
-          FB_AD_ACCOUNT_ID: ${{ secrets.FB_AD_ACCOUNT_ID }}
-          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
-          AUTO_BOOST_LIVE: ${{ vars.AUTO_BOOST_LIVE }}
       - name: Commit report if changed
         run: |
           git config user.name "hermes-bot"
           git config user.email "hermes-bot@users.noreply.github.com"
-          git add data/.ads_report.json data/metrics.json data/gsc_history.json 2>/dev/null || true
+          git add data/metrics.json data/gsc_history.json 2>/dev/null || true
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "[metrics] nightly update $(date -u +%F)"
           for i in 1 2 3 4 5; do

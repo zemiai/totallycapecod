@@ -1509,7 +1509,7 @@ function renderToday() {
   const c = state.data.conditions?.today;
   if (c) {
     document.getElementById('todayConditions').innerHTML =
-      `${c.weather.icon} ${c.weather.temp_high}° · 🌊 ${c.water_temp_f}°F · 🌅 ${c.sun.sunset}`;
+      `${c.weather.icon} ${c.weather.temp_high}°${c.water_temp_source && c.water_temp_f != null ? ' · 🌊 ' + c.water_temp_f + '°F' : ''} · 🌅 ${c.sun.sunset}`;
   } else {
     document.getElementById('todayConditions').textContent = 'Tide & conditions data updating…';
   }
@@ -1882,12 +1882,12 @@ function beachStatus(b){
   }
   // Off-season: summer crowd patterns don't apply — neutral gray dot, no fake lot status.
   if (tccOff()) {
-    return { code:'off', label:'Off-season · quiet', crowd:1, live:false,
-             fresh:'Off-season · no lifeguards on duty' };
+    return { code:'off', label:'Off-season', crowd:0, live:false,
+             fresh:'Off-season · no live reports' };
   }
-  const T={open:'Usually has parking',mid:'Often busy midday',full:'Often full midday'};
-  return { code:b.status, label:(T[b.status]||'Check before you go'), crowd:b.crowd,
-           live:false, fresh:'Typical for now — tap to report' };
+  // No live report → say so. We don't show guessed "typical" parking or crowd levels.
+  return { code:'off', label:'No recent report', crowd:0,
+           live:false, fresh:'No live report yet — tap to report' };
 }
 // ---- Season helpers (switch lives in data/season.json → js/season.js) ----
 function tccOff(){ return !!(window.TCCSeason && TCCSeason.isOff()); }
@@ -2386,14 +2386,14 @@ function quickAi(q) {
 function buildAiContext() {
   try {
     const d = state.data || {}, out = [];
-    if (tccOff()) out.push("SEASON: Cape Cod off-season. No lifeguards on duty; beach sticker/fee rules are mainly summer (follow posted signs). Many seasonal restaurants, shops and attractions are closed or on reduced hours — recommend only places marked OPEN now and suggest calling ahead; whale-watch boats are seasonal.");
+    if (tccOff()) out.push("SEASON: off-season. Hours change, so only list places marked OPEN now and suggest calling ahead.");
     const vt = localStorage.getItem('tcc_visitor_type');
-    if (vt === 'local') out.push("USER PROFILE: a Cape Cod local — skip the obvious tourist spots; favor less-crowded local picks, off-season notes, and practical specifics.");
-    else if (vt === 'visitor') out.push("USER PROFILE: visiting the Cape — orient them, highlight the iconic must-dos, and call out parking/timing they wouldn't know.");
+    if (vt === 'local') out.push("USER PROFILE: a Cape Cod local.");
+    else if (vt === 'visitor') out.push("USER PROFILE: visiting the Cape.");
     const c = d.conditions?.today;
     if (c) {
       const tides = (c.tides || []).map(t => `${t.type === 'high' ? 'High' : 'Low'} ${t.time}`).join(', ');
-      out.push(`CONDITIONS today: air ${c.weather?.temp_high ?? '?'}°F ${c.weather?.desc || ''}, water ${c.water_temp_f ?? '?'}°F, sunset ${c.sun?.sunset || '?'}${tides ? `; tides ${tides}` : ''}.`);
+      out.push(`CONDITIONS today: air ${c.weather?.temp_high ?? '?'}°F ${c.weather?.desc || ''} (National Weather Service forecast), water ${c.water_temp_source && c.water_temp_f != null ? c.water_temp_f + '°F (' + c.water_temp_source + ')' : 'no current reading'}, sunset ${c.sun?.sunset || '?'} (sunrise-sunset.org)${tides ? `; tides ${tides} (NOAA Chatham station)` : ''}.`);
     }
     const b = d.bridges?.current;
     if (b?.sagamore) out.push(`BRIDGES now: Sagamore ${b.sagamore.current_delay_min}min (${b.sagamore.current_status})${b.bourne ? `, Bourne ${b.bourne.current_delay_min}min (${b.bourne.current_status})` : ''}. ${b.sagamore.advice || ''}`.trim());
@@ -2413,17 +2413,17 @@ function buildAiContext() {
       const st = o === true ? ', OPEN now' : o === false ? ', CLOSED now' : '';
       return `${r.name} (${r.town}${r.cuisine ? ', ' + r.cuisine : ''}${r.rating ? ', ' + r.rating + '★' : ''}${st}${r.deal ? ', deal: ' + r.deal : ''})`;
     }).join('; ');
-    if (eats) out.push(`RESTAURANTS in app${loc ? ' (nearest first)' : ''} — recommend ones marked "OPEN now"; do NOT recommend any marked "CLOSED now": ${eats}.`);
+    if (eats) out.push(`RESTAURANTS in app${loc ? ' (nearest first)' : ''}, ratings and open/closed from each one's Google listing — list ones marked "OPEN now"; never list any marked "CLOSED now": ${eats}.`);
     const SHORT = { 'Usually has parking': 'usu. open', 'Often busy midday': 'busy midday', 'Often full midday': 'full midday', 'Spots open': 'open NOW', 'Filling up': 'filling NOW', 'Lot full': 'FULL now' };
     const beaches = d.beaches?.beaches || [];
     if (beaches.length) {
       const list = beaches.slice(0, 27).map(x => {
         const st = (typeof beachStatus === 'function') ? beachStatus(x) : { label: '' };
         const nm = x.name.replace(/ Beach$/, '');
-        return `${nm} (${x.town})${x.water_temp ? ' ' + x.water_temp + '°F' : ''}${st.label ? ' ' + (SHORT[st.label] || st.label) : ''}`;
+        return `${nm} (${x.town})${x.water_temp ? ' ' + x.water_temp + '°F' : ''}${st.live ? ' ' + (SHORT[st.label] || st.label) : ''}`;
       }).join('; ');
-      out.push(tccOff() ? `BEACHES (water temp; off-season, no lifeguards): ${list}.`
-                        : `BEACHES (water temp + parking; "NOW"=live report): ${list}.`);
+      out.push(tccOff() ? `BEACHES (latest water-temperature sensor readings; off-season): ${list}.`
+                        : `BEACHES (latest water-temperature sensor readings; "NOW" = live beachgoer report): ${list}.`);
     }
     const events = (d.events?.events || []).slice(0, 8).map(e => `${String(e.title || '').slice(0, 55)} (${e.town || ''}${e.time ? ', ' + e.time : ''})`).join('; ');
     if (events) out.push(`UPCOMING EVENTS: ${events}.`);
@@ -2649,14 +2649,14 @@ function renderConditions() {
 
   document.getElementById('sunInfo').innerHTML = `
     <div class="ios-list-item"><span style="font-size:22px;">🌅</span><div style="flex:1;"><div class="item-title">Sunrise · ${c.sun.sunrise}</div></div></div>
-    <div class="ios-list-item"><span style="font-size:22px;">🌇</span><div style="flex:1;"><div class="item-title">Sunset · ${c.sun.sunset}</div><div class="item-sub">Best at ${c.sun.best_sunset_spot.name}, ${c.sun.best_sunset_spot.town}</div></div></div>`;
+    <div class="ios-list-item"><span style="font-size:22px;">🌇</span><div style="flex:1;"><div class="item-title">Sunset · ${c.sun.sunset}</div><div class="item-sub">Source: ${c.sun.source || 'sunrise-sunset.org'}</div></div></div>`;
 
   // TASK9 Lever 4: freshness cue on weather/conditions
   const w = c.weather;
   const condFresh = c.updated_at ? `<span class="freshness-label" style="margin-left:4px;">${c.updated_at}</span>` : '';
   document.getElementById('weatherInfo').innerHTML = `
-    <div class="ios-list-item"><span style="font-size:22px;">${w.icon}</span><div style="flex:1;"><div class="item-title">${w.condition} · ${w.temp_high}° / ${w.temp_low}° ${condFresh}</div><div class="item-sub">Wind ${w.wind_mph}mph ${w.wind_dir} · Humidity ${w.humidity}% · UV ${w.uv_index}</div></div></div>
-    <div class="ios-list-item"><span style="font-size:22px;">🌊</span><div style="flex:1;"><div class="item-title">Water ${c.water_temp_f}°F</div><div class="item-sub">Swell ${c.swell_height_ft}ft @ ${c.swell_period_sec}s</div></div></div>`;
+    <div class="ios-list-item"><span style="font-size:22px;">${w.icon}</span><div style="flex:1;"><div class="item-title">${w.condition} · ${w.temp_high}°${w.temp_low != null ? ' / ' + w.temp_low + '°' : ''} ${condFresh}</div><div class="item-sub">Wind ${w.wind_mph}mph ${w.wind_dir} · National Weather Service forecast</div></div></div>
+    <div class="ios-list-item"><span style="font-size:22px;">🌊</span><div style="flex:1;"><div class="item-title">${c.water_temp_source && c.water_temp_f != null ? 'Water ' + c.water_temp_f + '°F' : 'Water temperature: no current reading'}</div><div class="item-sub">${c.water_temp_source || 'Sensor offline'}</div></div></div>`;
 
   if (hasPro()) {
     const f = state.data.conditions?.forecast_7day || [];
@@ -2668,7 +2668,7 @@ function renderConditions() {
           <span style="font-size:22px;">${d.icon}</span>
           <div style="flex:1;">
             <div class="item-title">${d.temp_high}° / ${d.temp_low}° · ${d.condition}</div>
-            <div class="item-sub">Sunset ${d.sunset} · Low tide ${d.low_tide} · 🌊 ${d.water_temp}°F</div>
+            <div class="item-sub">Sunset ${d.sunset} · Low tide ${d.low_tide} (NOAA, Chatham)</div>
           </div>
         </div>`).join('')}</div>`;
   } else {

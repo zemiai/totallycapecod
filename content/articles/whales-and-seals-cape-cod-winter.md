@@ -24,7 +24,7 @@ faq:
   - q: "Where can you see seals on Cape Cod?"
     a: "Monomoy National Wildlife Refuge off Chatham: South Monomoy Island contains the largest gray seal haul-out site on the U.S. Atlantic coast [20]. On the refuge's mainland trails at Morris Island in Chatham [20], the refuge says you may see \"the occasional seal\" [21]."
   - q: "How far should you stay from seals?"
-    a: "NOAA's viewing guideline is at least 150 feet (50 yards), and to limit your viewing to 30 minutes or less [13][23]. Harassing or feeding seals is against federal law [13], and touching or trying to touch one violates the Marine Mammal Protection Act [22]."
+    a: "NOAA's viewing guideline is at least 150 feet (50 yards), and to limit your viewing to 30 minutes or less [13][23]. Federal law prohibits harming or harassing them, and feeding them is against the law [13]. Touching or trying to touch a seal violates the Marine Mammal Protection Act [22]."
   - q: "Who do I call about a stranded seal or whale on Cape Cod?"
     a: "Call the International Fund for Animal Welfare (IFAW) at (508) 743-9548, which covers Cape Cod and southeastern Massachusetts, or NOAA's Northeast Marine Mammal and Sea Turtle Stranding and Entanglement Hotline at (866) 755-6622 [24]."
   - q: "What should I do if I find a sea turtle on a Cape Cod beach in winter?"
@@ -34,157 +34,157 @@ sources:
     title: "CCS researchers make season's first sighting of North Atlantic right whales in Cape Cod Bay (Dec. 8, 2025)"
     publisher: "Center for Coastal Studies"
     url: "https://coastalstudies.org/news/ccs-researchers-make-seasons-first-sighting-of-north-atlantic-right-whales-in-cape-cod-bay-2/"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 2
     title: "Cape Cod Seals"
     publisher: "Center for Coastal Studies"
     url: "https://coastalstudies.org/our-work/seal-research/cape-cod-seals/"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 3
     title: "North Atlantic Right Whales in Coastal Massachusetts: the 2025/2026 Season (July 1, 2026)"
     publisher: "Mass.gov (Massachusetts Division of Marine Fisheries)"
     url: "https://www.mass.gov/news/north-atlantic-right-whales-in-coastal-massachusetts-the-20252026-season"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 4
     title: "Right Whales Present in Large Numbers in Massachusetts Waters (advisory, April 11, 2025)"
     publisher: "Massachusetts Division of Marine Fisheries"
     url: "https://www.mass.gov/doc/41125-right-whales-present-in-large-numbers-in-massachusetts-waters/download"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 5
     title: "33 Right Whales Sighted in Cape Cod Bay (Jan. 12, 2026)"
     publisher: "Center for Coastal Studies"
     url: "https://coastalstudies.org/news/33-right-whales-sighted-in-cape-cod-bay/"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 6
     title: "North Atlantic Right Whale"
     publisher: "NOAA Fisheries"
     url: "https://www.fisheries.noaa.gov/species/north-atlantic-right-whale"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 7
     title: "By the Numbers: 2026 North Atlantic Right Whale Calving Season (April 30, 2026)"
     publisher: "NOAA Fisheries"
     url: "https://www.fisheries.noaa.gov/feature-story/numbers-2026-north-atlantic-right-whale-calving-season"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 8
     title: "Center for Coastal Studies Offers Spring Whale Walks (Mar. 4, 2026)"
     publisher: "Center for Coastal Studies"
     url: "https://coastalstudies.org/news/center-for-coastal-studies-offers-spring-whale-walks/"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 9
     title: "Center for Coastal Studies to Host Right Whale Day Events (Apr. 3, 2026)"
     publisher: "Center for Coastal Studies"
     url: "https://coastalstudies.org/news/rightwhaleday/"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 10
     title: "Race Point Beach"
     publisher: "National Park Service, Cape Cod National Seashore"
     url: "https://www.nps.gov/places/race-point-beach.htm"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 11
     title: "Herring Cove Beach"
     publisher: "National Park Service, Cape Cod National Seashore"
     url: "https://www.nps.gov/places/herring-cove-beach.htm"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 12
     title: "DMF Extends Small Vessel Speed Restriction for Cape Cod Bay to Protect Right Whales (advisory, April 29, 2025)"
     publisher: "Massachusetts Division of Marine Fisheries"
     url: "https://www.mass.gov/doc/42925-dmf-extends-small-vessel-speed-restriction-for-cape-cod-bay-to-protect-right-whales-0/download"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 13
     title: "Whale Watching and Wildlife Viewing in New England and the Mid-Atlantic"
     publisher: "NOAA Fisheries, Greater Atlantic Regional Fisheries Office"
     url: "https://www.fisheries.noaa.gov/new-england-mid-atlantic/marine-life-viewing-guidelines/whale-watching-and-wildlife-viewing-new"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 14
     title: "Reducing Vessel Strikes to North Atlantic Right Whales"
     publisher: "NOAA Fisheries"
     url: "https://www.fisheries.noaa.gov/national/endangered-species-conservation/reducing-vessel-strikes-north-atlantic-right-whales"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 15
     title: "322 CMR 12.00: Protected Species"
     publisher: "Massachusetts Division of Marine Fisheries"
     url: "https://www.mass.gov/doc/322-cmr-12-protected-species/download"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 16
     title: "Harbor Seal (Phoca vitulina vitulina): Western North Atlantic Stock (stock assessment report, May 2022)"
     publisher: "NOAA Fisheries"
     url: "https://media.fisheries.noaa.gov/2022-08/Harb%20Seal-W%20North%20Atl%20Stock_SAR%202021.pdf"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 17
     title: "Together Again: White Sharks and Gray Seals Off Cape Cod (July 31, 2019)"
     publisher: "NOAA Fisheries"
     url: "https://www.fisheries.noaa.gov/feature-story/together-again-white-sharks-and-gray-seals-cape-cod"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 18
     title: "Harp Seal: Western North Atlantic Stock (stock assessment report, May 2022)"
     publisher: "NOAA Fisheries"
     url: "https://media.fisheries.noaa.gov/2022-08/Harp%20Seal-W%20North%20Atl%20Stock_SAR%202021.pdf"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 19
     title: "Hooded Seal: Western North Atlantic Stock (stock assessment report, February 2019)"
     publisher: "NOAA Fisheries"
     url: "https://media.fisheries.noaa.gov/dam-migration/144_f2018_hoodedseal.pdf"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 20
     title: "Monomoy National Wildlife Refuge: About Us"
     publisher: "U.S. Fish & Wildlife Service"
     url: "https://www.fws.gov/refuge/monomoy/about-us"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 21
     title: "Wildlife Watching at Monomoy National Wildlife Refuge"
     publisher: "U.S. Fish & Wildlife Service"
     url: "https://www.fws.gov/refuge/monomoy/visit-us/activities/wildlife-watching"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 22
     title: "Share the Shore with Seals in New England/Mid-Atlantic"
     publisher: "NOAA Fisheries, Greater Atlantic Regional Fisheries Office"
     url: "https://www.fisheries.noaa.gov/new-england-mid-atlantic/marine-life-viewing-guidelines/share-shore-seals-new-england-mid-atlantic"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 23
     title: "Harbor Seal"
     publisher: "NOAA Fisheries"
     url: "https://www.fisheries.noaa.gov/species/harbor-seal"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 24
     title: "Report a Stranded or Injured Marine Animal"
     publisher: "NOAA Fisheries"
     url: "https://www.fisheries.noaa.gov/report"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 25
     title: "Shark Safety at Cape Cod"
     publisher: "National Park Service, Cape Cod National Seashore"
     url: "https://www.nps.gov/caco/planyourvisit/sharksafety.htm"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 26
     title: "White Shark Public Safety"
     publisher: "Atlantic White Shark Conservancy"
     url: "https://www.atlanticwhiteshark.org/white-shark-public-safety"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 27
     title: "Superintendent's Compendium"
     publisher: "National Park Service, Cape Cod National Seashore"
     url: "https://www.nps.gov/caco/learn/management/compendium.htm"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 28
     title: "Monomoy National Wildlife Refuge: Rules & Policies"
     publisher: "U.S. Fish & Wildlife Service"
     url: "https://www.fws.gov/refuge/monomoy/visit-us/rules-policies"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 29
     title: "Commercial Trap Gear Fishery to Open and Small Vessel Speed Limit Lifted Effective Wednesday, May 14th (advisory, May 13, 2025)"
     publisher: "Massachusetts Division of Marine Fisheries"
     url: "https://www.mass.gov/doc/51325-fixed-gear-seasonal-closures-to-open-and-small-vessel-speed-limit-lifted-effective-wednesday-may-14th/download"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 30
     title: "Monomoy National Wildlife Refuge: Trails"
     publisher: "U.S. Fish & Wildlife Service"
     url: "https://www.fws.gov/refuge/monomoy/visit-us/trails"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 31
     title: "Protecting Sea Turtles on Cape Cod"
     publisher: "Mass Audubon, Wellfleet Bay Wildlife Sanctuary"
     url: "https://www.massaudubon.org/places-to-explore/wildlife-sanctuaries/wellfleet-bay/projects/sea-turtles"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
 ---
 
 The off-season is wildlife season on Cape Cod. North Atlantic right whales, which are critically endangered, typically arrive in Cape Cod Bay in early winter, and many stay through mid-May [1]. Gray seals live on the Cape year-round [17], and NOAA says harbor seals are here seasonally, from September through late May [16].
@@ -249,7 +249,7 @@ Dates can change from year to year, so check the division's current notices befo
 Gray seals live on Cape Cod year-round: NOAA wrote in 2019 that the gray seals now living here came from larger Canadian herds and had only recently started living on the Cape year-round again [17]. Harbor seals live year-round in eastern Canada and Maine, but NOAA's stock assessment says they occur seasonally from southern New England to Virginia, from September through late May [16].
 
 - **Gray seal pups:** females in this area, at colonies such as Monomoy Island, give birth to a single white-coated pup from late December to mid-February [2].
-- **Rare visitors:** harp and hooded seals occasionally turn up too, usually between January and May [18][19].
+- **Harp and hooded seals:** NOAA's stock assessments say harp seal sightings and strandings from Maine to New Jersey have been increasing since the early 1990s [18], and that hooded seals have turned up more often from Maine to Florida [19], usually between January and May [18][19].
 
 ## Where to see seals: Monomoy and Chatham
 

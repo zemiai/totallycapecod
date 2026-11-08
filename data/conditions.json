@@ -6,20 +6,14 @@
       "temp_low": 44,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "wind_mph": 8,
-      "wind_dir": "W",
-      "humidity": 65,
-      "uv_index": 7
+      "wind_mph": 9,
+      "wind_dir": "W"
     },
     "sun": {
-      "sunrise": "7:21 AM",
-      "sunset": "5:26 PM",
-      "civil_twilight_end": "5:55 PM",
-      "best_sunset_spot": {
-        "name": "Skaket Beach",
-        "town": "Orleans",
-        "reason": "Bay-side sunset, walkable flats at low tide"
-      }
+      "sunrise": "6:21 AM",
+      "sunset": "4:26 PM",
+      "civil_twilight_end": "4:55 PM",
+      "source": "sunrise-sunset.org"
     },
     "tides": [
       {
@@ -43,9 +37,10 @@
         "height_ft": 5.0
       }
     ],
-    "water_temp_f": 64,
-    "swell_height_ft": 2,
-    "swell_period_sec": 8
+    "tides_source": "NOAA Tides & Currents, Chatham station 8447435",
+    "water_temp_f": 56,
+    "water_temp_source": "Cape Cod Bay buoy (NDBC 44090)",
+    "weather_source": "National Weather Service (api.weather.gov)"
   },
   "forecast_7day": [
     {
@@ -55,11 +50,10 @@
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
       "temp_low": 44,
-      "sunrise": "7:21 AM",
-      "sunset": "5:26 PM",
+      "sunrise": "6:21 AM",
+      "sunset": "4:26 PM",
       "low_tide": "5:10 AM",
-      "high_tide": "11:00 AM",
-      "water_temp": 64
+      "high_tide": "11:00 AM"
     },
     {
       "date": "2026-11-09",
@@ -67,51 +61,47 @@
       "temp_high": 58,
       "condition": "Rain",
       "icon": "\ud83c\udf27\ufe0f",
-      "temp_low": 44,
-      "sunrise": "7:22 AM",
-      "sunset": "5:25 PM",
+      "temp_low": 40,
+      "sunrise": "6:22 AM",
+      "sunset": "4:25 PM",
       "low_tide": "5:51 AM",
-      "high_tide": "11:40 AM",
-      "water_temp": 64
+      "high_tide": "11:40 AM"
     },
     {
       "date": "2026-11-10",
       "day": "Tue",
-      "temp_high": 54,
+      "temp_high": 57,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "temp_low": 45,
-      "sunrise": "7:23 AM",
-      "sunset": "5:24 PM",
+      "temp_low": 44,
+      "sunrise": "6:23 AM",
+      "sunset": "4:24 PM",
       "low_tide": "6:31 AM",
-      "high_tide": "12:17 AM",
-      "water_temp": 64
+      "high_tide": "12:17 AM"
     },
     {
       "date": "2026-11-11",
       "day": "Wed",
-      "temp_high": 57,
+      "temp_high": 56,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "temp_low": 43,
-      "sunrise": "7:24 AM",
-      "sunset": "5:23 PM",
+      "temp_low": 42,
+      "sunrise": "6:24 AM",
+      "sunset": "4:23 PM",
       "low_tide": "7:09 AM",
-      "high_tide": "1:00 AM",
-      "water_temp": 64
+      "high_tide": "1:00 AM"
     },
     {
       "date": "2026-11-12",
       "day": "Thu",
-      "temp_high": 52,
-      "condition": "Sunny",
-      "icon": "\u2600\ufe0f",
+      "temp_high": 53,
+      "condition": "Rain",
+      "icon": "\ud83c\udf27\ufe0f",
       "temp_low": 42,
-      "sunrise": "7:26 AM",
-      "sunset": "5:22 PM",
+      "sunrise": "6:26 AM",
+      "sunset": "4:22 PM",
       "low_tide": "7:48 AM",
-      "high_tide": "1:43 AM",
-      "water_temp": 64
+      "high_tide": "1:43 AM"
     },
     {
       "date": "2026-11-13",
@@ -119,27 +109,25 @@
       "temp_high": 51,
       "condition": "Rain",
       "icon": "\ud83c\udf27\ufe0f",
-      "temp_low": 40,
-      "sunrise": "7:27 AM",
-      "sunset": "5:21 PM",
+      "temp_low": 39,
+      "sunrise": "6:27 AM",
+      "sunset": "4:21 PM",
       "low_tide": "8:27 AM",
-      "high_tide": "2:26 AM",
-      "water_temp": 64
+      "high_tide": "2:26 AM"
     },
     {
       "date": "2026-11-14",
       "day": "Sat",
-      "temp_high": 51,
+      "temp_high": 48,
       "condition": "Rain",
       "icon": "\ud83c\udf27\ufe0f",
-      "temp_low": 39,
-      "sunrise": "7:28 AM",
-      "sunset": "5:20 PM",
+      "temp_low": 38,
+      "sunrise": "6:28 AM",
+      "sunset": "4:20 PM",
       "low_tide": "9:08 AM",
-      "high_tide": "3:11 AM",
-      "water_temp": 64
+      "high_tide": "3:11 AM"
     }
   ],
   "version": "1.0",
-  "updated_at": "2026-11-08T14:54:10Z"
+  "updated_at": "2026-11-08T20:09:03Z"
 }

@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import sys
 from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 from pathlib import Path
 
 import requests
@@ -55,25 +56,26 @@ def fetch_tides(date: str) -> list[dict]:
     return out
 
 
+WATER_BUOY = ("44090", "Cape Cod Bay buoy (NDBC 44090)")   # same sensor the app's beach list uses
+
+
 def fetch_water_temp() -> int | None:
-    """Latest NOAA water temp from Chatham buoy. Returns Fahrenheit int."""
+    """Latest Cape Cod Bay buoy water temperature (NDBC 44090), °F. None if unavailable.
+
+    The Chatham tide station (8447435) has no water-temperature sensor, so the old lookup
+    always failed and the page showed a fixed fallback of 64°F. Never substitute a number.
+    """
     try:
-        r = requests.get(
-            "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter",
-            params={
-                "date": "latest",
-                "station": NOAA_STATION,
-                "product": "water_temperature",
-                "units": "english",
-                "time_zone": "lst",
-                "format": "json",
-            },
-            timeout=20,
-        )
+        r = requests.get(f"https://www.ndbc.noaa.gov/data/realtime2/{WATER_BUOY[0]}.txt", timeout=20,
+                         headers={"User-Agent": "TotallyCapeCod/1.0 (+https://totallycapecod.com)"})
         r.raise_for_status()
-        data = r.json().get("data", [])
-        if data:
-            return round(float(data[0]["v"]))
+        lines = [l for l in r.text.splitlines() if l.strip()]
+        header = lines[0].lstrip("#").split()
+        wi = header.index("WTMP")
+        for row in lines[2:]:                      # skip header + units rows; newest first
+            cols = row.split()
+            if len(cols) > wi and cols[wi] not in ("MM", "999.0", "99.0", "999"):
+                return round(float(cols[wi]) * 9 / 5 + 32)
     except Exception as e:
         print(f"[hermes] water_temp lookup failed: {e}", file=sys.stderr)
     return None
@@ -91,8 +93,8 @@ def fetch_sun(date: str) -> dict:
     # Convert UTC ISO timestamps to Eastern time strings
     def fmt(iso_utc: str) -> str:
         dt = datetime.fromisoformat(iso_utc.replace("Z", "+00:00"))
-        # America/New_York: -4h DST (May-Oct), -5h standard. Crude but fine for May launch.
-        dt_local = dt - timedelta(hours=4)
+        # Real America/New_York conversion (the old fixed -4h was an hour off all winter).
+        dt_local = dt.astimezone(ZoneInfo("America/New_York"))
         return dt_local.strftime("%I:%M %p").lstrip("0")
     return {
         "sunrise": fmt(res["sunrise"]),
@@ -129,13 +131,11 @@ def fetch_weather() -> dict:
     icon, cond = icon_for(today_period["shortForecast"])
     today_weather = {
         "temp_high": today_period["temperature"],
-        "temp_low": today_period["temperature"] - 12,  # rough; replaced by paired night period below
+        "temp_low": None,  # filled from the paired night period below; never estimated
         "condition": cond,
         "icon": icon,
         "wind_mph": int(today_period.get("windSpeed", "0").split()[0] or 0),
         "wind_dir": today_period.get("windDirection", ""),
-        "humidity": 65,
-        "uv_index": 7,
     }
     # Pair night period for low
     night_today = next((p for p in periods if not p["isDaytime"] and p["startTime"][:10] == today_period["startTime"][:10]), None)
@@ -166,7 +166,7 @@ def main() -> None:
     today_weather, forecast_7day = fetch_weather()
     sun = fetch_sun(today_date)
     tides = fetch_tides(today_noaa)
-    water_temp = fetch_water_temp() or 64
+    water_temp = fetch_water_temp()
 
     # Decorate forecast with sun + tide for each day
     for day in forecast_7day:
@@ -185,24 +185,20 @@ def main() -> None:
             if highs: day["high_tide"] = highs[0]["time"]
         except Exception:
             pass
-        day["water_temp"] = water_temp
 
     payload = {
         "today": {
             "date": today_date,
             "weather": today_weather,
-            "sun": {
-                **sun,
-                "best_sunset_spot": {
-                    "name": "Skaket Beach",
-                    "town": "Orleans",
-                    "reason": "Bay-side sunset, walkable flats at low tide",
-                },
-            },
+            # Only measured/forecast values with a named source go here. (A fixed "best sunset
+            # spot" and a placeholder swell of 2 ft @ 8 s were removed on Nov 8, 2026: they
+            # weren't measurements, and the site only passes along verifiable data.)
+            "sun": {**sun, "source": "sunrise-sunset.org"},
             "tides": tides,
+            "tides_source": f"NOAA Tides & Currents, Chatham station {NOAA_STATION}",
             "water_temp_f": water_temp,
-            "swell_height_ft": 2,
-            "swell_period_sec": 8,
+            "water_temp_source": WATER_BUOY[1] if water_temp is not None else None,
+            "weather_source": "National Weather Service (api.weather.gov)",
         },
         "forecast_7day": forecast_7day,
     }

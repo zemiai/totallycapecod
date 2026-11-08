@@ -1,0 +1,47 @@
+name: "archive guide sources"
+
+# Saves a Wayback Machine copy of every page our guides cite and records the link in
+# content/evidence/<slug>.json (scripts/content/archive_sources.py). Runs when saved
+# references change, and weekly to retry anything the Archive rate-limited. Commits only
+# touch content/evidence/, which Netlify skips building; the "archived copy" links appear on
+# the guides at the next site build.
+
+on:
+  push:
+    branches: [main]
+    paths: ["content/evidence/**"]
+  schedule:
+    - cron: "41 7 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: archive-sources
+  cancel-in-progress: false
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install requests
+      - name: Archive cited pages
+        run: python scripts/content/archive_sources.py
+      - name: Commit archived links
+        run: |
+          git config user.name "hermes-bot"
+          git config user.email "hermes-bot@users.noreply.github.com"
+          git add content/evidence
+          if git diff --cached --quiet; then echo "nothing new"; exit 0; fi
+          git commit -m "[evidence] archived copies of cited pages"
+          for i in 1 2 3 4 5; do
+            if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
+            sleep $((i * 5))
+          done
+          exit 1

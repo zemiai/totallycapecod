@@ -101,6 +101,10 @@ def status_label(s):
 
 
 def make_beaches(out: Path) -> bool:
+    # Disabled Nov 8, 2026: beaches.json "status"/"crowd" values are old seeded placeholders,
+    # not live lot counts, and the site only posts verifiable data. Live lot status exists
+    # only as app users' reports (netlify/functions/beach-report.js).
+    return False
     beaches = load("beaches.json").get("beaches") or []
     if not beaches:
         return False
@@ -166,12 +170,10 @@ def make_outlook(out: Path) -> bool:
         return False
     img, d = base_canvas("Beach Day Outlook", today_str())
     y = 370
-    spot = sun.get("best_sunset_spot") or {}
     rows = [
         ("WEATHER", AMBER, f'{wx.get("condition", "")} · High {wx.get("temp_high", "?")}° / Low {wx.get("temp_low", "?")}°'),
         ("WIND", AMBER, f'{wx.get("wind_mph", "?")} mph {wx.get("wind_dir", "")} · UV index {wx.get("uv_index", "?")}'),
         ("SUN", AMBER, f'Rise {sun.get("sunrise", "?")} · Set {sun.get("sunset", "?")}'),
-        ("SUNSET SPOT", AMBER, f'{spot.get("name", "Skaket Beach")}, {spot.get("town", "Orleans")}'),
     ]
     for key in ("sagamore", "bourne"):
         b = br.get(key) or {}

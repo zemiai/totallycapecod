@@ -340,6 +340,34 @@ def number_sources(notes: list[dict]) -> tuple[list[dict], list[dict]]:
     return sources, notes
 
 
+def write_evidence(topic: dict, sources: list[dict], notes: list[dict]) -> None:
+    """Save the verbatim evidence behind each source (content/evidence/<slug>.json), which
+    build_site.py requires for every published guide (owner's rule: save the references)."""
+    by_url = {s["url"]: s["id"] for s in sources}
+    excerpts = {s["id"]: [] for s in sources}
+    for n in notes:
+        for e in n["evidence"]:
+            sid = by_url.get(e["url"].split("#")[0])
+            words = (e.get("text") or "").split()
+            if sid is None or not words:
+                continue
+            q = " ".join(words[:40])
+            if len(excerpts[sid]) < 6 and q not in [x["quote"] for x in excerpts[sid]]:
+                excerpts[sid].append({"quote": q, "supports": n["note"][:160]})
+    data = {
+        "slug": topic["slug"], "article_updated": TODAY.isoformat(), "saved": TODAY.isoformat(),
+        "about": ("Verbatim excerpts from every source this guide cites, saved so each fact can be traced and "
+                  "re-checked. Excerpts are short; see each URL (and its archived copy, when added) for full context."),
+        "sources": [{"id": s["id"], "url": s["url"], "publisher": s["publisher"], "title": s["title"],
+                     "checked": TODAY.isoformat(), "via": "live page", "archived": None,
+                     "excerpts": excerpts[s["id"]]} for s in sources],
+        "gaps": [],
+    }
+    (CONTENT / "evidence").mkdir(parents=True, exist_ok=True)
+    (CONTENT / "evidence" / f"{topic['slug']}.json").write_text(
+        json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
 def notes_prompt(sources: list[dict], notes: list[dict]) -> str:
     src = "\n".join(f"[{s['id']}] {s['publisher']} — {s['title']} — {s['url']}" for s in sources)
     nts = "\n".join(f"- {n['note']}  (sources: {', '.join(map(str, n['sources']))}; evidence: "
@@ -544,6 +572,7 @@ def main() -> int:
         log("dry run: passed all checks; not writing files\n" + md[:3000])
         return 0
     (CONTENT / "articles" / f"{topic['slug']}.md").write_text(md, encoding="utf-8")
+    write_evidence(topic, sources, notes)
     topic["status"] = "published"
     topic["published"] = TODAY.isoformat()
     PLAN.write_text(json.dumps(plan, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
@@ -551,6 +580,7 @@ def main() -> int:
     if rc != 0:
         log("build failed after writing — removing article")
         (CONTENT / "articles" / f"{topic['slug']}.md").unlink(missing_ok=True)
+        (CONTENT / "evidence" / f"{topic['slug']}.json").unlink(missing_ok=True)
         return 1
     (ROOT / ".content_commit_msg").write_text(f"new guide: {doc['title']} (fact-checked, {len(sources)} sources)")
     log(f"published /guides/{topic['slug']}/ with {len(sources)} sources")

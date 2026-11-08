@@ -21,12 +21,25 @@ aims first: "cape cod christmas events 2026", "sagamore bridge traffic", "cape c
    - a separate audit pass finds no unsupported, overstated or invented claims.
    A draft that still fails after one revision goes to `content/drafts/` with a report and its
    topic is marked `needs_review`. Nothing half-checked goes live.
-4. **Build.** `scripts/content/build_site.py` turns `content/articles/*.md` into
+4. **Save the references.** Every published guide has `content/evidence/<slug>.json`: for each
+   numbered source, short verbatim excerpts (≤40 words) that back the claims citing it, the date
+   they were checked, and a Wayback Machine copy (`archived`, filled in by the "archive guide
+   sources" workflow). `build_site.py` refuses to build a guide whose sources lack saved excerpts
+   or that has unresolved `gaps`, and each guide's Sources list shows the excerpts ("What the
+   source says") and the archived copy.
+5. **Build.** `scripts/content/build_site.py` turns `content/articles/*.md` into
    `/guides/<slug>/` pages with Article, Breadcrumb and FAQ structured data, plus the guides hub,
    the author page, the "How we fact-check" page, the RSS feed and `sitemap.xml`.
    Netlify deploys on push.
 
-## To turn it on
+## Who writes the guides
+
+Since Nov 8, 2026 a Claude scheduled task ("Totally Cape Cod — new guide (Tue/Fri)") researches,
+writes, independently fact-checks, saves the references for and publishes the next due topic
+every Tuesday and Friday morning. It needs no API key. The GitHub Action below is the older,
+unattended alternative; don't enable both, or each will publish.
+
+## To turn on the GitHub writer instead
 
 Add **one** repository secret (GitHub → Settings → Secrets and variables → Actions):
 
@@ -44,6 +57,9 @@ are deliberately uncited editorial notes with `<!-- nocite -->`.
 
 ## Standards (also published at /guides/standards/)
 
+- We're an intermediary: nothing is made up. Research, confirm with the source, then post, and save
+  the references. If it can't be confirmed, it's left out. This applies to social posts and app copy
+  too: no invented picks, rankings, reviews, quotes or "live" numbers.
 - Primary sources first: organizers, towns, the state, NPS, NOAA.
 - Credit organizers and photographers by name, with a link to the original. Photos are used only
   with permission.

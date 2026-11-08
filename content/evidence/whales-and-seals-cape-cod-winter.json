@@ -1,0 +1,750 @@
+{
+  "slug": "whales-and-seals-cape-cod-winter",
+  "article_updated": "2026-11-08",
+  "saved": "2026-11-08",
+  "about": "Verbatim excerpts from every source this guide cites, saved so each fact can be traced and re-checked. Excerpts are short; see each URL (and its archived copy, when added) for full context.",
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://coastalstudies.org/news/ccs-researchers-make-seasons-first-sighting-of-north-atlantic-right-whales-in-cape-cod-bay-2/",
+      "publisher": "Center for Coastal Studies",
+      "title": "CCS researchers make season's first sighting of North Atlantic right whales in Cape Cod Bay (Dec. 8, 2025)",
+      "checked": "2026-11-08",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "North Atlantic right whales are critically endangered",
+          "supports": "right whales are critically endangered"
+        },
+        {
+          "quote": "They typically arrive in Cape Cod Bay in early winter, with many remaining through mid-May.",
+          "supports": "arrive in Cape Cod Bay in early winter; many stay through mid-May"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "url": "https://coastalstudies.org/our-work/seal-research/cape-cod-seals/",
+      "publisher": "Center for Coastal Studies",
+      "title": "Cape Cod Seals",
+      "checked": "2026-11-08",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Highly gregarious, gray seals are often found in large groups hauled out on quiet sand or rock beaches for rest and breeding.",
+          "supports": "gray seal colonies (context: the next sentence is about gray seals)"
+        },
+        {
+          "quote": "Females in this area, such as Monomoy Island in Nantucket Sound, give birth to one, white-coated pup from late December to mid February.",
+          "supports": "gray seal pups: one white-coated pup, late December to mid-February, at colonies such as Monomoy Island"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "url": "https://www.mass.gov/news/north-atlantic-right-whales-in-coastal-massachusetts-the-20252026-season",
+      "publisher": "Mass.gov (Massachusetts Division of Marine Fisheries)",
+      "title": "North Atlantic Right Whales in Coastal Massachusetts: the 2025/2026 Season (July 1, 2026)",
+      "checked": "2026-11-08",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "7/01/2026 Division of Marine Fisheries North Atlantic right whales have been known to aggregate in high numbers in Cape Cod Bay in the early spring for centuries.",
+          "supports": "July 2026 season report; right whales have gathered in Cape Cod Bay in high numbers in early spring for centuries"
+        },
+        {
+          "quote": "This past season, the first aerial survey occurred on November 3, 2025",
+          "supports": "last season's first survey flight was November 3, 2025"
+        },
+        {
+          "quote": "on October 26, 2025, the first right whale sighting was reported from Race Point Beach by a member of the public",
+          "supports": "first right whale of last season reported from Race Point Beach by a member of the public, October 26, 2025"
+        },
+        {
+          "quote": "Cape Cod Bay, 14 individuals were sighted in December followed by a January where 39 were sighted, including 33 individuals sighted on January 10, 2025, which is the most the survey has ever sighted on a single day in January.",
+          "supports": "table: December 2025 = 14, January 2026 = 39; the January 10 count is the survey's most ever on a single January day (the source prints the year as 2025 inside its 2025/26-season account; source 5 dates the survey January 10, 2026)"
+        },
+        {
+          "quote": "57 individuals were sighted in February and 83 were sighted in March; during this time, the near real-time acoustic monitoring system was down. As it turned out, March was the busiest month of the season in Cape Cod Bay.",
+          "supports": "table: February 2026 = 57, March 2026 = 83; March was the busiest month in Cape Cod Bay in 2025/26"
+        },
+        {
+          "quote": "only 40 right whales were sighted and were acoustically detected on around 75% of the days within the month, a deviation from the high numbers usually observed in April. Many right whales were instead observed north of Cape Cod Bay",
+          "supports": "table: April 2026 = 40; many whales were seen north of the bay instead"
+        },
+        {
+          "quote": "the Center for Coastal Studies aerial survey team sighted and identified 188 North Atlantic right whale individuals, including 17 mother/calf pairs (see Fig. 2 for a photograph of one of these pairs), in Cape Cod Bay (155 individuals)",
+          "supports": "counts are from the Center for Coastal Studies aerial survey; 188 individuals including 17 mother/calf pairs, 155 in Cape Cod Bay"
+        },
+        {
+          "quote": "Visual and acoustic detections in coastal Massachusetts prompted the initiation of eight separate federal Slow Zones as these detections occurred in time and/or space when federal vessel speed zones were not active.",
+          "supports": "2025/26 detections without an active federal speed zone prompted eight Slow Zones"
+        },
+        {
+          "quote": "The aerial survey will begin again in autumn 2026",
+          "supports": "aerial survey to begin again in autumn 2026"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "url": "https://www.mass.gov/doc/41125-right-whales-present-in-large-numbers-in-massachusetts-waters/download",
+      "publisher": "Massachusetts Division of Marine Fisheries",
+      "title": "Right Whales Present in Large Numbers in Massachusetts Waters (advisory, April 11, 2025)",
+      "checked": "2026-11-08",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "April is typically the peak of the right whale season, coinciding with the densest aggregations of whales feeding at the surface or just below the surface.",
+          "supports": "April is typically the peak, with the densest groups feeding at or just below the surface"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "url": "https://coastalstudies.org/news/33-right-whales-sighted-in-cape-cod-bay/",
+      "publisher": "Center for Coastal Studies",
+      "title": "33 Right Whales Sighted in Cape Cod Bay (Jan. 12, 2026)",
+      "checked": "2026-11-08",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Jan 12, 2026",
+          "supports": "post date, which puts the Saturday, January 10th survey in 2026"
+        },
+        {
+          "quote": "Thirty-three North Atlantic right whales were observed in Cape Cod Bay during an aerial survey conducted Saturday, January 10th, by the Center for Coastal Studies (CCS).",
+          "supports": "33 right whales counted in Cape Cod Bay on January 10, 2026"
+        },
+        {
+          "quote": "Boaters, kayakers, paddle-boarders, swimmers and light aircraft and drone pilots are reminded that it is illegal to approach a North Atlantic right whale within 500 yards without a federal research permit.",
+          "supports": "500-yard limit applies to boaters, kayakers, paddle-boarders, swimmers, light-aircraft and drone pilots; illegal without a federal research permit"
+        },
+        {
+          "quote": "whales often feed very close to shore, offering watchers on the beach unbeatable views",
+          "supports": "right whales often feed very close to shore, with unbeatable views from the beach"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "url": "https://www.fisheries.noaa.gov/species/north-atlantic-right-whale",
+      "publisher": "NOAA Fisheries",
+      "title": "North Atlantic Right Whale",
+      "checked": "2026-11-08",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "To protect right whales, NOAA Fisheries has regulations that prohibit approaching or remaining within 500 yards (1,500 feet) of a right whale.",
+          "supports": "federal regulations: no approaching or remaining within 500 yards (1,500 feet)"
+        },
+        {
+          "quote": "These regulations apply to vessels and aircrafts (including drones) and to people using other watercrafts, such as surfboards, kayaks, and jet skis. Any vessel within 500 yards of a right whale must depart immediately at a safe, slow speed.",
+          "supports": "applies to vessels, aircraft including drones, surfboards, kayaks and jet skis; leave immediately at a safe, slow speed"
+        },
+        {
+          "quote": "The most recent abundance estimate for the population is approximately 380 whales",
+          "supports": "most recent population estimate is approximately 380"
+        },
+        {
+          "quote": "North Atlantic right whales have stocky black bodies with no dorsal fins, and their blow spouts are shaped like a “V.”",
+          "supports": "how to recognize: stocky black body, no dorsal fin, V-shaped blow"
+        },
+        {
+          "quote": "Call the NOAA Fisheries Enforcement Hotline at (800) 853-1964 to report a federal marine resource violation.",
+          "supports": "report violations to the NOAA Fisheries Enforcement Hotline, (800) 853-1964"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "url": "https://www.fisheries.noaa.gov/feature-story/numbers-2026-north-atlantic-right-whale-calving-season",
+      "publisher": "NOAA Fisheries",
+      "title": "By the Numbers: 2026 North Atlantic Right Whale Calving Season (April 30, 2026)",
+      "checked": "2026-11-08",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Twenty-three calves were born during the 2026 right whale calving season—the highest number since 2009.",
+          "supports": "23 calves in the 2026 calving season, the most since 2009"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "url": "https://coastalstudies.org/news/center-for-coastal-studies-offers-spring-whale-walks/",
+      "publisher": "Center for Coastal Studies",
+      "title": "Center for Coastal Studies Offers Spring Whale Walks (Mar. 4, 2026)",
+      "checked": "2026-11-08",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Mar 4, 2026",
+          "supports": "post date: the walks described were spring 2026"
+        },
+        {
+          "quote": "Starting March 27 and extending through the month of April, the Center for Coastal Studies (CCS) offers guided whale walks along the beaches of Provincetown.",
+          "supports": "guided whale walks from March 27 through April"
+        },
+        {
+          "quote": "CCS staff and educators lead the walks, which depart from Herring Cove or Race Point beaches in Provincetown.",
+          "supports": "walks depart from Herring Cove or Race Point beaches in Provincetown"
+        },
+        {
+          "quote": "Cetacean species commonly seen include the critically endangered North Atlantic right whale, humpback whale, fin, minke and sei whales.",
+          "supports": "species commonly seen: North Atlantic right, humpback, fin, minke and sei whales"
+        },
+        {
+          "quote": "“Cape Cod is one of the best places on Earth to watch whales from shore. It’s not uncommon for them to swim close to shore while feeding,” said Jesse Mechling, CCS Director of Education.",
+          "supports": "Jesse Mechling quote; not uncommon for whales to swim close to shore while feeding"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "url": "https://coastalstudies.org/news/rightwhaleday/",
+      "publisher": "Center for Coastal Studies",
+      "title": "Center for Coastal Studies to Host Right Whale Day Events (Apr. 3, 2026)",
+      "checked": "2026-11-08",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "right whales are often sighted during the month of April",
+          "supports": "the center says right whales are often sighted in April"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "url": "https://www.nps.gov/places/race-point-beach.htm",
+      "publisher": "National Park Service, Cape Cod National Seashore",
+      "title": "Race Point Beach",
+      "checked": "2026-11-08",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Cape Cod National Seashore",
+          "supports": "Race Point Beach is a Seashore beach (the park name shown under the page title)"
+        },
+        {
+          "quote": "End of Race Point Road, Provincetown",
+          "supports": "Race Point Beach is in Provincetown"
+        },
+        {
+          "quote": "In the spring whales can often be seen from shore",
+          "supports": "whales can often be seen from shore here in spring"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "url": "https://www.nps.gov/places/herring-cove-beach.htm",
+      "publisher": "National Park Service, Cape Cod National Seashore",
+      "title": "Herring Cove Beach",
+      "checked": "2026-11-08",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Whale watching from shore, tidal pools for the kids, calm waters, and killer sunsets",
+          "supports": "whale watching from shore listed among the beach's draws"
+        },
+        {
+          "quote": "Province Lands Road near the end of Route 6, Provincetown",
+          "supports": "Herring Cove Beach is in Provincetown"
+        },
+        {
+          "quote": "Herring Cove is the only Cape Cod National Seashore beach that is on the Cape Cod Bay side of the Cape.",
+          "supports": "Herring Cove is a Seashore beach"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "url": "https://www.mass.gov/doc/42925-dmf-extends-small-vessel-speed-restriction-for-cape-cod-bay-to-protect-right-whales-0/download",
+      "publisher": "Massachusetts Division of Marine Fisheries",
+      "title": "DMF Extends Small Vessel Speed Restriction for Cape Cod Bay to Protect Right Whales (advisory, April 29, 2025)",
+      "checked": "2026-11-08",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "the Division of Marine Fisheries is extending the small vessel speed restriction in Cape Cod Bay through May 15, 2025",
+          "supports": "in 2025 the division extended the small-boat limit through May 15"
+        },
+        {
+          "quote": "it is unlawful, under state and federal law, to approach a right whale within 500 yards.",
+          "supports": "Massachusetts law makes it unlawful to approach a right whale within 500 yards"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "url": "https://www.fisheries.noaa.gov/new-england-mid-atlantic/marine-life-viewing-guidelines/whale-watching-and-wildlife-viewing-new",
+      "publisher": "NOAA Fisheries, Greater Atlantic Regional Fisheries Office",
+      "title": "Whale Watching and Wildlife Viewing in New England and the Mid-Atlantic",
+      "checked": "2026-11-08",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Seals, dolphins and sea turtles: 150 feet",
+          "supports": "seal viewing distance: 150 feet"
+        },
+        {
+          "quote": "Feeding protected marine animals is also against the law.",
+          "supports": "feeding seals is against the law"
+        },
+        {
+          "quote": "Marine mammals, sea turtles, and Atlantic sturgeon are protected by federal laws that prohibit people from harming or harassing them. If your behavior changes their behavior, that may be considered harassment.",
+          "supports": "federal law prohibits harming or harassing; changing their behavior may be harassment"
+        },
+        {
+          "quote": "By law, don’t use drones within 1,500 feet of right whales. Maintain at least 1,000 feet from other marine mammals and sea turtles",
+          "supports": "drones: by law not within 1,500 feet of right whales; at least 1,000 feet from other marine mammals and sea turtles"
+        },
+        {
+          "quote": "Never enter the water or attempt to rescue on your own.",
+          "supports": "never enter the water or try to rescue an animal on your own"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "url": "https://www.fisheries.noaa.gov/national/endangered-species-conservation/reducing-vessel-strikes-north-atlantic-right-whales",
+      "publisher": "NOAA Fisheries",
+      "title": "Reducing Vessel Strikes to North Atlantic Right Whales",
+      "checked": "2026-11-08",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Most vessels 65 feet or longer must travel at 10 knots or less in certain locations (called Seasonal Management Areas)",
+          "supports": "most vessels 65 feet or longer: 10 knots or less in Seasonal Management Areas"
+        },
+        {
+          "quote": "Cape Cod Bay, January 1–May 15",
+          "supports": "Cape Cod Bay area: January 1 to May 15"
+        },
+        {
+          "quote": "Off Race Point, March 1–April 30",
+          "supports": "off Race Point: March 1 to April 30"
+        },
+        {
+          "quote": "In 2025, the Massachusetts Division of Marine Fisheries (DMF) extended speed restrictions through May 15, 2025, due to the continued presence of right whales in Cape Cod Bay.",
+          "supports": "in 2025 the division extended the state limit through May 15"
+        },
+        {
+          "quote": "For a period of 15 days after a whale is detected, mariners are encouraged to avoid these areas or reduce speeds to 10 knots or less while transiting through these areas.",
+          "supports": "Slow Zones: for 15 days, avoid the area or slow to 10 knots or less"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "url": "https://www.mass.gov/doc/322-cmr-12-protected-species/download",
+      "publisher": "Massachusetts Division of Marine Fisheries",
+      "title": "322 CMR 12.00: Protected Species",
+      "checked": "2026-11-08",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Buffer Zone means an area outward from a right whale a distance of 500 yards in all directions.",
+          "supports": "the state buffer zone is 500 yards"
+        },
+        {
+          "quote": "It shall be unlawful for any vessel registered in Massachusetts or within the waters under the jurisdiction of the Commonwealth to: (a) enter into a Buffer Zone created by a surfacing right whale;",
+          "supports": "vessels in state waters or registered in Massachusetts may not enter the zone around a surfacing right whale"
+        },
+        {
+          "quote": "(c) not depart immediately from a Buffer Zone upon the presence of a surfacing right whale.",
+          "supports": "must leave immediately if a right whale surfaces nearby"
+        },
+        {
+          "quote": "Cape Cod Bay Vessel Speed Restriction Area shall consist of all waters of Cape Cod Bay south of 42° 08' north latitude and those waters north and east of Cape Cod west of 70° 10' west longitude.",
+          "supports": "restricted area: Cape Cod Bay south of 42°08′ N and waters north and east of Cape Cod west of 70°10′ W"
+        },
+        {
+          "quote": "March 1st through April 30th, all vessels measuring less than 65' overall length and operating within the Cape Cod Bay Restricted Speed Area, as defined at 322 CMR 12.02, shall travel at a speed of ten knots or less.",
+          "supports": "boats under 65 feet: 10 knots or less, March 1 through April 30"
+        },
+        {
+          "quote": "The Director may, through a Notice of Declaration, adjust the duration of the Cape Cod Bay Vessel Speed Restriction Time Period",
+          "supports": "the Division of Marine Fisheries can adjust the dates by notice"
+        },
+        {
+          "quote": "(3) Exemptions. 322 CMR 12.05(2) shall not apply: (a) Inshore Areas. Within those waters within Plymouth, Kingston and Duxbury Harbors, Barnstable Harbor and Wellfleet Harbor",
+          "supports": "Plymouth, Kingston, Duxbury, Barnstable and Wellfleet harbors are exempt"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "url": "https://media.fisheries.noaa.gov/2022-08/Harb%20Seal-W%20North%20Atl%20Stock_SAR%202021.pdf",
+      "publisher": "NOAA Fisheries",
+      "title": "Harbor Seal (Phoca vitulina vitulina): Western North Atlantic Stock (stock assessment report, May 2022)",
+      "checked": "2026-11-08",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Harbor seals are year-round inhabitants of the coastal waters of eastern Canada and Maine (Katona et al. 1993), and occur seasonally along the coasts from southern New England to Virginia from September through late May",
+          "supports": "harbor seals: year-round in eastern Canada and Maine; seasonal from southern New England to Virginia, September through late May"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "url": "https://www.fisheries.noaa.gov/feature-story/together-again-white-sharks-and-gray-seals-cape-cod",
+      "publisher": "NOAA Fisheries",
+      "title": "Together Again: White Sharks and Gray Seals Off Cape Cod (July 31, 2019)",
+      "checked": "2026-11-08",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "July 31, 2019",
+          "supports": "NOAA wrote this in 2019"
+        },
+        {
+          "quote": "Gray seals now living on Cape Cod originated from larger Canadian herds, and have only recently started to again live on the Cape year-round.",
+          "supports": "gray seals came from Canadian herds and again live on the Cape year-round"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "url": "https://media.fisheries.noaa.gov/2022-08/Harp%20Seal-W%20North%20Atl%20Stock_SAR%202021.pdf",
+      "publisher": "NOAA Fisheries",
+      "title": "Harp Seal: Western North Atlantic Stock (stock assessment report, May 2022)",
+      "checked": "2026-11-08",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "numbers of sightings and strandings have been increasing off the east coast of the United States from Maine to New Jersey",
+          "supports": "harp seals turn up off the U.S. East Coast"
+        },
+        {
+          "quote": "These appearances usually occur in January–May",
+          "supports": "usually between January and May"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "url": "https://media.fisheries.noaa.gov/dam-migration/144_f2018_hoodedseal.pdf",
+      "publisher": "NOAA Fisheries",
+      "title": "Hooded Seal: Western North Atlantic Stock (stock assessment report, February 2019)",
+      "checked": "2026-11-08",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "with increased occurrences from Maine to Florida. These appearances usually occur between January and May in New England waters",
+          "supports": "hooded seals turn up in New England waters, usually between January and May"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "url": "https://www.fws.gov/refuge/monomoy/about-us",
+      "publisher": "U.S. Fish & Wildlife Service",
+      "title": "Monomoy National Wildlife Refuge: About Us",
+      "checked": "2026-11-08",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "South Monomoy Island contains the largest gray seal haul-out site on the U.S. Atlantic Coast.",
+          "supports": "largest gray seal haul-out on the U.S. Atlantic coast is on South Monomoy"
+        },
+        {
+          "quote": "Between 30,000-50,000 seals rely on the refuge's lands and waters.",
+          "supports": "between 30,000 and 50,000 seals rely on the refuge"
+        },
+        {
+          "quote": "a 40-acre unit attached to the mainland- the Morris Island unit, located in the town of Chatham, MA. Visitors can park at the parking lot on Wikis Way, where they can access a trail system that crosses dunes and beach.",
+          "supports": "40-acre Morris Island unit on the mainland in Chatham; Wikis Way parking lot; trails cross dunes and beach"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "url": "https://www.fws.gov/refuge/monomoy/visit-us/activities/wildlife-watching",
+      "publisher": "U.S. Fish & Wildlife Service",
+      "title": "Wildlife Watching at Monomoy National Wildlife Refuge",
+      "checked": "2026-11-08",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "On the Morris Island trails, you can see songbirds, shorebirds, horseshoe crabs, and the occasional seal.",
+          "supports": "\"the occasional seal\" on the Morris Island trails"
+        },
+        {
+          "quote": "On offshore portions of the refuge, an abundance of breeding, wintering, foraging, and resting birds can be observed year-round, as well as the largest grey seal haul-out on the U.S. East Coast.",
+          "supports": "the big haul-out is on the refuge's offshore portions"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "url": "https://www.fisheries.noaa.gov/new-england-mid-atlantic/marine-life-viewing-guidelines/share-shore-seals-new-england-mid-atlantic",
+      "publisher": "NOAA Fisheries, Greater Atlantic Regional Fisheries Office",
+      "title": "Share the Shore with Seals in New England/Mid-Atlantic",
+      "checked": "2026-11-08",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "If the seals start to vocalize more, start looking at you, moving away, waving flippers or increasing their yawning they are telling you to back away.",
+          "supports": "signs you're too close"
+        },
+        {
+          "quote": "On top of being a violation of the Marine Mammal Protection Act, touching, or attempting to touch seals can scare and stress them out.",
+          "supports": "touching or trying to touch a seal violates the Marine Mammal Protection Act"
+        },
+        {
+          "quote": "Seals also have large canine teeth and will bite if they feel threatened. They can transmit diseases to pets, so always make sure dogs are leashed if seals are in the area.",
+          "supports": "keep dogs leashed: canine teeth, bites, diseases to pets"
+        },
+        {
+          "quote": "Sometimes moms will leave their pups alone on the beach while they go off to feed.",
+          "supports": "mothers sometimes leave pups alone while they feed"
+        },
+        {
+          "quote": "Sometimes beach goers think pups need to go back into the water—that is not the case.",
+          "supports": "pups don't need to be put back in the water"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "url": "https://www.fisheries.noaa.gov/species/harbor-seal",
+      "publisher": "NOAA Fisheries",
+      "title": "Harbor Seal",
+      "checked": "2026-11-08",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Observe all seals and sea lions from a safe distance of at least 50 yards and limit your time spent observing to 30 minutes or less.",
+          "supports": "at least 50 yards from seals; limit viewing to 30 minutes or less"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "url": "https://www.fisheries.noaa.gov/report",
+      "publisher": "NOAA Fisheries",
+      "title": "Report a Stranded or Injured Marine Animal",
+      "checked": "2026-11-08",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "International Fund for Animal Welfare Area covered: Cape Cod and southeastern MA Phone: (508) 743-9548",
+          "supports": "IFAW, (508) 743-9548, covers Cape Cod and southeastern Massachusetts"
+        },
+        {
+          "quote": "Regional Northeast Marine Mammal and Sea Turtle Stranding and Entanglement Hotline Phone: (866) 755-NOAA (866-755-6622)",
+          "supports": "NOAA's regional stranding and entanglement hotline, (866) 755-6622"
+        },
+        {
+          "quote": "Center for Coastal Studies Entangled animals in the marine environment only Phone: (800) 900-3622",
+          "supports": "entangled animals at sea: Center for Coastal Studies, (800) 900-3622"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "url": "https://www.nps.gov/caco/planyourvisit/sharksafety.htm",
+      "publisher": "National Park Service, Cape Cod National Seashore",
+      "title": "Shark Safety at Cape Cod",
+      "checked": "2026-11-08",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Seals are the major prey species for the great white shark",
+          "supports": "seals are the major prey of great white sharks"
+        },
+        {
+          "quote": "There are confirmed reports of great white sharks feeding on seals close to shore.",
+          "supports": "confirmed reports of white sharks feeding on seals close to shore"
+        },
+        {
+          "quote": "Be aware sharks hunt for seals in shallow water.",
+          "supports": "sharks hunt seals in shallow water"
+        },
+        {
+          "quote": "Avoid areas where seals are present.",
+          "supports": "avoid areas where seals are present"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "url": "https://www.atlanticwhiteshark.org/white-shark-public-safety",
+      "publisher": "Atlantic White Shark Conservancy",
+      "title": "White Shark Public Safety",
+      "checked": "2026-11-08",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "the only way to completely eliminate the risk of an encounter with a shark is to remain on shore.",
+          "supports": "only way to completely eliminate the risk is to stay on shore"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "url": "https://www.nps.gov/caco/learn/management/compendium.htm",
+      "publisher": "National Park Service, Cape Cod National Seashore",
+      "title": "Superintendent's Compendium",
+      "checked": "2026-11-08",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Launching, landing, or operating an unmanned aircraft from or on lands and waters administered by the National Park Service within the boundaries of Cape Cod National Seashore is prohibited except as approved in writing by the superintendent.",
+          "supports": "drones prohibited on NPS lands and waters in the Seashore unless the superintendent approves in writing"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "url": "https://www.fws.gov/refuge/monomoy/visit-us/rules-policies",
+      "publisher": "U.S. Fish & Wildlife Service",
+      "title": "Monomoy National Wildlife Refuge: Rules & Policies",
+      "checked": "2026-11-08",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Use of Drones - Launching, landing, or operating an aircraft to include unmanned aircraft (drone) from or on lands and waters administered by the U.S. Fish & Wildlife Service is prohibited",
+          "supports": "drones prohibited at Monomoy National Wildlife Refuge"
+        },
+        {
+          "quote": "Pets are never allowed on South Monomoy, North Monomoy, and Minimoy islands.",
+          "supports": "no pets ever on South Monomoy, North Monomoy or Minimoy"
+        },
+        {
+          "quote": "dogs are NOT permitted in the summer, from May 1st to September 15th, to protect nesting wildlife. Leashed dogs are allowed on the Morris Island trails in the off-season, which is from September 16th to April 30th.",
+          "supports": "leashed dogs on the Morris Island trails only in the off-season, September 16 to April 30"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "url": "https://www.mass.gov/doc/51325-fixed-gear-seasonal-closures-to-open-and-small-vessel-speed-limit-lifted-effective-wednesday-may-14th/download",
+      "publisher": "Massachusetts Division of Marine Fisheries",
+      "title": "Commercial Trap Gear Fishery to Open and Small Vessel Speed Limit Lifted Effective Wednesday, May 14th (advisory, May 13, 2025)",
+      "checked": "2026-11-08",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Commercial Trap Gear Fishery to Open and Small Vessel Speed Limit Lifted Effective Wednesday, May 14th",
+          "supports": "small-vessel speed limit lifted effective May 14"
+        },
+        {
+          "quote": "Effective Wednesday, May 14th 2025",
+          "supports": "the year was 2025"
+        },
+        {
+          "quote": "DMF will lift the small vessel speed restriction in Cape Cod Bay allowing mariners with vessels less than 65’ to operate at speeds greater than 10 knots.",
+          "supports": "the division lifted the small-boat 10-knot limit"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "url": "https://www.fws.gov/refuge/monomoy/visit-us/trails",
+      "publisher": "U.S. Fish & Wildlife Service",
+      "title": "Monomoy National Wildlife Refuge: Trails",
+      "checked": "2026-11-08",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Parts of the Morris Island Trail are intertidal and may not be accessible during high tides.",
+          "supports": "parts of the trail are intertidal and may be impassable at high tide"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "url": "https://www.massaudubon.org/places-to-explore/wildlife-sanctuaries/wellfleet-bay/projects/sea-turtles",
+      "publisher": "Mass Audubon, Wellfleet Bay Wildlife Sanctuary",
+      "title": "Protecting Sea Turtles on Cape Cod",
+      "checked": "2026-11-08",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "immature sea turtles become “trapped” by the hooked shape of Cape Cod, and others just don’t move south quickly enough.",
+          "supports": "young turtles get \"trapped\" by the Cape's hooked shape or don't head south quickly enough"
+        },
+        {
+          "quote": "As the water continues to cool, turtles become lethargic and hypothermic, in a condition called “cold-stunned,” and they are unable to swim or eat. Onshore winds wash them onto beaches, mostly along the shore of Cape Cod Bay.",
+          "supports": "\"cold-stunned,\" unable to swim or eat; onshore winds strand them, mostly along Cape Cod Bay"
+        },
+        {
+          "quote": "Cold-stunned sea turtle strandings mainly take place from November to mid-January, beginning when the ocean temperatures fall below 55° F. Most of them are juvenile Kemp’s ridleys, the smallest and rarest of the sea turtles",
+          "supports": "November to mid-January, starting below 55°F; mostly juvenile Kemp's ridleys, the smallest and rarest"
+        },
+        {
+          "quote": "Do not assume a turtle is dead and do not put it back in the water—turtles that appear lifeless are often still alive.",
+          "supports": "don't assume it's dead; don't put it back in the water"
+        },
+        {
+          "quote": "it's illegal under both state and federal law to harass sea turtles or transport them without a permit.",
+          "supports": "illegal under state and federal law to harass or transport them without a permit"
+        },
+        {
+          "quote": "Carefully move the turtle above the high tide line. Never grab or hold the turtle by the head or flippers. Cover it completely with seaweed or wrack—never cover it with sand.",
+          "supports": "move it above the high tide line, not by head or flippers; cover with seaweed or wrack, never sand"
+        },
+        {
+          "quote": "Mark it with an obvious piece of debris like buoys, or driftwood, or draw a big arrow in the sand. Call the Wellfleet Bay hotline at 508-349-2615, Option 2, to receive further instructions.",
+          "supports": "mark the spot; call the Wellfleet Bay hotline, 508-349-2615, option 2"
+        }
+      ]
+    }
+  ],
+  "gaps": [],
+  "resolved": [
+    {
+      "source": 18,
+      "claim": "Rare visitors: harp and hooded seals occasionally turn up too, usually between January and May",
+      "problem": "The harp seal report does not call harp seals rare or occasional visitors. It says sightings and strandings off the U.S. East Coast from Maine to New Jersey have been increasing since the early 1990s, usually in January–May.",
+      "resolution": "Guide wording corrected on 2026-11-08 to match the source."
+    },
+    {
+      "source": 19,
+      "claim": "Rare visitors: harp and hooded seals occasionally turn up too, usually between January and May",
+      "problem": "The hooded seal report does not call hooded seals rare or occasional visitors. It says they are highly migratory, with increased occurrences from Maine to Florida, usually between January and May in New England waters. (Source 2, the Center for Coastal Studies seal page, calls hooded seals 'a rare sight' in this area but is not cited here.)",
+      "resolution": "Guide wording corrected on 2026-11-08 to match the source."
+    },
+    {
+      "source": 13,
+      "claim": "Harassing or feeding seals is against federal law",
+      "problem": "The source ties only harming or harassing to federal law ('protected by federal laws that prohibit people from harming or harassing them'). For feeding it says only 'Feeding protected marine animals is also against the law,' without naming federal law. The body's wording, 'Feeding them is against the law [13]', matches the source.",
+      "resolution": "Guide wording corrected on 2026-11-08 to match the source."
+    }
+  ]
+}

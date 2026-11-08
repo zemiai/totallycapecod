@@ -135,6 +135,42 @@ def validate(meta: dict, body: str, authors: dict) -> list[str]:
     return errs
 
 
+EVIDENCE = CONTENT / "evidence"
+
+
+def load_evidence(slug: str) -> dict:
+    """Saved references for a guide: content/evidence/<slug>.json (see docs/CONTENT_PLAN.md)."""
+    f = EVIDENCE / f"{slug}.json"
+    try:
+        return json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
+    except ValueError:
+        return {"_invalid": True}
+
+
+def validate_evidence(meta: dict) -> list[str]:
+    """Owner's rule: we're an intermediary — every source a guide cites must have saved,
+    verbatim excerpts backing it, and no unresolved gaps, before the guide can be built."""
+    slug = meta.get("slug", "?")
+    ev = load_evidence(slug)
+    if not ev:
+        return [f"{slug}: no saved references — write content/evidence/{slug}.json"]
+    if ev.get("_invalid"):
+        return [f"{slug}: content/evidence/{slug}.json is not valid JSON"]
+    errs = []
+    by_id = {s.get("id"): s for s in ev.get("sources") or []}
+    for s in meta.get("sources") or []:
+        e = by_id.get(s.get("id"))
+        if not e:
+            errs.append(f"{slug}: source {s.get('id')} has no saved excerpts")
+        elif str(e.get("url", "")).rstrip("/") != str(s.get("url", "")).rstrip("/"):
+            errs.append(f"{slug}: saved excerpts for source {s.get('id')} point to a different url")
+        elif not any(str(x.get("quote", "")).strip() for x in e.get("excerpts") or []):
+            errs.append(f"{slug}: source {s.get('id')} has no excerpt text")
+    for g in ev.get("gaps") or []:
+        errs.append(f"{slug}: unresolved gap for source {g.get('source')}: {str(g.get('claim', ''))[:80]}")
+    return errs
+
+
 # --------------------------------------------------------------- rendering ---
 def esc(s) -> str:
     return html.escape(str(s or ""), quote=True)
@@ -222,6 +258,10 @@ STYLE = """
   .g-sources ol{padding-left:22px;}
   .g-sources li{margin:6px 0;word-break:break-word;}
   .g-sources li:target{background:#FFF6D6;border-radius:6px;}
+  .g-ev{margin:4px 0 2px;font-size:13px;}
+  .g-ev summary{cursor:pointer;color:var(--text-secondary);}
+  .g-ev ul{margin:6px 0;padding-left:18px;}
+  .g-ev li{margin:4px 0;font-style:italic;}
   .g-related{margin-top:36px;}
   .g-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;}
   .g-card{display:block;background:#fff;border:1px solid var(--divider);border-radius:14px;padding:16px;text-decoration:none;color:var(--text);box-shadow:0 1px 3px rgba(0,0,0,.04);}
@@ -339,9 +379,25 @@ def render_article(meta: dict, body: str, authors: dict, all_articles: list) -> 
     if faq:
         items = "".join(f'<details><summary>{esc(q["q"])}</summary><p>{cite_html(markdown.markdown(q["a"])[3:-4], slug)}</p></details>' for q in faq)
         faq_html = f'<section class="g-faq"><h2 class="g-title" style="font-size:26px;">Quick answers</h2>{items}</section>'
+    ev_by_id = {e.get("id"): e for e in (load_evidence(slug).get("sources") or [])}
+
+    def src_extra(s: dict) -> str:
+        e = ev_by_id.get(s["id"]) or {}
+        out = ""
+        if e.get("archived"):
+            out += f' · <a href="{esc(e["archived"])}" target="_blank" rel="noopener nofollow">archived copy</a>'
+        quotes = [x for x in e.get("excerpts") or [] if str(x.get("quote", "")).strip()]
+        if quotes:
+            qs = "".join(f"<li>&ldquo;{esc(x['quote'].strip())}&rdquo;</li>" for x in quotes)
+            via = f" ({esc(e['via'])})" if e.get("via") and e.get("via") != "live page" else ""
+            out += (f'<details class="g-ev"><summary>What the source says</summary><ul>{qs}</ul>'
+                    f'<p class="muted">Excerpts saved {esc(pretty_date(str(e.get("checked") or s["accessed"])))}{via}.</p></details>')
+        return out
+
     src_items = "".join(
         f'<li id="src-{s["id"]}">{esc(s["publisher"])}: <a href="{esc(s["url"])}" target="_blank" rel="noopener">{esc(s["title"])}</a>'
-        f'{(" — " + esc(s["note"])) if s.get("note") else ""} <span class="muted">(accessed {esc(pretty_date(str(s["accessed"])))})</span></li>'
+        f'{(" — " + esc(s["note"])) if s.get("note") else ""} <span class="muted">(accessed {esc(pretty_date(str(s["accessed"])))})</span>'
+        f'{src_extra(s)}</li>'
         for s in sources)
     disclosure = meta.get("disclosure") or ("This guide was researched with the help of AI tools and checked line by line "
                                             "against the sources listed below before publishing.")
@@ -421,7 +477,13 @@ Totally Cape Cod publishes guides people use to plan real days on the Cape, so a
 
 Dates, times, prices, rules, seasons, counts and descriptions of places are linked to the source they came from, shown as numbered citations like this: [1]. The full list of sources sits at the bottom of each guide, with the date we checked it.
 
+Under each source you can open "What the source says": the exact passages we checked the guide against. We keep those excerpts on file, along with an archived copy of the page where one can be made, so the record survives even if the original page changes.
+
 We prefer primary sources: the organizer's own listing for an event, the town, state or National Park Service for rules and seasons, and the business itself for hours.
+
+## We pass information along; we don't make it up
+
+Totally Cape Cod is an intermediary. We don't invent facts, rankings, reviews or quotes. We research, confirm with the source, and then post. If we can't confirm something, we leave it out. Our social posts follow the same rule and name their sources.
 
 ## Credit where it's due
 
@@ -429,7 +491,7 @@ Events and photos are credited to the people and organizations behind them, with
 
 ## How guides are made
 
-Guides are researched with the help of AI tools. Before anything is published, each factual claim is checked against the text of its cited source; anything we can't confirm is cut, not guessed. Guides are updated when plans change — the "Updated" date shows the last check.
+Guides are researched with the help of AI tools. Before anything is published, a separate review checks each factual claim against the text of its cited source; anything we can't confirm is cut, not guessed. Guides are updated when plans change — the "Updated" date shows the last check.
 
 ## When we get something wrong
 
@@ -516,7 +578,7 @@ def build_sitemap(articles: list, authors: dict) -> str:
             e["lastmod"] = lm
     newest = max([m["updated"] for m, _ in articles] or [date.today().isoformat()])
     entries[f"{SITE}/guides/"] = dict(loc=f"{SITE}/guides/", lastmod=newest, changefreq="weekly", priority="0.8")
-    entries[f"{SITE}/guides/standards/"] = dict(loc=f"{SITE}/guides/standards/", lastmod="2026-10-26", changefreq="yearly", priority="0.3")
+    entries[f"{SITE}/guides/standards/"] = dict(loc=f"{SITE}/guides/standards/", lastmod="2026-11-08", changefreq="yearly", priority="0.3")
     for aid in authors:
         entries[f"{SITE}/authors/{aid}/"] = dict(loc=f"{SITE}/authors/{aid}/", lastmod=newest, changefreq="monthly", priority="0.4")
     for m, _ in articles:
@@ -549,6 +611,7 @@ def main_build(check_only: bool = False) -> int:
     errors = []
     for meta, body in articles:
         errors += validate(meta, body, authors)
+        errors += validate_evidence(meta)
     slugs = [m["slug"] for m, _ in articles]
     for s in set(slugs):
         if slugs.count(s) > 1:

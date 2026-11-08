@@ -52,7 +52,7 @@ sources:
     title: "The Cape Cod Christmas Market (event listing)"
     publisher: "Lemonadio.com, Mashpee Commons, Mashpee Chamber of Commerce & Naukabout on Facebook"
     url: "https://www.facebook.com/events/2461427824362331/"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 3
     title: "Falmouth Holidays by the Sea"
     publisher: "Falmouth Chamber of Commerce"
@@ -82,7 +82,7 @@ sources:
     title: "Evergreen – 2026 Mashpee Chamber Season of Illumination Parade (event listing)"
     publisher: "Mashpee Chamber of Commerce and Mashpee Commons on Facebook"
     url: "https://www.facebook.com/events/2107250426735741/"
-    accessed: 2026-10-26
+    accessed: 2026-11-08
   - id: 9
     title: "The Polar Express Train Ride"
     publisher: "Cape Cod Central Railroad"
@@ -246,7 +246,7 @@ Village strolls, lighted parades, Santa arriving by boat or fire truck, holiday 
 
 **Spectacle of Trees, JFK Hyannis Museum (from November 27).** The museum is open for its Spectacle of Trees on November 27 and 28 from 10 AM to 6 PM, on Sunday, November 29, from noon to 6 PM, and on December 3–6 and 10–12 from 10 AM to 6 PM [31].
 
-**The Cape Cod Christmas Market, Mashpee (November 27–29).** A three-day holiday market at the Naukabout Beer Garden, 4 Job's Fishing Road, open 11 AM to 2 PM on Friday, Saturday and Sunday, November 27–29. Admission is free, and the organizers promise handcrafted gifts from local artisans, festive food and warm drinks, live entertainment, visits with Santa and an annual community food drive [2].
+**The Cape Cod Christmas Market, Mashpee (Friday, November 27).** Lemonadio.com and its partners list The Cape Cod Christmas Market in Mashpee on Friday, November 27, 2026, on their Facebook event page [2]. Check that page for hours, location and any other dates. <!-- nocite -->
 
 **Brewster for the Holidays (November 27–December 23).** The Brewster Chamber of Commerce's celebration runs from Thanksgiving weekend to just before Christmas, with its main events on the first weekend of December, below [5].
 
@@ -285,7 +285,7 @@ The biggest cluster of 2026 events we found lands on this weekend. <!-- nocite -
 
 **Wequassett Resort, Harwich (December 4–5).** The resort's tree lighting is Friday, December 4, at 4:30 PM at its Main Fountain, with Christmas lights, carols and hot cocoa [22]. On Saturday, December 5, its annual Merry Market runs from 1 to 5 PM, Santa arrives at 3 PM, and fireworks go up over Pleasant Bay at 5:15 PM [6]. The resort is at 2173 Head of the Bay Road (Route 28), and extra parking is available at Lighthouse Charter School in Harwich, with shuttles from 2 to 8 PM [6].
 
-**Holly Folly, Provincetown (opens December 4).** The Provincetown Business Guild's Holly Folly runs all four weekends in December: December 4–6, 11–13, 18–20 and 25–27 [19]. The Provincetown Chamber of Commerce lists the kickoff weekend as Friday through Sunday, December 4–6, 2026 [4]. Opening-weekend highlights include the Holly Dolly Folly Follies holiday variety show on Friday at 8 PM, the Jingle Bell Fun Run & Brunch Fundraiser on Saturday at 10 AM, and Holigays! with the Boston Gay Men's Chorus on Saturday at 8 PM [19].
+**Holly Folly, Provincetown (opens December 4).** The Provincetown Business Guild's Holly Folly runs all four weekends in December: December 4–6, 11–13, 18–20 and 25–27 [19]. The Provincetown Chamber of Commerce lists Holly Folly for Friday through Sunday, December 4–6, 2026 [4]. Opening-weekend highlights include the Holly Dolly Folly Follies holiday variety show on Friday at 8 PM, the Jingle Bell Fun Run & Brunch Fundraiser on Saturday at 10 AM, and Holigays! with the Boston Gay Men's Chorus on Saturday at 8 PM [19].
 
 **Cape Symphony's Holiday on the Cape, Hyannis (December 4–6).** Six performances at the Barnstable Performing Arts Center, 744 West Main Street: Friday at 4 and 8 PM, Saturday at 3 and 7:30 PM, and Sunday at 1 and 5 PM [30].
 
@@ -303,7 +303,7 @@ The biggest cluster of 2026 events we found lands on this weekend. <!-- nocite -
 
 **Osterville Christmas Stroll & Open House (from Friday, December 11).** The Osterville Business and Professional Association's calendar lists its Christmas Stroll & Open House starting Friday, December 11, in Osterville Village at Main Street and Wianno Avenue [27]. The association describes a festive Friday night when the village glows with twinkling lights, carolers and open-late shops [28].
 
-**Mashpee Holiday Stroll and Season of Illumination Parade (Saturday, December 12).** Mashpee Commons lists the Mashpee Holiday Stroll followed by the Mashpee Chamber Parade on Saturday, December 12, from 1 to 7:30 PM at Central Square, 22 Steeple Street [23]. The Mashpee Chamber of Commerce's listing for its 20th annual Season of Illumination Parade, co-hosted with Mashpee Commons, shows a 6:30 PM start while its description says 6:00 PM, so arrive early [8].
+**Mashpee Holiday Stroll and Season of Illumination Parade (Saturday, December 12).** Mashpee Commons lists the Mashpee Holiday Stroll followed by the Mashpee Chamber Parade on Saturday, December 12, from 1 to 7:30 PM at Central Square, 22 Steeple Street [23]. The Mashpee Chamber of Commerce and Mashpee Commons also list their 2026 Season of Illumination Parade for that day on Facebook [8].
 
 **Sandwich Town-Wide Stroll (Sunday, December 13, 11 AM–4 PM).** This year the Sandwich Chamber of Commerce is expanding its annual Village Stroll into a town-wide event, inviting businesses in the Village, East Sandwich and South Sandwich to host holiday cheer, live entertainment, giveaways and special shopping [24].
 
