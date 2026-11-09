@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-11-09T06:15:25Z",
+  "updated_at": "2026-11-09T19:45:07Z",
   "_hermes_note": "Facility flags (lifeguard, restrooms, sticker_required) and notes come from the pages in source_url/sources, checked on source_checked; null means no official source confirmed it, so show nothing rather than yes or no. lifeguard true = a lifeguarded beach in season per the source, not that guards are on duty now. sticker_required is true only when a town sticker is the only way to park in season (no daily pass); the parking rule itself is in notes. status and crowd are old placeholder values kept only because code still reads them: never show or post them as observations (live lot status comes only from beachgoer reports). water_temp, water_temp_at and water_temp_src are written by scripts/update_beaches.py; water_temp_src_id is the station ID for water_temp_src.",
   "beaches": [
     {
@@ -25,7 +25,7 @@
         "https://capecod.gov/2024/05/24/barnstable-countys-guide-to-getting-beach-parking-stickers-on-cape-cod-a-breakdown-for-15-towns-and-the-cape-cod-national-seashore-2024"
       ],
       "source_checked": "2026-11-08",
-      "water_temp_at": "2026-11-09T05:30:00Z",
+      "water_temp_at": "2026-11-09T19:00:00Z",
       "water_temp_src": "Cape Cod Bay buoy",
       "water_temp_src_id": "NDBC 44090"
     },
@@ -52,7 +52,7 @@
         "https://www.nps.gov/caco/learn/management/advisory-commission-meeting-september-15-2025.htm"
       ],
       "source_checked": "2026-11-08",
-      "water_temp_at": "2026-11-09T05:30:00Z",
+      "water_temp_at": "2026-11-09T19:00:00Z",
       "water_temp_src": "Cape Cod Bay buoy",
       "water_temp_src_id": "NDBC 44090"
     },
@@ -78,7 +78,7 @@
         "https://www.nps.gov/caco/planyourvisit/fees.htm"
       ],
       "source_checked": "2026-11-08",
-      "water_temp_at": "2026-11-09T05:30:00Z",
+      "water_temp_at": "2026-11-09T19:00:00Z",
       "water_temp_src": "Cape Cod Bay buoy",
       "water_temp_src_id": "NDBC 44090"
     },
@@ -105,7 +105,7 @@
         "https://www.nps.gov/caco/learn/management/advisory-commission-meeting-september-15-2025.htm"
       ],
       "source_checked": "2026-11-08",
-      "water_temp_at": "2026-11-09T05:30:00Z",
+      "water_temp_at": "2026-11-09T19:00:00Z",
       "water_temp_src": "Cape Cod Bay buoy",
       "water_temp_src_id": "NDBC 44090"
     },
@@ -131,7 +131,7 @@
         "https://capecod.gov/2024/05/24/barnstable-countys-guide-to-getting-beach-parking-stickers-on-cape-cod-a-breakdown-for-15-towns-and-the-cape-cod-national-seashore-2024"
       ],
       "source_checked": "2026-11-08",
-      "water_temp_at": "2026-11-09T05:30:00Z",
+      "water_temp_at": "2026-11-09T19:00:00Z",
       "water_temp_src": "Cape Cod Bay buoy",
       "water_temp_src_id": "NDBC 44090"
     },
@@ -144,7 +144,7 @@
       "lng": -70.6431,
       "status": "full",
       "crowd": 5,
-      "water_temp": 58,
+      "water_temp": 57,
       "sticker_required": false,
       "restrooms": true,
       "lifeguard": true,
@@ -155,7 +155,7 @@
         "https://www.falmouthma.gov/151/Beach"
       ],
       "source_checked": "2026-11-08",
-      "water_temp_at": "2026-11-09T06:06:00Z",
+      "water_temp_at": "2026-11-09T19:36:00Z",
       "water_temp_src": "Woods Hole",
       "water_temp_src_id": "NOAA CO-OPS 8447930"
     },
@@ -180,7 +180,7 @@
         "https://capecod.gov/2024/05/24/barnstable-countys-guide-to-getting-beach-parking-stickers-on-cape-cod-a-breakdown-for-15-towns-and-the-cape-cod-national-seashore-2024"
       ],
       "source_checked": "2026-11-08",
-      "water_temp_at": "2026-11-09T05:30:00Z",
+      "water_temp_at": "2026-11-09T19:00:00Z",
       "water_temp_src": "Cape Cod Bay buoy",
       "water_temp_src_id": "NDBC 44090"
     },
@@ -193,7 +193,7 @@
       "lng": -70.3508,
       "status": "mid",
       "crowd": 3,
-      "water_temp": 56,
+      "water_temp": 57,
       "sticker_required": false,
       "restrooms": true,
       "lifeguard": true,
@@ -204,7 +204,7 @@
         "https://barnstablema.myrec.com/forms/5953_2026_beach_information.pdf"
       ],
       "source_checked": "2026-11-08",
-      "water_temp_at": "2026-11-09T05:50:00Z",
+      "water_temp_at": "2026-11-09T19:00:00Z",
       "water_temp_src": "Nantucket Sound buoy",
       "water_temp_src_id": "NDBC 44020"
     },
@@ -230,7 +230,7 @@
         "https://www.wellfleet-ma.gov/196/Beaches"
       ],
       "source_checked": "2026-11-08",
-      "water_temp_at": "2026-11-09T05:30:00Z",
+      "water_temp_at": "2026-11-09T19:00:00Z",
       "water_temp_src": "Cape Cod Bay buoy",
       "water_temp_src_id": "NDBC 44090"
     },
@@ -256,7 +256,7 @@
         "https://barnstablema.myrec.com/forms/5953_2026_beach_information.pdf"
       ],
       "source_checked": "2026-11-08",
-      "water_temp_at": "2026-11-09T05:30:00Z",
+      "water_temp_at": "2026-11-09T19:00:00Z",
       "water_temp_src": "Cape Cod Bay buoy",
       "water_temp_src_id": "NDBC 44090"
     },
@@ -283,7 +283,7 @@
         "https://www.wellfleet-ma.gov/DocumentCenter/View/5877/Fincomm-Budget-Book---V3-5-5-2026PDF"
       ],
       "source_checked": "2026-11-08",
-      "water_temp_at": "2026-11-09T05:30:00Z",
+      "water_temp_at": "2026-11-09T19:00:00Z",
       "water_temp_src": "Cape Cod Bay buoy",
       "water_temp_src_id": "NDBC 44090"
     },
@@ -309,7 +309,7 @@
         "https://www.wellfleet-ma.gov/DocumentCenter/View/5877/Fincomm-Budget-Book---V3-5-5-2026PDF"
       ],
       "source_checked": "2026-11-08",
-      "water_temp_at": "2026-11-09T05:30:00Z",
+      "water_temp_at": "2026-11-09T19:00:00Z",
       "water_temp_src": "Cape Cod Bay buoy",
       "water_temp_src_id": "NDBC 44090"
     },
@@ -336,7 +336,7 @@
         "https://www.nps.gov/caco/learn/management/advisory-commission-meeting-september-15-2025.htm"
       ],
       "source_checked": "2026-11-08",
-      "water_temp_at": "2026-11-09T05:30:00Z",
+      "water_temp_at": "2026-11-09T19:00:00Z",
       "water_temp_src": "Cape Cod Bay buoy",
       "water_temp_src_id": "NDBC 44090"
     },
@@ -360,7 +360,7 @@
         "https://www.truro-ma.gov/176/Beaches-of-Truro"
       ],
       "source_checked": "2026-11-08",
-      "water_temp_at": "2026-11-09T05:30:00Z",
+      "water_temp_at": "2026-11-09T19:00:00Z",
       "water_temp_src": "Cape Cod Bay buoy",
       "water_temp_src_id": "NDBC 44090"
     },
@@ -384,7 +384,7 @@
         "https://capecod.gov/2024/05/24/barnstable-countys-guide-to-getting-beach-parking-stickers-on-cape-cod-a-breakdown-for-15-towns-and-the-cape-cod-national-seashore-2024"
       ],
       "source_checked": "2026-11-08",
-      "water_temp_at": "2026-11-09T05:30:00Z",
+      "water_temp_at": "2026-11-09T19:00:00Z",
       "water_temp_src": "Cape Cod Bay buoy",
       "water_temp_src_id": "NDBC 44090"
     },
@@ -408,7 +408,7 @@
         "https://www.town.dennis.ma.us/449/Beach-Rules-Regulations"
       ],
       "source_checked": "2026-11-08",
-      "water_temp_at": "2026-11-09T05:30:00Z",
+      "water_temp_at": "2026-11-09T19:00:00Z",
       "water_temp_src": "Cape Cod Bay buoy",
       "water_temp_src_id": "NDBC 44090"
     },
@@ -434,7 +434,7 @@
         "https://capecod.gov/2024/05/24/barnstable-countys-guide-to-getting-beach-parking-stickers-on-cape-cod-a-breakdown-for-15-towns-and-the-cape-cod-national-seashore-2024"
       ],
       "source_checked": "2026-11-08",
-      "water_temp_at": "2026-11-09T05:30:00Z",
+      "water_temp_at": "2026-11-09T19:00:00Z",
       "water_temp_src": "Cape Cod Bay buoy",
       "water_temp_src_id": "NDBC 44090"
     },
@@ -459,7 +459,7 @@
         "https://capecod.gov/2024/05/24/barnstable-countys-guide-to-getting-beach-parking-stickers-on-cape-cod-a-breakdown-for-15-towns-and-the-cape-cod-national-seashore-2024"
       ],
       "source_checked": "2026-11-08",
-      "water_temp_at": "2026-11-09T05:30:00Z",
+      "water_temp_at": "2026-11-09T19:00:00Z",
       "water_temp_src": "Cape Cod Bay buoy",
       "water_temp_src_id": "NDBC 44090"
     },
@@ -472,7 +472,7 @@
       "lng": -69.9914,
       "status": "mid",
       "crowd": 3,
-      "water_temp": 56,
+      "water_temp": 57,
       "sticker_required": false,
       "restrooms": true,
       "lifeguard": true,
@@ -484,7 +484,7 @@
         "https://www.chatham-ma.gov/311/Sticker-Office"
       ],
       "source_checked": "2026-11-08",
-      "water_temp_at": "2026-11-09T05:50:00Z",
+      "water_temp_at": "2026-11-09T19:00:00Z",
       "water_temp_src": "Nantucket Sound buoy",
       "water_temp_src_id": "NDBC 44020"
     },
@@ -497,7 +497,7 @@
       "lng": -69.9925,
       "status": "mid",
       "crowd": 3,
-      "water_temp": 56,
+      "water_temp": 57,
       "sticker_required": false,
       "restrooms": true,
       "lifeguard": true,
@@ -509,7 +509,7 @@
         "https://www.chatham-ma.gov/311/Sticker-Office"
       ],
       "source_checked": "2026-11-08",
-      "water_temp_at": "2026-11-09T05:50:00Z",
+      "water_temp_at": "2026-11-09T19:00:00Z",
       "water_temp_src": "Nantucket Sound buoy",
       "water_temp_src_id": "NDBC 44020"
     },
@@ -532,7 +532,7 @@
         "https://www.brewster-ma.gov/763/Beach-Information"
       ],
       "source_checked": "2026-11-08",
-      "water_temp_at": "2026-11-09T05:30:00Z",
+      "water_temp_at": "2026-11-09T19:00:00Z",
       "water_temp_src": "Cape Cod Bay buoy",
       "water_temp_src_id": "NDBC 44090"
     },
@@ -555,7 +555,7 @@
         "https://www.brewster-ma.gov/763/Beach-Information"
       ],
       "source_checked": "2026-11-08",
-      "water_temp_at": "2026-11-09T05:30:00Z",
+      "water_temp_at": "2026-11-09T19:00:00Z",
       "water_temp_src": "Cape Cod Bay buoy",
       "water_temp_src_id": "NDBC 44090"
     },
@@ -568,7 +568,7 @@
       "lng": -70.5972,
       "status": "mid",
       "crowd": 3,
-      "water_temp": 58,
+      "water_temp": 57,
       "sticker_required": true,
       "restrooms": true,
       "lifeguard": true,
@@ -579,7 +579,7 @@
         "https://www.falmouthma.gov/151/Beach"
       ],
       "source_checked": "2026-11-08",
-      "water_temp_at": "2026-11-09T06:06:00Z",
+      "water_temp_at": "2026-11-09T19:36:00Z",
       "water_temp_src": "Woods Hole",
       "water_temp_src_id": "NOAA CO-OPS 8447930"
     },
@@ -592,7 +592,7 @@
       "lng": -70.5067,
       "status": "open",
       "crowd": 2,
-      "water_temp": 58,
+      "water_temp": 57,
       "sticker_required": false,
       "restrooms": true,
       "lifeguard": null,
@@ -603,7 +603,7 @@
         "https://www.mashpeema.gov/DocumentCenter/View/4926"
       ],
       "source_checked": "2026-11-08",
-      "water_temp_at": "2026-11-09T06:06:00Z",
+      "water_temp_at": "2026-11-09T19:36:00Z",
       "water_temp_src": "Woods Hole",
       "water_temp_src_id": "NOAA CO-OPS 8447930"
     },
@@ -616,7 +616,7 @@
       "lng": -70.2867,
       "status": "mid",
       "crowd": 3,
-      "water_temp": 56,
+      "water_temp": 57,
       "sticker_required": false,
       "restrooms": true,
       "lifeguard": true,
@@ -627,7 +627,7 @@
         "https://barnstablema.myrec.com/forms/5953_2026_beach_information.pdf"
       ],
       "source_checked": "2026-11-08",
-      "water_temp_at": "2026-11-09T05:50:00Z",
+      "water_temp_at": "2026-11-09T19:00:00Z",
       "water_temp_src": "Nantucket Sound buoy",
       "water_temp_src_id": "NDBC 44020"
     },
@@ -640,7 +640,7 @@
       "lng": -70.2914,
       "status": "open",
       "crowd": 2,
-      "water_temp": 56,
+      "water_temp": 57,
       "sticker_required": false,
       "restrooms": true,
       "lifeguard": true,
@@ -651,7 +651,7 @@
         "https://barnstablema.myrec.com/forms/5953_2026_beach_information.pdf"
       ],
       "source_checked": "2026-11-08",
-      "water_temp_at": "2026-11-09T05:50:00Z",
+      "water_temp_at": "2026-11-09T19:00:00Z",
       "water_temp_src": "Nantucket Sound buoy",
       "water_temp_src_id": "NDBC 44020"
     },
@@ -679,7 +679,7 @@
         "https://www.truro-ma.gov/207/Head-of-the-Meadow-Beach"
       ],
       "source_checked": "2026-11-08",
-      "water_temp_at": "2026-11-09T05:30:00Z",
+      "water_temp_at": "2026-11-09T19:00:00Z",
       "water_temp_src": "Cape Cod Bay buoy",
       "water_temp_src_id": "NDBC 44090"
     }
