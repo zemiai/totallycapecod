@@ -84,6 +84,19 @@ search volumes.
 | Beaches | dog friendly beaches, free parking, beach stickers 2027, sharks | queued for spring |
 | Towns | provincetown off-season, things to do in chatham | queued |
 
+## Season calendar (Tue/Fri, projected Nov 9, 2026)
+
+The scheduled writer takes the lowest-priority topic that's in season, so the queue publishes roughly:
+
+| When | What |
+|---|---|
+| Nov–Dec 2026 | November/December/New Year's guides, bridge times, "is Cape Cod worth visiting", best time to visit, Provincetown off-season, how many days, lighthouses, National Seashore, rainy days, Chatham, island ferries |
+| Jan–Feb 2027 | Camping and reservations, town guides (Wellfleet, Falmouth/Woods Hole, Hyannis, Orleans, Eastham, Brewster, Sandwich, Provincetown, Truro, Harwich, Dennis, Yarmouth, Bourne/Canal), Rail Trail, monthly guides |
+| Mar–Apr 2027 | Dog rules, beach rules, bike paths, whale watching 2027, getting there without a car, summer events 2027, fishing/shellfishing permits, seal tours, ponds, bridge replacement, beach parking 2027, lifeguarded beaches 2027, Fourth of July 2027, band concerts, farmers markets, Memorial Day |
+| May 2027 | May and June guides, shark safety; then refresh every dated guide as 2027 details are posted |
+
+Dated guides publish with "not yet announced" sections and are updated as organizers post 2027 details.
+
 ## What else moves rankings (outside the pipeline)
 
 - **Search Console + GA4 reporting.** Add `GOOGLE_SA_KEY`, `GA4_PROPERTY_ID` and
