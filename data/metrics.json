@@ -1,11 +1,7 @@
 {
- "generated_at": "2026-11-08T16:31:56Z",
+ "generated_at": "2026-11-09T20:30:19Z",
  "meta_ads": {
-  "window": "last_7d",
-  "total_spend": 0.0,
-  "total_clicks": 0,
-  "ads": [],
-  "flags": []
+  "skipped": "FB_ADS_TOKEN / FB_AD_ACCOUNT_ID not set"
  },
  "stripe": {
   "skipped": "STRIPE_REPORTING_KEY not set"
