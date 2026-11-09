@@ -1,46 +1,10 @@
 {
   "version": "1.0",
-  "updated_at": "2026-11-08T20:02:06Z",
+  "updated_at": "2026-11-09T19:57:21Z",
   "window_days": 21,
-  "count": 106,
+  "count": 107,
   "_hermes_note": "Real Cape Cod events scraped from chambers + venues. update_events.py",
   "events": [
-    {
-      "id": "walter-parks-the-unlawful-assembly-with-special-guest-vance-",
-      "tag": "\ud83d\udcc5 EVENT",
-      "category": "event",
-      "time": "Sun Nov 8 \u00b7 5:00 PM",
-      "title": "Walter Parks & The Unlawful Assembly with Special Guest Vance Gilbert",
-      "venue": "Payomet",
-      "town": "Truro",
-      "info": "",
-      "price": "",
-      "lat": 41.9979,
-      "lng": -70.0492,
-      "img": "https://payomet.org/wp-content/uploads/2026/09/WalterParks-860x562-1.webp",
-      "source": "Payomet",
-      "credit": "Payomet Performing Arts Center",
-      "source_url": "https://payomet.org/calendar/walter-parks-the-unlawful-assembly-featuring-vance-gilbert/",
-      "start": "2026-11-08T17:00:00+00:00"
-    },
-    {
-      "id": "vinyl-sundays-20261108",
-      "tag": "\ud83d\udcc5 EVENT",
-      "category": "event",
-      "time": "Sun Nov 8 \u00b7 5:00 PM",
-      "title": "Vinyl Sundays",
-      "venue": "Devil's Purse",
-      "town": "South Dennis",
-      "info": "",
-      "price": "",
-      "lat": 41.69,
-      "lng": -70.15,
-      "img": null,
-      "source": "Devil's Purse",
-      "credit": "Devil's Purse",
-      "source_url": "https://www.devilspurse.com/events/2026/11/8/vinyl-sundays",
-      "start": "2026-11-08T17:00:00+00:00"
-    },
     {
       "id": "tech-drop-in-at-the-brewster-ladies-library-20261110",
       "tag": "\ud83d\udcc5 EVENT",
@@ -129,7 +93,7 @@
       "source": "Payomet",
       "credit": "Payomet Performing Arts Center",
       "source_url": "https://payomet.org/calendar/circus-classes-open-skills-for-ages-7-12-9/",
-      "start": "2026-11-10T16:15:00+00:00"
+      "start": "2026-11-10T16:15:00-05:00"
     },
     {
       "id": "brewster-ladies-library-virtual-speaker-series-how-money-bec",
@@ -147,6 +111,24 @@
       "source": "Brewster",
       "credit": "Brewster Chamber of Commerce",
       "source_url": "https://members.brewster-capecod.com/events/details/brewster-ladies-library-virtual-speaker-series-how-money-became-god-rethinking-wealth-greed-with-paul-vigna-9601",
+      "start": "2026-11-11T00:00:00+00:00"
+    },
+    {
+      "id": "veterans-day-observance-2026-20261111",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Wed Nov 11",
+      "title": "Veterans Day Observance 2026",
+      "venue": "",
+      "town": "Chatham",
+      "info": "",
+      "price": "",
+      "lat": 41.6815,
+      "lng": -69.9597,
+      "img": null,
+      "source": "Chatham",
+      "credit": "Chatham Chamber of Commerce",
+      "source_url": "https://business.chathaminfo.com/events/details/veterans-day-observance-2026-32904",
       "start": "2026-11-11T00:00:00+00:00"
     },
     {
@@ -327,7 +309,7 @@
       "source": "Payomet",
       "credit": "Payomet Performing Arts Center",
       "source_url": "https://payomet.org/calendar/circus-classes-youth-performance-troupe-3/",
-      "start": "2026-11-12T16:30:00+00:00"
+      "start": "2026-11-12T16:30:00-05:00"
     },
     {
       "id": "listening-lounge-jazz-kissa-20261113",
@@ -489,7 +471,7 @@
       "source": "Payomet",
       "credit": "Payomet Performing Arts Center",
       "source_url": "https://payomet.org/calendar/circus-classes-little-lions-for-ages-3-4-9/",
-      "start": "2026-11-13T15:30:00+00:00"
+      "start": "2026-11-13T15:30:00-05:00"
     },
     {
       "id": "circus-classes-tiny-tent-for-ages-5-6-20261113",
@@ -507,7 +489,25 @@
       "source": "Payomet",
       "credit": "Payomet Performing Arts Center",
       "source_url": "https://payomet.org/calendar/circus-classes-tiny-tent-for-ages-5-6-3/",
-      "start": "2026-11-13T16:30:00+00:00"
+      "start": "2026-11-13T16:30:00-05:00"
+    },
+    {
+      "id": "death-bingo-20261113",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Fri Nov 13 \u00b7 5:00 PM",
+      "title": "Death Bingo!",
+      "venue": "Devil's Purse",
+      "town": "South Dennis",
+      "info": "",
+      "price": "",
+      "lat": 41.69,
+      "lng": -70.15,
+      "img": null,
+      "source": "Devil's Purse",
+      "credit": "Devil's Purse",
+      "source_url": "https://www.devilspurse.com/events/2026/11/6/death-bingo-6mn83-38jzj",
+      "start": "2026-11-13T17:00:00.549000-05:00"
     },
     {
       "id": "live-music-with-flydown-20261113",
@@ -525,43 +525,7 @@
       "source": "Cape Cod Beer",
       "credit": "Cape Cod Beer",
       "source_url": "https://capecodbeer.com/event/live-music-with-flydown/",
-      "start": "2026-11-13T18:00:00+00:00"
-    },
-    {
-      "id": "making-movies-20261113",
-      "tag": "\ud83c\udfad THEATER",
-      "category": "theater",
-      "time": "Fri Nov 13 \u00b7 7:00 PM",
-      "title": "Making Movies",
-      "venue": "Wellfleet Harbor Actors Theater",
-      "town": "Truro",
-      "info": "",
-      "price": "",
-      "lat": 41.9979,
-      "lng": -70.0492,
-      "img": "https://payomet.org/wp-content/uploads/2026/10/MakingMovies-860x562-1.webp",
-      "source": "Payomet",
-      "credit": "Payomet Performing Arts Center",
-      "source_url": "https://payomet.org/calendar/making-movies-2/",
-      "start": "2026-11-13T19:00:00+00:00"
-    },
-    {
-      "id": "death-bingo-20261113",
-      "tag": "\ud83d\udcc5 EVENT",
-      "category": "event",
-      "time": "Fri Nov 13 \u00b7 10:00 PM",
-      "title": "Death Bingo!",
-      "venue": "Devil's Purse",
-      "town": "South Dennis",
-      "info": "",
-      "price": "",
-      "lat": 41.69,
-      "lng": -70.15,
-      "img": null,
-      "source": "Devil's Purse",
-      "credit": "Devil's Purse",
-      "source_url": "https://www.devilspurse.com/events/2026/11/6/death-bingo-6mn83-38jzj",
-      "start": "2026-11-13T22:00:00.549000+00:00"
+      "start": "2026-11-13T18:00:00-05:00"
     },
     {
       "id": "the-hundred-aker-wood-20261114",
@@ -690,6 +654,24 @@
       "start": "2026-11-14T00:00:00+00:00"
     },
     {
+      "id": "live-music-the-barley-neck-20261114",
+      "tag": "\ud83c\udfb5 LIVE MUSIC",
+      "category": "music",
+      "time": "Sat Nov 14",
+      "title": "Live Music | The Barley Neck",
+      "venue": "",
+      "town": "Orleans",
+      "info": "",
+      "price": "",
+      "lat": 41.7901,
+      "lng": -69.9873,
+      "img": null,
+      "source": "Orleans",
+      "credit": "Orleans Chamber of Commerce",
+      "source_url": "https://members.orleanscapecod.org/events/details/live-music-at-the-barley-neck-11-14-2026-7049",
+      "start": "2026-11-14T00:00:00+00:00"
+    },
+    {
       "id": "thanksgiving-floral-centerpiece-workshop-20261114",
       "tag": "\ud83c\udf99\ufe0f TALK",
       "category": "talk",
@@ -726,6 +708,24 @@
       "start": "2026-11-14T00:00:00+00:00"
     },
     {
+      "id": "making-movies-20261113",
+      "tag": "\ud83c\udfad THEATER",
+      "category": "theater",
+      "time": "Fri Nov 13 \u00b7 7:00 PM",
+      "title": "Making Movies",
+      "venue": "Wellfleet Harbor Actors Theater",
+      "town": "Truro",
+      "info": "",
+      "price": "",
+      "lat": 41.9979,
+      "lng": -70.0492,
+      "img": "https://payomet.org/wp-content/uploads/2026/10/MakingMovies-860x562-1.webp",
+      "source": "Payomet",
+      "credit": "Payomet Performing Arts Center",
+      "source_url": "https://payomet.org/calendar/making-movies-2/",
+      "start": "2026-11-13T19:00:00-05:00"
+    },
+    {
       "id": "market-orleans-2026-11-14",
       "category": "farmers_market",
       "tag": "\ud83e\udd55 FARMERS MARKET",
@@ -744,6 +744,24 @@
       "img": null
     },
     {
+      "id": "live-music-with-liam-jonny-20261114",
+      "tag": "\ud83c\udfb5 LIVE MUSIC",
+      "category": "music",
+      "time": "Sat Nov 14 \u00b7 4:00 PM",
+      "title": "Live Music with Liam & Jonny",
+      "venue": "Cape Cod Winery",
+      "town": "Falmouth",
+      "info": "",
+      "price": "",
+      "lat": 41.5515,
+      "lng": -70.6148,
+      "img": null,
+      "source": "Cape Cod Winery",
+      "credit": "Cape Cod Winery",
+      "source_url": "https://www.capecodwinery.com/events/ljh7635e2g5eyhgk9ja3yax6xa3egs",
+      "start": "2026-11-14T16:00:00.026000-05:00"
+    },
+    {
       "id": "making-movies-20261114",
       "tag": "\ud83c\udfac FILM",
       "category": "film",
@@ -759,43 +777,7 @@
       "source": "Payomet",
       "credit": "Payomet Performing Arts Center",
       "source_url": "https://payomet.org/calendar/making-movies/",
-      "start": "2026-11-14T18:00:00+00:00"
-    },
-    {
-      "id": "live-music-with-boston-naturals-20261114",
-      "tag": "\ud83c\udfb5 LIVE MUSIC",
-      "category": "music",
-      "time": "Sat Nov 14 \u00b7 7:00 PM",
-      "title": "Live Music With Boston Naturals!",
-      "venue": "Cape Cod Beer",
-      "town": "Hyannis",
-      "info": "",
-      "price": "",
-      "lat": 41.652,
-      "lng": -70.2828,
-      "img": "https://capecodbeer.com/wp-content/uploads/Live-Music-Graphics-10-1.png",
-      "source": "Cape Cod Beer",
-      "credit": "Cape Cod Beer",
-      "source_url": "https://capecodbeer.com/event/live-music-with-boston-naturals-6/",
-      "start": "2026-11-14T19:00:00+00:00"
-    },
-    {
-      "id": "live-music-with-liam-jonny-20261114",
-      "tag": "\ud83c\udfb5 LIVE MUSIC",
-      "category": "music",
-      "time": "Sat Nov 14 \u00b7 9:00 PM",
-      "title": "Live Music with Liam & Jonny",
-      "venue": "Cape Cod Winery",
-      "town": "Falmouth",
-      "info": "",
-      "price": "",
-      "lat": 41.5515,
-      "lng": -70.6148,
-      "img": null,
-      "source": "Cape Cod Winery",
-      "credit": "Cape Cod Winery",
-      "source_url": "https://www.capecodwinery.com/events/ljh7635e2g5eyhgk9ja3yax6xa3egs",
-      "start": "2026-11-14T21:00:00.026000+00:00"
+      "start": "2026-11-14T18:00:00-05:00"
     },
     {
       "id": "the-hundred-aker-wood-20261115",
@@ -816,10 +798,28 @@
       "start": "2026-11-15T00:00:00+00:00"
     },
     {
+      "id": "live-music-with-boston-naturals-20261114",
+      "tag": "\ud83c\udfb5 LIVE MUSIC",
+      "category": "music",
+      "time": "Sat Nov 14 \u00b7 7:00 PM",
+      "title": "Live Music With Boston Naturals!",
+      "venue": "Cape Cod Beer",
+      "town": "Hyannis",
+      "info": "",
+      "price": "",
+      "lat": 41.652,
+      "lng": -70.2828,
+      "img": "https://capecodbeer.com/wp-content/uploads/Live-Music-Graphics-10-1.png",
+      "source": "Cape Cod Beer",
+      "credit": "Cape Cod Beer",
+      "source_url": "https://capecodbeer.com/event/live-music-with-boston-naturals-6/",
+      "start": "2026-11-14T19:00:00-05:00"
+    },
+    {
       "id": "vinyl-sundays-20261115",
       "tag": "\ud83d\udcc5 EVENT",
       "category": "event",
-      "time": "Sun Nov 15 \u00b7 5:00 PM",
+      "time": "Sun Nov 15 \u00b7 12:00 PM",
       "title": "Vinyl Sundays",
       "venue": "Devil's Purse",
       "town": "South Dennis",
@@ -831,7 +831,7 @@
       "source": "Devil's Purse",
       "credit": "Devil's Purse",
       "source_url": "https://www.devilspurse.com/events/2026/11/8/vinyl-sundays-n969z",
-      "start": "2026-11-15T17:00:00.181000+00:00"
+      "start": "2026-11-15T12:00:00.181000-05:00"
     },
     {
       "id": "toby-s-dog-walking-club-20261116",
@@ -849,7 +849,7 @@
       "source": "Highfield Hall",
       "credit": "Highfield Hall & Gardens",
       "source_url": "https://highfieldhallandgardens.org/event/toby-dog-walking-club/2026-11-16/",
-      "start": "2026-11-16T11:00:00+00:00"
+      "start": "2026-11-16T11:00:00-05:00"
     },
     {
       "id": "tuesday-talks-the-camps-of-chatham-beach-camps-chatham-ma-hi",
@@ -885,7 +885,7 @@
       "source": "Payomet",
       "credit": "Payomet Performing Arts Center",
       "source_url": "https://payomet.org/calendar/circus-classes-open-skills-for-ages-7-12-10/",
-      "start": "2026-11-17T16:15:00+00:00"
+      "start": "2026-11-17T16:15:00-05:00"
     },
     {
       "id": "the-hundred-aker-wood-20261118",
@@ -939,7 +939,7 @@
       "source": "Highfield Hall",
       "credit": "Highfield Hall & Gardens",
       "source_url": "https://highfieldhallandgardens.org/event/holidays-at-highfield-membership-preview-2026/",
-      "start": "2026-11-18T15:00:00+00:00"
+      "start": "2026-11-18T15:00:00-05:00"
     },
     {
       "id": "eastham-chamber-business-after-hours-at-local-break-20261119",
@@ -1011,7 +1011,7 @@
       "source": "Highfield Hall",
       "credit": "Highfield Hall & Gardens",
       "source_url": "https://highfieldhallandgardens.org/event/holidays-at-highfield-11-19-26/",
-      "start": "2026-11-19T10:00:00+00:00"
+      "start": "2026-11-19T10:00:00-05:00"
     },
     {
       "id": "circus-classes-youth-performance-troupe-20261119",
@@ -1029,13 +1029,13 @@
       "source": "Payomet",
       "credit": "Payomet Performing Arts Center",
       "source_url": "https://payomet.org/calendar/circus-classes-youth-performance-troupe-4/",
-      "start": "2026-11-19T16:30:00+00:00"
+      "start": "2026-11-19T16:30:00-05:00"
     },
     {
       "id": "jingle-beers-at-stone-zoo-20261119",
       "tag": "\ud83c\udf74 FOOD & DRINK",
       "category": "food",
-      "time": "Thu Nov 19 \u00b7 11:00 PM",
+      "time": "Thu Nov 19 \u00b7 6:00 PM",
       "title": "Jingle Beers at Stone Zoo",
       "venue": "Devil's Purse",
       "town": "South Dennis",
@@ -1047,14 +1047,14 @@
       "source": "Devil's Purse",
       "credit": "Devil's Purse",
       "source_url": "https://www.devilspurse.com/events/2026/11/19/jingle-beers-at-stone-zoo",
-      "start": "2026-11-19T23:00:00.616000+00:00"
+      "start": "2026-11-19T18:00:00.616000-05:00"
     },
     {
-      "id": "view-detail-20261120",
+      "id": "new-england-leather-weekend-20261120",
       "tag": "\ud83d\udcc5 EVENT",
       "category": "event",
       "time": "Fri Nov 20",
-      "title": "View Detail",
+      "title": "New England Leather Weekend",
       "venue": "",
       "town": "Provincetown",
       "info": "",
@@ -1064,15 +1064,15 @@
       "img": null,
       "source": "Provincetown",
       "credit": "Provincetown Chamber of Commerce",
-      "source_url": "https://ptownchamber.com/events/provincetown-food-wine-festival/",
+      "source_url": "https://ptownchamber.com/events/new-england-leather-weekend/",
       "start": "2026-11-20T00:00:00+00:00"
     },
     {
-      "id": "new-england-leather-weekend-20261120",
+      "id": "view-detail-20261120",
       "tag": "\ud83d\udcc5 EVENT",
       "category": "event",
       "time": "Fri Nov 20",
-      "title": "New England Leather Weekend",
+      "title": "View Detail",
       "venue": "",
       "town": "Provincetown",
       "info": "",
@@ -1191,7 +1191,7 @@
       "source": "Payomet",
       "credit": "Payomet Performing Arts Center",
       "source_url": "https://payomet.org/calendar/circus-classes-little-lions-for-ages-3-4-10/",
-      "start": "2026-11-20T15:30:00+00:00"
+      "start": "2026-11-20T15:30:00-05:00"
     },
     {
       "id": "circus-classes-tiny-tent-for-ages-5-6-20261120",
@@ -1209,7 +1209,7 @@
       "source": "Payomet",
       "credit": "Payomet Performing Arts Center",
       "source_url": "https://payomet.org/calendar/circus-classes-tiny-tent-for-ages-5-6-4/",
-      "start": "2026-11-20T16:30:00+00:00"
+      "start": "2026-11-20T16:30:00-05:00"
     },
     {
       "id": "twilight-hours-holidays-at-highfield-after-dark-20261120",
@@ -1227,7 +1227,25 @@
       "source": "Highfield Hall",
       "credit": "Highfield Hall & Gardens",
       "source_url": "https://highfieldhallandgardens.org/event/twilight-hours-11-20-26/",
-      "start": "2026-11-20T16:30:00+00:00"
+      "start": "2026-11-20T16:30:00-05:00"
+    },
+    {
+      "id": "death-bingo-20261120",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Fri Nov 20 \u00b7 5:00 PM",
+      "title": "Death Bingo!",
+      "venue": "Devil's Purse",
+      "town": "South Dennis",
+      "info": "",
+      "price": "",
+      "lat": 41.69,
+      "lng": -70.15,
+      "img": null,
+      "source": "Devil's Purse",
+      "credit": "Devil's Purse",
+      "source_url": "https://www.devilspurse.com/events/2026/11/6/death-bingo-6mn83-38jzj-6jbf8",
+      "start": "2026-11-20T17:00:00.086000-05:00"
     },
     {
       "id": "live-music-with-the-grab-brothers-20261120",
@@ -1245,31 +1263,13 @@
       "source": "Cape Cod Beer",
       "credit": "Cape Cod Beer",
       "source_url": "https://capecodbeer.com/event/live-music-with-the-grab-brothers-2/",
-      "start": "2026-11-20T18:00:00+00:00"
-    },
-    {
-      "id": "death-bingo-20261120",
-      "tag": "\ud83d\udcc5 EVENT",
-      "category": "event",
-      "time": "Fri Nov 20 \u00b7 10:00 PM",
-      "title": "Death Bingo!",
-      "venue": "Devil's Purse",
-      "town": "South Dennis",
-      "info": "",
-      "price": "",
-      "lat": 41.69,
-      "lng": -70.15,
-      "img": null,
-      "source": "Devil's Purse",
-      "credit": "Devil's Purse",
-      "source_url": "https://www.devilspurse.com/events/2026/11/6/death-bingo-6mn83-38jzj-6jbf8",
-      "start": "2026-11-20T22:00:00.086000+00:00"
+      "start": "2026-11-20T18:00:00-05:00"
     },
     {
       "id": "toast-of-harwich-20261120",
       "tag": "\ud83d\udcc5 EVENT",
       "category": "event",
-      "time": "Fri Nov 20 \u00b7 11:00 PM",
+      "time": "Fri Nov 20 \u00b7 6:00 PM",
       "title": "Toast of Harwich",
       "venue": "Devil's Purse",
       "town": "South Dennis",
@@ -1281,7 +1281,7 @@
       "source": "Devil's Purse",
       "credit": "Devil's Purse",
       "source_url": "https://www.devilspurse.com/events/2026/11/20/toast-of-harwich",
-      "start": "2026-11-20T23:00:00.990000+00:00"
+      "start": "2026-11-20T18:00:00.990000-05:00"
     },
     {
       "id": "the-hundred-aker-wood-20261121",
@@ -1371,13 +1371,13 @@
       "source": "Highfield Hall",
       "credit": "Highfield Hall & Gardens",
       "source_url": "https://highfieldhallandgardens.org/event/thanksgiving-classics-2026/",
-      "start": "2026-11-21T12:00:00+00:00"
+      "start": "2026-11-21T12:00:00-05:00"
     },
     {
       "id": "ben-n-ink-watercolors-20261121",
       "tag": "\ud83d\udcc5 EVENT",
       "category": "event",
-      "time": "Sat Nov 21 \u00b7 5:00 PM",
+      "time": "Sat Nov 21 \u00b7 12:00 PM",
       "title": "Ben N Ink Watercolors",
       "venue": "Devil's Purse",
       "town": "South Dennis",
@@ -1389,7 +1389,25 @@
       "source": "Devil's Purse",
       "credit": "Devil's Purse",
       "source_url": "https://www.devilspurse.com/events/2023/7/19/ben-n-ink-watercolers-6mps2-7d6c4-9z387-cxsa4",
-      "start": "2026-11-21T17:00:00.366000+00:00"
+      "start": "2026-11-21T12:00:00.366000-05:00"
+    },
+    {
+      "id": "live-music-with-johnny-mac-20261121",
+      "tag": "\ud83c\udfb5 LIVE MUSIC",
+      "category": "music",
+      "time": "Sat Nov 21 \u00b7 4:00 PM",
+      "title": "Live Music with Johnny Mac",
+      "venue": "Cape Cod Winery",
+      "town": "Falmouth",
+      "info": "",
+      "price": "",
+      "lat": 41.5515,
+      "lng": -70.6148,
+      "img": null,
+      "source": "Cape Cod Winery",
+      "credit": "Cape Cod Winery",
+      "source_url": "https://www.capecodwinery.com/events/live-music-with-johnny-mac-3",
+      "start": "2026-11-21T16:00:00.515000-05:00"
     },
     {
       "id": "power-load-ac-dc-cover-band-live-20261121",
@@ -1407,25 +1425,7 @@
       "source": "Cape Cod Beer",
       "credit": "Cape Cod Beer",
       "source_url": "https://capecodbeer.com/event/power-load-ac-dc-cover-band-live-2/",
-      "start": "2026-11-21T18:00:00+00:00"
-    },
-    {
-      "id": "live-music-with-johnny-mac-20261121",
-      "tag": "\ud83c\udfb5 LIVE MUSIC",
-      "category": "music",
-      "time": "Sat Nov 21 \u00b7 9:00 PM",
-      "title": "Live Music with Johnny Mac",
-      "venue": "Cape Cod Winery",
-      "town": "Falmouth",
-      "info": "",
-      "price": "",
-      "lat": 41.5515,
-      "lng": -70.6148,
-      "img": null,
-      "source": "Cape Cod Winery",
-      "credit": "Cape Cod Winery",
-      "source_url": "https://www.capecodwinery.com/events/live-music-with-johnny-mac-3",
-      "start": "2026-11-21T21:00:00.515000+00:00"
+      "start": "2026-11-21T18:00:00-05:00"
     },
     {
       "id": "the-hundred-aker-wood-20261122",
@@ -1461,7 +1461,7 @@
       "source": "Highfield Hall",
       "credit": "Highfield Hall & Gardens",
       "source_url": "https://highfieldhallandgardens.org/event/the-servants-tour-11-22-26/",
-      "start": "2026-11-22T09:00:00+00:00"
+      "start": "2026-11-22T09:00:00-05:00"
     },
     {
       "id": "holiday-hosting-culinary-workshop-with-kate-rickard-20261122",
@@ -1479,13 +1479,13 @@
       "source": "Highfield Hall",
       "credit": "Highfield Hall & Gardens",
       "source_url": "https://highfieldhallandgardens.org/event/holiday-hosting-2026/",
-      "start": "2026-11-22T12:00:00+00:00"
+      "start": "2026-11-22T12:00:00-05:00"
     },
     {
       "id": "vinyl-sundays-20261122",
       "tag": "\ud83d\udcc5 EVENT",
       "category": "event",
-      "time": "Sun Nov 22 \u00b7 5:00 PM",
+      "time": "Sun Nov 22 \u00b7 12:00 PM",
       "title": "Vinyl Sundays",
       "venue": "Devil's Purse",
       "town": "South Dennis",
@@ -1497,7 +1497,7 @@
       "source": "Devil's Purse",
       "credit": "Devil's Purse",
       "source_url": "https://www.devilspurse.com/events/2026/11/8/vinyl-sundays-n969z-jex7y",
-      "start": "2026-11-22T17:00:00.908000+00:00"
+      "start": "2026-11-22T12:00:00.908000-05:00"
     },
     {
       "id": "circus-classes-open-skills-for-ages-7-12-20261124",
@@ -1515,7 +1515,7 @@
       "source": "Payomet",
       "credit": "Payomet Performing Arts Center",
       "source_url": "https://payomet.org/calendar/circus-classes-open-skills-for-ages-7-12-11/",
-      "start": "2026-11-24T16:15:00+00:00"
+      "start": "2026-11-24T16:15:00-05:00"
     },
     {
       "id": "festive-evergreen-tree-felting-workshop-with-cheryl-flett-20",
@@ -1533,7 +1533,7 @@
       "source": "Highfield Hall",
       "credit": "Highfield Hall & Gardens",
       "source_url": "https://highfieldhallandgardens.org/event/festive-evergreen-tree-felting-2026/",
-      "start": "2026-11-24T17:00:00+00:00"
+      "start": "2026-11-24T17:00:00-05:00"
     },
     {
       "id": "lighting-of-the-pilgrim-monument-20261125",
@@ -1575,7 +1575,7 @@
       "id": "cape-cod-macarons-pop-up-20261125",
       "tag": "\ud83d\udcc5 EVENT",
       "category": "event",
-      "time": "Wed Nov 25 \u00b7 5:00 PM",
+      "time": "Wed Nov 25 \u00b7 12:00 PM",
       "title": "Cape Cod Macarons Pop-Up",
       "venue": "Devil's Purse",
       "town": "South Dennis",
@@ -1587,7 +1587,7 @@
       "source": "Devil's Purse",
       "credit": "Devil's Purse",
       "source_url": "https://www.devilspurse.com/events/2025/2/9/cape-cod-macarons-pop-up-rkc3b-mr76z-32ycf",
-      "start": "2026-11-25T17:00:00.293000+00:00"
+      "start": "2026-11-25T12:00:00.293000-05:00"
     },
     {
       "id": "the-hundred-aker-wood-20261126",
@@ -1713,13 +1713,13 @@
       "source": "Highfield Hall",
       "credit": "Highfield Hall & Gardens",
       "source_url": "https://highfieldhallandgardens.org/event/twilight-hours-11-27-26/",
-      "start": "2026-11-27T16:30:00+00:00"
+      "start": "2026-11-27T16:30:00-05:00"
     },
     {
       "id": "ultimate-death-bingo-20261127",
       "tag": "\ud83d\udcc5 EVENT",
       "category": "event",
-      "time": "Fri Nov 27 \u00b7 10:00 PM",
+      "time": "Fri Nov 27 \u00b7 5:00 PM",
       "title": "Ultimate Death Bingo!",
       "venue": "Devil's Purse",
       "town": "South Dennis",
@@ -1731,13 +1731,13 @@
       "source": "Devil's Purse",
       "credit": "Devil's Purse",
       "source_url": "https://www.devilspurse.com/events/2026/11/6/death-bingo-6mn83",
-      "start": "2026-11-27T22:00:00.202000+00:00"
+      "start": "2026-11-27T17:00:00.202000-05:00"
     },
     {
       "id": "annual-christmas-tree-lighting-20261127",
       "tag": "\ud83c\udf74 FOOD & DRINK",
       "category": "food",
-      "time": "Fri Nov 27 \u00b7 11:30 PM",
+      "time": "Fri Nov 27 \u00b7 6:30 PM",
       "title": "Annual Christmas Tree Lighting",
       "venue": "Cape Cod Winery",
       "town": "Falmouth",
@@ -1749,7 +1749,7 @@
       "source": "Cape Cod Winery",
       "credit": "Cape Cod Winery",
       "source_url": "https://www.capecodwinery.com/events/annual-christmas-tree-lighting-3",
-      "start": "2026-11-27T23:30:00.303000+00:00"
+      "start": "2026-11-27T18:30:00.303000-05:00"
     },
     {
       "id": "lighting-of-the-lobster-pot-tree-20261128",
@@ -1824,6 +1824,24 @@
       "img": null
     },
     {
+      "id": "vinyl-bingo-20261128",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Sat Nov 28 \u00b7 4:00 PM",
+      "title": "Vinyl Bingo!",
+      "venue": "Devil's Purse",
+      "town": "South Dennis",
+      "info": "",
+      "price": "",
+      "lat": 41.69,
+      "lng": -70.15,
+      "img": null,
+      "source": "Devil's Purse",
+      "credit": "Devil's Purse",
+      "source_url": "https://www.devilspurse.com/events/2026/11/28/vinyl-bingo",
+      "start": "2026-11-28T16:00:00.321000-05:00"
+    },
+    {
       "id": "live-music-with-lava-bomb-20261128",
       "tag": "\ud83c\udfb5 LIVE MUSIC",
       "category": "music",
@@ -1839,31 +1857,13 @@
       "source": "Cape Cod Beer",
       "credit": "Cape Cod Beer",
       "source_url": "https://capecodbeer.com/event/live-music-with-lava-bomb-2/",
-      "start": "2026-11-28T18:00:00+00:00"
-    },
-    {
-      "id": "vinyl-bingo-20261128",
-      "tag": "\ud83d\udcc5 EVENT",
-      "category": "event",
-      "time": "Sat Nov 28 \u00b7 9:00 PM",
-      "title": "Vinyl Bingo!",
-      "venue": "Devil's Purse",
-      "town": "South Dennis",
-      "info": "",
-      "price": "",
-      "lat": 41.69,
-      "lng": -70.15,
-      "img": null,
-      "source": "Devil's Purse",
-      "credit": "Devil's Purse",
-      "source_url": "https://www.devilspurse.com/events/2026/11/28/vinyl-bingo",
-      "start": "2026-11-28T21:00:00.321000+00:00"
+      "start": "2026-11-28T18:00:00-05:00"
     },
     {
       "id": "annual-christmas-tree-lighting-20261128",
       "tag": "\ud83c\udf74 FOOD & DRINK",
       "category": "food",
-      "time": "Sat Nov 28 \u00b7 11:30 PM",
+      "time": "Sat Nov 28 \u00b7 6:30 PM",
       "title": "Annual Christmas Tree Lighting",
       "venue": "Cape Cod Winery",
       "town": "Falmouth",
@@ -1875,7 +1875,7 @@
       "source": "Cape Cod Winery",
       "credit": "Cape Cod Winery",
       "source_url": "https://www.capecodwinery.com/events/annual-christmas-tree-lighting-4",
-      "start": "2026-11-28T23:30:00.518000+00:00"
+      "start": "2026-11-28T18:30:00.518000-05:00"
     },
     {
       "id": "the-designers-tour-of-holidays-at-highfield-20261129",
@@ -1893,13 +1893,13 @@
       "source": "Highfield Hall",
       "credit": "Highfield Hall & Gardens",
       "source_url": "https://highfieldhallandgardens.org/event/the-designers-tour-11-29-26/",
-      "start": "2026-11-29T09:00:00+00:00"
+      "start": "2026-11-29T09:00:00-05:00"
     },
     {
       "id": "vinyl-sundays-20261129",
       "tag": "\ud83d\udcc5 EVENT",
       "category": "event",
-      "time": "Sun Nov 29 \u00b7 5:00 PM",
+      "time": "Sun Nov 29 \u00b7 12:00 PM",
       "title": "Vinyl Sundays",
       "venue": "Devil's Purse",
       "town": "South Dennis",
@@ -1911,7 +1911,25 @@
       "source": "Devil's Purse",
       "credit": "Devil's Purse",
       "source_url": "https://www.devilspurse.com/events/2026/11/8/vinyl-sundays-n969z-jex7y-698j6",
-      "start": "2026-11-29T17:00:00.669000+00:00"
+      "start": "2026-11-29T12:00:00.669000-05:00"
+    },
+    {
+      "id": "toby-s-dog-walking-club-20261130",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Mon Nov 30 \u00b7 11:00 AM",
+      "title": "Toby\u2019s Dog Walking Club",
+      "venue": "Highfield Hall",
+      "town": "Falmouth",
+      "info": "",
+      "price": "FREE",
+      "lat": 41.5515,
+      "lng": -70.6148,
+      "img": "https://highfieldhallandgardens.org/wp-content/uploads/TobyWalkingClub.jpg",
+      "source": "Highfield Hall",
+      "credit": "Highfield Hall & Gardens",
+      "source_url": "https://highfieldhallandgardens.org/event/toby-dog-walking-club/2026-11-30/",
+      "start": "2026-11-30T11:00:00-05:00"
     }
   ]
 }
