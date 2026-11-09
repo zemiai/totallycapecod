@@ -2,8 +2,9 @@ name: "[hermes] bridges"
 
 on:
   schedule:
-    # Every hour from 10:00 UTC (6 AM ET) to 03:00 UTC (11 PM ET) — 18 runs/day.
-    - cron: "0 10-23,0-3 * * *"
+    # Every hour from 10:17 UTC (6 AM ET) to 03:17 UTC (11 PM ET) — 18 runs/day. Off the top of
+    # the hour: GitHub delays or drops many runs scheduled at :00 (Nov 2026: ~4 of 18 ran).
+    - cron: "17 10-23,0-3 * * *"
   workflow_dispatch:
 
 concurrency:

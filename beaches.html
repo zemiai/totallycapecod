@@ -35,8 +35,11 @@
   @media(max-width:480px){ .beach-grid{ grid-template-columns:1fr; } }
   .beach-card { background:white; border-radius:var(--radius-md); overflow:hidden; box-shadow:var(--shadow-sm); transition:transform var(--transition-base), box-shadow var(--transition-base); }
   .beach-card:hover { transform:translateY(-3px); box-shadow:var(--shadow-md); }
-  .beach-card .cover { height:160px; background-size:cover; background-position:center; position:relative; }
-  .beach-card .cover::after { content:''; position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.35) 0%, transparent 50%); }
+  /* No stock photos: we only show Cape Cod photos we have permission to use, so cards get a color tile by water type. */
+  .beach-card .cover { height:96px; position:relative; display:flex; align-items:flex-end; padding:12px 16px; background:linear-gradient(135deg,#1A3A6C,#4A90A4); }
+  .beach-card .cover.w-bay { background:linear-gradient(135deg,#2F6E80,#7BBCD0); }
+  .beach-card .cover.w-sound { background:linear-gradient(135deg,#2E7D6B,#6BC4A6); }
+  .beach-card .cover span { color:#fff; font-weight:700; font-size:15px; letter-spacing:.02em; }
   .beach-card .status-pill { position:absolute; bottom:10px; left:10px; padding:4px 10px; border-radius:999px; font-size:11px; font-weight:700; color:white; z-index:1; }
   .beach-card .status-pill.open { background:#34C759; }
   .beach-card .status-pill.mid { background:#FF9500; }
@@ -67,20 +70,13 @@
       <a href="/experiences.html">Experiences</a>
       <a href="/guides/">Guides</a><a href="/app/">📱 App</a>
     </div>
-    <button class="nav-mobile-toggle" onclick="toggleMobileMenu()">☰</button>
+    <button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button>
   </div>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()">
   <div class="mobile-menu-panel" onclick="event.stopPropagation()">
-    <a href="/">Home</a>
-    <a href="/feed.html">📍 Near You</a>
-    <a href="/eats.html">Eats</a>
-    <a href="/stays.html">Stays</a>
-    <a href="/experiences.html">Experiences</a>
-    <a href="/events">What's Happening</a>
-    <a href="/itinerary.html">Plan My Trip</a>
-    <a href="/guides/">Guides</a><a href="/app/">📱 Open the App</a>
+    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/app/">📱 Open the App</a>
   </div>
 </div>
 
@@ -152,15 +148,15 @@ function toggleMobileMenu(){document.getElementById('mobileMenu').classList.togg
 // Every rule links to the town or National Park Service page it came from (checked Nov 8, 2026).
 const NPS_PETS = {url:'https://www.nps.gov/caco/planyourvisit/pets.htm', label:'NPS: pets'};
 const beaches = [
-  {name:'Race Point Beach',slug:'race-point',town:'Provincetown',water:'Atlantic',tags:['atlantic','dog'],img:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',desc:'National Seashore beach at the northernmost point on Cape Cod. The Park Service notes swift currents and deeper water close to shore. Dogs: 6-ft leash where allowed; not on lifeguarded areas in summer.',src:[{url:'https://www.nps.gov/places/race-point-beach.htm',label:'NPS: Race Point'},NPS_PETS]},
-  {name:'Coast Guard Beach',slug:'coast-guard',town:'Eastham',water:'Atlantic',tags:['atlantic'],img:'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80',desc:'National Seashore beach on the open Atlantic. Mid-June to Labor Day the beach lot is for Eastham residents and handicap placards — park at Little Creek and ride the shuttle.',src:[{url:'https://www.nps.gov/caco/planyourvisit/coast-guard-beach-eastham.htm',label:'NPS: Coast Guard Beach'}]},
-  {name:'Nauset Beach',slug:'nauset-beach',town:'Orleans',water:'Atlantic',tags:['atlantic'],img:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',desc:'Open-Atlantic beach in Orleans. Check the town\'s parking rules before you go.',src:[]},
-  {name:'Sandy Neck Beach',slug:'sandy-neck',town:'Barnstable',water:'Cape Cod Bay',tags:['bay','dog'],img:'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80',desc:'Cape Cod Bay beach in Barnstable. Dogs must be leashed year-round and aren\'t allowed on the public bathing beach May 15–September 15; driving on the beach needs an ORV permit year-round.',src:[{url:'https://www.barnstable.gov/SandyNeckPark/faqs.aspx',label:'Town of Barnstable: Sandy Neck FAQ'}]},
-  {name:'Mayflower Beach',slug:'mayflower',town:'Dennis',water:'Cape Cod Bay',tags:['bay'],img:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',desc:'Cape Cod Bay beach in Dennis. Check the town\'s parking rules before you go.',src:[]},
-  {name:'Ballston Beach',slug:'',town:'Truro',water:'Atlantic',tags:['atlantic','dog'],img:'https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80',desc:'Ocean beach at the end of South Pamet Road, with no lifeguards. From the 3rd Saturday of June to Labor Day, the 65-space lot needs a Truro beach sticker (no day passes), and dogs aren\'t allowed 9 AM–6 PM.',src:[{url:'https://truro-ma.gov/177/Ballston-Beach',label:'Town of Truro: Ballston Beach'},{url:'https://truro-ma.gov/241/Pet-Closures',label:'Town of Truro: pet rules'}]},
-  {name:'Herring Cove Beach',slug:'herring-cove',town:'Provincetown',water:'Cape Cod Bay',tags:['bay','dog'],img:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',desc:'The National Seashore\'s only Cape Cod Bay beach: gentler waves, slightly warmer water and, in the Park Service\'s words, killer sunsets. Dogs: 6-ft leash where allowed; the northwest side is closed to pets April 1–October 15.',src:[{url:'https://www.nps.gov/places/herring-cove-beach.htm',label:'NPS: Herring Cove'},NPS_PETS]},
-  {name:'Old Silver Beach',slug:'old-silver',town:'Falmouth',water:'Buzzards Bay',tags:['sound','dog'],img:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',desc:'Buzzards Bay beach in North Falmouth with a public lot and a separate residents\' lot in season. Falmouth bans dogs on its public beaches May 1–October 1.',src:[{url:'https://www.falmouthma.gov/151/Beach',label:'Town of Falmouth: beaches'}]},
-  {name:'Craigville Beach',slug:'craigville',town:'Centerville',water:'Nantucket Sound',tags:['sound'],img:'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',desc:'Nantucket Sound beach in Centerville (Barnstable). Check the town\'s parking rules before you go.',src:[]},
+  {name:'Race Point Beach',slug:'race-point',town:'Provincetown',water:'Atlantic',tags:['atlantic','dog'],desc:'National Seashore beach at the northernmost point on Cape Cod. The Park Service notes swift currents and deeper water close to shore. Dogs: 6-ft leash where allowed; not on lifeguarded areas in summer.',src:[{url:'https://www.nps.gov/places/race-point-beach.htm',label:'NPS: Race Point'},NPS_PETS]},
+  {name:'Coast Guard Beach',slug:'coast-guard',town:'Eastham',water:'Atlantic',tags:['atlantic'],desc:'National Seashore beach on the open Atlantic. Mid-June to Labor Day the beach lot is for Eastham residents and handicap placards — park at Little Creek and ride the shuttle.',src:[{url:'https://www.nps.gov/caco/planyourvisit/coast-guard-beach-eastham.htm',label:'NPS: Coast Guard Beach'}]},
+  {name:'Nauset Beach',slug:'nauset-beach',town:'Orleans',water:'Atlantic',tags:['atlantic'],desc:'Open-Atlantic beach in Orleans. Check the town\'s parking rules before you go.',src:[]},
+  {name:'Sandy Neck Beach',slug:'sandy-neck',town:'Barnstable',water:'Cape Cod Bay',tags:['bay','dog'],desc:'Cape Cod Bay beach in Barnstable. Dogs must be leashed year-round and aren\'t allowed on the public bathing beach May 15–September 15; driving on the beach needs an ORV permit year-round.',src:[{url:'https://www.barnstable.gov/SandyNeckPark/faqs.aspx',label:'Town of Barnstable: Sandy Neck FAQ'}]},
+  {name:'Mayflower Beach',slug:'mayflower',town:'Dennis',water:'Cape Cod Bay',tags:['bay'],desc:'Cape Cod Bay beach in Dennis. Check the town\'s parking rules before you go.',src:[]},
+  {name:'Ballston Beach',slug:'',town:'Truro',water:'Atlantic',tags:['atlantic','dog'],desc:'Ocean beach at the end of South Pamet Road, with no lifeguards. From the 3rd Saturday of June to Labor Day, the 65-space lot needs a Truro beach sticker (no day passes), and dogs aren\'t allowed 9 AM–6 PM.',src:[{url:'https://truro-ma.gov/177/Ballston-Beach',label:'Town of Truro: Ballston Beach'},{url:'https://truro-ma.gov/241/Pet-Closures',label:'Town of Truro: pet rules'}]},
+  {name:'Herring Cove Beach',slug:'herring-cove',town:'Provincetown',water:'Cape Cod Bay',tags:['bay','dog'],desc:'The National Seashore\'s only Cape Cod Bay beach: gentler waves, slightly warmer water and, in the Park Service\'s words, killer sunsets. Dogs: 6-ft leash where allowed; the northwest side is closed to pets April 1–October 15.',src:[{url:'https://www.nps.gov/places/herring-cove-beach.htm',label:'NPS: Herring Cove'},NPS_PETS]},
+  {name:'Old Silver Beach',slug:'old-silver',town:'Falmouth',water:'Buzzards Bay',tags:['sound','dog'],desc:'Buzzards Bay beach in North Falmouth with a public lot and a separate residents\' lot in season. Falmouth bans dogs on its public beaches May 1–October 1.',src:[{url:'https://www.falmouthma.gov/151/Beach',label:'Town of Falmouth: beaches'}]},
+  {name:'Craigville Beach',slug:'craigville',town:'Centerville',water:'Nantucket Sound',tags:['sound'],desc:'Nantucket Sound beach in Centerville (Barnstable). Check the town\'s parking rules before you go.',src:[]},
 ];
 
 let currentFilter = 'all';
@@ -170,8 +166,7 @@ function renderBeaches() {
   const filtered = currentFilter === 'all' ? beaches : beaches.filter(b => b.tags.includes(currentFilter));
   grid.innerHTML = filtered.map(b => `
     <div class="beach-card" data-tags="${b.tags.join(' ')}">
-      <div class="cover" style="background-image:url('${b.img}')">
-      </div>
+      <div class="cover ${/bay/i.test(b.water) && !/buzzards/i.test(b.water) ? 'w-bay' : /atlantic/i.test(b.water) ? '' : 'w-sound'}" aria-hidden="true"><span>🌊 ${b.water}</span></div>
       <div class="body">
         <h3>${b.name}</h3>
         <div class="meta">${b.town}</div>

@@ -139,12 +139,11 @@
     <a href="/experiences.html">Experiences</a>
     <a href="/guides/">Guides</a><a href="/app/" class="nav-cta">📱 App</a>
   </div>
-  <button class="nav-mobile-toggle" onclick="toggleMobileMenu()">☰</button>
+  <button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button>
 </div></nav>
 <div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()">
-  <a href="/">Home</a><a href="/feed.html">Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a>
-  <a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">What's Happening</a><a href="/guides/">Guides</a><a href="/app/">📱 Open the App</a>
-</div></div>
+    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/app/">📱 Open the App</a>
+  </div></div>
 
 <!-- Location prompt -->
 <div class="geo-modal" id="geoModal">
@@ -268,7 +267,7 @@ function photoFor(r){
   if(cat==="default" && r.tags.includes("seafood")) cat="seafood";
   const pool=IMG[cat]||IMG.default;
   const id=pool[hash(r.name)%pool.length];
-  return `https://images.unsplash.com/${id}?w=800&q=80&auto=format&fit=crop`;
+  return null; // no stock photos: cards without a real photo get a color tile
 }
 
 // Branded cover fallback (gradient + icon) for events with no real photo.
@@ -420,7 +419,7 @@ function renderItem(it){
     ? `<a class="a-view" href="${esc(r.website)}" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'website',item:'${esc(r.name)}',location:'feed'})">Website</a>`
     : "";
   return `<div class="post">
-    <div class="post-photo" style="background-image:url('${photoFor(r)}')"><span class="dist-badge">${miLabel(it.mi)}</span><span class="price-badge">${esc(r.price)}</span>${openBadge}</div>
+    <div class="post-photo" style="${photoFor(r)?`background-image:url('${photoFor(r)}')`:'background-image:linear-gradient(135deg,#8A6440,#D4A574)'}"><span class="dist-badge">${miLabel(it.mi)}</span><span class="price-badge">${esc(r.price)}</span>${openBadge}</div>
     <div class="post-head">
       <div class="avatar food">🍴</div>
       <div class="ph-main"><div class="name">${esc(r.name)}</div><div class="sub">${esc(r.town)} · ${esc(r.cuisine)}${r.rating!=null?` · ⭐ ${r.rating} on Google${reviews}`:''}</div></div>

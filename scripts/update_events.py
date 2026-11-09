@@ -32,9 +32,9 @@ from lib.io import now_iso, safe_write
 
 OUT = Path(__file__).parent.parent / "data" / "events.json"
 
-WINDOW_DAYS = 21          # how far ahead to look
-PER_SOURCE_CAP = 25       # don't let one source flood the feed
-TOTAL_CAP = 200
+WINDOW_DAYS = 45          # how far ahead to look (covers holiday planning ~6 weeks out)
+PER_SOURCE_CAP = 40       # don't let one source flood the feed
+TOTAL_CAP = 400
 # Full browser-like headers, not just a UA: SiteGround/Shield bot-walls (Cape Cod
 # Beer, Highfield Hall — Aug 2026) serve a captcha to requests missing
 # Accept/Accept-Language, but pass the same request when they're present.
@@ -662,7 +662,14 @@ def main() -> None:
         kept = 0
         for e in evs:
             dt = e["start"]
-            if dt < now - timedelta(hours=12) or dt > horizon:
+            if dt > horizon:
+                continue
+            if e.get("has_time", False):
+                if dt < now - timedelta(hours=12):
+                    continue
+            elif dt.date() < now.astimezone(ET).date():
+                # All-day listing: keep it through the end of its own date (ET), so today's
+                # all-day events don't vanish from the feed early in the morning.
                 continue
             town_name = e.get("town") or town
             lat, lng = TOWN_COORDS.get(town_name, coord or DEFAULT_COORD) if not coord else coord

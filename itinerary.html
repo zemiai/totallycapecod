@@ -79,18 +79,13 @@
       <a href="/experiences.html">Experiences</a>
       <a href="/guides/">Guides</a><a href="/app/">📱 App</a>
     </div>
-    <button class="nav-mobile-toggle" onclick="toggleMobileMenu()">☰</button>
+    <button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button>
   </div>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()">
   <div class="mobile-menu-panel" onclick="event.stopPropagation()">
-    <a href="/beaches.html">Beaches</a>
-    <a href="/eats.html">Eats</a>
-    <a href="/stays.html">Stays</a>
-    <a href="/experiences.html">Experiences</a>
-    <a href="/events">What's Happening</a>
-    <a href="/guides/">Guides</a><a href="/app/">📱 Open the App</a>
+    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/app/">📱 Open the App</a>
   </div>
 </div>
 
@@ -223,7 +218,7 @@ const DURATIONS = [1, 2, 3, 7];
 let currentStep = 0;
 const itinerary = { vibes: [], duration: 3, email: '' };
 
-// Sources for each stop (checked Nov 8, 2026). Shown under the stop so anyone can verify it.
+// Sources for each stop (checked Nov 8, 2026; Pilgrim Monument hours Nov 9, 2026). Shown under the stop so anyone can verify it.
 const SRC = {
   raceNps:     { url: 'https://www.nps.gov/places/race-point-beach.htm', label: 'National Park Service' },
   ballston:    { url: 'https://truro-ma.gov/177/Ballston-Beach', label: 'Town of Truro' },
@@ -243,6 +238,23 @@ const SRC = {
 };
 
 function isOffSeason() { return !!(window.TCCSeason && TCCSeason.isOff()); }
+
+// Today's sunset time, from our conditions feed (source: sunrise-sunset.org). Used only if the
+// feed is for today's date in Cape Cod time, so a stale file never shows the wrong time.
+let SUN_TODAY = null;
+(function loadSunset() {
+  const todayET = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+  fetch('https://raw.githubusercontent.com/zemiai/totallycapecod/main/data/conditions.json', { cache: 'no-cache' })
+    .then(r => r.ok ? r.json() : null)
+    .then(d => {
+      const t = d && d.today;
+      if (!t || t.date !== todayET || !t.sun || !t.sun.sunset) return;
+      SUN_TODAY = { time: t.sun.sunset, source: t.sun.source || 'sunrise-sunset.org' };
+      const res = document.getElementById('step-result');
+      if (res && res.classList.contains('active')) renderItinerary();
+    })
+    .catch(() => {});
+})();
 
 function toggleVibe(el, vibe) {
   el.classList.toggle('selected');
@@ -329,6 +341,7 @@ function renderItinerary() {
           <div class="activity-body">
             <div class="activity-title">${a.emoji} ${a.title}</div>
             ${a.sub ? `<div class="activity-sub">${a.sub}</div>` : ''}
+            ${a.sunset && SUN_TODAY ? `<div class="activity-sub">Sunset today: ${SUN_TODAY.time} (${SUN_TODAY.source})</div>` : ''}
             ${a.src ? `<div class="activity-src">Source: <a href="${a.src.url}" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'source',item:'${a.src.label.replace(/'/g,'')}',location:'itinerary'})">${a.src.label} ↗</a></div>` : ''}
           </div>
           ${a.link ? `<div class="activity-cta"><a href="${a.link}" target="_blank" rel="noopener" class="btn btn-sm btn-navy" style="padding:6px 12px; font-size:11px;"
@@ -347,6 +360,8 @@ function buildItineraryDays(it) {
   const isRomantic = it.vibes.includes('romantic');
   const isHidden = it.vibes.includes('hidden');
   const OFF = isOffSeason();
+  // Off-season sunsets come as early as about 4:10 PM, so sunset stops show "Sunset" plus today's time.
+  const SUNSET = OFF ? 'Sunset' : '7pm';
 
   const days = [];
   const n = it.duration;
@@ -360,9 +375,11 @@ function buildItineraryDays(it) {
         : { time:'10am', emoji:'🏝️', title:'Race Point Beach, Provincetown', sub:'National Seashore beach at the northernmost point on Cape Cod. The Park Service notes swift currents and deeper water close to shore.', src:SRC.raceNps },
       (isFoodie && !OFF)
         ? { time:'1pm', emoji:'🦐', title:'The Lobster Pot', sub:'Provincetown seafood restaurant run by the McNulty family since 1979. Seasonal — check its site for dates.', src:SRC.lobsterPot }
-        : { time:'1pm', emoji:'🦐', title:'Lunch in Provincetown', sub:'Lobster rolls and seafood — compare places and reviews on Yelp.', link:'https://www.yelp.com/search?find_desc=lobster+roll&find_loc=Provincetown%2C+MA', linkText:'Yelp →', affiliateType:'yelp', affiliateItem:'lobster-ptown' },
-      { time:'4pm', emoji:'🏝️', title:'Another National Seashore beach', sub:'The Seashore has six beaches, from Coast Guard Beach in Eastham to Herring Cove in Provincetown.', src:SRC.nsBeaches },
-      { time:'7pm', emoji:'🌅', title: isRomantic ? 'Sunset at Herring Cove' : 'Sunset walk at Herring Cove', sub:'The National Seashore\'s only Cape Cod Bay beach. The Park Service says it offers “some of the best sunsets on Cape Cod.”', src:SRC.herringNps },
+        : OFF
+          ? { time:'1pm', emoji:'🍽️', title:'Lunch in Provincetown', sub:'Compare places and check today\'s hours on Yelp.', link:'https://www.yelp.com/search?find_desc=lunch&find_loc=Provincetown%2C+MA', linkText:'Yelp →', affiliateType:'yelp', affiliateItem:'lunch-ptown' }
+          : { time:'1pm', emoji:'🦐', title:'Lunch in Provincetown', sub:'Lobster rolls and seafood — compare places and reviews on Yelp.', link:'https://www.yelp.com/search?find_desc=lobster+roll&find_loc=Provincetown%2C+MA', linkText:'Yelp →', affiliateType:'yelp', affiliateItem:'lobster-ptown' },
+      { time: OFF ? '2:30pm' : '4pm', emoji:'🏝️', title:'Another National Seashore beach', sub:'The Seashore has six beaches, from Coast Guard Beach in Eastham to Herring Cove in Provincetown.', src:SRC.nsBeaches },
+      { time:SUNSET, sunset:true, emoji:'🌅', title: isRomantic ? 'Sunset at Herring Cove' : 'Sunset walk at Herring Cove', sub:'The National Seashore\'s only Cape Cod Bay beach. The Park Service says it offers “some of the best sunsets on Cape Cod.”', src:SRC.herringNps },
     ]
   });
 
@@ -374,8 +391,13 @@ function buildItineraryDays(it) {
         (isAdventure && !OFF)
           ? { time:'11am', emoji:'⛵', title:'Whale watch from Provincetown', sub:'Dolphin Fleet trips are generally 3–4 hours and run April–October. If the captain reports no whale sightings, paying passengers get a “1% Pass” for a future trip, not a refund.', src:SRC.dolphin, link:'https://www.viator.com/tours/Provincetown/Whale-Watching/d5265-g1-c17?pid=P00000000', linkText:'Book →', affiliateType:'viator', affiliateItem:'whale-watch' }
           : { time:'11am', emoji:'🗺️', title:'Provincetown stroll', sub:'Galleries, shops and history along Commercial Street.' },
-        { time:'3pm', emoji:'🍦', title:'Afternoon break', sub:'Coffee, ice cream or a bench by the harbor.' },
-        { time:'6pm', emoji:'🍽️', title:'Dinner at The Mews', sub:'Restaurant at 429 Commercial Street with a beachfront view.', src:SRC.mews, link:'https://www.opentable.com/r/the-mews-restaurant-and-cafe-provincetown', linkText:'Reserve →', affiliateType:'opentable', affiliateItem:'the-mews' },
+        OFF
+          ? { time:'3pm', emoji:'☕', title:'Afternoon break', sub:'Coffee or a bench by the harbor.' }
+          : { time:'3pm', emoji:'🍦', title:'Afternoon break', sub:'Coffee, ice cream or a bench by the harbor.' },
+        // We couldn't confirm The Mews' winter hours, so the off-season plan doesn't name a restaurant.
+        OFF
+          ? { time:'6pm', emoji:'🍽️', title:'Dinner in Provincetown', sub:'Compare places and check tonight\'s hours before you go.', link:'https://www.yelp.com/search?find_desc=dinner&find_loc=Provincetown%2C+MA', linkText:'Yelp →', affiliateType:'yelp', affiliateItem:'dinner-ptown' }
+          : { time:'6pm', emoji:'🍽️', title:'Dinner at The Mews', sub:'Restaurant at 429 Commercial Street with a beachfront view.', src:SRC.mews, link:'https://www.opentable.com/r/the-mews-restaurant-and-cafe-provincetown', linkText:'Reserve →', affiliateType:'opentable', affiliateItem:'the-mews' },
       ]
     });
   }
@@ -387,8 +409,8 @@ function buildItineraryDays(it) {
         isFamily
           ? { time:'10am', emoji:'🐦', title:'Wellfleet Bay Wildlife Sanctuary', sub:'Mass Audubon trails, open dawn to dusk. Adults $8, members free; no dogs (as of Nov 2026).', src:SRC.wellfleetBay }
           : { time:'10am', emoji:'🥾', title:'Great Island Trail, Wellfleet', sub:'The tavern loop is 3.9 miles round trip, mostly soft sand, and portions are submerged at high tide — check the tides first.', src:SRC.greatIsland },
-        { time:'1pm', emoji:'🦐', title:'Lunch at The Canteen', sub:'Casual spot at 225 Commercial Street; its site says it\'s open year-round.', src:SRC.canteen },
-        { time:'3pm', emoji:'📸', title:'Pilgrim Monument & Provincetown Museum', sub:'Climb the 252-foot granite tower. Check the museum\'s hours first.', src:SRC.pilgrim },
+        { time:'12:30pm', emoji:'🦐', title:'Lunch at The Canteen', sub:'Casual spot at 225 Commercial Street; its site says it\'s open year-round.', src:SRC.canteen },
+        { time:'2pm', emoji:'📸', title:'Pilgrim Monument & Provincetown Museum', sub:'Climb the 252-foot granite tower. As of November 2026 it\'s open Wednesday–Sunday, 10 AM–4 PM, with the last ticket sold at 3 PM; check its hours first.', src:SRC.pilgrim },
         { time:'7pm', emoji:'🎭', title:'Dinner + a show', sub:'Browse Provincetown shows and tours listed on Viator.', link:'https://www.viator.com/Provincetown/d5265-ttd', linkText:'Viator →', affiliateType:'viator', affiliateItem:'ptown-nightlife' },
       ]
     });
@@ -403,7 +425,7 @@ function buildItineraryDays(it) {
         OFF
           ? { time:'2pm', emoji:'💡', title:'Chatham Light overlook', sub:'The overlook parking area is free but limited to 30 minutes, with a $50 citation for longer stays.', src:SRC.chatham }
           : { time:'2pm', emoji:'🐠', title:'Shark Center, Chatham', sub:'The Atlantic White Shark Conservancy\'s visitor center. Seasonal — check its calendar.', src:SRC.sharkCenter },
-        { time:'5pm', emoji:'🌅', title:'Lighthouse Beach, Chatham', sub:'For walking and views, not swimming: strong currents, no lifeguards, and the south tip is permanently closed to swimming.', src:SRC.chatham },
+        { time: OFF ? '3pm' : '5pm', emoji:'🌅', title:'Lighthouse Beach, Chatham', sub:'For walking and views, not swimming: strong currents, no lifeguards, and the south tip is permanently closed to swimming.', src:SRC.chatham },
       ]
     });
   }
@@ -416,7 +438,7 @@ function buildItineraryDays(it) {
         { time:'10am', emoji:'🏝️', title:'Beach Morning', sub:'Your favorite spot from Day 1' },
         { time:'1pm', emoji:'🦐', title:'Long Lunch', sub:'Try a new restaurant' },
         { time:'4pm', emoji:'☕', title:'Coffee Break', sub:'People watching in town' },
-        { time:'7pm', emoji:'🌅', title:'Final Sunset', sub:'Make it count' },
+        { time:SUNSET, sunset:true, emoji:'🌅', title:'Final Sunset', sub:'Make it count' },
       ]
     });
   }

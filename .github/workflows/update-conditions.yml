@@ -3,7 +3,9 @@ name: "[hermes] conditions"
 on:
   schedule:
     # 4 AM ET = 08:00 UTC (EDT) / 09:00 UTC (EST). Run at both; the second is a no-op if cached.
-    - cron: "0 8 * * *"
+    # Several runs after midnight ET (off the hour; GitHub often delays scheduled runs by hours),
+    # so today's tides and sun times land early. Each run writes the current ET date.
+    - cron: "7 5,8,11,14 * * *"
   workflow_dispatch:
 
 concurrency:

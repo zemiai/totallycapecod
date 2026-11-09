@@ -5,7 +5,7 @@ slug: cape-cod-holiday-events-2026
 kicker: "Holidays 2026"
 description: "2026 dates for Cape Cod Christmas strolls, parades and tree lightings by town: Chatham, Falmouth, Hyannis, Sandwich, Holly Folly and more, with organizer links."
 date: 2026-10-26
-updated: 2026-11-08
+updated: 2026-11-09
 author: versel-johnson
 cluster: holidays
 keywords:
@@ -117,7 +117,7 @@ sources:
     title: "Christmas by the Sea"
     publisher: "Chatham Chamber of Commerce"
     url: "https://www.chathaminfo.com/2026/08/01/christmasbythesea/"
-    accessed: 2026-11-08
+    accessed: 2026-11-09
   - id: 16
     title: "Christmas in Harwich Weekend: Be Part of the Magic!"
     publisher: "Harwich Chamber of Commerce"
@@ -299,7 +299,7 @@ The biggest cluster of 2026 events we found lands on this weekend. <!-- nocite -
 
 ## Second weekend of December: December 11–13
 
-**Chatham's Christmas by the Sea (December 11–13).** The Chatham Chamber of Commerce lists a Friday night Christmas stroll and tree lighting on Main Street, Breakfast with Santa at the Wayside Inn on Saturday morning, and live entertainment and activities around town on Saturday and Sunday [15]. Times aren't posted yet, and the chamber says to check back for more detailed weekend activities [15].
+**Chatham's Christmas by the Sea (December 11–13).** The Chatham Chamber of Commerce lists a Friday night Christmas stroll and tree lighting on Main Street, Breakfast with Santa at the Wayside Inn on Saturday morning, and live entertainment and activities around town on Saturday and Sunday [15]. The chamber's Breakfast with Santa flyer gives two seatings on Saturday, December 12, at 8:00 and 10:00 AM in The Wild Goose Tavern at The Wayside Inn, 512 Main Street, and says tickets are coming soon [15]. Times for the stroll and the other activities aren't posted yet, and the chamber says to check back for more detailed weekend activities [15].
 
 **Osterville Christmas Stroll & Open House (from Friday, December 11).** The Osterville Business and Professional Association's calendar lists its Christmas Stroll & Open House starting Friday, December 11, in Osterville Village at Main Street and Wianno Avenue [27]. The association describes a festive Friday night when the village glows with twinkling lights, carolers and open-late shops [28].
 

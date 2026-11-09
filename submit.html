@@ -68,18 +68,13 @@
       <a href="/experiences.html">Experiences</a>
       <a href="/guides/">Guides</a><a href="/app/">📱 App</a>
     </div>
-    <button class="nav-mobile-toggle" onclick="toggleMobileMenu()">☰</button>
+    <button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button>
   </div>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()">
   <div class="mobile-menu-panel" onclick="event.stopPropagation()">
-    <a href="/beaches.html">Beaches</a>
-    <a href="/eats.html">Eats</a>
-    <a href="/stays.html">Stays</a>
-    <a href="/experiences.html">Experiences</a>
-    <a href="/events">What's Happening</a>
-    <a href="/guides/">Guides</a><a href="/app/">📱 Open the App</a>
+    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/app/">📱 Open the App</a>
   </div>
 </div>
 
@@ -406,7 +401,8 @@ async function handleSponsoredSubmit(e) {
   // Only send them to payment once their details are safely captured — never take
   // money without the lead, and never lose a paying business's info.
   if (ok) {
-    gtag('event','purchase',{transaction_id:data.email, value: tier==='basic'?99:tier==='featured'?299:799, currency:'USD'});
+    // Not a purchase yet (payment happens on Stripe), and never send personal data like an email to analytics.
+    gtag('event','begin_checkout',{value: tier==='basic'?99:tier==='featured'?299:799, currency:'USD', items:[{item_id: tier, item_name: tier + ' listing'}]});
     window.location.href = stripeLinks[tier] || '/';
   } else {
     alert('We couldn\'t save your details just now, so we didn\'t send you to payment. Please try again in a moment, or email info@totallycapecod.com and we\'ll set you up.');

@@ -68,6 +68,7 @@ GROUNDING & FACTUALITY (most important):
 - A "CURRENT DATA" section with live Cape Cod info (water temps, tide times, bridge delays, today's events, and the restaurants listed in the app) may be included below the user's question. For anything specific or time-sensitive — temperatures, tide/sunset times, bridge delays, "open now", today's events, parking status, prices, hours, phone numbers — use ONLY the CURRENT DATA.
 - Use ONLY CURRENT DATA for facts. Do not add facts from general knowledge or memory: no history, rules, prices, hours, distances, phone numbers, descriptions or "local tips" that aren't in CURRENT DATA.
 - When CURRENT DATA names a source (NOAA station, organizer, Google listing), mention it briefly, e.g. "per NOAA's Chatham station" or "per the organizer's listing".
+- CURRENT DATA may include a "FROM OUR GUIDES" block: fact-checked answers from Totally Cape Cod's guides, with the sources they cite and the guide's link. Use them for dates and details beyond the live feeds, credit the named source (e.g. "per the Chatham Chamber of Commerce"), and end with the guide link so the visitor can check it.
 - If the needed fact isn't in CURRENT DATA, say you don't have verified information on that and point them to the relevant app tab (Beaches, Bridges, Conditions, What's Happening, Near You) or to totallycapecod.com/guides. NEVER invent or guess a temperature, time, price, hour, phone number, name or open/closed status.
 - Better to say "I don't have verified information on that" than to state something that might be wrong.
 
@@ -268,7 +269,7 @@ exports.handler = async (event) => {
   const { question, deviceId, isPro } = body;
   // Live grounding data the client sends from its loaded app state (water temps,
   // bridge status, today's events, nearby beaches/eats). Capped + treated as data.
-  const context = (typeof body.context === 'string') ? body.context.slice(0, 2600) : '';
+  const context = (typeof body.context === 'string') ? body.context.slice(0, 3600) : '';
 
   // ---- Input validation ----
   if (!question || typeof question !== 'string' || question.trim().length === 0) {

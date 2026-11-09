@@ -46,8 +46,10 @@
 </style>
 </head>
 <body>
-<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/guides/">Guides</a><a href="/app/">📱 App</a></div><button class="nav-mobile-toggle" onclick="toggleMobileMenu()">☰</button></div></nav>
-<div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()"><a href="/">Home</a><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/experiences.html">Experiences</a><a href="/events">What's Happening</a><a href="/itinerary.html">Plan My Trip</a><a href="/guides/">Guides</a><a href="/app/">📱 Open the App</a></div></div>
+<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/guides/">Guides</a><a href="/app/">📱 App</a></div><button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button></div></nav>
+<div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()">
+    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/app/">📱 Open the App</a>
+  </div></div>
 
 <section class="hero" style="min-height:50vh;"><div class="hero-overlay"></div><div class="hero-content" style="padding-top:80px;"><div class="hero-badge">🏨 Cape Cod Stays</div><h1 class="hero-title">Where to <span class="script">Stay</span></h1><p class="hero-subtitle">Hotels, B&amp;Bs, camping and vacation rentals. Compare prices on Booking.com and VRBO.</p></div></section>
 
@@ -87,16 +89,16 @@ function toggleMobileMenu(){document.getElementById('mobileMenu').classList.togg
 // Descriptions say only what each property's own site confirms (checked Nov 8, 2026); site = that page.
 // Where we couldn't reach the property's site, we list just the name and town.
 const stays=[
-{name:"Chatham Bars Inn",town:"Chatham",type:"hotel",img:"https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80",desc:"Resort with a quarter mile of private beachfront, a spa and restaurants.",site:"https://www.chathambarsinn.com/"},
-{name:"The Red Jacket Beach Resort",town:"South Yarmouth",type:"hotel",img:"https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80",desc:""},
-{name:"Wequassett Resort",town:"Harwich",type:"hotel",img:"https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80",desc:""},
-{name:"The Provincetown Hotel at Gabriel's",town:"Provincetown",type:"hotel",img:"https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80",desc:"On Bradford Street, one block from Commercial Street.",site:"https://www.provincetownhotel.com/"},
-{name:"The Old Harbor Inn",town:"Chatham",type:"bnb",img:"https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80",desc:"Bed and breakfast steps from Main Street in Chatham.",site:"https://www.chathamoldharborinn.com/"},
-{name:"North of Highland Camping Area",town:"North Truro",type:"camping",img:"https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=600&q=80",desc:""},
-{name:"The Captain's House Inn",town:"Chatham",type:"bnb",img:"https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80",desc:"Bed and breakfast on two acres of gardens, with breakfast and afternoon tea.",site:"https://www.captainshouseinn.com/"},
-{search:true,name:"Vacation rentals in Truro",town:"Truro",type:"rental",img:"https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80",desc:"Browse current Truro rental listings and prices on VRBO and Booking.com."},
-{search:true,name:"Vacation rentals in Wellfleet",town:"Wellfleet",type:"rental",img:"https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80",desc:"Browse current Wellfleet rental listings and prices on VRBO and Booking.com."},
-{search:true,name:"Vacation rentals in Provincetown",town:"Provincetown",type:"rental",img:"https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80",desc:"Browse current Provincetown rental listings and prices on VRBO and Booking.com."},
+{name:"Chatham Bars Inn",town:"Chatham",type:"hotel",desc:"Resort with a quarter mile of private beachfront, a spa and restaurants.",site:"https://www.chathambarsinn.com/"},
+{name:"The Red Jacket Beach Resort",town:"South Yarmouth",type:"hotel",desc:""},
+{name:"Wequassett Resort",town:"Harwich",type:"hotel",desc:""},
+{name:"The Provincetown Hotel at Gabriel's",town:"Provincetown",type:"hotel",desc:"On Bradford Street, one block from Commercial Street.",site:"https://www.provincetownhotel.com/"},
+{name:"The Old Harbor Inn",town:"Chatham",type:"bnb",desc:"Bed and breakfast steps from Main Street in Chatham.",site:"https://www.chathamoldharborinn.com/"},
+{name:"North of Highland Camping Area",town:"North Truro",type:"camping",desc:""},
+{name:"The Captain's House Inn",town:"Chatham",type:"bnb",desc:"Bed and breakfast on two acres of gardens, with breakfast and afternoon tea.",site:"https://www.captainshouseinn.com/"},
+{search:true,name:"Vacation rentals in Truro",town:"Truro",type:"rental",desc:"Browse current Truro rental listings and prices on VRBO and Booking.com."},
+{search:true,name:"Vacation rentals in Wellfleet",town:"Wellfleet",type:"rental",desc:"Browse current Wellfleet rental listings and prices on VRBO and Booking.com."},
+{search:true,name:"Vacation rentals in Provincetown",town:"Provincetown",type:"rental",desc:"Browse current Provincetown rental listings and prices on VRBO and Booking.com."},
 ];
 let stayFilter='all';
 function renderStays(){
@@ -104,7 +106,7 @@ function renderStays(){
   const filtered=stayFilter==='all'?stays:stays.filter(s=>s.type===stayFilter);
   grid.innerHTML=filtered.map(s=>`
     <div class="stay-card">
-      <div class="cover" style="background-image:url('${s.img}')"></div>
+      <div class="cover${s.img?'':' tile-cover'}"${s.img?` style="background-image:url('${s.img}')"`:` style="background:linear-gradient(135deg,#2F6E80,#7BBCD0)"`}>${s.img?'':`<span class="tile-label">🏨 ${s.town}</span>`}</div>
       <div class="body">
         <h3>${s.name}</h3>
         <div class="meta">${s.town}${s.search?' · search':''}</div>

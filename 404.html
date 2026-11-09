@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#7BBCD0" />
+<title>Page not found — Totally Cape Cod</title>
+<meta name="robots" content="noindex" />
+<link rel="stylesheet" href="/css/tcc.css" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<style>
+  .nf-wrap { max-width: 720px; margin: 0 auto; padding: 120px 22px 80px; }
+  .nf-wrap h1 { font-family: 'Fraunces', serif; font-weight: 900; font-size: 38px; color: var(--warm-brown); margin: 0 0 12px; }
+  .nf-wrap p { font-size: 17px; line-height: 1.7; color: var(--text); }
+  .nf-links { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-top: 28px; }
+  .nf-links a { display: flex; align-items: center; min-height: 56px; padding: 0 18px; border-radius: var(--radius-md); background: #fff; border: 1px solid var(--divider); color: var(--text); font-weight: 700; text-decoration: none; box-shadow: var(--shadow-sm); }
+  .nf-links a:hover { border-color: var(--sea-soft); }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="site-nav" id="siteNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Totally Cape Cod</a>
+    <div class="nav-links">
+      <a href="/feed.html">📍 Near You</a>
+      <a href="/beaches.html">Beaches</a>
+      <a href="/eats.html">Eats</a>
+      <a href="/stays.html">Stays</a>
+      <a href="/experiences.html">Experiences</a>
+      <a href="/events">What's Happening</a>
+      <a href="/guides/">Guides</a><a href="/app/" class="nav-cta">📱 Get the App</a>
+    </div>
+    <button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()"><a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/app/">📱 Open the App</a></div></div>
+
+<main class="nf-wrap">
+  <h1>We couldn't find that page</h1>
+  <p>The link may be old or mistyped. Here's where most people are headed:</p>
+  <div class="nf-links">
+    <a href="/">🌊 Today on Cape Cod (app)</a>
+    <a href="/events">📅 Events</a>
+    <a href="/beaches.html">🏖️ Beaches</a>
+    <a href="/guides/">📖 Guides</a>
+    <a href="/cape-cod-bridge-traffic.html">🌉 Bridge traffic</a>
+    <a href="/cape-cod-water-temperature-today.html">🌡️ Water temperature</a>
+  </div>
+  <p style="margin-top:28px;">Think a link on our site is broken? <a href="/contact.html">Tell us</a> and we'll fix it.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-bottom">
+    © 2026 Totally Cape Cod. · <a href="/privacy.html" style="color: inherit;">Privacy</a> · <a href="/terms.html" style="color: inherit;">Terms</a> · <a href="/about.html" style="color: inherit;">About</a> · <a href="/contact.html" style="color: inherit;">Contact</a>
+  </div>
+</footer>
+<script>function toggleMobileMenu(){document.getElementById("mobileMenu").classList.toggle("show");}</script>
+</body>
+</html>

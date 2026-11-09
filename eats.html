@@ -47,8 +47,10 @@
 </style>
 </head>
 <body>
-<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/guides/">Guides</a><a href="/app/">📱 App</a></div><button class="nav-mobile-toggle" onclick="toggleMobileMenu()">☰</button></div></nav>
-<div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()"><a href="/">Home</a><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">What's Happening</a><a href="/itinerary.html">Plan My Trip</a><a href="/guides/">Guides</a><a href="/app/">📱 Open the App</a></div></div>
+<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/guides/">Guides</a><a href="/app/">📱 App</a></div><button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button></div></nav>
+<div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()">
+    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/app/">📱 Open the App</a>
+  </div></div>
 
 <section class="hero" style="min-height:50vh;"><div class="hero-overlay"></div><div class="hero-content" style="padding-top:80px;"><div class="hero-badge">🦐 Cape Cod Dining</div><h1 class="hero-title">Where to <span class="script">Eat</span></h1><p class="hero-subtitle">Lobster rolls, clam shacks, bakeries and waterfront dining, with Google ratings and closure flags, refreshed weekly.</p></div></section>
 
@@ -97,17 +99,17 @@
 function toggleMobileMenu(){document.getElementById('mobileMenu').classList.toggle('show');}
 // Descriptions say only what we could confirm; src links to where it came from (checked Nov 8, 2026).
 const eats=[
-{name:"The Lobster Pot",match:"lobster pot",town:"Provincetown",cuisine:"Seafood",tags:["lobster","fine"],img:"https://images.unsplash.com/photo-1553163147-621957516919?w=600&q=80",desc:"Seafood restaurant with views of Provincetown Harbor, run by the McNulty family since 1979. Seasonal — check its site for dates.",src:{url:"https://www.ptownlobsterpot.com/our-story",label:"The Lobster Pot"}},
-{name:"Arnold's Lobster & Clam Bar",match:"arnold",town:"Eastham",cuisine:"Seafood",tags:["lobster","clam"],img:"https://images.unsplash.com/photo-1553163147-621957516919?w=600&q=80",desc:"Lobster and clam bar in Eastham."},
-{name:"The Canteen",match:"canteen",town:"Provincetown",cuisine:"Casual",tags:["clam","breakfast"],img:"https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80",desc:"Casual New England eatery at 225 Commercial Street.",src:{url:"https://www.thecanteenptown.com/",label:"The Canteen"}},
-{name:"PB Boulangerie Bistro",match:"pb boulangerie",town:"Wellfleet",cuisine:"Bakery / Cafe",tags:["breakfast"],img:"https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80",desc:"French bakery and bistro in Wellfleet."},
-{name:"Mac's Seafood",match:"mac's seafood",town:"Wellfleet",cuisine:"Seafood",tags:["lobster","clam"],img:"https://images.unsplash.com/photo-1553163147-621957516919?w=600&q=80",desc:"Seafood in Wellfleet."},
-{name:"The Mews Restaurant & Cafe",match:"the mews",town:"Provincetown",cuisine:"Fine Dining",tags:["fine"],img:"https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80",desc:"Restaurant at 429 Commercial Street with a beachfront view.",src:{url:"https://ptownchamber.com/business-directory/mews-restaurant-cafe/",label:"Provincetown Chamber listing"}},
-{name:"Four Seas Ice Cream",match:"four seas",town:"Centerville",cuisine:"Ice Cream",tags:["icecream"],img:"https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=600&q=80",desc:"Centerville ice cream shop whose history goes back to 1934. Seasonal.",src:{url:"https://fourseasicecream.com/history",label:"Four Seas history"}},
-{name:"The Red Inn",match:"red inn",town:"Provincetown",cuisine:"Fine Dining",tags:["fine"],img:"https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80",desc:""},
-{name:"Box Lunch",match:"box lunch",town:"Provincetown",cuisine:"Sandwiches",tags:["breakfast"],img:"https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80",desc:""},
-{name:"Cafe Heaven",match:"cafe heaven",town:"Provincetown",cuisine:"Brunch",tags:["breakfast"],img:"https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80",desc:""},
-{name:"Sundae School",match:"sundae school",town:"Dennis Port",cuisine:"Ice Cream",tags:["icecream"],img:"https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=600&q=80",desc:"Ice cream at 381 Lower County Road, Dennis Port.",src:{url:"https://sundaeschool.com/",label:"Sundae School"}},
+{name:"The Lobster Pot",match:"lobster pot",town:"Provincetown",cuisine:"Seafood",tags:["lobster","fine"],desc:"Seafood restaurant with views of Provincetown Harbor, run by the McNulty family since 1979. Seasonal — check its site for dates.",src:{url:"https://www.ptownlobsterpot.com/our-story",label:"The Lobster Pot"}},
+{name:"Arnold's Lobster & Clam Bar",match:"arnold",town:"Eastham",cuisine:"Seafood",tags:["lobster","clam"],desc:"Lobster and clam bar in Eastham."},
+{name:"The Canteen",match:"canteen",town:"Provincetown",cuisine:"Casual",tags:["clam","breakfast"],desc:"Casual New England eatery at 225 Commercial Street.",src:{url:"https://www.thecanteenptown.com/",label:"The Canteen"}},
+{name:"PB Boulangerie Bistro",match:"pb boulangerie",town:"Wellfleet",cuisine:"Bakery / Cafe",tags:["breakfast"],desc:"French bakery and bistro in Wellfleet."},
+{name:"Mac's Seafood",match:"mac's seafood",town:"Wellfleet",cuisine:"Seafood",tags:["lobster","clam"],desc:"Seafood in Wellfleet."},
+{name:"The Mews Restaurant & Cafe",match:"the mews",town:"Provincetown",cuisine:"Fine Dining",tags:["fine"],desc:"Restaurant at 429 Commercial Street with a beachfront view.",src:{url:"https://ptownchamber.com/business-directory/mews-restaurant-cafe/",label:"Provincetown Chamber listing"}},
+{name:"Four Seas Ice Cream",match:"four seas",town:"Centerville",cuisine:"Ice Cream",tags:["icecream"],desc:"Centerville ice cream shop whose history goes back to 1934. Seasonal.",src:{url:"https://fourseasicecream.com/history",label:"Four Seas history"}},
+{name:"The Red Inn",match:"red inn",town:"Provincetown",cuisine:"Fine Dining",tags:["fine"],desc:""},
+{name:"Box Lunch",match:"box lunch",town:"Provincetown",cuisine:"Sandwiches",tags:["breakfast"],desc:""},
+{name:"Cafe Heaven",match:"cafe heaven",town:"Provincetown",cuisine:"Brunch",tags:["breakfast"],desc:""},
+{name:"Sundae School",match:"sundae school",town:"Dennis Port",cuisine:"Ice Cream",tags:["icecream"],desc:"Ice cream at 381 Lower County Road, Dennis Port.",src:{url:"https://sundaeschool.com/",label:"Sundae School"}},
 ];
 // Ratings, price level and open/closed status come from our live restaurant data
 // (Google ratings, refreshed by the eats pipeline), not from hard-coded numbers.
@@ -123,7 +125,7 @@ function renderEats(){
     const rating=L.rating?` · ⭐ ${esc(L.rating)} on Google`:'';
     return `
     <div class="eat-card">
-      <div class="cover" style="background-image:url('${r.img}')">${L.price?`<span class="price-pill" title="Google price level">${esc(L.price)} on Google</span>`:''}</div>
+      <div class="cover${r.img?'':' tile-cover'}"${r.img?` style="background-image:url('${r.img}')"`:` style="background:linear-gradient(135deg,#8A6440,#D4A574)"`}>${r.img?'':`<span class="tile-label">🍽️ ${esc(r.cuisine||r.town)}</span>`}${L.price?`<span class="price-pill" title="Google price level">${esc(L.price)} on Google</span>`:''}</div>
       <div class="body">
         <h3>${esc(r.name)}</h3>
         <div class="meta">${esc(r.town)} · ${esc(r.cuisine)}${rating}</div>

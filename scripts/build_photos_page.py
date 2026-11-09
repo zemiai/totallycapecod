@@ -116,8 +116,8 @@ def main() -> None:
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 </head>
 <body>
-<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/app/">📱 App</a></div><button class="nav-mobile-toggle" onclick="toggleMobileMenu()">☰</button></div></nav>
-<div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()"><a href="/">Home</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/app/">📱 Open the App</a></div></div>
+<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/app/">📱 App</a></div><button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button></div></nav>
+<div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()"><a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/app/">📱 Open the App</a></div></div>
 
 <section class="hero" style="min-height:40vh;"><div class="hero-overlay"></div><div class="hero-content" style="padding-top:84px;max-width:860px;"><div class="hero-badge">📸 Real Cape Cod scenery</div><h1 class="hero-title">Cape Cod Photos</h1><p class="hero-subtitle">{esc(hero_sub)}</p></div></section>
 

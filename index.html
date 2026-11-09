@@ -263,21 +263,13 @@
       <a href="/events">What's Happening</a>
       <a href="/guides/">Guides</a><a href="/app/" class="nav-cta">📱 Get the App</a>
     </div>
-    <button class="nav-mobile-toggle" onclick="toggleMobileMenu()">☰</button>
+    <button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button>
   </div>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()">
   <div class="mobile-menu-panel" onclick="event.stopPropagation()">
-    <a href="/feed.html">📍 Near You</a>
-    <a href="/beaches.html">Beaches</a>
-    <a href="/eats.html">Eats</a>
-    <a href="/stays.html">Stays</a>
-    <a href="/experiences.html">Experiences</a>
-    <a href="/events">What's Happening</a>
-    <a href="/itinerary.html">Plan My Trip</a>
-    <a href="/submit.html">Submit a Spot</a>
-    <a href="/guides/">Guides</a><a href="/app/">📱 Get the App</a>
+    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/app/">📱 Open the App</a>
   </div>
 </div>
 
@@ -341,7 +333,7 @@
 
   <div class="directory-preview">
     <a href="/beaches.html" class="directory-tile" onclick="gtag('event','click',{event_category:'directory',event_label:'beaches'})">
-      <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80');"></div>
+      <div class="bg" style="background-image: linear-gradient(135deg,#1A3A6C,#4A90A4);"></div>
       <div class="overlay"></div>
       <div class="content">
         <h3>Beaches</h3>
@@ -349,7 +341,7 @@
       </div>
     </a>
     <a href="/eats.html" class="directory-tile" onclick="gtag('event','click',{event_category:'directory',event_label:'eats'})">
-      <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1553163147-621957516919?w=600&q=80');"></div>
+      <div class="bg" style="background-image: linear-gradient(135deg,#8A6440,#D4A574);"></div>
       <div class="overlay"></div>
       <div class="content">
         <h3>Eats</h3>
@@ -357,7 +349,7 @@
       </div>
     </a>
     <a href="/stays.html" class="directory-tile" onclick="gtag('event','click',{event_category:'directory',event_label:'stays'})">
-      <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80');"></div>
+      <div class="bg" style="background-image: linear-gradient(135deg,#2F6E80,#7BBCD0);"></div>
       <div class="overlay"></div>
       <div class="content">
         <h3>Stays</h3>
@@ -365,7 +357,7 @@
       </div>
     </a>
     <a href="/experiences.html" class="directory-tile" onclick="gtag('event','click',{event_category:'directory',event_label:'experiences'})">
-      <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80');"></div>
+      <div class="bg" style="background-image: linear-gradient(135deg,#2E7D6B,#6BC4A6);"></div>
       <div class="overlay"></div>
       <div class="content">
         <h3>Experiences</h3>
@@ -385,7 +377,7 @@
 
   <div class="grid-3">
     <div class="card featured-card">
-      <div class="card-cover" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80');">
+      <div class="card-cover" style="background-image: linear-gradient(135deg,#1A3A6C,#4A90A4);">
         <span class="card-tag">Beach</span>
       </div>
       <div class="card-body">
@@ -400,7 +392,7 @@
     </div>
 
     <div class="card featured-card">
-      <div class="card-cover" style="background-image: url('https://images.unsplash.com/photo-1553163147-621957516919?w=600&q=80');">
+      <div class="card-cover" style="background-image: linear-gradient(135deg,#8A6440,#D4A574);">
         <span class="card-tag">Food</span>
       </div>
       <div class="card-body">
@@ -415,7 +407,7 @@
     </div>
 
     <div class="card featured-card">
-      <div class="card-cover" style="background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=600&q=80');">
+      <div class="card-cover" style="background-image: linear-gradient(135deg,#2E7D6B,#6BC4A6);">
         <span class="card-tag">Experience</span>
       </div>
       <div class="card-body">

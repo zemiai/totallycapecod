@@ -80,7 +80,7 @@
     --cape-cream:#F4ECD8; --cape-sand:#E8DCC4;
     --cape-navy:#1A3A6C; --cape-navy-dark:#122B52;
     --cape-off:#FFFEF7;
-    --ios-bg:#F2F2F7; --ios-card:#FFFFFF; --ios-text:#1C1C1E; --ios-sub:#8E8E93; --ios-divider:#E5E5EA;
+    --ios-bg:#F2F2F7; --ios-card:#FFFFFF; --ios-text:#1C1C1E; --ios-sub:#6C6C70; --ios-divider:#E5E5EA;
     --gold:#C99A4A; --gold-dark:#A77C30;
     --status-open:#34C759; --status-mid:#FF9500; --status-full:#FF3B30; --status-off:#8E8E93;
   }
@@ -374,6 +374,8 @@
   .nb-ask-q{ font-family:'Fraunces',serif; font-weight:700; font-style:italic; font-size:16.5px; color:var(--ios-text); line-height:1.35; }
   .nb-ask-cta{ margin-top:7px; font-size:13px; font-weight:800; color:#1E6B7A; }
   .nb-photo{ height:170px; background-size:cover; background-position:center; background-color:var(--cape-sand); position:relative; }
+  .cover-icon.cover-date{ flex-direction:column; font-size:34px; font-weight:800; color:#fff; letter-spacing:-.01em; }
+  .cover-icon.cover-date b{ font-size:14px; letter-spacing:.12em; font-weight:800; opacity:.9; }
   .cover-icon{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:58px; line-height:1; opacity:0.95; filter:drop-shadow(0 2px 8px rgba(0,0,0,0.28)); pointer-events:none; }
   /* Today on the Cape rail (events starting today) */
   .specials-rail{ display:flex; gap:10px; overflow-x:auto; padding:2px 16px 6px; margin-bottom:4px; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
@@ -1004,7 +1006,10 @@
     <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); switchTab('pro')"><span style="font-size:24px;">👑</span><div style="flex:1;"><div class="item-title">Cape Cod Pro</div><div class="item-sub" id="moreMenuProStatus">$9.99 lifetime</div></div></div>
     <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); replayTour()"><span style="font-size:24px;">🧭</span><div style="flex:1;"><div class="item-title">Quick tour</div><div class="item-sub">How the app works</div></div></div>
     <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); openModal('feedback')"><span style="font-size:24px;">💬</span><div style="flex:1;"><div class="item-title">What's missing?</div><div class="item-sub">Tell us what would make your trip better</div></div></div>
-    <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); window.open('/','_blank')"><span style="font-size:24px;">🌐</span><div style="flex:1;"><div class="item-title">Totally Cape Cod Website</div><div class="item-sub">Guides, directories & more</div></div></div>
+    <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); window.open('/welcome','_blank')"><span style="font-size:24px;">🌐</span><div style="flex:1;"><div class="item-title">Totally Cape Cod Website</div><div class="item-sub">Guides, directories & more</div></div></div>
+    <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); window.open('/guides/','_blank')"><span style="font-size:24px;">📖</span><div style="flex:1;"><div class="item-title">Guides</div><div class="item-sub">Researched guides with sources</div></div></div>
+    <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); window.open('/photos.html','_blank')"><span style="font-size:24px;">📷</span><div style="flex:1;"><div class="item-title">Photos</div><div class="item-sub">Cape Cod photos, credited</div></div></div>
+    <div class="ios-list-item tappable" onclick="closeModal('moreMenu'); window.open('/guides/standards/','_blank')"><span style="font-size:24px;">✅</span><div style="flex:1;"><div class="item-title">How we fact-check</div><div class="item-sub">Our sources, and how to report an error</div></div></div>
     <button onclick="closeModal('moreMenu')" style="width:100%; background:transparent; color:var(--cape-navy); border:none; padding:14px; font-weight:600; font-size:15px; margin-top:6px;">Close</button>
   </div>
 </div>
@@ -1355,6 +1360,8 @@ async function loadData() {
   // own latency to the critical path, and on mobile LTE that showed up as seconds of
   // near-blank screen before the app painted.
   const curatedP = fetchWithTimeout(DATA_BASE + 'curated.json', 8000);
+  // Fact-checked Q&A from our guides, for the concierge (built with the guides, served by the site)
+  fetchWithTimeout('/guides/knowledge.json', 8000).then(k => { state.data.guideFacts = k; });
   const beachLiveP = fetchWithTimeout('/.netlify/functions/beach-report', 6000);
   const results = await Promise.allSettled(files.map(f => fetchWithTimeout(DATA_BASE + f + '.json', 8000)));
   results.forEach((r, i) => {
@@ -1471,8 +1478,9 @@ function tccBridgeAge() {
   const t = Date.parse(state.data.bridges?.updated_at || '');
   if (isNaN(t)) return { label: 'Update time unknown', fresh: false };
   const m = Math.max(1, Math.round((Date.now() - t) / 60000));
-  const label = m < 60 ? `Updated ${m}m ago` : m < 1440 ? `Updated ${Math.round(m / 60)}h ago` : `Updated ${Math.round(m / 1440)}d ago`;
-  return { label, fresh: m < 90 };
+  const at = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' }).format(new Date(t));
+  const label = m < 60 ? `Updated ${m}m ago` : `Last reading ${at} · may be out of date`;
+  return { label, fresh: m < 60 };
 }
 function tccBridgeAgeLabel() {
   const a = tccBridgeAge();
@@ -1582,7 +1590,9 @@ function renderToday() {
   document.getElementById('todayDate').textContent = new Date().toLocaleDateString('en-US', opts);
 
   // Conditions strip
-  const c = state.data.conditions?.today;
+  const cRaw = state.data.conditions?.today;
+  const etDate = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+  const c = cRaw && cRaw.date === etDate ? cRaw : null;   // never show yesterday's weather or sunset as today's
   if (c) {
     document.getElementById('todayConditions').innerHTML =
       `${c.weather.icon} ${c.weather.temp_high}°${c.water_temp_source && c.water_temp_f != null ? ' · 🌊 ' + c.water_temp_f + '°F' : ''} · 🌅 ${c.sun.sunset}`;
@@ -1634,8 +1644,17 @@ function renderToday() {
     banner.innerHTML = bannerHtml;
   }
 
-  // Tides
-  const tides = c?.tides || [];
+  // Tides — the next two still to come today, and only if the feed is for today's date
+  const etToday = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+  const condIsToday = !!(c && c.date === etToday);
+  const tMin = s => { const m = /(\d{1,2}):(\d{2})\s*(AM|PM)/i.exec(String(s || '')); if (!m) return null; let h = (+m[1]) % 12; if (/PM/i.test(m[3])) h += 12; return h * 60 + (+m[2]); };
+  const nowParts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date());
+  const nowMin = ((+(nowParts.find(p => p.type === 'hour') || {}).value || 0) % 24) * 60 + (+(nowParts.find(p => p.type === 'minute') || {}).value || 0);
+  const tides = condIsToday ? (c.tides || []).filter(t => { const m = tMin(t.time); return m == null || m >= nowMin; }) : [];
+  const noaaTides = 'https://tidesandcurrents.noaa.gov/noaatidepredictions.html?id=8447435';
+  const tidesEmpty = !condIsToday
+    ? `<div class="ios-list-item"><div class="item-sub">Today's tide times are updating. Meanwhile, see <a href="${noaaTides}" target="_blank" rel="noopener">NOAA's Chatham tide predictions</a>.</div></div>`
+    : `<div class="ios-list-item"><div class="item-sub">No more tides today. Tomorrow's are on <a href="${noaaTides}" target="_blank" rel="noopener">NOAA's Chatham tide predictions</a>.</div></div>`;
   document.getElementById('todayTides').innerHTML = tides.slice(0,2).map(t => `
     <div class="ios-list-item">
       <span style="font-size:22px;">🌊</span>
@@ -1644,7 +1663,7 @@ function renderToday() {
         <div class="item-sub">${t.height_ft} ft</div>
       </div>
     </div>
-  `).join('') || '<div class="ios-list-item"><div class="item-sub">Tide & conditions data updating…</div></div>';
+  `).join('') || tidesEmpty;
 
   // Bridges — freshness from the file's real update time (tccBridgeAge)
   const b = state.data.bridges?.current;
@@ -1656,7 +1675,7 @@ function renderToday() {
           <div class="item-title">Sagamore ${tccBridgeAgeLabel()}</div>
           <div class="item-sub">${tccBridgeLine(b.sagamore)} · Google Maps traffic data</div>
         </div>
-        <div class="bridge-delay ${b.sagamore.current_status==='light'?'light':b.sagamore.current_status==='heavy'?'heavy':'moderate'}">${b.sagamore.current_delay_min}<span style="font-size:14px;">m</span></div>
+        <div class="bridge-delay ${b.sagamore.current_status==='light'?'light':b.sagamore.current_status==='heavy'?'heavy':'moderate'}"${tccBridgeAge().fresh ? '' : ' style="opacity:.4; filter:grayscale(1);" title="Reading may be out of date"'}>${nbEsc(b.sagamore.current_delay_min)}<span style="font-size:14px;">m</span></div>
       </div>
     `;
   } else {
@@ -1693,8 +1712,9 @@ function renderToday() {
   const events = state.data.events?.events || [];
   const unlocked = hasPro() || state.proPreview;
   const shown = unlocked ? events.slice(0, 10) : events.slice(0, FREE_EVENT_LIMIT);
-  let happeningHtml = shown.map(e => renderEventCard(e)).join('') ||
-    '<div class="empty-state">No events posted for today yet — check back this morning.</div>';
+  let happeningHtml = shown.length
+    ? tccNoneTodayNote(events) + shown.map(e => renderEventCard(e)).join('')
+    : '<div class="empty-state">No upcoming events are listed right now — check back soon.</div>';
   if (events.length > shown.length) {
     happeningHtml += unlocked
       ? `<button class="unlock-cta" onclick="switchTab('events')">See all ${events.length} events →</button>`
@@ -1742,11 +1762,66 @@ const COVER_STYLE = {
   default:        ['linear-gradient(135deg,#7BBCD0,#1A3A6C)', '📅'],
 };
 // realPhoto wins; otherwise a branded gradient + category icon so no card is ever blank.
-function cardCover(realPhoto, key) {
-  if (realPhoto) return { style: `background-image:url('${realPhoto}')`, icon: '' };
+// Real photos load lazily (data-bg) and resized, so a phone doesn't download full-size posters.
+// Cards with no photo and no specific category show the event's real date (the 📅 emoji
+// renders as a fixed "July 17" on Apple devices).
+function cardCover(realPhoto, key, ev) {
   const [grad, emoji] = COVER_STYLE[key] || COVER_STYLE.default;
+  if (realPhoto) return { style: `background:${grad}" data-bg="${realPhoto}`, icon: '' };
+  if (!COVER_STYLE[key] || key === 'default') {
+    const d = ev && tccEventDate(ev);
+    if (d) return { style: `background:${grad}`, icon: `<span class="cover-icon cover-date"><b>${d.mon}</b>${d.day}</span>` };
+  }
   return { style: `background:${grad}`, icon: `<span class="cover-icon">${emoji}</span>` };
 }
+// Event date in Cape Cod time. Date-only listings arrive as midnight UTC of the listed date.
+function tccEventDate(e) {
+  const s = String(e && e.start || '');
+  let d;
+  if (/T00:00(:00)?(\.0+)?(Z|\+00:00)$/.test(s)) d = new Date(s.slice(0, 10) + 'T12:00:00Z');
+  else { const t = Date.parse(s); if (isNaN(t)) return null; d = new Date(t); }
+  const tz = /T00:00(:00)?(\.0+)?(Z|\+00:00)$/.test(s) ? 'UTC' : 'America/New_York';
+  return { mon: new Intl.DateTimeFormat('en-US', { timeZone: tz, month: 'short' }).format(d).toUpperCase(),
+           day: new Intl.DateTimeFormat('en-US', { timeZone: tz, day: 'numeric' }).format(d) };
+}
+// "Nothing listed for today" note, so an empty today never looks like a stale list.
+function tccDayKey(e) {
+  const s = String(e && e.start || '');
+  if (/T00:00(:00)?(\.0+)?(Z|\+00:00)$/.test(s)) return s.slice(0, 10);
+  const t = Date.parse(s);
+  return isNaN(t) ? '' : new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(t));
+}
+function tccNoneTodayNote(list) {
+  if (!list || !list.length) return '';
+  const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+  if (list.some(e => tccDayKey(e) === today)) return '';
+  const k = tccDayKey(list[0]);
+  if (!k || k <= today) return '';
+  const pretty = new Intl.DateTimeFormat('en-US', { timeZone: 'UTC', weekday: 'short', month: 'short', day: 'numeric' }).format(new Date(k + 'T12:00:00Z'));
+  return `<div style="padding:10px 16px; color:var(--ios-sub); font-size:14px;">Nothing listed for today. Next up: ${pretty}.</div>`;
+}
+function tccSmallImg(u) { return 'https://wsrv.nl/?url=' + encodeURIComponent(u) + '&w=640&output=webp&q=75'; }
+(function tccLazyImages() {
+  const show = el => {
+    const src = el.getAttribute('data-bg'); if (!src) return;
+    el.removeAttribute('data-bg');
+    const small = tccSmallImg(src), im = new Image();
+    const set = u => { el.style.backgroundImage = `url('${u}')`; el.style.backgroundSize = 'cover'; el.style.backgroundPosition = 'center'; };
+    im.onload = () => set(small);
+    im.onerror = () => set(src);   // resizer unavailable → original image
+    im.src = small;
+  };
+  const io = ('IntersectionObserver' in window)
+    ? new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { io.unobserve(en.target); show(en.target); } }), { rootMargin: '300px' })
+    : null;
+  const watch = el => io ? io.observe(el) : show(el);
+  const scan = root => { if (root.nodeType !== 1) return; if (root.hasAttribute('data-bg')) watch(root); root.querySelectorAll('[data-bg]').forEach(watch); };
+  const start = () => {
+    scan(document.body);
+    new MutationObserver(ms => ms.forEach(m => m.addedNodes.forEach(scan))).observe(document.body, { childList: true, subtree: true });
+  };
+  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start);
+})();
 
 // ── Live "open now" computed on-device from a Google Places weekly schedule ──
 // (r.hours = regularOpeningHours.periods). Evaluated in Eastern time so it's
@@ -1805,16 +1880,16 @@ function tccCredit(e) {
 }
 function renderEventCard(e) {
   const loc = [e.venue, e.town].filter(Boolean).join(' · ');
-  const cov = cardCover(e.img || '', e.category);
+  const cov = cardCover(e.img ? nbEsc(e.img) : '', e.category, e);
   return `<div class="happening-card">
     <div class="cover" style="${cov.style}">
       ${cov.icon}
-      <span class="tag">${e.tag}</span>
-      <span class="time">${e.time}</span>
+      <span class="tag">${nbEsc(String(e.tag || '').replace(/📅\s*/g, ''))}</span>
+      <span class="time">${nbEsc(e.time)}</span>
     </div>
     <div class="body">
-      <div style="font-weight:700; font-size:15px;">${e.title}</div>
-      <div style="color:var(--ios-sub); font-size:12px; margin-top:2px;">${e.info || loc}</div>
+      <div style="font-weight:700; font-size:15px;">${nbEsc(e.title)}</div>
+      <div style="color:var(--ios-sub); font-size:12px; margin-top:2px;">${nbEsc(e.info || loc)}</div>
       ${tccCredit(e)}
     </div>
   </div>`;
@@ -1841,10 +1916,12 @@ function renderEvents() {
   const shown = (hasPro() || state.proPreview) ? filtered : filtered.slice(0, FREE_EVENT_LIMIT);
   const eventsEmpty = filtered.length === 0
     ? (events.length === 0
-        ? '<div class="empty-state">No events posted for today yet — check back this morning.</div>'
+        ? '<div class="empty-state">No upcoming events are listed right now — check back soon.</div>'
         : '<div class="empty-state">No events match this filter.</div>')
     : '';
-  document.getElementById('eventsList').innerHTML = shown.map(e => renderEventCard(e)).join('') || eventsEmpty;
+  document.getElementById('eventsList').innerHTML = shown.length
+    ? (state.eventFilter === 'all' ? tccNoneTodayNote(filtered) : '') + shown.map(e => renderEventCard(e)).join('')
+    : eventsEmpty;
 
   // TASK9 Lever 5: loss-aversion copy on events unlock CTA
   if (!hasPro() && !state.proPreview && filtered.length > FREE_EVENT_LIMIT) {
@@ -2395,9 +2472,14 @@ function confirmStamp() {
   if (!state.pendingStamp) return;
   // GPS validation (if available) — must be within 1 mile of the location
   getUserLoc(loc => {
-    const d = distanceMiles(loc.lat, loc.lng, state.pendingStamp.lat, state.pendingStamp.lng);
-    if (d > 1.0 && !confirm(`You're ${d.toFixed(1)} miles from this spot. Stamp anyway?`)) {
-      return;
+    // Only state a distance when we have the visitor's real location (not the Orleans default).
+    if (!loc || loc === DEFAULT_LOC) {
+      if (!confirm("We couldn't check your location, so we can't confirm you're at this spot. Stamp anyway?")) return;
+    } else {
+      const d = distanceMiles(loc.lat, loc.lng, state.pendingStamp.lat, state.pendingStamp.lng);
+      if (d > 1.0 && !confirm(`You're ${d.toFixed(1)} miles from this spot. Stamp anyway?`)) {
+        return;
+      }
     }
     if (!state.stamps.includes(state.pendingStamp.slug)) {
       state.stamps.push(state.pendingStamp.slug);
@@ -2430,9 +2512,30 @@ function quickAi(q) {
 // specifics (temps, tides, bridge delays, today's events, real restaurants) from
 // facts instead of guessing. The server caps this at 2200 chars and instructs the
 // model to use ONLY this for time-sensitive facts.
-function buildAiContext() {
+// The guide facts that best match a question (simple keyword overlap), so the concierge can
+// answer from our fact-checked guides and link them.
+function tccGuideFacts(q) {
+  const g = state.data.guideFacts?.guides || [];
+  const STOP = new Set('a an and are at be best can cape cod do does for from how i in is it me of on or the there this to what when where which who will with year you your'.split(' '));
+  const words = String(q || '').toLowerCase().match(/[a-z0-9]+/g) || [];
+  const qs = new Set(words.filter(w => w.length > 2 && !STOP.has(w)));
+  if (!qs.size) return '';
+  const scored = [];
+  g.forEach(guide => (guide.facts || []).forEach(f => {
+    const text = (f.q + ' ' + f.a + ' ' + (guide.keywords || []).join(' ')).toLowerCase();
+    let score = 0;
+    qs.forEach(w => { if (text.includes(w)) score += (f.q.toLowerCase().includes(w) ? 2 : 1); });
+    if (score >= 2) scored.push({ score, f, guide });
+  }));
+  scored.sort((a, b) => b.score - a.score);
+  return scored.slice(0, 3).map(({ f, guide }) =>
+    `Q: ${f.q} A: ${f.a}${f.sources.length ? ' (sources: ' + f.sources.join(', ') + ')' : ''} [guide: ${guide.url}]`).join('\n');
+}
+function buildAiContext(question) {
   try {
     const d = state.data || {}, out = [];
+    const gf = tccGuideFacts(question);
+    if (gf) out.push(`FROM OUR GUIDES (fact-checked; credit the source and include the guide link):\n${gf}`);
     if (tccOff()) out.push("SEASON: off-season. Hours change, so only list places marked OPEN now and suggest calling ahead.");
     const vt = localStorage.getItem('tcc_visitor_type');
     if (vt === 'local') out.push("USER PROFILE: a Cape Cod local.");
@@ -2467,14 +2570,23 @@ function buildAiContext() {
       const list = beaches.slice(0, 27).map(x => {
         const st = (typeof beachStatus === 'function') ? beachStatus(x) : { label: '' };
         const nm = x.name.replace(/ Beach$/, '');
-        return `${nm} (${x.town})${x.water_temp ? ' ' + x.water_temp + '°F' : ''}${st.live ? ' ' + (SHORT[st.label] || st.label) : ''}`;
+        return `${nm} (${x.town})${st.live ? ' ' + (SHORT[st.label] || st.label) : ''}`;
       }).join('; ');
+      // Beaches don't have their own sensors: each shows the nearest of a few water sensors.
+      const bySensor = {};
+      beaches.forEach(x => {
+        if (x.water_temp == null) return;
+        const k = x.water_temp_src || x.water_temp_src_id || 'nearest sensor';
+        (bySensor[k] = bySensor[k] || { t: x.water_temp, names: [] }).names.push(x.name.replace(/ Beach$/, ''));
+      });
+      const sensors = Object.entries(bySensor).map(([k, v]) => `${k}: ${v.t}°F (shown for ${v.names.length} beaches, e.g. ${v.names.slice(0, 3).join(', ')})`).join('; ');
+      if (sensors) out.push(`WATER TEMPERATURE: beaches have no sensors of their own; each beach shows the nearest of these ${Object.keys(bySensor).length} sensor readings — ${sensors}. Say which sensor a reading is from; don't present it as a reading taken at the beach.`);
       out.push(tccOff() ? `BEACHES (latest water-temperature sensor readings; off-season): ${list}.`
                         : `BEACHES (latest water-temperature sensor readings; "NOW" = live beachgoer report): ${list}.`);
     }
     const events = (d.events?.events || []).slice(0, 8).map(e => `${String(e.title || '').slice(0, 55)} (${e.town || ''}${e.time ? ', ' + e.time : ''})`).join('; ');
     if (events) out.push(`UPCOMING EVENTS: ${events}.`);
-    return out.join('\n').slice(0, 2600);
+    return out.join('\n').slice(0, 3600);
   } catch (e) { return ''; }
 }
 function sendAi() {
@@ -2523,7 +2635,7 @@ function sendAi() {
     fetch(window.TCC_AI_ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ question: q, deviceId, isPro: hasPro(), context: buildAiContext() }),
+      body: JSON.stringify({ question: q, deviceId, isPro: hasPro(), context: buildAiContext(q) }),
     })
       .then(async r => {
         const d = await r.json().catch(() => ({}));
@@ -2594,7 +2706,7 @@ function renderBridges() {
         <div class="item-sub">${tccBridgeLine(x)}</div>
         <div style="font-size:11px; color:var(--ios-sub); margin-top:2px;">${x.live_speed_mph != null ? `Speed: ${nbEsc(x.live_speed_mph)} mph · ` : ''}Google Maps traffic data</div>
       </div>
-      <div class="bridge-delay ${x.current_status==='light'?'light':x.current_status==='heavy'?'heavy':'moderate'}">${nbEsc(x.current_delay_min)}<span style="font-size:14px;">m</span></div>
+      <div class="bridge-delay ${x.current_status==='light'?'light':x.current_status==='heavy'?'heavy':'moderate'}"${tccBridgeAge().fresh ? '' : ' style="opacity:.4; filter:grayscale(1);" title="Reading may be out of date"'}>${nbEsc(x.current_delay_min)}<span style="font-size:14px;">m</span></div>
     </div>` : '';
   document.getElementById('bridgeCurrent').innerHTML = card(b.sagamore, 'Sagamore Bridge') + card(b.bourne, 'Bourne Bridge');
 }
@@ -3000,7 +3112,7 @@ function nbNearestTown(loc){ let best=NB_TOWNS[0], bd=1e9; for(const t of NB_TOW
 function nbCrowd(n){ let h='<span class="nb-crowd">'; for(let i=1;i<=5;i++) h+=`<i class="${i<=n?'on':''}"></i>`; return h+'</span>'; }
 function nbPhoto(r){
   if(r.photo) return r.photo.startsWith('http') ? r.photo : ASSET_BASE + r.photo;
-  return `https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=800&q=80&auto=format&fit=crop`;
+  return ''; // no stock photos
 }
 // Tap-to-collect from the scroll: match a feed item to a passport stamp (exact slug,
 // else nearest within 0.3 mi) and surface a collect pill. Ties the feed to the viral passport.
@@ -3146,13 +3258,13 @@ function nbRenderItem(it){
   if(it.type==="event"){
     const e=it.data;
     const loc=[e.venue,e.town].filter(Boolean).join(' · ');
-    const cov = cardCover(e.img ? nbEsc(e.img) : '', e.category);
+    const cov = cardCover(e.img ? nbEsc(e.img) : '', e.category, e);
     return `<div class="nb-card">
       <div class="nb-photo" style="${cov.style}">${cov.icon}<span class="nb-dist">${nbMiLabel(it.mi)}</span>${e.price?`<span class="nb-price">${nbEsc(e.price)}</span>`:""}</div>
       <div class="nb-head">
         <div class="nb-avatar event">🎟️</div>
         <div class="main"><div class="name">${nbEsc(e.title)}</div><div class="sub">${nbEsc(loc)}</div></div>
-        <div class="nb-kind event">${nbEsc(e.tag)}</div></div>
+        <div class="nb-kind event">${nbEsc(String(e.tag || '').replace(/📅\s*/g, ''))}</div></div>
       <div class="nb-body">
         ${it.forYou?'<div class="nb-foryou">✨ Picked for you</div>':""}
         ${e.info?`<p>${nbEsc(e.info)}</p>`:""}

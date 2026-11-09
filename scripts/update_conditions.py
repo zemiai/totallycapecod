@@ -160,7 +160,8 @@ def fetch_weather() -> dict:
 
 
 def main() -> None:
-    today_date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    # Cape Cod's calendar date (not UTC's, which flips to tomorrow at 7–8 PM ET)
+    today_date = datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d")
     today_noaa = today_date.replace("-", "")
 
     today_weather, forecast_7day = fetch_weather()
