@@ -38,7 +38,7 @@
       "title": "Sun and Moon Data for One Day: November 1, 2026, Hyannis area",
       "checked": "2026-11-10",
       "via": "live page",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261110115827/https://aa.usno.navy.mil/api/rstt/oneday?date=2026-11-01&coords=41.65,-70.28&tz=-5",
       "excerpts": [
         {
           "quote": "\"isdst\": false ... \"phen\": \"Rise\", \"time\": \"06:13\" ... \"phen\": \"Set\", \"time\": \"16:36\" ... \"phen\": \"End Civil Twilight\", \"time\": \"17:04\"",
@@ -53,7 +53,7 @@
       "title": "Sun and Moon Data for One Day: November 15, 2026, Hyannis area",
       "checked": "2026-11-10",
       "via": "live page",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261110115841/https://aa.usno.navy.mil/api/rstt/oneday?date=2026-11-15&coords=41.65,-70.28&tz=-5",
       "excerpts": [
         {
           "quote": "\"isdst\": false ... \"phen\": \"Rise\", \"time\": \"06:30\" ... \"phen\": \"Set\", \"time\": \"16:21\" ... \"phen\": \"End Civil Twilight\", \"time\": \"16:51\"",
