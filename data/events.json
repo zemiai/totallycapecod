@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-11-09T23:50:55Z",
+  "updated_at": "2026-11-10T17:17:10Z",
   "window_days": 45,
   "count": 158,
   "_hermes_note": "Real Cape Cod events scraped from chambers + venues. update_events.py",
@@ -798,6 +798,24 @@
       "start": "2026-11-15T00:00:00+00:00"
     },
     {
+      "id": "the-power-of-stories-to-change-the-world-20261115",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Sun Nov 15",
+      "title": "The Power of Stories to Change the World",
+      "venue": "",
+      "town": "Eastham",
+      "info": "",
+      "price": "",
+      "lat": 41.83,
+      "lng": -69.974,
+      "img": null,
+      "source": "Eastham",
+      "credit": "Eastham Chamber of Commerce",
+      "source_url": "https://members.easthamchamber.com/events/details/the-power-of-stories-to-change-the-world-6044",
+      "start": "2026-11-15T00:00:00+00:00"
+    },
+    {
       "id": "live-music-with-boston-naturals-20261114",
       "tag": "\ud83c\udfb5 LIVE MUSIC",
       "category": "music",
@@ -1155,24 +1173,6 @@
       "source": "Yarmouth",
       "credit": "Yarmouth Chamber of Commerce",
       "source_url": "https://www.thacherhall.org/event-details/candlelight-music",
-      "start": "2026-11-20T00:00:00+00:00"
-    },
-    {
-      "id": "view-details-20261120",
-      "tag": "\ud83d\udcc5 EVENT",
-      "category": "event",
-      "time": "Fri Nov 20",
-      "title": "View Details",
-      "venue": "",
-      "town": "Bourne",
-      "info": "",
-      "price": "",
-      "lat": 41.7412,
-      "lng": -70.599,
-      "img": null,
-      "source": "Bourne",
-      "credit": "Cape Cod Canal Region Chamber of Commerce",
-      "source_url": "https://web.capecodcanalchamber.org/atlas/events/ribbon-cutting-salt-ivy-boutique-1727/details",
       "start": "2026-11-20T00:00:00+00:00"
     },
     {
@@ -2274,24 +2274,6 @@
       "start": "2026-12-04T00:00:00+00:00"
     },
     {
-      "id": "cape-symphony-presents-a-taste-of-jazz-20261204",
-      "tag": "\ud83c\udfb5 LIVE MUSIC",
-      "category": "music",
-      "time": "Fri Dec 4",
-      "title": "Cape Symphony Presents: A Taste of Jazz",
-      "venue": "",
-      "town": "Eastham",
-      "info": "",
-      "price": "",
-      "lat": 41.83,
-      "lng": -69.974,
-      "img": null,
-      "source": "Eastham",
-      "credit": "Eastham Chamber of Commerce",
-      "source_url": "https://members.easthamchamber.com/events/details/cape-symphony-presents-a-taste-of-jazz-12-04-2026-6031",
-      "start": "2026-12-04T00:00:00+00:00"
-    },
-    {
       "id": "circus-classes-little-lions-for-ages-3-4-20261204",
       "tag": "\ud83d\udcc5 EVENT",
       "category": "event",
@@ -2380,6 +2362,24 @@
       "credit": "Orleans Farmers Market",
       "source_url": "https://www.orleansfarmersmarket.org",
       "img": null
+    },
+    {
+      "id": "love-local-fest-20261205",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Sat Dec 5 \u00b7 11:00 AM",
+      "title": "Love. Local. Fest",
+      "venue": "Devil's Purse",
+      "town": "South Dennis",
+      "info": "",
+      "price": "",
+      "lat": 41.69,
+      "lng": -70.15,
+      "img": null,
+      "source": "Devil's Purse",
+      "credit": "Devil's Purse",
+      "source_url": "https://www.devilspurse.com/events/2026/12/5/love-local-fest",
+      "start": "2026-12-05T11:00:00.403000-05:00"
     },
     {
       "id": "live-music-with-boston-naturals-20261205",
