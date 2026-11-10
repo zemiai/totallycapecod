@@ -1,6 +1,6 @@
 {
   "slug": "cape-cod-holiday-events-2026",
-  "article_updated": "2026-11-09",
+  "article_updated": "2026-11-10",
   "saved": "2026-11-08",
   "about": "Verbatim excerpts from every source this guide cites, saved so each fact can be traced and re-checked. Excerpts are short; see each URL (and its archived copy, when added) for full context.",
   "sources": [
@@ -802,6 +802,41 @@
         {
           "quote": "8:30 AM Registration Begins 9:30 AM FREE Kids’ Run 10:00 AM 5K Race",
           "supports": "Registration 8:30 AM, 5K at 10 AM (flyer image)"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "url": "https://assets.simpleviewinc.com/simpleview/image/upload/v1/clients/capecodma/2026_Holidays_by_the_Sea_Parade_Packet_and_Entry_Form_0d48fc2a-96a0-483a-b0d9-b4590a738f24.pdf",
+      "publisher": "Falmouth Chamber of Commerce",
+      "title": "Holidays by the Sea Weekend 2026: Parade Packet and Entry Form (PDF)",
+      "checked": "2026-11-10",
+      "via": "PDF (copy supplied by Versel Johnson from this URL)",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "HOLIDAYS BY THE SEA WEEKEND 2026 (DECEMBER 4-6)",
+          "supports": "weekend dates"
+        },
+        {
+          "quote": "Thank you for participating in our 63rd Annual Falmouth Christmas Parade on Sunday, December 6, 2026.",
+          "supports": "63rd annual parade, Sunday, December 6, 2026"
+        },
+        {
+          "quote": "Theme: “From Sea to Shining Sea: Celebrating 250 Years of America”",
+          "supports": "parade theme"
+        },
+        {
+          "quote": "When: Sunday, December 6, 2026. Rain or Shine.",
+          "supports": "rain or shine"
+        },
+        {
+          "quote": "Parade Staging: Dillingham Avenue (closed to through traffic). Use Gifford Street entrance ONLY.",
+          "supports": "staging on Dillingham Avenue"
+        },
+        {
+          "quote": "Parade Start: NOON, 12:00PM. Arrive for staging between 8:30AM - 10:30AM.",
+          "supports": "noon start"
         }
       ]
     }

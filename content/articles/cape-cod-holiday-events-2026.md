@@ -5,7 +5,7 @@ slug: cape-cod-holiday-events-2026
 kicker: "Holidays 2026"
 description: "2026 dates for Cape Cod Christmas strolls, parades and tree lightings by town: Chatham, Falmouth, Hyannis, Sandwich, Holly Folly and more, with organizer links."
 date: 2026-10-26
-updated: 2026-11-09
+updated: 2026-11-10
 author: versel-johnson
 cluster: holidays
 keywords:
@@ -23,7 +23,7 @@ faq:
   - q: "When is the Falmouth Christmas stroll in 2026?"
     a: "The Falmouth Village Holiday Stroll is Saturday, December 5, 2026, from 4 to 8 PM on Main Street and Queen's Buy Way, with the lighting of the Village Green at 6 PM, according to the Falmouth Chamber of Commerce's tentative 2026 schedule, which it says is subject to change [3]."
   - q: "When is the Falmouth Christmas parade in 2026?"
-    a: "Sunday, December 6, 2026, at noon, according to the Falmouth Chamber of Commerce's tentative 2026 schedule. The 63rd annual parade steps off from Dillingham Avenue and Davis Straits and heads along Main Street to the Village Green [3]."
+    a: "Sunday, December 6, 2026, at noon, rain or shine, according to the Falmouth Chamber of Commerce's 2026 parade packet, which has the 63rd annual parade staging on Dillingham Avenue [34]. The chamber's tentative schedule has it heading along Main Street to the Village Green [3]."
   - q: "When is the Chatham Christmas stroll in 2026?"
     a: "Chatham's Christmas by the Sea weekend is Friday through Sunday, December 11–13, 2026, starting with a Friday night Christmas stroll and tree lighting on Main Street, according to the Chatham Chamber of Commerce [15]."
   - q: "When is the Hyannis Christmas stroll in 2026?"
@@ -208,6 +208,11 @@ sources:
     publisher: "Orleans Chamber of Commerce"
     url: "https://members.orleanscapecod.org/events/details/santa-stampede-2026-23394"
     accessed: 2026-11-08
+  - id: 34
+    title: "Holidays by the Sea Weekend 2026: Parade Packet and Entry Form (PDF)"
+    publisher: "Falmouth Chamber of Commerce"
+    url: "https://assets.simpleviewinc.com/simpleview/image/upload/v1/clients/capecodma/2026_Holidays_by_the_Sea_Parade_Packet_and_Entry_Form_0d48fc2a-96a0-483a-b0d9-b4590a738f24.pdf"
+    accessed: 2026-11-10
 ---
 
 Village strolls, lighted parades, Santa arriving by boat or fire truck, holiday markets and a garden full of lights: here are the 2026 dates Cape Cod organizers have announced so far, town by town and weekend by weekend, each linked to its source. A few haven't posted 2026 dates yet; they're at the end, and we'll update this guide as organizers announce. <!-- nocite -->
@@ -262,7 +267,7 @@ The biggest cluster of 2026 events we found lands on this weekend. <!-- nocite -
 - **Saturday, Dec. 5, 10:30 AM:** Seafaring Santa arrives by boat at Falmouth Harbor [3].
 - **Saturday, Dec. 5, 3 PM:** the 15th annual GhELF Run, followed by the 15th annual Jingle Jog 5K [3].
 - **Saturday, Dec. 5, 4–8 PM:** the Falmouth Village Holiday Stroll on Main Street and Queen's Buy Way, hosted by the Falmouth Village Association, with Santa at Barbo's Furniture and parking at the Mullen-Hall and Lawrence schools; the Village Green is lit at 6 PM [3].
-- **Sunday, Dec. 6, noon:** the 63rd annual Falmouth Chamber of Commerce Christmas Parade, themed "From Sea to Shining Sea: Celebrating 250 Years of America," stepping off from Dillingham Avenue and Davis Straits and running along Main Street to the Village Green [3].
+- **Sunday, Dec. 6, noon:** the 63rd annual Falmouth Chamber of Commerce Christmas Parade, themed "From Sea to Shining Sea: Celebrating 250 Years of America," stepping off from Dillingham Avenue and Davis Straits and running along Main Street to the Village Green [3]. The chamber's 2026 parade packet for participants confirms the date, the noon start, the theme and staging on Dillingham Avenue, rain or shine [34].
 
 **Hyannis Holiday (December 4–5).** Arts Barnstable, the Greater Hyannis Civic Association, the Hyannis Main Street BID and Love Live Local run a joint holiday weekend downtown, and its website lists Friday, December 4, and Saturday, December 5, 2026 [11]. The Hyannis Main Street Business Improvement District lists a Sip & Shop on Friday from 5 to 8 PM [13] and Hyannis Holiday on Saturday at noon [12], and Love Live Local holds its Love Local Fest on Saturday from 11 AM to 4 PM at 367 Main Street [14]. The weekend's website still shows last year's Main Street Stroll and Harbor Boat Parade details, so we'll add 2026 times when they're posted [11].
 
