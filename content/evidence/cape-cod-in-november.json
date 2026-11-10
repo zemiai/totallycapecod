@@ -1,0 +1,1079 @@
+{
+  "slug": "cape-cod-in-november",
+  "article_updated": "2026-11-10",
+  "saved": "2026-11-10",
+  "about": "Verbatim excerpts from every source this guide cites, saved so each fact can be traced and re-checked. Excerpts are short; see each URL (and its archived copy, when added) for full context.",
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=normals-monthly-1991-2020&stations=USW00094720&format=json&dataTypes=MLY-TMAX-NORMAL,MLY-TMIN-NORMAL,MLY-TAVG-NORMAL,MLY-PRCP-NORMAL&includeStationName=true",
+      "publisher": "NOAA National Centers for Environmental Information",
+      "title": "U.S. Climate Normals 1991–2020, monthly: Hyannis Barnstable Muni AP (USW00094720)",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "\"STATION\":\"USW00094720\",...\"NAME\":\"HYANNIS BARNSTABLE MUNI AP, MA US\"",
+          "supports": "Station name as given by NCEI for USW00094720"
+        },
+        {
+          "quote": "{\"DATE\":\"11\",\"MLY-TAVG-NORMAL\":\"    45.4\",\"MLY-TMIN-NORMAL\":\"    37.3\",\"STATION\":\"USW00094720\",\"MLY-PRCP-NORMAL\":\"    4.13\",\"MLY-TMAX-NORMAL\":\"    53.5\",\"NAME\":\"HYANNIS BARNSTABLE MUNI AP, MA US\"}",
+          "supports": "November 1991-2020 normals at Hyannis Barnstable Muni AP: avg high 53.5 F, avg low 37.3 F, mean 45.4 F, precipitation 4.13 in"
+        },
+        {
+          "quote": "{\"DATE\":\"10\",\"MLY-TAVG-NORMAL\":\"    54.5\",\"MLY-TMIN-NORMAL\":\"    45.7\",\"STATION\":\"USW00094720\",\"MLY-PRCP-NORMAL\":\"    4.33\",\"MLY-TMAX-NORMAL\":\"    63.4\",\"NAME\":\"HYANNIS BARNSTABLE MUNI AP, MA US\"}",
+          "supports": "October normals: avg high 63.4 F, avg low 45.7 F, mean 54.5 F, precipitation 4.33 in"
+        },
+        {
+          "quote": "{\"DATE\":\"12\",\"MLY-TAVG-NORMAL\":\"    37.2\",\"MLY-TMIN-NORMAL\":\"    29.3\",\"STATION\":\"USW00094720\",\"MLY-PRCP-NORMAL\":\"    4.68\",\"MLY-TMAX-NORMAL\":\"    45.2\",\"NAME\":\"HYANNIS BARNSTABLE MUNI AP, MA US\"}",
+          "supports": "December normals: avg high 45.2 F, avg low 29.3 F, mean 37.2 F, precipitation 4.68 in"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-11-01&coords=41.65,-70.28&tz=-5",
+      "publisher": "U.S. Naval Observatory, Astronomical Applications Department",
+      "title": "Sun and Moon Data for One Day: November 1, 2026, Hyannis area",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "\"isdst\": false ... \"phen\": \"Rise\", \"time\": \"06:13\" ... \"phen\": \"Set\", \"time\": \"16:36\" ... \"phen\": \"End Civil Twilight\", \"time\": \"17:04\"",
+          "supports": "On 2026-11-01 at Hyannis (41.65N, 70.28W), EST: sunrise 06:13, sunset 16:36, end of civil twilight 17:04"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-11-15&coords=41.65,-70.28&tz=-5",
+      "publisher": "U.S. Naval Observatory, Astronomical Applications Department",
+      "title": "Sun and Moon Data for One Day: November 15, 2026, Hyannis area",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "\"isdst\": false ... \"phen\": \"Rise\", \"time\": \"06:30\" ... \"phen\": \"Set\", \"time\": \"16:21\" ... \"phen\": \"End Civil Twilight\", \"time\": \"16:51\"",
+          "supports": "On 2026-11-15 at Hyannis (41.65N, 70.28W), EST: sunrise 06:30, sunset 16:21, end of civil twilight 16:51"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-11-30&coords=41.65,-70.28&tz=-5",
+      "publisher": "U.S. Naval Observatory, Astronomical Applications Department",
+      "title": "Sun and Moon Data for One Day: November 30, 2026, Hyannis area",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "\"isdst\": false ... \"phen\": \"Rise\", \"time\": \"06:48\" ... \"phen\": \"Set\", \"time\": \"16:12\" ... \"phen\": \"End Civil Twilight\", \"time\": \"16:43\"",
+          "supports": "On 2026-11-30 at Hyannis (41.65N, 70.28W), EST: sunrise 06:48, sunset 16:12, end of civil twilight 16:43"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "url": "https://www.nist.gov/pml/time-and-frequency-division/popular-links/daylight-saving-time-dst",
+      "publisher": "National Institute of Standards and Technology",
+      "title": "Daylight Saving Time",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "During 2026, daylight saving time is in effect from March 8 at 2 a.m. (local time) to November 1 at 2 a.m. (local time).",
+          "supports": "In 2026 daylight saving time ended November 1 at 2 a.m. local time"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "url": "https://www.weather.gov/safety/winter-noreaster",
+      "publisher": "NOAA National Weather Service",
+      "title": "Nor'easters",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "These storms may occur at any time of year but are most frequent and most violent between September and April.",
+          "supports": "Nor'easters are most frequent and most violent between September and April"
+        },
+        {
+          "quote": "A Nor’easter is a storm along the East Coast of North America, so called because the winds over the coastal area are typically from the northeast.",
+          "supports": "Definition of a nor'easter"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "url": "https://www.nhc.noaa.gov/climo/",
+      "publisher": "NOAA National Hurricane Center",
+      "title": "Tropical Cyclone Climatology",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "The Atlantic hurricane season runs from June 1 to November 30.",
+          "supports": "Atlantic hurricane season runs June 1 to November 30"
+        },
+        {
+          "quote": "The official hurricane season for the Atlantic basin is from June 1 to November 30, but tropical cyclone activity sometimes occurs before and after these dates, respectively.",
+          "supports": "Tropical activity sometimes occurs outside the official season"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "url": "https://www.nps.gov/caco/planyourvisit/conditions.htm",
+      "publisher": "National Park Service, Cape Cod National Seashore",
+      "title": "Current Park Conditions",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Open: Staff and volunteers are on duty to assist with orientation information and provide maps and brochures. Films and exhibits are available. Open 9 am to 4:30 pm.",
+          "supports": "Salt Pond Visitor Center (Eastham) is open 9 am–4:30 pm (current conditions, updated Nov 9, 2026)."
+        },
+        {
+          "quote": "Closed: The visitor center has closed for the season.",
+          "supports": "Province Lands Visitor Center is closed for the season; its parking-area restrooms stay open year-round."
+        },
+        {
+          "quote": "Open: Head of the Meadow Beach Open: Vault toilets in parking lot are open year-round. Closed: Restrooms and showers Closed: Beach entrance fee collection and annual pass sales have ended for the season.",
+          "supports": "beaches open; restrooms/showers closed; vault toilets open; fee collection ended"
+        },
+        {
+          "quote": "Open: All eleven walking trails in the park are open for use.",
+          "supports": "all eleven walking trails open"
+        },
+        {
+          "quote": "Leashed pets are permitted on Head of the Meadow Bike Trail year-round, and on the Nauset and Province Lands bike trails from November 1 through April 30.",
+          "supports": "leashed pets on bike trails"
+        },
+        {
+          "quote": "Herring Cove Beach Open: Herring Cove Beach Open: Vault toilets in parking lot are open year-round.",
+          "supports": "Herring Cove listed open; its vault toilets open year-round"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "url": "https://www.nps.gov/caco/planyourvisit/fees.htm",
+      "publisher": "National Park Service, Cape Cod National Seashore",
+      "title": "Fees & Passes",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Entrance fees are only required seasonally at park beaches and are not required in most other parts of the park. Cape Cod National Seashore beach entrance fees are collected in spring, summer, and fall.",
+          "supports": "Seashore entrance fees apply only seasonally at the beaches, collected spring through fall; not required in most other parts of the park."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "url": "https://www.nps.gov/caco/planyourvisit/hours.htm",
+      "publisher": "National Park Service, Cape Cod National Seashore",
+      "title": "Operating Hours & Seasons",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Cape Cod National Seashore is open year-round. The most popular months to visit the park are June through September.",
+          "supports": "The Seashore is open year-round; some facilities close November through April."
+        },
+        {
+          "quote": "From November through April, some visitor facilities are closed.",
+          "supports": "Some visitor facilities close November–April."
+        },
+        {
+          "quote": "Lifeguards are typically on duty at the six national seashore beaches from late June through Labor Day.",
+          "supports": "Lifeguards typically staff the six Seashore beaches only late June through Labor Day (none in November)."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "url": "https://www.nps.gov/caco/planyourvisit/visitorcenters.htm",
+      "publisher": "National Park Service, Cape Cod National Seashore",
+      "title": "Visitor Centers",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Salt Pond Visitor Center is Cape Cod National Seashore's year-round visitor orientation facility.",
+          "supports": "Salt Pond Visitor Center is the Seashore's year-round visitor center."
+        },
+        {
+          "quote": "The Province Lands Visitor Center is open from May through October.",
+          "supports": "Province Lands Visitor Center is open May through October; its outdoor decks are open all year, weather permitting."
+        },
+        {
+          "quote": "The outdoor decks are open all year, weather-permitting.",
+          "supports": "Province Lands outdoor observation decks open all year."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "url": "https://www.nps.gov/caco/planyourvisit/hunting-fishing.htm",
+      "publisher": "National Park Service, Cape Cod National Seashore",
+      "title": "Hunting at Cape Cod National Seashore",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Hunting is permitted for deer, upland game, and migratory waterfowl.",
+          "supports": "Hunting for deer, upland game and migratory waterfowl is permitted in the Seashore."
+        },
+        {
+          "quote": "With certain exceptions, hunting seasons and regulations are in accordance with Massachusetts State hunting regulations.",
+          "supports": "Seashore hunting seasons generally follow Massachusetts state regulations."
+        },
+        {
+          "quote": "All hunting is prohibited from March 1 through August 31, except for the spring turkey hunt.",
+          "supports": "Hunting is prohibited March 1–August 31 (except spring turkey), so it is allowed in fall/winter including November."
+        },
+        {
+          "quote": "Hunting or the possession of a loaded weapon is prohibited on or within 500 feet of established bicycle and official nature trails.",
+          "supports": "No hunting or loaded weapons within 500 ft of bike and official nature trails."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "url": "https://www.eastham-ma.gov/410/Beach-Parking-Daily-Passes",
+      "publisher": "Town of Eastham",
+      "title": "Beach Parking & Daily Passes",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Stickers or Day Passes are required at the bay beaches, freshwater ponds and pull-off areas starting June 20, 2026. The final day of the season where stickers and passes are required is Labor Day Monday September 7.",
+          "supports": "Eastham town beach stickers/day passes required June 20 – Labor Day (Sept 7), 2026 — none required in November."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "url": "https://www.steamshipauthority.com/schedules",
+      "publisher": "The Steamship Authority",
+      "title": "Ferry Schedules for Nantucket & Martha's Vineyard",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "We provide the most frequent daily service, year-round, between the mainland of Cape Cod and the Islands of Martha’s Vineyard and Nantucket.",
+          "supports": "Steamship Authority runs year-round daily service from Cape Cod to Martha's Vineyard and Nantucket."
+        },
+        {
+          "quote": "Martha's Vineyard Ferry Schedules October 23, 2026-January 5, 2027",
+          "supports": "Current Martha's Vineyard schedule period runs Oct 23, 2026 – Jan 5, 2027."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "url": "https://www.hylinecruises.com/marthas-vineyard-ferry/",
+      "publisher": "Hy-Line Cruises",
+      "title": "Martha's Vineyard Ferry",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Martha’s Vineyard Ferry service has ended for the season – see you in 2027!",
+          "supports": "Hy-Line's Hyannis–Martha's Vineyard ferry has ended for 2026 (seasonal, May–October)."
+        },
+        {
+          "quote": "We’ve been taking passengers to the Vineyard seasonally, May through October, since 1971",
+          "supports": "Hy-Line's Vineyard service is seasonal, May through October."
+        },
+        {
+          "quote": "Take the high-speed ferry from Hyannis to Martha’s Vineyard.",
+          "supports": "Hy-Line Martha's Vineyard ferry departs from Hyannis"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "url": "https://www.hylinecruises.com/nantucket-ferry/",
+      "publisher": "Hy-Line Cruises",
+      "title": "Nantucket Ferry",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "we’ve been providing seasonal ferry service since 1973 and year-round service since December 1995.",
+          "supports": "Hy-Line runs year-round Hyannis–Nantucket service."
+        },
+        {
+          "quote": "Our year-round high-speed Nantucket ferry from Hyannis.",
+          "supports": "year-round Hyannis–Nantucket service"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "url": "https://baystatecruisecompany.com/schedule-fares/",
+      "publisher": "Bay State Cruise Company",
+      "title": "Provincetown Ferry 2026 Schedules and Fares",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "2026 Season: Daily service sails seven days a week, May 16th through October 18th, 2026. Weekend-only service then follows through Nov 15th 2026.",
+          "supports": "Boston–Provincetown fast ferry: daily May 16–Oct 18, 2026, then weekends only through Nov 15, 2026."
+        },
+        {
+          "quote": "2026 LATE FALL WEEKEND FAST FERRY SCHEDULE October 23rd - November 15th, 2026",
+          "supports": "Late-fall weekend schedule runs Oct 23 – Nov 15, 2026."
+        },
+        {
+          "quote": "The Ferry trip times will be 25 minutes-35minutes longer than usual. This Slow Zone will remain in place through our Nov 15th sailing schedule.",
+          "supports": "NOAA right-whale Slow Zone adds 25–35 minutes to trips through the Nov 15 schedule."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "url": "https://www.cityexperiences.com/boston/city-cruises/provincetown-ferry/",
+      "publisher": "City Cruises (City Experiences)",
+      "title": "Provincetown Fast Ferry",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "The Provincetown Fast Ferry operates seasonally, mid-May through mid-October each year.",
+          "supports": "City Cruises' Boston–Provincetown fast ferry is seasonal, mid-May to mid-October (not running in November)."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "url": "https://www.captjohn.com/fast-ferry-ptown/",
+      "publisher": "Captain John Boats",
+      "title": "Fast Ferry to PTown",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Closed for the season. Thank you for a great 2026, see you in the spring!",
+          "supports": "Captain John Boats (Plymouth–Provincetown fast ferry and Provincetown whale watch) is closed for the 2026 season."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "url": "https://whales.net/",
+      "publisher": "Hyannis Whale Watcher Cruises",
+      "title": "Hyannis Whale Watcher Cruises",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "The 2026 season is in the books, and we are truly grateful for the memories it holds.",
+          "supports": "Hyannis Whale Watcher's 2026 season is over."
+        },
+        {
+          "quote": "Change of plans: Our last trip of 2026 has shifted to Sunday, November 1! Join us to bid the whales farewell and celebrate a truly remarkable season.",
+          "supports": "Its last trip of 2026 was Sunday, November 1."
+        },
+        {
+          "quote": "Already counting down to May 16, 2027",
+          "supports": "2027 season expected to begin May 16, 2027."
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "url": "https://capecodrta.org/bus_routes/flex/",
+      "publisher": "Cape Cod Regional Transit Authority",
+      "title": "FLEX: Harwich ⇄ Provincetown",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Sept 8, 2026 – Jan 22, 2027 Monday through Saturday Sunday trips 9/13 – 10/11",
+          "supports": "FLEX (Harwich–Provincetown) runs Mon–Sat on the Fall/Winter 2026 schedule Sept 8, 2026 – Jan 22, 2027; Sunday trips ended Oct 11."
+        },
+        {
+          "quote": "Saturday schedule on Columbus Day (Oct 12), Veterans Day (Nov 11) and Martin Luther King Jr. Day (Jan 18).",
+          "supports": "Saturday schedule on Veterans Day (Nov 11)."
+        },
+        {
+          "quote": "No service on Thanksgiving, Christmas or New Year’s Day.",
+          "supports": "no bus service on Thanksgiving"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "url": "https://capecodrta.org/bus_routes/h2o-hyannis-orleans/",
+      "publisher": "Cape Cod Regional Transit Authority",
+      "title": "H2O: Hyannis ⇄ Orleans",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Sept 8, 2026 – Jan 22, 2027 Monday through Saturday",
+          "supports": "H2O (Hyannis–Orleans) runs Mon–Sat, Sept 8, 2026 – Jan 22, 2027."
+        },
+        {
+          "quote": "No service on Thanksgiving, Christmas or New Year’s Day.",
+          "supports": "no bus service on Thanksgiving"
+        },
+        {
+          "quote": "Saturday schedule on Columbus Day (Oct 12), Veterans Day (Nov 11) and Martin Luther King Jr. Day (Jan 18).",
+          "supports": "Saturday schedule on Veterans Day"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "url": "https://capecodrta.org/bus_routes/sealine/",
+      "publisher": "Cape Cod Regional Transit Authority",
+      "title": "Sealine: Hyannis ⇄ Falmouth / Woods Hole",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Sept 8, 2026 – Jan 22, 2027 Monday through Saturday",
+          "supports": "Sealine (Hyannis–Falmouth–Woods Hole) runs Mon–Sat, Sept 8, 2026 – Jan 22, 2027."
+        },
+        {
+          "quote": "No service on Thanksgiving, Christmas or New Year’s Day.",
+          "supports": "no bus service on Thanksgiving"
+        },
+        {
+          "quote": "Saturday schedule on Columbus Day (Oct 12), Veterans Day (Nov 11) and Martin Luther King Jr. Day (Jan 18).",
+          "supports": "Saturday schedule on Veterans Day"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "url": "https://capecodrta.org/bus_routes/provincetown-north-truro-shuttle/",
+      "publisher": "Cape Cod Regional Transit Authority",
+      "title": "The Shuttle: Provincetown ⇄ North Truro",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Runs Friday, Saturday and Sunday through October 11, 2026.",
+          "supports": "Provincetown–North Truro Shuttle ended Oct 11, 2026 (weekends only after Sept 8) — not running in November."
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "url": "https://capecodrta.org/bus_routes/hyannis-trolley/",
+      "publisher": "Cape Cod Regional Transit Authority",
+      "title": "Hyannis Trolley",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "The Hyannis Trolley is a summer service that operates between Memorial Day and Labor Day.",
+          "supports": "Hyannis Trolley is summer-only, Memorial Day to Labor Day."
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "url": "https://capecodrta.org/",
+      "publisher": "Cape Cod Regional Transit Authority",
+      "title": "Cape Cod Regional Transit Authority (home page)",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Free Fares on all Fixed Routes!!",
+          "supports": "CCRTA fixed routes are fare-free."
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "url": "https://www.cranberries.org/faqs",
+      "publisher": "Cape Cod Cranberry Growers' Association",
+      "title": "FAQs",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "The cranberry harvest takes place once a year from mid-September through early November.",
+          "supports": "Cranberry harvest runs mid-September through early November."
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "url": "https://ccmnh.org/hours",
+      "publisher": "Cape Cod Museum of Natural History",
+      "title": "Hours",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Fall 2026 Hours: Wednesdays - Sundays 10am -3pm Last admission 2:30pm",
+          "supports": "CCMNH (Brewster) fall 2026 hours: Wednesday–Sunday 10 am–3 pm, last admission 2:30."
+        },
+        {
+          "quote": "CLOSED VETERANS DAY WEDNESDAY, NOVEMBER 11TH THANKSGIVING DAY THURSDAY, NOVEMBER 26TH",
+          "supports": "Closed Veterans Day (Wed Nov 11) and Thanksgiving (Thu Nov 26)."
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "url": "https://heritagemuseumsandgardens.org/",
+      "publisher": "Heritage Museums & Gardens",
+      "title": "Heritage Museums & Gardens (home page)",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Now closed for the main season. Visit us during Spooky Knights or Gardens Aglow!",
+          "supports": "Heritage is closed for its main season"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "url": "https://www.orleansfarmersmarket.org",
+      "publisher": "Orleans Farmers' Market",
+      "title": "Orleans Farmers' Market",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Every Saturday 9 am -12 pm May 2 to November 21 19 Old Colony Way Orleans, MA 02653",
+          "supports": "Outdoor market every Saturday 9 am–12 pm, May 2 to November 21, at 19 Old Colony Way, Orleans"
+        },
+        {
+          "quote": "December through April 10 am to noon We are Inside at 5 Namskaket Road Orleans, MA",
+          "supports": "December–April the market is indoors at 5 Namskaket Road, 10 am to noon"
+        },
+        {
+          "quote": "Our market is year round, operating 50 weeks a year, taking a break the week after Thanksgiving and Christmas.",
+          "supports": "Year-round market; break the week after Thanksgiving (so no market Sat Nov 28)"
+        },
+        {
+          "quote": "We are inside again this week 10/7/26 at 5 Namskaket Road, Orleans 9-12 due to the wet weather",
+          "supports": "market has moved inside to 5 Namskaket Road in wet weather this fall"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "url": "https://www.falmouthfarmersmarket.org/",
+      "publisher": "Falmouth Farmers Market",
+      "title": "Falmouth Farmers Market",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Every Sunday Aug 2 – Nov 15, 2026 10 AM – 1 PM",
+          "supports": "Sunday market at Mullen Hall School parking lot, 10 AM–1 PM, through November 15, 2026"
+        },
+        {
+          "quote": "market in the parking lot of Mullen Hall School with some of your favorite vendors.",
+          "supports": "Location: Mullen Hall School parking lot"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "url": "https://business.chathaminfo.com/events/details/veterans-day-observance-2026-32904",
+      "publisher": "Chatham Chamber of Commerce",
+      "title": "Veterans Day Observance 2026",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Chatham’s Veterans Day ceremony will be Wednesday, November 11th at 11:00 a.m. at the Community Center, 702 Main Street.",
+          "supports": "Wednesday Nov 11, 2026, 11:00 a.m., Chatham Community Center, 702 Main Street"
+        },
+        {
+          "quote": "The program will feature remarks by a distinguished veteran and Chatham resident Henry Holden.",
+          "supports": "Speaker: veteran and Chatham resident Henry Holden"
+        },
+        {
+          "quote": "Wednesday Nov 11, 2026",
+          "supports": "Date block"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "url": "https://capesymphony.org/orchestra/2026-27-season/music-from-west-side-story-and-the-americas",
+      "publisher": "Cape Symphony",
+      "title": "Music from West Side Story and the Americas",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Event dates: November 14 & 15, 2026 Showtimes: Sat 4:00 PM, Sun 3:00 PM",
+          "supports": "Nov 14 & 15, 2026; Sat 4:00 PM, Sun 3:00 PM"
+        },
+        {
+          "quote": "Location: Barnstable Performing Arts Center 744 West Main Street, Hyannis, MA 02601",
+          "supports": "Venue: Barnstable Performing Arts Center, 744 West Main Street, Hyannis"
+        },
+        {
+          "quote": "Ticketholders are invited to an entertaining and informative talk about the concert program given by Assistant Conductor Joe Marchio, beginning one hour before each performance.",
+          "supports": "Pre-concert talk one hour before each performance"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "url": "https://capesymphony.org/cape-symphony-presents/a-taste-of-jazz",
+      "publisher": "Cape Symphony",
+      "title": "A Taste of Jazz",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Event dates: November + December 2026 Showtimes: 5:30-8:00 PM",
+          "supports": "Friday & Saturday evenings Nov–Dec 2026, 5:30–8:00 PM"
+        },
+        {
+          "quote": "November 13 & 14 | Joe Mongelli Trio November 20 & 21 | Michael Junkins Duo November 27 & 28 | Yulia & Fernando",
+          "supports": "Remaining November lineup"
+        },
+        {
+          "quote": "twenty-eight Atlantic Wequassett Resort & Golf Club, 2173 Route 28, Harwich, MA",
+          "supports": "Venue: twenty-eight Atlantic, Wequassett Resort, Harwich"
+        },
+        {
+          "quote": "Advanced booking is strongly encouraged.",
+          "supports": "Reservations encouraged"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "url": "https://members.orleanscapecod.org/events/details/holly-berry-bazaar-11-14-2026-25600",
+      "publisher": "Orleans Chamber of Commerce",
+      "title": "Holly Berry Bazaar",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Stop by Nauset Regional Middle School on Saturday, November 14th, 2026, from 9:00 a.m. to 3:00 p.m. to kick off your holiday shopping.",
+          "supports": "Saturday, November 14, 2026, 9 a.m.–3 p.m., Nauset Regional Middle School, Orleans; free"
+        },
+        {
+          "quote": "Admission is free, and the community impact is priceless.",
+          "supports": "Admission free"
+        },
+        {
+          "quote": "Join us for the biennial Holly Berry Bazaar, the largest fundraiser of the year for the Cape Cod Hospital Auxiliary, Orleans Branch!",
+          "supports": "Benefits Cape Cod Hospital Auxiliary, Orleans Branch"
+        },
+        {
+          "quote": "Location Nauset Regional Middle School 70 MA - 28 Route 28/ South Orleans Road Orleans, MA 02653",
+          "supports": "bazaar location in Orleans"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "url": "https://caperep.org/show/the-hundred-aker-wood/",
+      "publisher": "Cape Repertory Theatre",
+      "title": "The Hundred Aker Wood",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "November 12, 2026 — December 13, 2026",
+          "supports": "run dates"
+        },
+        {
+          "quote": "Thursday - Saturday at 7:30 pm Sunday at 2:00 pm NEW THIS SEASON! Saturday Matinees 11/14, 11/21, 11/27, 11/28, 12/05 and 12/12 at 2:00 pm",
+          "supports": "show times; Saturday matinees incl. 11/14 and 11/21"
+        },
+        {
+          "quote": "Price: $45; $30 for 35 and under; $25 for 18 and under.",
+          "supports": "ticket prices"
+        },
+        {
+          "quote": "A World Premiere Musical by Macklin Devine, Paddo Devine, Seamus Devine and Maura Hanlon",
+          "supports": "world premiere; writers"
+        },
+        {
+          "quote": "When A.A. Milne wrote Winnie-the-Pooh and The House at Pooh Corner, he wrote them for adults as well as children.",
+          "supports": "adaptation of A.A. Milne's Winnie-the-Pooh stories"
+        },
+        {
+          "quote": "3299 Main Street, P.O. Box 1305, Brewster, MA 02631",
+          "supports": "Cape Rep Theatre is in Brewster"
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "url": "https://www.massaudubon.org/whc",
+      "publisher": "Mass Audubon, Wellfleet Bay Wildlife Sanctuary",
+      "title": "2026 State of Wellfleet Harbor Conference",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Special Event: Saturday, November 14 Doors open at 8:45 am. Conference: 9:15 am-1:00 pm",
+          "supports": "Saturday, November 14; doors 8:45 am, conference 9:15 am–1:00 pm"
+        },
+        {
+          "quote": "New location! Nauset Regional High School 100 Cable Rd, Eastham, MA",
+          "supports": "New location: Nauset Regional High School, 100 Cable Rd, Eastham"
+        },
+        {
+          "quote": "The 2026 State of Wellfleet Harbor Conference returns for its 24th year",
+          "supports": "24th year"
+        },
+        {
+          "quote": "Adult Members Free Adult Nonmembers Free",
+          "supports": "Free; registration recommended"
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "url": "https://ccmnh.org/events/in-the-whale-55503",
+      "publisher": "Cape Cod Museum of Natural History",
+      "title": "In the Whale",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Friday, November 13, 2026 5:30pm–9:30pm",
+          "supports": "Friday, November 13, 2026, 5:30–9:30 pm; $50 per person, non-refundable"
+        },
+        {
+          "quote": "Per Person: $50 Tickets are non-refundable",
+          "supports": "Price"
+        },
+        {
+          "quote": "Step inside a gigantic reconstruction of a Humpback. Discover life underwater with an exclusive guided tour of our aquarium.",
+          "supports": "What it is"
+        },
+        {
+          "quote": "Watch the award-winning documentary about Michael Packard’s incredible tale, with an in-person intro and Q&A by its director David Abel.",
+          "supports": "Documentary with director intro/Q&A"
+        },
+        {
+          "quote": "869 Main Street (Route 6A) Brewster, MA 02631",
+          "supports": "museum is in Brewster"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "url": "https://capecodmaritimemuseum.org/events-and-lectures",
+      "publisher": "Cape Cod Maritime Museum",
+      "title": "Events and Lectures",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "HISTORY ON TAP: RESTORING CRANBERRY BOGS TO NATURAL CONDITIONS Thursday, November 12, 2026 5:00 PM 6:30 PM Cape Cod Maritime Museum",
+          "supports": "Thu Nov 12, 2026, 5–6:30 PM: Restoring Cranberry Bogs to Natural Conditions"
+        },
+        {
+          "quote": "HISTORY ON TAP: A Look Back at the Cape Cod Canal’s Bridges Thursday, November 19, 2026 5:00 PM 6:30 PM Cape Cod Maritime Museum",
+          "supports": "Thu Nov 19, 2026, 5–6:30 PM: A Look Back at the Cape Cod Canal's Bridges"
+        },
+        {
+          "quote": "Come early to grab a drink and enjoy views of the beautiful Hyannis Inner harbor before the talk begins.",
+          "supports": "talks are at the museum on Hyannis Inner Harbor"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "url": "https://ptownchamber.com/events/thanksgiving-weekend-2/",
+      "publisher": "Provincetown Chamber of Commerce",
+      "title": "Thanksgiving Weekend",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "On Thursday most businesses are closed but some restaurants are open and offering special Thanksgiving menus. Friday, Saturday and Sunday shops, galleries, restaurants are open, welcoming all visitors and locals with special sales.",
+          "supports": "Thursday most businesses closed; Fri–Sun shops open with sales"
+        },
+        {
+          "quote": "Thanksgiving Holiday starts on Wednesday evening with Lighting of the Pilgrim Monument community celebration.",
+          "supports": "holiday starts Wednesday evening with the Pilgrim Monument lighting"
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "url": "https://runsignup.com/Race/MA/Chatham/ChathamTurkeyTrot",
+      "publisher": "Chatham Turkey Trot (RunSignup)",
+      "title": "Chatham, MA Turkey Trot 2026 Run/Walk",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "The Chatham, MA Turkey Trot 2026 Run/Walk is on Thursday November 26, 2026.",
+          "supports": "Date"
+        },
+        {
+          "quote": "Oyster Pond Parking Lot 80 Stage Harbor Rd. Chatham, MA US 02633",
+          "supports": "Start location: Oyster Pond parking lot, 80 Stage Harbor Rd, Chatham"
+        },
+        {
+          "quote": "80 Stage Harbor Rd, Chatham, Thursday November 26th starting at 7am.",
+          "supports": "Day-of pickup from 7am"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "url": "https://runsignup.com/Race/Events/MA/Chatham/ChathamTurkeyTrot",
+      "publisher": "Chatham Turkey Trot (RunSignup)",
+      "title": "Chatham, MA Turkey Trot 2026 Run/Walk: Events",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "5K Run / Walk",
+          "supports": "Thanksgiving Day, Thu Nov 26, 2026, 5K run/walk, start 8:00 am"
+        },
+        {
+          "quote": "Start Time: 8:00am EST",
+          "supports": "Start time"
+        },
+        {
+          "quote": "Registration is $45/person between November 7th and November 26th",
+          "supports": "Fee $45 after Nov 7 (plus signup fee)"
+        },
+        {
+          "quote": "The Chatham Turkey Trot is a family-friendly fun Thanksgiving morning run or walk over 3.1 miles of winding and rolling paved roads with breathtaking scenery in Chatham, Massachusetts, to benefit the Lower Cape Outreach Council.",
+          "supports": "Benefits Lower Cape Outreach Council (og:description)"
+        },
+        {
+          "quote": "Price: $48.70 incl. $3.70 Fee",
+          "supports": "online price $48.70 including a $3.70 fee"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "url": "https://raceroster.com/139384",
+      "publisher": "South Shore Race Management (Race Roster)",
+      "title": "2026 Thanksgiving Sandwich 5K",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Thu, November 26, 2026 8:00 AM EST",
+          "supports": "Thu Nov 26, 2026, 8:00 AM, 65 Route 6A, Sandwich (Stop & Shop Plaza)"
+        },
+        {
+          "quote": "Thursday, November 26th from 6:30am - 7:45am at the Stop & Shop Plaza, 65 Route 6A, Sandwich, MA",
+          "supports": "Location"
+        },
+        {
+          "quote": "Online registration closes on Thursday, November 26th at 6:30am.",
+          "supports": "Fee $28.25 (Nov 5–26); online registration only, closes 6:30am race day"
+        },
+        {
+          "quote": "Race proceeds benefit the Sandwich and Bourne food pantries as well as the Cape Cod Military Support Foundation.",
+          "supports": "Beneficiaries; walkers welcome; no dogs"
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "url": "https://ptownchamber.com/events/pink-friday/",
+      "publisher": "Provincetown Chamber of Commerce",
+      "title": "Pink Friday",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Friday, November 27, 2026",
+          "supports": "Friday, November 27, 2026"
+        },
+        {
+          "quote": "No big malls, no big brands stores here, just little stores and galleries with amazing collection of beautiful merchandise, famous Provincetown art and on of the kind work by local artisans.",
+          "supports": "What it is: small-shop/gallery shopping day on Commercial Street"
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "url": "https://www.mass.gov/news/north-atlantic-right-whales-in-coastal-massachusetts-the-20252026-season",
+      "publisher": "Mass.gov (Massachusetts Division of Marine Fisheries)",
+      "title": "North Atlantic Right Whales in Coastal Massachusetts: the 2025/2026 Season (July 1, 2026)",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "7/01/2026 Division of Marine Fisheries North Atlantic right whales have been known to aggregate in high numbers in Cape Cod Bay in the early spring for centuries.",
+          "supports": "July 2026 season report; right whales have gathered in Cape Cod Bay in high numbers in early spring for centuries"
+        },
+        {
+          "quote": "This past season, the first aerial survey occurred on November 3, 2025",
+          "supports": "last season's first survey flight was November 3, 2025"
+        },
+        {
+          "quote": "on October 26, 2025, the first right whale sighting was reported from Race Point Beach by a member of the public",
+          "supports": "first right whale of last season reported from Race Point Beach by a member of the public, October 26, 2025"
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "url": "https://www.massaudubon.org/places-to-explore/wildlife-sanctuaries/wellfleet-bay/projects/sea-turtles",
+      "publisher": "Mass Audubon, Wellfleet Bay Wildlife Sanctuary",
+      "title": "Protecting Sea Turtles on Cape Cod",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "As the water continues to cool, turtles become lethargic and hypothermic, in a condition called “cold-stunned,” and they are unable to swim or eat. Onshore winds wash them onto beaches, mostly along the shore of Cape Cod Bay.",
+          "supports": "\"cold-stunned,\" unable to swim or eat; onshore winds strand them, mostly along Cape Cod Bay"
+        },
+        {
+          "quote": "Cold-stunned sea turtle strandings mainly take place from November to mid-January, beginning when the ocean temperatures fall below 55° F. Most of them are juvenile Kemp’s ridleys, the smallest and rarest of the sea turtles",
+          "supports": "November to mid-January, starting below 55°F; mostly juvenile Kemp's ridleys, the smallest and rarest"
+        },
+        {
+          "quote": "Mark it with an obvious piece of debris like buoys, or driftwood, or draw a big arrow in the sand. Call the Wellfleet Bay hotline at 508-349-2615, Option 2, to receive further instructions.",
+          "supports": "mark the spot; call the Wellfleet Bay hotline, 508-349-2615, option 2"
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "url": "https://ptownchamber.com/events/the-canteen-holiday-market-2/",
+      "publisher": "Provincetown Chamber of Commerce",
+      "title": "The Canteen Holiday Market",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Friday-Thursday, November 27, 2026-December 31, 2026 Starting the day after Thanksgiving and running every weekend to New Years",
+          "supports": "Weekends from the day after Thanksgiving to New Year's"
+        },
+        {
+          "quote": "the Canteen transforms into a magical, cozy place to gather, enjoy holiday foods and drinks, and buy handcrafted goods from local artisans.",
+          "supports": "What it is"
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "url": "https://www.adifferentdrummercraft.com",
+      "publisher": "A Different Drummer",
+      "title": "A Different Drummer Craft Events",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "And the final fair in 2026 is coming up! November 14 - 4th Holiday Craft Fair Monomoy Regional High School Harwich",
+          "supports": "Saturday Nov 14, 2026, Monomoy Regional High School, Harwich"
+        },
+        {
+          "quote": "Monomoy Regional High School 75 Oak St ~ Harwich, MA The 4th Annual Holiday Craft Fair is held in the gym and now expanding into the cafeteria to make over 60 booths for this fair.",
+          "supports": "Address; 60+ booths in gym and cafeteria"
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "url": "https://www.cultural-center.org/small-wonders",
+      "publisher": "Cultural Center of Cape Cod",
+      "title": "Small Wonders 2026",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "The show will fill our Great Hall from November 18-December 19.",
+          "supports": "Exhibit Nov 18 – Dec 19, Great Hall"
+        },
+        {
+          "quote": "Opening reception: Friday, November 20, 5-7pm.",
+          "supports": "Opening reception Friday Nov 20, 5–7pm"
+        },
+        {
+          "quote": "a juried show of art that's reasonably priced and measures no more than 12\" on any side (though the frame may extend beyond that).",
+          "supports": "small works, no more than 12 inches on a side, not counting the frame"
+        },
+        {
+          "quote": "Visit: 307 Old Main Street, South Yarmouth",
+          "supports": "Cultural Center of Cape Cod is in South Yarmouth"
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "url": "https://heritagemuseumsandgardens.org/gardens-aglow-faq/",
+      "publisher": "Heritage Museums & Gardens",
+      "title": "Gardens Aglow FAQ",
+      "checked": "2026-11-10",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Gardens Aglow takes place from 4:30-8:30 pm on the following dates: Friday, November 27 Saturday, November 28 Sunday, November 29",
+          "supports": "Gardens Aglow 4:30-8:30 PM starting Friday, November 27"
+        }
+      ]
+    }
+  ],
+  "gaps": []
+}

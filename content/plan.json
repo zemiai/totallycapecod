@@ -33,7 +33,7 @@
       "keywords": ["cape cod in november", "things to do in cape cod in november", "cape cod in november weather", "cape cod in early november", "is november a good time to visit cape cod"],
       "window": {"from": "10-20", "to": "11-24"},
       "priority": 10,
-      "status": "queued",
+      "status": "published", "published": "2026-11-10",
       "brief": "Practical November guide: typical weather (NOAA/NWS normals for Hyannis or Chatham), what's seasonal vs year-round (lifeguards, beach fees, ferries, whale watches), confirmed November 2026 events with organizers, farmers markets, Thanksgiving weekend, early holiday events. Link to /guides/cape-cod-holiday-events-2026/.",
       "seed_urls": ["https://www.mass.gov/news/north-atlantic-right-whales-in-coastal-massachusetts-the-20252026-season"],
       "data": ["events"],
