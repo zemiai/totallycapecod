@@ -3,6 +3,15 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<!-- Desktop visitors to the bare homepage get the full-width site at /welcome. Phones, installed apps,
+     /app/ and deep links (?tab=…, #…) keep the app. ?app=1 forces the app on desktop. -->
+<script>
+(function(){try{
+  if(location.pathname!=='/'||location.hash||/[?&](app=1|tab=)/.test(location.search))return;
+  if(navigator.standalone||matchMedia('(display-mode: standalone)').matches)return;
+  if(matchMedia('(min-width:1024px) and (hover:hover) and (pointer:fine)').matches)location.replace('/welcome'+location.search);
+}catch(e){}})();
+</script>
 <meta name="theme-color" content="#1A3A6C" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />

@@ -299,6 +299,80 @@
 
 <div class="wave-divider"></div>
 
+<!-- Right now: live readings from the same data files the app uses. Nothing is shown without its source and check time. -->
+<section class="section page-wrap rn-section" id="right-now" style="padding-top: 8px;">
+  <div class="section-header">
+    <div class="section-label">Right now</div>
+    <h2 class="section-title">Cape Cod at a glance</h2>
+    <p class="section-subtitle">Current bridge delays, water temperature, tides and sunset, each with its source and the time it was checked.</p>
+  </div>
+  <div class="rn-grid" id="rnGrid">
+    <div class="rn-card"><div class="rn-label">Loading current readings…</div></div>
+  </div>
+</section>
+<style>
+  @media (min-width:1024px){.hero{min-height:0;padding-top:150px;}}
+  .rn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  @media (max-width:1100px){.rn-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:560px){.rn-grid{grid-template-columns:1fr;}}
+  .rn-card{background:var(--card);border:1px solid var(--divider);border-radius:var(--radius-md);box-shadow:var(--shadow-sm);padding:22px;display:flex;flex-direction:column;gap:6px;text-decoration:none;color:var(--text);}
+  a.rn-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);transition:all .15s ease;}
+  .rn-label{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);}
+  .rn-big{font-family:'Fraunces',Georgia,serif;font-weight:900;font-size:34px;line-height:1.1;color:var(--cape-navy);}
+  .rn-big.moderate{color:#B7791F;} .rn-big.heavy{color:#C0392B;}
+  .rn-sub{font-size:14px;line-height:1.5;color:var(--text);}
+  .rn-src{font-size:12px;line-height:1.45;color:var(--text-secondary);margin-top:auto;padding-top:8px;}
+  .rn-more{font-size:13px;font-weight:700;color:var(--sea-deep);}
+  .rn-note{grid-column:1/-1;font-size:13px;color:var(--text-secondary);margin:0;}
+  .guide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  @media (max-width:1024px){.guide-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:640px){.guide-grid{grid-template-columns:1fr;}}
+</style>
+<script>
+(function(){
+  var RAW='https://raw.githubusercontent.com/zemiai/totallycapecod/main/data/';
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function when(iso){var d=new Date(iso);if(isNaN(d))return 'time unknown';return d.toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});}
+  function day(ymd){var d=new Date(ymd+'T12:00:00');if(isNaN(d))return esc(ymd);return d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});}
+  function get(f){return fetch(RAW+f).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).catch(function(){return null;});}
+  function bridge(b,checked){
+    if(!b||b.current_delay_min==null)return '';
+    var m=b.current_delay_min,cls=m>=20?'heavy':(m>=8?'moderate':'');
+    return '<a class="rn-card" href="/cape-cod-bridge-traffic.html"><div class="rn-label">🌉 '+esc(b.name||'Bridge')+'</div>'+
+      '<div class="rn-big '+cls+'">'+(m===0?'No added delay':esc(m)+' min delay')+'</div>'+
+      '<div class="rn-sub">Leaving the Cape'+(b.live_speed_mph!=null?' · '+esc(b.live_speed_mph)+' mph on the measured stretch':'')+'</div>'+
+      '<div class="rn-src">Source: Google Maps traffic · checked '+checked+'</div><div class="rn-more">Bridge traffic →</div></a>';
+  }
+  Promise.all([get('bridges.json'),get('conditions.json')]).then(function(r){
+    var br=r[0],co=r[1],h='';
+    if(br&&br.current){
+      var checked=br.updated_at?when(br.updated_at):'time unknown';
+      if(br.updated_at&&(Date.now()-new Date(br.updated_at).getTime())>3*3600000)
+        h+='<p class="rn-note"><strong>The bridge reading is more than 3 hours old</strong>, so check a live traffic map before you go.</p>';
+      h+=bridge(br.current.sagamore,checked)+bridge(br.current.bourne,checked);
+    }
+    var t=co&&co.today;
+    if(t){
+      var cchk=co.updated_at?when(co.updated_at):'time unknown',d=t.date?day(t.date):'';
+      var tides=(t.tides||[]).map(function(x){return esc(x.type==='high'?'High':'Low')+' '+esc(x.time);}).join(' · ');
+      h+='<a class="rn-card" href="/cape-cod-water-temperature-today.html"><div class="rn-label">🌊 Water &amp; tides'+(d?' · '+d:'')+'</div>'+
+        (t.water_temp_f!=null?'<div class="rn-big">'+esc(t.water_temp_f)+'°F</div><div class="rn-sub">Water temperature'+(t.water_temp_source?', '+esc(t.water_temp_source):'')+'</div>':'')+
+        (tides?'<div class="rn-sub">'+tides+'</div>':'')+
+        '<div class="rn-src">'+(t.tides_source?'Tides: '+esc(t.tides_source)+' · ':'')+'checked '+cchk+'</div><div class="rn-more">Water temperatures →</div></a>';
+      var w=t.weather||{},s=t.sun||{};
+      h+='<a class="rn-card" href="/app/"><div class="rn-label">☀️ Weather &amp; sun'+(d?' · '+d:'')+'</div>'+
+        (w.temp_high!=null?'<div class="rn-big">'+esc(w.temp_high)+'° / '+esc(w.temp_low)+'°</div><div class="rn-sub">'+esc(w.condition||'')+(w.wind_mph!=null?' · wind '+esc(w.wind_dir||'')+' '+esc(w.wind_mph)+' mph':'')+'</div>':'')+
+        (s.sunset?'<div class="rn-sub">Sunrise '+esc(s.sunrise)+' · Sunset '+esc(s.sunset)+'</div>':'')+
+        '<div class="rn-src">'+(t.weather_source?'Weather: '+esc(t.weather_source):'')+(s.source?' · Sun: '+esc(s.source):'')+' · checked '+cchk+'</div><div class="rn-more">More in the app →</div></a>';
+    }
+    var g=document.getElementById('rnGrid');
+    if(h)g.innerHTML=h;else document.getElementById('right-now').style.display='none';
+  });
+})();
+</script>
+
+<div class="wave-divider"></div>
+
 <!-- Outcome-first value band: understand the value in 5 seconds, then one clear action -->
 <section class="section page-wrap" style="padding-top: 16px;">
   <div class="section-header">
@@ -442,7 +516,14 @@
     <p class="section-subtitle">Beaches, events and wildlife, with the rules and details that matter. New guides are checked line by line against their sources.</p>
   </div>
 
-  <div class="grid-2">
+  <div class="guide-grid">
+    <a href="/guides/cape-cod-in-november/" class="card" style="text-decoration: none;" onclick="gtag('event','click',{event_category:'seo',event_label:'november_guide'})">
+      <div style="padding: 28px;">
+        <div style="font-size: 32px; margin-bottom: 12px;">🍂</div>
+        <h3 style="font-family: 'Fraunces', serif; font-weight: 900; font-size: 22px; margin: 0 0 8px; color: var(--warm-brown);">Cape Cod in November 2026</h3>
+        <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin: 0;">NOAA weather normals, sunset times, which ferries and buses still run, and confirmed events through Thanksgiving weekend.</p>
+      </div>
+    </a>
     <a href="/best-beaches-2026.html" class="card" style="text-decoration: none;" onclick="gtag('event','click',{event_category:'seo',event_label:'best_beaches'})">
       <div style="padding: 28px;">
         <div style="font-size: 32px; margin-bottom: 12px;">🏝️</div>
@@ -469,6 +550,13 @@
         <div style="font-size: 32px; margin-bottom: 12px;">🐋</div>
         <h3 style="font-family: 'Fraunces', serif; font-weight: 900; font-size: 22px; margin: 0 0 8px; color: var(--warm-brown);">Whales &amp; Seals in Winter</h3>
         <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin: 0;">When right whales visit Cape Cod Bay, where to see seals, how close you can legally get, and who to call for a stranded animal.</p>
+      </div>
+    </a>
+    <a href="/guides/" class="card" style="text-decoration: none;" onclick="gtag('event','click',{event_category:'seo',event_label:'all_guides'})">
+      <div style="padding: 28px;">
+        <div style="font-size: 32px; margin-bottom: 12px;">📚</div>
+        <h3 style="font-family: 'Fraunces', serif; font-weight: 900; font-size: 22px; margin: 0 0 8px; color: var(--warm-brown);">All guides →</h3>
+        <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin: 0;">Every guide lists its sources and shows the passages we checked it against.</p>
       </div>
     </a>
   </div>
