@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-11-10T17:17:10Z",
+  "updated_at": "2026-11-11T01:28:18Z",
   "window_days": 45,
   "count": 158,
   "_hermes_note": "Real Cape Cod events scraped from chambers + venues. update_events.py",
@@ -76,24 +76,6 @@
       "credit": "Brewster Chamber of Commerce",
       "source_url": "https://members.brewster-capecod.com/events/details/brewster-ladies-library-a-reading-by-the-john-hay-studio-writers-11-10-2026-9600",
       "start": "2026-11-10T00:00:00+00:00"
-    },
-    {
-      "id": "circus-classes-open-skills-for-ages-7-12-20261110",
-      "tag": "\ud83d\udcc5 EVENT",
-      "category": "event",
-      "time": "Tue Nov 10 \u00b7 4:15 PM",
-      "title": "Circus Classes // Open Skills for Ages 7\u201312",
-      "venue": "Truro Central School (off Rte. 6)",
-      "town": "Truro",
-      "info": "",
-      "price": "",
-      "lat": 41.9979,
-      "lng": -70.0492,
-      "img": "https://payomet.org/wp-content/uploads/2026/10/Circus-Classes_Open-Skills-for-Ages-7\u201312.webp",
-      "source": "Payomet",
-      "credit": "Payomet Performing Arts Center",
-      "source_url": "https://payomet.org/calendar/circus-classes-open-skills-for-ages-7-12-9/",
-      "start": "2026-11-10T16:15:00-05:00"
     },
     {
       "id": "brewster-ladies-library-virtual-speaker-series-how-money-bec",
@@ -1173,6 +1155,24 @@
       "source": "Yarmouth",
       "credit": "Yarmouth Chamber of Commerce",
       "source_url": "https://www.thacherhall.org/event-details/candlelight-music",
+      "start": "2026-11-20T00:00:00+00:00"
+    },
+    {
+      "id": "view-details-20261120",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Fri Nov 20",
+      "title": "View Details",
+      "venue": "",
+      "town": "Bourne",
+      "info": "",
+      "price": "",
+      "lat": 41.7412,
+      "lng": -70.599,
+      "img": null,
+      "source": "Bourne",
+      "credit": "Cape Cod Canal Region Chamber of Commerce",
+      "source_url": "https://web.capecodcanalchamber.org/atlas/events/ribbon-cutting-salt-ivy-boutique-1727/details",
       "start": "2026-11-20T00:00:00+00:00"
     },
     {
