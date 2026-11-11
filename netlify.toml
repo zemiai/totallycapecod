@@ -38,6 +38,12 @@
 [functions."trigger-beaches"]
   schedule = "*/30 * * * *"
 
+# Same idea for bridge traffic: GitHub ran the hourly bridges workflow only 3–5 times a day
+# (Nov 2026). Dispatch it hourly, 6 AM–11 PM ET (10:47–03:47 UTC), offset from the workflow's
+# own :17 cron. No-ops if GH_DISPATCH_TOKEN isn't set.
+[functions."trigger-bridges"]
+  schedule = "47 10-23,0-3 * * *"
+
 # Long-cache for the heavy assets, short-cache for HTML + JSON so updates appear fast.
 [[headers]]
   for = "/data/*.json"

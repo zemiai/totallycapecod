@@ -210,7 +210,7 @@ def md_to_html(md: str, slug: str) -> str:
 
 NAV = ('<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a>'
        '<div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a>'
-       '<a href="/events">Events</a><a href="/guides/">Guides</a><a href="/app/">📱 App</a></div>'
+       '<a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/app/">📱 App</a></div>'
        '<button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button></div></nav>'
        '<div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()">'
        '<a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/app/">📱 Open the App</a></div></div>')
@@ -272,6 +272,14 @@ STYLE = """
   .live-events-embed .section{padding:10px 0;}
   .live-events-embed .section-title{font-size:18px;margin:8px 0;}
   @media(max-width:600px){.g-wrap{padding-top:84px;}.g-body{font-size:16px;}}
+  .g-toc{display:none;}
+  @media(min-width:1260px){
+    .g-toc{display:block;position:fixed;top:110px;left:calc(50% + 410px);width:210px;max-height:calc(100vh - 140px);overflow-y:auto;font-size:13.5px;line-height:1.4;border-left:2px solid var(--divider);padding-left:16px;}
+    .g-toc-h{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:10px;}
+    .g-toc a{display:block;color:var(--text-secondary);text-decoration:none;padding:5px 0;}
+    .g-toc a:hover{color:var(--warm-brown);}
+    .g-body h2,.g-faq,.g-sources{scroll-margin-top:84px;}
+  }
 </style>
 """
 
@@ -345,6 +353,15 @@ def render_article(meta: dict, body: str, authors: dict, all_articles: list) -> 
     url = f"{SITE}/guides/{slug}/"
     a = authors[meta["author"]]
     body_html = md_to_html(body, slug)
+    # Desktop "On this page" sidebar, built from the article's H2s (ids come from the toc extension).
+    heads = re.findall(r'<h2 id="([^"]+)">(.*?)</h2>', body_html, flags=re.S)
+    toc_html = ""
+    if len(heads) >= 3:
+        links = "".join(f'<a href="#{hid}">{re.sub(r"<[^>]+>", "", txt)}</a>' for hid, txt in heads)
+        if meta.get("faq"):
+            links += '<a href="#quick-answers">Quick answers</a>'
+        links += '<a href="#sources">Sources</a>'
+        toc_html = f'<nav class="g-toc" aria-label="On this page"><div class="g-toc-h">On this page</div>{links}</nav>'
     sources = sorted(meta.get("sources") or [], key=lambda s: s["id"])
     faq = meta.get("faq") or []
 
@@ -377,7 +394,7 @@ def render_article(meta: dict, body: str, authors: dict, all_articles: list) -> 
     faq_html = ""
     if faq:
         items = "".join(f'<details><summary>{esc(q["q"])}</summary><p>{cite_html(markdown.markdown(q["a"])[3:-4], slug)}</p></details>' for q in faq)
-        faq_html = f'<section class="g-faq"><h2 class="g-title" style="font-size:26px;">Quick answers</h2>{items}</section>'
+        faq_html = f'<section class="g-faq" id="quick-answers"><h2 class="g-title" style="font-size:26px;">Quick answers</h2>{items}</section>'
     ev_by_id = {e.get("id"): e for e in (load_evidence(slug).get("sources") or [])}
 
     def src_extra(s: dict) -> str:
@@ -408,7 +425,7 @@ def render_article(meta: dict, body: str, authors: dict, all_articles: list) -> 
     scripts = '<script src="/js/live-events.js" defer></script>' if needs_events else ""
 
     return (head(f'{meta.get("seo_title") or meta["title"]} | Totally Cape Cod', meta["description"], url, ld)
-            + f"""<main class="g-wrap">
+            + f"""{toc_html}<main class="g-wrap">
 <div class="g-crumbs"><a href="/">Home</a> › <a href="/guides/">Guides</a></div>
 <div class="g-kicker">{esc(meta.get("kicker") or "Guide")}</div>
 <h1 class="g-title">{esc(meta["title"])}</h1>
@@ -419,7 +436,7 @@ def render_article(meta: dict, body: str, authors: dict, all_articles: list) -> 
 </article>
 {faq_html}
 <div class="g-note">📝 {esc(disclosure)} Spot something out of date? <a href="/contact.html">Tell us</a> and we'll fix it.</div>
-<section class="g-sources"><h2>Sources</h2><ol>{src_items}</ol></section>
+<section class="g-sources" id="sources"><h2>Sources</h2><ol>{src_items}</ol></section>
 {related_html}
 </main>
 {FOOTER}

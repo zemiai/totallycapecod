@@ -635,7 +635,10 @@ a:hover { text-decoration: underline; }
   color: var(--warm-brown);
 }
 
-@media (max-width: 768px) {
+.nav-links a { white-space: nowrap; }
+@media (max-width: 1100px) { .nav-links { gap: 18px; } }
+/* Eight links don't fit below ~940px, so tablets get the menu button too. */
+@media (max-width: 940px) {
   .nav-links { display: none; }
   .nav-mobile-toggle { display: block; }
 }
