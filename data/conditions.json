@@ -2,11 +2,11 @@
   "today": {
     "date": "2026-11-12",
     "weather": {
-      "temp_high": 56,
-      "temp_low": 42,
+      "temp_high": 54,
+      "temp_low": 45,
       "condition": "Rain",
       "icon": "\ud83c\udf27\ufe0f",
-      "wind_mph": 8,
+      "wind_mph": 14,
       "wind_dir": "E"
     },
     "sun": {
@@ -46,10 +46,10 @@
     {
       "date": "2026-11-12",
       "day": "Thu",
-      "temp_high": 56,
+      "temp_high": 54,
       "condition": "Rain",
       "icon": "\ud83c\udf27\ufe0f",
-      "temp_low": 42,
+      "temp_low": 45,
       "sunrise": "6:26 AM",
       "sunset": "4:22 PM",
       "low_tide": "7:48 AM",
@@ -58,10 +58,10 @@
     {
       "date": "2026-11-13",
       "day": "Fri",
-      "temp_high": 52,
+      "temp_high": 51,
       "condition": "Rain",
       "icon": "\ud83c\udf27\ufe0f",
-      "temp_low": 37,
+      "temp_low": 42,
       "sunrise": "6:27 AM",
       "sunset": "4:21 PM",
       "low_tide": "8:27 AM",
@@ -70,10 +70,10 @@
     {
       "date": "2026-11-14",
       "day": "Sat",
-      "temp_high": 51,
+      "temp_high": 46,
       "condition": "Rain",
       "icon": "\ud83c\udf27\ufe0f",
-      "temp_low": 38,
+      "temp_low": 39,
       "sunrise": "6:28 AM",
       "sunset": "4:20 PM",
       "low_tide": "9:08 AM",
@@ -106,10 +106,10 @@
     {
       "date": "2026-11-17",
       "day": "Tue",
-      "temp_high": 51,
+      "temp_high": 52,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "temp_low": 39,
+      "temp_low": 42,
       "sunrise": "6:32 AM",
       "sunset": "4:18 PM",
       "low_tide": "11:36 AM",
@@ -118,10 +118,10 @@
     {
       "date": "2026-11-18",
       "day": "Wed",
-      "temp_high": 53,
+      "temp_high": 55,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "temp_low": 41,
+      "temp_low": 45,
       "sunrise": "6:33 AM",
       "sunset": "4:17 PM",
       "low_tide": "12:22 AM",
@@ -129,5 +129,5 @@
     }
   ],
   "version": "1.0",
-  "updated_at": "2026-11-12T13:41:18Z"
+  "updated_at": "2026-11-12T21:26:54Z"
 }
