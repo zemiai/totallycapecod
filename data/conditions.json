@@ -1,67 +1,55 @@
 {
   "today": {
-    "date": "2026-11-11",
+    "date": "2026-11-12",
     "weather": {
       "temp_high": 56,
-      "temp_low": 40,
-      "condition": "Sunny",
-      "icon": "\u2600\ufe0f",
-      "wind_mph": 5,
-      "wind_dir": "NW"
+      "temp_low": 42,
+      "condition": "Rain",
+      "icon": "\ud83c\udf27\ufe0f",
+      "wind_mph": 8,
+      "wind_dir": "E"
     },
     "sun": {
-      "sunrise": "6:24 AM",
-      "sunset": "4:23 PM",
+      "sunrise": "6:26 AM",
+      "sunset": "4:22 PM",
       "civil_twilight_end": "4:52 PM",
       "source": "sunrise-sunset.org"
     },
     "tides": [
       {
-        "time": "1:00 AM",
+        "time": "1:43 AM",
         "type": "high",
-        "height_ft": 4.8
+        "height_ft": 4.6
       },
       {
-        "time": "7:09 AM",
+        "time": "7:48 AM",
         "type": "low",
-        "height_ft": 0.5
+        "height_ft": 0.6
       },
       {
-        "time": "12:56 PM",
+        "time": "1:35 PM",
         "type": "high",
-        "height_ft": 5.7
+        "height_ft": 5.5
       },
       {
-        "time": "8:02 PM",
+        "time": "8:43 PM",
         "type": "low",
-        "height_ft": -0.1
+        "height_ft": -0.0
       }
     ],
     "tides_source": "NOAA Tides & Currents, Chatham station 8447435",
-    "water_temp_f": 56,
+    "water_temp_f": 55,
     "water_temp_source": "Cape Cod Bay buoy (NDBC 44090)",
     "weather_source": "National Weather Service (api.weather.gov)"
   },
   "forecast_7day": [
-    {
-      "date": "2026-11-11",
-      "day": "Wed",
-      "temp_high": 56,
-      "condition": "Sunny",
-      "icon": "\u2600\ufe0f",
-      "temp_low": 40,
-      "sunrise": "6:24 AM",
-      "sunset": "4:23 PM",
-      "low_tide": "7:09 AM",
-      "high_tide": "1:00 AM"
-    },
     {
       "date": "2026-11-12",
       "day": "Thu",
       "temp_high": 56,
       "condition": "Rain",
       "icon": "\ud83c\udf27\ufe0f",
-      "temp_low": 48,
+      "temp_low": 42,
       "sunrise": "6:26 AM",
       "sunset": "4:22 PM",
       "low_tide": "7:48 AM",
@@ -70,10 +58,10 @@
     {
       "date": "2026-11-13",
       "day": "Fri",
-      "temp_high": 50,
+      "temp_high": 52,
       "condition": "Rain",
       "icon": "\ud83c\udf27\ufe0f",
-      "temp_low": 41,
+      "temp_low": 37,
       "sunrise": "6:27 AM",
       "sunset": "4:21 PM",
       "low_tide": "8:27 AM",
@@ -85,7 +73,7 @@
       "temp_high": 51,
       "condition": "Rain",
       "icon": "\ud83c\udf27\ufe0f",
-      "temp_low": 40,
+      "temp_low": 38,
       "sunrise": "6:28 AM",
       "sunset": "4:20 PM",
       "low_tide": "9:08 AM",
@@ -97,7 +85,7 @@
       "temp_high": 51,
       "condition": "Rain",
       "icon": "\ud83c\udf27\ufe0f",
-      "temp_low": 40,
+      "temp_low": 41,
       "sunrise": "6:29 AM",
       "sunset": "4:19 PM",
       "low_tide": "9:52 AM",
@@ -121,13 +109,25 @@
       "temp_high": 51,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "temp_low": 40,
+      "temp_low": 39,
       "sunrise": "6:32 AM",
       "sunset": "4:18 PM",
       "low_tide": "11:36 AM",
       "high_tide": "5:33 AM"
+    },
+    {
+      "date": "2026-11-18",
+      "day": "Wed",
+      "temp_high": 53,
+      "condition": "Sunny",
+      "icon": "\u2600\ufe0f",
+      "temp_low": 41,
+      "sunrise": "6:33 AM",
+      "sunset": "4:17 PM",
+      "low_tide": "12:22 AM",
+      "high_tide": "6:22 AM"
     }
   ],
   "version": "1.0",
-  "updated_at": "2026-11-11T21:18:36Z"
+  "updated_at": "2026-11-12T13:41:18Z"
 }
