@@ -1,0 +1,434 @@
+{
+ "slug": "sagamore-bourne-bridge-traffic-best-times",
+ "article_updated": "2026-11-13",
+ "saved": "2026-11-13",
+ "about": "Verbatim excerpts from every source this guide cites, saved so each fact can be traced and re-checked. Excerpts are short; see each URL (and its archived copy, when added) for full context.",
+ "sources": [
+  {
+   "id": 1,
+   "url": "https://www.mass.gov/info-details/about-the-cape-cod-bridges",
+   "publisher": "Massachusetts Department of Transportation (Mass.gov)",
+   "title": "About the Cape Cod Bridges",
+   "checked": "2026-11-13",
+   "via": "live page",
+   "archived": null,
+   "excerpts": [
+    {
+     "quote": "These bridges are currently owned, operated, and maintained by the USACE.",
+     "supports": "USACE owns, operates and maintains both bridges"
+    },
+    {
+     "quote": "Currently, the roadways of both bridges consist of two lanes in each direction with a sidewalk on one side.",
+     "supports": "Two travel lanes in each direction on each bridge"
+    },
+    {
+     "quote": "Traffic delays are prevalent during the summer with frequent traffic backups.",
+     "supports": "Summer delays and backups"
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "url": "https://www.mass.gov/doc/cape-cod-bridges-feis-chapter-1-introduction/download",
+   "publisher": "Massachusetts Department of Transportation (Mass.gov)",
+   "title": "Cape Cod Bridges Program Final Environmental Impact Statement, Chapter 1: Introduction",
+   "checked": "2026-11-13",
+   "via": "PDF",
+   "archived": null,
+   "excerpts": [
+    {
+     "quote": "Sagamore Bridge is 1,408 feet long with three spans, carrying U.S. Route 6 across Cape Cod Canal",
+     "supports": "Sagamore length and route"
+    },
+    {
+     "quote": "Bourne Bridge is 2,384 feet long with seven spans, carrying State Route 28 across Cape Cod Canal",
+     "supports": "Bourne length and route"
+    },
+    {
+     "quote": "Each bridge is 48 feet, 8 inches wide, including four 10-foot-wide vehicular travel lanes",
+     "supports": "Bridge width and lanes"
+    },
+    {
+     "quote": "which opened to traffic in June 1935.",
+     "supports": "Both bridges opened to traffic in June 1935"
+    },
+    {
+     "quote": "These bridges — which provide the only roadway connections between Cape Cod and the mainland — are currently owned by the United States",
+     "supports": "Only roadway connections between Cape Cod and the mainland"
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "url": "https://public-inspection.federalregister.gov/2026-17969.pdf",
+   "publisher": "Federal Highway Administration (Federal Register)",
+   "title": "Notice of Final Federal Agency Actions on Proposed Transportation Project in Massachusetts (FR Doc. 2026-17969)",
+   "checked": "2026-11-13",
+   "via": "PDF",
+   "archived": null,
+   "excerpts": [
+    {
+     "quote": "Final Environmental Impact Statement (FEIS) and Record of Decision (ROD) for the Project, signed June 26, 2026,",
+     "supports": "FEIS/ROD signed June 26, 2026"
+    },
+    {
+     "quote": "The actions relate to the proposed Cape Cod Bridges Project which includes replacement of the Sagamore Bridge carrying U.S. Route 6",
+     "supports": "Project includes replacing the Sagamore Bridge"
+    },
+    {
+     "quote": "and replacement of the Bourne Bridge carrying State Route 28 as it travels across the Cape Cod Canal",
+     "supports": "Project includes replacing the Bourne Bridge"
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "url": "https://www.mass.gov/doc/chapter-2-3/download",
+   "publisher": "Massachusetts Department of Transportation (Mass.gov)",
+   "title": "Cape Cod Canal Transportation Study, Chapter 2: Existing Environmental and Traffic Conditions",
+   "checked": "2026-11-13",
+   "via": "PDF",
+   "archived": null,
+   "excerpts": [
+    {
+     "quote": "The summer period data collection occurred August 10–17 and the non summer collection took place October 19–26, as these months were found to be representative of these periods.",
+     "supports": "Summer counts in August, non-summer counts in October (2014, per Table 2-16 headings)"
+    },
+    {
+     "quote": "SUMMER 2014 NON-SUMMER 2014 ... AM PM SAT ADJUSTED ADT ... 1 Bourne Bridge 3,700 4,750 4,750 56,500 3,400 3,550 3,950 38,000 2 Sagamore Bridge 4,650 5,550 5,800 65,900 3,350 3,850 3,650 41,400",
+     "supports": "Table 2-16 (2014): Bourne summer PM and Saturday peak hours 4,750, summer ADT 56,500, non-summer 38,000; Sagamore Saturday peak hour 5,800, summer ADT 65,900, non-summer 41,400"
+    },
+    {
+     "quote": "daily traffic volumes on the Bourne and Sagamore Bridge are 49% and 59% higher in the summer, respectively, compared to non-summer periods.",
+     "supports": "49% / 59% higher in summer"
+    },
+    {
+     "quote": "the average traffic volumes crossing the Canal Bridges during February are only 54% (Bourne Bridge) to 60% (Sagamore Bridge) of the volumes crossing these bridges during August.",
+     "supports": "February traffic 54-60% of August"
+    },
+    {
+     "quote": "Traffic data was collected for summer Saturday peak period, a period of high traffic demand ... because vacation rentals on the Cape generally begin and end on Saturday.",
+     "supports": "Why summer Saturdays are busy"
+    },
+    {
+     "quote": "The time periods examined were: AM summer weekday (7:00 AM – 9:00 AM) PM summer weekday (4:00 PM – 6:00 PM) Saturday summer (10:00 AM - 12:00 PM)",
+     "supports": "2014 study periods: weekday 7-9 AM and 4-6 PM; Saturday 10 AM-12 PM"
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "url": "https://www.mass.gov/doc/chapter-3-3/download",
+   "publisher": "Massachusetts Department of Transportation (Mass.gov)",
+   "title": "Cape Cod Canal Transportation Study, Chapter 3: Future No-Build Transportation Conditions",
+   "checked": "2026-11-13",
+   "via": "PDF",
+   "archived": null,
+   "excerpts": [
+    {
+     "quote": "While historically known to occur during the summer tourist season, this roadway congestion now often occurs during the spring and fall shoulder seasons",
+     "supports": "Shoulder-season congestion"
+    },
+    {
+     "quote": "The Route 6 Exit 1C interchange has also been evaluated because its location and substandard design contribute to congestion on Route 6 westbound, particularly during summer Sundays.",
+     "supports": "Summer Sunday congestion on Route 6 westbound at Exit 1C"
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "url": "https://www.mass.gov/doc/cape-cod-bridges-feis-chapter-4-section-42-transportation-traffic-and-safety/download",
+   "publisher": "Massachusetts Department of Transportation (Mass.gov)",
+   "title": "Cape Cod Bridges Program FEIS, Chapter 4, Section 4.2: Transportation, Traffic, and Safety",
+   "checked": "2026-11-13",
+   "via": "PDF",
+   "archived": null,
+   "excerpts": [
+    {
+     "quote": "Traffic volumes and congestion levels in the vicinity of Cape Cod Canal are typically the highest during the summer",
+     "supports": "Traffic highest in summer"
+    },
+    {
+     "quote": "This means that 85% of the year, traffic volumes within the Study Area are equal to or lower than the Fall Weekday PM period.",
+     "supports": "85% of the year at or below fall weekday PM"
+    },
+    {
+     "quote": "Congestion stemming from the steep grade and the narrow lanes on the bridge and the lane reduction on State Route 3 cause queues to extend approximately 2 miles from the bridge during the Fall Weekday PM peak hour",
+     "supports": "Cause and length of Sagamore queues in the fall weekday PM peak"
+    },
+    {
+     "quote": "Queueing on northbound State Route 28 often extends approximately 2 miles during the Fall Weekday PM peak hour",
+     "supports": "Bourne/Route 28 northbound queues ~2 miles"
+    },
+    {
+     "quote": "The rotary is a frequent source of congestion during peak travel hours.",
+     "supports": "Bourne Rotary congestion"
+    },
+    {
+     "quote": "Table 4.2-1. Average Annual Daily Traffic on Sagamore and Bourne Bridges, 2019 ... Total 61,990 46,500",
+     "supports": "2019 AADT: Sagamore 61,990, Bourne 46,500"
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "url": "https://www.mass.gov/doc/cape-cod-bridges-feis-appendix-42-traffic-engineering-technical-report/download",
+   "publisher": "Massachusetts Department of Transportation (Mass.gov)",
+   "title": "Cape Cod Bridges Program FEIS, Appendix 4.2: Traffic Engineering Technical Report",
+   "checked": "2026-11-13",
+   "via": "PDF",
+   "archived": null,
+   "excerpts": [
+    {
+     "quote": "Summer Saturday Midday represents the peak period for total canal crossings in both directions, including on-Cape and off-Cape traffic.",
+     "supports": "Summer Saturday midday is the peak crossing period"
+    },
+    {
+     "quote": "MassDOT chose the Fall Weekday PM period as the design time period in which to evaluate traffic operations.",
+     "supports": "Fall weekday PM as design period"
+    },
+    {
+     "quote": "it was determined that the 2024 volumes were in line with the 2019 Base Year traffic volumes",
+     "supports": "2024 volumes in line with 2019"
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "url": "https://www.mass.gov/news/massdot-advisory-thanksgiving-holiday-travel-0",
+   "publisher": "Massachusetts Department of Transportation (Mass.gov)",
+   "title": "MassDOT Advisory: Thanksgiving Holiday Travel (2025)",
+   "checked": "2026-11-13",
+   "via": "live page",
+   "archived": null,
+   "excerpts": [
+    {
+     "quote": "Heavier traffic than usual is expected on Monday, November 24, and Tuesday, November 25,",
+     "supports": "Thanksgiving 2025 heavy days"
+    },
+    {
+     "quote": "with additional delays likely during midday hours on Wednesday, November 26, Thanksgiving Day, November 27, and throughout the weekend following Thanksgiving.",
+     "supports": "Midday Wednesday, Thanksgiving, weekend"
+    },
+    {
+     "quote": "We also expect volumes to be heavy on Sunday, November 30.",
+     "supports": "Heavy Sunday Nov 30, 2025"
+    },
+    {
+     "quote": "Drivers are encouraged to travel during morning hours if possible.",
+     "supports": "Morning travel advice"
+    },
+    {
+     "quote": "11/24/2025",
+     "supports": "Release date"
+    },
+    {
+     "quote": "This year, MassDOT is forecasting increased traffic volumes throughout the week with the heaviest traffic expected Monday through Wednesday",
+     "supports": "Thanksgiving 2025 statewide forecast"
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "url": "https://www.mass.gov/news/massdot-encourages-memorial-day-travelers-to-plan-ahead-for-busy-weekend-1",
+   "publisher": "Massachusetts Department of Transportation (Mass.gov)",
+   "title": "MassDOT Encourages Memorial Day Travelers to Plan Ahead for Busy Weekend (2026)",
+   "checked": "2026-11-13",
+   "via": "live page",
+   "archived": null,
+   "excerpts": [
+    {
+     "quote": "Friday, May 22 is expected to be the busiest travel day.",
+     "supports": "Memorial Day 2026 busiest day"
+    },
+    {
+     "quote": "On Saturday, May 23, drivers are encouraged to avoid late morning and early afternoon travel, with traffic expected to be lightest in the evening.",
+     "supports": "Saturday advice"
+    },
+    {
+     "quote": "On Sunday, May 24, and Monday, May 25, traffic is expected to be heaviest during mid-day hours.",
+     "supports": "Sunday/Monday midday"
+    },
+    {
+     "quote": "Download the Mass511 mobile app or visit www.mass511.com to view live cameras, travel times, real-time traffic conditions, and project information before setting out on the road.",
+     "supports": "Mass511 features"
+    },
+    {
+     "quote": "Users can subscribe to receive text and email alerts for traffic conditions.",
+     "supports": "Mass511 alerts"
+    },
+    {
+     "quote": "Dial 511 and select a route to hear real-time conditions.",
+     "supports": "Dial 511"
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "url": "https://www.mass.gov/news/massdot-advises-travelers-to-plan-ahead-for-busy-fourth-of-july-travel-1",
+   "publisher": "Massachusetts Department of Transportation (Mass.gov)",
+   "title": "MassDOT Advises Travelers to Plan Ahead for Busy Fourth of July Travel (2026)",
+   "checked": "2026-11-13",
+   "via": "live page",
+   "archived": null,
+   "excerpts": [
+    {
+     "quote": "The heaviest traffic is expected on Thursday, July 2, and Friday, July 3,",
+     "supports": "July 4 2026 heaviest days"
+    },
+    {
+     "quote": "On Saturday, July 4, increased congestion is expected on routes heading into Cape Cod.",
+     "supports": "Saturday into Cape Cod"
+    },
+    {
+     "quote": "Sunday, July 5, will see heavier traffic in the morning and mid-day hours from travelers leaving Cape Cod",
+     "supports": "Sunday leaving Cape Cod"
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "url": "https://www.mass.gov/news/massdot-releases-labor-day-weekend-travel-advisory-0",
+   "publisher": "Massachusetts Department of Transportation (Mass.gov)",
+   "title": "MassDOT Releases Labor Day Weekend Travel Advisory (2026)",
+   "checked": "2026-11-13",
+   "via": "live page",
+   "archived": null,
+   "excerpts": [
+    {
+     "quote": "Friday, September 4, is expected to see heavy traffic throughout the day with major delays anticipated from 10:00 a.m. to 6:00 p.m.",
+     "supports": "Labor Day Friday"
+    },
+    {
+     "quote": "should see lighter traffic overall, with major delays limited to the mid-day window between 10:00 a.m. and 2:00 p.m.",
+     "supports": "Saturday and Monday lighter"
+    },
+    {
+     "quote": "Sunday, September 6, is expected to see heavier traffic beginning in the morning that extends later into the evening.",
+     "supports": "Sunday heavier"
+    },
+    {
+     "quote": "Download the Mass511 mobile app or visit www.mass511.com to view live cameras, travel times, real-time traffic conditions, and project information before setting out on the road.",
+     "supports": "Mass511 features"
+    },
+    {
+     "quote": "Dial 511 and select a route to hear real-time conditions.",
+     "supports": "Dial 511"
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "url": "https://www.mass.gov/info-details/latest-updates-cape-cod-bridges-project",
+   "publisher": "Massachusetts Department of Transportation (Mass.gov)",
+   "title": "Latest updates – Cape Cod Bridges",
+   "checked": "2026-11-13",
+   "via": "live page",
+   "archived": null,
+   "excerpts": [
+    {
+     "quote": "Foundation load testing will take place at four locations near the Sagamore Bridge: two north of the Cape Cod Canal and two south of the canal.",
+     "supports": "Four test sites"
+    },
+    {
+     "quote": "Foundation load testing activities will be intermittent, limited to daytime hours on weekdays.",
+     "supports": "Weekday daytime, intermittent"
+    },
+    {
+     "quote": "Activities south of the Sagamore Bridge are starting first, in the area of the former Christmas Tree Shops location.",
+     "supports": "Start location"
+    },
+    {
+     "quote": "On July 23, 2026, MassDOT held a Design Public Hearing for the replacement of the Sagamore Bridge in Bourne.",
+     "supports": "Public hearing date"
+    },
+    {
+     "quote": "notified three firms/joint ventures that they are shortlisted for the project",
+     "supports": "Three shortlisted teams"
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "url": "https://www.mass.gov/news/governor-healey-advances-sagamore-bridge-replacement-with-956-million-in-federal-funding-and-final-procurement-phase",
+   "publisher": "Office of Governor Maura Healey / MassDOT (Mass.gov)",
+   "title": "Governor Healey Advances Sagamore Bridge Replacement with $956 Million in Federal Funding and Final Procurement Phase",
+   "checked": "2026-11-13",
+   "via": "live page",
+   "archived": null,
+   "excerpts": [
+    {
+     "quote": "securing authorization for $956 million in federal grant funding and releasing the Request for Proposals",
+     "supports": "$956M authorized; final procurement phase"
+    },
+    {
+     "quote": "A Notice to Proceed is anticipated in late 2027, with construction expected to begin in winter 2027.",
+     "supports": "Schedule"
+    },
+    {
+     "quote": "MassDOT plans to maintain two lanes of traffic in each direction throughout construction",
+     "supports": "Lanes during construction"
+    },
+    {
+     "quote": "MassDOT expects the new eastbound span to open in 2033.",
+     "supports": "Eastbound span 2033"
+    },
+    {
+     "quote": "MassDOT and the U.S. Army Corps of Engineers have jointly applied for more than $1 billion in federal funding",
+     "supports": "Bourne funding application"
+    }
+   ]
+  },
+  {
+   "id": 14,
+   "url": "https://www.mass.gov/doc/cape-cod-bridges-program-public-hearing-faqs-72326/download",
+   "publisher": "Massachusetts Department of Transportation (Mass.gov)",
+   "title": "Cape Cod Bridges Program: Sagamore Bridge Design Public Hearing FAQs",
+   "checked": "2026-11-13",
+   "via": "PDF",
+   "archived": null,
+   "excerpts": [
+    {
+     "quote": "MassDOT has recently issued a Request for Proposals to three design-build teams on September 24, 2026.",
+     "supports": "RFP date"
+    },
+    {
+     "quote": "expects major construction to begin in spring 2028.",
+     "supports": "Major construction start"
+    },
+    {
+     "quote": "keep at least two travel lanes open in each direction across the canal throughout construction",
+     "supports": "At least two lanes each way"
+    },
+    {
+     "quote": "The US Army Corps of Engineers owns the Bourne Bridge and will be responsible for its maintenance",
+     "supports": "USACE maintains Bourne until replaced in a later phase"
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "url": "https://www.capecodcommission.org/traffic",
+   "publisher": "Cape Cod Commission",
+   "title": "Real Time Traffic",
+   "checked": "2026-11-13",
+   "via": "live page",
+   "archived": null,
+   "excerpts": [
+    {
+     "quote": "view live cameras, travel times, real-time traffic conditions, and project information",
+     "supports": "Mass511 (via CCC)"
+    },
+    {
+     "quote": "provides real-time travel time information to aid the public in decision making",
+     "supports": "GoTime app"
+    },
+    {
+     "quote": "www.nae.usace.army.mil/Missions/Recreation/Cape-Cod-Canal/Bridge-Alerts",
+     "supports": "Link to USACE Cape Cod Canal bridge alerts"
+    }
+   ]
+  }
+ ],
+ "gaps": []
+}

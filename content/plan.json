@@ -48,7 +48,8 @@
       "cluster": "bridges",
       "keywords": ["sagamore bridge traffic", "bourne bridge traffic", "cape cod bridge traffic", "best time to cross sagamore bridge", "best time to travel to cape cod on saturday", "cape cod traffic"],
       "priority": 12,
-      "status": "queued",
+      "status": "published",
+   "published": "2026-11-13",
       "brief": "When traffic backs up on the Cape Cod Canal bridges and how to avoid it: official info from MassDOT and the U.S. Army Corps of Engineers (who owns/maintains the bridges, current construction or lane closures, the bridge replacement program), peak periods per official sources, and how to check live delays (/cape-cod-bridge-traffic.html).",
       "min_notes": 8
     },

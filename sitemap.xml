@@ -128,7 +128,7 @@
   </url>
   <url>
     <loc>https://totallycapecod.com/guides/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -140,9 +140,15 @@
   </url>
   <url>
     <loc>https://totallycapecod.com/authors/versel-johnson/</loc>
-    <lastmod>2026-11-10</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://totallycapecod.com/guides/sagamore-bourne-bridge-traffic-best-times/</loc>
+    <lastmod>2026-11-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://totallycapecod.com/guides/cape-cod-in-november/</loc>
