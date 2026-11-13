@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updated_at": "2026-11-13T07:12:34Z",
+  "updated_at": "2026-11-13T19:59:19Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
     {
@@ -26,7 +26,7 @@
       "location": "Provincetown, MA, USA",
       "reported_by": "iNaturalist \u00b7 tokenature",
       "reported_at": "2026-11-01T19:54:00Z",
-      "time_ago": "11 days ago",
+      "time_ago": "12 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/758707948/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/412339328"
@@ -40,7 +40,7 @@
       "location": "Off Cape Cod",
       "reported_by": "iNaturalist \u00b7 tianshuo",
       "reported_at": "2026-11-01T19:45:00Z",
-      "time_ago": "11 days ago",
+      "time_ago": "12 days ago",
       "photo_url": "https://static.inaturalist.org/photos/759913038/medium.jpg",
       "notes": "North Atlantic Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/412933674"
@@ -54,7 +54,7 @@
       "location": "US",
       "reported_by": "iNaturalist \u00b7 kgrieshop",
       "reported_at": "2026-11-01T15:48:27Z",
-      "time_ago": "11 days ago",
+      "time_ago": "12 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/758656271/medium.jpg",
       "notes": "Humpback Whale",
       "source_url": "https://www.inaturalist.org/observations/412313092"
@@ -68,7 +68,7 @@
       "location": "Eastham, MA, USA",
       "reported_by": "iNaturalist \u00b7 ggiribet",
       "reported_at": "2026-10-31T18:26:00Z",
-      "time_ago": "12 days ago",
+      "time_ago": "13 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/758232484/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/412106188"
@@ -82,7 +82,7 @@
       "location": "Eastham, MA, USA",
       "reported_by": "iNaturalist \u00b7 ggiribet",
       "reported_at": "2026-10-31T18:26:00Z",
-      "time_ago": "12 days ago",
+      "time_ago": "13 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/758232476/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/412106185"
@@ -96,7 +96,7 @@
       "location": "Eastham, MA 02642, USA",
       "reported_by": "iNaturalist \u00b7 d_bellethorne",
       "reported_at": "2026-10-31T15:10:00Z",
-      "time_ago": "12 days ago",
+      "time_ago": "13 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/758028707/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/412006963"
@@ -110,7 +110,7 @@
       "location": "Provincetown, MA, US",
       "reported_by": "iNaturalist \u00b7 bobkroeger",
       "reported_at": "2026-10-30T12:20:14Z",
-      "time_ago": "13 days ago",
+      "time_ago": "14 days ago",
       "photo_url": "https://static.inaturalist.org/photos/759078395/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/412520790"
