@@ -2,11 +2,11 @@
   "today": {
     "date": "2026-11-14",
     "weather": {
-      "temp_high": 50,
-      "temp_low": 39,
-      "condition": "Sunny",
-      "icon": "\u2600\ufe0f",
-      "wind_mph": 9,
+      "temp_high": 48,
+      "temp_low": 40,
+      "condition": "Cloudy",
+      "icon": "\u2601\ufe0f",
+      "wind_mph": 12,
       "wind_dir": "NW"
     },
     "sun": {
@@ -46,10 +46,10 @@
     {
       "date": "2026-11-14",
       "day": "Sat",
-      "temp_high": 50,
-      "condition": "Sunny",
-      "icon": "\u2600\ufe0f",
-      "temp_low": 39,
+      "temp_high": 48,
+      "condition": "Cloudy",
+      "icon": "\u2601\ufe0f",
+      "temp_low": 40,
       "sunrise": "6:28 AM",
       "sunset": "4:20 PM",
       "low_tide": "9:08 AM",
@@ -61,7 +61,7 @@
       "temp_high": 50,
       "condition": "Rain",
       "icon": "\ud83c\udf27\ufe0f",
-      "temp_low": 37,
+      "temp_low": 39,
       "sunrise": "6:29 AM",
       "sunset": "4:19 PM",
       "low_tide": "9:52 AM",
@@ -70,7 +70,7 @@
     {
       "date": "2026-11-16",
       "day": "Mon",
-      "temp_high": 51,
+      "temp_high": 50,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
       "temp_low": 37,
@@ -94,7 +94,7 @@
     {
       "date": "2026-11-18",
       "day": "Wed",
-      "temp_high": 56,
+      "temp_high": 57,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
       "temp_low": 46,
@@ -106,7 +106,7 @@
     {
       "date": "2026-11-19",
       "day": "Thu",
-      "temp_high": 56,
+      "temp_high": 57,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
       "temp_low": 47,
@@ -121,7 +121,7 @@
       "temp_high": 58,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "temp_low": 47,
+      "temp_low": 46,
       "sunrise": "6:35 AM",
       "sunset": "4:15 PM",
       "low_tide": "1:56 AM",
@@ -129,5 +129,5 @@
     }
   ],
   "version": "1.0",
-  "updated_at": "2026-11-14T12:05:03Z"
+  "updated_at": "2026-11-14T19:04:19Z"
 }
