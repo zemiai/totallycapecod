@@ -2,8 +2,8 @@
   "today": {
     "date": "2026-11-15",
     "weather": {
-      "temp_high": 50,
-      "temp_low": 38,
+      "temp_high": 49,
+      "temp_low": 39,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
       "wind_mph": 13,
@@ -46,10 +46,10 @@
     {
       "date": "2026-11-15",
       "day": "Sun",
-      "temp_high": 50,
+      "temp_high": 49,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "temp_low": 38,
+      "temp_low": 39,
       "sunrise": "6:29 AM",
       "sunset": "4:19 PM",
       "low_tide": "9:52 AM",
@@ -58,10 +58,10 @@
     {
       "date": "2026-11-16",
       "day": "Mon",
-      "temp_high": 50,
-      "condition": "Cloudy",
-      "icon": "\u2601\ufe0f",
-      "temp_low": 36,
+      "temp_high": 49,
+      "condition": "Sunny",
+      "icon": "\u2600\ufe0f",
+      "temp_low": 38,
       "sunrise": "6:30 AM",
       "sunset": "4:18 PM",
       "low_tide": "10:41 AM",
@@ -73,7 +73,7 @@
       "temp_high": 52,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "temp_low": 41,
+      "temp_low": 42,
       "sunrise": "6:32 AM",
       "sunset": "4:18 PM",
       "low_tide": "11:36 AM",
@@ -82,7 +82,7 @@
     {
       "date": "2026-11-18",
       "day": "Wed",
-      "temp_high": 57,
+      "temp_high": 58,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
       "temp_low": 46,
@@ -106,10 +106,10 @@
     {
       "date": "2026-11-20",
       "day": "Fri",
-      "temp_high": 58,
+      "temp_high": 59,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "temp_low": 47,
+      "temp_low": 48,
       "sunrise": "6:35 AM",
       "sunset": "4:15 PM",
       "low_tide": "1:56 AM",
@@ -118,10 +118,10 @@
     {
       "date": "2026-11-21",
       "day": "Sat",
-      "temp_high": 55,
+      "temp_high": 56,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "temp_low": 48,
+      "temp_low": 47,
       "sunrise": "6:36 AM",
       "sunset": "4:15 PM",
       "low_tide": "2:42 AM",
@@ -129,5 +129,5 @@
     }
   ],
   "version": "1.0",
-  "updated_at": "2026-11-15T12:40:01Z"
+  "updated_at": "2026-11-15T19:42:59Z"
 }
