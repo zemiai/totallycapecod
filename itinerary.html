@@ -28,65 +28,29 @@
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-<style>
-  .step-indicator { display:flex; justify-content:center; gap:8px; margin-bottom:28px; }
-  .step-dot { width:10px; height:10px; border-radius:50%; background:var(--divider); transition:all var(--transition-fast); }
-  .step-dot.active { background:var(--cape-navy); transform:scale(1.2); }
-  .step-dot.done { background:var(--gold); }
-
-  .builder-step { display:none; max-width:600px; margin:0 auto; }
-  .builder-step.active { display:block; animation:fadeIn 0.35s ease; }
-
-  .vibe-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
-  @media(min-width:640px){ .vibe-grid{ grid-template-columns:repeat(3,1fr); } }
-  .vibe-option { border:2px solid var(--divider); border-radius:var(--radius-md); padding:16px; text-align:center; cursor:pointer; background:white; transition:all var(--transition-fast); }
-  .vibe-option:hover { border-color:var(--cape-navy); }
-  .vibe-option.selected { border-color:var(--cape-navy); background:rgba(26,58,108,0.04); }
-  .vibe-option .emoji { font-size:28px; margin-bottom:6px; display:block; }
-  .vibe-option .label { font-weight:700; font-size:14px; }
-
-  .day-card { background:white; border-radius:var(--radius-md); padding:20px; margin-bottom:16px; box-shadow:var(--shadow-sm); }
-  .day-card h4 { font-family:'Fraunces',serif; font-weight:900; font-size:18px; margin:0 0 12px; color:var(--cape-brown-dark); }
-  .activity-row { display:flex; align-items:center; gap:12px; padding:10px 0; border-bottom:1px solid var(--divider); }
-  .activity-row:last-child { border-bottom:none; }
-  .activity-time { width:48px; font-weight:700; font-size:13px; color:var(--cape-navy); flex-shrink:0; }
-  .activity-body { flex:1; }
-  .activity-title { font-weight:700; font-size:14px; }
-  .activity-sub { font-size:12px; color:var(--text-secondary); }
-  .activity-src { font-size:11px; color:var(--text-secondary); margin-top:2px; }
-  .activity-src a { color:inherit; text-decoration:underline; }
-  .activity-cta { flex-shrink:0; }
-  .plan-note { background:#FFF6E5; border:1px solid #F1DFB8; border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.55; color:var(--text); margin:0 0 16px; }
-
-  .share-bar { background:linear-gradient(135deg, var(--cape-cream) 0%, var(--cape-sand) 100%); border-radius:var(--radius-md); padding:20px; text-align:center; margin-top:20px; }
-
-  .hero-mini { min-height:40vh; display:flex; align-items:flex-end; justify-content:center; padding:0 20px 40px; background:linear-gradient(180deg, var(--cape-blush) 0%, var(--cape-cream) 100%); position:relative; }
-  .hero-mini::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); opacity:0.6; }
-  .hero-mini-overlay { position:absolute; inset:0; background:linear-gradient(180deg, rgba(62,42,32,0.1) 0%, rgba(62,42,32,0.3) 100%); }
-  .hero-mini-content { position:relative; z-index:2; text-align:center; max-width:600px; }
-</style>
+<style>.step-indicator{display:flex;gap:8px;margin-bottom:20px}.step-dot{width:10px;height:10px;border-radius:50%;background:var(--kraft)}.step-dot.active{background:var(--navy)}.step-dot.done{background:var(--kraftd)}.builder-step{display:none;max-width:40rem}.builder-step.active{display:block}.vibe-grid{display:flex;flex-wrap:wrap;gap:10px}.day-card h3{margin:26px 0 6px;font:800 24px/1.2 'Fraunces',Georgia,serif}.activity-row{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:2px dashed var(--kraft)}.day-card h3+.activity-row{border-top:2px dashed var(--kraft)}.activity-time{flex:none;width:4rem;font:800 17px/1.35 'Fraunces',Georgia,serif;color:var(--navy)}.activity-body{flex:1;min-width:0}.activity-title{font:700 19px/1.3 'Fraunces',Georgia,serif;color:var(--navy)}.activity-sub{font-size:16px;line-height:1.5}.activity-src{margin-top:2px;font-size:15px;color:var(--mute)}.activity-src a{text-decoration:underline}.activity-cta{flex:none}.plan-note{margin:0 0 16px;padding:12px 0;border-top:2px dashed var(--kraft);border-bottom:2px dashed var(--kraft);font-size:16px}.share-bar{margin-top:24px}.share-bar h3,.share-bar h2{font:800 21px/1.25 'Fraunces',Georgia,serif;margin:0 0 6px}.share-bar .links-row{margin-top:12px}</style>
 <script src="/js/mylist.js"></script>
 </head>
-<body>
+<body class="dc">
 
 <nav class="site-nav" id="siteNav">
   <div class="nav-inner">
     <a href="/" class="nav-logo">Totally Cape Cod</a>
-    <div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 App</a></div>
+    <div class="nav-links"><a href="/feed.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>App</a></div>
     <button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button>
   </div>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()">
   <div class="mobile-menu-panel" onclick="event.stopPropagation()">
-    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 Open the App</a>
+    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>Open the App</a>
   </div>
 </div>
 
-<section class="hero-mini">
-  <div class="hero-mini-overlay"></div>
-  <div class="hero-mini-content" style="padding-top:80px;">
-    <div class="hero-badge">✈️ Itinerary Builder</div>
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Itinerary Builder</div>
     <h1 class="hero-title">Plan Your<br/><span class="script">Cape Cod</span> Trip</h1>
     <p class="hero-subtitle">Answer 3 quick questions for a sample day-by-day plan, with links to check each stop.</p>
   </div>
@@ -94,7 +58,7 @@
 
 <section class="section page-wrap">
 
-  <div class="step-indicator">
+  <div class="step-indicator" aria-hidden="true">
     <div class="step-dot active" id="dot-0"></div>
     <div class="step-dot" id="dot-1"></div>
     <div class="step-dot" id="dot-2"></div>
@@ -102,46 +66,46 @@
 
   <!-- Step 1: Vibe (only options that change the plan are offered) -->
   <div class="builder-step active" id="step-0">
-    <div class="section-header" style="margin-bottom:24px;">
-      <h2 class="section-title" style="font-size:1.5rem;">What's your vibe?</h2>
+    <div class="section-header">
+      <h2 class="section-title">What's your vibe?</h2>
       <p class="section-subtitle">Pick all that apply — each one swaps in a few different stops</p>
     </div>
     <div class="vibe-grid">
-      <div class="vibe-option" data-vibe="foodie" onclick="toggleVibe(this, 'foodie')"><span class="emoji">🦐</span><span class="label">Foodie</span></div>
-      <div class="vibe-option" data-vibe="adventure" onclick="toggleVibe(this, 'adventure')"><span class="emoji">⛵</span><span class="label">Adventure</span></div>
-      <div class="vibe-option" data-vibe="family" onclick="toggleVibe(this, 'family')"><span class="emoji">👨‍👩‍👧</span><span class="label">Family Fun</span></div>
-      <div class="vibe-option" data-vibe="romantic" onclick="toggleVibe(this, 'romantic')"><span class="emoji">💕</span><span class="label">Romantic</span></div>
-      <div class="vibe-option" data-vibe="hidden" onclick="toggleVibe(this, 'hidden')"><span class="emoji">🗺️</span><span class="label">Detours</span></div>
+      <button type="button" class="vibe-option" data-vibe="foodie" onclick="toggleVibe(this, 'foodie')" aria-pressed="false"><span class="label">Foodie</span></button>
+      <button type="button" class="vibe-option" data-vibe="adventure" onclick="toggleVibe(this, 'adventure')" aria-pressed="false"><span class="label">Adventure</span></button>
+      <button type="button" class="vibe-option" data-vibe="family" onclick="toggleVibe(this, 'family')" aria-pressed="false"><span class="label">Family Fun</span></button>
+      <button type="button" class="vibe-option" data-vibe="romantic" onclick="toggleVibe(this, 'romantic')" aria-pressed="false"><span class="label">Romantic</span></button>
+      <button type="button" class="vibe-option" data-vibe="hidden" onclick="toggleVibe(this, 'hidden')" aria-pressed="false"><span class="label">Detours</span></button>
     </div>
-    <div style="text-align:center; margin-top:28px;">
-      <button class="btn btn-primary" onclick="nextStep()" id="btn-step-0">Continue →</button>
+    <div style="margin-top:24px;">
+      <button class="btn btn-primary" onclick="nextStep()" id="btn-step-0">Continue<span class=x> →</span></button>
     </div>
   </div>
 
   <!-- Step 2: Duration -->
   <div class="builder-step" id="step-1">
-    <div class="section-header" style="margin-bottom:24px;">
-      <h2 class="section-title" style="font-size:1.5rem;">How long is your trip?</h2>
+    <div class="section-header">
+      <h2 class="section-title">How long is your trip?</h2>
     </div>
-    <div class="vibe-grid" style="max-width:400px; margin:0 auto;">
-      <div class="vibe-option" onclick="selectDuration(this, 1)"><span class="emoji">🌅</span><span class="label">Day Trip</span></div>
-      <div class="vibe-option" onclick="selectDuration(this, 2)"><span class="emoji">🌟</span><span class="label">Weekend</span></div>
-      <div class="vibe-option" onclick="selectDuration(this, 3)"><span class="emoji">🌅</span><span class="label">3-4 Days</span></div>
-      <div class="vibe-option" onclick="selectDuration(this, 7)"><span class="emoji">🌟</span><span class="label">Full Week</span></div>
+    <div class="vibe-grid">
+      <button type="button" class="vibe-option" onclick="selectDuration(this, 1)" aria-pressed="false"><span class="label">Day Trip</span></button>
+      <button type="button" class="vibe-option" onclick="selectDuration(this, 2)" aria-pressed="false"><span class="label">Weekend</span></button>
+      <button type="button" class="vibe-option" onclick="selectDuration(this, 3)" aria-pressed="false"><span class="label">3-4 Days</span></button>
+      <button type="button" class="vibe-option" onclick="selectDuration(this, 7)" aria-pressed="false"><span class="label">Full Week</span></button>
     </div>
-    <div style="text-align:center; margin-top:28px; display:flex; gap:12px; justify-content:center;">
-      <button class="btn btn-ghost" style="color:var(--text); border-color:var(--divider);" onclick="prevStep()">← Back</button>
-      <button class="btn btn-primary" onclick="nextStep()" id="btn-step-1">Continue →</button>
+    <div style="margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
+      <button class="btn btn-ghost" onclick="prevStep()"><span class=x>← </span>Back</button>
+      <button class="btn btn-primary" onclick="nextStep()" id="btn-step-1">Continue<span class=x> →</span></button>
     </div>
   </div>
 
   <!-- Step 3: Email + Generate -->
   <div class="builder-step" id="step-2">
-    <div class="section-header" style="margin-bottom:24px;">
-      <h2 class="section-title" style="font-size:1.5rem;">Get Cape Cod updates by email</h2>
+    <div class="section-header">
+      <h2 class="section-title">Get Cape Cod updates by email</h2>
       <p class="section-subtitle">Sign up and your sample itinerary appears on the next screen.</p>
     </div>
-    <div class="card" style="padding:28px; max-width:460px; margin:0 auto;">
+    <div class="sig">
       <form onsubmit="generateItinerary(event)">
         <div class="form-group">
           <label class="form-label">Email</label>
@@ -149,31 +113,25 @@
         </div>
         <button type="submit" class="btn btn-primary w-full"
                 onclick="gtag('event','generate_lead',{method:'itinerary_builder'})">
-          🎯 Show My Itinerary →
+          Show My Itinerary<span class=x> →</span>
         </button>
       </form>
     </div>
-    <div style="text-align:center; margin-top:16px;">
-      <button class="btn btn-ghost" style="color:var(--text); border-color:var(--divider);" onclick="prevStep()">← Back</button>
+    <div style="margin-top:16px;">
+      <button class="btn btn-ghost" onclick="prevStep()"><span class=x>← </span>Back</button>
     </div>
   </div>
 
   <!-- Results -->
   <div class="builder-step" id="step-result">
-    <div class="section-header" style="margin-bottom:24px;">
-      <h2 class="section-title" style="font-size:1.5rem;">Your Sample Cape Cod Itinerary</h2>
+    <div class="section-header">
+      <h2 class="section-title">Your Sample Cape Cod Itinerary</h2>
       <p class="section-subtitle">A sample plan based in Provincetown, with a Chatham day trip on longer stays. A few stops change with the vibes you picked. Hours and seasons change, so check each stop's link before you go. Some links are affiliate links, which help keep this site free.</p>
     </div>
     <div id="itineraryOutput"></div>
-    <div class="share-bar">
-      <h4 style="font-family:'Fraunces',serif; font-weight:900; font-size:18px; margin:0 0 8px; color:var(--cape-brown-dark);">Share this itinerary</h4>
-      <p style="font-size:13px; color:var(--text-secondary); margin:0 0 14px;">The link opens this same plan.</p>
-      <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
-        <button class="btn btn-sm btn-navy" onclick="copyLink()">📋 Copy Link</button>
-        <button class="btn btn-sm btn-primary" onclick="shareEmail()">📧 Email</button>
-        <a href="/" class="btn btn-sm btn-ghost" style="color:var(--cape-brown-dark); border-color:var(--divider);">🏠 Home</a>
-      </div>
-    </div>
+    <div class="share-bar sig"><h3>Share this itinerary</h3><p>The link opens this same plan.</p><div class="links-row" style="margin-top:12px;"><button class="btn btn-sm btn-navy" onclick="copyLink()">Copy Link</button>
+        <button class="btn btn-sm btn-ghost" onclick="shareEmail()">Email</button>
+        <a href="/" class="btn btn-sm btn-ghost">Home</a></div></div>
   </div>
 
 </section>
@@ -252,6 +210,7 @@ let SUN_TODAY = null;
 
 function toggleVibe(el, vibe) {
   el.classList.toggle('selected');
+  el.setAttribute('aria-pressed', el.classList.contains('selected') ? 'true' : 'false');
   if (el.classList.contains('selected')) {
     if (!itinerary.vibes.includes(vibe)) itinerary.vibes.push(vibe);
   } else {
@@ -260,8 +219,8 @@ function toggleVibe(el, vibe) {
 }
 
 function selectDuration(el, days) {
-  document.querySelectorAll('#step-1 .vibe-option').forEach(o => o.classList.remove('selected'));
-  el.classList.add('selected');
+  document.querySelectorAll('#step-1 .vibe-option').forEach(o => { o.classList.remove('selected'); o.setAttribute('aria-pressed', 'false'); });
+  el.classList.add('selected'); el.setAttribute('aria-pressed', 'true');
   itinerary.duration = days;
 }
 
@@ -328,18 +287,18 @@ function renderItinerary() {
     : '';
   days.forEach((day, i) => {
     html += `<div class="day-card">
-      <h4>Day ${i+1} — ${day.title}</h4>
+      <h3>Day ${i+1} — ${day.title}</h3>
       ${day.activities.map(a => `
         <div class="activity-row">
           <div class="activity-time">${a.time}</div>
           <div class="activity-body">
-            <div class="activity-title">${a.emoji} ${a.title}</div>
+            <div class="activity-title">${a.title}</div>
             ${a.sub ? `<div class="activity-sub">${a.sub}</div>` : ''}
             ${a.sunset && SUN_TODAY ? `<div class="activity-sub">Sunset today: ${SUN_TODAY.time} (${SUN_TODAY.source})</div>` : ''}
-            ${a.src ? `<div class="activity-src">Source: <a href="${a.src.url}" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'source',item:'${a.src.label.replace(/'/g,'')}',location:'itinerary'})">${a.src.label} ↗</a></div>` : ''}
+            ${a.src ? `<div class="activity-src">Source: <a href="${a.src.url}" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'source',item:'${a.src.label.replace(/'/g,'')}',location:'itinerary'})">${a.src.label}<span class=x> ↗</span></a></div>` : ''}
           </div>
-          ${a.link ? `<div class="activity-cta"><a href="${a.link}" target="_blank" rel="noopener" class="btn btn-sm btn-navy" style="padding:6px 12px; font-size:11px;"
-            onclick="gtag('event','affiliate_click',{type:'${a.affiliateType}',item:'${a.affiliateItem}',location:'itinerary'})">${a.linkText || 'Book →'}</a></div>` : ''}
+          ${a.link ? `<div class="activity-cta"><a href="${a.link}" target="_blank" rel="noopener" class="btn btn-sm btn-ghost"
+            onclick="gtag('event','affiliate_click',{type:'${a.affiliateType}',item:'${a.affiliateItem}',location:'itinerary'})">${a.linkText || 'Book<span class=x> →</span>'}</a></div>` : ''}
         </div>
       `).join('')}
     </div>`;
@@ -365,15 +324,15 @@ function buildItineraryDays(it) {
     title: isRomantic ? 'Sunset Arrival' : isFamily ? 'Beach Day One' : 'Hit the Beach',
     activities: [
       isHidden
-        ? { time:'10am', emoji:'🏝️', title:'Ballston Beach, Truro', sub:'Ocean beach with no lifeguards. In season, parking needs a Truro beach sticker (no day passes).', src:SRC.ballston }
-        : { time:'10am', emoji:'🏝️', title:'Race Point Beach, Provincetown', sub:'National Seashore beach at the northernmost point on Cape Cod. The Park Service notes swift currents and deeper water close to shore.', src:SRC.raceNps },
+        ? { time:'10am', title:'Ballston Beach, Truro', sub:'Ocean beach with no lifeguards. In season, parking needs a Truro beach sticker (no day passes).', src:SRC.ballston }
+        : { time:'10am', title:'Race Point Beach, Provincetown', sub:'National Seashore beach at the northernmost point on Cape Cod. The Park Service notes swift currents and deeper water close to shore.', src:SRC.raceNps },
       (isFoodie && !OFF)
-        ? { time:'1pm', emoji:'🦐', title:'The Lobster Pot', sub:'Provincetown seafood restaurant run by the McNulty family since 1979. Seasonal — check its site for dates.', src:SRC.lobsterPot }
+        ? { time:'1pm', title:'The Lobster Pot', sub:'Provincetown seafood restaurant run by the McNulty family since 1979. Seasonal — check its site for dates.', src:SRC.lobsterPot }
         : OFF
-          ? { time:'1pm', emoji:'🍽️', title:'Lunch in Provincetown', sub:'Compare places and check today\'s hours on Yelp.', link:'https://www.yelp.com/search?find_desc=lunch&find_loc=Provincetown%2C+MA', linkText:'Yelp →', affiliateType:'yelp', affiliateItem:'lunch-ptown' }
-          : { time:'1pm', emoji:'🦐', title:'Lunch in Provincetown', sub:'Lobster rolls and seafood — compare places and reviews on Yelp.', link:'https://www.yelp.com/search?find_desc=lobster+roll&find_loc=Provincetown%2C+MA', linkText:'Yelp →', affiliateType:'yelp', affiliateItem:'lobster-ptown' },
-      { time: OFF ? '2:30pm' : '4pm', emoji:'🏝️', title:'Another National Seashore beach', sub:'The Seashore has six beaches, from Coast Guard Beach in Eastham to Herring Cove in Provincetown.', src:SRC.nsBeaches },
-      { time:SUNSET, sunset:true, emoji:'🌅', title: isRomantic ? 'Sunset at Herring Cove' : 'Sunset walk at Herring Cove', sub:'The National Seashore\'s only Cape Cod Bay beach. The Park Service says it offers “some of the best sunsets on Cape Cod.”', src:SRC.herringNps },
+          ? { time:'1pm', title:'Lunch in Provincetown', sub:'Compare places and check today\'s hours on Yelp.', link:'https://www.yelp.com/search?find_desc=lunch&find_loc=Provincetown%2C+MA', linkText:'Yelp<span class=x> →</span>', affiliateType:'yelp', affiliateItem:'lunch-ptown' }
+          : { time:'1pm', title:'Lunch in Provincetown', sub:'Lobster rolls and seafood — compare places and reviews on Yelp.', link:'https://www.yelp.com/search?find_desc=lobster+roll&find_loc=Provincetown%2C+MA', linkText:'Yelp<span class=x> →</span>', affiliateType:'yelp', affiliateItem:'lobster-ptown' },
+      { time: OFF ? '2:30pm' : '4pm', title:'Another National Seashore beach', sub:'The Seashore has six beaches, from Coast Guard Beach in Eastham to Herring Cove in Provincetown.', src:SRC.nsBeaches },
+      { time:SUNSET, sunset:true, title: isRomantic ? 'Sunset at Herring Cove' : 'Sunset walk at Herring Cove', sub:'The National Seashore\'s only Cape Cod Bay beach. The Park Service says it offers “some of the best sunsets on Cape Cod.”', src:SRC.herringNps },
     ]
   });
 
@@ -381,17 +340,17 @@ function buildItineraryDays(it) {
     days.push({
       title: isAdventure ? 'Adventure Day' : 'Explore the Town',
       activities: [
-        { time:'9am', emoji:'☕', title:'Coffee in town', sub:'Start the day on Commercial Street.' },
+        { time:'9am', title:'Coffee in town', sub:'Start the day on Commercial Street.' },
         (isAdventure && !OFF)
-          ? { time:'11am', emoji:'⛵', title:'Whale watch from Provincetown', sub:'Dolphin Fleet trips are generally 3–4 hours and run April–October. If the captain reports no whale sightings, paying passengers get a “1% Pass” for a future trip, not a refund.', src:SRC.dolphin, link:'https://www.viator.com/tours/Provincetown/Whale-Watching/d5265-g1-c17?pid=P00000000', linkText:'Book →', affiliateType:'viator', affiliateItem:'whale-watch' }
-          : { time:'11am', emoji:'🗺️', title:'Provincetown stroll', sub:'Galleries, shops and history along Commercial Street.' },
+          ? { time:'11am', title:'Whale watch from Provincetown', sub:'Dolphin Fleet trips are generally 3–4 hours and run April–October. If the captain reports no whale sightings, paying passengers get a “1% Pass” for a future trip, not a refund.', src:SRC.dolphin, link:'https://www.viator.com/tours/Provincetown/Whale-Watching/d5265-g1-c17?pid=P00000000', linkText:'Book<span class=x> →</span>', affiliateType:'viator', affiliateItem:'whale-watch' }
+          : { time:'11am', title:'Provincetown stroll', sub:'Galleries, shops and history along Commercial Street.' },
         OFF
-          ? { time:'3pm', emoji:'☕', title:'Afternoon break', sub:'Coffee or a bench by the harbor.' }
-          : { time:'3pm', emoji:'🍦', title:'Afternoon break', sub:'Coffee, ice cream or a bench by the harbor.' },
+          ? { time:'3pm', title:'Afternoon break', sub:'Coffee or a bench by the harbor.' }
+          : { time:'3pm', title:'Afternoon break', sub:'Coffee, ice cream or a bench by the harbor.' },
         // We couldn't confirm The Mews' winter hours, so the off-season plan doesn't name a restaurant.
         OFF
-          ? { time:'6pm', emoji:'🍽️', title:'Dinner in Provincetown', sub:'Compare places and check tonight\'s hours before you go.', link:'https://www.yelp.com/search?find_desc=dinner&find_loc=Provincetown%2C+MA', linkText:'Yelp →', affiliateType:'yelp', affiliateItem:'dinner-ptown' }
-          : { time:'6pm', emoji:'🍽️', title:'Dinner at The Mews', sub:'Restaurant at 429 Commercial Street with a beachfront view.', src:SRC.mews, link:'https://www.opentable.com/r/the-mews-restaurant-and-cafe-provincetown', linkText:'Reserve →', affiliateType:'opentable', affiliateItem:'the-mews' },
+          ? { time:'6pm', title:'Dinner in Provincetown', sub:'Compare places and check tonight\'s hours before you go.', link:'https://www.yelp.com/search?find_desc=dinner&find_loc=Provincetown%2C+MA', linkText:'Yelp<span class=x> →</span>', affiliateType:'yelp', affiliateItem:'dinner-ptown' }
+          : { time:'6pm', title:'Dinner at The Mews', sub:'Restaurant at 429 Commercial Street with a beachfront view.', src:SRC.mews, link:'https://www.opentable.com/r/the-mews-restaurant-and-cafe-provincetown', linkText:'Reserve<span class=x> →</span>', affiliateType:'opentable', affiliateItem:'the-mews' },
       ]
     });
   }
@@ -401,11 +360,11 @@ function buildItineraryDays(it) {
       title: isFamily ? 'Family Day' : 'Trails & Town',
       activities: [
         isFamily
-          ? { time:'10am', emoji:'🐦', title:'Wellfleet Bay Wildlife Sanctuary', sub:'Mass Audubon trails, open dawn to dusk. Adults $8, members free; no dogs (as of Nov 2026).', src:SRC.wellfleetBay }
-          : { time:'10am', emoji:'🥾', title:'Great Island Trail, Wellfleet', sub:'The tavern loop is 3.9 miles round trip, mostly soft sand, and portions are submerged at high tide — check the tides first.', src:SRC.greatIsland },
-        { time:'12:30pm', emoji:'🦐', title:'Lunch at The Canteen', sub:'Casual spot at 225 Commercial Street; its site says it\'s open year-round.', src:SRC.canteen },
-        { time:'2pm', emoji:'📸', title:'Pilgrim Monument & Provincetown Museum', sub:'Climb the 252-foot granite tower. As of November 2026 it\'s open Wednesday–Sunday, 10 AM–4 PM, with the last ticket sold at 3 PM; check its hours first.', src:SRC.pilgrim },
-        { time:'7pm', emoji:'🎭', title:'Dinner + a show', sub:'Browse Provincetown shows and tours listed on Viator.', link:'https://www.viator.com/Provincetown/d5265-ttd', linkText:'Viator →', affiliateType:'viator', affiliateItem:'ptown-nightlife' },
+          ? { time:'10am', title:'Wellfleet Bay Wildlife Sanctuary', sub:'Mass Audubon trails, open dawn to dusk. Adults $8, members free; no dogs (as of Nov 2026).', src:SRC.wellfleetBay }
+          : { time:'10am', title:'Great Island Trail, Wellfleet', sub:'The tavern loop is 3.9 miles round trip, mostly soft sand, and portions are submerged at high tide — check the tides first.', src:SRC.greatIsland },
+        { time:'12:30pm', title:'Lunch at The Canteen', sub:'Casual spot at 225 Commercial Street; its site says it\'s open year-round.', src:SRC.canteen },
+        { time:'2pm', title:'Pilgrim Monument & Provincetown Museum', sub:'Climb the 252-foot granite tower. As of November 2026 it\'s open Wednesday–Sunday, 10 AM–4 PM, with the last ticket sold at 3 PM; check its hours first.', src:SRC.pilgrim },
+        { time:'7pm', title:'Dinner + a show', sub:'Browse Provincetown shows and tours listed on Viator.', link:'https://www.viator.com/Provincetown/d5265-ttd', linkText:'Viator<span class=x> →</span>', affiliateType:'viator', affiliateItem:'ptown-nightlife' },
       ]
     });
   }
@@ -414,12 +373,12 @@ function buildItineraryDays(it) {
     days.push({
       title: 'Day Trip',
       activities: [
-        { time:'9am', emoji:'🚗', title:'Drive Route 6A', sub:'Named a National Scenic Byway in 2021; it runs along the Cape\'s north side.', src:SRC.route6a },
-        { time:'12pm', emoji:'🦐', title:'Lunch in Chatham', sub:'For example, The Chatham Squire at 487 Main Street.', src:SRC.squire },
+        { time:'9am', title:'Drive Route 6A', sub:'Named a National Scenic Byway in 2021; it runs along the Cape\'s north side.', src:SRC.route6a },
+        { time:'12pm', title:'Lunch in Chatham', sub:'For example, The Chatham Squire at 487 Main Street.', src:SRC.squire },
         OFF
-          ? { time:'2pm', emoji:'💡', title:'Chatham Light overlook', sub:'The overlook parking area is free but limited to 30 minutes, with a $50 citation for longer stays.', src:SRC.chatham }
-          : { time:'2pm', emoji:'🐠', title:'Shark Center, Chatham', sub:'The Atlantic White Shark Conservancy\'s visitor center. Seasonal — check its calendar.', src:SRC.sharkCenter },
-        { time: OFF ? '3pm' : '5pm', emoji:'🌅', title:'Lighthouse Beach, Chatham', sub:'For walking and views, not swimming: strong currents, no lifeguards, and the south tip is permanently closed to swimming.', src:SRC.chatham },
+          ? { time:'2pm', title:'Chatham Light overlook', sub:'The overlook parking area is free but limited to 30 minutes, with a $50 citation for longer stays.', src:SRC.chatham }
+          : { time:'2pm', title:'Shark Center, Chatham', sub:'The Atlantic White Shark Conservancy\'s visitor center. Seasonal — check its calendar.', src:SRC.sharkCenter },
+        { time: OFF ? '3pm' : '5pm', title:'Lighthouse Beach, Chatham', sub:'For walking and views, not swimming: strong currents, no lifeguards, and the south tip is permanently closed to swimming.', src:SRC.chatham },
       ]
     });
   }
@@ -429,10 +388,10 @@ function buildItineraryDays(it) {
     days.push({
       title: 'Relax & Repeat',
       activities: [
-        { time:'10am', emoji:'🏝️', title:'Beach Morning', sub:'Your favorite spot from Day 1' },
-        { time:'1pm', emoji:'🦐', title:'Long Lunch', sub:'Try a new restaurant' },
-        { time:'4pm', emoji:'☕', title:'Coffee Break', sub:'People watching in town' },
-        { time:SUNSET, sunset:true, emoji:'🌅', title:'Final Sunset', sub:'Make it count' },
+        { time:'10am', title:'Beach Morning', sub:'Your favorite spot from Day 1' },
+        { time:'1pm', title:'Long Lunch', sub:'Try a new restaurant' },
+        { time:'4pm', title:'Coffee Break', sub:'People watching in town' },
+        { time:SUNSET, sunset:true, title:'Final Sunset', sub:'Make it count' },
       ]
     });
   }
@@ -443,7 +402,7 @@ function buildItineraryDays(it) {
 function copyLink() {
   const url = location.href;
   if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(url).then(() => alert('📋 Link copied to clipboard!'), () => prompt('Copy this link:', url));
+    navigator.clipboard.writeText(url).then(() => alert('Link copied to clipboard!'), () => prompt('Copy this link:', url));
   } else {
     prompt('Copy this link:', url);
   }
@@ -461,7 +420,7 @@ function shareEmail() {
   if (!v.length || !DURATIONS.includes(d)) return;
   itinerary.vibes = v;
   itinerary.duration = d;
-  document.querySelectorAll('#step-0 .vibe-option').forEach(o => o.classList.toggle('selected', v.includes(o.dataset.vibe)));
+  document.querySelectorAll('#step-0 .vibe-option').forEach(o => { o.classList.toggle('selected', v.includes(o.dataset.vibe)); o.setAttribute('aria-pressed', v.includes(o.dataset.vibe) ? 'true' : 'false'); });
   showResults();
 })();
 

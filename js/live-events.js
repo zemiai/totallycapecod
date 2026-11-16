@@ -34,6 +34,13 @@
   // Last day of a multi-day listing (its own day when there's no end time).
   function endDay(e) { var t = e.end ? Date.parse(e.end) : NaN; return isNaN(t) ? eventDay(e) : dayKey(new Date(t)); }
   function eventSortTime(e) { return isDateOnly(e) ? Date.parse(String(e.start).slice(0, 10) + 'T12:00:00Z') : Date.parse(e.start); }
+  // Daybook pages (body.dc) style these cards from css/tcc.css; other pages keep the inline styles.
+  var DOT_DC = '<span class=dot aria-hidden=true> \u00b7 </span>';
+  var PICT = /[\u{1F000}-\u{1FAFF}\u2600-\u27BF\uFE0F]\s*/gu;
+  function isDc() { return !!(document.body && document.body.classList.contains('dc')); }
+  function dot() { return isDc() ? DOT_DC : ' \u00b7 '; }
+  function st(css) { return isDc() ? '' : ' style="' + css + '"'; }
+  function dlh(k) { return esc(dayLabel(k)).replace(' \u00b7 ', dot()); }
   function norm(t) { return String(t || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim(); }
   function dayKey(d) {
     return new Intl.DateTimeFormat('en-CA', { timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit' }).format(d);
@@ -72,18 +79,18 @@
       url: '/events?date=' + k, detail: when + (e.venue ? ' at ' + e.venue : '') }) + '</div>';
   }
   function card(e) {
-    var where = [e.venue, e.town].filter(Boolean).map(esc).join(' · ');
+    var where = [e.venue, e.town].filter(Boolean).map(esc).join(dot());
     var src = safeUrl(e.source_url);
     var who = e.credit || CREDIT[e.source] || e.source;
     var credit = who ? (src
       ? 'via <a href="' + esc(src) + '" target="_blank" rel="noopener">' + esc(who) + '</a>'
       : 'via ' + esc(who)) : '';
-    return '<div class="card live-ev" style="padding:18px;">' +
-      '<div style="font-size:12px;font-weight:700;color:var(--coral-soft,#c0563f);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;">' + esc(String(e.tag || e.category || 'Event').replace(/📅\s*/g, '')) + '</div>' +
-      '<h3 style="font-weight:700;font-size:16px;margin:0 0 4px;line-height:1.3;">' + (src ? '<a href="' + esc(src) + '" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">' + esc(e.title) + '</a>' : esc(e.title)) + '</h3>' +
-      '<p style="font-size:13px;color:var(--text-secondary,#6b6b6b);margin:0 0 8px;">' + where + (where ? ' · ' : '') + esc(timeLabel(e)) + '</p>' +
-      (e.price ? '<p style="font-size:13px;margin:0 0 8px;">🎟️ ' + esc(e.price) + '</p>' : '') +
-      (credit ? '<p style="font-size:12px;color:var(--text-secondary,#6b6b6b);margin:0;">' + credit + '</p>' : '') +
+    return '<div class="card live-ev rw"' + st('padding:18px;') + '>' +
+      '<div class="ev-t"' + st('font-size:12px;font-weight:700;color:var(--coral-soft,#c0563f);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;') + '>' + esc(String(e.tag || e.category || 'Event').replace(isDc() ? PICT : /\ud83d\udcc5\s*/g, '')) + '</div>' +
+      '<h3 class="ev-n"' + st('font-weight:700;font-size:16px;margin:0 0 4px;line-height:1.3;') + '>' + (src ? '<a href="' + esc(src) + '" target="_blank" rel="noopener"' + st('color:inherit;text-decoration:none;') + '>' + esc(e.title) + '</a>' : esc(e.title)) + '</h3>' +
+      '<p class="ev-w"' + st('font-size:13px;color:var(--text-secondary,#6b6b6b);margin:0 0 8px;') + '>' + where + (where ? dot() : '') + esc(timeLabel(e)) + '</p>' +
+      (e.price ? '<p class="ev-p"' + st('font-size:13px;margin:0 0 8px;') + '>' + (isDc() ? '' : '\ud83c\udf9f\ufe0f ') + esc(e.price) + '</p>' : '') +
+      (credit ? '<p class="ev-c"' + st('font-size:12px;color:var(--text-secondary,#6b6b6b);margin:0;') + '>' + credit + '</p>' : '') +
       mlBtn(e) +
       '</div>';
   }
@@ -142,30 +149,30 @@
     }).slice(0, limit);
     if (!list.length) {
       var msg = when
-        ? 'Nothing is listed for ' + esc(from === to ? dayLabel(from) : dayLabel(from) + ' – ' + dayLabel(to)) + ' yet.' +
-          (lastDay && from > lastDay ? ' Our calendar currently runs through ' + esc(dayLabel(lastDay)) + '.' : '') +
+        ? 'Nothing is listed for ' + (from === to ? dlh(from) : dlh(from) + ' – ' + dlh(to)) + ' yet.' +
+          (lastDay && from > lastDay ? ' Our calendar currently runs through ' + dlh(lastDay) + '.' : '') +
           ' For holiday strolls and parades with confirmed dates, see our <a href="/guides/cape-cod-holiday-events-2026/">holiday events guide</a>.'
         : 'No upcoming events are listed right now — check back soon, or open the app for tonight\'s picks.';
-      el.innerHTML = '<p style="color:var(--text-secondary,#6b6b6b);">' + msg + '</p>';
+      el.innerHTML = '<p' + st('color:var(--text-secondary,#6b6b6b);') + '>' + msg + '</p>';
       return;
     }
     if (!group && el.hasAttribute('data-rows')) { el.innerHTML = '<ul class="ev-rows">' + list.map(row).join('') + '</ul>'; return; }
-    if (!group) { el.innerHTML = '<div class="grid-3">' + list.map(card).join('') + '</div>'; return; }
+    if (!group) { el.innerHTML = '<div class="grid-3 rws">' + list.map(card).join('') + '</div>'; return; }
     var html = '', cur = '', today = dayKey(new Date());
     var floor = from && from > today ? from : today;
     // Ongoing multi-day events go under the first day shown (e.g. Today), not their past start date.
     function groupDay(e) { var k = eventDay(e); return (k < floor && endDay(e) >= floor) ? floor : k; }
     // Say so when nothing is listed for today, instead of silently starting tomorrow.
     if ((!from || from <= today) && (!to || to >= today) && groupDay(list[0]) > today) {
-      html += '<section class="section"><h2 class="section-title">' + esc(dayLabel(today)) + '</h2>' +
-        '<p style="color:var(--text-secondary,#6b6b6b);">Nothing is listed for today. Next up: ' + esc(dayLabel(groupDay(list[0])).replace(/^Tomorrow · /, 'tomorrow, ')) + '.</p></section>';
+      html += '<section class="section"><h2 class="section-title">' + dlh(today) + '</h2>' +
+        '<p' + st('color:var(--text-secondary,#6b6b6b);') + '>Nothing is listed for today. Next up: ' + esc(dayLabel(groupDay(list[0])).replace(/^Tomorrow · /, 'tomorrow, ')) + '.</p></section>';
     }
     list.forEach(function (e) {
       var k = groupDay(e);
       if (k !== cur) {
         if (cur) html += '</div></section>';
         cur = k;
-        html += '<section class="section"><h2 class="section-title">' + esc(dayLabel(k)) + '</h2><div class="grid-3">';
+        html += '<section class="section"><h2 class="section-title">' + dlh(k) + '</h2><div class="grid-3 rws">';
       }
       html += card(e);
     });
@@ -177,10 +184,10 @@
     var last = events.length ? eventDay(events[events.length - 1]) : '';
     var today = dayKey(new Date());
     var opts = [['', 'All upcoming'], ['today', 'Today'], ['weekend', 'This weekend'], ['week', 'Next 7 days']];
-    bar.innerHTML = opts.map(function (o) {
+    bar.innerHTML = (isDc() ? '<div class="ev-scroll">' : '') + opts.map(function (o) {
       return '<button type="button" class="ev-chip" data-when="' + o[0] + '">' + o[1] + '</button>';
     }).join('') +
-      '<label class="ev-date">Pick a date <input type="date" min="' + today + '"' + (last ? ' max="' + last + '"' : '') + '></label>' +
+      '<label class="ev-date">Pick a date <input type="date" min="' + today + '"' + (last ? ' max="' + last + '"' : '') + '></label>' + (isDc() ? '</div>' : '') +
       (last ? '<span class="ev-range">Listings run through ' + esc(dayLabel(last).replace(/^(Today|Tomorrow) · /, '')) + '</span>' : '');
     var input = bar.querySelector('input');
     function apply(when, push) {

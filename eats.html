@@ -23,63 +23,41 @@
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-<style>
-.eat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-@media(max-width:768px){.eat-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:480px){.eat-grid{grid-template-columns:1fr;}}
-.eat-card{background:white;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);transition:transform var(--transition-base),box-shadow var(--transition-base);}
-.eat-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);}
-.eat-card .cover{height:160px;background-size:cover;background-position:center;position:relative;}
-.eat-card .cover::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.35) 0%,transparent 50%);}
-.eat-card .price-pill{position:absolute;bottom:10px;right:10px;padding:4px 10px;border-radius:999px;font-size:11px;font-weight:700;color:white;background:var(--cape-navy);z-index:1;}
-.eat-card .body{padding:14px;}
-.eat-card h3{font-weight:700;font-size:16px;margin:0 0 4px;}
-.eat-card .meta{font-size:12px;color:var(--text-secondary);margin-bottom:8px;}
-.eat-card .tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
-.eat-card .tag{font-size:11px;font-weight:600;background:var(--cape-cream);color:var(--cape-brown-dark);padding:3px 8px;border-radius:6px;}
-.eat-card .actions{display:flex;gap:8px;}
-.eat-card .actions a{flex:1;text-align:center;padding:8px;border-radius:10px;font-size:12px;font-weight:700;text-decoration:none;}
-.eat-card .actions .btn-view{background:var(--cape-navy);color:white;}
-.eat-card .actions .btn-book{background:var(--cape-cream);color:var(--cape-brown-dark);border:1px solid var(--divider);}
-.eat-card .src{font-size:11px;color:var(--text-secondary);margin:0 0 10px;}
-.eat-card .src a{color:inherit;text-decoration:underline;}
-</style>
 <script src="/js/mylist.js"></script>
 </head>
-<body>
-<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 App</a></div><button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button></div></nav>
+<body class="dc">
+<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/feed.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>App</a></div><button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button></div></nav>
 <div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()">
-    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 Open the App</a>
+    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>Open the App</a>
   </div></div>
 
-<section class="hero" style="min-height:50vh;"><div class="hero-overlay"></div><div class="hero-content" style="padding-top:80px;"><div class="hero-badge">🦐 Cape Cod Dining</div><h1 class="hero-title">Where to <span class="script">Eat</span></h1><p class="hero-subtitle">Lobster rolls, clam shacks, bakeries and waterfront dining, with Google ratings and closure flags, refreshed weekly.</p></div></section>
+<section class="hero"><div class="hero-overlay"></div><div class="hero-content"><div class="hero-badge">Cape Cod Dining</div><h1 class="hero-title">Where to <span class="script">Eat</span></h1><p class="hero-subtitle">Lobster rolls, clam shacks, bakeries and waterfront dining, with Google ratings and closure flags, refreshed weekly.</p></div></section>
 
 <section class="section page-wrap">
 <div class="filter-bar">
-<div class="filter-chip active" onclick="filterEats('all',this)">All</div>
-<div class="filter-chip" onclick="filterEats('lobster',this)">🦐 Lobster Rolls</div>
-<div class="filter-chip" onclick="filterEats('clam',this)">🦪 Clam Shack</div>
-<div class="filter-chip" onclick="filterEats('fine',this)">🍽️ Fine Dining</div>
-<div class="filter-chip" onclick="filterEats('breakfast',this)">☕ Breakfast</div>
-<div class="filter-chip" onclick="filterEats('icecream',this)">🍦 Ice Cream</div>
+<button type="button" class="filter-chip active" aria-pressed="true" onclick="filterEats('all',this)">All</button>
+<button type="button" class="filter-chip" aria-pressed="false" onclick="filterEats('lobster',this)"><span class="lc">Lobster Rolls</span></button>
+<button type="button" class="filter-chip" aria-pressed="false" onclick="filterEats('clam',this)"><span class="lc">Clam Shack</span></button>
+<button type="button" class="filter-chip" aria-pressed="false" onclick="filterEats('fine',this)"><span class="lc">Fine Dining</span></button>
+<button type="button" class="filter-chip" aria-pressed="false" onclick="filterEats('breakfast',this)"><span class="lc">Breakfast</span></button>
+<button type="button" class="filter-chip" aria-pressed="false" onclick="filterEats('icecream',this)"><span class="lc">Ice Cream</span></button>
 </div>
 
-<div class="affiliate-band" style="margin-bottom:20px;">
-<div><div class="label">🎯 Reserve Your Table</div><div class="title"><span class="s-summer">Reserve Cape Cod restaurants on OpenTable</span><span class="s-off">Off-season hours vary — call ahead</span></div></div>
-<a href="https://www.opentable.com/region/cape-cod" target="_blank" rel="noopener" class="btn btn-navy btn-sm" onclick="gtag('event','affiliate_click',{type:'opentable',location:'eats_banner'})">Find Tables →</a>
+<div class="affiliate-band">
+<div><div class="label">Reserve Your Table</div><div class="title"><span class="s-summer">Reserve Cape Cod restaurants on OpenTable</span><span class="s-off">Off-season hours vary — call ahead</span></div></div>
+<a href="https://www.opentable.com/region/cape-cod" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" onclick="gtag('event','affiliate_click',{type:'opentable',location:'eats_banner'})">Find Tables<span class=x> →</span></a>
 </div>
 
-<div class="eat-grid" id="eatGrid"></div>
+<div class="eat-grid rws" id="eatGrid"></div>
 
-<div class="card" style="padding:24px; margin-top:32px;">
-<h3 style="font-family:'Fraunces',serif; font-weight:900; font-size:20px; margin:0 0 6px; color:var(--cape-brown-dark);">🦐 Lobster Rolls We Send Friends To</h3>
-<p style="color:var(--text-secondary); font-size:14px; margin:0 0 14px;">Two of our favorites. Check hours before you go.</p>
-<div class="grid-3" style="margin-top:16px;">
-<div class="card" style="padding:16px;"><div style="font-size:28px; margin-bottom:8px;">🤝</div><div style="font-weight:700; font-size:15px; margin-bottom:4px;">Arnold's — Eastham</div><div style="font-size:13px; color:var(--text-secondary);">Lobster and clam bar.</div></div>
-<div class="card" style="padding:16px;"><div style="font-size:28px; margin-bottom:8px;">🦐</div><div style="font-weight:700; font-size:15px; margin-bottom:4px;">The Lobster Pot — Ptown</div><div style="font-size:13px; color:var(--text-secondary);">On Provincetown Harbor, run by the McNulty family since 1979 (<a href="https://www.ptownlobsterpot.com/our-story" target="_blank" rel="noopener">its history page</a>).</div></div>
+<section class="section">
+<h2 class="section-title">Lobster Rolls We Send Friends To</h2>
+<p>Two of our favorites. Check hours before you go.</p>
+<div class="rws" style="margin-top:14px;">
+<div class="rw"><div class="nm">Arnold's — Eastham</div><div class="dsc">Lobster and clam bar.</div></div>
+<div class="rw"><div class="nm">The Lobster Pot — Ptown</div><div class="dsc">On Provincetown Harbor, run by the McNulty family since 1979 (<a href="https://www.ptownlobsterpot.com/our-story" target="_blank" rel="noopener">its history page</a>).</div></div>
 </div>
-</div>
-
+</section>
 </section>
 
 <footer class="site-footer">
@@ -120,17 +98,17 @@ function renderEats(){
   grid.innerHTML=filtered.map(r=>{
     const L=live[r.match]||{};
     const closed=L.business_status==='CLOSED_TEMPORARILY';
-    const rating=L.rating?` · ⭐ ${esc(L.rating)} on Google`:'';
+    const rating=L.rating?`<span class=dot aria-hidden=true> · </span>${esc(L.rating)} on Google`:'';
     return `
-    <div class="eat-card" id="eat-${mlKey(r)}">
-      <div class="cover${r.img?'':' tile-cover'}"${r.img?` style="background-image:url('${r.img}')"`:` style="background:linear-gradient(135deg,#8A6440,#D4A574)"`}>${r.img?'':`<span class="tile-label">🍽️ ${esc(r.cuisine||r.town)}</span>`}${L.price?`<span class="price-pill" title="Google price level">${esc(L.price)} on Google</span>`:''}</div>
+    <div class="eat-card rw" id="eat-${mlKey(r)}">
+      <div class="cover"><span class="tile-label">${esc(r.cuisine||r.town)}</span>${L.price?`<span class="price-pill" title="Google price level">${esc(L.price)} on Google</span>`:''}</div>
       <div class="body">
-        <h3>${esc(r.name)}</h3>
-        <div class="meta">${esc(r.town)} · ${esc(r.cuisine)}${rating}</div>
-        ${closed?'<div class="meta" style="color:#B45309;font-weight:700;">Google lists this as temporarily closed — check before you go</div>':''}
+        <h2>${esc(r.name)}</h2>
+        <div class="meta">${esc(r.town)}<span class=dot aria-hidden=true> · </span>${esc(r.cuisine)}${rating}</div>
+        ${closed?'<div class="meta warn">Google lists this as temporarily closed — check before you go</div>':''}
         <div class="tags">${r.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
-        ${r.desc?`<p style="font-size:13px;color:var(--text-secondary);margin:0 0 6px;line-height:1.5;">${esc(r.desc)}</p>`:''}
-        ${r.src?`<p class="src">Source: <a href="${esc(r.src.url)}" target="_blank" rel="noopener">${esc(r.src.label)} ↗</a></p>`:((L.website&&!L.website_hidden)?`<p class="src"><a href="${esc(L.website)}" target="_blank" rel="noopener">Restaurant website ↗</a></p>`:'')}
+        ${r.desc?`<p class="dsc">${esc(r.desc)}</p>`:''}
+        ${r.src?`<p class="src">Source: <a href="${esc(r.src.url)}" target="_blank" rel="noopener">${esc(r.src.label)}<span class=x> ↗</span></a></p>`:((L.website&&!L.website_hidden)?`<p class="src"><a href="${esc(L.website)}" target="_blank" rel="noopener">Restaurant website<span class=x> ↗</span></a></p>`:'')}
         ${mlBtn(r)}
         <div class="actions">
           <a href="https://www.yelp.com/search?find_desc=${encodeURIComponent(r.name)}&find_loc=${encodeURIComponent(r.town)}%2C+MA" target="_blank" rel="noopener" class="btn-view" onclick="gtag('event','affiliate_click',{type:'yelp',item:'${esc(r.name)}',location:'eats_card'})">Reviews</a>
@@ -139,7 +117,7 @@ function renderEats(){
       </div>
     </div>`;}).join('');
 }
-function filterEats(tag,el){document.querySelectorAll('.filter-chip').forEach(c=>c.classList.remove('active'));el.classList.add('active');eatFilter=tag;renderEats();gtag('event','filter_click',{category:'eats',filter:tag});}
+function filterEats(tag,el){document.querySelectorAll('.filter-chip').forEach(c=>{c.classList.remove('active');c.setAttribute('aria-pressed','false')});el.classList.add('active');el.setAttribute('aria-pressed','true');eatFilter=tag;renderEats();gtag('event','filter_click',{category:'eats',filter:tag});}
 renderEats();
 fetch('https://raw.githubusercontent.com/zemiai/totallycapecod/main/data/eats.json',{cache:'no-cache'})
   .then(r=>r.ok?r.json():null).then(d=>{

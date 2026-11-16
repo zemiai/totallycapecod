@@ -19,133 +19,29 @@
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-<style>
-  .feed-wrap{max-width:640px;margin:0 auto;padding:84px 14px 90px;}
-  .feed-intro{text-align:center;margin:6px 0 14px;}
-  .feed-intro h1{font-family:'Fraunces',serif;font-weight:900;font-size:30px;color:var(--warm-brown);margin:0 0 4px;letter-spacing:-0.02em;}
-  .feed-intro p{color:var(--text-secondary);font-size:14px;margin:0;}
-
-  /* Sticky location bar */
-  .loc-bar{position:sticky;top:62px;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:10px;
-    background:rgba(253,248,242,0.92);backdrop-filter:blur(12px);border:1px solid var(--divider);
-    border-radius:var(--radius-full);padding:9px 9px 9px 16px;margin:0 0 16px;box-shadow:var(--shadow-sm);}
-  .loc-bar .where{font-weight:700;color:var(--warm-brown);font-size:14px;display:flex;align-items:center;gap:7px;min-width:0;}
-  .loc-bar .where .town{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-  .loc-bar .where .dot{width:9px;height:9px;border-radius:50%;background:var(--status-open);box-shadow:0 0 0 4px rgba(107,196,166,0.2);flex:none;}
-  .loc-bar button{flex:none;background:var(--sand-cream);border:1px solid var(--divider);color:var(--warm-brown);
-    font-weight:700;font-size:12px;padding:8px 14px;border-radius:var(--radius-full);cursor:pointer;}
-  .loc-bar button:hover{border-color:var(--sea-soft);color:var(--sea-deep);}
-
-  /* Posts */
-  .post{background:var(--card);border:1px solid var(--divider);border-radius:var(--radius-lg);overflow:hidden;
-    box-shadow:var(--shadow-sm);margin-bottom:16px;animation:fadeUp .45s ease both;}
-  @keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
-  .post-head{display:flex;align-items:center;gap:11px;padding:12px 14px 10px;}
-  .avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-    font-size:20px;flex:none;background:linear-gradient(135deg,var(--sea-light),var(--mint-light));}
-  .avatar.food{background:linear-gradient(135deg,var(--peach-light),var(--coral-light));}
-  .avatar.beach{background:linear-gradient(135deg,var(--sea-mist),var(--sea-light));}
-  .avatar.event{background:linear-gradient(135deg,var(--lavender-light),var(--sea-mist));}
-  .avatar.road{background:linear-gradient(135deg,var(--sand-soft),var(--peach-light));}
-  .post-head .ph-main{min-width:0;flex:1;}
-  .post-head .name{font-weight:700;font-size:15px;color:var(--text);line-height:1.2;}
-  .post-head .sub{font-size:12.5px;color:var(--text-secondary);margin-top:2px;}
-  .kind-pill{font-size:10px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;
-    padding:4px 9px;border-radius:var(--radius-full);flex:none;}
-  .kp-food{background:var(--peach-light);color:#B5654A;}
-  .kp-beach{background:var(--sea-mist);color:var(--sea-deep);}
-  .kp-event{background:var(--lavender-light);color:#6B5E8A;}
-  .kp-road{background:var(--sand-light);color:var(--warm-brown);}
-
-  .post-photo{height:300px;background-size:cover;background-position:center;position:relative;background-color:var(--sea-mist);}
-  .cover-icon{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:88px;line-height:1;opacity:0.95;filter:drop-shadow(0 2px 10px rgba(0,0,0,0.28));pointer-events:none;z-index:1;}
-  .post-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(74,64,56,0.28),transparent 45%);}
-  .dist-badge{position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.92);backdrop-filter:blur(4px);
-    color:var(--warm-brown);font-weight:800;font-size:12px;padding:6px 11px;border-radius:var(--radius-full);z-index:1;}
-  .price-badge{position:absolute;bottom:12px;left:12px;background:rgba(74,64,56,0.78);color:#fff;
-    font-weight:700;font-size:12px;padding:5px 11px;border-radius:var(--radius-full);z-index:1;}
-  .open-badge{position:absolute;top:12px;left:12px;font-weight:800;font-size:11.5px;padding:5px 10px;
-    border-radius:var(--radius-full);z-index:1;background:rgba(255,255,255,0.94);backdrop-filter:blur(4px);}
-  .open-badge.open{color:var(--status-open);}
-  .open-badge.closed{color:var(--status-full);}
-  .post-head .sub .rev{color:var(--text-secondary);font-weight:600;}
-
-  .post-body{padding:12px 14px 14px;}
-  .post-body p{margin:0;font-size:14.5px;line-height:1.55;color:var(--text);}
-  .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;}
-  .tag{font-size:11px;font-weight:600;background:var(--sand-cream);color:var(--warm-brown-soft);
-    padding:3px 9px;border-radius:6px;text-transform:capitalize;}
-  .actions{display:flex;gap:8px;margin-top:12px;}
-  .actions a{flex:1;text-align:center;padding:10px;border-radius:var(--radius-full);font-size:13px;font-weight:700;text-decoration:none;}
-  .a-view{background:linear-gradient(135deg,var(--sea-deep),var(--sea-soft));color:#fff;}
-  .a-book{background:var(--sand-cream);color:var(--warm-brown);border:1px solid var(--divider);}
-  .actions a:hover{text-decoration:none;opacity:.92;}
-
-  /* Live stat rows (beach / bridge) */
-  .stat-grid{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px;}
-  .stat{background:var(--sand-cream);border:1px solid var(--divider);border-radius:var(--radius-sm);
-    padding:8px 12px;font-size:13px;font-weight:600;color:var(--text);}
-  .stat b{display:block;font-size:11px;font-weight:700;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.04em;margin-bottom:2px;}
-  .pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;padding:5px 11px;border-radius:var(--radius-full);}
-  .pill.open{background:rgba(107,196,166,0.18);color:#3E9A7C;}
-  .pill.mid{background:rgba(232,184,122,0.22);color:#C28A3A;}
-  .pill.full{background:rgba(232,138,138,0.2);color:#C75C5C;}
-  .crowd-dots{display:inline-flex;gap:3px;vertical-align:middle;}
-  .crowd-dots i{width:7px;height:7px;border-radius:50%;background:var(--divider);display:inline-block;}
-  .crowd-dots i.on{background:var(--sand-warm);}
-
-  .updated{font-size:11.5px;color:var(--text-secondary);margin-top:10px;display:flex;align-items:center;gap:6px;}
-  .live-dot{width:7px;height:7px;border-radius:50%;background:var(--status-open);animation:pulse 1.8s infinite;}
-  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
-
-  /* Town divider */
-  .town-head{display:flex;align-items:center;gap:12px;margin:8px 2px 14px;}
-  .town-head .line{flex:1;height:1px;background:var(--divider);}
-  .town-head .label{font-family:'Fraunces',serif;font-weight:900;font-size:16px;color:var(--warm-brown);white-space:nowrap;}
-  .town-head .label .mi{font-family:'Inter',sans-serif;font-weight:700;font-size:12px;color:var(--text-secondary);margin-left:6px;}
-  .loop-divider{text-align:center;margin:22px 0;color:var(--text-secondary);font-size:13px;font-weight:600;}
-  .loop-divider span{background:var(--sand-cream);border:1px solid var(--divider);padding:8px 18px;border-radius:var(--radius-full);}
-
-  /* Skeleton */
-  .skz{height:120px;border-radius:var(--radius-lg);margin-bottom:16px;
-    background:linear-gradient(100deg,var(--divider) 30%,#fff 50%,var(--divider) 70%);
-    background-size:200% 100%;animation:shimmer 1.3s infinite;}
-  @keyframes shimmer{from{background-position:200% 0;}to{background-position:-200% 0;}}
-
-  /* Location modal */
-  .geo-modal{position:fixed;inset:0;z-index:200;background:rgba(74,64,56,0.4);backdrop-filter:blur(8px);
-    display:flex;align-items:center;justify-content:center;padding:20px;}
-  .geo-modal.hide{display:none;}
-  .geo-card{background:#fff;border-radius:var(--radius-xl);max-width:380px;width:100%;padding:30px 26px;
-    text-align:center;box-shadow:var(--shadow-lg);animation:fadeUp .4s ease both;}
-  .geo-card .pin{font-size:46px;margin-bottom:8px;}
-  .geo-card h2{font-family:'Fraunces',serif;font-weight:900;font-size:24px;color:var(--warm-brown);margin:0 0 8px;}
-  .geo-card p{font-size:14.5px;color:var(--text-secondary);line-height:1.55;margin:0 0 22px;}
-  .geo-card .btn{width:100%;margin-bottom:10px;}
-  .geo-card .fine{font-size:11.5px;color:var(--text-secondary);margin:6px 0 0;}
-</style>
+<style>.feed-wrap{max-width:1200px;margin:0 auto;padding:96px 18px 64px}.feed-intro{margin:0 0 16px}.feed-intro h1{font-size:clamp(36px,9.5vw,56px);line-height:1.05;letter-spacing:-.02em;margin:0 0 14px}.feed-intro p{max-width:36rem;font-size:18px;line-height:1.55;color:var(--ink)}.loc-bar{position:sticky;top:62px;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 4px;padding:4px 0;background:var(--paper);border-top:2px dashed var(--kraft);border-bottom:2px dashed var(--kraft)}.loc-bar .where{display:flex;align-items:center;gap:8px;min-width:0;font-weight:600}.loc-bar .town{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.loc-bar .ld{flex:none;width:9px;height:9px;border-radius:50%;background:var(--bay)}.loc-bar button{flex:none;min-height:44px;padding:0 16px;border:2px solid var(--navy);border-radius:22px;background:transparent;color:var(--navy);font:600 16px/1.2 'Inter',sans-serif;cursor:pointer}#feed{display:grid;grid-template-columns:minmax(0,1fr)}#feed>.rw:first-child{border-top:2px dashed var(--kraft)}.town-head{grid-column:1/-1;margin:20px 0 2px;font:800 24px/1.2 'Fraunces',Georgia,serif;color:var(--navy)}.town-head .mi{margin-left:10px;font:400 16px 'Inter',sans-serif;color:var(--mute)}.loop-divider{grid-column:1/-1;padding:14px 0;font-size:16px;color:var(--mute)}.post-photo{order:0;position:relative;flex:0 0 100%;height:200px;margin-bottom:12px;border-radius:12px;background:#D9C8B0 center/cover no-repeat}.post-photo.np{order:3;height:auto;margin:0;background:none;display:flex;flex-wrap:wrap;gap:0 14px;font-size:16px;color:var(--mute)}.post-photo:not(.np) :is(.dist-badge,.price-badge,.open-badge){position:absolute;padding:3px 8px;border-radius:6px;background:var(--paper);color:var(--ink);font:600 14px/1.4 'Inter',sans-serif}.dist-badge{top:10px;right:10px}.price-badge{bottom:10px;left:10px}.open-badge{top:10px;left:10px}.open-badge.open{color:var(--bay)}.open-badge.closed{color:#B0301F}.stat-grid{order:4;display:flex;flex-wrap:wrap;gap:4px 32px}.stat{font:900 28px/1.15 'Fraunces',Georgia,serif;color:var(--navy)}.stat b{display:block;font:600 16px/1.4 'Inter',sans-serif;color:var(--ink)}.stat .sm{font:400 15px/1.4 'Inter',sans-serif;color:var(--mute)}.stat a{color:inherit;text-decoration:underline}.rw .stat-grid+p{order:5}.rw .live-dot{display:inline-block;width:8px;height:8px;margin-right:8px;border-radius:50%;background:var(--bay)}.rw .rev{font-weight:400}.skz{height:96px;margin-bottom:12px;border-radius:10px;background:var(--sand)}.geo-modal{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(74,64,56,.45)}.geo-modal.hide{display:none}.geo-card{width:100%;max-width:420px;padding:24px;border:2px solid var(--navy);border-radius:14px;background:var(--paper)}.geo-card h2{margin:0 0 8px;font:800 26px/1.2 'Fraunces',Georgia,serif}.geo-card p{margin:0 0 18px;font-size:17px}.geo-card .btn{width:100%;margin-bottom:10px}.geo-card .fine{margin:6px 0 0;font-size:15px;color:var(--mute)}@media(min-width:900px){#feed{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px}#feed>.rw:nth-child(2){border-top:2px dashed var(--kraft)}}</style>
 <script src="/js/mylist.js"></script>
 </head>
-<body>
+<body class="dc">
 
 <!-- Navigation -->
 <nav class="site-nav" id="siteNav"><div class="nav-inner">
   <a href="/" class="nav-logo">Totally Cape Cod</a>
-  <div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/" class="nav-cta">📱 App</a></div>
+  <div class="nav-links"><a href="/feed.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/" class="nav-cta"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>App</a></div>
   <button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button>
 </div></nav>
 <div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()">
-    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 Open the App</a>
+    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>Open the App</a>
   </div></div>
 
 <!-- Location prompt -->
 <div class="geo-modal" id="geoModal">
   <div class="geo-card">
-    <div class="pin">📍</div>
+    
     <h2>What's happening near you?</h2>
     <p>Share your location and we'll surface the closest eats, beaches, and events first — then scroll the whole Cape.</p>
     <button class="btn btn-navy" onclick="useMyLocation()">Use my location</button>
-    <button class="btn btn-ghost" onclick="useMidCape()" style="border:1.5px solid var(--divider);color:var(--warm-brown);">Just browse the Cape</button>
+    <button class="btn btn-ghost" onclick="useMidCape()">Just browse the Cape</button>
     <p class="fine">We never store your location — it stays on your device.</p>
   </div>
 </div>
@@ -157,7 +53,7 @@
   </div>
 
   <div class="loc-bar" id="locBar" style="display:none;">
-    <div class="where"><span class="dot"></span><span class="town" id="locLabel">Locating…</span></div>
+    <div class="where"><span class="ld"></span><span class="town" id="locLabel">Locating…</span></div>
     <button onclick="openGeo()">Change</button>
   </div>
 
@@ -263,13 +159,12 @@ function photoFor(r){
   return null; // no stock photos: cards without a real photo get a color tile
 }
 
-// Branded cover fallback (gradient + icon) for events with no real photo.
+// Events with no real photo get no cover block; their distance and price show as plain text.
 function eventCover(e){
-  if(e.img) return {style:`background-image:url('${e.img}')`, icon:''};
-  const map={music:['#6E5BA6','#3C2E66','🎵'],art:['#C2698E','#7E3F60','🎨'],film:['#37496B','#161F3C','🎬'],drive_in:['#37496B','#161F3C','🎬'],family:['#E3A24E','#B97320','🎠'],food_deal:['#D5644A','#9E3A26','🦞'],farmers_market:['#7BA05B','#496B32','🧺'],trivia:['#5685A4','#33576F','🧠'],happy_hour:['#C77F4A','#8C5222','🍻'],free_event:['#6FB6CC','#2E7C90','🎉']};
-  const m=map[e.category]||['#7BBCD0','#1A3A6C','📅'];
-  return {style:`background:linear-gradient(135deg,${m[0]},${m[1]})`, icon:`<span class="cover-icon">${m[2]}</span>`};
+  if(e.img) return {style:`background-image:url('${e.img}')`, cls:''};
+  return {style:'', cls:' np'};
 }
+const PICT=/[\u{1F000}-\u{1FAFF}☀-➿️]\s*/gu;
 
 // Live "open now" from a Google Places weekly schedule (r.hours), evaluated in Eastern time.
 function tccNowET(){
@@ -341,58 +236,50 @@ function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;","
 function srcLink(u){
   if(!u || !/^https?:\/\//.test(u)) return '';
   let host=''; try{ host=new URL(u).hostname.replace(/^www\./,''); }catch(_){ return ''; }
-  return `<div class="updated">Source: <a href="${esc(u)}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">${esc(host)}</a></div>`;
+  return `<div class="src">Source: <a href="${esc(u)}" target="_blank" rel="noopener">${esc(host)}</a></div>`;
 }
 function ageMin(iso){ const t=Date.parse(iso||''); return isNaN(t)?null:Math.max(0,Math.round((Date.now()-t)/60000)); }
 function ageText(m){ return m==null?'time unknown':(m<60?m+' min ago':m<1440?Math.round(m/60)+' h ago':Math.round(m/1440)+' days ago'); }
 
 function renderItem(it){
   if(it.type==="townhead"){
-    return `<div class="town-head"><div class="line"></div><div class="label">${esc(it.town)}<span class="mi">${miLabel(it.mi)} away</span></div><div class="line"></div></div>`;
+    return `<div class="town-head">${esc(it.town)}<span class="mi">${miLabel(it.mi)} away</div>`;
   }
   if(it.type==="bridge"){
     const s=BRIDGES.sagamore,b=BRIDGES.bourne;
-    return `<div class="post"><div class="post-head">
-      <div class="avatar road">🚗</div>
-      <div class="ph-main"><div class="name">Bridge traffic leaving the Cape</div><div class="sub">Extra minutes from traffic, per Google Maps</div></div>
-      <div class="kind-pill kp-road">${(ageMin(BRIDGES_AT)??1e9)<=90?'Live':'Traffic'}</div></div>
-      <div class="post-body">
-        <div class="stat-grid">
-          <div class="stat"><b>${esc(s.name)}</b>${s.delay?s.delay+' min added':'No added delay'}</div>
-          <div class="stat"><b>${esc(b.name)}</b>${b.delay?b.delay+' min added':'No added delay'}</div>
-        </div>
-        ${(ageMin(BRIDGES_AT)??1e9)>180?'<p style="margin-top:10px;">This reading is a few hours old — check current traffic before you go.</p>':''}
-        <div class="updated">${(ageMin(BRIDGES_AT)??1e9)<=90?'<span class="live-dot"></span>':''}Google Maps traffic · updated ${ageText(ageMin(BRIDGES_AT))}</div>
-      </div></div>`;
+    return `<div class="post rw">
+      <div class="ev-n">Bridge traffic leaving the Cape</div><div class="ev-w">Extra minutes from traffic, per Google Maps</div>
+      <div class="ev-t">${(ageMin(BRIDGES_AT)??1e9)<=90?'Live':'Traffic'}</div>
+      <div class="stat-grid">
+        <div class="stat"><b>${esc(s.name)}</b>${s.delay?s.delay+' min added':'No added delay'}</div>
+        <div class="stat"><b>${esc(b.name)}</b>${b.delay?b.delay+' min added':'No added delay'}</div>
+      </div>
+      ${(ageMin(BRIDGES_AT)??1e9)>180?'<p>This reading is a few hours old — check current traffic before you go.</p>':''}
+      <div class="src">${(ageMin(BRIDGES_AT)??1e9)<=90?'<span class="live-dot"></span>':''}Google Maps traffic<span class=dot aria-hidden=true> · </span>updated ${ageText(ageMin(BRIDGES_AT))}</div></div>`;
   }
   if(it.type==="beach"){
     const b=it.data;
-    return `<div class="post"><div class="post-head">
-      <div class="avatar beach">🏖️</div>
-      <div class="ph-main"><div class="name">${esc(b.name)}</div><div class="sub">${esc(b.town)} · ${miLabel(it.mi)} away</div></div>
-      <div class="kind-pill kp-beach">Beach</div></div>
-      <div class="post-body">
-        ${b.water_temp?`<div class="stat-grid"><div class="stat"><b>Water</b>${b.water_temp}°F${b.water_temp_src?` · nearest sensor: ${SENSOR_LINKS[b.water_temp_src]?`<a href="${SENSOR_LINKS[b.water_temp_src]}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">${esc(b.water_temp_src)}</a>`:esc(b.water_temp_src)}`:''}</div></div>`:''}
-        ${b.notes?`<p style="margin-top:10px;">${esc(b.notes)}</p>`:""}
-        ${tempAge(b)?`<div class="updated">${tempFresh(b)?'<span class="live-dot"></span>':''}Water temp updated ${tempAge(b)}</div>`:""}
-      </div></div>`;
+    return `<div class="post rw">
+      <div class="ev-n">${esc(b.name)}</div><div class="ev-w">${esc(b.town)}<span class=dot aria-hidden=true> · </span>${miLabel(it.mi)} away</div>
+      <div class="ev-t">Beach</div>
+      ${b.water_temp?`<div class="stat-grid"><div class="stat"><b>Water</b>${b.water_temp}°F${b.water_temp_src?`<span class="sm"><span class=dot aria-hidden=true> · </span>nearest sensor: ${SENSOR_LINKS[b.water_temp_src]?`<a href="${SENSOR_LINKS[b.water_temp_src]}" target="_blank" rel="noopener">${esc(b.water_temp_src)}</a>`:esc(b.water_temp_src)}</span>`:''}</div></div>`:''}
+      ${b.notes?`<p>${esc(b.notes)}</p>`:""}
+      ${tempAge(b)?`<div class="src">${tempFresh(b)?'<span class="live-dot"></span>':''}Water temp updated ${tempAge(b)}</div>`:""}
+      </div>`;
   }
   if(it.type==="event"){
     const e=it.data;
     const cov=eventCover(e);
     const who = e.credit || e.source || '';
-    const credit = who ? `<div class="updated">via ${e.source_url?`<a href="${esc(e.source_url)}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">${esc(who)}</a>`:esc(who)}</div>` : '';
-    return `<div class="post">
-      <div class="post-photo" style="${cov.style}">${cov.icon}<span class="dist-badge">${miLabel(it.mi)}</span>${e.price?`<span class="price-badge">${esc(e.price)}</span>`:''}</div>
-      <div class="post-head">
-        <div class="avatar event">🎟️</div>
-        <div class="ph-main"><div class="name">${esc(e.title)}</div><div class="sub">${esc(e.venue)} · ${esc(e.town)}</div></div>
-        <div class="kind-pill kp-event">${esc(e.tag)}</div></div>
-      <div class="post-body">
-        ${e.info?`<p>${esc(e.info)}</p>`:''}
-        <div class="tags"><span class="tag">🕒 ${esc(e.time)}</span>${e.price?`<span class="tag">${esc(e.price)}</span>`:''}</div>
-        ${credit}
-      </div></div>`;
+    const credit = who ? `<div class="src">via ${e.source_url?`<a href="${esc(e.source_url)}" target="_blank" rel="noopener">${esc(who)}</a>`:esc(who)}</div>` : '';
+    return `<div class="post rw">
+      <div class="post-photo${cov.cls}"${cov.style?` style="${cov.style}"`:''}><span class="dist-badge">${miLabel(it.mi)}</span>${e.price?`<span class="price-badge">${esc(e.price)}</span>`:''}</div>
+      <div class="ev-n">${esc(e.title)}</div><div class="ev-w">${esc(e.venue)}<span class=dot aria-hidden=true> · </span>${esc(e.town)}</div>
+      <div class="ev-t">${esc(String(e.tag||'').replace(PICT,''))}</div>
+      ${e.info?`<p>${esc(e.info)}</p>`:''}
+      <div class="tags"><span class="tag">${esc(e.time)}</span>${e.price?`<span class="tag">${esc(e.price)}</span>`:''}</div>
+      ${credit}
+      </div>`;
   }
   // food
   const r=it.data;
@@ -405,27 +292,24 @@ function renderItem(it){
   // "Call" when we have a number; else Google Maps so the button is never broken.
   const phoneDigits = r.phone ? String(r.phone).replace(/[^0-9+]/g,'') : '';
   const callBtn = phoneDigits
-    ? `<a class="a-book" href="tel:${phoneDigits}" onclick="gtag('event','call_click',{item:'${esc(r.name)}',location:'feed'})">📞 Call</a>`
-    : `<a class="a-book" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(r.name+' '+r.town+' MA')}${r.place_id?`&query_place_id=${encodeURIComponent(r.place_id)}`:''}" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'maps',item:'${esc(r.name)}',location:'feed'})">📍 Directions</a>`;
+    ? `<a class="a-book" href="tel:${phoneDigits}" onclick="gtag('event','call_click',{item:'${esc(r.name)}',location:'feed'})">Call</a>`
+    : `<a class="a-book" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(r.name+' '+r.town+' MA')}${r.place_id?`&query_place_id=${encodeURIComponent(r.place_id)}`:''}" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'maps',item:'${esc(r.name)}',location:'feed'})">Directions</a>`;
   // Skip sites flagged in data/eats.json (website_hidden), e.g. ones showing injected spam.
   const siteBtn = (r.website && !r.website_hidden)
     ? `<a class="a-view" href="${esc(r.website)}" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'website',item:'${esc(r.name)}',location:'feed'})">Website</a>`
     : "";
-  return `<div class="post">
-    <div class="post-photo" style="${photoFor(r)?`background-image:url('${photoFor(r)}')`:'background-image:linear-gradient(135deg,#8A6440,#D4A574)'}"><span class="dist-badge">${miLabel(it.mi)}</span><span class="price-badge">${esc(r.price)}</span>${openBadge}</div>
-    <div class="post-head">
-      <div class="avatar food">🍴</div>
-      <div class="ph-main"><div class="name">${esc(r.name)}</div><div class="sub">${esc(r.town)} · ${esc(r.cuisine)}${r.rating!=null?` · ⭐ ${r.rating} on Google${reviews}`:''}</div></div>
-      <div class="kind-pill kp-food">Eat</div></div>
-    <div class="post-body">
-      <p>${esc(r.desc)}</p>
-      ${srcLink(r.desc_source)}
-      <div class="tags">${r.tags.slice(0,3).map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div>
-      <div class="actions">
-        ${siteBtn}
-        <a class="a-view" href="${yelp}" target="_blank" rel="noopener" onclick="gtag('event','affiliate_click',{type:'yelp',item:'${esc(r.name)}',location:'feed'})">Reviews</a>
-        ${callBtn}
-      </div>
+  const ph=photoFor(r);
+  return `<div class="post rw">
+    <div class="post-photo${ph?'':' np'}"${ph?` style="background-image:url('${ph}')"`:''}><span class="dist-badge">${miLabel(it.mi)}</span><span class="price-badge">${esc(r.price)}</span>${openBadge}</div>
+    <div class="ev-n">${esc(r.name)}</div><div class="ev-w">${esc(r.town)}<span class=dot aria-hidden=true> · </span>${esc(r.cuisine)}${r.rating!=null?`<span class=dot aria-hidden=true> · </span>${r.rating} on Google${reviews}`:''}</div>
+    <div class="ev-t">Eat</div>
+    <p>${esc(r.desc)}</p>
+    ${srcLink(r.desc_source)}
+    <div class="tags">${r.tags.slice(0,3).map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div>
+    <div class="actions">
+      ${siteBtn}
+      <a class="a-view" href="${yelp}" target="_blank" rel="noopener" onclick="gtag('event','affiliate_click',{type:'yelp',item:'${esc(r.name)}',location:'feed'})">Reviews</a>
+      ${callBtn}
     </div></div>`;
 }
 
@@ -433,15 +317,15 @@ function renderItem(it){
 function renderPage(){
   if(!SEQ.length){
     document.getElementById('feed').innerHTML = LIVE_STATE==='loading'
-      ? '<div class="loop-divider"><span>Loading what\'s near you…</span></div>'
-      : '<div class="loop-divider"><span>Live data couldn\'t load right now — please refresh in a moment.</span></div>';
+      ? '<div class="loop-divider">Loading what\'s near you…</div>'
+      : '<div class="loop-divider">Live data couldn\'t load right now — please refresh in a moment.</div>';
     return;
   }
   const out=[]; let n=0;
   while(n<5){
     if(ptr>=SEQ.length){
       loops++;
-      out.push(`<div class="loop-divider"><span>🔄 That's the whole Cape — starting over near you</span></div>`);
+      out.push(`<div class="loop-divider">That's the whole Cape — starting over near you</div>`);
       ptr=0;
     }
     out.push(renderItem(SEQ[ptr++]));
@@ -470,7 +354,7 @@ function useMidCape(fallback){
   USER={lat:MID_CAPE.lat,lng:MID_CAPE.lng,label:MID_CAPE.label}; closeGeo(); startFeed();
   // If we landed here because location was denied/failed (not an explicit "just browse"),
   // say so — don't let people think they're seeing near-them results when they aren't.
-  if(fallback){ const el=document.getElementById('locLabel'); if(el) el.textContent="Showing Mid-Cape · turn on location for near-you results"; }
+  if(fallback){ const el=document.getElementById('locLabel'); if(el) el.innerHTML='Showing Mid-Cape<span class=dot aria-hidden=true> · </span>turn on location for near-you results'; }
 }
 function useMyLocation(){
   if(!navigator.geolocation){ useMidCape(true); return; }
