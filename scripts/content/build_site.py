@@ -181,15 +181,20 @@ def pretty_date(iso: str) -> str:
     return d.strftime("%B %-d, %Y")
 
 
-def cite_html(text: str, slug: str) -> str:
+def cite_html(text: str, slug: str, cite_base: str | None = None) -> str:
+    """cite_base=None keeps the classic [n] markers linking to #src-n on the same page.
+    A string (e.g. "/guides/<slug>/sources/") gives quiet superscripts linking to that page."""
     def rep(m):
         nums = [n.strip() for n in m.group(1).split(",")]
+        if cite_base is not None:
+            links = "".join(f'<a href="{cite_base}#src-{n}" aria-label="Source {n}">{n}</a>' for n in nums)
+            return f'<sup class="cite cite-q">{links}</sup>'
         links = ",".join(f'<a href="#src-{n}" aria-label="Source {n}">{n}</a>' for n in nums)
         return f'<sup class="cite">[{links}]</sup>'
     return CITE_RE.sub(rep, text)
 
 
-def md_to_html(md: str, slug: str) -> str:
+def md_to_html(md: str, slug: str, cite_base: str | None = None) -> str:
     # {{events ...}} shortcode → live, sourced events widget (js/live-events.js)
     def events_widget(m):
         attrs = dict(re.findall(r'(\w+)="([^"]*)"', m.group(1)))
@@ -202,7 +207,7 @@ def md_to_html(md: str, slug: str) -> str:
     md = re.sub(r"\{\{\s*events\s*(.*?)\}\}", events_widget, md)
     out = markdown.markdown(md, extensions=["tables", "sane_lists", "attr_list", "toc"],
                             extension_configs={"toc": {"permalink": False}})
-    out = cite_html(out, slug)
+    out = cite_html(out, slug, cite_base)
     # external links open in a new tab, internal stay put
     out = re.sub(r'<a href="(https?://(?!totallycapecod\.com)[^"]+)"', r'<a href="\1" target="_blank" rel="noopener"', out)
     return out
@@ -348,23 +353,7 @@ def card(meta: dict) -> str:
             f'<b>{esc(meta["title"])}</b><span>Updated {esc(pretty_date(meta["updated"]))}</span></a>')
 
 
-def render_article(meta: dict, body: str, authors: dict, all_articles: list) -> str:
-    slug = meta["slug"]
-    url = f"{SITE}/guides/{slug}/"
-    a = authors[meta["author"]]
-    body_html = md_to_html(body, slug)
-    # Desktop "On this page" sidebar, built from the article's H2s (ids come from the toc extension).
-    heads = re.findall(r'<h2 id="([^"]+)">(.*?)</h2>', body_html, flags=re.S)
-    toc_html = ""
-    if len(heads) >= 3:
-        links = "".join(f'<a href="#{hid}">{re.sub(r"<[^>]+>", "", txt)}</a>' for hid, txt in heads)
-        if meta.get("faq"):
-            links += '<a href="#quick-answers">Quick answers</a>'
-        links += '<a href="#sources">Sources</a>'
-        toc_html = f'<nav class="g-toc" aria-label="On this page"><div class="g-toc-h">On this page</div>{links}</nav>'
-    sources = sorted(meta.get("sources") or [], key=lambda s: s["id"])
-    faq = meta.get("faq") or []
-
+def article_ld(meta: dict, a: dict, url: str, sources: list, faq: list) -> list:
     ld = [{
         "@context": "https://schema.org", "@type": "Article",
         "headline": meta["title"][:110], "description": meta["description"],
@@ -384,17 +373,11 @@ def render_article(meta: dict, body: str, authors: dict, all_articles: list) -> 
         ld.append({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": plain(q["q"]),
              "acceptedAnswer": {"@type": "Answer", "text": plain(q["a"])}} for q in faq]})
+    return ld
 
-    updated = ""
-    if meta["updated"] != meta["date"]:
-        updated = f' · Updated <time datetime="{meta["updated"]}">{pretty_date(meta["updated"])}</time>'
-    byline = (f'<div class="g-byline"><span>By <a href="/authors/{esc(meta["author"])}/" rel="author">{esc(a["name"])}</a></span>'
-              f'<span>Published <time datetime="{meta["date"]}">{pretty_date(meta["date"])}</time>{updated}</span>'
-              f'<span><a href="/guides/standards/">How we fact-check</a></span></div>')
-    faq_html = ""
-    if faq:
-        items = "".join(f'<details><summary>{esc(q["q"])}</summary><p>{cite_html(markdown.markdown(q["a"])[3:-4], slug)}</p></details>' for q in faq)
-        faq_html = f'<section class="g-faq" id="quick-answers"><h2 class="g-title" style="font-size:26px;">Quick answers</h2>{items}</section>'
+
+def build_src_items(slug: str, sources: list) -> str:
+    """The numbered reference <li>s (with saved evidence excerpts) used on article pages and sources pages."""
     ev_by_id = {e.get("id"): e for e in (load_evidence(slug).get("sources") or [])}
 
     def src_extra(s: dict) -> str:
@@ -410,13 +393,54 @@ def render_article(meta: dict, body: str, authors: dict, all_articles: list) -> 
                     f'<p class="muted">Excerpts saved {esc(pretty_date(str(e.get("checked") or s["accessed"])))}{via}.</p></details>')
         return out
 
-    src_items = "".join(
+    return "".join(
         f'<li id="src-{s["id"]}">{esc(s["publisher"])}: <a href="{esc(s["url"])}" target="_blank" rel="noopener">{esc(s["title"])}</a>'
         f'{(" — " + esc(s["note"])) if s.get("note") else ""} <span class="muted">(accessed {esc(pretty_date(str(s["accessed"])))})</span>'
         f'{src_extra(s)}</li>'
         for s in sources)
+
+
+def render_article(meta: dict, body: str, authors: dict, all_articles: list) -> str:
+    slug = meta["slug"]
+    if meta.get("layout") == "directory":
+        return render_directory(meta, body, authors, all_articles)
+    url = f"{SITE}/guides/{slug}/"
+    a = authors[meta["author"]]
+    sp = bool(meta.get("sources_page"))          # opt-in: references live on /guides/<slug>/sources/
+    cb = f"/guides/{slug}/sources/" if sp else None
+    body_html = md_to_html(body, slug, cb)
+    # Desktop "On this page" sidebar, built from the article's H2s (ids come from the toc extension).
+    heads = re.findall(r'<h2 id="([^"]+)">(.*?)</h2>', body_html, flags=re.S)
+    toc_html = ""
+    if len(heads) >= 3:
+        links = "".join(f'<a href="#{hid}">{re.sub(r"<[^>]+>", "", txt)}</a>' for hid, txt in heads)
+        if meta.get("faq"):
+            links += '<a href="#quick-answers">Quick answers</a>'
+        links += '<a href="#sources">Sources</a>' if not sp else ""
+        toc_html = f'<nav class="g-toc" aria-label="On this page"><div class="g-toc-h">On this page</div>{links}</nav>'
+    sources = sorted(meta.get("sources") or [], key=lambda s: s["id"])
+    faq = meta.get("faq") or []
+
+    ld = article_ld(meta, a, url, sources, faq)
+
+    updated = ""
+    if meta["updated"] != meta["date"]:
+        updated = f' · Updated <time datetime="{meta["updated"]}">{pretty_date(meta["updated"])}</time>'
+    byline = (f'<div class="g-byline"><span>By <a href="/authors/{esc(meta["author"])}/" rel="author">{esc(a["name"])}</a></span>'
+              f'<span>Published <time datetime="{meta["date"]}">{pretty_date(meta["date"])}</time>{updated}</span>'
+              f'<span><a href="/guides/standards/">How we fact-check</a></span></div>')
+    faq_html = ""
+    if faq:
+        items = "".join(f'<details><summary>{esc(q["q"])}</summary><p>{cite_html(markdown.markdown(q["a"])[3:-4], slug, cb)}</p></details>' for q in faq)
+        faq_html = f'<section class="g-faq" id="quick-answers"><h2 class="g-title" style="font-size:26px;">Quick answers</h2>{items}</section>'
+    src_items = build_src_items(slug, sources)
+    sources_html = f'<section class="g-sources" id="sources"><h2>Sources</h2><ol>{src_items}</ol></section>'
+    if sp:
+        sources_html = f'<section class="g-sources" id="sources">{trust_box(meta, len(sources))}</section>'
     disclosure = meta.get("disclosure") or ("This guide was researched with the help of AI tools and checked line by line "
                                             "against the sources listed below before publishing.")
+    if sp:
+        disclosure = disclosure.replace("listed below", "listed on the sources page")
     related = [m for (m, _) in all_articles if m["slug"] != slug][:3]
     related_html = ""
     if related:
@@ -436,11 +460,507 @@ def render_article(meta: dict, body: str, authors: dict, all_articles: list) -> 
 </article>
 {faq_html}
 <div class="g-note">📝 {esc(disclosure)} Spot something out of date? <a href="/contact.html">Tell us</a> and we'll fix it.</div>
-<section class="g-sources" id="sources"><h2>Sources</h2><ol>{src_items}</ol></section>
+{sources_html}
 {related_html}
 </main>
 {FOOTER}
 {scripts}
+</body>
+</html>
+""")
+
+
+# ------------------------------------------------- directory layout + sources page ---
+# Opt-in per article through front matter: `layout: directory` (needs content/directories/<slug>.json),
+# `sources_page: true` (references move to /guides/<slug>/sources/). Other articles never touch this code.
+DIRECTORIES = CONTENT / "directories"
+KIND_ICON = {"candy": "candy", "gift shop": "gift", "candles": "candle", "jewelry": "ring", "pottery": "vase",
+             "books": "book", "museum shop": "museum", "toys and kids": "blocks", "food": "wedge",
+             "home and garden": "house", "other": "bag"}
+KIND_GROUP = {"candy": ("candy", "Candy and sweets"), "gift shop": ("gifts", "Gifts and home"),
+              "home and garden": ("gifts", "Gifts and home"), "candles": ("makers", "Makers and studios"),
+              "jewelry": ("makers", "Makers and studios"), "pottery": ("makers", "Makers and studios")}
+STATUS = {"hours_dated": ("Hours posted", "posted", "posted"), "hours_undated": ("Hours posted, no date given", "posted", "nodate"),
+          "call": ("No hours published: call ahead", "call", "call"), "reopens": ("Reopens November 27", "call", "reopens")}
+ICONS = {
+    "candy": '<circle cx="12" cy="12" r="4"/><path d="M8.6 9.6 4 7v10l4.6-2.6M15.4 9.6 20 7v10l-4.6-2.6"/>',
+    "gift": '<rect x="4" y="10" width="16" height="10" rx="1"/><path d="M3 7h18v3H3zM12 7v13M12 7C10 4 7 4 7 6s3 1 5 1zM12 7c2-3 5-3 5-1s-3 1-5 1z"/>',
+    "candle": '<rect x="8" y="11" width="8" height="10" rx="1"/><path d="M12 3c2 2.5 2 4 0 5-2-1-2-2.5 0-5zM12 8v3"/>',
+    "ring": '<circle cx="12" cy="15" r="5"/><path d="m9 7 3-4 3 4-3 3z"/>',
+    "vase": '<path d="M9 3h6M10 3v4c-3 2-4 5-4 8a6 6 0 0 0 12 0c0-3-1-6-4-8V3"/>',
+    "book": '<path d="M5 3h14v15H7a2 2 0 0 0-2 2zM5 20a2 2 0 0 0 2 1h12M9 7h6"/>',
+    "museum": '<path d="m3 9 9-5 9 5zM5 9v8M9.5 9v8M14.5 9v8M19 9v8M3 20h18"/>',
+    "blocks": '<rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/><rect x="8" y="4" width="8" height="8"/>',
+    "wedge": '<path d="M3 18V9l18-4v13zM3 9l18 4"/>',
+    "house": '<path d="m4 11 8-7 8 7M6 10v10h12V10M10 20v-5h4v5"/>',
+    "bag": '<path d="M5 8h14l-1 12H6zM9 8V6a3 3 0 0 1 6 0v2"/>',
+    "heart": '<path d="M12 20S5 15.6 5 10a4 4 0 0 1 7-2.600A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',
+    "pin": '<path d="M12 21s-6-5.5-6-10a6 6 0 0 1 12 0c0 4.5-6 10-6 10z"/><circle cx="12" cy="11" r="2"/>',
+    "phone": '<path d="M5 4h4l2 5-2.5 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>',
+    "share": '<path d="M12 15V4M8 8l4-4 4 4M5 13v6h14v-6"/>',
+    "check": '<circle cx="12" cy="12" r="9"/><path d="m8 12.5 3 3 5-6"/>',
+}
+SPRITE = ('<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>'
+          + "".join(f'<symbol id="i-{k}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">{v}</symbol>' for k, v in ICONS.items())
+          + "</defs></svg>")
+
+
+def icon(name: str, cls: str = "gd-i") -> str:
+    return f'<svg class="{cls}" width="22" height="22" aria-hidden="true" focusable="false"><use href="#i-{name}"/></svg>'
+
+
+def load_directory(slug: str) -> dict:
+    f = DIRECTORIES / f"{slug}.json"
+    return json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
+
+
+def split_body(body: str) -> tuple[str, list]:
+    parts = re.split(r"(?m)^## ", body)
+    secs = []
+    for p in parts[1:]:
+        title, _, rest = p.partition("\n")
+        secs.append((title.strip(), rest.strip()))
+    return parts[0].strip(), secs
+
+
+def split_shops(rest: str) -> list:
+    """[(shop name, shop paragraph markdown, [aside markdown])] for one town section."""
+    out = []
+    for c in re.split(r"(?m)^### ", rest)[1:]:
+        name, _, txt = c.partition("\n")
+        paras = [x.strip() for x in re.split(r"\n\s*\n", txt.strip()) if x.strip()]
+        main, asides = [], []
+        for i, x in enumerate(paras):
+            if i > 0 and x.endswith("<!-- nocite -->") and not CITE_RE.search(x):
+                asides.append(x.replace("<!-- nocite -->", "").strip())
+            else:
+                main.append(x)
+        out.append((name.strip(), "\n\n".join(main), asides))
+    return out
+
+
+def validate_directory(meta: dict, body: str) -> list[str]:
+    slug = meta.get("slug", "?")
+    if meta.get("layout") != "directory":
+        return []
+    d = (load_directory(slug).get("shops") or [])
+    if not d:
+        return [f"{slug}: layout 'directory' needs content/directories/{slug}.json"]
+    _, secs = split_body(body)
+    want = [(t, n) for t, rest in secs if "### " in rest for n, _, _ in split_shops(rest)]
+    have = [(e.get("town"), e.get("name")) for e in d]
+    errs = []
+    if want != have:
+        errs.append(f"{slug}: directory shops do not match the article's shop headings in order")
+    for e in d:
+        if e.get("status") not in STATUS:
+            errs.append(f"{slug}: {e.get('name')}: unknown status {e.get('status')!r}")
+        if e.get("kind") not in KIND_ICON:
+            errs.append(f"{slug}: {e.get('name')}: unknown kind {e.get('kind')!r}")
+        if not e.get("anchor") or not e.get("address") or not e.get("state_text"):
+            errs.append(f"{slug}: {e.get('name')}: missing anchor, address or state_text")
+        if not e.get("hours_line") and e.get("status") not in ("call",):
+            errs.append(f"{slug}: {e.get('name')}: hours_line is empty but hours are posted")
+    return errs
+
+
+def trust_box(meta: dict, n_sources: int, with_icon: bool = False) -> str:
+    slug = meta["slug"]
+    line = meta.get("trust_line")
+    lead = f"<strong>{esc(line)}</strong> " if line else ""
+    ic = icon("check", "gd-i gd-tick") if with_icon else ""
+    return (f'<div class="gd-trust">{ic}<p>{lead}{n_sources} sources back this page. '
+            f'<a href="/guides/{esc(slug)}/sources/">See sources and how we checked</a></p></div>')
+
+
+def render_sources_page(meta: dict, body: str, authors: dict) -> str:
+    slug = meta["slug"]
+    url = f"{SITE}/guides/{slug}/sources/"
+    main_url = f"{SITE}/guides/{slug}/"
+    sources = sorted(meta.get("sources") or [], key=lambda s: s["id"])
+    _, secs = split_body(body)
+    method = [(t, r) for t, r in secs if t == "How this list was made"]
+    method_html = "".join(md_to_html(f"## {t}\n\n{r}", slug) for t, r in method)
+    disclosure = (meta.get("disclosure") or ("This guide was researched with the help of AI tools and checked line by line "
+                  "against the sources listed below before publishing.")).replace("listed below", "listed on this page")
+    title = f"Sources and method: {meta['title']}"
+    ld = [{"@context": "https://schema.org", "@type": "WebPage", "name": title, "url": url,
+           "isPartOf": main_url, "publisher": publisher_ld()},
+          {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+              {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + "/"},
+              {"@type": "ListItem", "position": 2, "name": "Guides", "item": SITE + "/guides/"},
+              {"@type": "ListItem", "position": 3, "name": meta["title"], "item": main_url},
+              {"@type": "ListItem", "position": 4, "name": "Sources and method", "item": url}]}]
+    return (head(f"{title} | Totally Cape Cod",
+                 "The method, the numbered sources and the saved excerpts behind this guide.", url, ld, og_type="website", extra=SRC_CSS)
+            + f"""<main class="g-wrap">
+<div class="g-crumbs"><a href="/">Home</a> › <a href="/guides/">Guides</a> › <a href="/guides/{esc(slug)}/">{esc(meta.get("kicker") or "Guide")}</a> › Sources</div>
+<h1 class="g-title">Sources and method</h1>
+<p class="g-dek">This page holds how the list was made, the numbered sources and the saved excerpts behind <a href="/guides/{esc(slug)}/">{esc(meta["title"])}</a>.</p>
+<p><a href="/guides/{esc(slug)}/">Back to the guide</a><br><a href="/guides/standards/">How we fact-check</a></p>
+<article class="g-body">
+{method_html}
+</article>
+<section class="g-sources" id="sources"><h2>Sources</h2><ol>{build_src_items(slug, sources)}</ol></section>
+<div class="g-note">📝 {esc(disclosure)} Spot something out of date? <a href="/contact.html">Tell us</a> and we'll fix it.</div>
+<p><a href="/guides/{esc(slug)}/">Back to the guide</a><br><a href="/guides/standards/">Read our editorial and fact-checking standards</a></p>
+</main>
+{FOOTER}
+</body>
+</html>
+""")
+
+
+SRC_CSS = """<style>
+.g-wrap a{color:#245F78}.g-wrap a:focus-visible,.g-wrap summary:focus-visible{outline:3px solid #1A3A6C;outline-offset:2px;border-radius:4px}
+.g-sources{font-size:16px;line-height:1.6}.g-sources li{margin:10px 0}.g-ev{font-size:15px}.g-ev summary{display:flex;align-items:center;min-height:44px}
+.g-body{line-height:1.7}.g-body li{margin:8px 0}.g-body,.g-dek{max-width:42rem}
+</style>
+"""
+
+DIR_CSS = """<style>
+.gd{--paper:#FDF8F2;--ink:#4A4038;--mute:#625749;--navy:#1A3A6C;--kraft:#D4A574;--kraftd:#9A6F3C;--sand:#F5E6D3;--tagbg:#EBD3AD;--cran:#9E2A3F;--bay:#2F6B57;--line:#E4D6C2;max-width:1120px;margin:0 auto;padding:78px 18px 56px;font-size:17px;line-height:1.6;color:var(--ink)}
+.gd [hidden]{display:none!important}
+.gd a{color:var(--navy)}
+.gd a:focus-visible,.gd button:focus-visible,.gd summary:focus-visible{outline:3px solid var(--navy);outline-offset:2px;border-radius:6px}
+.gd h1,.gd h2,.gd h3{font-family:'Fraunces',Georgia,serif;color:var(--navy);margin:0}
+.gd .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.gd-i{flex:none;display:block}
+.gd-crumbs{font-size:15px;color:var(--mute);margin-bottom:10px}
+.gd-hero{display:grid;gap:18px;background:var(--sand);border-radius:20px;padding:22px 20px 24px}
+.gd-hero h1{font-weight:900;line-height:1.02;letter-spacing:-.015em}
+.gd-t1{display:block;font-size:clamp(34px,9vw,56px)}
+.gd-t2{display:block;font-weight:400;font-size:clamp(19px,4.6vw,26px);line-height:1.2;margin-top:10px;letter-spacing:0}
+.gd-hero .dek{font-size:18px;line-height:1.5;margin:14px 0 8px;max-width:34rem}
+.gd-hero .chk{margin:0;font-size:16px;color:var(--mute)}
+.gd-fig{margin:0}
+.gd-fig img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:12px;background:#D9C8B0}
+.gd-fig figcaption{font-size:15px;line-height:1.45;color:var(--mute);margin-top:7px}
+.gd-twine ul{display:flex;flex-wrap:wrap;gap:0 14px;list-style:none;margin:0;padding:0}
+.gd-twine li{position:relative;padding-top:24px;margin-bottom:6px}
+.gd-twine li::before{content:"";position:absolute;top:0;left:-7px;right:-7px;height:2px;background:var(--kraftd);border-radius:1px}
+.gd-hero .gd-twine ul{overflow-x:clip}
+.gd-hero .gd-twine li::before{left:-100vw;right:-100vw;border-radius:0}
+.gd-twine li:nth-child(odd){--tilt:-1.6deg}.gd-twine li:nth-child(even){--tilt:1.4deg}
+.gd-tag{position:relative;display:block;text-decoration:none;transform-origin:50% -24px;transform:rotate(var(--tilt))}
+.gd-tag::before{content:"";position:absolute;left:50%;top:-24px;height:24px;border-left:1.5px solid var(--kraftd)}
+.gd-face{display:block;min-width:96px;padding:20px 14px 9px;background:var(--tagbg);color:var(--ink);clip-path:polygon(13px 0,calc(100% - 13px) 0,100% 13px,100% 100%,0 100%,0 13px);position:relative;line-height:1.2}
+.gd-face::before{content:"";position:absolute;top:7px;left:50%;width:8px;height:8px;margin-left:-4px;border-radius:50%;background:var(--sand);box-shadow:inset 0 0 0 1.5px var(--kraftd)}
+.gd-face strong{display:block;font:800 18px/1.15 'Fraunces',Georgia,serif;color:var(--navy)}
+.gd-face span.n{font-size:15px;font-weight:600}
+.gd-mark{position:absolute;top:-9px;right:-9px;z-index:2;min-width:24px;height:24px;padding:0 6px;border-radius:12px;background:var(--cran);color:#fff;font:700 14px/24px 'Inter',sans-serif;text-align:center}
+.gd-trust{display:flex;gap:12px;align-items:flex-start;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;margin:22px 0;font-size:17px;line-height:1.5}
+.gd-trust p{margin:0}.gd-tick{margin-top:2px;color:var(--bay)}
+.gd-prose{max-width:35rem}
+.gd-prose p,.gd-prose li{margin:0 0 14px}.gd-prose ul{padding-left:22px}
+.gd-prose h2,.gd-faq h2,.gd-plan h2{font-weight:900;font-size:30px;line-height:1.1;margin:0 0 12px}
+.gd-prose a{text-decoration:underline;text-underline-offset:2px}
+.gd-aside{font-family:'Fraunces',Georgia,serif;font-style:italic;color:var(--mute);border-left:1px solid var(--kraftd);padding:2px 0 2px 14px;margin:20px 0 0;max-width:35rem;font-size:18px;line-height:1.5}
+.gd-shared{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:0 0 18px;padding:12px 0;border-top:2px solid var(--cran);border-bottom:1px solid var(--line)}
+.gd-shared p{margin:0;font-weight:600}
+.gd-layout{margin-top:26px}
+.gd-rail{display:none}
+.gd-jump{position:sticky;top:73px;z-index:40;display:flex;align-items:center;gap:6px;background:var(--paper);border-bottom:1px solid var(--line);margin:0 -18px;padding:0 18px}
+.gd-jump .lbl{flex:none;font-size:15px;color:var(--mute);padding-right:4px}
+.gd-jump ul{display:flex;gap:2px;list-style:none;margin:0;padding:0;overflow-x:auto;scrollbar-width:thin}
+.gd-jump a{display:flex;align-items:center;min-height:44px;padding:0 12px;white-space:nowrap;font-weight:600;font-size:16px;text-decoration:none;color:var(--ink);border-bottom:3px solid transparent}
+.gd-jump a:hover{border-bottom-color:var(--navy)}
+.gd-filters{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px;scroll-margin-top:130px}
+.gd-chip{min-height:44px;padding:0 16px;border-radius:22px;border:1.5px solid var(--kraftd);background:#fff;color:var(--ink);font:600 16px/1 'Inter',sans-serif;cursor:pointer}
+.gd-chip[aria-pressed=true]{background:var(--navy);border-color:var(--navy);color:#fff}
+.gd-count{margin:0 0 4px;font-size:15px;color:var(--mute)}
+.gd-empty{margin:18px 0;max-width:35rem;font-weight:600}
+.gd-town{padding-top:30px;scroll-margin-top:130px}
+.gd-town>h2{display:flex;align-items:baseline;gap:12px;font-weight:900;font-size:30px;line-height:1.1;margin-bottom:4px}
+.gd-town>h2 small{font:600 15px 'Inter',sans-serif;color:var(--mute)}
+.gd-shop{padding:20px 0;border-bottom:2px dashed var(--kraft);max-width:38rem;scroll-margin-top:130px}
+.gd-shop:target{background:linear-gradient(90deg,rgba(212,165,116,.18),transparent)}
+.gd-st{display:flex;align-items:flex-start;gap:10px}
+.gd-st h3{flex:1;font-weight:800;font-size:22px;line-height:1.2;padding-top:3px}
+.gd-st .gd-i{margin-top:5px;color:var(--kraftd)}
+.gd-save{flex:none;display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 12px;border:1.5px solid var(--kraftd);border-radius:22px;background:#fff;color:var(--ink);font:600 15px/1 'Inter',sans-serif;cursor:pointer}
+.gd-save[aria-pressed=true]{color:var(--cran);border-color:var(--cran);background:#FBEDEF}
+.gd-save[aria-pressed=true] svg{fill:var(--cran)}
+.gd-shop p{margin:0}
+.gd-addr{margin-top:4px!important;font-size:17px}
+.gd-addr em{display:block;font-style:normal;font-size:15px;color:var(--mute)}
+.gd-quote{margin-top:8px!important;font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:18px;line-height:1.45}
+.gd-hours{margin-top:12px;border-left:3px solid var(--bar,#9A6F3C);padding-left:12px}
+.gd-hl{font-weight:600;line-height:1.4}
+.gd-state{font-size:15px;color:var(--sc,var(--mute))}
+.s-posted{--bar:#2F6B57;--sc:#2F6B57}.s-nodate{--bar:#2F6B57;--sc:#2F6B57}.s-call{--bar:#9A6F3C;--sc:#625749}.s-reopens{--bar:#9E2A3F;--sc:#9E2A3F}
+.s-nodate .gd-state,.s-reopens .gd-state{font-weight:600}
+.gd-last{margin-top:8px!important;font-size:15px;color:var(--mute)}
+.gd-act{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.gd-btn{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:0 14px;border:1.5px solid var(--navy);border-radius:22px;color:var(--navy);font:600 16px/1 'Inter',sans-serif;text-decoration:none;background:#fff;cursor:pointer}
+.gd-btn:hover{background:var(--sand)}
+.gd-full summary{display:flex;align-items:center;min-height:44px;margin-top:4px;font-weight:600;color:var(--navy);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.gd-full>div{font-size:17px;line-height:1.6;padding:2px 0 6px}.gd-full>div p{margin:0}
+sup.cite-q{font-size:.68em;line-height:0;margin-left:1px;white-space:nowrap}
+sup.cite-q a{position:relative;color:#566A75;text-decoration:none;font-weight:600}
+sup.cite-q a+a::before{content:","}
+sup.cite-q a::after{content:"";position:absolute;inset:-14px -4px}
+sup.cite-q a:hover{color:var(--navy);text-decoration:underline}
+.gd-more{margin:34px 0 8px}
+.gd-more>summary{display:inline-flex;align-items:center;min-height:48px;padding:0 18px;border:1.5px solid var(--navy);border-radius:24px;font-weight:600;color:var(--navy);cursor:pointer}
+.gd-scroll{overflow-x:auto;margin-top:12px}
+.gd-glance{font-weight:900;font-size:24px;margin:0 0 8px}
+.gd-scroll table{border-collapse:collapse;font-size:15px;line-height:1.45;min-width:640px;width:100%}
+.gd-scroll th,.gd-scroll td{text-align:left;padding:9px 10px;border-bottom:1px dashed var(--kraft);vertical-align:top}
+.gd-scroll th{background:var(--sand)}
+.gd-faq{margin-top:40px;max-width:35rem}
+.gd-faq details{border-bottom:1px dashed var(--kraft);padding:4px 0}
+.gd-faq summary{display:flex;align-items:center;min-height:48px;font-weight:600;color:var(--navy);cursor:pointer}
+.gd-faq p{margin:4px 0 12px}
+.gd-end{margin-top:34px}
+.gd-plan{margin-top:38px}
+.gd-share{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:16px}
+.gd-share span{font-size:15px;color:var(--mute)}
+.gd-note{font-size:15px;line-height:1.55;border-top:1px solid var(--line);padding-top:14px;margin:28px 0 0;color:var(--mute);max-width:35rem}
+.gd-note a{color:var(--navy)}
+.gd-bar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:2px solid var(--cran);padding:8px 14px calc(8px + env(safe-area-inset-bottom))}
+.gd-bar p{margin:0 0 6px;font-size:16px;line-height:1.35}
+.gd-bar strong{color:var(--cran)}
+.gd-barb{display:flex;flex-wrap:wrap;gap:6px}
+.gd-barb .gd-btn{font-size:15px;padding:0 11px;border-color:var(--cran);color:var(--cran)}
+.gd-baron body{padding-bottom:116px}
+@media(min-width:1000px){
+ .gd-hero{grid-template-columns:1fr 330px;grid-template-areas:"tx fg" "tw fg";gap:18px 36px;padding:34px 36px 30px;align-items:start}
+ .gd-hero>div{grid-area:tx}.gd-hero .gd-twine{grid-area:tw}.gd-fig{grid-area:fg}.gd-fig img{aspect-ratio:4/5}
+ .gd-layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:0 48px;align-items:start}
+ .gd-rail{display:block;position:sticky;top:84px;padding-top:30px}
+ .gd-jump{display:none}
+ .gd-rail ul{list-style:none;margin:0;padding:0 0 0 14px;position:relative}
+ .gd-rail ul::before{content:"";position:absolute;left:14px;top:-6px;bottom:6px;width:2px;background:var(--kraftd)}
+ .gd-rail li{position:relative;padding:0 0 8px 22px}
+ .gd-rail li::before{content:"";position:absolute;left:0;top:23px;width:22px;height:0;border-top:1.5px solid var(--kraftd)}
+ .gd-rail .gd-tag{transform-origin:0 50%;transform:rotate(var(--rt,-1deg))}
+ .gd-rail li:nth-child(even){--rt:1deg}
+ .gd-rail .gd-tag::before{display:none}
+ .gd-rail .gd-face{min-width:0;padding:11px 14px 11px 24px;clip-path:polygon(13px 0,100% 0,100% 100%,13px 100%,0 50%);display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+ .gd-rail .gd-face::before{top:50%;left:10px;margin:-4px 0 0}
+ .gd-rail .gd-face strong{display:inline;font-size:17px}
+ .gd-rail .gd-mark{top:-2px;right:-8px}
+ .gd-railsum{margin:14px 0 0;font-weight:600;color:var(--cran);font-size:16px}
+}
+@media(max-width:999px){.gd-jump{top:61px}}
+@media(max-width:768px){.gd-jump{top:73px}}
+@media(max-width:480px){.gd-face{min-width:0;padding:18px 8px 7px}.gd-face strong{font-size:15px}.gd-face span.n{font-size:14px}.gd-twine ul{gap:0 9px}.gd-twine li{padding-top:20px}.gd-tag{transform-origin:50% -20px}.gd-tag::before{top:-20px;height:20px}.gd-fig img{aspect-ratio:21/9}.gd{padding-left:14px;padding-right:14px}.gd-jump{margin-left:-14px;margin-right:-14px;padding:0 14px}.gd-hero{padding:18px 16px 20px}}
+@media(prefers-reduced-motion:no-preference){
+ @keyframes gd-settle{from{transform:rotate(calc(var(--tilt)*-5))}55%{transform:rotate(calc(var(--tilt)*2))}to{transform:rotate(var(--tilt))}}
+ .gd-hero .gd-tag{animation:gd-settle .9s ease-out both;animation-delay:calc(var(--i)*40ms)}
+ .gd-chip,.gd-save{transition:background-color .12s,color .12s,border-color .12s}
+}
+</style>
+"""
+
+DIR_JS = """<script>
+(function(){var d=document,root=d.documentElement,KEY='tcc-gift-shops-2026-list',saved=[],shared=[],cur='all';
+try{saved=JSON.parse(localStorage.getItem(KEY)||'[]')||[]}catch(e){saved=[]}
+if(!Array.isArray(saved))saved=[];
+function $(s,r){return[].slice.call((r||d).querySelectorAll(s))}
+var cards=$('.gd-shop'),ids=cards.map(function(c){return c.id});
+saved=saved.filter(function(i){return ids.indexOf(i)>-1});
+function store(){try{localStorage.setItem(KEY,JSON.stringify(saved))}catch(e){}}
+function inOrder(l){return cards.filter(function(c){return l.indexOf(c.id)>-1})}
+function match(c){if(cur==='all')return true;if(cur==='saved')return saved.indexOf(c.id)>-1;if(cur==='shared')return shared.indexOf(c.id)>-1;return c.dataset.hours===cur||c.dataset.group===cur}
+var f=d.getElementById('gd-filters'),cnt=d.getElementById('gd-count'),empty=d.getElementById('gd-empty'),bar=d.getElementById('gd-bar'),bt=d.getElementById('gd-bartext'),lim=d.getElementById('gd-maplimit'),msg=d.getElementById('gd-barmsg'),map=d.getElementById('gd-map'),rs=d.getElementById('gd-railsum');
+function enc(s){return encodeURIComponent(s)}
+function mapsUrl(){var l=inOrder(saved).slice(0,10);if(!l.length)return'';var last=l[l.length-1],w=l.slice(0,-1).map(function(c){return enc(c.dataset.q)});
+return'https://www.google.com/maps/dir/?api=1&destination='+enc(last.dataset.q)+(w.length?'&waypoints='+w.join('%7C'):'')}
+function listUrl(){var c=d.querySelector('link[rel=canonical]');return(c?c.href:location.href.split('#')[0])+'#list='+inOrder(saved).map(function(x){return x.id}).join(',')}
+function paint(){var n=0,s=saved.length;
+cards.forEach(function(c){var v=match(c);c.hidden=!v;if(v)n++;var b=$('.gd-save',c)[0];if(b){var on=saved.indexOf(c.id)>-1;b.setAttribute('aria-pressed',on);b.lastElementChild.textContent=on?'On my list':'Add to my list'}});
+$('.gd-town').forEach(function(t){var any=$('.gd-shop',t).some(function(c){return!c.hidden});t.hidden=!any;
+$('.gd-jump a[href="#'+t.id+'"],.gd-rail a[href="#'+t.id+'"]').forEach(function(a){a.parentNode.hidden=!any})});
+$('.gd-mark').forEach(function(m){var k=cards.filter(function(c){return c.dataset.town===m.dataset.town&&saved.indexOf(c.id)>-1}).length;m.hidden=!k;m.firstChild.nodeValue=k});
+$('.gd-chip').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.f===cur)});
+cnt.textContent='Showing '+n+' of '+cards.length+' shops';
+empty.hidden=!(cur==='saved'&&!s);
+var t='My list: '+s+(s===1?' shop':' shops');bt.textContent=t;rs.textContent=t;rs.hidden=!s;bar.hidden=!s;root.classList.toggle('gd-baron',!!s);
+if(s)map.href=mapsUrl();lim.textContent=s>10?'Maps shows the first 10 of '+s+' shops.':''}
+f.hidden=false;cnt.hidden=false;
+$('.gd-chip').forEach(function(b){b.addEventListener('click',function(){cur=b.dataset.f;paint()})});
+$('.gd-save').forEach(function(b){b.hidden=false;b.addEventListener('click',function(){var id=b.closest('.gd-shop').id,i=saved.indexOf(id);if(i>-1)saved.splice(i,1);else saved.push(id);store();paint()})});
+function toList(){cur='saved';paint();f.scrollIntoView()}
+d.getElementById('gd-show').addEventListener('click',toList);
+d.getElementById('gd-listshare').addEventListener('click',function(){var u=listUrl();
+function say(t){msg.textContent=t}
+if(navigator.share){navigator.share({title:'My Cape Cod gift shop list',url:u}).catch(function(){})}
+else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(u).then(function(){say('Link copied')},function(){say('Copy this link: '+u)})}
+else say('Copy this link: '+u)});
+var m=/^#list=([a-z0-9,-]+)$/.exec(location.hash),sn=d.getElementById('gd-shared');
+if(m){shared=m[1].split(',').filter(function(i){return ids.indexOf(i)>-1});
+if(shared.length){d.getElementById('gd-sharedtext').textContent='Someone shared a list with you: '+shared.length+(shared.length===1?' shop':' shops');sn.hidden=false;
+d.getElementById('gd-sshow').addEventListener('click',function(){cur='shared';paint();f.scrollIntoView()});
+d.getElementById('gd-sadd').addEventListener('click',function(){shared.forEach(function(i){if(saved.indexOf(i)<0)saved.push(i)});store();sn.hidden=true;toList()})}}
+paint();
+var sb=d.getElementById('gd-share'),sm=d.getElementById('gd-sharemsg');
+if(sb){sb.hidden=false;sb.addEventListener('click',function(){var c=d.querySelector('link[rel=canonical]'),u=c?c.href:location.href.split('#')[0];
+function say(t){sm.textContent=t}
+if(navigator.share){navigator.share({title:d.title,url:u}).catch(function(){})}
+else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(u).then(function(){say('Link copied')},function(){say('Copy this link: '+u)})}
+else say('Copy this link: '+u)})}
+})();
+</script>"""
+
+
+def render_directory(meta: dict, body: str, authors: dict, all_articles: list) -> str:
+    from urllib.parse import quote
+    slug = meta["slug"]
+    url = f"{SITE}/guides/{slug}/"
+    a = authors[meta["author"]]
+    sources = sorted(meta.get("sources") or [], key=lambda s: s["id"])
+    faq = meta.get("faq") or []
+    cb = f"/guides/{slug}/sources/"
+    shops = {e["name"]: e for e in load_directory(slug)["shops"]}
+    intro, secs = split_body(body)
+    towns = []                       # (town, [(name, para_md, asides)])
+    glance_md, after = "", []        # sections other than method / glance / towns
+    for title, rest in secs:
+        if "### " in rest:
+            towns.append((title, split_shops(rest)))
+        elif title == "At a glance":
+            glance_md = rest
+        elif title != "How this list was made":
+            after.append((title, rest))
+    n_shops = sum(len(sh) for _, sh in towns)
+
+    gcount: dict = {}
+    for e in shops.values():
+        g = KIND_GROUP.get(e["kind"])
+        if g:
+            gcount[g] = gcount.get(g, 0) + 1
+    groups = [g for g, n in gcount.items() if n >= 3]
+
+    def tid(t):
+        return "town-" + re.sub(r"[^a-z0-9]+", "-", t.lower()).strip("-")
+
+    def shop_html(name, para_md, e):
+        _, hours_f, cls = STATUS[e["status"]]
+        g = KIND_GROUP.get(e["kind"])
+        qtext = f'{e["name"]} {e["address"]}'
+        q = quote(qtext, safe="")
+        phone = e.get("phone")
+        digits = re.sub(r"\D", "", phone or "")
+        if len(digits) == 11 and digits.startswith("1"):
+            digits = digits[1:]
+        act = (f'<a class="gd-btn" href="https://www.google.com/maps/search/?api=1&amp;query={q}" target="_blank" rel="noopener">'
+               f'{icon("pin")}Directions<span class="sr"> to {esc(name)}</span></a>')
+        if phone:
+            act += f'<a class="gd-btn" href="tel:{digits}">{icon("phone")}Call {esc(phone)}<span class="sr"> {esc(name)}</span></a>'
+        if e.get("latest_activity"):
+            last = f'<p class="gd-last">Latest activity: {esc(pretty_date(e["latest_activity"]))}</p>'
+        elif e.get("activity_note"):
+            last = f'<p class="gd-last">{esc(e["activity_note"])}</p>'
+        else:
+            last = ""
+        quote_html = f'<p class="gd-quote">&ldquo;{esc(e["sells_quote"])}&rdquo;</p>' if e.get("sells_quote") else ""
+        note = f'<em>{esc(e["address_note"])}</em>' if e.get("address_note") else ""
+        hl = f'<p class="gd-hl">{esc(e["hours_line"])}</p>' if e.get("hours_line") else ""
+        full = md_to_html(para_md, slug, cb)
+        grp = f' data-group="{g[0]}"' if g else ""
+        return (f'<article class="gd-shop" id="{esc(e["anchor"])}" data-hours="{hours_f}" data-town="{tid(e["town"])}" data-q="{esc(qtext)}"{grp}>'
+                f'<div class="gd-st">{icon(KIND_ICON[e["kind"]])}<h3>{esc(name)}</h3>'
+                f'<button class="gd-save" type="button" aria-pressed="false" aria-label="Add to my list: {esc(name)}" hidden>{icon("heart")}<span>Add to my list</span></button></div>'
+                f'<p class="gd-addr">{esc(e["address"])}{note}</p>'
+                f'{quote_html}'
+                f'<div class="gd-hours s-{cls}">{hl}<p class="gd-state">{esc(e["state_text"])}</p></div>'
+                f'{last}'
+                f'<div class="gd-act">{act}</div>'
+                f'<details class="gd-full"><summary>Read the full entry<span class="sr"> for {esc(name)}</span></summary><div>{full}</div></details>'
+                f'</article>')
+
+    town_html, tags, rail, jump = [], [], [], []
+    for i, (t, sh) in enumerate(towns):
+        cards = "".join(shop_html(n, p, shops[n]) for n, p, _ in sh)
+        asides = "".join(f'<p class="gd-aside">{esc(x)}</p>' for _, _, ax in sh for x in ax)
+        cnt = len(sh)
+        word = "shop" if cnt == 1 else "shops"
+        town_html.append(f'<section class="gd-town" id="{tid(t)}"><h2>{esc(t)} <small>{cnt} {word}</small></h2>{cards}{asides}</section>')
+        face = (f'<a class="gd-tag" href="#{tid(t)}"><span class="gd-face"><strong>{esc(t)}</strong><span class="n">{cnt}<span class="sr"> {word}</span></span></span>'
+                f'<span class="gd-mark" data-town="{tid(t)}" hidden>0<span class="sr"> on my list</span></span></a>')
+        tags.append(f'<li style="--i:{i}">{face}</li>')
+        rail.append(f'<li>{face}</li>')
+        jump.append(f'<li><a href="#{tid(t)}">{esc(t)}</a></li>')
+
+    pj = json.loads((ROOT / "data" / "photos.json").read_text(encoding="utf-8"))
+    ph = next(p for p in pj["photos"] if p["id"] == meta["hero_photo"])
+    who = pj["photographers"][ph["photographer"]]
+    credit = f'Photo: <a href="{esc(ph["source_url"])}" target="_blank" rel="noopener">{esc(who["name"])}</a>'
+    t1, sep, t2 = meta["title"].partition(": ")
+    h1 = (f'<span class="gd-t1">{esc(t1)}<span class="sr">:</span></span> <span class="gd-t2">{esc(t2)}</span>' if sep
+          else f'<span class="gd-t1">{esc(meta["title"])}</span>')
+    hero = (f'<header class="gd-hero"><div><h1>{h1}</h1><p class="dek">{esc(meta["description"])}</p>'
+            f'<p class="chk">Checked {pretty_date(str(meta["updated"]))}</p></div>'
+            f'<nav class="gd-twine" aria-label="Shops per town"><ul>{"".join(tags)}</ul></nav>'
+            f'<figure class="gd-fig"><img src="/{esc(ph["file"])}" width="{ph["width"]}" height="{ph["height"]}" alt="{esc(ph["alt"])}" loading="lazy" decoding="async">'
+            f'<figcaption>{esc(ph["title"])}, {esc(ph["place"])}. {credit}</figcaption></figure></header>')
+
+    chips = ['<button class="gd-chip" type="button" data-f="all" aria-pressed="true">All</button>',
+             '<button class="gd-chip" type="button" data-f="posted" aria-pressed="false">Hours posted</button>',
+             '<button class="gd-chip" type="button" data-f="call" aria-pressed="false">Call ahead</button>']
+    for (gk, gl) in groups:
+        chips.append(f'<button class="gd-chip" type="button" data-f="{gk}" aria-pressed="false">{esc(gl)}</button>')
+    chips.append('<button class="gd-chip" type="button" data-f="saved" aria-pressed="false">My list</button>')
+
+    table = md_to_html(glance_md, slug, cb)
+    table_html = (f'<details class="gd-more"><summary>See all {n_shops} in a table</summary>'
+                  f'<div class="gd-scroll"><h2 class="gd-glance">At a glance</h2>{table}</div></details>')
+    faq_html = ""
+    if faq:
+        items = "".join(f'<details><summary>{esc(q["q"])}</summary><p>{cite_html(markdown.markdown(q["a"])[3:-4], slug, cb)}</p></details>' for q in faq)
+        faq_html = f'<section class="gd-faq" id="quick-answers"><h2>Quick answers</h2>{items}</section>'
+    after_html = "".join(f'<section class="gd-prose gd-end">{md_to_html(f"## {t}" + chr(10) * 2 + r, slug, cb)}</section>'
+                         for t, r in after)
+    others = [m for (m, _) in all_articles if m["slug"] != slug]
+    others.sort(key=lambda m: m["slug"] != "cape-cod-holiday-events-2026")
+    plan = ('<section class="gd-plan"><h2>Keep planning</h2><div class="g-cards">' + "".join(card(m) for m in others)
+            + '<a class="g-card" href="/app/"><span>Free app</span><b>Open the Totally Cape Cod app</b><span>Beaches, events and eats</span></a>'
+            + '</div></section>')
+    share = ('<div class="gd-share"><button class="gd-btn" id="gd-share" type="button" hidden>' + icon("share") + 'Share this guide</button>'
+             '<span id="gd-sharemsg" role="status"></span></div>')
+    disclosure = (meta.get("disclosure") or ("This guide was researched with the help of AI tools and checked line by line "
+                  "against the sources listed below before publishing.")).replace("listed below", "listed on the sources page")
+    intro_html = md_to_html(intro, slug, cb)
+    ld = article_ld(meta, a, url, sources, faq)
+    crumbs = '<div class="gd-crumbs"><a href="/">Home</a> › <a href="/guides/">Guides</a></div>'
+    shared_html = ('<div class="gd-shared" id="gd-shared" hidden><p id="gd-sharedtext"></p>'
+                   '<button class="gd-btn" id="gd-sshow" type="button">Show these shops</button>'
+                   '<button class="gd-btn" id="gd-sadd" type="button">Add them to my list</button></div>')
+    bar = ('<div class="gd-bar" id="gd-bar" hidden><p><strong id="gd-bartext">My list: 0 shops</strong> '
+           '<span id="gd-barstatus" role="status"><span id="gd-maplimit"></span> <span id="gd-barmsg"></span></span></p>'
+           '<div class="gd-barb"><button class="gd-btn" id="gd-show" type="button">Show my list</button>'
+           '<a class="gd-btn" id="gd-map" href="#" target="_blank" rel="noopener">Map my list</a>'
+           '<button class="gd-btn" id="gd-listshare" type="button">Share my list</button></div></div>')
+    return (head(f'{meta.get("seo_title") or meta["title"]} | Totally Cape Cod', meta["description"], url, ld, extra=DIR_CSS)
+            + f"""{SPRITE}<main class="gd">
+{crumbs}
+{hero}
+{trust_box(meta, len(sources), True)}
+{shared_html}
+<div class="gd-prose">{intro_html}</div>
+<div class="gd-layout">
+<aside class="gd-rail"><nav class="gd-twine" aria-label="Jump to town, side list"><ul>{"".join(rail)}</ul></nav><p class="gd-railsum" id="gd-railsum" hidden></p></aside>
+<div class="gd-listcol">
+<nav class="gd-jump" aria-label="Jump to town"><span class="lbl">Jump to town</span><ul>{"".join(jump)}</ul></nav>
+<div class="gd-filters" id="gd-filters" role="group" aria-label="Filter shops" hidden>{"".join(chips)}</div>
+<p class="gd-count" id="gd-count" role="status" hidden></p>
+<p class="gd-empty" id="gd-empty" hidden>Nothing is on your list yet. Choose &ldquo;Add to my list&rdquo; on a shop to start.</p>
+{"".join(town_html)}
+</div>
+</div>
+{table_html}
+{faq_html}
+{after_html}
+{trust_box(meta, len(sources), True)}
+{share}
+{plan}
+<div class="gd-note">📝 {esc(disclosure)} Spot something out of date? <a href="/contact.html">Tell us</a> and we'll fix it.</div>
+{bar}
+</main>
+{FOOTER}
+{DIR_JS}
 </body>
 </html>
 """)
@@ -600,6 +1120,9 @@ def build_sitemap(articles: list, authors: dict) -> str:
     for m, _ in articles:
         loc = f"{SITE}/guides/{m['slug']}/"
         entries[loc] = dict(loc=loc, lastmod=m["updated"], changefreq=m.get("changefreq", "weekly"), priority=str(m.get("priority", "0.8")))
+        if m.get("sources_page"):
+            sloc = loc + "sources/"
+            entries[sloc] = dict(loc=sloc, lastmod=m["updated"], changefreq="monthly", priority="0.4")
     rows = []
     for e in entries.values():
         rows.append("  <url>\n    <loc>{}</loc>\n{}{}{}  </url>".format(
@@ -650,6 +1173,7 @@ def main_build(check_only: bool = False) -> int:
     for meta, body in articles:
         errors += validate(meta, body, authors)
         errors += validate_evidence(meta)
+        errors += validate_directory(meta, body)
     slugs = [m["slug"] for m, _ in articles]
     for s in set(slugs):
         if slugs.count(s) > 1:
@@ -662,6 +1186,8 @@ def main_build(check_only: bool = False) -> int:
         return 0
     for meta, body in articles:
         write(ROOT / "guides" / meta["slug"] / "index.html", render_article(meta, body, authors, articles))
+        if meta.get("sources_page"):
+            write(ROOT / "guides" / meta["slug"] / "sources" / "index.html", render_sources_page(meta, body, authors))
     write(ROOT / "guides" / "index.html", render_hub(articles))
     write(ROOT / "guides" / "standards" / "index.html", render_standards())
     write(ROOT / "guides" / "feed.xml", render_rss(articles, authors))

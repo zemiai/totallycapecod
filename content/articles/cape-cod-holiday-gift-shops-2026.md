@@ -8,6 +8,10 @@ date: 2026-11-15
 updated: 2026-11-15
 author: versel-johnson
 cluster: holidays
+layout: directory
+sources_page: true
+hero_photo: rm-chatham-boat
+trust_line: "Every shop was checked on November 15, 2026."
 keywords:
   - cape cod gift shops
   - cape cod christmas shopping 2026
