@@ -471,6 +471,42 @@ def render_article(meta: dict, body: str, authors: dict, all_articles: list) -> 
 """)
 
 
+# ------------------------------------------------------------ live strip (guide-live.js) ---
+# Optional front matter `towns: [Chatham, Orleans]` narrows the strip's events; directory guides
+# derive their towns from the directory data. No towns means Cape-wide. Never used on `layout: classic`.
+GL_CSS = """<style>
+.gl{--paper:#FDF8F2;--ink:#4A4038;--mute:#625749;--navy:#1A3A6C;--kraft:#D4A574;--bay:#2F6B57;min-height:560px;margin:26px 0;padding:14px 0;border-top:2px dashed var(--kraft);border-bottom:2px dashed var(--kraft);font:16px/1.5 Inter,system-ui,sans-serif;color:var(--ink)}
+.gl a{color:var(--navy)}.gl a:focus-visible{outline:3px solid var(--navy);outline-offset:2px;border-radius:4px}
+.gl-static{margin:0}.gl-static a,.gl-all a,.gl-go{display:inline-flex;align-items:center;min-height:44px}
+.gl-cols{display:flex;flex-direction:column}
+.gl-col{padding:12px 0}.gl-col+.gl-col{border-top:2px dashed var(--kraft)}
+.gl h3{font:800 19px/1.2 Fraunces,Georgia,serif;color:var(--navy);margin:0 0 8px}
+.gl ul{list-style:none;margin:0;padding:0}
+.gl p{margin:0}.gl-m{font-size:15px;color:var(--mute);margin:0 0 4px!important}
+.gl a.gl-ev{display:block;min-height:44px;padding:4px 0;text-decoration:none}.ga-body>.gl{max-width:none}.gl-ev b{display:block;font-weight:600;text-decoration:underline;text-underline-offset:2px}
+.gl-ev span{display:block;font-size:15px;color:var(--mute)}.gl-ev .gl-src{font-size:14px}
+.gl-row{margin:0 0 2px}.gl-dim .gl-row,.gl-dim .gl-m{color:#766A5C}.gl-dim .gl-row b{font-weight:500}
+.gl-all{margin:6px 0 0}
+@media(min-width:700px){.gl{min-height:330px}.gl-cols{flex-direction:row;gap:0}.gl-col{flex:1 1 0;min-width:0;padding:6px 18px}.gl-col:first-child{padding-left:0;flex-grow:1.3}.gl-col:last-child{padding-right:0}.gl-col+.gl-col{border-top:0;border-left:2px dashed var(--kraft)}}
+</style>
+<noscript><style>.gl{min-height:0!important}</style></noscript>"""
+
+
+def live_strip(meta: dict, towns: list | None = None) -> str:
+    """The 'live strip' section: one static line that /js/guide-live.js replaces when data is available."""
+    towns = [str(t) for t in (towns if towns is not None else (meta.get("towns") or []))]
+    return (GL_CSS + f'<section class="gl" data-gl data-towns="{esc(json.dumps(towns))}" aria-label="Happening now on Cape Cod">'
+            '<p class="gl-static">See <a href="/events">what is on this week</a> or check <a href="/cape-cod-bridge-traffic.html">bridge traffic</a>.</p>'
+            '</section><script src="/js/guide-live.js" defer></script>')
+
+
+def insert_live_strip(body_html: str, meta: dict) -> str:
+    """Put the strip after the introduction: just before the first H2 of the body."""
+    i = body_html.find("<h2")
+    strip = live_strip(meta)
+    return body_html + strip if i < 0 else body_html[:i] + strip + body_html[i:]
+
+
 # ------------------------------------------------- directory layout + sources page ---
 # Opt-in per article through front matter: `layout: directory` (needs content/directories/<slug>.json),
 # `sources_page: true` (references move to /guides/<slug>/sources/). Other articles never touch this code.
@@ -939,6 +975,7 @@ def render_directory(meta: dict, body: str, authors: dict, all_articles: list) -
 {trust_box(meta, len(sources), True)}
 {shared_html}
 <div class="gd-prose">{intro_html}</div>
+{live_strip(meta, sorted({v["town"] for v in shops.values()}))}
 <div class="gd-layout">
 <aside class="gd-rail"><nav class="gd-twine" aria-label="Jump to town, side list"><ul>{"".join(rail)}</ul></nav><p class="gd-railsum" id="gd-railsum" hidden></p></aside>
 <div class="gd-listcol">
@@ -1101,7 +1138,7 @@ def render_prose(meta: dict, body: str, authors: dict, all_articles: list) -> st
 {trust_box(meta, len(sources), True, True, "ga-trust")}
 {jump}
 <article class="ga-body">
-{body_html}
+{insert_live_strip(body_html, meta)}
 </article>
 {faq_html}
 {trust_box(meta, len(sources), True, True, "ga-trust")}
