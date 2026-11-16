@@ -15,8 +15,8 @@
    ],
    "facts": [
     {
-     "q": "Which shops on this list use the words “daily” or “seven days” in their hours text?",
-     "a": "Four shops do, with caveats. The Brewster Book Store says “We are open 10 am-5 pm, 7 days a week!”, and its hours page lists “Upcoming Dates Open Close  November 26th Closed”. The Brewster Store’s site says “We are open seven day a week year round.”, while its Instagram profile reads “Open 364 Days a Year!”. Kandy Korner Gifts in Hyannis lists “Daily Hours - 10am - 6pm”. HandCraft House Gallery in Brewster lists “Open Daily 10:00 AM to 4:00 PM”. Bass River Mercantile in South Yarmouth does not use those words; its site says “General hours are 10-5 Monday through Sunday. On somedays we’re not here at all, but lately we’ve been here a lot….unless we’re not here.”.",
+     "q": "Which shops on this list say they are open daily or seven days a week?",
+     "a": "Four shops use that kind of wording. The Brewster Book Store says it is open 10 AM to 5 PM, seven days a week, and its page lists November 26th as closed. The Brewster Store’s site says it is open seven days a week year round, while its Instagram profile reads “Open 364 Days a Year!”. Kandy Korner Gifts in Hyannis lists daily hours of 10 AM to 6 PM. HandCraft House Gallery in Brewster lists daily hours of 10 AM to 4 PM. Bass River Mercantile in South Yarmouth lists 10 to 5, Monday through Sunday, with its own caveat: “On somedays we’re not here at all, but lately we’ve been here a lot….unless we’re not here.”",
      "sources": [
       "Brewster Book Store",
       "The Brewster Store",
@@ -28,14 +28,14 @@
     },
     {
      "q": "Which shop on this list reopens on a stated date?",
-     "a": "Nut House Candle Company in Dennis Port. Its Instagram profile says “HOURS: CLOSED! Reopen November 27th”.",
+     "a": "Nut House Candle Company in Dennis Port. Its Instagram profile reads “CLOSED! Reopen November 27th”.",
      "sources": [
       "Nut House Candle Company on Instagram"
      ]
     },
     {
      "q": "Which shops say they are closed on a holiday?",
-     "a": "FabVilla in Mashpee says “Closed- Easter Sunday, Thanksgiving, Christmas”. The Brewster Book Store’s hours page lists “Upcoming Dates Open Close  November 26th Closed”. The Cape Cod Museum of Natural History’s hours page lists “THANKSGIVING DAY THURSDAY, NOVEMBER 26TH”  and “WINTER HOLIDAYS MONDAY, DECEMBER 21ST - SATURDAY, DECEMBER 26TH”  under a “CLOSED” heading; those are museum closures, not confirmed for its shop.",
+     "a": "FabVilla in Mashpee says it is closed on Easter Sunday, Thanksgiving and Christmas. The Brewster Book Store’s page lists November 26th as closed. The Cape Cod Museum of Natural History lists Thanksgiving Day, November 26th, and December 21st to 26th  as closed; those are museum closures, not confirmed for its shop.",
      "sources": [
       "FabVilla",
       "Brewster Book Store",
@@ -44,14 +44,14 @@
     },
     {
      "q": "Does Truro Vineyards publish hours for after Christmas?",
-     "a": "Not on the visit page we read. The page says “We are OPEN YEAR ROUND Fall Hours (through just before Christmas) Monday-Saturday 11-5 Sunday 12-5”  and lists no hours for after Christmas.",
+     "a": "Not on the visit page we read. Its fall hours run “through just before Christmas”, and the page lists no hours for after Christmas.",
      "sources": [
       "Truro Vineyards of Cape Cod"
      ]
     },
     {
      "q": "Which shops publish hours with a fall or other season label?",
-     "a": "Labelled fall: the Brewster Book Store’s “Fall Store Hours” table; Truro Vineyards’ “Fall Hours (through just before Christmas)”; DRIFT Wellfleet’s “Late Fall Hours”; Masterson Made’s “Fall Hours”; and the Cape Cod Museum of Natural History’s “Fall 2026 Hours”, which are museum hours. Labelled by month: Stage Stop Candy’s “Showroom Hours: October - December”  and Provincetown Fudge Factory’s “NOVEMBER STORE HOURS”. Ross Coppelman’s site still shows a “Spring Hours” label. Adorn Cape Cod’s hours page carries “updated 9.13.26”  but no season label.",
+     "a": "Labelled fall: the Brewster Book Store’s “Fall Store Hours” table, Truro Vineyards’ “Fall Hours (through just before Christmas)”, DRIFT Wellfleet’s “Late Fall Hours”, Masterson Made’s “Fall Hours”, and the Cape Cod Museum of Natural History’s “Fall 2026 Hours”, which are museum hours. Labelled by month: Stage Stop Candy’s “Showroom Hours: October - December”  and Provincetown Fudge Factory’s “NOVEMBER STORE HOURS”. Ross Coppelman’s site still shows a “Spring Hours” label. Adorn Cape Cod’s hours page is marked “updated 9.13.26”  but carries no season label.",
      "sources": [
       "Brewster Book Store",
       "Truro Vineyards of Cape Cod",
