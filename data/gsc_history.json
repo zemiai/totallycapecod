@@ -8,5 +8,19 @@
   "tracked": {
    "cape cod events this weekend": 52.7
   }
+ },
+ {
+  "date": "2026-11-16",
+  "clicks": 52,
+  "impressions": 4313,
+  "ctr": 1.21,
+  "avg_position": 43.6,
+  "tracked": {
+   "bourne bridge traffic": 56.6,
+   "cape cod events this weekend": 62.5,
+   "cape cod christmas events 2026": 6,
+   "falmouth christmas parade 2026": 9.7,
+   "cape cod traffic": 71.5
+  }
  }
 ]
