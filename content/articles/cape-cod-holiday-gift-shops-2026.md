@@ -16,7 +16,7 @@ keywords:
   - brewster gift shops
 faq:
   - q: "Which shops on this list say they are open daily or seven days a week?"
-    a: "Four shops use that kind of wording. The Brewster Book Store says it is open 10 AM to 5 PM, seven days a week [14], and its page lists November 26th as closed [13]. The Brewster Store’s site says it is open seven days a week year round [16], while its Instagram profile reads “Open 364 Days a Year!” [17]. Kandy Korner Gifts in Hyannis lists daily hours of 10 AM to 6 PM [51]. HandCraft House Gallery in Brewster lists daily hours of 10 AM to 4 PM [26]. Bass River Mercantile in South Yarmouth lists 10 to 5, Monday through Sunday, with its own caveat: “On somedays we’re not here at all, but lately we’ve been here a lot….unless we’re not here.” [86]"
+    a: "Five shops use that kind of wording. The Brewster Book Store says it is open 10 AM to 5 PM, seven days a week [14], and its page lists November 26th as closed [13]. The Brewster Store’s site says it is open seven days a week year round [16], while its Instagram profile reads “Open 364 Days a Year!” [17]. Kandy Korner Gifts in Hyannis lists daily hours of 10 AM to 6 PM [51]. HandCraft House Gallery in Brewster lists daily hours of 10 AM to 4 PM [26]. Bass River Mercantile in South Yarmouth lists 10 to 5, Monday through Sunday, with its own caveat: “On somedays we’re not here at all, but lately we’ve been here a lot….unless we’re not here.” [86]"
   - q: "Which shop on this list reopens on a stated date?"
     a: "Nut House Candle Company in Dennis Port. Its Instagram profile reads “CLOSED! Reopen November 27th” [39]."
   - q: "Which shops say they are closed on a holiday?"
@@ -497,7 +497,7 @@ Hours change, and many shops publish none. Where a shop gives hours without a da
 | Chatham | The Chatham Cheese Company | Instagram post, October 30, 2026 [32] | No; says call for seasonal hours |
 | Chatham | Chatham Kids | Instagram post, October 29, 2026 [34] | No |
 | Chatham | Yankee Ingenuity | Instagram post, November 15, 2026 [36] | Yes, undated |
-| Dennis | Nut House Candle Company | Instagram profile says closed, reopens Nov 27 [39] | No; closed until Nov 27 |
+| Dennis | Nut House Candle Company | Instagram profile says closed, reopens Nov 27 [39] | No; profile says closed, reopens Nov 27 (no year shown) |
 | Dennis | Ross Coppelman, Goldsmith | Instagram post, November 13, 2026 [41] | Spring label; call |
 | Dennis | Stage Stop Candy | Instagram post, November 14, 2026 [43] | Yes, October to December |
 | Falmouth | Celebrations of Cape Cod | Facebook post, November 14, 2026 [45] | No |
@@ -572,7 +572,7 @@ The last errand has a way of becoming the first of several. <!-- nocite -->
 
 ### Nut House Candle Company
 
-Nut House Candle Company is at 626 Main Street, Dennis Port [40]. The Dennis Chamber of Commerce lists it under “Gifts & Specialty Items” [3]. Its site description says “All-natural scented soy candles, hand poured on Cape Cod.” [40] It publishes no hours on the pages we read. Its Instagram profile reads “CLOSED! Reopen November 27th” [39], with no year shown. The phone number is 774-722-7907 [40]. Its newest Instagram post we found is dated October 17, 2026 [38]; it shows nothing yet that puts the shop open for the season.
+Nut House Candle Company is at 626 Main Street, Dennis Port [40]. The Dennis Chamber of Commerce lists it under “Gifts & Specialty Items” [3]. Its site description says “All-natural scented soy candles, hand poured on Cape Cod.” [40] It publishes no hours on the pages we read. Its Instagram profile reads “CLOSED! Reopen November 27th” [39], with no year shown. The phone number is 774-722-7907 [40]. Its newest Instagram post we found is dated October 17, 2026 [38].
 
 ### Ross Coppelman, Goldsmith
 
@@ -688,11 +688,11 @@ Bass River Mercantile is at 2 North Main Street, South Yarmouth [86]. The Yarmou
 
 ## Before you go
 
-Every shop here was checked on one day, November 15, 2026, and hours can change after that. Calling first costs a minute. <!-- nocite -->
+Every shop here was checked on one day, November 15, 2026, and hours can change after that. <!-- nocite -->
 
 - FabVilla says it is closed on Easter Sunday, Thanksgiving and Christmas [58].
 - The Brewster Book Store’s page lists November 26th as closed [13].
-- The Cape Cod Museum of Natural History lists Thanksgiving Day, November 26th, and December 21st to 26th as closed [22] [22]. These are museum closures; we did not confirm the shop’s hours.
+- The Cape Cod Museum of Natural History lists Thanksgiving Day, November 26th, and December 21st to 26th as closed [22]. These are museum closures; we did not confirm the shop’s hours.
 - Nut House Candle Company’s Instagram profile reads “CLOSED! Reopen November 27th” [39].
 - Truro Vineyards’ fall hours run “through just before Christmas” [81], and no hours for after Christmas are listed.
 - Jobi Pottery and Gallery, HandCraft House Gallery, Masterson Made and Oceana show more than one address or town across their own pages. The entries give both.
