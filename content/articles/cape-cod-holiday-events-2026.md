@@ -360,4 +360,5 @@ This list fills in automatically as Cape Cod venues, chambers and organizers pos
 - **Confirm before you drive.** Falmouth's 2026 schedule is still marked tentative, so call ahead [3].
 - **Check back for times.** Chatham's chamber says more detailed weekend activities are coming [15], and Centerville is posting performance details closer to its stroll [25].
 - **Check the bridges.** See [live Sagamore and Bourne bridge delays](/cape-cod-bridge-traffic.html) before you leave. <!-- nocite -->
+- **Shopping while you stroll.** See our [town-by-town list of Cape Cod holiday gift shops](/guides/cape-cod-holiday-gift-shops-2026/), with the hours each shop publishes. <!-- nocite -->
 - **Keep the list in your pocket.** Live events, tides and bridge traffic are in the free [Totally Cape Cod app](/app/). <!-- nocite -->
