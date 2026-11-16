@@ -475,7 +475,7 @@ def render_article(meta: dict, body: str, authors: dict, all_articles: list) -> 
 # Optional front matter `towns: [Chatham, Orleans]` narrows the strip's events; directory guides
 # derive their towns from the directory data. No towns means Cape-wide. Never used on `layout: classic`.
 GL_CSS = """<style>
-.gl{--paper:#FDF8F2;--ink:#4A4038;--mute:#625749;--navy:#1A3A6C;--kraft:#D4A574;--bay:#2F6B57;min-height:560px;margin:26px 0;padding:14px 0;border-top:2px dashed var(--kraft);border-bottom:2px dashed var(--kraft);font:16px/1.5 Inter,system-ui,sans-serif;color:var(--ink)}
+.gl{--paper:#FDF8F2;--ink:#4A4038;--mute:#625749;--navy:#1A3A6C;--kraft:#D4A574;--bay:#2F6B57;min-height:380px;margin:26px 0;padding:14px 0;border-top:2px dashed var(--kraft);border-bottom:2px dashed var(--kraft);font:16px/1.5 Inter,system-ui,sans-serif;color:var(--ink)}
 .gl a{color:var(--navy)}.gl a:focus-visible{outline:3px solid var(--navy);outline-offset:2px;border-radius:4px}
 .gl-static{margin:0}.gl-static a,.gl-all a,.gl-go{display:inline-flex;align-items:center;min-height:44px}
 .gl-cols{display:flex;flex-direction:column}
@@ -486,8 +486,12 @@ GL_CSS = """<style>
 .gl a.gl-ev{display:block;min-height:44px;padding:4px 0;text-decoration:none}.ga-body>.gl{max-width:none}.gl-ev b{display:block;font-weight:600;text-decoration:underline;text-underline-offset:2px}
 .gl-ev span{display:block;font-size:15px;color:var(--mute)}.gl-ev .gl-src{font-size:14px}
 .gl-row{margin:0 0 2px}.gl-dim .gl-row,.gl-dim .gl-m{color:#766A5C}.gl-dim .gl-row b{font-weight:500}
-.gl-all{margin:6px 0 0}
-@media(min-width:700px){.gl{min-height:330px}.gl-cols{flex-direction:row;gap:0}.gl-col{flex:1 1 0;min-width:0;padding:6px 18px}.gl-col:first-child{padding-left:0;flex-grow:1.3}.gl-col:last-child{padding-right:0}.gl-col+.gl-col{border-top:0;border-left:2px dashed var(--kraft)}}
+.gl-all{margin:0}.gl-cols{display:none}
+.gl a.gl-r{display:flex;gap:12px;align-items:baseline;min-height:44px;padding:9px 0;text-decoration:none;color:var(--ink)}.gl a.gl-r+a.gl-r{border-top:2px dashed var(--kraft)}
+.gl-lab{flex:none;width:6.6rem;font:800 16px/1.3 Fraunces,Georgia,serif;color:var(--navy)}.gl-tx{text-decoration:underline;text-underline-offset:2px}
+.gl-dim .gl-tx{color:#766A5C}.gl-srcs{padding-top:8px;border-top:2px dashed var(--kraft);margin-top:2px!important}
+.gl.gl-none{min-height:0}
+@media(min-width:700px){.gl{min-height:330px}.gl-compact{display:none}.gl-cols{display:flex;flex-direction:row;gap:0}.gl-col{flex:1 1 0;min-width:0;padding:6px 18px}.gl-col:first-child{padding-left:0;flex-grow:1.3}.gl-col:last-child{padding-right:0}.gl-col+.gl-col{border-top:0;border-left:2px dashed var(--kraft)}}
 </style>
 <noscript><style>.gl{min-height:0!important}</style></noscript>"""
 
