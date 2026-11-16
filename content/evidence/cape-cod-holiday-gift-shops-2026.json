@@ -1,5 +1,5 @@
 {
-  "slug": "cape-cod-gift-shops-open-for-the-holidays-2026",
+  "slug": "cape-cod-holiday-gift-shops-2026",
   "article_updated": "2026-11-15",
   "saved": "2026-11-15",
   "about": "Verbatim excerpts from every source this guide cites, saved so each fact can be traced and re-checked. Excerpts are short; see each URL (and its archived copy, when added) for full context.",
@@ -16,6 +16,10 @@
         {
           "quote": "Category: \"Gift Shops\" (Brewster Chamber of Commerce)",
           "supports": "Brewster Chamber of Commerce lists Cape Cod Museum of Natural History under the category \"Gift Shops\"; Brewster Chamber of Commerce lists Brewster Book Store under the category \"Gift Shops\"; Brewster Chamber of Commerce lists The Brewster Store under the category \"Gift Shops\"; Brewster Chamber of Commerce lists By-the-Bay Designs under the category \"Gift Shops\"; Brewster Chamber of Commerce lists HandCraft House Gallery under the category \"Gift Shops\""
+        },
+        {
+          "quote": "Brewster General Store, The",
+          "supports": "Name under which the Brewster chamber lists The Brewster Store"
         }
       ]
     },
@@ -51,51 +55,21 @@
     },
     {
       "id": 4,
-      "url": "https://assets.simpleviewinc.com/simpleview/image/upload/v1/clients/capecodma/Falmouth_Guidebook_2026_64b068da-005a-4a62-ad88-b49338eee859.pdf",
-      "publisher": "Falmouth Chamber of Commerce",
-      "title": "Falmouth Guidebook 2026, Merchants section",
-      "checked": "2026-11-15",
-      "via": "live page",
-      "archived": null,
-      "excerpts": [
-        {
-          "quote": "Category: \"GIFTS & HOME ACCESSORIES\" (Falmouth Chamber of Commerce)",
-          "supports": "Falmouth Chamber of Commerce lists Celebrations of Cape Cod under the category \"GIFTS & HOME ACCESSORIES\"; Falmouth Chamber of Commerce lists Masterson Made under the category \"GIFTS & HOME ACCESSORIES\""
-        }
-      ]
-    },
-    {
-      "id": 5,
       "url": "https://business.hyannis.com/list/category/shops-clothing-home-furnishing-gifts-food-164",
-      "publisher": "Hyannis Area Chamber of Commerce",
+      "publisher": "Greater Hyannis Chamber of Commerce",
       "title": "Shops: Clothing, Home Furnishing, Gifts, Food (member directory category)",
       "checked": "2026-11-15",
       "via": "live page",
       "archived": null,
       "excerpts": [
         {
-          "quote": "Category: \"Shops: Clothing, Home Furnishing, Gifts, Food\" (Hyannis Area Chamber of Commerce)",
-          "supports": "Hyannis Area Chamber of Commerce lists Kandy Korner Gifts under the category \"Shops: Clothing, Home Furnishing, Gifts, Food\"; Hyannis Area Chamber of Commerce lists Mrs. Mitchell's Gifts under the category \"Shops: Clothing, Home Furnishing, Gifts, Food\"; Hyannis Area Chamber of Commerce lists Soho Arts Company under the category \"Shops: Clothing, Home Furnishing, Gifts, Food\""
+          "quote": "Category: \"Shops: Clothing, Home Furnishing, Gifts, Food\" (Greater Hyannis Chamber of Commerce)",
+          "supports": "Greater Hyannis Chamber of Commerce lists Kandy Korner Gifts under the category \"Shops: Clothing, Home Furnishing, Gifts, Food\"; Greater Hyannis Chamber of Commerce lists Mrs. Mitchell's Gifts under the category \"Shops: Clothing, Home Furnishing, Gifts, Food\"; Greater Hyannis Chamber of Commerce lists Soho Arts Company under the category \"Shops: Clothing, Home Furnishing, Gifts, Food\""
         }
       ]
     },
     {
-      "id": 6,
-      "url": "https://www.mashpeechamber.com/find-a-business",
-      "publisher": "Mashpee Chamber of Commerce",
-      "title": "Shopping & Specialty Retail (member directory category)",
-      "checked": "2026-11-15",
-      "via": "live page",
-      "archived": null,
-      "excerpts": [
-        {
-          "quote": "Category: \"Shopping & Specialty Retail\" (Mashpee Chamber of Commerce)",
-          "supports": "Mashpee Chamber of Commerce lists FabVilla under the category \"Shopping & Specialty Retail\""
-        }
-      ]
-    },
-    {
-      "id": 7,
+      "id": 5,
       "url": "https://members.orleanscapecod.org/list/category/wedding-gifts-203",
       "publisher": "Orleans Chamber of Commerce",
       "title": "Wedding Gifts (member directory category)",
@@ -110,7 +84,7 @@
       ]
     },
     {
-      "id": 8,
+      "id": 6,
       "url": "https://ptownchamber.com/shopping",
       "publisher": "Provincetown Chamber of Commerce",
       "title": "Shopping (member directory category)",
@@ -125,7 +99,7 @@
       ]
     },
     {
-      "id": 9,
+      "id": 7,
       "url": "https://web.sandwichchamber.com/atlas/directory/subcategory/shopping-&-speciality-retail/gifts,-clothing-&-accessories",
       "publisher": "Sandwich Chamber of Commerce",
       "title": "Gifts, Clothing & Accessories (member directory category)",
@@ -140,7 +114,7 @@
       ]
     },
     {
-      "id": 10,
+      "id": 8,
       "url": "https://www.trurochamberofcommerce.com/shop/",
       "publisher": "Truro Chamber of Commerce",
       "title": "Shop (member directory category)",
@@ -155,7 +129,7 @@
       ]
     },
     {
-      "id": 11,
+      "id": 9,
       "url": "https://www.wellfleetchamber.com/shopping/gift-shops/",
       "publisher": "Wellfleet Chamber of Commerce",
       "title": "Gift Shops (member directory category)",
@@ -168,8 +142,8 @@
           "supports": "Wellfleet Chamber of Commerce lists Wellfleet Marine Retail Store under the category \"Gift Shops\"; Wellfleet Chamber of Commerce lists DRIFT Wellfleet Home & Gift under the category \"Gift Shops\""
         },
         {
-          "quote": "410-963-7895",
-          "supports": "Phone number the Wellfleet chamber lists for DRIFT Wellfleet Home & Gift"
+          "quote": "3 W Main Street Wellfleet MA 02667",
+          "supports": "Street address the Wellfleet chamber lists for DRIFT Wellfleet Home & Gift"
         },
         {
           "quote": "Seaside treasures for family, home, garden and beach",
@@ -178,7 +152,7 @@
       ]
     },
     {
-      "id": 12,
+      "id": 10,
       "url": "https://yarmouthcapecod.com/shop/",
       "publisher": "Yarmouth Chamber of Commerce",
       "title": "Shopping & Specialty Retail (member directory category)",
@@ -197,7 +171,7 @@
       ]
     },
     {
-      "id": 13,
+      "id": 11,
       "url": "https://brewsterbookstore.com/contact-hours",
       "publisher": "Brewster Book Store",
       "title": "Brewster Book Store (shop website)",
@@ -210,7 +184,7 @@
           "supports": "Hours Brewster Book Store publishes (label: Fall Store Hours)"
         },
         {
-          "quote": "2648 Main Street Brewster, MA USA 02631",
+          "quote": "2648 Main Street Brewster, MA 02631 USA",
           "supports": "Street address of Brewster Book Store"
         },
         {
@@ -224,7 +198,7 @@
       ]
     },
     {
-      "id": 14,
+      "id": 12,
       "url": "https://www.instagram.com/p/Dfw5EImnL51/",
       "publisher": "The Brewster Store on Instagram",
       "title": "The Brewster Store (Instagram post)",
@@ -239,7 +213,7 @@
       ]
     },
     {
-      "id": 15,
+      "id": 13,
       "url": "https://www.facebook.com/By-the-Bay-Designs-157744414395831",
       "publisher": "By-the-Bay Designs on Facebook",
       "title": "By-the-Bay Designs (Facebook page)",
@@ -252,13 +226,13 @@
           "supports": "Date of By-the-Bay Designs's newest Facebook activity found: November 15, 2026"
         },
         {
-          "quote": "1077 Rte 6a, Lemon Tree Village, Brewster",
+          "quote": "1077 Rte 6a Lemon Tree Village, Brewster, MA, United States, 02631",
           "supports": "Street address of By-the-Bay Designs"
         }
       ]
     },
     {
-      "id": 16,
+      "id": 14,
       "url": "https://www.instagram.com/p/Dfkz9OKqL5l/",
       "publisher": "Cape Cod Museum of Natural History on Instagram",
       "title": "Cape Cod Museum of Natural History (Instagram post)",
@@ -273,7 +247,7 @@
       ]
     },
     {
-      "id": 17,
+      "id": 15,
       "url": "https://www.instagram.com/p/De2Fk3CKitg/",
       "publisher": "HandCraft House Gallery on Instagram",
       "title": "HandCraft House Gallery (Instagram post)",
@@ -288,7 +262,7 @@
       ]
     },
     {
-      "id": 18,
+      "id": 16,
       "url": "https://www.instagram.com/p/Dfu9uMuh2K4/",
       "publisher": "Chatham Candle Company on Instagram",
       "title": "Chatham Candle Company (Instagram post)",
@@ -303,7 +277,7 @@
       ]
     },
     {
-      "id": 19,
+      "id": 17,
       "url": "https://www.instagram.com/p/DfS0d4LmrsI/",
       "publisher": "Chatham Candy Manor on Instagram",
       "title": "Chatham Candy Manor (Instagram post)",
@@ -318,7 +292,7 @@
       ]
     },
     {
-      "id": 20,
+      "id": 18,
       "url": "https://www.instagram.com/p/DfIrb50o9Ma/",
       "publisher": "The Chatham Cheese Company on Instagram",
       "title": "The Chatham Cheese Company (Instagram post)",
@@ -333,7 +307,7 @@
       ]
     },
     {
-      "id": 21,
+      "id": 19,
       "url": "https://www.instagram.com/p/DfF_KkltHMI/",
       "publisher": "Chatham Kids on Instagram",
       "title": "Chatham Kids (Instagram post)",
@@ -348,7 +322,7 @@
       ]
     },
     {
-      "id": 22,
+      "id": 20,
       "url": "https://www.instagram.com/p/Dfw6iXgxBoH/",
       "publisher": "Yankee Ingenuity on Instagram",
       "title": "Yankee Ingenuity (Instagram post)",
@@ -363,7 +337,7 @@
       ]
     },
     {
-      "id": 23,
+      "id": 21,
       "url": "https://www.instagram.com/p/DemZQYCAY3a/",
       "publisher": "Nut House Candle Company on Instagram",
       "title": "Nut House Candle Company (Instagram post)",
@@ -378,7 +352,22 @@
       ]
     },
     {
-      "id": 24,
+      "id": 22,
+      "url": "https://www.instagram.com/nuthousecandleco/",
+      "publisher": "Nut House Candle Company on Instagram",
+      "title": "Nut House Candle Company (Instagram profile)",
+      "checked": "2026-11-15",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "HOURS: CLOSED! Reopen November 27th",
+          "supports": "Nut House Candle Company Instagram profile closure note"
+        }
+      ]
+    },
+    {
+      "id": 23,
       "url": "https://www.instagram.com/p/DfsKC0DFHWT/",
       "publisher": "Ross Coppelman, Goldsmith on Instagram",
       "title": "Ross Coppelman, Goldsmith (Instagram post)",
@@ -393,7 +382,7 @@
       ]
     },
     {
-      "id": 25,
+      "id": 24,
       "url": "https://www.instagram.com/p/DfusT6NjR6u/",
       "publisher": "Stage Stop Candy on Instagram",
       "title": "Stage Stop Candy (Instagram post)",
@@ -408,7 +397,7 @@
       ]
     },
     {
-      "id": 26,
+      "id": 25,
       "url": "https://www.facebook.com/pages/Celebrations-of-CapeCod/125745837470511",
       "publisher": "Celebrations of Cape Cod on Facebook",
       "title": "Celebrations of Cape Cod (Facebook page)",
@@ -435,7 +424,7 @@
       ]
     },
     {
-      "id": 27,
+      "id": 26,
       "url": "https://www.instagram.com/p/DfaYT80FGwp/",
       "publisher": "Masterson Made on Instagram",
       "title": "Masterson Made (Instagram post)",
@@ -450,7 +439,7 @@
       ]
     },
     {
-      "id": 28,
+      "id": 27,
       "url": "https://www.instagram.com/p/DY0jk2rRk0m/",
       "publisher": "Kandy Korner Gifts on Instagram",
       "title": "Kandy Korner Gifts (Instagram post)",
@@ -465,7 +454,7 @@
       ]
     },
     {
-      "id": 29,
+      "id": 28,
       "url": "https://kandykorner.com/",
       "publisher": "Kandy Korner Gifts",
       "title": "Kandy Korner Gifts (shop website)",
@@ -492,7 +481,7 @@
       ]
     },
     {
-      "id": 30,
+      "id": 29,
       "url": "https://www.facebook.com/mrsmitchellsgiftscapecod",
       "publisher": "Mrs. Mitchell's Gifts on Facebook",
       "title": "Mrs. Mitchell's Gifts (Facebook page)",
@@ -507,7 +496,7 @@
       ]
     },
     {
-      "id": 31,
+      "id": 30,
       "url": "https://www.instagram.com/p/DfXZ16aozf-/",
       "publisher": "Soho Arts Company on Instagram",
       "title": "Soho Arts Company (Instagram post)",
@@ -522,7 +511,7 @@
       ]
     },
     {
-      "id": 32,
+      "id": 31,
       "url": "https://www.instagram.com/p/DfxVA5OGPiC/",
       "publisher": "FabVilla on Instagram",
       "title": "FabVilla (Instagram post)",
@@ -537,7 +526,7 @@
       ]
     },
     {
-      "id": 33,
+      "id": 32,
       "url": "https://www.instagram.com/p/DfsAzFCKLC1/",
       "publisher": "Adorn Cape Cod on Instagram",
       "title": "Adorn Cape Cod (Instagram post)",
@@ -552,7 +541,7 @@
       ]
     },
     {
-      "id": 34,
+      "id": 33,
       "url": "https://nausetlanternshop.com/",
       "publisher": "The Nauset Lantern Shop",
       "title": "The Nauset Lantern Shop (shop website)",
@@ -565,12 +554,16 @@
           "supports": "Hours The Nauset Lantern Shop publishes (no season label)"
         },
         {
+          "quote": "52 Route 6A | Orleans, MA 02653",
+          "supports": "Street address of The Nauset Lantern Shop"
+        },
+        {
           "quote": "Nauset Lantern Shop handcrafts over 100 styles of copper lanterns.",
           "supports": "What The Nauset Lantern Shop says it sells"
         },
         {
-          "quote": "The Orleans Cape Cod shop is open daily and welcomes visitors to browse",
-          "supports": "Nauset Lantern Shop site text that conflicts with its listed hours"
+          "quote": "NEW LOCATION! 288 Main Street Hingham, MA 02043 Open Tuesday - Friday 10:30am - 2:30pm",
+          "supports": "Nauset Lantern Shop site text about a separate Hingham location and its hours"
         },
         {
           "quote": "508-255-1009",
@@ -579,7 +572,7 @@
       ]
     },
     {
-      "id": 35,
+      "id": 34,
       "url": "https://www.instagram.com/p/DfpVCoPjHcb/",
       "publisher": "Oceana on Instagram",
       "title": "Oceana (Instagram post)",
@@ -594,7 +587,7 @@
       ]
     },
     {
-      "id": 36,
+      "id": 35,
       "url": "https://www.instagram.com/p/DfpAc3JAHGP/",
       "publisher": "Snow's Home & Garden on Instagram",
       "title": "Snow's Home & Garden (Instagram post)",
@@ -609,7 +602,7 @@
       ]
     },
     {
-      "id": 37,
+      "id": 36,
       "url": "https://www.instagram.com/p/DfR3XBYhsuc/",
       "publisher": "Cabot's Candy Factory on Instagram",
       "title": "Cabot's Candy Factory (Instagram post)",
@@ -624,7 +617,7 @@
       ]
     },
     {
-      "id": 38,
+      "id": 37,
       "url": "https://www.facebook.com/FudgeFactoryMA",
       "publisher": "Provincetown Fudge Factory on Facebook",
       "title": "Provincetown Fudge Factory (Facebook page)",
@@ -645,7 +638,7 @@
           "supports": "What Provincetown Fudge Factory says it sells"
         },
         {
-          "quote": "November store hours Sun-Thu 11 AM-6 PM, Fri-Sat 11 AM-8 PM",
+          "quote": "NOVEMBER STORE HOURS: SUN thru THURS: 11 AM-6 PM; FRI & SAT: 11 AM-8 PM",
           "supports": "Hours Provincetown Fudge Factory publishes (label: November store hours)"
         },
         {
@@ -655,7 +648,7 @@
       ]
     },
     {
-      "id": 39,
+      "id": 38,
       "url": "https://www.instagram.com/p/DfvNAEPvzMV/",
       "publisher": "Wave Cape Cod on Instagram",
       "title": "Wave Cape Cod (Instagram post)",
@@ -670,7 +663,7 @@
       ]
     },
     {
-      "id": 40,
+      "id": 39,
       "url": "https://www.atlanticspice.com/",
       "publisher": "Atlantic Spice Company",
       "title": "Atlantic Spice Company (shop website)",
@@ -697,7 +690,7 @@
       ]
     },
     {
-      "id": 41,
+      "id": 40,
       "url": "https://www.instagram.com/p/Dfuo6shmzVh/",
       "publisher": "Jobi Pottery and Gallery on Instagram",
       "title": "Jobi Pottery and Gallery (Instagram post)",
@@ -712,7 +705,7 @@
       ]
     },
     {
-      "id": 42,
+      "id": 41,
       "url": "https://www.instagram.com/p/DfuibFlMDti/",
       "publisher": "Truro Vineyards of Cape Cod on Instagram",
       "title": "Truro Vineyards of Cape Cod (Instagram post)",
@@ -727,7 +720,7 @@
       ]
     },
     {
-      "id": 43,
+      "id": 42,
       "url": "https://www.instagram.com/p/DfMw0LFIFtb/",
       "publisher": "DRIFT Wellfleet Home & Gift on Instagram",
       "title": "DRIFT Wellfleet Home & Gift (Instagram post)",
@@ -742,7 +735,7 @@
       ]
     },
     {
-      "id": 44,
+      "id": 43,
       "url": "https://www.facebook.com/wellfleetmarineretailstore",
       "publisher": "Wellfleet Marine Retail Store on Facebook",
       "title": "Wellfleet Marine Retail Store (Facebook page)",
@@ -757,7 +750,7 @@
       ]
     },
     {
-      "id": 45,
+      "id": 44,
       "url": "https://bassrivermercantile.com/contact-us/",
       "publisher": "Bass River Mercantile",
       "title": "Bass River Mercantile (shop website)",
@@ -766,7 +759,7 @@
       "archived": null,
       "excerpts": [
         {
-          "quote": "General hours are 10-5 Monday through Sunday. On somedays we're not here at all, but lately we've been here a lot....unless we're not here.",
+          "quote": "General hours are 10-5 Monday through Sunday. On somedays we’re not here at all, but lately we’ve been here a lot….unless we’re not here.",
           "supports": "Hours Bass River Mercantile publishes (no season label)"
         },
         {
@@ -780,7 +773,7 @@
       ]
     },
     {
-      "id": 46,
+      "id": 45,
       "url": "https://brewsterbookstore.com/",
       "publisher": "Brewster Book Store",
       "title": "Brewster Book Store (shop website, home page)",
@@ -795,7 +788,7 @@
       ]
     },
     {
-      "id": 47,
+      "id": 46,
       "url": "https://brewsterstore.com/",
       "publisher": "The Brewster Store",
       "title": "The Brewster Store (shop website)",
@@ -822,6 +815,21 @@
         {
           "quote": "(508) 896-3744",
           "supports": "Phone number of The Brewster Store"
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "url": "https://www.instagram.com/thebrewsterstore1866/",
+      "publisher": "The Brewster Store on Instagram",
+      "title": "The Brewster Store (Instagram profile)",
+      "checked": "2026-11-15",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Open 364 Days a Year!",
+          "supports": "The Brewster Store Instagram profile statement about days open"
         }
       ]
     },
@@ -877,17 +885,59 @@
           "supports": "Hours Cape Cod Museum of Natural History publishes (label: Fall 2026 Hours)"
         },
         {
+          "quote": "CLOSED",
+          "supports": "Heading of the closed-dates block on the museum hours page"
+        },
+        {
+          "quote": "VETERANS DAY WEDNESDAY, NOVEMBER 11TH",
+          "supports": "Museum hours page closed-dates entry for Veterans Day"
+        },
+        {
           "quote": "THANKSGIVING DAY THURSDAY, NOVEMBER 26TH",
-          "supports": "Museum hours page entry for Thanksgiving Day"
+          "supports": "Museum hours page entry for Thanksgiving Day; x"
         },
         {
           "quote": "WINTER HOLIDAYS MONDAY, DECEMBER 21ST - SATURDAY, DECEMBER 26TH",
-          "supports": "Museum hours page entry for the winter holidays"
+          "supports": "Museum hours page entry for the winter holidays; x"
+        },
+        {
+          "quote": "HOURS ARE SUBJECT TO CHANGE.",
+          "supports": "Museum hours page note that hours can change"
         }
       ]
     },
     {
       "id": 51,
+      "url": "https://hchgallery.com/pages/about-us",
+      "publisher": "HandCraft House Gallery",
+      "title": "HandCraft House Gallery (shop website)",
+      "checked": "2026-11-15",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "3966 Route 6A, Brewster, Massachusetts",
+          "supports": "Street address of HandCraft House Gallery"
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "url": "https://www.instagram.com/handcrafthousegallery/",
+      "publisher": "HandCraft House Gallery on Instagram",
+      "title": "HandCraft House Gallery (Instagram profile)",
+      "checked": "2026-11-15",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "3966 Main Street, Brewster, Massachusetts 02631",
+          "supports": "Street address on the Instagram profile of HandCraft House Gallery"
+        }
+      ]
+    },
+    {
+      "id": 53,
       "url": "https://hchgallery.com/",
       "publisher": "HandCraft House Gallery",
       "title": "HandCraft House Gallery (shop website)",
@@ -910,7 +960,7 @@
       ]
     },
     {
-      "id": 52,
+      "id": 54,
       "url": "https://www.chatham-candle.com/",
       "publisher": "Chatham Candle Company",
       "title": "Chatham Candle Company (shop website)",
@@ -933,7 +983,7 @@
       ]
     },
     {
-      "id": 53,
+      "id": 55,
       "url": "https://candymanor.com/pages/contactus",
       "publisher": "Chatham Candy Manor",
       "title": "Chatham Candy Manor (shop website)",
@@ -952,7 +1002,7 @@
       ]
     },
     {
-      "id": 54,
+      "id": 56,
       "url": "https://candymanor.com/",
       "publisher": "Chatham Candy Manor",
       "title": "Chatham Candy Manor (shop website)",
@@ -967,7 +1017,7 @@
       ]
     },
     {
-      "id": 55,
+      "id": 57,
       "url": "https://chathamcheese.com/",
       "publisher": "The Chatham Cheese Company",
       "title": "The Chatham Cheese Company (shop website)",
@@ -984,17 +1034,32 @@
           "supports": "What The Chatham Cheese Company says it sells"
         },
         {
-          "quote": "508-945-1605",
-          "supports": "Phone number of The Chatham Cheese Company"
+          "quote": "Hours | Call for Seasonal Hours",
+          "supports": "Hours text on the Chatham Cheese Company home page"
         },
         {
-          "quote": "Hours Please call for private tastings. Reservations required.",
-          "supports": "Chatham Cheese Company home page hours text (from research file gap note)"
+          "quote": "508-945-1605",
+          "supports": "Phone number of The Chatham Cheese Company"
         }
       ]
     },
     {
-      "id": 56,
+      "id": 58,
+      "url": "https://www.instagram.com/chatham_kids/",
+      "publisher": "Chatham Kids on Instagram",
+      "title": "Chatham Kids (Instagram profile)",
+      "checked": "2026-11-15",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "584 Main Street, Chatham, Massachusetts 02633",
+          "supports": "Street address on the Instagram profile of Chatham Kids"
+        }
+      ]
+    },
+    {
+      "id": 59,
       "url": "https://yankee-ingenuity.com/",
       "publisher": "Yankee Ingenuity",
       "title": "Yankee Ingenuity (shop website)",
@@ -1021,7 +1086,7 @@
       ]
     },
     {
-      "id": 57,
+      "id": 60,
       "url": "https://nuthousecandleco.com/",
       "publisher": "Nut House Candle Company",
       "title": "Nut House Candle Company (shop website)",
@@ -1044,22 +1109,7 @@
       ]
     },
     {
-      "id": 58,
-      "url": "https://www.instagram.com/nuthousecandleco/",
-      "publisher": "Nut House Candle Company on Instagram",
-      "title": "Nut House Candle Company (Instagram profile)",
-      "checked": "2026-11-15",
-      "via": "live page",
-      "archived": null,
-      "excerpts": [
-        {
-          "quote": "HOURS: CLOSED! Reopen November 27th",
-          "supports": "Nut House Candle Company Instagram profile closure note"
-        }
-      ]
-    },
-    {
-      "id": 59,
+      "id": 61,
       "url": "https://rosscoppelman.com/",
       "publisher": "Ross Coppelman, Goldsmith",
       "title": "Ross Coppelman, Goldsmith (shop website)",
@@ -1067,6 +1117,10 @@
       "via": "live page",
       "archived": null,
       "excerpts": [
+        {
+          "quote": "1439 Route 6A, East Dennis, MA 02641",
+          "supports": "Street address of Ross Coppelman, Goldsmith"
+        },
         {
           "quote": "For over 50 years, Cape Cod jeweler and goldsmith, Ross Coppelman, has designed and hand-crafted iconic Cape Cod jewelry with timeless elegance.",
           "supports": "What Ross Coppelman, Goldsmith says it sells"
@@ -1082,7 +1136,7 @@
       ]
     },
     {
-      "id": 60,
+      "id": 62,
       "url": "https://stagestopcandy.com/",
       "publisher": "Stage Stop Candy",
       "title": "Stage Stop Candy (shop website)",
@@ -1099,8 +1153,12 @@
           "supports": "What Stage Stop Candy says it sells"
         },
         {
-          "quote": "Showroom Hours: October - December Sun 11:00 AM - 6:00 PM, Mon 11:00 AM - 6:00 PM, Tue CLOSED, Wed CLOSED, Thu-Sat 11:00 AM - 6:00 PM",
+          "quote": "Showroom Hours: October - December | Sunday: 11:00 AM - 6:00 PM | Monday: 11:00 AM - 6:00 PM | Tuesday: CLOSED | Wednesday: CLOSED",
           "supports": "Hours Stage Stop Candy publishes (label: Showroom Hours: October - December)"
+        },
+        {
+          "quote": "Saturday: 11:00 AM - 6:00 PM",
+          "supports": "Hours Stage Stop Candy publishes (Saturday line)"
         },
         {
           "quote": "508-394-1791",
@@ -1109,7 +1167,45 @@
       ]
     },
     {
-      "id": 61,
+      "id": 63,
+      "url": "https://www.mastersonmade.com/about",
+      "publisher": "Masterson Made",
+      "title": "Masterson Made (shop website)",
+      "checked": "2026-11-15",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "89 Water Street, Woods Hole, MA 02543",
+          "supports": "Street address of Masterson Made"
+        },
+        {
+          "quote": "Fall Hours: Sunday 10 am - 4 pm, Monday 10 am - 4 pm, Tuesday 10 am - 4 pm, Wednesday 10 am - 6 pm, Thursday 10 am - 6 pm, Friday 10 am - 6 pm, Saturday 10 am - 6 pm",
+          "supports": "Hours Masterson Made publishes (label: Fall Hours)"
+        },
+        {
+          "quote": "508-203-1515",
+          "supports": "Phone number of Masterson Made"
+        }
+      ]
+    },
+    {
+      "id": 64,
+      "url": "https://www.instagram.com/mastersonmade/",
+      "publisher": "Masterson Made on Instagram",
+      "title": "Masterson Made (Instagram profile)",
+      "checked": "2026-11-15",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "89 Water Street, Falmouth, Massachusetts 02543",
+          "supports": "Street address on the Instagram profile of Masterson Made"
+        }
+      ]
+    },
+    {
+      "id": 65,
       "url": "https://mastersonmade.com/",
       "publisher": "Masterson Made",
       "title": "Masterson Made (shop website)",
@@ -1124,7 +1220,7 @@
       ]
     },
     {
-      "id": 62,
+      "id": 66,
       "url": "https://mrsmitchellsonmain.com/contact",
       "publisher": "Mrs. Mitchell's Gifts",
       "title": "Mrs. Mitchell's Gifts (shop website)",
@@ -1143,30 +1239,45 @@
       ]
     },
     {
-      "id": 63,
+      "id": 67,
+      "url": "https://sohocompany.net/pages/visit-our-retail-shop",
+      "publisher": "Soho Arts Company",
+      "title": "Soho Arts Company (shop website)",
+      "checked": "2026-11-15",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "located at 342 Main Street, Hyannis MA 02601",
+          "supports": "Street address of Soho Arts Company"
+        },
+        {
+          "quote": "Our current hours are: Monday-Thursday 10AM-5PM, Friday 10AM-6PM, Saturday 10AM-6PM, Sunday 10AM-4PM",
+          "supports": "Hours Soho Arts Company publishes (no season label)"
+        },
+        {
+          "quote": "508-771-7646",
+          "supports": "Phone number of Soho Arts Company"
+        }
+      ]
+    },
+    {
+      "id": 68,
       "url": "https://business.hyannis.com/list/member/soho-arts-company-hyannis-1715",
-      "publisher": "Hyannis Area Chamber of Commerce",
+      "publisher": "Greater Hyannis Chamber of Commerce",
       "title": "Soho Arts Company (chamber member profile)",
       "checked": "2026-11-15",
       "via": "live page",
       "archived": null,
       "excerpts": [
         {
-          "quote": "342 Main Street",
-          "supports": "Street address of Soho Arts Company (research notes record the chamber profile as the address source)"
-        },
-        {
           "quote": "Home, decorative accessories, gifts, baby, rugs, tabletop, table linens, candles, body products",
           "supports": "The chamber's description of Soho Arts Company"
-        },
-        {
-          "quote": "(508) 771-7646 (800) (508) 771-7640",
-          "supports": "Phone text exactly as printed on the chamber profile for Soho Arts Company (reads oddly; see gaps)"
         }
       ]
     },
     {
-      "id": 64,
+      "id": 69,
       "url": "https://fabvilla.net/pages/visit-the-store",
       "publisher": "FabVilla",
       "title": "FabVilla (shop website)",
@@ -1193,7 +1304,7 @@
       ]
     },
     {
-      "id": 65,
+      "id": 70,
       "url": "https://fabvilla.net/",
       "publisher": "FabVilla",
       "title": "FabVilla (shop website)",
@@ -1208,7 +1319,7 @@
       ]
     },
     {
-      "id": 66,
+      "id": 71,
       "url": "https://adorncapecod.com/hours-location-and-contact",
       "publisher": "Adorn Cape Cod",
       "title": "Adorn Cape Cod (shop website)",
@@ -1231,7 +1342,7 @@
       ]
     },
     {
-      "id": 67,
+      "id": 72,
       "url": "https://adorncapecod.com/",
       "publisher": "Adorn Cape Cod",
       "title": "Adorn Cape Cod (shop website)",
@@ -1246,22 +1357,7 @@
       ]
     },
     {
-      "id": 68,
-      "url": "https://www.instagram.com/oceanacapecod/",
-      "publisher": "Oceana on Instagram",
-      "title": "Oceana (Instagram profile)",
-      "checked": "2026-11-15",
-      "via": "live page",
-      "archived": null,
-      "excerpts": [
-        {
-          "quote": "Shop local. Gift coastal.",
-          "supports": "What Oceana says it sells"
-        }
-      ]
-    },
-    {
-      "id": 69,
+      "id": 73,
       "url": "https://oceanacapecod.com/pages/contact",
       "publisher": "Oceana",
       "title": "Oceana (shop website)",
@@ -1269,6 +1365,10 @@
       "via": "live page",
       "archived": null,
       "excerpts": [
+        {
+          "quote": "One Main Street Square, Orleans, MA 02653",
+          "supports": "Street address of Oceana"
+        },
         {
           "quote": "Hours 10am-5pm Monday thru Saturday Closed Sunday",
           "supports": "Hours Oceana publishes (no season label)"
@@ -1280,22 +1380,45 @@
       ]
     },
     {
-      "id": 70,
-      "url": "https://snowscapecod.com/",
-      "publisher": "Snow's Home & Garden",
-      "title": "Snow's Home & Garden (shop website)",
+      "id": 74,
+      "url": "https://www.instagram.com/oceanacapecod/",
+      "publisher": "Oceana on Instagram",
+      "title": "Oceana (Instagram profile)",
       "checked": "2026-11-15",
       "via": "live page",
       "archived": null,
       "excerpts": [
         {
-          "quote": "COVID-19 UPDATE ... temporarily closed",
-          "supports": "Snow's Home & Garden site banner text"
+          "quote": "1 Main St, Orleans, Massachusetts 02653",
+          "supports": "Street address on the Instagram profile of Oceana"
+        },
+        {
+          "quote": "Shop local. Gift coastal.",
+          "supports": "What Oceana says it sells"
         }
       ]
     },
     {
-      "id": 71,
+      "id": 75,
+      "url": "https://www.instagram.com/snowscapecod/",
+      "publisher": "Snow's Home & Garden on Instagram",
+      "title": "Snow's Home & Garden (Instagram profile)",
+      "checked": "2026-11-15",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "22 Main St, Orleans, Massachusetts 02653",
+          "supports": "Street address on the Instagram profile of Snow's Home & Garden"
+        },
+        {
+          "quote": "A family owned and operated favorite #CapeCod shopping destination for locals and visitors, celebrating over 130 years!",
+          "supports": "What Snow's Home & Garden says about itself on Instagram"
+        }
+      ]
+    },
+    {
+      "id": 76,
       "url": "https://www.cabotscandy.com/pages/contact",
       "publisher": "Cabot's Candy Factory",
       "title": "Cabot's Candy Factory (shop website)",
@@ -1314,7 +1437,7 @@
       ]
     },
     {
-      "id": 72,
+      "id": 77,
       "url": "https://www.cabotscandy.com/",
       "publisher": "Cabot's Candy Factory",
       "title": "Cabot's Candy Factory (shop website)",
@@ -1329,8 +1452,8 @@
       ]
     },
     {
-      "id": 73,
-      "url": "https://wavecapecod.com/",
+      "id": 78,
+      "url": "https://www.wavecapecod.com/",
       "publisher": "Wave Cape Cod",
       "title": "Wave Cape Cod (shop website)",
       "checked": "2026-11-15",
@@ -1338,13 +1461,67 @@
       "archived": null,
       "excerpts": [
         {
+          "quote": "130 Route 6A Sandwich, Massachusetts 02563-2018",
+          "supports": "Street address of Wave Cape Cod"
+        },
+        {
           "quote": "a cheerful jewelry and gift shop",
           "supports": "What Wave Cape Cod says it sells"
+        },
+        {
+          "quote": "Monday-Saturday 10:00 am - 5:00 pm",
+          "supports": "Hours Wave Cape Cod publishes (no season label)"
+        },
+        {
+          "quote": "OPEN YEAR-ROUND!",
+          "supports": "Wave Cape Cod home page year-round statement"
+        },
+        {
+          "quote": "(508) 833-8500",
+          "supports": "Phone number of Wave Cape Cod"
         }
       ]
     },
     {
-      "id": 74,
+      "id": 79,
+      "url": "https://jobipottery.com/contact-page/",
+      "publisher": "Jobi Pottery and Gallery",
+      "title": "Jobi Pottery and Gallery (shop website)",
+      "checked": "2026-11-15",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Studio Location: 3 Depot Road, Truro, MA 02666",
+          "supports": "Studio address of Jobi Pottery and Gallery"
+        },
+        {
+          "quote": "Call for a studio visit",
+          "supports": "Jobi Pottery's note about visiting the studio"
+        },
+        {
+          "quote": "Check Facebook and Instagram for announcements on open days, sales, and events!",
+          "supports": "Jobi Pottery's note about open days"
+        }
+      ]
+    },
+    {
+      "id": 80,
+      "url": "https://www.instagram.com/jobipotterygal/",
+      "publisher": "Jobi Pottery and Gallery on Instagram",
+      "title": "Jobi Pottery and Gallery (Instagram profile)",
+      "checked": "2026-11-15",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "314 US-6, Truro, Massachusetts 02666",
+          "supports": "Street address on the Instagram profile of Jobi Pottery and Gallery"
+        }
+      ]
+    },
+    {
+      "id": 81,
       "url": "https://jobipottery.com/",
       "publisher": "Jobi Pottery and Gallery",
       "title": "Jobi Pottery and Gallery (shop website)",
@@ -1359,15 +1536,11 @@
         {
           "quote": "508-349-3350",
           "supports": "Phone number of Jobi Pottery and Gallery"
-        },
-        {
-          "quote": "Check Facebook and Instagram for announcements on open days, sales, and events!",
-          "supports": "Jobi Pottery's note about open days"
         }
       ]
     },
     {
-      "id": 75,
+      "id": 82,
       "url": "https://trurovineyardsofcapecod.com/visit-us/",
       "publisher": "Truro Vineyards of Cape Cod",
       "title": "Truro Vineyards of Cape Cod (shop website)",
@@ -1398,7 +1571,7 @@
       ]
     },
     {
-      "id": 76,
+      "id": 83,
       "url": "https://www.instagram.com/driftwellfleet/",
       "publisher": "DRIFT Wellfleet Home & Gift on Instagram",
       "title": "DRIFT Wellfleet Home & Gift (Instagram profile)",
@@ -1407,17 +1580,17 @@
       "archived": null,
       "excerpts": [
         {
-          "quote": "361 Main Street",
-          "supports": "Street address of DRIFT Wellfleet Home & Gift"
+          "quote": "361 Main Street, Wellfleet, Massachusetts 02667",
+          "supports": "Street address on the Instagram profile of DRIFT Wellfleet Home & Gift"
         },
         {
-          "quote": "Late Fall Hours | Th 11 to 3 | Fr 11 to 4 | Sat 11 to 4 | Sun - some, not all so call",
+          "quote": "Late Fall Hours | Th 11 to 3 | Fr 11 to 4 | Sat 11 to 4 | Sun — some, not all so call",
           "supports": "Hours DRIFT Wellfleet Home & Gift publishes (label: Late Fall Hours)"
         }
       ]
     },
     {
-      "id": 77,
+      "id": 84,
       "url": "https://wellfleetmarine.com/pages/contact",
       "publisher": "Wellfleet Marine Retail Store",
       "title": "Wellfleet Marine Retail Store (shop website)",
@@ -1438,94 +1611,17 @@
   ],
   "gaps": [],
   "research_gaps": [
-    "Provincetown Fudge Factory: hours text is on the graphic of the Nov 1 post; screenshot read today shows NOVEMBER STORE HOURS Sunday thru Thursday 11AM to 6PM, Friday + Saturday 11AM to 8PM; quote field uses the notes' wording of the same hours",
-    "Cabot's Candy Factory: no hours on site contact page or IG bio",
-    "Cabot's Candy Factory: home and contact pages re-read today: still no hours",
-    "Truro Vineyards of Cape Cod: no winter or December-specific hours: the site's only hours are Fall Hours (through just before Christmas); no hours for after Christmas were found",
-    "Truro Vineyards of Cape Cod: no on-site gift shop is described on the pages read; the site's /shop/ page is an online store (merchandise and baskets)",
-    "Truro Vineyards of Cape Cod: Facebook page URL not recorded; Instagram profile is linked from the site and used instead",
-    "Truro Vineyards of Cape Cod: chamber listing: also on Truro Chamber Shop list per notes",
-    "Atlantic Spice Company: no social found",
-    "Atlantic Spice Company: chamber: also on the Provincetown chamber shopping list per notes; Truro chamber page links atlanticspice.com",
-    "DRIFT Wellfleet Home & Gift: phone is from chamber listing, not shop's own page",
-    "DRIFT Wellfleet Home & Gift: sells quote not yet captured",
-    "DRIFT Wellfleet Home & Gift: driftwellfleet.com showed a browser Privacy error today and was not opened",
-    "Masterson Made: address text from research notes; own-page source URL not recorded in notes",
-    "Masterson Made: no hours on site or IG bio",
-    "Masterson Made: phone not recorded",
-    "Chatham Candy Manor: no hours on site or IG bio",
-    "Chatham Candy Manor: contact page re-read today: address only, no hours",
-    "Chatham Candle Company: no phone seen",
-    "Chatham Candle Company: phone: none on the home page; only an email address (candlechatham@gmail.com) is shown",
-    "Chatham Candle Company: CONTRADICTS NOTES: the notes said no hours were published; the home page shows a Location & Hours table today",
-    "Chatham Kids: address text from research notes; own-page source URL not recorded in notes",
-    "Chatham Kids: no hours on site or IG bio",
-    "Chatham Kids: no phone found",
-    "Chatham Kids: site is chathamclothingbar.com per chamber profile",
-    "Chatham Kids: sells quote is from the Chatham Clothing Bar family-of-stores home page, not specific to Chatham Kids",
-    "The Chatham Cheese Company: no fixed hours published",
-    "The Chatham Cheese Company: today's home page read found 'Hours Please call for private tastings. Reservations required.'; the 'Call for Seasonal Hours' quote is from the notes and was not re-found",
-    "Yankee Ingenuity: hours undated, no season label",
-    "Cape Cod Museum of Natural History: hours are MUSEUM hours; Science Shop hours not confirmed",
-    "Cape Cod Museum of Natural History: sells quote not yet captured",
-    "Cape Cod Museum of Natural History: home page menu has a Science Shop link; shop page not opened, no shop description or shop hours",
-    "The Brewster Store: hours quote elided in middle (all seven days listed); undated",
-    "HandCraft House Gallery: hours undated, no season label",
-    "HandCraft House Gallery: street address not found in the page text read today; address text is from notes",
-    "By-the-Bay Designs: site by-the-bay-designs.com shows no hours",
-    "By-the-Bay Designs: FB showed Closed now on a Sunday afternoon, hours not captured",
-    "By-the-Bay Designs: site by-the-bay-designs.com shows a phone but no street address or hours",
-    "Wave Cape Cod: address text from research notes; own-page source URL not recorded in notes",
-    "Wave Cape Cod: site pages loaded with no readable hours",
-    "Wave Cape Cod: phone not recorded",
-    "Oceana: address text from research notes; own-page source URL not recorded in notes",
-    "Oceana: hours undated, no season label",
-    "Snow's Home & Garden: address text from research notes; own-page source URL not recorded in notes",
-    "Snow's Home & Garden: site rendered almost no text; the COVID banner is stale per notes",
-    "Snow's Home & Garden: no hours on IG bio",
-    "Snow's Home & Garden: phone not recorded",
-    "Snow's Home & Garden: sells quote not yet captured",
-    "Snow's Home & Garden: snowscapecod.com returned only about 157 characters of text today",
-    "The Nauset Lantern Shop: address text from research notes; own-page source URL not recorded in notes",
-    "The Nauset Lantern Shop: hours undated (footer 2026)",
-    "The Nauset Lantern Shop: no social found",
-    "The Nauset Lantern Shop: the site's own text conflicts: 'open daily' in the description vs 'Open Tuesday - Saturday 8am - 4pm'; the page also lists a Hingham store (288 Main Street, Open Tuesday - Friday 10:30am - 2:30pm)",
-    "The Nauset Lantern Shop: Orleans street address not found in page text read today",
-    "Nut House Candle Company: closed now per shop; reopens Nov 27",
-    "Ross Coppelman, Goldsmith: address text from research notes; own-page source URL not recorded in notes",
-    "Ross Coppelman, Goldsmith: hours label is Spring Hours: stale, do not present as current",
-    "FabVilla: hours undated; Mashpee has no gift category, general retail filter used",
-    "Jobi Pottery and Gallery: address text from research notes; own-page source URL not recorded in notes",
-    "Jobi Pottery and Gallery: no fixed hours (call for a studio visit)",
-    "Jobi Pottery and Gallery: phone page URL: contact page, exact path not recorded",
-    "Wellfleet Marine Retail Store: no hours published (FB showed Closed now on a Sunday)",
-    "Wellfleet Marine Retail Store: chamber lists 508-349-6417, shop's contact page 508-214-0677",
-    "Celebrations of Cape Cod: hours not read (FB showed Closed now on Sunday)",
-    "Brewster Book Store: no social found",
-    "Brewster Book Store: sells quote not yet captured",
-    "Kandy Korner Gifts: hours undated, no season label",
-    "Kandy Korner Gifts: Instagram newest post is 2026-05-27 UTC (24w): stale; site shows current holiday promo",
-    "Mrs. Mitchell's Gifts: no hours published",
-    "Mrs. Mitchell's Gifts: sells quote not yet captured",
-    "Soho Arts Company: address source is chamber profile in notes; own page not recorded",
-    "Soho Arts Company: phone from chamber profile (also 508.775.7778 listed there)",
-    "Soho Arts Company: no hours on contact page",
-    "Bass River Mercantile: hours undated; footer Copyright 2012 - 2026",
-    "Bass River Mercantile: social post not checked",
-    "Bass River Mercantile: sells quote not yet captured",
-    "Bass River Mercantile: site gives no description of what it sells on the contact page; kind unconfirmed",
-    "All chamber sources: the research file records the category label for each chamber listing, not saved page text, so the chamber excerpts are the category label as recorded.",
-    "Provincetown Fudge Factory: the hours quote field uses the research notes' wording of the Facebook graphic; the screenshot reading (NOVEMBER STORE HOURS Sunday thru Thursday 11AM to 6PM, Friday + Saturday 11AM to 8PM) differs in wording. The article paraphrases without quotation marks.",
-    "Address not confirmed from the shop's own pages (no source URL in the research file), so the article gives no street address: Masterson Made, Chatham Kids, Wave Cape Cod, Oceana, Snow's Home & Garden, The Nauset Lantern Shop, Ross Coppelman Goldsmith, Jobi Pottery and Gallery, HandCraft House Gallery.",
-    "Soho Arts Company: street address and phone are cited to the chamber member profile, which the research notes name as the source; the phone text as printed is garbled ('(508) 771-7646 (800) (508) 771-7640') and is reproduced as is.",
-    "DRIFT Wellfleet Home & Gift: the phone is the chamber's listing, not the shop's own page.",
-    "Chatham Kids: the only 'sells' quote is from the Chatham Clothing Bar family-of-stores page and is not specific to Chatham Kids, so it is not used.",
-    "The Chatham Cheese Company: the 'Call for Seasonal Hours' note was not re-found on the page; the article uses the 'Hours Please call for private tastings. Reservations required.' text recorded in the research file's gap note.",
-    "Snow's Home & Garden: the site banner 'COVID-19 UPDATE ... temporarily closed' is reported as shown; the research notes consider it stale but the page shows almost no text.",
-    "Kandy Korner Gifts: newest Instagram post found is May 27, 2026; the article does not count Instagram as recent proof for it.",
-    "Mrs. Mitchell's Gifts: newest dated activity is a Facebook post of October 18, 2026, the only proof of being open.",
-    "Truro Vineyards: the 'sells' excerpt is a tastings line; no on-site gift shop is described on the pages read.",
-    "By-the-Bay Designs, Wellfleet Marine Retail Store, Celebrations of Cape Cod: Facebook post dates are from the research notes (relative age or 'Yesterday'), not a stored timestamp; the article states what the notes record.",
-    "Shop pages where the shop's own address text conflicts with chamber text (DRIFT, Mrs. Mitchell's, By-the-Bay Designs, Wellfleet Marine phone) use the shop's own page and do not mention the conflict, per the brief."
+    "Falmouth chamber guidebook listing (Celebrations of Cape Cod, Masterson Made) and the Mashpee chamber listing (FabVilla): unverifiable at the 2026-11-15 re-check, so no chamber listing is cited for these three shops.",
+    "Provincetown Fudge Factory: the post's hours text is on a graphic; the quote is the text the fact-checker recorded from the Nov 1 post.",
+    "Cabot's Candy Factory and Chatham Candy Manor: no hours found on the pages read.",
+    "Cape Cod Museum of Natural History: the shop's own hours and description were not found; the hours given are the museum's.",
+    "DRIFT Wellfleet: driftwellfleet.com did not load for the fact-checker; the address and hours are from its Instagram profile and the chamber phone number is not published here.",
+    "Snow's Home & Garden: snowscapecod.com did not load for the fact-checker; the address and description are from its Instagram profile and the site banner is not used.",
+    "Chatham Kids: the parent site chathamclothingbar.com shows no address or phone; the address is from the Instagram profile.",
+    "Atlantic Spice Company, Nauset Lantern Shop, Bass River Mercantile: undated website text only; no social proof found.",
+    "Several 'site description says' quotes (Candy Manor, Yankee Ingenuity, Nut House, Stage Stop, Ross Coppelman, Brewster Store, Masterson Made, Cabot's, Kandy Korner, Nauset) were found in the page meta description, not visible text.",
+    "By-the-Bay Designs, Wellfleet Marine Retail Store, Celebrations of Cape Cod: Facebook post ages are relative ('3 hours', 'Yesterday') as shown on the check day, not stored timestamps.",
+    "Ross Coppelman: hours still labelled Spring Hours on its site; not repeated.",
+    "Truro Vineyards: no on-site gift shop described on the pages read."
   ]
 }
