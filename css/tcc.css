@@ -637,8 +637,8 @@ a:hover { text-decoration: underline; }
 
 .nav-links a { white-space: nowrap; }
 @media (max-width: 1100px) { .nav-links { gap: 18px; } }
-/* Eight links don't fit below ~940px, so tablets get the menu button too. */
-@media (max-width: 940px) {
+/* Nine links (with My list) don't fit below ~1040px, so tablets get the menu button too. */
+@media (max-width: 1040px) {
   .nav-links { display: none; }
   .nav-mobile-toggle { display: block; }
 }
@@ -774,3 +774,41 @@ p a:not([class]) { text-decoration: underline; text-underline-offset: 2px; }
 /* Cards without a photo we have permission to use get a color tile instead of a stock image */
 .tile-cover { height:84px !important; display:flex; align-items:flex-end; padding:12px 16px; background:linear-gradient(135deg,#1A3A6C,#4A90A4); }
 .tile-cover > .tile-label { color:#fff; font-weight:700; font-size:15px; letter-spacing:.02em; position:relative; z-index:1; }
+
+/* ── My list (js/mylist.js): header link with live count, and the Add to my list toggle ── */
+.mylist-count {
+  display: inline-block;
+  min-width: 20px;
+  height: 20px;
+  margin-left: 6px;
+  padding: 0 6px;
+  border-radius: 10px;
+  background: #9E2A3F;
+  color: #fff;
+  font: 700 12px/20px 'Inter', sans-serif;
+  text-align: center;
+  vertical-align: 1px;
+}
+.mylist-count[hidden] { display: none; }
+.ml-row { margin: 6px 0 12px; }
+.ml-add {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1.5px solid #9A6F3C;
+  border-radius: 22px;
+  background: #fff;
+  color: #4A4038;
+  font: 600 15px/1 'Inter', sans-serif;
+  cursor: pointer;
+}
+.ml-add[hidden] { display: none; }
+.ml-add svg { flex: none; fill: none; }
+.ml-add:focus-visible { outline: 3px solid #1A3A6C; outline-offset: 2px; }
+.ml-add[aria-pressed="true"] { color: #9E2A3F; border-color: #9E2A3F; background: #FBEDEF; }
+.ml-add[aria-pressed="true"] svg { fill: #9E2A3F; }
+@media (prefers-reduced-motion: no-preference) {
+  .ml-add { transition: background-color .12s, color .12s, border-color .12s; }
+}

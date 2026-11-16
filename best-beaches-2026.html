@@ -56,11 +56,12 @@
   ]
 }
 </script>
+<script src="/js/mylist.js"></script>
 </head>
 <body>
-<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/app/">📱 App</a></div><button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button></div></nav>
+<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 App</a></div><button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button></div></nav>
 <div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()">
-    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/app/">📱 Open the App</a>
+    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 Open the App</a>
   </div></div>
 
 <section class="hero" style="min-height:56vh;"><div class="hero-overlay"></div><div class="hero-content" style="padding-top:84px;max-width:860px;"><div class="hero-badge">2026 Beach Guide</div><h1 class="hero-title">Cape Cod Beaches by Region</h1><p class="hero-subtitle">Beaches organized by region, with the parking, dog and facility rules we could confirm, each linked to the town or the National Park Service.</p><div class="pill-row"><a class="pill" href="#outer-cape">Outer Cape</a><a class="pill" href="#mid-cape">Mid Cape</a><a class="pill" href="#lower-cape">Lower Cape</a><a class="pill" href="#upper-cape">Upper Cape</a><a class="pill" href="#faq">Parking &amp; dog FAQ</a></div></div></section>
@@ -145,6 +146,15 @@
 <script>
 function toggleMobileMenu(){document.getElementById('mobileMenu').classList.toggle('show');}
 document.getElementById('leadForm').addEventListener('submit',async(e)=>{e.preventDefault();const email=document.getElementById('leadEmail').value;document.getElementById('leadMsg').textContent='Signing you up…';try{const res=await fetch('/.netlify/functions/email-capture',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,source:'best_beaches_checklist',url:location.href,timestamp:new Date().toISOString()})});if(!res.ok)throw new Error('signup failed');document.getElementById('leadMsg').textContent='You’re subscribed.';gtag('event','generate_lead',{method:'best_beaches_checklist'});}catch(err){document.getElementById('leadMsg').textContent='That didn’t go through. Please try again in a moment.';}});
+</script>
+<script>
+// "Add to my list" toggles (js/mylist.js), added only when JavaScript runs. Name and town are read from each card.
+(function(){var L=window.TCCList;if(!L)return;
+document.querySelectorAll('.beach-mini').forEach(function(c){var h=c.querySelector('h3');if(!h)return;
+var name=h.textContent.trim(),k=L.slug(name),town='';
+c.querySelectorAll('.row').forEach(function(r){var s=r.querySelector('strong');if(!town&&s&&s.textContent==='Town:')town=r.textContent.replace('Town:','').replace(/\s*\(.*$/,'').trim()});
+if(!c.id)c.id='beach-'+k;
+L.attach(c,{id:'beach:'+k,type:'beach',name:name,town:town,address:'',url:'/best-beaches-2026.html#'+c.id})})})();
 </script>
 </body>
 </html>

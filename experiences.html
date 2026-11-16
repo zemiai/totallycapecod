@@ -44,11 +44,12 @@
 .exp-card .src{font-size:11px;color:var(--text-secondary);margin:0 0 10px;}
 .exp-card .src a{color:inherit;text-decoration:underline;}
 </style>
+<script src="/js/mylist.js"></script>
 </head>
 <body>
-<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/app/">📱 App</a></div><button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button></div></nav>
+<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 App</a></div><button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button></div></nav>
 <div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()">
-    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/app/">📱 Open the App</a>
+    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 Open the App</a>
   </div></div>
 
 <section class="hero" style="min-height:50vh;"><div class="hero-overlay"></div><div class="hero-content" style="padding-top:80px;"><div class="hero-badge">⛵ Cape Cod Adventures</div><h1 class="hero-title">Experiences & <span class="script">Tours</span></h1><p class="hero-subtitle">Whale watching, a harbor cruise, lighthouse tours, trails and bike paths. Details are linked to each operator or agency.</p></div></section>
@@ -104,12 +105,15 @@ const exps=[
 {name:"Chatham Lighthouse overlook",town:"Chatham",price:"",duration:"30-min parking",tags:["lighthouse"],desc:"Chatham Light is a working U.S. Coast Guard lighthouse. The overlook parking area is free but strictly limited to 30 minutes, with a $50 citation for violations, so for a longer visit park in town and walk.",src:{url:"https://www.chathaminfo.com/beaches/",label:"Chatham Chamber of Commerce"}},
 {name:"Pirate's Cove Adventure Golf",town:"South Yarmouth",price:"",duration:"Two 18-hole courses",tags:["family"],desc:"Mini golf with two 18-hole courses. Its season runs mid-April through Columbus Day weekend.",src:{url:"https://www.piratescove.net/locations/massachusetts/south-yarmouth/",label:"Pirate's Cove"}},
 ];
+// "Add to my list" toggle (js/mylist.js); the card id is where My list links back to.
+function mlKey(e){return window.TCCList?TCCList.slug(e.name):'';}
+function mlBtn(e){return window.TCCList?'<div class="ml-row">'+TCCList.btnHtml({id:'experience:'+mlKey(e),type:'experience',name:e.name,town:e.town,address:'',url:'/experiences.html#experience-'+mlKey(e)})+'</div>':'';}
 let expFilter='all';
 function renderExps(){
   const grid=document.getElementById('expGrid');
   const filtered=expFilter==='all'?exps:exps.filter(e=>e.tags.includes(expFilter));
   grid.innerHTML=filtered.map(e=>`
-    <div class="exp-card">
+    <div class="exp-card" id="experience-${mlKey(e)}">
       <div class="cover${e.img?'':' tile-cover'}"${e.img?` style="background-image:url('${e.img}')"`:` style="background:linear-gradient(135deg,#2E7D6B,#6BC4A6)"`}>${e.img?'':`<span class="tile-label">🧭 ${e.town}</span>`}${e.price?`<span class="price-pill">${e.price}</span>`:''}</div>
       <div class="body">
         <h3>${e.name}</h3>
@@ -117,6 +121,7 @@ function renderExps(){
         <div class="tags">${e.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
         <p style="font-size:13px;color:var(--text-secondary);margin:0 0 6px;line-height:1.5;">${e.desc}</p>
         <p class="src">Source: <a href="${e.src.url}" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'source',item:'${e.name.replace(/'/g,'')}',location:'experiences_card'})">${e.src.label} ↗</a></p>
+        ${mlBtn(e)}
         <div class="actions">
           ${e.book
             ? `<a href="https://www.viator.com/searchResults/all?text=${encodeURIComponent(e.name)}" target="_blank" rel="noopener" class="btn-view" onclick="gtag('event','affiliate_click',{type:'viator',item:'${e.name.replace(/'/g,'')}',location:'experiences_card'})">Book on Viator</a>`

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1A3A6C" />
+<title>My list | Totally Cape Cod</title>
+<meta name="description" content="Your list of Cape Cod shops, events, beaches, places to eat and stay, and experiences. It stays on this device. Map it or share it." />
+<meta name="robots" content="noindex" />
+<link rel="stylesheet" href="/css/tcc.css" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<style>
+.ml{--paper:#FDF8F2;--ink:#4A4038;--mute:#625749;--navy:#1A3A6C;--kraft:#D4A574;--kraftd:#9A6F3C;--sand:#F5E6D3;--cran:#9E2A3F;--bay:#2F6B57;--line:#E4D6C2;max-width:760px;margin:0 auto;padding:96px 18px 64px;font-size:17px;line-height:1.6;color:var(--ink)}
+.ml [hidden]{display:none!important}
+.ml a{color:var(--navy)}
+.ml a:focus-visible,.ml button:focus-visible{outline:3px solid var(--navy);outline-offset:2px;border-radius:6px}
+.ml h1,.ml h2,.ml h3{font-family:'Fraunces',Georgia,serif;color:var(--navy);margin:0}
+.ml h1{font-weight:900;font-size:clamp(34px,9vw,52px);line-height:1.05;letter-spacing:-.015em}
+.ml .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.ml-lede{margin:12px 0 0;max-width:35rem}
+.ml-sum{margin:12px 0 0;font-weight:600}
+.ml-tools{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 4px}
+.ml-btn{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1.5px solid var(--navy);border-radius:22px;color:var(--navy);font:600 16px/1 'Inter',sans-serif;text-decoration:none;background:#fff;cursor:pointer}
+.ml-btn:hover{background:var(--sand)}
+.ml-tools .ml-btn.ml-on{border-color:var(--cran);color:var(--cran)}
+.ml-say{margin:6px 0 0;font-size:15px;color:var(--mute);min-height:1.2em}
+.ml-confirm{margin:12px 0 0;padding:12px 0;border-top:2px solid var(--cran);border-bottom:1px solid var(--line)}
+.ml-confirm p{margin:0 0 8px;font-weight:600}
+.ml-confirm .ml-btn{margin-right:8px}
+.ml-shared{margin:22px 0 0;padding:12px 0 0;border-top:2px solid var(--cran)}
+.ml-shared h2{font-size:24px;font-weight:900}
+.ml-group{padding-top:30px}
+.ml-group>h2{display:flex;align-items:baseline;gap:12px;font-weight:900;font-size:30px;line-height:1.1;margin-bottom:2px}
+.ml-group>h2 small{font:600 15px 'Inter',sans-serif;color:var(--mute)}
+.ml-item{padding:18px 0;border-bottom:2px dashed var(--kraft)}
+.ml-item h3{font-weight:800;font-size:22px;line-height:1.2}
+.ml-item p{margin:4px 0 0}
+.ml-meta{font-size:15px;color:var(--mute)}
+.ml-act{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.ml-note{margin:10px 0 0;font-size:15px;color:var(--mute);max-width:35rem}
+.ml-empty{margin:22px 0;max-width:35rem;font-weight:600}
+@media(prefers-reduced-motion:no-preference){.ml-btn{transition:background-color .12s}}
+</style>
+<script src="/js/mylist.js"></script>
+</head>
+<body>
+
+<nav class="site-nav" id="siteNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Totally Cape Cod</a>
+    <div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/my-list.html" class="mylist-link" aria-current="page">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 App</a></div>
+    <button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()">
+  <div class="mobile-menu-panel" onclick="event.stopPropagation()">
+    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/my-list.html" class="mylist-link" aria-current="page">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 Open the App</a>
+  </div>
+</div>
+
+<main class="ml" id="ml">
+<h1>My list</h1>
+<p class="ml-lede" id="ml-lede">My list keeps shops, events, beaches, places to eat, places to stay and experiences in one place on this device. It needs JavaScript to work.</p>
+<p class="ml-empty" id="ml-empty" hidden>Nothing is on your list yet. Choose &ldquo;Add to my list&rdquo; on a listing in the <a href="/guides/">guides</a>, <a href="/events">events</a> or <a href="/beaches.html">beaches</a> pages.</p>
+<div id="ml-top" hidden>
+<p class="ml-sum" id="ml-sum"></p>
+<div class="ml-tools">
+<a class="ml-btn ml-on" id="ml-map" href="#" target="_blank" rel="noopener">Map my list</a>
+<button class="ml-btn ml-on" id="ml-share" type="button">Share my list</button>
+<button class="ml-btn" id="ml-clear" type="button">Clear my list</button>
+</div>
+<div class="ml-confirm" id="ml-confirm" role="group" aria-labelledby="ml-confirmtext" hidden>
+<p id="ml-confirmtext"></p>
+<button class="ml-btn" id="ml-yes" type="button">Yes, clear my list</button><button class="ml-btn" id="ml-no" type="button">Keep my list</button>
+</div>
+</div>
+<p class="ml-say" id="ml-say" role="status"></p>
+<section class="ml-shared" id="ml-shared" aria-labelledby="ml-sharedh" hidden>
+<h2 id="ml-sharedh">Shared with you</h2>
+<p id="ml-sharedtext"></p>
+<div class="ml-tools"><button class="ml-btn ml-on" id="ml-addshared" type="button">Add them to my list</button></div>
+<div id="ml-sharedlist"></div>
+</section>
+<div id="ml-groups"></div>
+<p class="ml-note" id="ml-keep" hidden>This browser is not keeping your list between visits. It will last until you close this page.</p>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">Totally Cape Cod</div>
+      <p class="footer-desc">Cape Cod beaches, events and eats, linked to their sources.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-heading">Explore</div>
+      <a href="/beaches.html">Beaches</a>
+      <a href="/eats.html">Restaurants</a>
+      <a href="/stays.html">Hotels</a>
+      <a href="/experiences.html">Experiences</a>
+    </div>
+    <div class="footer-links">
+      <div class="footer-heading">Plan</div><a href="/guides/">Cape Cod Guides</a>
+      <a href="/itinerary.html">Itinerary Builder</a>
+      <a href="/app/">Get the App</a>
+      <a href="/best-beaches-2026.html">Beaches by Region 2026</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Totally Cape Cod. Affiliate links help keep this guide free.</div>
+</footer>
+
+<script>
+function toggleMobileMenu(){document.getElementById('mobileMenu').classList.toggle('show');}
+(function(){var L=window.TCCList,d=document;if(!L)return;
+function $(i){return d.getElementById(i)}
+var GIFT='/guides/cape-cod-holiday-gift-shops-2026/';
+var sharedItems=[];
+function el(tag,cls,text){var n=d.createElement(tag);if(cls)n.className=cls;if(text!=null)n.textContent=text;return n}
+function say(t){$('ml-say').textContent=t||''}
+function plural(n,one,many){return n+' '+(n===1?one:many)}
+function row(it,mode){var r=el('article','ml-item');r.setAttribute('data-id',it.id);
+r.appendChild(el('h3',null,it.name));
+if(it.town)r.appendChild(el('p','ml-meta',it.town));
+if(it.address)r.appendChild(el('p',null,it.address));
+if(it.detail)r.appendChild(el('p','ml-meta',it.detail));
+var a=el('div','ml-act');
+if(it.url){var l=el('a','ml-btn','Back to the listing');l.href=it.url;var s=el('span','sr',' for '+it.name);l.appendChild(s);a.appendChild(l)}
+if(mode==='mine'){var b=el('button','ml-btn','Remove from my list');b.type='button';b.setAttribute('aria-label','Remove from my list: '+it.name);
+b.addEventListener('click',function(){var g=r.parentNode,i=g.querySelectorAll('.ml-item'),k=Array.prototype.indexOf.call(i,r);L.remove(it.id);
+var nb=d.querySelectorAll('#ml-groups .ml-item button');var f=nb[Math.min(k,nb.length-1)]||$('ml-groups');
+if(f&&f.id!=='ml-groups'){f.focus()}else{var h=d.querySelector('h1');h.setAttribute('tabindex','-1');h.focus()}});a.appendChild(b)}
+r.appendChild(a);return r}
+function groups(list,mode){var frag=d.createDocumentFragment();
+L.TYPES.forEach(function(t){var g=list.filter(function(i){return i.type===t});if(!g.length)return;
+var sec=el('section','ml-group');var h=el('h2',null,L.LABELS[t]+' ');h.appendChild(el('small',null,String(g.length)));sec.appendChild(h);
+var stubs=g.filter(function(i){return i.stub});
+if(stubs.length){var n=el('p','ml-note',plural(stubs.length,'shop','shops')+' you added in the gift shops guide will show their names here after you open ');var a=el('a',null,'that guide');a.href=GIFT;n.appendChild(a);n.appendChild(d.createTextNode(' once.'));sec.appendChild(n)}
+g.filter(function(i){return!i.stub}).forEach(function(i){sec.appendChild(row(i,mode))});frag.appendChild(sec)});return frag}
+function paint(){var list=L.items(),n=list.length;
+$('ml-lede').hidden=true;
+$('ml-empty').hidden=!!n;$('ml-top').hidden=!n;
+var box=$('ml-groups');box.textContent='';box.appendChild(groups(list,'mine'));
+if(n){$('ml-sum').textContent='My list: '+plural(n,'place','places');
+var m=L.mapsInfo(list),mp=$('ml-map');
+if(m.url){mp.hidden=false;mp.href=m.url}else{mp.hidden=true;mp.removeAttribute('href')}
+var notes=[];
+if(m.withAddress>m.shown)notes.push('Maps shows the first '+m.shown+' of '+m.withAddress+' places that have an address.');
+if(m.total-m.withAddress>0)notes.push(plural(m.total-m.withAddress,'place has','places have')+' no address, so '+(m.total-m.withAddress===1?'it is':'they are')+' left off the map.');
+$('ml-sum').textContent+=(notes.length?'. '+notes.join(' '):'')}
+else $('ml-confirm').hidden=true;
+$('ml-keep').hidden=!(n&&!L.persistent)}
+function shareUrl(){return location.origin+'/my-list.html#list='+L.pack(L.items())}
+$('ml-share').addEventListener('click',function(){var u=shareUrl();
+if(navigator.share){navigator.share({title:'My Cape Cod list',url:u}).catch(function(){})}
+else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(u).then(function(){say('Link copied')},function(){say('Copy this link: '+u)})}
+else say('Copy this link: '+u)});
+$('ml-clear').addEventListener('click',function(){$('ml-confirmtext').textContent='Remove all '+plural(L.count(),'place','places')+' from my list?';$('ml-confirm').hidden=false;$('ml-no').focus()});
+function closeConfirm(){$('ml-confirm').hidden=true;$('ml-clear').focus()}
+$('ml-no').addEventListener('click',closeConfirm);
+$('ml-confirm').addEventListener('keydown',function(e){if(e.key==='Escape')closeConfirm()});
+$('ml-yes').addEventListener('click',function(){L.clear();say('Your list is empty.');var h=d.querySelector('h1');h.setAttribute('tabindex','-1');h.focus()});
+function readShared(){var m=/^#list=([A-Za-z0-9._-]+)$/.exec(location.hash);sharedItems=m?L.unpack(m[1]):[];
+var box=$('ml-shared');
+if(!sharedItems.length){box.hidden=true;return}
+var fresh=sharedItems.filter(function(i){return!L.has(i.id)});
+$('ml-sharedtext').textContent='Someone shared a list with you: '+plural(sharedItems.length,'place','places')+(fresh.length<sharedItems.length?', '+(sharedItems.length-fresh.length)+' already on yours':'')+'.';
+$('ml-addshared').hidden=!fresh.length;
+var sl=$('ml-sharedlist');sl.textContent='';sl.appendChild(groups(sharedItems,'shared'));box.hidden=false}
+$('ml-addshared').addEventListener('click',function(){var n=L.addMany(sharedItems);say(n?'Added '+plural(n,'place','places')+' to my list.':'');
+sharedItems=[];$('ml-shared').hidden=true;
+try{history.replaceState(null,'',location.pathname+location.search)}catch(e){}
+var h=d.querySelector('h1');h.setAttribute('tabindex','-1');h.focus()});
+window.addEventListener('hashchange',readShared);
+L.onChange(function(){paint();readShared()});
+paint();readShared();
+})();
+</script>
+<noscript><p style="max-width:760px;margin:0 auto;padding:0 18px 32px">My list needs JavaScript. Your list is kept in this browser only.</p></noscript>
+</body>
+</html>
