@@ -6,6 +6,7 @@
  *   data-match="christmas|stroll"  → only events whose title/tag/venue matches (regex, case-insensitive)
  *   data-from="2026-11-20" data-to="2026-12-31"  → only events on these ET dates (inclusive)
  *   data-town="Chatham|Harwich"   → only these towns (regex)
+ *   data-rows          → list rows (date, name, place, credit) instead of cards; used by the home page
  *   data-controls      → date controls (Today / This weekend / Next 7 days / pick a date);
  *                        the page URL keeps the choice (?date=2026-12-12 or ?when=weekend)
  */
@@ -86,6 +87,22 @@
       mlBtn(e) +
       '</div>';
   }
+  // Row layout (opt-in with data-rows): date, name, place, credit. Styled by the page that asks for it.
+  function row(e) {
+    var k = eventDay(e), today = dayKey(new Date());
+    var fmt = function (d) { return new Intl.DateTimeFormat('en-US', { timeZone: 'UTC', month: 'short', day: 'numeric' }).format(new Date(d + 'T12:00:00Z')); };
+    var date = k < today ? 'Through ' + fmt(endDay(e)) : new Intl.DateTimeFormat('en-US', { timeZone: 'UTC', weekday: 'short', month: 'short', day: 'numeric' }).format(new Date(k + 'T12:00:00Z'));
+    var t = timeLabel(e), time = /AM|PM/.test(t) ? t : '';
+    var where = [e.venue, e.town].filter(Boolean).map(esc).join(', ');
+    var src = safeUrl(e.source_url);
+    var who = e.credit || CREDIT[e.source] || e.source;
+    var credit = who ? (src ? 'via <a href="' + esc(src) + '" target="_blank" rel="noopener">' + esc(who) + '</a>' : 'via ' + esc(who)) : '';
+    return '<li class="live-ev ev-row"><div class="ev-when">' + esc(date) + (time ? '<span>' + esc(time) + '</span>' : '') + '</div>' +
+      '<div class="ev-main"><h3 class="ev-name">' + (src ? '<a href="' + esc(src) + '" target="_blank" rel="noopener">' + esc(e.title) + '</a>' : esc(e.title)) + '</h3>' +
+      (where ? '<p class="ev-where">' + where + '</p>' : '') +
+      (e.price ? '<p class="ev-meta">' + esc(e.price) + '</p>' : '') +
+      (credit ? '<p class="ev-meta">' + credit + '</p>' : '') + mlBtn(e) + '</div></li>';
+  }
   function safeRe(src) {
     if (!src) return null;
     try { return new RegExp(src, 'i'); } catch (e) { return null; }
@@ -132,6 +149,7 @@
       el.innerHTML = '<p style="color:var(--text-secondary,#6b6b6b);">' + msg + '</p>';
       return;
     }
+    if (!group && el.hasAttribute('data-rows')) { el.innerHTML = '<ul class="ev-rows">' + list.map(row).join('') + '</ul>'; return; }
     if (!group) { el.innerHTML = '<div class="grid-3">' + list.map(card).join('') + '</div>'; return; }
     var html = '', cur = '', today = dayKey(new Date());
     var floor = from && from > today ? from : today;
