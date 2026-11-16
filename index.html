@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#7BBCD0" />
+<meta name="theme-color" content="#FDF8F2" />
 <script src="/js/season.js"></script>
 <title>Totally Cape Cod — Live Beaches, Bridge Traffic &amp; Things to Do on Cape Cod</title>
 <meta name="description" content="Live Cape Cod beach water temps, bridge traffic, tides, events and restaurants — plan a Cape Cod trip in any season with Totally Cape Cod." />
@@ -16,34 +16,31 @@
 <meta property="og:image" content="https://totallycapecod.com/og-image.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://totallycapecod.com/og-image.png" />
-
 <!-- GA4 -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-Q0YM9WQLWK');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-Q0YM9WQLWK');
 </script>
 <script src="/js/pixel.js" defer></script>
-
 <!-- A/B testing harness: add a test here + an applier below; results segment by
-     the ab_* user properties in GA4. Sticky per device via localStorage. -->
+the ab_* user properties in GA4. Sticky per device via localStorage. -->
 <script>
-  window.tccAB = (function () {
-    var TESTS = { hero_copy: ['control', 'live_now'] };
-    var a = {};
-    try { a = JSON.parse(localStorage.getItem('tcc_ab') || '{}'); } catch (e) {}
-    var changed = false;
-    for (var t in TESTS) {
-      if (TESTS[t].indexOf(a[t]) === -1) { a[t] = TESTS[t][Math.floor(Math.random() * TESTS[t].length)]; changed = true; }
-    }
-    if (changed) { try { localStorage.setItem('tcc_ab', JSON.stringify(a)); } catch (e) {} }
-    gtag('set', 'user_properties', { ab_hero: a.hero_copy });
-    gtag('event', 'ab_assign', { test: 'hero_copy', variant: a.hero_copy });
-    return a;
-  })();
+window.tccAB = (function () {
+var TESTS = { hero_copy: ['control', 'live_now'] };
+var a = {};
+try { a = JSON.parse(localStorage.getItem('tcc_ab') || '{}'); } catch (e) {}
+var changed = false;
+for (var t in TESTS) {
+if (TESTS[t].indexOf(a[t]) === -1) { a[t] = TESTS[t][Math.floor(Math.random() * TESTS[t].length)]; changed = true; }
+}
+if (changed) { try { localStorage.setItem('tcc_ab', JSON.stringify(a)); } catch (e) {} }
+gtag('set', 'user_properties', { ab_hero: a.hero_copy });
+gtag('event', 'ab_assign', { test: 'hero_copy', variant: a.hero_copy });
+return a;
+})();
 </script>
-
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,600&amp;family=Inter:wght@300;400;500;600;700;800&amp;display=swap" />
@@ -53,660 +50,342 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-
 <noscript><style>.card-cover[data-bg$="/img/photos/r-marcotte/nauset-light-night.jpg"]{background-image:url(/img/photos/r-marcotte/nauset-light-night.jpg)}.card-cover[data-bg$="/img/photos/r-marcotte/sandwich-boardwalk-pilings.jpg"]{background-image:url(/img/photos/r-marcotte/sandwich-boardwalk-pilings.jpg)}.card-cover[data-bg$="/img/photos/r-marcotte/chatham-boat-bow.jpg"]{background-image:url(/img/photos/r-marcotte/chatham-boat-bow.jpg)}</style></noscript>
 <style>
-  /* Homepage-specific pastel styles */
-  .hero-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-
-  /* Outcome-first value band — what the app DOES for you, one dominant CTA */
-  .outcomes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; margin-top: 8px; }
-  .outcome { display: flex; gap: 13px; align-items: flex-start; background: white; border: 1px solid var(--divider); border-radius: var(--radius-md); padding: 18px; box-shadow: var(--shadow-sm); }
-  .outcome .ic { font-size: 28px; line-height: 1; flex: none; }
-  .outcome strong { display: block; font-family: 'Fraunces', serif; font-weight: 700; font-size: 16px; color: var(--warm-brown); }
-  .outcome p { margin: 4px 0 0; font-size: 13px; color: var(--text-secondary); line-height: 1.45; }
-  .btn-lg { font-size: 17px; padding: 16px 34px; }
-  .cta-reassure { font-size: 13px; color: var(--text-secondary); margin-top: 10px; }
-
-  .directory-preview {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    margin-top: 32px;
-  }
-  @media (max-width: 768px) {
-    .directory-preview { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  .directory-tile {
-    position: relative;
-    height: 220px;
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    cursor: pointer;
-    text-decoration: none;
-    box-shadow: var(--shadow-sm);
-    transition: transform var(--transition-base), box-shadow var(--transition-base);
-    border: 1px solid var(--divider);
-  }
-  .directory-tile:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-    text-decoration: none;
-  }
-  .directory-tile .bg {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    transition: transform var(--transition-slow);
-  }
-  .directory-tile:hover .bg { transform: scale(1.05); }
-  .directory-tile .overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(107,83,68,0.5) 0%, rgba(107,83,68,0.1) 60%, transparent 100%);
-  }
-  .directory-tile .content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 20px;
-    color: white;
-  }
-  .directory-tile .content h3 {
-    font-family: 'Fraunces', serif;
-    font-weight: 700;
-    font-size: 20px;
-    margin: 0 0 4px;
-  }
-  .directory-tile .content p {
-    font-size: 13px;
-    opacity: 0.9;
-    margin: 0;
-  }
-
-  .featured-card {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-  .featured-card .card-cover { height: 160px; }
-  .featured-card .card-body { flex: 1; }
-  .star-rating { color: var(--gold); font-size: 13px; letter-spacing: 1px; }
-
-  .email-popup {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-    max-width: 420px;
-    margin: 0 auto;
-    background: rgba(255,255,255,0.9);
-    backdrop-filter: blur(20px);
-    border: 1px solid var(--divider);
-    border-radius: var(--radius-lg);
-    padding: 20px;
-    box-shadow: var(--shadow-lg);
-    z-index: 300;
-    display: none;
-    animation: slideUp 0.4s ease;
-  }
-  .email-popup.show { display: block; }
-
-  .email-popup h3 {
-    font-family: 'Fraunces', serif;
-    font-weight: 900;
-    font-size: 18px;
-    margin: 0 0 4px;
-    color: var(--warm-brown);
-  }
-  .email-popup p {
-    font-size: 13px;
-    color: var(--text-secondary);
-    margin: 0 0 12px;
-  }
-  .email-popup .close {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    color: var(--text-secondary);
-  }
-
-  .app-preview {
-    background: linear-gradient(135deg, var(--sea-mist) 0%, var(--mint-light) 100%);
-    border-radius: var(--radius-xl);
-    padding: 48px 32px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.5);
-  }
-  .app-preview::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(245,230,211,0.6) 0%, transparent 70%);
-    border-radius: 50%;
-  }
-
-  .revenue-band {
-    background: linear-gradient(135deg, var(--sand-cream) 0%, var(--peach-light) 50%, var(--coral-light) 100%);
-    border-radius: var(--radius-xl);
-    padding: 40px 32px;
-    text-align: center;
-    border: 1px solid var(--divider);
-  }
-
-  .testimonial-card {
-    background: white;
-    border-radius: var(--radius-md);
-    padding: 24px;
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--divider);
-  }
-  .testimonial-card .quote {
-    font-family: 'Fraunces', serif;
-    font-style: italic;
-    font-size: 16px;
-    color: var(--warm-brown);
-    line-height: 1.6;
-    margin: 0 0 12px;
-  }
-  .testimonial-card .author {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text-secondary);
-  }
-
-  .sponsor-tier {
-    background: white;
-    border-radius: var(--radius-md);
-    padding: 28px;
-    text-align: center;
-    border: 2px solid var(--divider);
-    transition: all var(--transition-base);
-  }
-  .sponsor-tier:hover {
-    border-color: var(--coral-soft);
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-  }
-  .sponsor-tier.featured {
-    border-color: var(--coral-soft);
-    background: linear-gradient(135deg, white 0%, var(--peach-light) 100%);
-  }
-
-  @keyframes slideUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+/* Home page daybook; scoped to body.hm */
+.hm{--paper:#FDF8F2;--ink:#4A4038;--mute:#625749;--dim:#766A5C;--navy:#1A3A6C;--kraft:#D4A574;--kraftd:#9A6F3C;--sand:#F5E6D3;--bay:#2F6B57;font-size:17px;line-height:1.6;color:var(--ink);background:var(--paper)}.hm a{color:var(--navy)}.hm a:focus-visible,.hm button:focus-visible,.hm input:focus-visible{outline:3px solid var(--navy);outline-offset:2px;border-radius:4px}.hm h1,.hm h2,.hm h3{font-family:'Fraunces',Georgia,serif;color:var(--navy);margin:0}.hm p{margin:0}.hm .x{display:none!important}.hm .lc{text-transform:lowercase}.hm .lc::first-letter{text-transform:uppercase}.hm .nav-links a{display:inline-flex;align-items:center;gap:6px;min-height:44px}.hm .nav-logo{display:inline-flex;align-items:center;min-height:44px}.hm .nav-links .nav-cta{min-height:44px}.hm .nav-links .nav-cta{background:var(--navy);box-shadow:none;color:#fff!important}.hm .nav-links a svg,.hm .mobile-menu-panel a svg{width:16px;height:16px;flex:none;vertical-align:-2px;margin-right:6px}.hm .nav-links a svg{margin:0}.hm svg.i{fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}.hm-w{max-width:1200px;margin:0 auto;padding:0 18px}.hm-head{padding-top:96px;padding-bottom:28px;display:grid;grid-template-columns:minmax(0,1fr);gap:30px}.hm-date{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 14px;margin:0 0 14px;font-size:16px;color:var(--mute)}.hm-day:empty{display:none}.hm-day{font:600 20px/1.3 'Fraunces',Georgia,serif;color:var(--ink)}.hm .hero-title{font-weight:900;font-size:clamp(38px,11vw,72px);line-height:1.02;letter-spacing:-.02em;color:var(--navy);margin:0 0 18px;text-shadow:none;text-align:left}.hm .hero-title .script{font-style:normal;font-weight:inherit;color:inherit}.hm .hero-subtitle{font-size:18px;line-height:1.55;color:var(--ink);margin:0 0 24px;max-width:34rem}.hm-btns{display:flex;flex-wrap:wrap;gap:12px}.hm-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border:2px solid var(--navy);border-radius:10px;font:600 17px/1.2 'Inter',system-ui,sans-serif;text-decoration:none;cursor:pointer}.hm .hm-fill{background:var(--navy);color:#fff}.hm .hm-fill:hover{background:#122B52}.hm .hm-line{background:transparent;color:var(--navy)}.hm .hm-line:hover{background:var(--sand)}.hm .hm-sm{min-height:44px;padding:0 16px;font-size:16px}.hm-re{margin-top:12px;font-size:16px;color:var(--mute);display:flex;flex-wrap:wrap;gap:0 14px}.hm-re span{white-space:nowrap}.hm-re span.x{display:none}.hm-ledger{border-top:2px dashed var(--kraft);padding-top:18px}.hm-eye{display:block;font-size:15px;color:var(--mute);margin-bottom:2px}.hm h2{font-weight:900;font-size:clamp(28px,7.5vw,32px);line-height:1.12;letter-spacing:-.01em}.hm-sub{margin-top:8px!important;max-width:38rem;font-size:16px;color:var(--mute)}.hm-rows{margin-top:6px;min-height:780px}.hm-load{padding:14px 0;color:var(--mute)}.hm-note{padding:12px 0 2px;font-size:16px;color:var(--ink);grid-column:1/-1}.hm-r{display:grid;grid-template-columns:minmax(0,1fr) auto;padding:13px 0 12px;border-bottom:2px dashed var(--kraft);color:var(--ink)!important;text-decoration:none}.hm-r span{display:block;grid-column:1/-1}.hm-r .hm-l{grid-column:1;white-space:nowrap;font-size:16px;font-weight:600;color:var(--ink)}.hm-l .hm-d{display:inline-block;white-space:nowrap;font-weight:400;color:var(--mute);margin-left:6px}.hm-fig{font:900 clamp(28px,8vw,34px)/1.1 'Fraunces',Georgia,serif;color:var(--navy);margin:3px 0 5px}.hm-fig.moderate{color:#8F5F0A}.hm-fig.heavy{color:#B0301F}.hm-q{font-size:16px;line-height:1.45}.hm-q i{font-style:normal;display:inline-block;margin-right:12px}.hm-m{margin-top:3px;font-size:15px;line-height:1.4;color:var(--mute)}.hm-m em{font-style:normal;font-weight:600;color:var(--bay);display:inline-block;margin-right:12px}.hm-m b{font-weight:400;display:inline-block}.hm-r .hm-more{grid-column:2;grid-row:1;margin:0;font-size:16px;color:var(--navy);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--kraftd)}.hm-r:hover .hm-more{text-decoration-thickness:2px}.hm-dim .hm-fig,.hm-dim .hm-q,.hm-dim .hm-l{color:var(--dim)}.hm-dim .hm-fig{font-weight:700}.hm-dim .hm-m em{color:var(--dim);font-weight:400}
+@media (prefers-reduced-motion:no-preference){.hm-fig{animation:hmIn .45s ease-out both;animation-delay:calc(var(--i,0)*55ms)}@keyframes hmIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}}.hm-sec{padding:38px 0 6px}.hm-sec>header{margin-bottom:12px}.hm-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr)}.hm-list>li{border-bottom:2px dashed var(--kraft)}.hm-list:not(.ev-rows)>li:first-child{border-top:2px dashed var(--kraft)}.hm .ev-rows{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr)}.hm .ev-rows>li{display:grid;grid-template-columns:7.3rem minmax(0,1fr);gap:0 12px;padding:14px 0;border-bottom:2px dashed var(--kraft)}.hm .ev-rows>li:first-child{border-top:2px dashed var(--kraft)}.hm .ev-when{white-space:nowrap;font:800 17px/1.3 'Fraunces',Georgia,serif;color:var(--navy)}.hm .ev-when span{display:block;font:400 15px/1.4 'Inter',sans-serif;color:var(--mute)}.hm .ev-name{font:700 18px/1.3 'Inter',sans-serif;color:var(--ink);margin:0}.hm .ev-name a{color:var(--navy);text-underline-offset:3px;text-decoration:underline;text-decoration-color:var(--kraftd)}.hm .ev-where{font-size:16px;color:var(--mute)}.hm .ev-meta{font-size:15px;color:var(--mute)}.hm .ev-main .ml-row{margin:4px 0 0}.hm-g{display:block;padding:16px 0;min-height:44px;color:var(--ink)!important;text-decoration:none!important}.hm-g h3{font-weight:800;font-size:21px;line-height:1.25;text-decoration:underline;text-decoration-color:var(--kraftd);text-decoration-thickness:1px;text-underline-offset:4px}.hm-g:hover h3{text-decoration-thickness:2px}.hm-g p{margin-top:5px;font-size:16px;line-height:1.5}.hm .hm-more-row{margin-top:22px}.hm-apps>li{display:flex;gap:14px;align-items:flex-start;padding:15px 0}.hm-apps svg{flex:none;width:26px;height:26px;margin-top:2px;color:var(--navy)}.hm-apps strong{display:block;font:800 19px/1.25 'Fraunces',Georgia,serif;color:var(--navy)}.hm-apps p{margin-top:3px;font-size:16px;line-height:1.5}.hm-cta{margin-top:22px}.hm-ph{display:grid;gap:26px;grid-template-columns:minmax(0,1fr)}.hm-ph a{display:block;color:var(--ink);text-decoration:none}.hm-ph .card-cover{height:230px;border-radius:12px;background:#D9C8B0 center/cover no-repeat}.hm-ph h3{font-weight:800;font-size:21px;line-height:1.25;margin:10px 0 2px}.hm-ph a:hover h3{text-decoration:underline}.hm-ph .card-sub{font-size:15px;line-height:1.45;color:var(--mute)}.hm-ph .card-sub span{display:block}.hm-ph .card-sub svg{width:15px;height:15px;vertical-align:-2px;margin-right:5px}.hm-sub a,.hm-sub a:visited{color:var(--navy)}.hm-feats{display:grid;gap:0;grid-template-columns:minmax(0,1fr)}.hm-feat{padding:18px 0;border-bottom:2px dashed var(--kraft)}.hm-feats .hm-feat:first-child{border-top:2px dashed var(--kraft)}.hm-tag{display:block;font-size:15px;color:var(--mute)}.hm-feat h3{font-weight:800;font-size:22px;line-height:1.2;margin:2px 0 3px}.hm-feat .card-sub{font-size:15px;color:var(--mute)}.hm-feat .card-sub span{display:block}.hm-feat .hm-p{margin-top:8px;font-size:16px;line-height:1.5}.hm-feat .hm-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:10px;font-size:15px;color:var(--mute)}.hm-aff{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 20px;padding:0 0 18px;border-bottom:2px dashed var(--kraft)}.hm-aff .label{font-size:15px;color:var(--mute)}.hm-aff .title{font:800 21px/1.25 'Fraunces',Georgia,serif;color:var(--navy)}.hm-app h2{margin:0 0 10px}.hm-app>svg{width:30px;height:30px;color:var(--navy);margin-bottom:8px}.hm-app p{max-width:34rem;margin-bottom:18px}.hm-mail{margin:44px 0 0;padding:20px 0 22px;border-top:2px dashed var(--kraft);border-bottom:2px dashed var(--kraft);max-width:38rem}.hm-mail{position:relative}.hm-mail[hidden]{display:none}.hm-mail .close{position:absolute;top:8px;right:0;width:44px;height:44px;border:0;background:none;font-size:26px;line-height:1;color:var(--mute);cursor:pointer}.hm-mail h2{font-size:24px;line-height:1.2;margin:0 0 4px;padding-right:44px}.hm-mail p{font-size:16px;color:var(--mute);margin:0 0 12px}.hm-mail form{display:flex;flex-wrap:wrap;gap:10px}.hm-mail input{flex:1 1 220px;min-height:48px;padding:0 14px;border:1.5px solid var(--kraftd);border-radius:10px;background:#fff;color:var(--ink);font:400 16px 'Inter',sans-serif}.hm-mail .hm-btn{min-height:48px;font-size:16px}.hm-end{height:56px}
+@media (min-width:700px){.hm-w{padding:0 20px}.hm-ph{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.hm-feats{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:32px}.hm-feats .hm-feat:first-child{border-top:0}.hm-feat{border-top:2px dashed var(--kraft);display:flex;flex-direction:column}.hm-feat .hm-foot{margin-top:auto;padding-top:10px}}
+@media (min-width:900px){.hm-list,.hm .ev-rows{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px}.hm-list:not(.ev-rows)>li:nth-child(2),.hm .ev-rows>li:nth-child(2){border-top:2px dashed var(--kraft)}}
+@media (min-width:1000px){.hm-head{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);column-gap:56px;align-items:start;padding-top:112px;padding-bottom:44px}.hm-head.hm-solo{grid-template-columns:minmax(0,1fr)}.hm-ledger{margin-top:6px}.hm-rows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px;align-content:start;min-height:520px}.hm-fig{font-size:28px}.hm-r .hm-more{grid-column:1;grid-row:auto;margin-top:4px}}
+@media (max-width:560px){.hm-date{flex-direction:column}}
+@media (max-width:699px){.hm-l .hm-d{display:block;margin:0;font-size:15px}}
+@media (max-width:359px){.hm .ev-rows>li{grid-template-columns:minmax(0,1fr)}.hm-btn{width:100%}}
 </style>
+<noscript><style>.hm-rows{min-height:0}</style></noscript>
 <script src="/js/mylist.js"></script>
 </head>
-<body>
-
-<!-- Navigation -->
+<body class="hm">
 <nav class="site-nav" id="siteNav">
-  <div class="nav-inner">
-    <a href="/" class="nav-logo">Totally Cape Cod</a>
-    <div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/" class="nav-cta">📱 Get the App</a></div>
-    <button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button>
-  </div>
-</nav>
-
-<div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()">
-  <div class="mobile-menu-panel" onclick="event.stopPropagation()">
-    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 Open the App</a>
-  </div>
+<div class="nav-inner">
+<a href="/" class="nav-logo">Totally Cape Cod</a>
+<div class="nav-links"><a href="/feed.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/" class="nav-cta"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>Get the App</a></div>
+<button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button>
 </div>
-
-<!-- Hero -->
-<section class="hero">
-  <div class="hero-overlay"></div>
-  <div class="hero-content" style="padding-top: 80px;">
-    <div class="hero-badge">📍 <span data-season-label>Cape Cod</span></div>
-    <h1 class="hero-title">Never waste a day on <span class="script">Cape Cod</span></h1>
-    <p class="hero-subtitle"><span class="s-summer">Beach reports, bridge delays, water temps and tonight's events — updated through the day. Know before you drive.</span><span class="s-off">Live bridge delays, water temps, tides and tonight's events — updated through the day. Know before you drive.</span></p>
-    <div class="hero-buttons">
-      <a href="/app/" class="btn btn-primary btn-lg" onclick="gtag('event','click',{event_category:'hero',event_label:'open_app'})">Open the Free App →</a>
-      <a href="/beaches.html" class="btn btn-ghost" onclick="gtag('event','click',{event_category:'hero',event_label:'explore_beaches'})">Explore Beaches 🏝️</a>
-    </div>
-    <div class="cta-reassure">Free · No app store needed · Works on any phone</div>
-  </div>
-</section>
-
+</nav>
+<div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()">
+<div class="mobile-menu-panel" onclick="event.stopPropagation()">
+<a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>Open the App</a>
+</div>
+</div>
+<main>
+<div class="hm-w">
+<div class="hm-head" id="hmHead">
+<!-- Today's page: date, headline, dek, two buttons -->
+<header class="hm-intro">
+<p class="hm-date"><span class="hm-day" data-hm-date></span><span class="hm-season" data-season-label>Cape Cod</span></p>
 <script>
-  // hero_copy test applier — runs immediately after the hero markup (no flicker).
-  // Summer-only copy test (beach-lot wording) — skipped in the off-season.
-  if (window.tccAB && tccAB.hero_copy === 'live_now' && !(window.TCCSeason && TCCSeason.isOff())) {
-    document.querySelector('.hero-title').innerHTML = 'Cape Cod, <span class="script">live</span> right now';
-    document.querySelector('.hero-subtitle').textContent = 'Beach parking reports from other beachgoers, bridge delays from Google Maps, what\u2019s on tonight \u2014 check before you leave the house.';
-  }
+(function () {
+var el = document.querySelector('[data-hm-date]');
+try { el.textContent = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', weekday: 'long', month: 'long', day: 'numeric' }).format(new Date()); } catch (e) {}
+// The season label arrives from season.js; set it in sentence case only once it has painted.
+document.addEventListener('DOMContentLoaded', function () { document.querySelector('.hm-season').classList.add('lc'); });
+})();
 </script>
-
-<div class="wave-divider"></div>
-
-<!-- Right now: live readings from the same data files the app uses. Nothing is shown without its source and check time. -->
-<section class="section page-wrap rn-section" id="right-now" style="padding-top: 8px;">
-  <div class="section-header">
-    <div class="section-label">Right now</div>
-    <h2 class="section-title">Cape Cod at a glance</h2>
-    <p class="section-subtitle">Current bridge delays, water temperature, tides and sunset, each with its source and the time it was checked.</p>
-  </div>
-  <div class="rn-grid" id="rnGrid">
-    <div class="rn-card"><div class="rn-label">Loading current readings…</div></div>
-  </div>
+<h1 class="hero-title">Never waste a day on <span class="script">Cape Cod</span></h1>
+<p class="hero-subtitle"><span class="s-summer">Beach reports, bridge delays, water temps and tonight's events — updated through the day. Know before you drive.</span><span class="s-off">Live bridge delays, water temps, tides and tonight's events — updated through the day. Know before you drive.</span></p>
+<div class="hm-btns">
+<a href="/app/" class="hm-btn hm-fill" onclick="gtag('event','click',{event_category:'hero',event_label:'open_app'})"><span class="lc">Open the Free App</span><span class="x"> →</span></a>
+<a href="/beaches.html" class="hm-btn hm-line" onclick="gtag('event','click',{event_category:'hero',event_label:'explore_beaches'})"><span class="lc">Explore Beaches</span></a>
+</div>
+<div class="hm-re"><span>Free</span><span class="x"> · </span><span>No app store needed</span><span class="x"> · </span><span>Works on any phone</span></div>
+</header>
+<script>
+// hero_copy test applier — runs immediately after the hero markup (no flicker).
+// Summer-only copy test (beach-lot wording) — skipped in the off-season.
+if (window.tccAB && tccAB.hero_copy === 'live_now' && !(window.TCCSeason && TCCSeason.isOff())) {
+document.querySelector('.hero-title').innerHTML = 'Cape Cod, <span class="script">live</span> right now';
+document.querySelector('.hero-subtitle').textContent = 'Beach parking reports from other beachgoers, bridge delays from Google Maps, what’s on tonight — check before you leave the house.';
+}
+</script>
+<section class="hm-ledger" id="right-now">
+<span class="hm-eye lc">Right now</span>
+<h2>Cape Cod at a glance</h2>
+<p class="hm-sub">Current bridge delays, water temperature, tides and sunset, each with its source and the time it was checked.</p>
+<div class="hm-rows" id="rnGrid"><p class="hm-load">Loading current readings…</p></div>
 </section>
-<style>
-  @media (min-width:1024px){.hero{min-height:0;padding-top:150px;}}
-  .rn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
-  @media (max-width:1100px){.rn-grid{grid-template-columns:repeat(2,1fr);}}
-  @media (max-width:560px){.rn-grid{grid-template-columns:1fr;}}
-  .rn-card{background:var(--card);border:1px solid var(--divider);border-radius:var(--radius-md);box-shadow:var(--shadow-sm);padding:22px;display:flex;flex-direction:column;gap:6px;text-decoration:none;color:var(--text);}
-  a.rn-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);transition:all .15s ease;}
-  .rn-label{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--text-secondary);}
-  .rn-big{font-family:'Fraunces',Georgia,serif;font-weight:900;font-size:34px;line-height:1.1;color:var(--cape-navy);}
-  .rn-big.moderate{color:#B7791F;} .rn-big.heavy{color:#C0392B;}
-  .rn-sub{font-size:14px;line-height:1.5;color:var(--text);}
-  .rn-src{font-size:12px;line-height:1.45;color:var(--text-secondary);margin-top:auto;padding-top:8px;}
-  .rn-more{font-size:13px;font-weight:700;color:var(--sea-deep);}
-  .rn-note{grid-column:1/-1;font-size:13px;color:var(--text-secondary);margin:0;}
-  .guide-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-  @media (max-width:1024px){.guide-grid{grid-template-columns:repeat(2,1fr);}}
-  @media (max-width:640px){.guide-grid{grid-template-columns:1fr;}}
-</style>
 <script>
 (function(){
-  var RAW='https://raw.githubusercontent.com/zemiai/totallycapecod/main/data/';
-  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
-  function when(iso){var d=new Date(iso);if(isNaN(d))return 'time unknown';return d.toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});}
-  function day(ymd){var d=new Date(ymd+'T12:00:00');if(isNaN(d))return esc(ymd);return d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});}
-  function get(f){return fetch(RAW+f).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).catch(function(){return null;});}
-  function bridge(b,checked){
-    if(!b||b.current_delay_min==null)return '';
-    var m=b.current_delay_min,cls=m>=20?'heavy':(m>=8?'moderate':'');
-    return '<a class="rn-card" href="/cape-cod-bridge-traffic.html"><div class="rn-label">🌉 '+esc(b.name||'Bridge')+'</div>'+
-      '<div class="rn-big '+cls+'">'+(m===0?'No added delay':esc(m)+' min delay')+'</div>'+
-      '<div class="rn-sub">Leaving the Cape'+(b.live_speed_mph!=null?' · '+esc(b.live_speed_mph)+' mph on the measured stretch':'')+'</div>'+
-      '<div class="rn-src">Source: Google Maps traffic · checked '+checked+'</div><div class="rn-more">Bridge traffic →</div></a>';
-  }
-  Promise.all([get('bridges.json'),get('conditions.json')]).then(function(r){
-    var br=r[0],co=r[1],h='';
-    if(br&&br.current){
-      var checked=br.updated_at?when(br.updated_at):'time unknown';
-      if(br.updated_at&&(Date.now()-new Date(br.updated_at).getTime())>3*3600000)
-        h+='<p class="rn-note"><strong>The bridge reading is more than 3 hours old</strong>, so check a live traffic map before you go.</p>';
-      h+=bridge(br.current.sagamore,checked)+bridge(br.current.bourne,checked);
-    }
-    var t=co&&co.today;
-    if(t){
-      var cchk=co.updated_at?when(co.updated_at):'time unknown',d=t.date?day(t.date):'';
-      var tides=(t.tides||[]).map(function(x){return esc(x.type==='high'?'High':'Low')+' '+esc(x.time);}).join(' · ');
-      h+='<a class="rn-card" href="/cape-cod-water-temperature-today.html"><div class="rn-label">🌊 Water &amp; tides'+(d?' · '+d:'')+'</div>'+
-        (t.water_temp_f!=null?'<div class="rn-big">'+esc(t.water_temp_f)+'°F</div><div class="rn-sub">Water temperature'+(t.water_temp_source?', '+esc(t.water_temp_source):'')+'</div>':'')+
-        (tides?'<div class="rn-sub">'+tides+'</div>':'')+
-        '<div class="rn-src">'+(t.tides_source?'Tides: '+esc(t.tides_source)+' · ':'')+'checked '+cchk+'</div><div class="rn-more">Water temperatures →</div></a>';
-      var w=t.weather||{},s=t.sun||{};
-      h+='<a class="rn-card" href="/app/"><div class="rn-label">☀️ Weather &amp; sun'+(d?' · '+d:'')+'</div>'+
-        (w.temp_high!=null?'<div class="rn-big">'+esc(w.temp_high)+'° / '+esc(w.temp_low)+'°</div><div class="rn-sub">'+esc(w.condition||'')+(w.wind_mph!=null?' · wind '+esc(w.wind_dir||'')+' '+esc(w.wind_mph)+' mph':'')+'</div>':'')+
-        (s.sunset?'<div class="rn-sub">Sunrise '+esc(s.sunrise)+' · Sunset '+esc(s.sunset)+'</div>':'')+
-        '<div class="rn-src">'+(t.weather_source?'Weather: '+esc(t.weather_source):'')+(s.source?' · Sun: '+esc(s.source):'')+' · checked '+cchk+'</div><div class="rn-more">More in the app →</div></a>';
-    }
-    var g=document.getElementById('rnGrid');
-    if(h)g.innerHTML=h;else document.getElementById('right-now').style.display='none';
-  });
+var RAW='https://raw.githubusercontent.com/zemiai/totallycapecod/main/data/';
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function when(iso){var d=new Date(iso);if(isNaN(d))return 'time unknown';return d.toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});}
+function day(ymd){var d=new Date(ymd+'T12:00:00');if(isNaN(d))return esc(ymd);return d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});}
+function todayET(){return new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());}
+function get(f){return fetch(RAW+f).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).catch(function(){return null;});}
+var n=0;
+// One ledger row: label, figure, qualifiers, source and check time, link. dim = stale reading.
+function row(o){
+var i=n++;
+return '<a class="hm-r'+(o.dim?' hm-dim':'')+'" href="'+o.href+'"><span class="hm-l">'+o.label+(o.date?'<span class="hm-d">'+o.date+'</span>':'')+'</span>'+
+(o.fig?'<span class="hm-fig '+(o.cls||'')+'" style="--i:'+i+'">'+o.fig+'</span>':'')+
+(o.q.length?'<span class="hm-q">'+o.q.map(function(x){return '<i>'+x+'</i>';}).join('')+'</span>':'')+
+'<span class="hm-m"><em>'+o.time+'</em>'+(o.src?'<b>'+o.src+'</b>':'')+'</span><span class="hm-more">'+o.more+'</span></a>';
+}
+function bridge(b,checked,dim){
+if(!b||b.current_delay_min==null)return '';
+var m=b.current_delay_min,cls=m>=20?'heavy':(m>=8?'moderate':'');
+return row({label:esc(b.name||'Bridge'),fig:(m===0?'No added delay':esc(m)+' min delay'),cls:cls,
+q:['Leaving the Cape'].concat(b.live_speed_mph!=null?[esc(b.live_speed_mph)+' mph on the measured stretch']:[]),
+src:'Source: Google Maps traffic',time:'checked '+checked,href:'/cape-cod-bridge-traffic.html',more:'Bridge traffic',dim:dim});
+}
+Promise.all([get('bridges.json'),get('conditions.json')]).then(function(r){
+var br=r[0],co=r[1],h='';
+if(br&&br.current){
+var checked=br.updated_at?when(br.updated_at):'time unknown';
+var old=!!(br.updated_at&&(Date.now()-new Date(br.updated_at).getTime())>3*3600000);
+if(old)h+='<p class="hm-note"><strong>The bridge reading is more than 3 hours old</strong>, so check a live traffic map before you go.</p>';
+h+=bridge(br.current.sagamore,checked,old)+bridge(br.current.bourne,checked,old);
+}
+var t=co&&co.today;
+if(t){
+var cchk=co.updated_at?when(co.updated_at):'time unknown',d=t.date?day(t.date):'';
+var dim=!!(t.date&&t.date!==todayET());
+var tides=(t.tides||[]).map(function(x){return esc(x.type==='high'?'High':'Low')+' '+esc(x.time);});
+if(t.water_temp_f!=null||tides.length)
+h+=row({label:'Water &amp; tides',date:d,fig:t.water_temp_f!=null?esc(t.water_temp_f)+'°F':'',
+q:(t.water_temp_f!=null?['Water temperature'+(t.water_temp_source?', '+esc(t.water_temp_source):'')]:[]).concat(tides),
+src:t.tides_source?'Tides: '+esc(t.tides_source):'',time:'checked '+cchk,href:'/cape-cod-water-temperature-today.html',more:'Water temperatures',dim:dim});
+var w=t.weather||{},s=t.sun||{};
+if(w.temp_high!=null||s.sunset){
+var src=(t.weather_source?'Weather: '+esc(t.weather_source):'')+(s.source?(t.weather_source?', ':'')+'Sun: '+esc(s.source):'');
+h+=row({label:'Weather &amp; sun',date:d,fig:w.temp_high!=null?esc(w.temp_high)+'°'+(w.temp_low!=null?' / '+esc(w.temp_low)+'°':''):'',
+q:(w.temp_high!=null?[esc(w.condition||'')+(w.wind_mph!=null?', wind '+esc(w.wind_dir||'')+' '+esc(w.wind_mph)+' mph':'')]:[]).concat(s.sunset?['Sunrise '+esc(s.sunrise),'Sunset '+esc(s.sunset)]:[]),
+src:src,time:'checked '+cchk,href:'/app/',more:'More in the app',dim:dim});
+}
+}
+var g=document.getElementById('rnGrid');
+if(h)g.innerHTML=h;else{document.getElementById('right-now').style.display='none';document.getElementById('hmHead').classList.add('hm-solo');}
+});
 })();
 </script>
-
-<div class="wave-divider"></div>
-
-<!-- Outcome-first value band: understand the value in 5 seconds, then one clear action -->
-<section class="section page-wrap" style="padding-top: 16px;">
-  <div class="section-header">
-    <div class="section-label">In the app</div>
-    <h2 class="section-title">What the free app does</h2>
-    <p class="section-subtitle">One free web app, updated through the day.</p>
-  </div>
-  <div class="outcomes-grid">
-    <div class="outcome s-summer"><span class="ic">🏖️</span><div><strong>Check beach parking reports</strong><p>Parking reports from other beachgoers, shown for 3 hours after they're posted.</p></div></div>
-    <div class="outcome s-off"><span class="ic">🏖️</span><div><strong>Plan a beach walk</strong><p>Water temps from three sensors and today's tides from NOAA's Chatham station, for 27 mapped beaches.</p></div></div>
-    <div class="outcome"><span class="ic">🌉</span><div><strong>Check the bridges</strong><p>Sagamore &amp; Bourne delays from Google Maps traffic, checked several times a day.</p></div></div>
-    <div class="outcome"><span class="ic">🦞</span><div><strong>Find dinner</strong><p>What's open near you, going by Google's listed hours — lobster rolls, clam shacks and more.</p></div></div>
-    <div class="outcome"><span class="ic">👧</span><div><strong>Keep the kids busy</strong><p>Today's events and a 110-stamp <span class="s-summer">summer</span><span class="s-off">Cape</span> passport.</p></div></div>
-    <div class="outcome"><span class="ic">💬</span><div><strong>Ask the AI guide</strong><p>An AI assistant that answers from the app's current data, like water temps, events and bridge traffic.</p></div></div>
-    <div class="outcome"><span class="ic">☀️</span><div><strong>Check the water</strong><p>Water temps from the nearest of three sensors, with the time each was checked.</p></div></div>
-  </div>
-  <div style="text-align:center; margin-top:30px;">
-    <a href="/app/" class="btn btn-primary btn-lg" onclick="gtag('event','click',{event_category:'outcomes',event_label:'open_app'})">Open the Free App →</a>
-    <div class="cta-reassure">Free · No app store needed · Works on any phone</div>
-  </div>
-</section>
-
-<div class="wave-divider"></div>
-
-<!-- Directory Preview -->
-<section class="section page-wrap" style="padding-top: 20px;">
-  <div class="section-header">
-    <div class="section-label">Explore</div>
-    <h2 class="section-title">Or dive into a guide</h2>
-    <p class="section-subtitle">Prefer to browse first? Pick a category and find your next favorite spot.</p>
-  </div>
-
-  <div class="directory-preview">
-    <a href="/beaches.html" class="directory-tile" onclick="gtag('event','click',{event_category:'directory',event_label:'beaches'})">
-      <div class="bg" style="background-image: linear-gradient(135deg,#1A3A6C,#4A90A4);"></div>
-      <div class="overlay"></div>
-      <div class="content">
-        <h3>Beaches</h3>
-        <p>27 mapped, with water temps</p>
-      </div>
-    </a>
-    <a href="/eats.html" class="directory-tile" onclick="gtag('event','click',{event_category:'directory',event_label:'eats'})">
-      <div class="bg" style="background-image: linear-gradient(135deg,#8A6440,#D4A574);"></div>
-      <div class="overlay"></div>
-      <div class="content">
-        <h3>Eats</h3>
-        <p>Lobster rolls, clam shacks & more</p>
-      </div>
-    </a>
-    <a href="/stays.html" class="directory-tile" onclick="gtag('event','click',{event_category:'directory',event_label:'stays'})">
-      <div class="bg" style="background-image: linear-gradient(135deg,#2F6E80,#7BBCD0);"></div>
-      <div class="overlay"></div>
-      <div class="content">
-        <h3>Stays</h3>
-        <p>Hotels, rentals & B&Bs</p>
-      </div>
-    </a>
-    <a href="/experiences.html" class="directory-tile" onclick="gtag('event','click',{event_category:'directory',event_label:'experiences'})">
-      <div class="bg" style="background-image: linear-gradient(135deg,#2E7D6B,#6BC4A6);"></div>
-      <div class="overlay"></div>
-      <div class="content">
-        <h3>Experiences</h3>
-        <p>Whale watching, sailing & tours</p>
-      </div>
-    </a>
-  </div>
-</section>
-
-<!-- Featured Spots -->
-<section class="section page-wrap">
-  <div class="section-header">
-    <div class="section-label">Start Here</div>
-    <h2 class="section-title">Featured Spots</h2>
-    <p class="section-subtitle">Each with a link to its source.</p>
-  </div>
-
-  <div class="grid-3">
-    <div class="card featured-card">
-      <div class="card-cover" style="background-image: linear-gradient(135deg,#1A3A6C,#4A90A4);">
-        <span class="card-tag">Beach</span>
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">Race Point Beach</h3>
-        <p class="card-sub">Provincetown · Cape Cod National Seashore</p>
-        <p style="font-size: 13px; color: var(--text-secondary); margin-top: 8px; line-height: 1.5;">National Seashore beach at the northernmost point on Cape Cod. The Park Service notes swift currents and deeper water close to shore. <a href="https://www.nps.gov/places/race-point-beach.htm" target="_blank" rel="noopener">Source: NPS ↗</a></p>
-      </div>
-      <div class="card-footer">
-        <span style="font-size: 13px; color: var(--text-secondary);">📍 Outer Cape</span>
-        <a href="/beaches.html" class="btn btn-sm btn-navy" onclick="gtag('event','click',{event_category:'featured',event_label:'race_point'})">View</a>
-      </div>
-    </div>
-
-    <div class="card featured-card">
-      <div class="card-cover" style="background-image: linear-gradient(135deg,#8A6440,#D4A574);">
-        <span class="card-tag">Food</span>
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">The Lobster Pot</h3>
-        <p class="card-sub">Provincetown · Seafood</p>
-        <p style="font-size: 13px; color: var(--text-secondary); margin-top: 8px; line-height: 1.5;">Run by the McNulty family since 1979, with views of Provincetown Harbor, according to the restaurant. Seasonal — check its site for dates. <a href="https://www.ptownlobsterpot.com/our-story" target="_blank" rel="noopener">Source: The Lobster Pot ↗</a></p>
-      </div>
-      <div class="card-footer">
-        <span style="font-size: 13px; color: var(--text-secondary);">🦐 Provincetown</span>
-        <a href="/eats.html" class="btn btn-sm btn-navy" onclick="gtag('event','click',{event_category:'featured',event_label:'lobster_pot'})">View</a>
-      </div>
-    </div>
-
-    <div class="card featured-card">
-      <div class="card-cover" style="background-image: linear-gradient(135deg,#2E7D6B,#6BC4A6);">
-        <span class="card-tag">Experience</span>
-      </div>
-      <div class="card-body">
-        <h3 class="card-title">Whale Watch Tour</h3>
-        <p class="card-sub">Provincetown · Dolphin Fleet trips run 3–4 hours, April–October (<a href="https://whalewatch.com/information/terms-conditions/" target="_blank" rel="noopener">Dolphin Fleet ↗</a>)</p>
-        <p style="font-size: 13px; color: var(--text-secondary); margin-top: 8px; line-height: 1.5;">Trips to Stellwagen Bank, which NOAA says is “routinely ranked among the world's top-10 whale-watching destinations.” <a href="https://oceanservice.noaa.gov/ocean/sanctuaries/stellwagen.html" target="_blank" rel="noopener">Source: NOAA ↗</a></p>
-      </div>
-      <div class="card-footer">
-        <span style="font-size: 13px; color: var(--text-secondary);">🐋 Seasonal</span>
-        <a href="/experiences.html" class="btn btn-sm btn-navy" onclick="gtag('event','click',{event_category:'featured',event_label:'whale_watch'})">View</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Affiliate CTA Band -->
-<section class="section page-wrap" style="padding-top: 0;">
-  <div class="affiliate-band">
-    <div>
-      <div class="label">Book Your Stay</div>
-      <div class="title">Hotels & rentals on Cape Cod</div>
-    </div>
-    <a href="https://www.booking.com/searchresults.html?ss=Cape+Cod" target="_blank" rel="noopener" class="btn btn-sm btn-navy" onclick="gtag('event','affiliate_click',{event_category:'booking',event_label:'homepage_banner'})">Search on Booking.com →</a>
-  </div>
-</section>
-
-<!-- SEO Content Sections -->
-<section class="section page-wrap">
-  <div class="section-header">
-    <div class="section-label">Guides</div>
-    <h2 class="section-title">Cape Cod guides</h2>
-    <p class="section-subtitle">Beaches, events and wildlife, with the rules and details that matter. New guides are checked line by line against their sources.</p>
-  </div>
-
-  <div class="guide-grid">
-    <a href="/guides/cape-cod-in-november/" class="card" style="text-decoration: none;" onclick="gtag('event','click',{event_category:'seo',event_label:'november_guide'})">
-      <div style="padding: 28px;">
-        <div style="font-size: 32px; margin-bottom: 12px;">🍂</div>
-        <h3 style="font-family: 'Fraunces', serif; font-weight: 900; font-size: 22px; margin: 0 0 8px; color: var(--warm-brown);">Cape Cod in November 2026</h3>
-        <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin: 0;">NOAA weather normals, sunset times, which ferries and buses still run, and confirmed events through Thanksgiving weekend.</p>
-      </div>
-    </a>
-    <a href="/best-beaches-2026.html" class="card" style="text-decoration: none;" onclick="gtag('event','click',{event_category:'seo',event_label:'best_beaches'})">
-      <div style="padding: 28px;">
-        <div style="font-size: 32px; margin-bottom: 12px;">🏝️</div>
-        <h3 style="font-family: 'Fraunces', serif; font-weight: 900; font-size: 22px; margin: 0 0 8px; color: var(--warm-brown);">Beaches by Region 2026</h3>
-        <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin: 0;">Cape Cod beaches by region, with parking and dog rules linked to the town or the Park Service.</p>
-      </div>
-    </a>
-    <a href="/guides/cape-cod-holiday-events-2026/" class="card" style="text-decoration: none;" onclick="gtag('event','click',{event_category:'seo',event_label:'holiday_guide'})">
-      <div style="padding: 28px;">
-        <div style="font-size: 32px; margin-bottom: 12px;">🎄</div>
-        <h3 style="font-family: 'Fraunces', serif; font-weight: 900; font-size: 22px; margin: 0 0 8px; color: var(--warm-brown);">Holiday Events 2026</h3>
-        <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin: 0;">2026 dates announced so far for holiday strolls, parades, Gardens Aglow and markets, each linked to its organizer.</p>
-      </div>
-    </a>
-    <a href="/hidden-gems.html" class="card" style="text-decoration: none;" onclick="gtag('event','click',{event_category:'seo',event_label:'hidden_gems'})">
-      <div style="padding: 28px;">
-        <div style="font-size: 32px; margin-bottom: 12px;">🗺️</div>
-        <h3 style="font-family: 'Fraunces', serif; font-weight: 900; font-size: 22px; margin: 0 0 8px; color: var(--warm-brown);">Cape Cod Detours</h3>
-        <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin: 0;">Ballston Beach, Paine's Creek Beach and the Great Island Trail, with parking, dog and tide rules linked to their sources.</p>
-      </div>
-    </a>
-    <a href="/guides/whales-and-seals-cape-cod-winter/" class="card" style="text-decoration: none;" onclick="gtag('event','click',{event_category:'seo',event_label:'whales_seals_guide'})">
-      <div style="padding: 28px;">
-        <div style="font-size: 32px; margin-bottom: 12px;">🐋</div>
-        <h3 style="font-family: 'Fraunces', serif; font-weight: 900; font-size: 22px; margin: 0 0 8px; color: var(--warm-brown);">Whales &amp; Seals in Winter</h3>
-        <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin: 0;">When right whales visit Cape Cod Bay, where to see seals, how close you can legally get, and who to call for a stranded animal.</p>
-      </div>
-    </a>
-    <a href="/guides/" class="card" style="text-decoration: none;" onclick="gtag('event','click',{event_category:'seo',event_label:'all_guides'})">
-      <div style="padding: 28px;">
-        <div style="font-size: 32px; margin-bottom: 12px;">📚</div>
-        <h3 style="font-family: 'Fraunces', serif; font-weight: 900; font-size: 22px; margin: 0 0 8px; color: var(--warm-brown);">All guides →</h3>
-        <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin: 0;">Every guide lists its sources and shows the passages we checked it against.</p>
-      </div>
-    </a>
-  </div>
-</section>
-
-<!-- Local photographer feature (photos used with permission, always credited + linked) -->
-<section class="section page-wrap" id="local-lens">
-  <div class="section-header">
-    <div class="section-label">📸 Through a Local Lens</div>
-    <h2 class="section-title">Cape Cod by R. Marcotte Photography</h2>
-    <p class="section-subtitle">A Cape Cod landscape photographer who kindly let us share these. See much more of their work on <a href="https://www.facebook.com/rmarcottephotography/" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'photographer',item:'r-marcotte',location:'home_photos_sub'})">Facebook</a> and at <a href="https://rmarcottephotography.mypixieset.com/" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'photographer',item:'r-marcotte-portfolio',location:'home_photos_sub'})">their portfolio</a>.</p>
-  </div>
-  <div class="grid-3">
-    <a class="card" href="https://www.facebook.com/photo/?fbid=613936567391398" target="_blank" rel="noopener" style="text-decoration:none;" onclick="gtag('event','outbound_click',{type:'photographer',item:'rm-nauset-light-night',location:'home_photos'})">
-      <div class="card-cover" data-bg="/img/photos/r-marcotte/nauset-light-night.jpg" style="height:240px;" role="img" aria-label="Nauset Light's red and white tower lit against a starry night sky"></div>
-      <div class="card-body"><h3 class="card-title">Nauset Light under the stars</h3><p class="card-sub">Nauset Light Beach, Eastham · 📸 R. Marcotte Photography</p></div>
-    </a>
-    <a class="card" href="https://www.facebook.com/photo/?fbid=560512772177218" target="_blank" rel="noopener" style="text-decoration:none;" onclick="gtag('event','outbound_click',{type:'photographer',item:'rm-sandwich-boardwalk',location:'home_photos'})">
-      <div class="card-cover" data-bg="/img/photos/r-marcotte/sandwich-boardwalk-pilings.jpg" style="height:240px;" role="img" aria-label="Weathered pilings and cross-braces beneath the Sandwich Boardwalk"></div>
-      <div class="card-body"><h3 class="card-title">Under the Sandwich Boardwalk</h3><p class="card-sub">Sandwich · 📸 R. Marcotte Photography</p></div>
-    </a>
-    <a class="card" href="https://www.facebook.com/photo/?fbid=583056666589495" target="_blank" rel="noopener" style="text-decoration:none;" onclick="gtag('event','outbound_click',{type:'photographer',item:'rm-chatham-boat',location:'home_photos'})">
-      <div class="card-cover" data-bg="/img/photos/r-marcotte/chatham-boat-bow.jpg" style="height:240px;" role="img" aria-label="The weathered bow of a wooden boat crusted with mussel shells"></div>
-      <div class="card-body"><h3 class="card-title">A weathered bow</h3><p class="card-sub">Chatham · 📸 R. Marcotte Photography</p></div>
-    </a>
-  </div>
-  <div style="text-align:center; margin-top:18px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
-    <a href="/photos.html" class="btn btn-navy btn-sm">See the gallery →</a>
-    <a href="https://www.facebook.com/rmarcottephotography/" target="_blank" rel="noopener" class="btn btn-sm" style="border:1px solid var(--divider);" onclick="gtag('event','outbound_click',{type:'photographer',item:'r-marcotte',location:'home_photos_cta'})">More from R. Marcotte Photography →</a>
-  </div>
-</section>
-
-<!-- Events Preview -->
-<section class="section page-wrap">
-  <div class="section-header">
-    <div class="section-label">This Weekend</div>
-    <h2 class="section-title">Events & Happenings</h2>
-    <p class="section-subtitle">What's going on this week across the Cape.</p>
-  </div>
-
-  <!-- Live, sourced events (js/live-events.js) — replaced the old hand-typed summer cards,
-       which had wrong dates (e.g. OysterFest is in October, not August). -->
-  <div data-live-events data-limit="6"><p style="color: var(--text-secondary);">Loading this week's events…</p></div>
-  <script>
-(function () {
-  var els = document.querySelectorAll('[data-bg]');
-  function show(el) { el.style.backgroundImage = "url('" + el.getAttribute('data-bg') + "')"; el.removeAttribute('data-bg'); }
-  if (!('IntersectionObserver' in window)) { for (var i = 0; i < els.length; i++) show(els[i]); return; }
-  var io = new IntersectionObserver(function (es) {
-    es.forEach(function (e) { if (e.isIntersecting) { io.unobserve(e.target); show(e.target); } });
-  }, { rootMargin: '400px 0px' });
-  for (var i = 0; i < els.length; i++) io.observe(els[i]);
-})();
-</script>
+</div>
+</div>
+<div class="hm-w">
+<section class="hm-sec" id="events">
+<header>
+<span class="hm-eye lc">This Weekend</span>
+<h2 class="lc">Events &amp; Happenings</h2>
+<p class="hm-sub">What's going on this week across the Cape.</p>
+</header>
+<!-- Live, sourced events (js/live-events.js) — replaced the old hand-typed summer cards,
+which had wrong dates (e.g. OysterFest is in October, not August). -->
+<div data-live-events data-limit="6" data-rows><p style="color: var(--text-secondary);">Loading this week's events…</p></div>
 <script src="/js/live-events.js" defer></script>
-
-  <div style="text-align: center; margin-top: 24px;">
-    <a href="/events" class="btn btn-primary" onclick="gtag('event','click',{event_category:'events',event_label:'view_all'})">View Full Calendar 📅</a>
-  </div>
+<p class="hm-more-row"><a href="/events" class="hm-btn hm-fill hm-sm" onclick="gtag('event','click',{event_category:'events',event_label:'view_all'})"><span class="lc">View Full Calendar</span></a></p>
 </section>
-
-<!-- App CTA -->
-<section class="section page-wrap">
-  <div class="app-preview">
-    <div style="position: relative; z-index: 1;">
-      <div style="font-size: 48px; margin-bottom: 16px;">📱</div>
-      <h2 style="font-family: 'Fraunces', serif; font-weight: 900; font-size: 32px; color: var(--warm-brown); margin: 0 0 12px;">Get the App</h2>
-      <p style="font-size: 16px; color: var(--warm-brown-soft); max-width: 480px; margin: 0 auto 24px; line-height: 1.6;">Water temps, tide times and the Cape Cod Passport — all in your pocket. Add to your homescreen for the full experience.</p>
-      <a href="/app/" class="btn btn-primary" onclick="gtag('event','click',{event_category:'app',event_label:'download'})">Open the App 🎯</a>
-    </div>
-  </div>
+<section class="hm-sec">
+<header>
+<span class="hm-eye lc">Guides</span>
+<h2>Cape Cod guides</h2>
+<p class="hm-sub">Beaches, events and wildlife, with the rules and details that matter. New guides are checked line by line against their sources.</p>
+</header>
+<ul class="hm-list">
+<li><a href="/guides/cape-cod-holiday-events-2026/" class="hm-g" onclick="gtag('event','click',{event_category:'seo',event_label:'holiday_guide'})"><h3>Holiday Events 2026</h3><p>2026 dates announced so far for holiday strolls, parades, Gardens Aglow and markets, each linked to its organizer.</p></a></li>
+<li><a href="/guides/cape-cod-in-november/" class="hm-g" onclick="gtag('event','click',{event_category:'seo',event_label:'november_guide'})"><h3>Cape Cod in November 2026</h3><p>NOAA weather normals, sunset times, which ferries and buses still run, and confirmed events through Thanksgiving weekend.</p></a></li>
+<li><a href="/guides/whales-and-seals-cape-cod-winter/" class="hm-g" onclick="gtag('event','click',{event_category:'seo',event_label:'whales_seals_guide'})"><h3>Whales &amp; Seals in Winter</h3><p>When right whales visit Cape Cod Bay, where to see seals, how close you can legally get, and who to call for a stranded animal.</p></a></li>
+<li><a href="/best-beaches-2026.html" class="hm-g" onclick="gtag('event','click',{event_category:'seo',event_label:'best_beaches'})"><h3>Beaches by Region 2026</h3><p>Cape Cod beaches by region, with parking and dog rules linked to the town or the Park Service.</p></a></li>
+<li><a href="/hidden-gems.html" class="hm-g" onclick="gtag('event','click',{event_category:'seo',event_label:'hidden_gems'})"><h3>Cape Cod Detours</h3><p>Ballston Beach, Paine's Creek Beach and the Great Island Trail, with parking, dog and tide rules linked to their sources.</p></a></li>
+<li><a href="/guides/" class="hm-g" onclick="gtag('event','click',{event_category:'seo',event_label:'all_guides'})"><h3>All guides<span class="x"> →</span></h3><p>Every guide lists its sources and shows the passages we checked it against.</p></a></li>
+</ul>
 </section>
-
+<section class="hm-sec">
+<header>
+<span class="hm-eye lc">Explore</span>
+<h2>Or dive into a guide</h2>
+<p class="hm-sub">Prefer to browse first? Pick a category and find your next favorite spot.</p>
+</header>
+<ul class="hm-list">
+<li><a href="/beaches.html" class="hm-g" onclick="gtag('event','click',{event_category:'directory',event_label:'beaches'})"><h3>Beaches</h3><p>27 mapped, with water temps</p></a></li>
+<li><a href="/eats.html" class="hm-g" onclick="gtag('event','click',{event_category:'directory',event_label:'eats'})"><h3>Eats</h3><p>Lobster rolls, clam shacks & more</p></a></li>
+<li><a href="/stays.html" class="hm-g" onclick="gtag('event','click',{event_category:'directory',event_label:'stays'})"><h3>Stays</h3><p>Hotels, rentals & B&Bs</p></a></li>
+<li><a href="/experiences.html" class="hm-g" onclick="gtag('event','click',{event_category:'directory',event_label:'experiences'})"><h3>Experiences</h3><p>Whale watching, sailing & tours</p></a></li>
+</ul>
+<!-- Email sign-up: inline, after the guides (was a popup that covered the hero buttons) -->
+<div class="hm-mail" id="emailSignup">
+<button class="close" type="button" aria-label="Close" onclick="closeEmailPopup()">&times;</button>
+<h2>Get Cape Cod updates by email</h2>
+<p>New guides and Cape Cod updates, sent to your inbox.</p>
+<form onsubmit="handleEmailSubmit(event)">
+<input type="email" id="popupEmail" placeholder="your@email.com" aria-label="Email address" autocomplete="email" required />
+<button type="submit" class="hm-btn hm-fill"><span class="lc">Sign up</span></button>
+</form>
+</div>
+</section>
+<section class="hm-sec">
+<header>
+<span class="hm-eye lc">In the app</span>
+<h2>What the free app does</h2>
+<p class="hm-sub">One free web app, updated through the day.</p>
+</header>
+<ul class="hm-list hm-apps">
+<li class="s-summer"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 0 1 18 0z"/><path d="M12 12v8"/><path d="M8 20h8"/></svg><div><strong>Check beach parking reports</strong><p>Parking reports from other beachgoers, shown for 3 hours after they're posted.</p></div></li>
+<li class="s-off"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><path d="M3 15c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg><div><strong>Plan a beach walk</strong><p>Water temps from three sensors and today's tides from NOAA's Chatham station, for 27 mapped beaches.</p></div></li>
+<li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 19h20"/><path d="M5 19V8"/><path d="M19 19V8"/><path d="M5 8c3 6 11 6 14 0"/></svg><div><strong>Check the bridges</strong><p>Sagamore &amp; Bourne delays from Google Maps traffic, checked several times a day.</p></div></li>
+<li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v7M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10"/><path d="M17 3c-2 2-3 5-3 8h3v10"/></svg><div><strong>Find dinner</strong><p>What's open near you, going by Google's listed hours — lobster rolls, clam shacks and more.</p></div></li>
+<li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.4l-5.3 3 1.2-6L3.4 9.3l6-.7z"/></svg><div><strong>Keep the kids busy</strong><p>Today's events and a 110-stamp <span class="s-summer">summer</span><span class="s-off">Cape</span> passport.</p></div></li>
+<li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><div><strong>Ask the AI guide</strong><p>An AI assistant that answers from the app's current data, like water temps, events and bridge traffic.</p></div></li>
+<li><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c4 5 6 8 6 11a6 6 0 0 1-12 0c0-3 2-6 6-11z"/></svg><div><strong>Check the water</strong><p>Water temps from the nearest of three sensors, with the time each was checked.</p></div></li>
+</ul>
+<div class="hm-cta">
+<a href="/app/" class="hm-btn hm-fill" onclick="gtag('event','click',{event_category:'outcomes',event_label:'open_app'})"><span class="lc">Open the Free App</span><span class="x"> →</span></a>
+<div class="hm-re"><span>Free</span><span class="x"> · </span><span>No app store needed</span><span class="x"> · </span><span>Works on any phone</span></div>
+</div>
+</section>
+<!-- Local photographer feature (photos used with permission, always credited + linked) -->
+<section class="hm-sec" id="local-lens">
+<header>
+<span class="hm-eye lc">Through a Local Lens</span>
+<h2>Cape Cod by R. Marcotte Photography</h2>
+<p class="hm-sub">A Cape Cod landscape photographer who kindly let us share these. See much more of their work on <a href="https://www.facebook.com/rmarcottephotography/" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'photographer',item:'r-marcotte',location:'home_photos_sub'})">Facebook</a> and at <a href="https://rmarcottephotography.mypixieset.com/" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'photographer',item:'r-marcotte-portfolio',location:'home_photos_sub'})">their portfolio</a>.</p>
+</header>
+<div class="hm-ph">
+<a href="https://www.facebook.com/photo/?fbid=613936567391398" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'photographer',item:'rm-nauset-light-night',location:'home_photos'})">
+<div class="card-cover" data-bg="/img/photos/r-marcotte/nauset-light-night.jpg" role="img" aria-label="Nauset Light's red and white tower lit against a starry night sky"></div>
+<h3 class="card-title">Nauset Light under the stars</h3><p class="card-sub"><span>Nauset Light Beach, Eastham</span><span class="x"> · </span><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>R. Marcotte Photography</span></p>
+</a>
+<a href="https://www.facebook.com/photo/?fbid=560512772177218" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'photographer',item:'rm-sandwich-boardwalk',location:'home_photos'})">
+<div class="card-cover" data-bg="/img/photos/r-marcotte/sandwich-boardwalk-pilings.jpg" role="img" aria-label="Weathered pilings and cross-braces beneath the Sandwich Boardwalk"></div>
+<h3 class="card-title">Under the Sandwich Boardwalk</h3><p class="card-sub"><span>Sandwich</span><span class="x"> · </span><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>R. Marcotte Photography</span></p>
+</a>
+<a href="https://www.facebook.com/photo/?fbid=583056666589495" target="_blank" rel="noopener" onclick="gtag('event','outbound_click',{type:'photographer',item:'rm-chatham-boat',location:'home_photos'})">
+<div class="card-cover" data-bg="/img/photos/r-marcotte/chatham-boat-bow.jpg" role="img" aria-label="The weathered bow of a wooden boat crusted with mussel shells"></div>
+<h3 class="card-title">A weathered bow</h3><p class="card-sub"><span>Chatham</span><span class="x"> · </span><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>R. Marcotte Photography</span></p>
+</a>
+</div>
+<div class="hm-btns hm-more-row">
+<a href="/photos.html" class="hm-btn hm-fill hm-sm"><span class="lc">See the gallery</span><span class="x"> →</span></a>
+<a href="https://www.facebook.com/rmarcottephotography/" target="_blank" rel="noopener" class="hm-btn hm-line hm-sm" onclick="gtag('event','outbound_click',{type:'photographer',item:'r-marcotte',location:'home_photos_cta'})">More from R. Marcotte Photography<span class="x"> →</span></a>
+</div>
+<script>
+(function () {
+var els = document.querySelectorAll('[data-bg]');
+function show(el) { el.style.backgroundImage = "url('" + el.getAttribute('data-bg') + "')"; el.removeAttribute('data-bg'); }
+if (!('IntersectionObserver' in window)) { for (var i = 0; i < els.length; i++) show(els[i]); return; }
+var io = new IntersectionObserver(function (es) {
+es.forEach(function (e) { if (e.isIntersecting) { io.unobserve(e.target); show(e.target); } });
+}, { rootMargin: '400px 0px' });
+for (var i = 0; i < els.length; i++) io.observe(els[i]);
+})();
+</script>
+</section>
+<section class="hm-sec">
+<header>
+<span class="hm-eye lc">Start Here</span>
+<h2 class="lc">Featured Spots</h2>
+<p class="hm-sub">Each with a link to its source.</p>
+</header>
+<div class="hm-feats">
+<article class="hm-feat">
+<span class="hm-tag">Beach</span>
+<h3 class="card-title">Race Point Beach</h3>
+<p class="card-sub"><span>Provincetown</span><span class="x"> · </span><span>Cape Cod National Seashore</span></p>
+<p class="hm-p">National Seashore beach at the northernmost point on Cape Cod. The Park Service notes swift currents and deeper water close to shore. <a href="https://www.nps.gov/places/race-point-beach.htm" target="_blank" rel="noopener">Source: NPS<span class="x"> ↗</span></a></p>
+<div class="hm-foot"><span>Outer Cape</span><a href="/beaches.html" class="hm-btn hm-line hm-sm" onclick="gtag('event','click',{event_category:'featured',event_label:'race_point'})">View</a></div>
+</article>
+<article class="hm-feat">
+<span class="hm-tag">Food</span>
+<h3 class="card-title">The Lobster Pot</h3>
+<p class="card-sub"><span>Provincetown</span><span class="x"> · </span><span>Seafood</span></p>
+<p class="hm-p">Run by the McNulty family since 1979, with views of Provincetown Harbor, according to the restaurant. Seasonal — check its site for dates. <a href="https://www.ptownlobsterpot.com/our-story" target="_blank" rel="noopener">Source: The Lobster Pot<span class="x"> ↗</span></a></p>
+<div class="hm-foot"><span>Provincetown</span><a href="/eats.html" class="hm-btn hm-line hm-sm" onclick="gtag('event','click',{event_category:'featured',event_label:'lobster_pot'})">View</a></div>
+</article>
+<article class="hm-feat">
+<span class="hm-tag">Experience</span>
+<h3 class="card-title">Whale Watch Tour</h3>
+<p class="card-sub"><span>Provincetown</span><span class="x"> · </span><span>Dolphin Fleet trips run 3–4 hours, April–October (<a href="https://whalewatch.com/information/terms-conditions/" target="_blank" rel="noopener">Dolphin Fleet<span class="x"> ↗</span></a>)</span></p>
+<p class="hm-p">Trips to Stellwagen Bank, which NOAA says is “routinely ranked among the world's top-10 whale-watching destinations.” <a href="https://oceanservice.noaa.gov/ocean/sanctuaries/stellwagen.html" target="_blank" rel="noopener">Source: NOAA<span class="x"> ↗</span></a></p>
+<div class="hm-foot"><span>Seasonal</span><a href="/experiences.html" class="hm-btn hm-line hm-sm" onclick="gtag('event','click',{event_category:'featured',event_label:'whale_watch'})">View</a></div>
+</article>
+</div>
+</section>
+<section class="hm-sec">
+<div class="hm-aff">
+<div>
+<div class="label lc">Book Your Stay</div>
+<div class="title">Hotels & rentals on Cape Cod</div>
+</div>
+<a href="https://www.booking.com/searchresults.html?ss=Cape+Cod" target="_blank" rel="noopener" class="hm-btn hm-line hm-sm" onclick="gtag('event','affiliate_click',{event_category:'booking',event_label:'homepage_banner'})">Search on Booking.com<span class="x"> →</span></a>
+</div>
+</section>
+<section class="hm-sec hm-app">
+<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>
+<h2 class="lc">Get the App</h2>
+<p>Water temps, tide times and the Cape Cod Passport — all in your pocket. Add to your homescreen for the full experience.</p>
+<a href="/app/" class="hm-btn hm-fill" onclick="gtag('event','click',{event_category:'app',event_label:'download'})"><span class="lc">Open the App</span></a>
+</section>
+<div class="hm-end"></div>
+</div>
+</main>
 <!-- Footer -->
 <footer class="site-footer">
-  <div class="footer-inner">
-    <div>
-      <div class="footer-brand">Totally Cape Cod</div>
-      <p class="footer-desc">Cape Cod beaches, events and eats, linked to their sources.</p>
-    </div>
-    <div class="footer-links">
-      <div class="footer-heading">Explore</div>
-      <a href="/beaches.html">Beaches</a>
-      <a href="/eats.html">Restaurants</a>
-      <a href="/stays.html">Hotels</a>
-      <a href="/experiences.html">Experiences</a>
-    </div>
-    <div class="footer-links">
-      <div class="footer-heading">Plan</div><a href="/guides/">Cape Cod Guides</a>
-      <a href="/events">What's Happening</a>
-      <a href="/itinerary.html">Itinerary Builder</a>
-      <a href="/app/">Get the App</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    © 2026 Totally Cape Cod. Affiliate links help keep this guide free. · <a href="/privacy.html" style="color: inherit;">Privacy</a> · <a href="/terms.html" style="color: inherit;">Terms</a> · <a href="/about.html" style="color: inherit;">About</a> · <a href="/contact.html" style="color: inherit;">Contact</a>
-  </div>
-</footer>
-
-<!-- Email Capture Popup -->
-<div class="email-popup" id="emailPopup">
-  <button class="close" onclick="closeEmailPopup()">&times;</button>
-  <h3>Get Cape Cod updates by email</h3>
-  <p>New guides and Cape Cod updates, sent to your inbox.</p>
-  <form onsubmit="handleEmailSubmit(event)" style="display: flex; gap: 8px;">
-    <input type="email" id="popupEmail" placeholder="your@email.com" required style="flex: 1; padding: 10px 14px; border: 1.5px solid var(--divider); border-radius: 12px; font-size: 14px;" />
-    <button type="submit" class="btn btn-primary" style="padding: 10px 18px; font-size: 13px;">Sign up</button>
-  </form>
+<div class="footer-inner">
+<div>
+<div class="footer-brand">Totally Cape Cod</div>
+<p class="footer-desc">Cape Cod beaches, events and eats, linked to their sources.</p>
 </div>
-
+<div class="footer-links">
+<div class="footer-heading">Explore</div>
+<a href="/beaches.html">Beaches</a>
+<a href="/eats.html">Restaurants</a>
+<a href="/stays.html">Hotels</a>
+<a href="/experiences.html">Experiences</a>
+</div>
+<div class="footer-links">
+<div class="footer-heading">Plan</div><a href="/guides/">Cape Cod Guides</a>
+<a href="/events">What's Happening</a>
+<a href="/itinerary.html">Itinerary Builder</a>
+<a href="/app/">Get the App</a>
+</div>
+</div>
+<div class="footer-bottom">
+© 2026 Totally Cape Cod. Affiliate links help keep this guide free. · <a href="/privacy.html" style="color: inherit;">Privacy</a> · <a href="/terms.html" style="color: inherit;">Terms</a> · <a href="/about.html" style="color: inherit;">About</a> · <a href="/contact.html" style="color: inherit;">Contact</a>
+</div>
+</footer>
 <script>
 function toggleMobileMenu() {
-  document.getElementById('mobileMenu').classList.toggle('show');
+document.getElementById('mobileMenu').classList.toggle('show');
 }
-
-// Email popup
-setTimeout(function() {
-  if (!localStorage.getItem('tcc_email_captured') && !localStorage.getItem('tcc_popup_closed')) {
-    document.getElementById('emailPopup').classList.add('show');
-    gtag('event', 'popup_show', { event_category: 'email_capture' });
-  }
-}, 5000);
-
+// Email sign-up (inline block). Hidden for someone who has already signed up or dismissed it.
+try { if (localStorage.getItem('tcc_email_captured') || localStorage.getItem('tcc_popup_closed')) document.getElementById('emailSignup').hidden = true; } catch (err) {}
 function closeEmailPopup() {
-  document.getElementById('emailPopup').classList.remove('show');
-  localStorage.setItem('tcc_popup_closed', 'true');
-  gtag('event', 'popup_close', { event_category: 'email_capture' });
+document.getElementById('emailSignup').hidden = true;
+try { localStorage.setItem('tcc_popup_closed', 'true'); } catch (err) {}
+gtag('event', 'popup_close', { event_category: 'email_capture' });
 }
-
 async function handleEmailSubmit(e) {
-  e.preventDefault();
-  const email = document.getElementById('popupEmail').value;
-  let ok = false;
-  try {
-    const res = await fetch('/.netlify/functions/email-capture', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, source: 'homepage_popup', url: location.href, timestamp: new Date().toISOString() })
-    });
-    ok = res.ok;
-  } catch (err) {
-    ok = false;
-  }
-  // Only say "subscribed" when the signup actually went through.
-  if (!ok) {
-    alert('Sorry — that didn\'t go through. Please try again in a moment.');
-    return;
-  }
-  try { localStorage.setItem('tcc_email_captured', 'true'); } catch (err) {}
-  document.getElementById('emailPopup').classList.remove('show');
-  gtag('event', 'generate_lead', { method: 'homepage_popup' });
-  alert('You\'re subscribed.');
+e.preventDefault();
+const email = document.getElementById('popupEmail').value;
+let ok = false;
+try {
+const res = await fetch('/.netlify/functions/email-capture', {
+method: 'POST',
+headers: { 'Content-Type': 'application/json' },
+body: JSON.stringify({ email, source: 'homepage_popup', url: location.href, timestamp: new Date().toISOString() })
+});
+ok = res.ok;
+} catch (err) {
+ok = false;
+}
+// Only say "subscribed" when the signup actually went through.
+if (!ok) {
+alert('Sorry — that didn\'t go through. Please try again in a moment.');
+return;
+}
+try { localStorage.setItem('tcc_email_captured', 'true'); } catch (err) {}
+document.getElementById('emailSignup').hidden = true;
+gtag('event', 'generate_lead', { method: 'homepage_popup' });
+alert('You\'re subscribed.');
 }
 </script>
-
 </body>
 </html>
