@@ -1,38 +1,38 @@
 {
   "today": {
-    "date": "2026-11-15",
+    "date": "2026-11-16",
     "weather": {
       "temp_high": 49,
-      "temp_low": 39,
+      "temp_low": 37,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "wind_mph": 13,
+      "wind_mph": 3,
       "wind_dir": "NW"
     },
     "sun": {
-      "sunrise": "6:29 AM",
-      "sunset": "4:19 PM",
-      "civil_twilight_end": "4:49 PM",
+      "sunrise": "6:30 AM",
+      "sunset": "4:18 PM",
+      "civil_twilight_end": "4:48 PM",
       "source": "sunrise-sunset.org"
     },
     "tides": [
       {
-        "time": "3:56 AM",
+        "time": "4:43 AM",
         "type": "high",
         "height_ft": 4.1
       },
       {
-        "time": "9:52 AM",
+        "time": "10:41 AM",
         "type": "low",
-        "height_ft": 0.7
+        "height_ft": 0.6
       },
       {
-        "time": "3:45 PM",
+        "time": "4:35 PM",
         "type": "high",
-        "height_ft": 4.9
+        "height_ft": 4.7
       },
       {
-        "time": "10:49 PM",
+        "time": "11:35 PM",
         "type": "low",
         "height_ft": 0.2
       }
@@ -44,24 +44,12 @@
   },
   "forecast_7day": [
     {
-      "date": "2026-11-15",
-      "day": "Sun",
-      "temp_high": 49,
-      "condition": "Sunny",
-      "icon": "\u2600\ufe0f",
-      "temp_low": 39,
-      "sunrise": "6:29 AM",
-      "sunset": "4:19 PM",
-      "low_tide": "9:52 AM",
-      "high_tide": "3:56 AM"
-    },
-    {
       "date": "2026-11-16",
       "day": "Mon",
       "temp_high": 49,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "temp_low": 38,
+      "temp_low": 37,
       "sunrise": "6:30 AM",
       "sunset": "4:18 PM",
       "low_tide": "10:41 AM",
@@ -106,7 +94,7 @@
     {
       "date": "2026-11-20",
       "day": "Fri",
-      "temp_high": 59,
+      "temp_high": 60,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
       "temp_low": 48,
@@ -121,13 +109,25 @@
       "temp_high": 56,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "temp_low": 47,
+      "temp_low": 48,
       "sunrise": "6:36 AM",
       "sunset": "4:15 PM",
       "low_tide": "2:42 AM",
       "high_tide": "8:39 AM"
+    },
+    {
+      "date": "2026-11-22",
+      "day": "Sun",
+      "temp_high": 59,
+      "condition": "Rain",
+      "icon": "\ud83c\udf27\ufe0f",
+      "temp_low": 47,
+      "sunrise": "6:38 AM",
+      "sunset": "4:14 PM",
+      "low_tide": "3:29 AM",
+      "high_tide": "9:24 AM"
     }
   ],
   "version": "1.0",
-  "updated_at": "2026-11-15T19:42:59Z"
+  "updated_at": "2026-11-16T13:32:45Z"
 }
