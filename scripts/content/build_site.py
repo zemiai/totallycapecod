@@ -480,8 +480,8 @@ KIND_ICON = {"candy": "candy", "gift shop": "gift", "candles": "candle", "jewelr
 KIND_GROUP = {"candy": ("candy", "Candy and sweets"), "gift shop": ("gifts", "Gifts and home"),
               "home and garden": ("gifts", "Gifts and home"), "candles": ("makers", "Makers and studios"),
               "jewelry": ("makers", "Makers and studios"), "pottery": ("makers", "Makers and studios")}
-STATUS = {"hours_dated": ("Hours posted", "posted", "posted"), "hours_undated": ("Hours posted, no date", "posted", "nodate"),
-          "call": ("Call ahead", "call", "call"), "reopens": ("Reopens", "call", "reopens")}
+STATUS = {"hours_dated": ("Hours posted", "posted", "posted"), "hours_undated": ("Hours posted, no date given", "posted", "nodate"),
+          "call": ("No hours published: call ahead", "call", "call"), "reopens": ("Reopens November 27", "call", "reopens")}
 ICONS = {
     "candy": '<circle cx="12" cy="12" r="4"/><path d="M8.6 9.6 4 7v10l4.6-2.6M15.4 9.6 20 7v10l-4.6-2.6"/>',
     "gift": '<rect x="4" y="10" width="16" height="10" rx="1"/><path d="M3 7h18v3H3zM12 7v13M12 7C10 4 7 4 7 6s3 1 5 1zM12 7c2-3 5-3 5-1s-3 1-5 1z"/>',
@@ -557,8 +557,10 @@ def validate_directory(meta: dict, body: str) -> list[str]:
             errs.append(f"{slug}: {e.get('name')}: unknown status {e.get('status')!r}")
         if e.get("kind") not in KIND_ICON:
             errs.append(f"{slug}: {e.get('name')}: unknown kind {e.get('kind')!r}")
-        if not e.get("anchor") or not e.get("address") or not e.get("hours_line"):
-            errs.append(f"{slug}: {e.get('name')}: missing anchor, address or hours_line")
+        if not e.get("anchor") or not e.get("address") or not e.get("state_text"):
+            errs.append(f"{slug}: {e.get('name')}: missing anchor, address or state_text")
+        if not e.get("hours_line") and e.get("status") not in ("call",):
+            errs.append(f"{slug}: {e.get('name')}: hours_line is empty but hours are posted")
     return errs
 
 
@@ -595,13 +597,13 @@ def render_sources_page(meta: dict, body: str, authors: dict) -> str:
 <div class="g-crumbs"><a href="/">Home</a> › <a href="/guides/">Guides</a> › <a href="/guides/{esc(slug)}/">{esc(meta.get("kicker") or "Guide")}</a> › Sources</div>
 <h1 class="g-title">Sources and method</h1>
 <p class="g-dek">This page holds how the list was made, the numbered sources and the saved excerpts behind <a href="/guides/{esc(slug)}/">{esc(meta["title"])}</a>.</p>
-<p><a href="/guides/{esc(slug)}/">Back to the guide</a> · <a href="/guides/standards/">How we fact-check</a></p>
+<p><a href="/guides/{esc(slug)}/">Back to the guide</a><br><a href="/guides/standards/">How we fact-check</a></p>
 <article class="g-body">
 {method_html}
 </article>
 <section class="g-sources" id="sources"><h2>Sources</h2><ol>{build_src_items(slug, sources)}</ol></section>
 <div class="g-note">📝 {esc(disclosure)} Spot something out of date? <a href="/contact.html">Tell us</a> and we'll fix it.</div>
-<p><a href="/guides/{esc(slug)}/">Back to the guide</a> · <a href="/guides/standards/">Read our editorial and fact-checking standards</a></p>
+<p><a href="/guides/{esc(slug)}/">Back to the guide</a><br><a href="/guides/standards/">Read our editorial and fact-checking standards</a></p>
 </main>
 {FOOTER}
 </body>
@@ -613,118 +615,183 @@ SRC_CSS = """<style>
 .g-wrap a{color:#245F78}.g-wrap a:focus-visible,.g-wrap summary:focus-visible{outline:3px solid #1A3A6C;outline-offset:2px;border-radius:4px}
 .g-sources{font-size:16px;line-height:1.6}.g-sources li{margin:10px 0}.g-ev{font-size:15px}.g-ev summary{display:flex;align-items:center;min-height:44px}
 .g-body{line-height:1.7}.g-body li{margin:8px 0}.g-body,.g-dek{max-width:42rem}
-@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 </style>
 """
 
 DIR_CSS = """<style>
-.gd{--ink:#3F362F;--mute:#645A4E;--link:#245F78;--navy:#1A3A6C;--tag:#F5E6D3;--line:#E4D6C2;max-width:1100px;margin:0 auto;padding:78px 18px 56px;font-size:17px;line-height:1.7;color:var(--ink)}
+.gd{--paper:#FDF8F2;--ink:#4A4038;--mute:#625749;--navy:#1A3A6C;--kraft:#D4A574;--kraftd:#9A6F3C;--sand:#F5E6D3;--tagbg:#EBD3AD;--cran:#9E2A3F;--bay:#2F6B57;--line:#E4D6C2;max-width:1120px;margin:0 auto;padding:78px 18px 56px;font-size:17px;line-height:1.6;color:var(--ink)}
 .gd [hidden]{display:none!important}
-.gd a{color:var(--link)}
+.gd a{color:var(--navy)}
 .gd a:focus-visible,.gd button:focus-visible,.gd summary:focus-visible{outline:3px solid var(--navy);outline-offset:2px;border-radius:6px}
-.gd h1,.gd h2,.gd h3{font-family:'Fraunces',Georgia,serif;color:var(--navy);line-height:1.15;margin:0}
+.gd h1,.gd h2,.gd h3{font-family:'Fraunces',Georgia,serif;color:var(--navy);margin:0}
 .gd .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .gd-i{flex:none;display:block}
-.gd-crumbs{font-size:14px;color:var(--mute);margin-bottom:10px}
-.gd-hero{display:grid;gap:20px;background:var(--tag);border-radius:20px;padding:22px;position:relative}
-.gd-hero h1{font-weight:900;font-size:clamp(28px,4.6vw,42px);letter-spacing:-.01em;margin-bottom:12px}
-.gd-hero .dek{font-size:18px;line-height:1.55;margin:0 0 10px;max-width:34rem}
+.gd-crumbs{font-size:15px;color:var(--mute);margin-bottom:10px}
+.gd-hero{display:grid;gap:18px;background:var(--sand);border-radius:20px;padding:22px 20px 24px}
+.gd-hero h1{font-weight:900;line-height:1.02;letter-spacing:-.015em}
+.gd-t1{display:block;font-size:clamp(34px,9vw,56px)}
+.gd-t2{display:block;font-weight:400;font-size:clamp(19px,4.6vw,26px);line-height:1.2;margin-top:10px;letter-spacing:0}
+.gd-hero .dek{font-size:18px;line-height:1.5;margin:14px 0 8px;max-width:34rem}
 .gd-hero .chk{margin:0;font-size:16px;color:var(--mute)}
 .gd-fig{margin:0}
-.gd-fig img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:12px;background:#D9C8B0}
-.gd-fig figcaption{font-size:14px;line-height:1.45;color:var(--mute);margin-top:7px}
-.gd-strip{grid-column:1/-1;border-top:2px dashed #D3BC9B;padding-top:16px}
-.gd-strip ul{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
-.gd-tag{display:inline-flex;text-decoration:none;color:var(--ink)!important;border-radius:6px}
-.gd-face{position:relative;display:flex;align-items:center;gap:8px;min-height:48px;padding:0 15px 0 30px;background:#fff;font-weight:600;font-size:16px;clip-path:polygon(16px 0,100% 0,100% 100%,16px 100%,0 50%)}
-.gd-face::before{content:"";position:absolute;left:12px;top:50%;width:8px;height:8px;margin-top:-4px;border-radius:50%;background:var(--tag);box-shadow:inset 0 0 0 1.5px #B89A74}
-.gd-face b{font-family:'Fraunces',Georgia,serif;font-weight:900;font-size:21px;color:var(--navy)}
-.gd-trust{display:flex;gap:12px;align-items:flex-start;border:1.5px solid #A9CBD6;background:#EDF6F9;border-radius:14px;padding:14px 16px;margin:18px 0;color:#1D3C4A;font-size:17px;line-height:1.5}
-.gd-trust p{margin:0}.gd-tick{margin-top:2px;color:#1D6A55}
-.gd-prose{max-width:36rem}
+.gd-fig img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:12px;background:#D9C8B0}
+.gd-fig figcaption{font-size:15px;line-height:1.45;color:var(--mute);margin-top:7px}
+.gd-twine ul{display:flex;flex-wrap:wrap;gap:0 14px;list-style:none;margin:0;padding:0}
+.gd-twine li{position:relative;padding-top:24px;margin-bottom:6px}
+.gd-twine li::before{content:"";position:absolute;top:0;left:-7px;right:-7px;height:2px;background:var(--kraftd);border-radius:1px}
+.gd-twine li:nth-child(odd){--tilt:-1.6deg}.gd-twine li:nth-child(even){--tilt:1.4deg}
+.gd-tag{position:relative;display:block;text-decoration:none;transform-origin:50% -24px;transform:rotate(var(--tilt))}
+.gd-tag::before{content:"";position:absolute;left:50%;top:-24px;height:24px;border-left:1.5px solid var(--kraftd)}
+.gd-face{display:block;min-width:96px;padding:20px 14px 9px;background:var(--tagbg);color:var(--ink);clip-path:polygon(13px 0,calc(100% - 13px) 0,100% 13px,100% 100%,0 100%,0 13px);position:relative;line-height:1.2}
+.gd-face::before{content:"";position:absolute;top:7px;left:50%;width:8px;height:8px;margin-left:-4px;border-radius:50%;background:var(--sand);box-shadow:inset 0 0 0 1.5px var(--kraftd)}
+.gd-face strong{display:block;font:800 18px/1.15 'Fraunces',Georgia,serif;color:var(--navy)}
+.gd-face span.n{font-size:15px;font-weight:600}
+.gd-mark{position:absolute;top:-9px;right:-9px;z-index:2;min-width:24px;height:24px;padding:0 6px;border-radius:12px;background:var(--cran);color:#fff;font:700 14px/24px 'Inter',sans-serif;text-align:center}
+.gd-trust{display:flex;gap:12px;align-items:flex-start;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;margin:22px 0;font-size:17px;line-height:1.5}
+.gd-trust p{margin:0}.gd-tick{margin-top:2px;color:var(--bay)}
+.gd-prose{max-width:35rem}
 .gd-prose p,.gd-prose li{margin:0 0 14px}.gd-prose ul{padding-left:22px}
-.gd-prose h2,.gd-faq h2,.gd-plan h2{font-weight:900;font-size:28px;margin:0 0 12px}
+.gd-prose h2,.gd-faq h2,.gd-plan h2{font-weight:900;font-size:30px;line-height:1.1;margin:0 0 12px}
 .gd-prose a{text-decoration:underline;text-underline-offset:2px}
-.gd-aside{font-family:'Fraunces',Georgia,serif;font-style:italic;color:var(--mute);border-left:3px solid #D4A574;padding:2px 0 2px 14px;margin:18px 0 0;max-width:36rem;font-size:17px;line-height:1.55}
-.gd-jump{position:sticky;top:60px;z-index:40;display:flex;align-items:center;gap:6px;background:rgba(253,248,242,.97);border-bottom:1px solid var(--line);margin:26px -18px 0;padding:0 18px}
-.gd-jump .lbl{flex:none;font-size:14px;color:var(--mute);padding-right:4px}
+.gd-aside{font-family:'Fraunces',Georgia,serif;font-style:italic;color:var(--mute);border-left:1px solid var(--kraftd);padding:2px 0 2px 14px;margin:20px 0 0;max-width:35rem;font-size:18px;line-height:1.5}
+.gd-shared{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin:0 0 18px;padding:12px 0;border-top:2px solid var(--cran);border-bottom:1px solid var(--line)}
+.gd-shared p{margin:0;font-weight:600}
+.gd-layout{margin-top:26px}
+.gd-rail{display:none}
+.gd-jump{position:sticky;top:73px;z-index:40;display:flex;align-items:center;gap:6px;background:var(--paper);border-bottom:1px solid var(--line);margin:0 -18px;padding:0 18px}
+.gd-jump .lbl{flex:none;font-size:15px;color:var(--mute);padding-right:4px}
 .gd-jump ul{display:flex;gap:2px;list-style:none;margin:0;padding:0;overflow-x:auto;scrollbar-width:thin}
 .gd-jump a{display:flex;align-items:center;min-height:44px;padding:0 12px;white-space:nowrap;font-weight:600;font-size:16px;text-decoration:none;color:var(--ink);border-bottom:3px solid transparent}
 .gd-jump a:hover{border-bottom-color:var(--navy)}
-.gd-filters{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px}
-.gd-chip{min-height:44px;padding:0 16px;border-radius:22px;border:1.5px solid #A98F6C;background:#fff;color:var(--ink);font:600 16px/1 'Inter',sans-serif;cursor:pointer}
+.gd-filters{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px;scroll-margin-top:130px}
+.gd-chip{min-height:44px;padding:0 16px;border-radius:22px;border:1.5px solid var(--kraftd);background:#fff;color:var(--ink);font:600 16px/1 'Inter',sans-serif;cursor:pointer}
 .gd-chip[aria-pressed=true]{background:var(--navy);border-color:var(--navy);color:#fff}
 .gd-count{margin:0 0 4px;font-size:15px;color:var(--mute)}
-.gd-town{padding-top:26px;scroll-margin-top:118px}
-.gd-town>h2{display:flex;align-items:baseline;gap:12px;font-weight:900;font-size:clamp(26px,4vw,32px);padding-bottom:8px;margin-bottom:14px;border-bottom:2px dashed #D3BC9B}
+.gd-empty{margin:18px 0;max-width:35rem;font-weight:600}
+.gd-town{padding-top:30px;scroll-margin-top:130px}
+.gd-town>h2{display:flex;align-items:baseline;gap:12px;font-weight:900;font-size:30px;line-height:1.1;margin-bottom:4px}
 .gd-town>h2 small{font:600 15px 'Inter',sans-serif;color:var(--mute)}
-.gd-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;align-items:start}
-.gd-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:8px;scroll-margin-top:124px}
-.gd-card:target{outline:3px solid #D4A574}
-.gd-ct{display:flex;align-items:flex-start;gap:10px}
-.gd-ic{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--tag);color:var(--navy)}
-.gd-ct h3{flex:1;font-weight:700;font-size:20px;padding-top:6px}
-.gd-save{flex:none;display:inline-flex;align-items:center;gap:5px;min-height:44px;min-width:44px;padding:0 10px;border:1.5px solid transparent;border-radius:22px;background:transparent;color:var(--mute);font:600 14px 'Inter',sans-serif;cursor:pointer}
-.gd-save[aria-pressed=true]{color:#8A2B2B;background:#F9E3E3}
-.gd-save[aria-pressed=true] svg{fill:#8A2B2B}
-.gd-card p{margin:0}
-.gd-addr{font-size:16px;line-height:1.45}
-.gd-addr em{display:block;font-style:normal;font-size:14px;color:var(--mute)}
-.gd-act{display:flex;flex-wrap:wrap;gap:8px}
-.gd-btn{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:0 14px;border:1.5px solid var(--link);border-radius:22px;color:var(--link);font:600 16px/1 'Inter',sans-serif;text-decoration:none;background:#fff;cursor:pointer}
-.gd-btn:hover{background:#EDF6F9}
-.gd-hours{font-size:17px;line-height:1.45}
-.gd-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;font-size:15px;color:var(--mute)}
-.gd-st{display:inline-block;padding:4px 10px;border-radius:12px;font-weight:700;font-size:14px;line-height:1.3}
-.gd-s-posted{background:#D6EDE3;color:#14523E}.gd-s-nodate{background:#D6EBF4;color:#1C4B62}
-.gd-s-call{background:#FCE6D3;color:#74390A}.gd-s-reopens{background:#F7D9D9;color:#80252A}
-.gd-sells{font-size:16px;line-height:1.5;color:var(--mute)}
-.gd-full summary{display:flex;align-items:center;min-height:44px;font-weight:700;color:var(--link);cursor:pointer}
-.gd-full>div{font-size:17px;line-height:1.65;padding:2px 0 6px}.gd-full>div p{margin:0}
+.gd-shop{padding:20px 0;border-bottom:2px dashed var(--kraft);max-width:38rem;scroll-margin-top:130px}
+.gd-shop:target{background:linear-gradient(90deg,rgba(212,165,116,.18),transparent)}
+.gd-st{display:flex;align-items:flex-start;gap:10px}
+.gd-st h3{flex:1;font-weight:800;font-size:22px;line-height:1.2;padding-top:3px}
+.gd-st .gd-i{margin-top:5px;color:var(--kraftd)}
+.gd-save{flex:none;display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 12px;border:1.5px solid var(--kraftd);border-radius:22px;background:#fff;color:var(--ink);font:600 15px/1 'Inter',sans-serif;cursor:pointer}
+.gd-save[aria-pressed=true]{color:var(--cran);border-color:var(--cran);background:#FBEDEF}
+.gd-save[aria-pressed=true] svg{fill:var(--cran)}
+.gd-shop p{margin:0}
+.gd-addr{margin-top:4px!important;font-size:17px}
+.gd-addr em{display:block;font-style:normal;font-size:15px;color:var(--mute)}
+.gd-quote{margin-top:8px!important;font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:18px;line-height:1.45}
+.gd-hours{margin-top:12px;border-left:3px solid var(--bar,#9A6F3C);padding-left:12px}
+.gd-hl{font-weight:600;line-height:1.4}
+.gd-state{font-size:15px;color:var(--sc,var(--mute))}
+.s-posted{--bar:#2F6B57;--sc:#2F6B57}.s-nodate{--bar:#2F6B57;--sc:#2F6B57}.s-call{--bar:#9A6F3C;--sc:#625749}.s-reopens{--bar:#9E2A3F;--sc:#9E2A3F}
+.s-nodate .gd-state,.s-reopens .gd-state{font-weight:600}
+.gd-last{margin-top:8px!important;font-size:15px;color:var(--mute)}
+.gd-act{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.gd-btn{display:inline-flex;align-items:center;gap:7px;min-height:44px;padding:0 14px;border:1.5px solid var(--navy);border-radius:22px;color:var(--navy);font:600 16px/1 'Inter',sans-serif;text-decoration:none;background:#fff;cursor:pointer}
+.gd-btn:hover{background:var(--sand)}
+.gd-full summary{display:flex;align-items:center;min-height:44px;margin-top:4px;font-weight:600;color:var(--navy);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.gd-full>div{font-size:17px;line-height:1.6;padding:2px 0 6px}.gd-full>div p{margin:0}
 sup.cite-q{font-size:.68em;line-height:0;margin-left:1px;white-space:nowrap}
 sup.cite-q a{position:relative;color:#566A75;text-decoration:none;font-weight:600}
 sup.cite-q a+a::before{content:","}
 sup.cite-q a::after{content:"";position:absolute;inset:-14px -4px}
 sup.cite-q a:hover{color:var(--navy);text-decoration:underline}
 .gd-more{margin:34px 0 8px}
-.gd-more>summary{display:inline-flex;align-items:center;min-height:48px;padding:0 18px;border:1.5px solid var(--link);border-radius:24px;font-weight:700;color:var(--link);cursor:pointer}
+.gd-more>summary{display:inline-flex;align-items:center;min-height:48px;padding:0 18px;border:1.5px solid var(--navy);border-radius:24px;font-weight:600;color:var(--navy);cursor:pointer}
 .gd-scroll{overflow-x:auto;margin-top:12px}
 .gd-glance{font-weight:900;font-size:24px;margin:0 0 8px}
 .gd-scroll table{border-collapse:collapse;font-size:15px;line-height:1.45;min-width:640px;width:100%}
-.gd-scroll th,.gd-scroll td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
-.gd-scroll th{background:var(--tag)}
-.gd-faq{margin-top:40px;max-width:36rem}
-.gd-faq details{border-bottom:1px solid var(--line);padding:4px 0}
-.gd-faq summary{display:flex;align-items:center;min-height:48px;font-weight:700;color:var(--navy);cursor:pointer}
+.gd-scroll th,.gd-scroll td{text-align:left;padding:9px 10px;border-bottom:1px dashed var(--kraft);vertical-align:top}
+.gd-scroll th{background:var(--sand)}
+.gd-faq{margin-top:40px;max-width:35rem}
+.gd-faq details{border-bottom:1px dashed var(--kraft);padding:4px 0}
+.gd-faq summary{display:flex;align-items:center;min-height:48px;font-weight:600;color:var(--navy);cursor:pointer}
 .gd-faq p{margin:4px 0 12px}
 .gd-end{margin-top:34px}
 .gd-plan{margin-top:38px}
 .gd-share{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:16px}
 .gd-share span{font-size:15px;color:var(--mute)}
-.gd-note{font-size:15px;line-height:1.55;background:#F3F8FA;border:1px solid #D7E8EE;border-radius:12px;padding:12px 14px;margin:28px 0 0;color:#2E4A55;max-width:36rem}
-@media(min-width:800px){.gd-hero{grid-template-columns:1.2fr .8fr;align-items:center;gap:20px 34px;padding:34px 36px}}
-@media(max-width:768px){.gd-jump{top:73px}.gd-town,.gd-card{scroll-margin-top:136px}}
-@media(max-width:480px){.gd{padding-left:14px;padding-right:14px}.gd-jump{margin-left:-14px;margin-right:-14px;padding:0 14px}.gd-hero{padding:18px}.gd-grid{grid-template-columns:1fr}}
-@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}.gd-tag,.gd-chip,.gd-btn{transition:background-color .15s,transform .15s}.gd-tag:hover{transform:translateY(-2px)}}
+.gd-note{font-size:15px;line-height:1.55;border-top:1px solid var(--line);padding-top:14px;margin:28px 0 0;color:var(--mute);max-width:35rem}
+.gd-note a{color:var(--navy)}
+.gd-bar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:2px solid var(--cran);padding:8px 14px calc(8px + env(safe-area-inset-bottom))}
+.gd-bar p{margin:0 0 6px;font-size:16px;line-height:1.35}
+.gd-bar strong{color:var(--cran)}
+.gd-barb{display:flex;flex-wrap:wrap;gap:6px}
+.gd-barb .gd-btn{font-size:15px;padding:0 11px;border-color:var(--cran);color:var(--cran)}
+.gd-baron body{padding-bottom:116px}
+@media(min-width:1000px){
+ .gd-hero{grid-template-columns:1fr 330px;grid-template-areas:"tx fg" "tw fg";gap:18px 36px;padding:34px 36px 30px;align-items:start}
+ .gd-hero>div{grid-area:tx}.gd-hero .gd-twine{grid-area:tw}.gd-fig{grid-area:fg}.gd-fig img{aspect-ratio:4/5}
+ .gd-layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:0 48px;align-items:start}
+ .gd-rail{display:block;position:sticky;top:84px;padding-top:30px}
+ .gd-jump{display:none}
+ .gd-rail ul{list-style:none;margin:0;padding:0 0 0 14px;position:relative}
+ .gd-rail ul::before{content:"";position:absolute;left:14px;top:-6px;bottom:6px;width:2px;background:var(--kraftd)}
+ .gd-rail li{position:relative;padding:0 0 8px 22px}
+ .gd-rail li::before{content:"";position:absolute;left:0;top:23px;width:22px;height:0;border-top:1.5px solid var(--kraftd)}
+ .gd-rail .gd-tag{transform-origin:0 50%;transform:rotate(var(--rt,-1deg))}
+ .gd-rail li:nth-child(even){--rt:1deg}
+ .gd-rail .gd-tag::before{display:none}
+ .gd-rail .gd-face{min-width:0;padding:11px 14px 11px 24px;clip-path:polygon(13px 0,100% 0,100% 100%,13px 100%,0 50%);display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+ .gd-rail .gd-face::before{top:50%;left:10px;margin:-4px 0 0}
+ .gd-rail .gd-face strong{display:inline;font-size:17px}
+ .gd-rail .gd-mark{top:-2px;right:-8px}
+ .gd-railsum{margin:14px 0 0;font-weight:600;color:var(--cran);font-size:16px}
+}
+@media(max-width:999px){.gd-jump{top:61px}}
+@media(max-width:768px){.gd-jump{top:73px}}
+@media(max-width:480px){.gd-face{min-width:0;padding:19px 10px 8px}.gd-face strong{font-size:16px}.gd-twine ul{gap:0 12px}.gd{padding-left:14px;padding-right:14px}.gd-jump{margin-left:-14px;margin-right:-14px;padding:0 14px}.gd-hero{padding:18px 16px 20px}}
+@media(prefers-reduced-motion:no-preference){
+ @keyframes gd-settle{from{transform:rotate(calc(var(--tilt)*-5))}55%{transform:rotate(calc(var(--tilt)*2))}to{transform:rotate(var(--tilt))}}
+ .gd-hero .gd-tag{animation:gd-settle .9s ease-out both;animation-delay:calc(var(--i)*40ms)}
+ .gd-chip,.gd-save{transition:background-color .12s,color .12s,border-color .12s}
+}
 </style>
 """
 
 DIR_JS = """<script>
-(function(){var d=document,KEY='tcc-gift-shops-2026-saved',saved=[],cur='all';
+(function(){var d=document,root=d.documentElement,KEY='tcc-gift-shops-2026-list',saved=[],shared=[],cur='all';
 try{saved=JSON.parse(localStorage.getItem(KEY)||'[]')||[]}catch(e){saved=[]}
 if(!Array.isArray(saved))saved=[];
+function $(s,r){return[].slice.call((r||d).querySelectorAll(s))}
+var cards=$('.gd-shop'),ids=cards.map(function(c){return c.id});
+saved=saved.filter(function(i){return ids.indexOf(i)>-1});
 function store(){try{localStorage.setItem(KEY,JSON.stringify(saved))}catch(e){}}
-var $=function(s,r){return[].slice.call((r||d).querySelectorAll(s))},cards=$('.gd-card'),chips=$('.gd-chip'),towns=$('.gd-town'),f=d.getElementById('gd-filters'),cnt=d.getElementById('gd-count'),mine=d.getElementById('gd-mine');
-function ok(c){if(cur==='all')return true;if(cur==='saved')return saved.indexOf(c.id)>-1;if(cur==='posted'||cur==='call')return c.dataset.hours===cur;return c.dataset.group===cur}
-function paint(){if(cur==='saved'&&!saved.length)cur='all';var n=0;
-cards.forEach(function(c){var v=ok(c);c.hidden=!v;if(v)n++;var b=$('.gd-save',c)[0],s=saved.indexOf(c.id)>-1;if(b){b.setAttribute('aria-pressed',s);b.lastElementChild.textContent=s?'Saved':'Save'}});
-towns.forEach(function(t){var any=$('.gd-card',t).some(function(c){return!c.hidden});t.hidden=!any;var a=d.querySelector('.gd-jump a[href="#'+t.id+'"]');if(a&&a.parentNode)a.parentNode.hidden=!any});
-chips.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.f===cur)});
-mine.hidden=!saved.length;mine.firstChild.nodeValue='My list ('+saved.length+')';
-cnt.textContent='Showing '+n+' of '+cards.length+' shops'}
+function inOrder(l){return cards.filter(function(c){return l.indexOf(c.id)>-1})}
+function match(c){if(cur==='all')return true;if(cur==='saved')return saved.indexOf(c.id)>-1;if(cur==='shared')return shared.indexOf(c.id)>-1;return c.dataset.hours===cur||c.dataset.group===cur}
+var f=d.getElementById('gd-filters'),cnt=d.getElementById('gd-count'),empty=d.getElementById('gd-empty'),bar=d.getElementById('gd-bar'),bt=d.getElementById('gd-bartext'),lim=d.getElementById('gd-maplimit'),msg=d.getElementById('gd-barmsg'),map=d.getElementById('gd-map'),rs=d.getElementById('gd-railsum');
+function enc(s){return encodeURIComponent(s)}
+function mapsUrl(){var l=inOrder(saved).slice(0,10);if(!l.length)return'';var last=l[l.length-1],w=l.slice(0,-1).map(function(c){return enc(c.dataset.q)});
+return'https://www.google.com/maps/dir/?api=1&destination='+enc(last.dataset.q)+(w.length?'&waypoints='+w.join('%7C'):'')}
+function listUrl(){var c=d.querySelector('link[rel=canonical]');return(c?c.href:location.href.split('#')[0])+'#list='+inOrder(saved).map(function(x){return x.id}).join(',')}
+function paint(){var n=0,s=saved.length;
+cards.forEach(function(c){var v=match(c);c.hidden=!v;if(v)n++;var b=$('.gd-save',c)[0];if(b){var on=saved.indexOf(c.id)>-1;b.setAttribute('aria-pressed',on);b.lastElementChild.textContent=on?'On my list':'Add to my list'}});
+$('.gd-town').forEach(function(t){var any=$('.gd-shop',t).some(function(c){return!c.hidden});t.hidden=!any;
+$('.gd-jump a[href="#'+t.id+'"],.gd-rail a[href="#'+t.id+'"]').forEach(function(a){a.parentNode.hidden=!any})});
+$('.gd-mark').forEach(function(m){var k=cards.filter(function(c){return c.dataset.town===m.dataset.town&&saved.indexOf(c.id)>-1}).length;m.hidden=!k;m.firstChild.nodeValue=k});
+$('.gd-chip').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.f===cur)});
+cnt.textContent='Showing '+n+' of '+cards.length+' shops';
+empty.hidden=!(cur==='saved'&&!s);
+var t='My list: '+s+(s===1?' shop':' shops');bt.textContent=t;rs.textContent=t;rs.hidden=!s;bar.hidden=!s;root.classList.toggle('gd-baron',!!s);
+if(s)map.href=mapsUrl();lim.textContent=s>10?'Maps shows the first 10 of '+s+' shops.':''}
 f.hidden=false;cnt.hidden=false;
-chips.forEach(function(b){b.addEventListener('click',function(){cur=b.dataset.f;paint()})});
-$('.gd-save').forEach(function(b){b.hidden=false;b.addEventListener('click',function(){var id=b.closest('.gd-card').id,i=saved.indexOf(id);if(i>-1)saved.splice(i,1);else saved.push(id);store();paint()})});
+$('.gd-chip').forEach(function(b){b.addEventListener('click',function(){cur=b.dataset.f;paint()})});
+$('.gd-save').forEach(function(b){b.hidden=false;b.addEventListener('click',function(){var id=b.closest('.gd-shop').id,i=saved.indexOf(id);if(i>-1)saved.splice(i,1);else saved.push(id);store();paint()})});
+function toList(){cur='saved';paint();f.scrollIntoView()}
+d.getElementById('gd-show').addEventListener('click',toList);
+d.getElementById('gd-listshare').addEventListener('click',function(){var u=listUrl();
+function say(t){msg.textContent=t}
+if(navigator.share){navigator.share({title:'My Cape Cod gift shop list',url:u}).catch(function(){})}
+else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(u).then(function(){say('Link copied')},function(){say('Copy this link: '+u)})}
+else say('Copy this link: '+u)});
+var m=/^#list=([a-z0-9,-]+)$/.exec(location.hash),sn=d.getElementById('gd-shared');
+if(m){shared=m[1].split(',').filter(function(i){return ids.indexOf(i)>-1});
+if(shared.length){d.getElementById('gd-sharedtext').textContent='Someone shared a list with you: '+shared.length+(shared.length===1?' shop':' shops');sn.hidden=false;
+d.getElementById('gd-sshow').addEventListener('click',function(){cur='shared';paint();f.scrollIntoView()});
+d.getElementById('gd-sadd').addEventListener('click',function(){shared.forEach(function(i){if(saved.indexOf(i)<0)saved.push(i)});store();sn.hidden=true;toList()})}}
 paint();
 var sb=d.getElementById('gd-share'),sm=d.getElementById('gd-sharemsg');
 if(sb){sb.hidden=false;sb.addEventListener('click',function(){var c=d.querySelector('link[rel=canonical]'),u=c?c.href:location.href.split('#')[0];
@@ -757,23 +824,21 @@ def render_directory(meta: dict, body: str, authors: dict, all_articles: list) -
             after.append((title, rest))
     n_shops = sum(len(sh) for _, sh in towns)
 
-    # filter chips: kinds with at least three shops
     gcount: dict = {}
     for e in shops.values():
         g = KIND_GROUP.get(e["kind"])
         if g:
-            gcount.setdefault(g, 0)
-            gcount[g] += 1
+            gcount[g] = gcount.get(g, 0) + 1
     groups = [g for g, n in gcount.items() if n >= 3]
 
     def tid(t):
         return "town-" + re.sub(r"[^a-z0-9]+", "-", t.lower()).strip("-")
 
-    def card_html(name, para_md, e):
-        label, hours_f, cls = STATUS[e["status"]]
-        label = e.get("status_label") or label
+    def shop_html(name, para_md, e):
+        _, hours_f, cls = STATUS[e["status"]]
         g = KIND_GROUP.get(e["kind"])
-        q = quote(f'{e["name"]} {e["address"]}', safe="")
+        qtext = f'{e["name"]} {e["address"]}'
+        q = quote(qtext, safe="")
         phone = e.get("phone")
         digits = re.sub(r"\D", "", phone or "")
         if len(digits) == 11 and digits.startswith("1"):
@@ -781,55 +846,61 @@ def render_directory(meta: dict, body: str, authors: dict, all_articles: list) -
         act = (f'<a class="gd-btn" href="https://www.google.com/maps/search/?api=1&amp;query={q}" target="_blank" rel="noopener">'
                f'{icon("pin")}Directions<span class="sr"> to {esc(name)}</span></a>')
         if phone:
-            act += f'<a class="gd-btn" href="tel:{digits}">{icon("phone")}{esc(phone)}<span class="sr"> call {esc(name)}</span></a>'
-        la = ""
+            act += f'<a class="gd-btn" href="tel:{digits}">{icon("phone")}Call {esc(phone)}<span class="sr"> {esc(name)}</span></a>'
         if e.get("latest_activity"):
-            la = f'<span>Latest activity: {esc(pretty_date(e["latest_activity"]))}</span>'
+            last = f'<p class="gd-last">Latest activity: {esc(pretty_date(e["latest_activity"]))}</p>'
         elif e.get("activity_note"):
-            la = f'<span>{esc(e["activity_note"])}</span>'
-        sells = f'<p class="gd-sells">&ldquo;{esc(e["sells_quote"])}&rdquo;</p>' if e.get("sells_quote") else ""
+            last = f'<p class="gd-last">{esc(e["activity_note"])}</p>'
+        else:
+            last = ""
+        quote_html = f'<p class="gd-quote">&ldquo;{esc(e["sells_quote"])}&rdquo;</p>' if e.get("sells_quote") else ""
         note = f'<em>{esc(e["address_note"])}</em>' if e.get("address_note") else ""
+        hl = f'<p class="gd-hl">{esc(e["hours_line"])}</p>' if e.get("hours_line") else ""
         full = md_to_html(para_md, slug, cb)
         grp = f' data-group="{g[0]}"' if g else ""
-        return (f'<article class="gd-card" id="{esc(e["anchor"])}" data-hours="{hours_f}"'
-                f'{grp}>'
-                f'<div class="gd-ct"><span class="gd-ic">{icon(KIND_ICON[e["kind"]])}</span><h3>{esc(name)}</h3>'
-                f'<button class="gd-save" type="button" aria-pressed="false" aria-label="Save {esc(name)}" hidden>{icon("heart")}<span>Save</span></button></div>'
+        return (f'<article class="gd-shop" id="{esc(e["anchor"])}" data-hours="{hours_f}" data-town="{tid(e["town"])}" data-q="{esc(qtext)}"{grp}>'
+                f'<div class="gd-st">{icon(KIND_ICON[e["kind"]])}<h3>{esc(name)}</h3>'
+                f'<button class="gd-save" type="button" aria-pressed="false" aria-label="Add to my list: {esc(name)}" hidden>{icon("heart")}<span>Add to my list</span></button></div>'
                 f'<p class="gd-addr">{esc(e["address"])}{note}</p>'
+                f'{quote_html}'
+                f'<div class="gd-hours s-{cls}">{hl}<p class="gd-state">{esc(e["state_text"])}</p></div>'
+                f'{last}'
                 f'<div class="gd-act">{act}</div>'
-                f'<p class="gd-hours">{esc(e["hours_line"])}</p>'
-                f'<p class="gd-meta"><span class="gd-st gd-s-{cls}">{esc(label)}</span>{la}</p>'
-                f'{sells}'
-                f'<details class="gd-full"><summary>Full entry<span class="sr"> for {esc(name)}</span></summary><div>{full}</div></details>'
+                f'<details class="gd-full"><summary>Read the full entry<span class="sr"> for {esc(name)}</span></summary><div>{full}</div></details>'
                 f'</article>')
 
-    town_html, strip, jump = [], [], []
-    for t, sh in towns:
-        cards = "".join(card_html(n, p, shops[n]) for n, p, _ in sh)
+    town_html, tags, rail, jump = [], [], [], []
+    for i, (t, sh) in enumerate(towns):
+        cards = "".join(shop_html(n, p, shops[n]) for n, p, _ in sh)
         asides = "".join(f'<p class="gd-aside">{esc(x)}</p>' for _, _, ax in sh for x in ax)
         cnt = len(sh)
-        town_html.append(f'<section class="gd-town" id="{tid(t)}"><h2>{esc(t)} <small>{cnt} shop{"s" if cnt != 1 else ""}</small></h2>'
-                         f'<div class="gd-grid">{cards}</div>{asides}</section>')
-        strip.append(f'<li><a class="gd-tag" href="#{tid(t)}"><span class="gd-face">{esc(t)} <b>{cnt}</b>'
-                     f'<span class="sr"> shop{"s" if cnt != 1 else ""}</span></span></a></li>')
+        word = "shop" if cnt == 1 else "shops"
+        town_html.append(f'<section class="gd-town" id="{tid(t)}"><h2>{esc(t)} <small>{cnt} {word}</small></h2>{cards}{asides}</section>')
+        face = (f'<a class="gd-tag" href="#{tid(t)}"><span class="gd-face"><strong>{esc(t)}</strong><span class="n">{cnt}<span class="sr"> {word}</span></span></span>'
+                f'<span class="gd-mark" data-town="{tid(t)}" hidden>0<span class="sr"> on my list</span></span></a>')
+        tags.append(f'<li style="--i:{i}">{face}</li>')
+        rail.append(f'<li>{face}</li>')
         jump.append(f'<li><a href="#{tid(t)}">{esc(t)}</a></li>')
 
-    ph = next(p for p in json.loads((ROOT / "data" / "photos.json").read_text(encoding="utf-8"))["photos"]
-              if p["id"] == meta["hero_photo"])
-    who = json.loads((ROOT / "data" / "photos.json").read_text(encoding="utf-8"))["photographers"][ph["photographer"]]
+    pj = json.loads((ROOT / "data" / "photos.json").read_text(encoding="utf-8"))
+    ph = next(p for p in pj["photos"] if p["id"] == meta["hero_photo"])
+    who = pj["photographers"][ph["photographer"]]
     credit = f'Photo: <a href="{esc(ph["source_url"])}" target="_blank" rel="noopener">{esc(who["name"])}</a>'
-    hero = (f'<header class="gd-hero"><div><h1>{esc(meta["title"])}</h1><p class="dek">{esc(meta["description"])}</p>'
+    t1, sep, t2 = meta["title"].partition(": ")
+    h1 = (f'<span class="gd-t1">{esc(t1)}<span class="sr">:</span></span> <span class="gd-t2">{esc(t2)}</span>' if sep
+          else f'<span class="gd-t1">{esc(meta["title"])}</span>')
+    hero = (f'<header class="gd-hero"><div><h1>{h1}</h1><p class="dek">{esc(meta["description"])}</p>'
             f'<p class="chk">Checked {pretty_date(str(meta["updated"]))}</p></div>'
+            f'<nav class="gd-twine" aria-label="Shops per town"><ul>{"".join(tags)}</ul></nav>'
             f'<figure class="gd-fig"><img src="/{esc(ph["file"])}" width="{ph["width"]}" height="{ph["height"]}" alt="{esc(ph["alt"])}" loading="lazy" decoding="async">'
-            f'<figcaption>{esc(ph["title"])}, {esc(ph["place"])}. {credit}</figcaption></figure>'
-            f'<nav class="gd-strip" aria-label="Shops per town"><ul>{"".join(strip)}</ul></nav></header>')
+            f'<figcaption>{esc(ph["title"])}, {esc(ph["place"])}. {credit}</figcaption></figure></header>')
 
     chips = ['<button class="gd-chip" type="button" data-f="all" aria-pressed="true">All</button>',
              '<button class="gd-chip" type="button" data-f="posted" aria-pressed="false">Hours posted</button>',
              '<button class="gd-chip" type="button" data-f="call" aria-pressed="false">Call ahead</button>']
     for (gk, gl) in groups:
         chips.append(f'<button class="gd-chip" type="button" data-f="{gk}" aria-pressed="false">{esc(gl)}</button>')
-    chips.append('<button class="gd-chip" id="gd-mine" type="button" data-f="saved" aria-pressed="false" hidden>My list (0)</button>')
+    chips.append('<button class="gd-chip" type="button" data-f="saved" aria-pressed="false">My list</button>')
 
     table = md_to_html(glance_md, slug, cb)
     table_html = (f'<details class="gd-more"><summary>See all {n_shops} in a table</summary>'
@@ -841,7 +912,7 @@ def render_directory(meta: dict, body: str, authors: dict, all_articles: list) -
     after_html = "".join(f'<section class="gd-prose gd-end">{md_to_html(f"## {t}" + chr(10) * 2 + r, slug, cb)}</section>'
                          for t, r in after)
     others = [m for (m, _) in all_articles if m["slug"] != slug]
-    others.sort(key=lambda m: m["slug"] != "cape-cod-holiday-events-2026")     # events guide first
+    others.sort(key=lambda m: m["slug"] != "cape-cod-holiday-events-2026")
     plan = ('<section class="gd-plan"><h2>Keep planning</h2><div class="g-cards">' + "".join(card(m) for m in others)
             + '<a class="g-card" href="/app/"><span>Free app</span><b>Open the Totally Cape Cod app</b><span>Beaches, events and eats</span></a>'
             + '</div></section>')
@@ -852,17 +923,30 @@ def render_directory(meta: dict, body: str, authors: dict, all_articles: list) -
     intro_html = md_to_html(intro, slug, cb)
     ld = article_ld(meta, a, url, sources, faq)
     crumbs = '<div class="gd-crumbs"><a href="/">Home</a> › <a href="/guides/">Guides</a></div>'
+    shared_html = ('<div class="gd-shared" id="gd-shared" hidden><p id="gd-sharedtext"></p>'
+                   '<button class="gd-btn" id="gd-sshow" type="button">Show these shops</button>'
+                   '<button class="gd-btn" id="gd-sadd" type="button">Add them to my list</button></div>')
+    bar = ('<div class="gd-bar" id="gd-bar" hidden><p><strong id="gd-bartext">My list: 0 shops</strong> '
+           '<span id="gd-barstatus" role="status"><span id="gd-maplimit"></span> <span id="gd-barmsg"></span></span></p>'
+           '<div class="gd-barb"><button class="gd-btn" id="gd-show" type="button">Show my list</button>'
+           '<a class="gd-btn" id="gd-map" href="#" target="_blank" rel="noopener">Map my list</a>'
+           '<button class="gd-btn" id="gd-listshare" type="button">Share my list</button></div></div>')
     return (head(f'{meta.get("seo_title") or meta["title"]} | Totally Cape Cod', meta["description"], url, ld, extra=DIR_CSS)
             + f"""{SPRITE}<main class="gd">
 {crumbs}
 {hero}
 {trust_box(meta, len(sources), True)}
+{shared_html}
 <div class="gd-prose">{intro_html}</div>
-<div class="gd-list">
+<div class="gd-layout">
+<aside class="gd-rail"><nav class="gd-twine" aria-label="Jump to town, side list"><ul>{"".join(rail)}</ul></nav><p class="gd-railsum" id="gd-railsum" hidden></p></aside>
+<div class="gd-listcol">
 <nav class="gd-jump" aria-label="Jump to town"><span class="lbl">Jump to town</span><ul>{"".join(jump)}</ul></nav>
 <div class="gd-filters" id="gd-filters" role="group" aria-label="Filter shops" hidden>{"".join(chips)}</div>
 <p class="gd-count" id="gd-count" role="status" hidden></p>
+<p class="gd-empty" id="gd-empty" hidden>Nothing is on your list yet. Choose &ldquo;Add to my list&rdquo; on a shop to start.</p>
 {"".join(town_html)}
+</div>
 </div>
 {table_html}
 {faq_html}
@@ -871,6 +955,7 @@ def render_directory(meta: dict, body: str, authors: dict, all_articles: list) -
 {share}
 {plan}
 <div class="gd-note">📝 {esc(disclosure)} Spot something out of date? <a href="/contact.html">Tell us</a> and we'll fix it.</div>
+{bar}
 </main>
 {FOOTER}
 {DIR_JS}
