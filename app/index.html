@@ -63,7 +63,6 @@
 </script>
 
 <!-- GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0YM9WQLWK"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -74,7 +73,9 @@
 <!-- Both third-party stylesheets load non-blocking (media=print flips to all on load), so a
      slow unpkg/Google response can't hold up first paint. noscript keeps them working
      without JS. Fonts use display=swap, so text renders in the fallback face immediately. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://unpkg.com" crossorigin>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""
       media="print" onload="this.media='all'"/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"
@@ -530,7 +531,7 @@
 
 <div class="app-shell">
   <div class="app-topbar">
-    <img src="/icon-512.png" alt="Totally Cape Cod" />
+    <img src="/icon-512.png" alt="Totally Cape Cod" width="512" height="512" fetchpriority="high" decoding="async" />
   </div>
   <div class="ios-content" id="iosContent">
 
@@ -766,7 +767,7 @@
       <!-- TASK9 Lever 2: Enhanced paywall persuasion copy -->
       <div id="proSplashLocked">
         <div style="background:linear-gradient(135deg,#1A3A6C 0%,#2C5599 100%); color:white; padding:30px 20px; text-align:center;">
-          <img src="/icon-512.png" alt="Totally Cape Cod" class="tcc-logo-float" style="height:84px; width:auto; display:block; margin:0 auto; filter:drop-shadow(0 2px 8px rgba(0,0,0,0.25));" />
+          <img src="/icon-512.png" alt="Totally Cape Cod" class="tcc-logo-float" width="512" height="512" loading="lazy" decoding="async" style="height:84px; width:auto; display:block; margin:0 auto; filter:drop-shadow(0 2px 8px rgba(0,0,0,0.25));" />
           <div class="font-display" style="font-weight:900; font-size:30px; margin-top:8px;">Cape Cod Pro</div>
           <!-- Trust line: one-time, lifetime, no subscription -->
           <div style="opacity:0.9; font-size:12px; margin-top:6px; letter-spacing:0.02em;">One-time payment · yours forever · no subscription · restore anytime</div>
@@ -830,7 +831,7 @@
   <div class="modal-sheet" style="border-radius:24px 24px 0 0;">
     <div class="modal-handle"></div>
     <div style="text-align:center; padding:4px 0 14px;">
-      <img src="/icon-512.png" alt="Totally Cape Cod" style="height:68px; width:auto; display:block; margin:0 auto;" />
+      <img src="/icon-512.png" alt="Totally Cape Cod" width="512" height="512" loading="lazy" decoding="async" style="height:68px; width:auto; display:block; margin:0 auto;" />
       <div class="font-display" style="font-weight:900; font-size:24px; color:var(--cape-navy); margin-top:6px;">Plan your Cape Cod day</div>
       <div style="color:var(--ios-sub); font-size:13px; margin-top:4px;">Beaches, tides, bridge traffic and upcoming events →</div>
     </div>
@@ -1137,7 +1138,7 @@
   <div class="modal-sheet">
     <div class="modal-handle"></div>
     <div style="text-align:center;">
-      <img src="/icon-512.png" alt="Totally Cape Cod" style="height:60px; width:auto; display:block; margin:0 auto;" />
+      <img src="/icon-512.png" alt="Totally Cape Cod" width="512" height="512" loading="lazy" decoding="async" style="height:60px; width:auto; display:block; margin:0 auto;" />
       <div class="font-display" style="font-weight:900; font-size:24px; margin-top:6px;">Cape Cod Pro</div>
       <div style="color:var(--ios-sub); font-size:12px; margin-top:2px;">One-time payment · yours forever · no subscription</div>
     </div>

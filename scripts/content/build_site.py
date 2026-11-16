@@ -311,7 +311,6 @@ def head(title: str, description: str, url: str, jsonld: list, og_type="article"
 <meta name="twitter:description" content="{esc(description)}" />
 <meta name="twitter:image" content="{SITE}/og-image.png" />
 <link rel="alternate" type="application/rss+xml" title="Totally Cape Cod Guides" href="{SITE}/guides/feed.xml" />
-<script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','{GA_ID}');</script>
 <script src="/js/pixel.js" defer></script>
 <script src="/js/season.js"></script>
