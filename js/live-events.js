@@ -60,6 +60,16 @@
     'Heritage Museums': 'Heritage Museums & Gardens', 'Highfield Hall': 'Highfield Hall & Gardens',
     'Payomet': 'Payomet Performing Arts Center', 'Melody Tent': 'Cape Cod Melody Tent'
   };
+  // "Add to my list" toggle (js/mylist.js): date and place come from the listing itself.
+  function mlBtn(e) {
+    var L = window.TCCList;
+    if (!L || !e.id || !e.title) return '';
+    var k = eventDay(e), t = timeLabel(e);
+    var when = new Intl.DateTimeFormat('en-US', { timeZone: 'UTC', weekday: 'short', month: 'short', day: 'numeric' }).format(new Date(k + 'T12:00:00Z'));
+    if (/AM|PM/.test(t)) when += ', ' + t;
+    return '<div class="ml-row">' + L.btnHtml({ id: 'event:' + e.id, type: 'event', name: e.title, town: e.town || '', address: '',
+      url: '/events?date=' + k, detail: when + (e.venue ? ' at ' + e.venue : '') }) + '</div>';
+  }
   function card(e) {
     var where = [e.venue, e.town].filter(Boolean).map(esc).join(' · ');
     var src = safeUrl(e.source_url);
@@ -73,6 +83,7 @@
       '<p style="font-size:13px;color:var(--text-secondary,#6b6b6b);margin:0 0 8px;">' + where + (where ? ' · ' : '') + esc(timeLabel(e)) + '</p>' +
       (e.price ? '<p style="font-size:13px;margin:0 0 8px;">🎟️ ' + esc(e.price) + '</p>' : '') +
       (credit ? '<p style="font-size:12px;color:var(--text-secondary,#6b6b6b);margin:0;">' + credit + '</p>' : '') +
+      mlBtn(e) +
       '</div>';
   }
   function safeRe(src) {

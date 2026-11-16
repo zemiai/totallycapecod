@@ -43,11 +43,12 @@
 .stay-card .src{font-size:11px;color:var(--text-secondary);margin:0 0 10px;}
 .stay-card .src a{color:inherit;text-decoration:underline;}
 </style>
+<script src="/js/mylist.js"></script>
 </head>
 <body>
-<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/app/">📱 App</a></div><button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button></div></nav>
+<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 App</a></div><button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button></div></nav>
 <div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()">
-    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/app/">📱 Open the App</a>
+    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 Open the App</a>
   </div></div>
 
 <section class="hero" style="min-height:50vh;"><div class="hero-overlay"></div><div class="hero-content" style="padding-top:80px;"><div class="hero-badge">🏨 Cape Cod Stays</div><h1 class="hero-title">Where to <span class="script">Stay</span></h1><p class="hero-subtitle">Hotels, B&amp;Bs, camping and vacation rentals. Compare prices on Booking.com and VRBO.</p></div></section>
@@ -94,18 +95,22 @@ const stays=[
 {search:true,name:"Vacation rentals in Wellfleet",town:"Wellfleet",type:"rental",desc:"Browse current Wellfleet rental listings and prices on VRBO and Booking.com."},
 {search:true,name:"Vacation rentals in Provincetown",town:"Provincetown",type:"rental",desc:"Browse current Provincetown rental listings and prices on VRBO and Booking.com."},
 ];
+// "Add to my list" toggle (js/mylist.js). The vacation-rental search cards are searches, not places, so they get none.
+function mlKey(s){return window.TCCList?TCCList.slug(s.name):'';}
+function mlBtn(s){return window.TCCList&&!s.search?'<div class="ml-row">'+TCCList.btnHtml({id:'stay:'+mlKey(s),type:'stay',name:s.name,town:s.town,address:'',url:'/stays.html#stay-'+mlKey(s)})+'</div>':'';}
 let stayFilter='all';
 function renderStays(){
   const grid=document.getElementById('stayGrid');
   const filtered=stayFilter==='all'?stays:stays.filter(s=>s.type===stayFilter);
   grid.innerHTML=filtered.map(s=>`
-    <div class="stay-card">
+    <div class="stay-card" id="stay-${mlKey(s)}">
       <div class="cover${s.img?'':' tile-cover'}"${s.img?` style="background-image:url('${s.img}')"`:` style="background:linear-gradient(135deg,#2F6E80,#7BBCD0)"`}>${s.img?'':`<span class="tile-label">🏨 ${s.town}</span>`}</div>
       <div class="body">
         <h3>${s.name}</h3>
         <div class="meta">${s.town}${s.search?' · search':''}</div>
         ${s.desc?`<p style="font-size:13px;color:var(--text-secondary);margin:0 0 6px;line-height:1.5;">${s.desc}</p>`:''}
         ${s.site?`<p class="src">Source: <a href="${s.site}" target="_blank" rel="noopener">the property's website ↗</a></p>`:''}
+        ${mlBtn(s)}
         <div class="actions">
           <a href="https://www.booking.com/searchresults.html?ss=${encodeURIComponent(s.search?s.town+', Massachusetts':s.name+' '+s.town)}" target="_blank" rel="noopener" class="btn-view" onclick="gtag('event','affiliate_click',{type:'booking',item:'${s.name}',location:'stays_card'})">Booking.com</a>
           <a href="https://www.vrbo.com/search/keywords:${encodeURIComponent(s.town+'-cape-cod-massachusetts')}" target="_blank" rel="noopener" class="btn-book" onclick="gtag('event','affiliate_click',{type:'vrbo',item:'${s.name}',location:'stays_card'})">VRBO</a>

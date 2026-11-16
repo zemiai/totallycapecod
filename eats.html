@@ -44,11 +44,12 @@
 .eat-card .src{font-size:11px;color:var(--text-secondary);margin:0 0 10px;}
 .eat-card .src a{color:inherit;text-decoration:underline;}
 </style>
+<script src="/js/mylist.js"></script>
 </head>
 <body>
-<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/app/">📱 App</a></div><button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button></div></nav>
+<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 App</a></div><button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button></div></nav>
 <div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()">
-    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/app/">📱 Open the App</a>
+    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 Open the App</a>
   </div></div>
 
 <section class="hero" style="min-height:50vh;"><div class="hero-overlay"></div><div class="hero-content" style="padding-top:80px;"><div class="hero-badge">🦐 Cape Cod Dining</div><h1 class="hero-title">Where to <span class="script">Eat</span></h1><p class="hero-subtitle">Lobster rolls, clam shacks, bakeries and waterfront dining, with Google ratings and closure flags, refreshed weekly.</p></div></section>
@@ -109,6 +110,9 @@ const eats=[
 // (Google ratings, refreshed by the eats pipeline), not from hard-coded numbers.
 let live={};
 function esc(t){return String(t==null?'':t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+// "Add to my list" toggle (js/mylist.js); the card id is where My list links back to.
+function mlKey(r){return window.TCCList?TCCList.slug(r.name):'';}
+function mlBtn(r){return window.TCCList?'<div class="ml-row">'+TCCList.btnHtml({id:'eat:'+mlKey(r),type:'eat',name:r.name,town:r.town,address:'',url:'/eats.html#eat-'+mlKey(r)})+'</div>':'';}
 let eatFilter='all';
 function renderEats(){
   const grid=document.getElementById('eatGrid');
@@ -118,7 +122,7 @@ function renderEats(){
     const closed=L.business_status==='CLOSED_TEMPORARILY';
     const rating=L.rating?` · ⭐ ${esc(L.rating)} on Google`:'';
     return `
-    <div class="eat-card">
+    <div class="eat-card" id="eat-${mlKey(r)}">
       <div class="cover${r.img?'':' tile-cover'}"${r.img?` style="background-image:url('${r.img}')"`:` style="background:linear-gradient(135deg,#8A6440,#D4A574)"`}>${r.img?'':`<span class="tile-label">🍽️ ${esc(r.cuisine||r.town)}</span>`}${L.price?`<span class="price-pill" title="Google price level">${esc(L.price)} on Google</span>`:''}</div>
       <div class="body">
         <h3>${esc(r.name)}</h3>
@@ -127,6 +131,7 @@ function renderEats(){
         <div class="tags">${r.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
         ${r.desc?`<p style="font-size:13px;color:var(--text-secondary);margin:0 0 6px;line-height:1.5;">${esc(r.desc)}</p>`:''}
         ${r.src?`<p class="src">Source: <a href="${esc(r.src.url)}" target="_blank" rel="noopener">${esc(r.src.label)} ↗</a></p>`:((L.website&&!L.website_hidden)?`<p class="src"><a href="${esc(L.website)}" target="_blank" rel="noopener">Restaurant website ↗</a></p>`:'')}
+        ${mlBtn(r)}
         <div class="actions">
           <a href="https://www.yelp.com/search?find_desc=${encodeURIComponent(r.name)}&find_loc=${encodeURIComponent(r.town)}%2C+MA" target="_blank" rel="noopener" class="btn-view" onclick="gtag('event','affiliate_click',{type:'yelp',item:'${esc(r.name)}',location:'eats_card'})">Reviews</a>
           <a href="https://www.opentable.com/s?term=${encodeURIComponent(r.name)}&metroId=66" target="_blank" rel="noopener" class="btn-book" onclick="gtag('event','affiliate_click',{type:'opentable',item:'${esc(r.name)}',location:'eats_card'})">Reserve</a>

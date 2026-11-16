@@ -17,6 +17,7 @@
   .nf-links a { display: flex; align-items: center; min-height: 56px; padding: 0 18px; border-radius: var(--radius-md); background: #fff; border: 1px solid var(--divider); color: var(--text); font-weight: 700; text-decoration: none; box-shadow: var(--shadow-sm); }
   .nf-links a:hover { border-color: var(--sea-soft); }
 </style>
+<script src="/js/mylist.js"></script>
 </head>
 <body>
 
@@ -24,12 +25,12 @@
 <nav class="site-nav" id="siteNav">
   <div class="nav-inner">
     <a href="/" class="nav-logo">Totally Cape Cod</a>
-    <div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/app/" class="nav-cta">📱 Get the App</a></div>
+    <div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/" class="nav-cta">📱 Get the App</a></div>
     <button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button>
   </div>
 </nav>
 
-<div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()"><a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/app/">📱 Open the App</a></div></div>
+<div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()"><a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 Open the App</a></div></div>
 
 <main class="nf-wrap">
   <h1>We couldn't find that page</h1>

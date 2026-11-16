@@ -215,10 +215,10 @@ def md_to_html(md: str, slug: str, cite_base: str | None = None) -> str:
 
 NAV = ('<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a>'
        '<div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a>'
-       '<a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/app/">📱 App</a></div>'
+       '<a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 App</a></div>'
        '<button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button></div></nav>'
        '<div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()">'
-       '<a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/app/">📱 Open the App</a></div></div>')
+       '<a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 Open the App</a></div></div>')
 
 FOOTER = ('<footer class="site-footer"><div class="footer-inner"><div><div class="footer-brand">Totally Cape Cod</div>'
           '<p class="footer-desc">Cape Cod beaches, events and eats, linked to their sources.</p></div>'
@@ -314,6 +314,7 @@ def head(title: str, description: str, url: str, jsonld: list, og_type="article"
 <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','{GA_ID}');</script>
 <script src="/js/pixel.js" defer></script>
 <script src="/js/season.js"></script>
+<script src="/js/mylist.js"></script>
 <link rel="stylesheet" href="/css/tcc.css" />
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
@@ -794,13 +795,17 @@ sup.cite-q a:hover{color:var(--navy);text-decoration:underline}
 """
 
 DIR_JS = """<script>
-(function(){var d=document,root=d.documentElement,KEY='tcc-gift-shops-2026-list',saved=[],shared=[],cur='all';
-try{saved=JSON.parse(localStorage.getItem(KEY)||'[]')||[]}catch(e){saved=[]}
-if(!Array.isArray(saved))saved=[];
+(function(){var d=document,root=d.documentElement,KEY='tcc-gift-shops-2026-list',saved=[],shared=[],cur='all',L=window.TCCList;
+if(!L)return;
 function $(s,r){return[].slice.call((r||d).querySelectorAll(s))}
 var cards=$('.gd-shop'),ids=cards.map(function(c){return c.id});
-saved=saved.filter(function(i){return ids.indexOf(i)>-1});
+function itemOf(c){var h=$('h3',c)[0],a=$('.gd-addr',c)[0],t=c.closest('.gd-town'),th=t&&$('h2',t)[0];
+return{id:'shop:'+c.id,type:'shop',name:h.textContent,town:th?th.firstChild.nodeValue.trim():'',address:a?a.firstChild.nodeValue.trim():'',url:location.pathname+'#'+c.id}}
+cards.forEach(function(c){L.refresh(itemOf(c))});
+L.items().forEach(function(i){if(i.stub&&i.type==='shop'&&i.url.split('#')[0]===location.pathname&&ids.indexOf(i.id.slice(5))<0)L.drop(i.id)});
+function pull(){saved=L.items().filter(function(i){return i.type==='shop'&&ids.indexOf(i.id.slice(5))>-1}).map(function(i){return i.id.slice(5)})}
 function store(){try{localStorage.setItem(KEY,JSON.stringify(saved))}catch(e){}}
+pull();
 function inOrder(l){return cards.filter(function(c){return l.indexOf(c.id)>-1})}
 function match(c){if(cur==='all')return true;if(cur==='saved')return saved.indexOf(c.id)>-1;if(cur==='shared')return shared.indexOf(c.id)>-1;return c.dataset.hours===cur||c.dataset.group===cur}
 var f=d.getElementById('gd-filters'),cnt=d.getElementById('gd-count'),empty=d.getElementById('gd-empty'),bar=d.getElementById('gd-bar'),bt=d.getElementById('gd-bartext'),lim=d.getElementById('gd-maplimit'),msg=d.getElementById('gd-barmsg'),map=d.getElementById('gd-map'),rs=d.getElementById('gd-railsum');
@@ -820,7 +825,8 @@ var t='My list: '+s+(s===1?' shop':' shops');bt.textContent=t;rs.textContent=t;r
 if(s)map.href=mapsUrl();lim.textContent=s>10?'Maps shows the first 10 of '+s+' shops.':''}
 f.hidden=false;cnt.hidden=false;
 $('.gd-chip').forEach(function(b){b.addEventListener('click',function(){cur=b.dataset.f;paint()})});
-$('.gd-save').forEach(function(b){b.hidden=false;b.addEventListener('click',function(){var id=b.closest('.gd-shop').id,i=saved.indexOf(id);if(i>-1)saved.splice(i,1);else saved.push(id);store();paint()})});
+$('.gd-save').forEach(function(b){b.hidden=false;b.addEventListener('click',function(){L.toggle(itemOf(b.closest('.gd-shop')))})});
+L.onChange(function(){pull();store();paint()});
 function toList(){cur='saved';paint();f.scrollIntoView()}
 d.getElementById('gd-show').addEventListener('click',toList);
 d.getElementById('gd-listshare').addEventListener('click',function(){var u=listUrl();
@@ -832,7 +838,7 @@ var m=/^#list=([a-z0-9,-]+)$/.exec(location.hash),sn=d.getElementById('gd-shared
 if(m){shared=m[1].split(',').filter(function(i){return ids.indexOf(i)>-1});
 if(shared.length){d.getElementById('gd-sharedtext').textContent='Someone shared a list with you: '+shared.length+(shared.length===1?' shop':' shops');sn.hidden=false;
 d.getElementById('gd-sshow').addEventListener('click',function(){cur='shared';paint();f.scrollIntoView()});
-d.getElementById('gd-sadd').addEventListener('click',function(){shared.forEach(function(i){if(saved.indexOf(i)<0)saved.push(i)});store();sn.hidden=true;toList()})}}
+d.getElementById('gd-sadd').addEventListener('click',function(){L.addMany(cards.filter(function(c){return shared.indexOf(c.id)>-1}).map(itemOf));sn.hidden=true;toList()})}}
 paint();
 var sb=d.getElementById('gd-share'),sm=d.getElementById('gd-sharemsg');
 if(sb){sb.hidden=false;sb.addEventListener('click',function(){var c=d.querySelector('link[rel=canonical]'),u=c?c.href:location.href.split('#')[0];
