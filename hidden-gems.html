@@ -22,71 +22,52 @@
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-<style>
-  .content-wrap{max-width:1080px;margin:0 auto;padding:0 20px 64px;}
-  .gem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-  @media(max-width:768px){.gem-grid{grid-template-columns:repeat(2,1fr);}}
-  @media(max-width:560px){.gem-grid{grid-template-columns:1fr;}}
-  .gem-card{background:white;border-radius:var(--radius-md);padding:18px;box-shadow:var(--shadow-sm);border:1px solid rgba(0,0,0,0.03);} 
-  .gem-card h3{font-family:'Fraunces',serif;font-weight:900;font-size:20px;margin:0 0 8px;color:var(--cape-brown-dark);} 
-  .gem-card .meta{font-size:12px;color:var(--text-secondary);margin-bottom:10px;} 
-  .list{display:grid;gap:12px;} 
-  .list-item{padding:14px 0;border-bottom:1px solid var(--divider);} 
-  .list-item:last-child{border-bottom:none;} 
-  .list-item strong{color:var(--cape-brown-dark);} 
-  .callout{background:linear-gradient(135deg,var(--cape-navy) 0%,var(--cape-navy-dark) 100%);color:white;border-radius:var(--radius-lg);padding:22px;display:flex;justify-content:space-between;gap:14px;align-items:center;flex-wrap:wrap;}
-  .callout a{background:white;color:var(--cape-navy);padding:12px 18px;border-radius:12px;font-weight:800;text-decoration:none;}
-  .checklist{background:linear-gradient(135deg,var(--cape-cream) 0%,#fff 100%);border:1px solid var(--divider);border-radius:var(--radius-lg);padding:22px;}
-</style>
 <script src="/js/mylist.js"></script>
 </head>
-<body>
-<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 App</a></div><button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button></div></nav>
+<body class="dc">
+<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/feed.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>App</a></div><button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button></div></nav>
 <div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()">
-    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 Open the App</a>
+    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>Open the App</a>
   </div></div>
 
-<section class="hero" style="min-height:56vh;"><div class="hero-overlay"></div><div class="hero-content" style="padding-top:84px;max-width:860px;"><div class="hero-badge">Detours</div><h1 class="hero-title">Cape Cod Detours</h1><p class="hero-subtitle">Two beaches and a trail, with the parking, dog and tide rules linked to their sources.</p></div></section>
+<section class="hero"><div class="hero-overlay"></div><div class="hero-content"><div class="hero-badge">Detours</div><h1 class="hero-title">Cape Cod Detours</h1><p class="hero-subtitle">Two beaches and a trail, with the parking, dog and tide rules linked to their sources.</p></div></section>
 
 <div class="content-wrap">
   <section class="section">
-    <p style="line-height:1.75;color:var(--text-primary);">Each stop below lists only what we could confirm with the town or the National Park Service, with a link so you can check it before you go. Rules change from season to season.</p>
+    <p>Each stop below lists only what we could confirm with the town or the National Park Service, with a link so you can check it before you go. Rules change from season to season.</p>
   </section>
 
-  <div class="gem-grid">
-    <div class="gem-card"><h3>Ballston Beach</h3><div class="meta">Truro · Ocean beach at the end of South Pamet Road</div><p>From the 3rd Saturday of June to Labor Day, the 65-space lot needs a Truro beach sticker (no day passes), and dogs aren’t allowed 9 AM–6 PM. There are no lifeguards.</p><p class="meta" style="margin:8px 0 0;">Sources: <a href="https://truro-ma.gov/177/Ballston-Beach" target="_blank" rel="noopener">Town of Truro: Ballston Beach</a> · <a href="https://truro-ma.gov/241/Pet-Closures" target="_blank" rel="noopener">Town of Truro: pet rules</a></p></div>
-    <div class="gem-card"><h3>Paine's Creek Beach</h3><div class="meta">Brewster · Cape Cod Bay</div><p>Brewster requires a beach parking permit from June 15 through the Sunday of Labor Day. A portable toilet is available from Memorial Day through the October holiday weekend.</p><p class="meta" style="margin:8px 0 0;">Source: <a href="https://www.brewster-ma.gov/250/Beach-Information" target="_blank" rel="noopener">Town of Brewster: beach information</a></p></div>
-    <div class="gem-card"><h3>Great Island Trail to Jeremy Point</h3><div class="meta">Wellfleet · Cape Cod National Seashore</div><p>The National Seashore’s most difficult trail: up to 8.8 miles round trip, mostly soft sand, out to the Jeremy Point overlook. Portions are submerged at high tide, so bring water and plan around the tide.</p><p class="meta" style="margin:8px 0 0;">Source: <a href="https://www.nps.gov/caco/planyourvisit/greatislandtrail.htm" target="_blank" rel="noopener">NPS: Great Island Trail</a></p></div>
+  <div class="gem-grid rws">
+    <div class="gem-card rw"><h2>Ballston Beach</h2><div class="meta">Truro<span class=dot aria-hidden=true> · </span>Ocean beach at the end of South Pamet Road</div><p>From the 3rd Saturday of June to Labor Day, the 65-space lot needs a Truro beach sticker (no day passes), and dogs aren’t allowed 9 AM–6 PM. There are no lifeguards.</p><p class="src">Sources: <a href="https://truro-ma.gov/177/Ballston-Beach" target="_blank" rel="noopener">Town of Truro: Ballston Beach</a><span class=dot aria-hidden=true> · </span><a href="https://truro-ma.gov/241/Pet-Closures" target="_blank" rel="noopener">Town of Truro: pet rules</a></p></div>
+    <div class="gem-card rw"><h2>Paine's Creek Beach</h2><div class="meta">Brewster<span class=dot aria-hidden=true> · </span>Cape Cod Bay</div><p>Brewster requires a beach parking permit from June 15 through the Sunday of Labor Day. A portable toilet is available from Memorial Day through the October holiday weekend.</p><p class="src">Source: <a href="https://www.brewster-ma.gov/250/Beach-Information" target="_blank" rel="noopener">Town of Brewster: beach information</a></p></div>
+    <div class="gem-card rw"><h2>Great Island Trail to Jeremy Point</h2><div class="meta">Wellfleet<span class=dot aria-hidden=true> · </span>Cape Cod National Seashore</div><p>The National Seashore’s most difficult trail: up to 8.8 miles round trip, mostly soft sand, out to the Jeremy Point overlook. Portions are submerged at high tide, so bring water and plan around the tide.</p><p class="src">Source: <a href="https://www.nps.gov/caco/planyourvisit/greatislandtrail.htm" target="_blank" rel="noopener">NPS: Great Island Trail</a></p></div>
   </div>
 
   <section class="section">
     <h2 class="section-title">More ideas for a slower day</h2>
-    <div class="list">
-      <div class="list-item"><strong>1. Watch the sunrise from a harbor.</strong> Bring coffee and an extra layer.</div>
-      <div class="list-item"><strong>2. Visit a bookstore or a gallery</strong> when the weather turns.</div>
-      <div class="list-item"><strong>3. Walk a harbor after dinner.</strong></div>
-      <div class="list-item"><strong>4. Bike the Cape Cod Rail Trail,</strong> a paved trail through six Cape towns (<a href="https://www.mass.gov/locations/cape-cod-rail-trail" target="_blank" rel="noopener">Mass DCR</a>).</div>
-      <div class="list-item"><strong>5. Drive Route 6A,</strong> named a National Scenic Byway in 2021 (<a href="https://www.capecodcommission.org/about-us/newsroom/experience-cape-cods-historic-route-6a" target="_blank" rel="noopener">Cape Cod Commission</a>).</div>
-      <div class="list-item"><strong>6. Stay for sunset</strong> with nowhere else to be.</div>
+    <div class="list rws">
+      <div class="list-item rx"><strong>1. Watch the sunrise from a harbor.</strong> Bring coffee and an extra layer.</div>
+      <div class="list-item rx"><strong>2. Visit a bookstore or a gallery</strong> when the weather turns.</div>
+      <div class="list-item rx"><strong>3. Walk a harbor after dinner.</strong></div>
+      <div class="list-item rx"><strong>4. Bike the Cape Cod Rail Trail,</strong> a paved trail through six Cape towns (<a href="https://www.mass.gov/locations/cape-cod-rail-trail" target="_blank" rel="noopener">Mass DCR</a>).</div>
+      <div class="list-item rx"><strong>5. Drive Route 6A,</strong> named a National Scenic Byway in 2021 (<a href="https://www.capecodcommission.org/about-us/newsroom/experience-cape-cods-historic-route-6a" target="_blank" rel="noopener">Cape Cod Commission</a>).</div>
+      <div class="list-item rx"><strong>6. Stay for sunset</strong> with nowhere else to be.</div>
     </div>
   </section>
 
   <section class="section">
-    <div class="checklist">
-      <h2 class="section-title" style="margin-top:0;">Get Cape Cod updates by email</h2>
-      <p style="margin-top:-4px;color:var(--text-secondary);">Join the Totally Cape Cod email list for new guides and spots as we add them.</p>
-      <form id="hiddenLeadForm" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
-        <input type="email" id="hiddenLeadEmail" placeholder="your@email.com" required style="flex:1;min-width:240px;padding:14px 16px;border:1px solid var(--divider);border-radius:12px;font-size:15px;" />
-        <button class="btn btn-primary" type="submit">Sign me up →</button>
+    <div class="sig">
+      <h2 class="section-title">Get Cape Cod updates by email</h2>
+      <p>Join the Totally Cape Cod email list for new guides and spots as we add them.</p>
+      <form id="hiddenLeadForm" class="em">
+        <input type="email" id="hiddenLeadEmail" placeholder="your@email.com" required />
+        <button class="btn btn-primary" type="submit">Sign me up<span class=x> →</span></button>
       </form>
-      <div id="hiddenLeadMsg" style="margin-top:12px;font-size:14px;color:var(--text-secondary);"></div>
+      <div id="hiddenLeadMsg" class="msg"></div>
     </div>
   </section>
 
-  <div class="callout">
-    <div><div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.8;font-weight:700;">Stay nearby</div><div style="font-family:'Fraunces',serif;font-size:24px;font-weight:900;margin-top:4px;">Find a place to stay</div><div style="opacity:.9;font-size:14px;margin-top:6px;max-width:640px;">Search Cape Cod hotels and rentals on Booking.com.</div></div>
-    <a href="https://www.booking.com/searchresults.html?ss=Cape+Cod" target="_blank" rel="noopener" onclick="gtag('event','affiliate_click',{type:'booking',location:'hidden_gems_cta'})">Find a stay →</a>
-  </div>
+  <div class="affiliate-band"><div><div class="label">Stay nearby</div><div class="title">Find a place to stay</div><p>Search Cape Cod hotels and rentals on Booking.com.</p></div><a class="btn btn-ghost" href="https://www.booking.com/searchresults.html?ss=Cape+Cod" target="_blank" rel="noopener" onclick="gtag('event','affiliate_click',{type:'booking',location:'hidden_gems_cta'})">Find a stay<span class=x> →</span></a></div>
 </div>
 
 <footer class="site-footer">
@@ -101,7 +82,7 @@ document.getElementById('hiddenLeadForm').addEventListener('submit',async(e)=>{e
 <script>
 // "Add to my list" toggles (js/mylist.js), added only when JavaScript runs. Name and town are read from each card.
 (function(){var L=window.TCCList;if(!L)return;
-document.querySelectorAll('.gem-card').forEach(function(c){var h=c.querySelector('h3'),m=c.querySelector('.meta');if(!h||!m)return;
+document.querySelectorAll('.gem-card').forEach(function(c){var h=c.querySelector('h2'),m=c.querySelector('.meta');if(!h||!m)return;
 var name=h.textContent.trim(),k=L.slug(name),town=m.textContent.split(' \u00b7 ')[0].trim();
 if(!c.id)c.id='gem-'+k;
 L.attach(c,{id:(/beach/i.test(name)?'beach:':'experience:')+k,type:/beach/i.test(name)?'beach':'experience',name:name,town:town,address:'',url:'/hidden-gems.html#'+c.id})})})();

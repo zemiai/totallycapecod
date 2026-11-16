@@ -23,26 +23,6 @@
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-<style>
-  .content-wrap{max-width:1080px;margin:0 auto;padding:0 20px 64px;}
-  .region-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
-  @media(max-width:768px){.region-grid{grid-template-columns:1fr;}}
-  .beach-mini{background:white;border-radius:var(--radius-md);padding:18px;box-shadow:var(--shadow-sm);border:1px solid rgba(0,0,0,0.03);}
-  .beach-mini h3{font-family:'Fraunces',serif;font-weight:900;font-size:20px;margin:0 0 6px;color:var(--cape-brown-dark);}
-  .beach-mini .row{font-size:13px;color:var(--text-secondary);margin:3px 0;}
-  .beach-mini .src{font-size:12px;color:var(--text-secondary);margin:8px 0 0;}
-  .beach-mini .src a{color:inherit;text-decoration:underline;}
-  .faq{background:linear-gradient(135deg,var(--cape-cream) 0%,#fff 100%);border-radius:var(--radius-lg);padding:22px;border:1px solid var(--divider);}
-  .faq-item{padding:14px 0;border-bottom:1px solid var(--divider);}
-  .faq-item:last-child{border-bottom:none;}
-  .faq-q{font-weight:700;color:var(--cape-brown-dark);margin-bottom:6px;}
-  .faq-src{font-size:12px;color:var(--text-secondary);margin-top:4px;}
-  .faq-src a{color:inherit;text-decoration:underline;}
-  .callout{background:linear-gradient(135deg,var(--cape-navy) 0%,var(--cape-navy-dark) 100%);color:white;border-radius:var(--radius-lg);padding:22px;display:flex;justify-content:space-between;gap:14px;align-items:center;flex-wrap:wrap;}
-  .callout a{background:white;color:var(--cape-navy);padding:12px 18px;border-radius:12px;font-weight:800;text-decoration:none;}
-  .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 18px;}
-  .pill{font-size:12px;font-weight:700;padding:7px 12px;border-radius:999px;background:white;border:1px solid var(--divider);color:var(--cape-brown-dark);text-decoration:none;}
-</style>
 <!-- FAQ structured data: must match the visible FAQ below word for word (Google requires the questions to be on the page). -->
 <script type="application/ld+json">
 {
@@ -58,13 +38,13 @@
 </script>
 <script src="/js/mylist.js"></script>
 </head>
-<body>
-<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 App</a></div><button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button></div></nav>
+<body class="dc">
+<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/feed.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>App</a></div><button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button></div></nav>
 <div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()">
-    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 Open the App</a>
+    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>Open the App</a>
   </div></div>
 
-<section class="hero" style="min-height:56vh;"><div class="hero-overlay"></div><div class="hero-content" style="padding-top:84px;max-width:860px;"><div class="hero-badge">2026 Beach Guide</div><h1 class="hero-title">Cape Cod Beaches by Region</h1><p class="hero-subtitle">Beaches organized by region, with the parking, dog and facility rules we could confirm, each linked to the town or the National Park Service.</p><div class="pill-row"><a class="pill" href="#outer-cape">Outer Cape</a><a class="pill" href="#mid-cape">Mid Cape</a><a class="pill" href="#lower-cape">Lower Cape</a><a class="pill" href="#upper-cape">Upper Cape</a><a class="pill" href="#faq">Parking &amp; dog FAQ</a></div></div></section>
+<section class="hero"><div class="hero-overlay"></div><div class="hero-content"><div class="hero-badge">2026 Beach Guide</div><h1 class="hero-title">Cape Cod Beaches by Region</h1><p class="hero-subtitle">Beaches organized by region, with the parking, dog and facility rules we could confirm, each linked to the town or the National Park Service.</p><div class="links-row" style="margin-top:16px;"><a href="#outer-cape">Outer Cape</a><a href="#mid-cape">Mid Cape</a><a href="#lower-cape">Lower Cape</a><a href="#upper-cape">Upper Cape</a><a href="#faq">Parking &amp; dog FAQ</a></div></div></section>
 
 <div class="content-wrap">
   <section class="section" id="intro">
@@ -74,68 +54,65 @@
 
   <section class="section" id="outer-cape">
     <h2 class="section-title">Outer Cape beaches</h2>
-    <div class="region-grid">
-      <div class="beach-mini"><h3>Race Point Beach</h3><div class="row"><strong>Town:</strong> Provincetown (Cape Cod National Seashore)</div><div class="row"><strong>Water:</strong> the Park Service notes swift currents and deeper water close to shore</div><div class="row"><strong>Facilities:</strong> seasonal restrooms; lifeguards typically on duty late June through Labor Day</div><div class="row"><strong>Dogs:</strong> 6-ft leash where allowed; not on lifeguard-protected beaches in summer</div><p class="src">Sources: <a href="https://www.nps.gov/places/race-point-beach.htm" target="_blank" rel="noopener">NPS: Race Point Beach</a> · <a href="https://www.nps.gov/caco/planyourvisit/guide-to-beaches.htm" target="_blank" rel="noopener">NPS: guide to beaches</a> · <a href="https://www.nps.gov/caco/planyourvisit/pets.htm" target="_blank" rel="noopener">NPS: pets</a></p></div>
-      <div class="beach-mini"><h3>Coast Guard Beach</h3><div class="row"><strong>Town:</strong> Eastham (Cape Cod National Seashore)</div><div class="row"><strong>Parking:</strong> mid-June to Labor Day the beach lot is for Eastham residents and handicap placards; park at Little Creek and take the shuttle.</div><div class="row"><strong>Facilities:</strong> seasonal restrooms, a wheelchair-accessible ramp to the beach, and lifeguards typically on duty late June through Labor Day</div><p class="src">Sources: <a href="https://www.nps.gov/caco/planyourvisit/coast-guard-beach-eastham.htm" target="_blank" rel="noopener">NPS: Coast Guard Beach</a> · <a href="https://www.nps.gov/caco/planyourvisit/guide-to-beaches.htm" target="_blank" rel="noopener">NPS: guide to beaches</a></p></div>
-      <div class="beach-mini"><h3>Ballston Beach</h3><div class="row"><strong>Town:</strong> Truro (ocean beach at the end of South Pamet Road)</div><div class="row"><strong>Parking:</strong> 65-space lot; Truro beach sticker required from the 3rd Saturday of June to Labor Day, and no day passes are sold</div><div class="row"><strong>Facilities:</strong> no lifeguards; portable toilet in season</div><div class="row"><strong>Dogs:</strong> not allowed 9 AM–6 PM, 3rd Saturday of June to Labor Day</div><p class="src">Sources: <a href="https://truro-ma.gov/177/Ballston-Beach" target="_blank" rel="noopener">Town of Truro: Ballston Beach</a> · <a href="https://truro-ma.gov/241/Pet-Closures" target="_blank" rel="noopener">Town of Truro: pet rules</a></p></div>
-      <div class="beach-mini"><h3>Head of the Meadow</h3><div class="row"><strong>Town:</strong> Truro (Cape Cod National Seashore)</div><div class="row"><strong>Facilities:</strong> in summer, restrooms or vault toilets</div><p class="src">Source: <a href="https://www.nps.gov/caco/planyourvisit/guide-to-beaches.htm" target="_blank" rel="noopener">NPS: guide to beaches</a></p></div>
+    <div class="region-grid rws">
+      <div class="beach-mini rw"><h3>Race Point Beach</h3><div class="row"><strong>Town:</strong> Provincetown (Cape Cod National Seashore)</div><div class="row"><strong>Water:</strong> the Park Service notes swift currents and deeper water close to shore</div><div class="row"><strong>Facilities:</strong> seasonal restrooms; lifeguards typically on duty late June through Labor Day</div><div class="row"><strong>Dogs:</strong> 6-ft leash where allowed; not on lifeguard-protected beaches in summer</div><p class="src">Sources: <a href="https://www.nps.gov/places/race-point-beach.htm" target="_blank" rel="noopener">NPS: Race Point Beach</a><span class=dot aria-hidden=true> · </span><a href="https://www.nps.gov/caco/planyourvisit/guide-to-beaches.htm" target="_blank" rel="noopener">NPS: guide to beaches</a><span class=dot aria-hidden=true> · </span><a href="https://www.nps.gov/caco/planyourvisit/pets.htm" target="_blank" rel="noopener">NPS: pets</a></p></div>
+      <div class="beach-mini rw"><h3>Coast Guard Beach</h3><div class="row"><strong>Town:</strong> Eastham (Cape Cod National Seashore)</div><div class="row"><strong>Parking:</strong> mid-June to Labor Day the beach lot is for Eastham residents and handicap placards; park at Little Creek and take the shuttle.</div><div class="row"><strong>Facilities:</strong> seasonal restrooms, a wheelchair-accessible ramp to the beach, and lifeguards typically on duty late June through Labor Day</div><p class="src">Sources: <a href="https://www.nps.gov/caco/planyourvisit/coast-guard-beach-eastham.htm" target="_blank" rel="noopener">NPS: Coast Guard Beach</a><span class=dot aria-hidden=true> · </span><a href="https://www.nps.gov/caco/planyourvisit/guide-to-beaches.htm" target="_blank" rel="noopener">NPS: guide to beaches</a></p></div>
+      <div class="beach-mini rw"><h3>Ballston Beach</h3><div class="row"><strong>Town:</strong> Truro (ocean beach at the end of South Pamet Road)</div><div class="row"><strong>Parking:</strong> 65-space lot; Truro beach sticker required from the 3rd Saturday of June to Labor Day, and no day passes are sold</div><div class="row"><strong>Facilities:</strong> no lifeguards; portable toilet in season</div><div class="row"><strong>Dogs:</strong> not allowed 9 AM–6 PM, 3rd Saturday of June to Labor Day</div><p class="src">Sources: <a href="https://truro-ma.gov/177/Ballston-Beach" target="_blank" rel="noopener">Town of Truro: Ballston Beach</a><span class=dot aria-hidden=true> · </span><a href="https://truro-ma.gov/241/Pet-Closures" target="_blank" rel="noopener">Town of Truro: pet rules</a></p></div>
+      <div class="beach-mini rw"><h3>Head of the Meadow</h3><div class="row"><strong>Town:</strong> Truro (Cape Cod National Seashore)</div><div class="row"><strong>Facilities:</strong> in summer, restrooms or vault toilets</div><p class="src">Source: <a href="https://www.nps.gov/caco/planyourvisit/guide-to-beaches.htm" target="_blank" rel="noopener">NPS: guide to beaches</a></p></div>
     </div>
   </section>
 
   <section class="section" id="mid-cape">
     <h2 class="section-title">Mid Cape beaches</h2>
-    <div class="region-grid">
-      <div class="beach-mini"><h3>Mayflower Beach</h3><div class="row"><strong>Town:</strong> Dennis (Cape Cod Bay)</div><div class="row"><strong>Parking and rules:</strong> check with the town before you go</div></div>
-      <div class="beach-mini"><h3>Craigville Beach</h3><div class="row"><strong>Town:</strong> Centerville, in Barnstable (Nantucket Sound)</div><div class="row"><strong>Parking and rules:</strong> check with the town before you go</div></div>
-      <div class="beach-mini"><h3>Sandy Neck Beach</h3><div class="row"><strong>Town:</strong> Barnstable (Cape Cod Bay)</div><div class="row"><strong>Dogs:</strong> leashed year-round; not allowed on the public bathing beach (Bodfish Beach) May 15 to September 15</div><div class="row"><strong>Off-road driving:</strong> an ORV permit is required year-round</div><div class="row"><strong>Facilities:</strong> restrooms and changing facilities, and a concession stand</div><p class="src">Sources: <a href="https://www.barnstable.gov/SandyNeckPark/faqs.aspx" target="_blank" rel="noopener">Town of Barnstable: Sandy Neck FAQ</a> · <a href="https://www.barnstable.gov/SandyNeckPark/publicbeach/publichome.aspx" target="_blank" rel="noopener">Town of Barnstable: Sandy Neck public beach</a></p></div>
+    <div class="region-grid rws">
+      <div class="beach-mini rw"><h3>Mayflower Beach</h3><div class="row"><strong>Town:</strong> Dennis (Cape Cod Bay)</div><div class="row"><strong>Parking and rules:</strong> check with the town before you go</div></div>
+      <div class="beach-mini rw"><h3>Craigville Beach</h3><div class="row"><strong>Town:</strong> Centerville, in Barnstable (Nantucket Sound)</div><div class="row"><strong>Parking and rules:</strong> check with the town before you go</div></div>
+      <div class="beach-mini rw"><h3>Sandy Neck Beach</h3><div class="row"><strong>Town:</strong> Barnstable (Cape Cod Bay)</div><div class="row"><strong>Dogs:</strong> leashed year-round; not allowed on the public bathing beach (Bodfish Beach) May 15 to September 15</div><div class="row"><strong>Off-road driving:</strong> an ORV permit is required year-round</div><div class="row"><strong>Facilities:</strong> restrooms and changing facilities, and a concession stand</div><p class="src">Sources: <a href="https://www.barnstable.gov/SandyNeckPark/faqs.aspx" target="_blank" rel="noopener">Town of Barnstable: Sandy Neck FAQ</a><span class=dot aria-hidden=true> · </span><a href="https://www.barnstable.gov/SandyNeckPark/publicbeach/publichome.aspx" target="_blank" rel="noopener">Town of Barnstable: Sandy Neck public beach</a></p></div>
     </div>
   </section>
 
   <section class="section" id="lower-cape">
     <h2 class="section-title">Lower Cape beaches</h2>
-    <div class="region-grid">
-      <div class="beach-mini"><h3>Nauset Beach</h3><div class="row"><strong>Town:</strong> Orleans (Atlantic Ocean)</div><div class="row"><strong>Parking and rules:</strong> check with the town before you go</div></div>
-      <div class="beach-mini"><h3>Skaket Beach</h3><div class="row"><strong>Town:</strong> Orleans (Cape Cod Bay)</div><div class="row"><strong>Parking and rules:</strong> check with the town before you go</div></div>
-      <div class="beach-mini"><h3>First Encounter Beach</h3><div class="row"><strong>Town:</strong> Eastham</div><div class="row"><strong>Parking:</strong> in season, an Eastham beach sticker or a $30 daily pass (cash or check only)</div><p class="src">Source: <a href="https://www.eastham-ma.gov/410/Beach-Parking-Daily-Passes" target="_blank" rel="noopener">Town of Eastham: beach parking &amp; daily passes</a></p></div>
-      <div class="beach-mini"><h3>Paine’s Creek Beach</h3><div class="row"><strong>Town:</strong> Brewster (Cape Cod Bay)</div><div class="row"><strong>Parking:</strong> Brewster parking permit required June 15 through the Sunday of Labor Day</div><div class="row"><strong>Facilities:</strong> portable toilet from Memorial Day through the October holiday weekend; no lifeguards</div><p class="src">Source: <a href="https://www.brewster-ma.gov/250/Beach-Information" target="_blank" rel="noopener">Town of Brewster: beach information</a></p></div>
+    <div class="region-grid rws">
+      <div class="beach-mini rw"><h3>Nauset Beach</h3><div class="row"><strong>Town:</strong> Orleans (Atlantic Ocean)</div><div class="row"><strong>Parking and rules:</strong> check with the town before you go</div></div>
+      <div class="beach-mini rw"><h3>Skaket Beach</h3><div class="row"><strong>Town:</strong> Orleans (Cape Cod Bay)</div><div class="row"><strong>Parking and rules:</strong> check with the town before you go</div></div>
+      <div class="beach-mini rw"><h3>First Encounter Beach</h3><div class="row"><strong>Town:</strong> Eastham</div><div class="row"><strong>Parking:</strong> in season, an Eastham beach sticker or a $30 daily pass (cash or check only)</div><p class="src">Source: <a href="https://www.eastham-ma.gov/410/Beach-Parking-Daily-Passes" target="_blank" rel="noopener">Town of Eastham: beach parking &amp; daily passes</a></p></div>
+      <div class="beach-mini rw"><h3>Paine’s Creek Beach</h3><div class="row"><strong>Town:</strong> Brewster (Cape Cod Bay)</div><div class="row"><strong>Parking:</strong> Brewster parking permit required June 15 through the Sunday of Labor Day</div><div class="row"><strong>Facilities:</strong> portable toilet from Memorial Day through the October holiday weekend; no lifeguards</div><p class="src">Source: <a href="https://www.brewster-ma.gov/250/Beach-Information" target="_blank" rel="noopener">Town of Brewster: beach information</a></p></div>
     </div>
   </section>
 
   <section class="section" id="upper-cape">
     <h2 class="section-title">Upper Cape beaches</h2>
-    <div class="region-grid">
-      <div class="beach-mini"><h3>Old Silver Beach</h3><div class="row"><strong>Town:</strong> North Falmouth (Buzzards Bay)</div><div class="row"><strong>Parking:</strong> a public lot, and a separate lot for resident stickers only</div><div class="row"><strong>Facilities:</strong> restrooms, bathhouse, food concession and lifeguards in season</div><p class="src">Sources: <a href="https://www.falmouthma.gov/152/Beach-Parking-Stickers" target="_blank" rel="noopener">Town of Falmouth: beach stickers &amp; facilities</a> · <a href="https://www.falmouthma.gov/151/Beach" target="_blank" rel="noopener">Town of Falmouth: beach hours</a></p></div>
-      <div class="beach-mini"><h3>Megansett Beach</h3><div class="row"><strong>Town:</strong> North Falmouth</div><div class="row"><strong>Parking:</strong> sticker parking only, 9 AM–5 PM in season</div><p class="src">Source: <a href="https://www.falmouthma.gov/151/Beach" target="_blank" rel="noopener">Town of Falmouth: beach hours</a></p></div>
+    <div class="region-grid rws">
+      <div class="beach-mini rw"><h3>Old Silver Beach</h3><div class="row"><strong>Town:</strong> North Falmouth (Buzzards Bay)</div><div class="row"><strong>Parking:</strong> a public lot, and a separate lot for resident stickers only</div><div class="row"><strong>Facilities:</strong> restrooms, bathhouse, food concession and lifeguards in season</div><p class="src">Sources: <a href="https://www.falmouthma.gov/152/Beach-Parking-Stickers" target="_blank" rel="noopener">Town of Falmouth: beach stickers &amp; facilities</a><span class=dot aria-hidden=true> · </span><a href="https://www.falmouthma.gov/151/Beach" target="_blank" rel="noopener">Town of Falmouth: beach hours</a></p></div>
+      <div class="beach-mini rw"><h3>Megansett Beach</h3><div class="row"><strong>Town:</strong> North Falmouth</div><div class="row"><strong>Parking:</strong> sticker parking only, 9 AM–5 PM in season</div><p class="src">Source: <a href="https://www.falmouthma.gov/151/Beach" target="_blank" rel="noopener">Town of Falmouth: beach hours</a></p></div>
     </div>
   </section>
 
   <section class="section" id="checklist">
-    <div class="faq">
-      <h2 class="section-title" style="margin-top:0;">Get Cape Cod updates by email</h2>
-      <p style="margin-top:-6px;color:var(--text-secondary);">Join the Totally Cape Cod email list for new guides and beach-season updates.</p>
-      <form id="leadForm" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
-        <input type="email" id="leadEmail" placeholder="your@email.com" required style="flex:1;min-width:240px;padding:14px 16px;border:1px solid var(--divider);border-radius:12px;font-size:15px;" />
-        <button class="btn btn-primary" type="submit">Sign me up →</button>
+    <div class="sig">
+      <h2 class="section-title">Get Cape Cod updates by email</h2>
+      <p>Join the Totally Cape Cod email list for new guides and beach-season updates.</p>
+      <form id="leadForm" class="em">
+        <input type="email" id="leadEmail" placeholder="your@email.com" required />
+        <button class="btn btn-primary" type="submit">Sign me up<span class=x> →</span></button>
       </form>
-      <div id="leadMsg" style="margin-top:12px;font-size:14px;color:var(--text-secondary);"></div>
+      <div id="leadMsg" class="msg"></div>
     </div>
   </section>
 
   <section class="section" id="faq">
     <div class="faq">
-      <h2 class="section-title" style="margin-top:0;">Cape Cod beach parking &amp; dog FAQ</h2>
-      <div class="faq-item"><div class="faq-q">Are dogs allowed on Cape Cod National Seashore beaches?</div><div>Where pets are allowed, the National Park Service requires a 6-foot leash. In summer, pets are not permitted on lifeguard-protected beaches, and some areas close to pets from April 1 to October 15 for nesting shorebirds. Town beaches set their own rules.</div><div class="faq-src">Source: <a href="https://www.nps.gov/caco/planyourvisit/pets.htm" target="_blank" rel="noopener">NPS: pets</a></div></div>
-      <div class="faq-item"><div class="faq-q">Can I buy a daily parking pass for Ballston Beach in Truro?</div><div>No. The Town of Truro does not sell a daily beach sticker for Ballston. From the third Saturday of June to Labor Day, its 65-space lot needs a Truro beach sticker.</div><div class="faq-src">Source: <a href="https://truro-ma.gov/177/Ballston-Beach" target="_blank" rel="noopener">Town of Truro: Ballston Beach</a></div></div>
-      <div class="faq-item"><div class="faq-q">Where do I park for Coast Guard Beach in Eastham in summer?</div><div>From mid-June to Labor Day, the beach lot is restricted to Eastham residents and vehicles with handicap placards. The National Park Service says the primary parking is at Little Creek, where a shuttle runs to the beach.</div><div class="faq-src">Source: <a href="https://www.nps.gov/caco/planyourvisit/coast-guard-beach-eastham.htm" target="_blank" rel="noopener">NPS: Coast Guard Beach</a></div></div>
-      <div class="faq-item"><div class="faq-q">Can I buy a daily parking pass at First Encounter Beach in Eastham?</div><div>Yes. In season, the Town of Eastham sells a $30 daily pass per vehicle at First Encounter Beach, cash or check only. An Eastham beach sticker also works.</div><div class="faq-src">Source: <a href="https://www.eastham-ma.gov/410/Beach-Parking-Daily-Passes" target="_blank" rel="noopener">Town of Eastham: beach parking &amp; daily passes</a></div></div>
-    </div>
-    <p style="font-size:12px;color:var(--text-secondary);margin-top:10px;">Sources checked November 8, 2026. Spotted something out of date? <a href="/contact.html">Tell us</a>.</p>
+      <h2 class="section-title">Cape Cod beach parking &amp; dog FAQ</h2><div class="rws">
+      <div class="faq-item rx"><div class="faq-q">Are dogs allowed on Cape Cod National Seashore beaches?</div><div>Where pets are allowed, the National Park Service requires a 6-foot leash. In summer, pets are not permitted on lifeguard-protected beaches, and some areas close to pets from April 1 to October 15 for nesting shorebirds. Town beaches set their own rules.</div><div class="faq-src">Source: <a href="https://www.nps.gov/caco/planyourvisit/pets.htm" target="_blank" rel="noopener">NPS: pets</a></div></div>
+      <div class="faq-item rx"><div class="faq-q">Can I buy a daily parking pass for Ballston Beach in Truro?</div><div>No. The Town of Truro does not sell a daily beach sticker for Ballston. From the third Saturday of June to Labor Day, its 65-space lot needs a Truro beach sticker.</div><div class="faq-src">Source: <a href="https://truro-ma.gov/177/Ballston-Beach" target="_blank" rel="noopener">Town of Truro: Ballston Beach</a></div></div>
+      <div class="faq-item rx"><div class="faq-q">Where do I park for Coast Guard Beach in Eastham in summer?</div><div>From mid-June to Labor Day, the beach lot is restricted to Eastham residents and vehicles with handicap placards. The National Park Service says the primary parking is at Little Creek, where a shuttle runs to the beach.</div><div class="faq-src">Source: <a href="https://www.nps.gov/caco/planyourvisit/coast-guard-beach-eastham.htm" target="_blank" rel="noopener">NPS: Coast Guard Beach</a></div></div>
+      <div class="faq-item rx"><div class="faq-q">Can I buy a daily parking pass at First Encounter Beach in Eastham?</div><div>Yes. In season, the Town of Eastham sells a $30 daily pass per vehicle at First Encounter Beach, cash or check only. An Eastham beach sticker also works.</div><div class="faq-src">Source: <a href="https://www.eastham-ma.gov/410/Beach-Parking-Daily-Passes" target="_blank" rel="noopener">Town of Eastham: beach parking &amp; daily passes</a></div></div>
+    </div></div>
+    <p style="font-size:15px;color:var(--mute);margin-top:10px;">Sources checked November 8, 2026. Spotted something out of date? <a href="/contact.html">Tell us</a>.</p>
   </section>
 
-  <div class="callout" style="margin-top:24px;">
-    <div><div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.8;font-weight:700;">Book nearby stays</div><div style="font-family:'Fraunces',serif;font-size:24px;font-weight:900;margin-top:4px;">Turn your beach day into a Cape Cod weekend</div><div style="opacity:.9;font-size:14px;margin-top:6px;max-width:640px;">Search Cape Cod hotels and rentals on Booking.com.</div></div>
-    <a href="https://www.booking.com/searchresults.html?ss=Cape+Cod" target="_blank" rel="noopener" onclick="gtag('event','affiliate_click',{type:'booking',location:'best_beaches_cta'})">Search hotels →</a>
-  </div>
+  <div class="affiliate-band"><div><div class="label">Book nearby stays</div><div class="title">Turn your beach day into a Cape Cod weekend</div><p>Search Cape Cod hotels and rentals on Booking.com.</p></div><a class="btn btn-ghost" href="https://www.booking.com/searchresults.html?ss=Cape+Cod" target="_blank" rel="noopener" onclick="gtag('event','affiliate_click',{type:'booking',location:'best_beaches_cta'})">Search hotels<span class=x> →</span></a></div>
 </div>
 
 <footer class="site-footer">

@@ -24,34 +24,20 @@
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-<style>
-  .legal-wrap { max-width: 760px; margin: 0 auto; padding: 120px 22px 80px; }
-  .legal-wrap h1 { font-family: 'Fraunces', serif; font-weight: 900; font-size: 42px; color: var(--warm-brown); margin: 0 0 18px; }
-  .legal-wrap h2 { font-family: 'Fraunces', serif; font-weight: 700; font-size: 26px; color: var(--warm-brown); margin: 40px 0 12px; }
-  .legal-wrap p, .legal-wrap li { font-size: 17px; line-height: 1.75; color: var(--text); }
-  .legal-wrap .lead { font-size: 20px; color: var(--warm-brown-soft); }
-  .legal-wrap ul { padding-left: 22px; }
-  .legal-wrap a { color: var(--sea-deep); }
-  .cta-row { margin-top: 40px; display: flex; gap: 12px; flex-wrap: wrap; }
-  .cta-row a { display: inline-block; padding: 13px 26px; border-radius: var(--radius-full); font-weight: 700; text-decoration: none; }
-  .cta-primary { background: var(--sea-soft); color: #fff; box-shadow: var(--shadow-md); }
-  .cta-secondary { background: var(--sand-cream); color: var(--warm-brown); border: 1px solid var(--divider); }
-  .legal-wrap .note { background: var(--sand-cream); border: 1px dashed var(--gold); border-radius: var(--radius-md); padding: 14px 18px; font-size: 14px; color: var(--warm-brown-soft); margin-top: 36px; }
-</style>
 <script src="/js/mylist.js"></script>
 </head>
-<body>
+<body class="dc">
 
 <!-- Navigation -->
 <nav class="site-nav" id="siteNav">
   <div class="nav-inner">
     <a href="/" class="nav-logo">Totally Cape Cod</a>
-    <div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/" class="nav-cta">📱 Get the App</a></div>
+    <div class="nav-links"><a href="/feed.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/" class="nav-cta">Get the App</a></div>
     <button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button>
   </div>
 </nav>
 
-<div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()"><a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 Open the App</a></div></div>
+<div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()"><a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>Open the App</a></div></div>
 
 <main class="legal-wrap">
   <h1>About Totally Cape Cod</h1>
@@ -73,7 +59,7 @@
 
 
   <div class="cta-row">
-    <a href="/contact.html" class="cta-secondary">Get in touch</a>
+    <a href="/contact.html" class="btn btn-ghost">Get in touch</a>
   </div></main>
 
 <!-- Footer -->

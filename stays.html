@@ -22,52 +22,31 @@
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-<style>
-.stay-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-@media(max-width:768px){.stay-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:480px){.stay-grid{grid-template-columns:1fr;}}
-.stay-card{background:white;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);transition:transform var(--transition-base),box-shadow var(--transition-base);}
-.stay-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);}
-.stay-card .cover{height:170px;background-size:cover;background-position:center;position:relative;}
-.stay-card .cover::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.35) 0%,transparent 50%);}
-.stay-card .price-pill{position:absolute;bottom:10px;left:10px;padding:4px 10px;border-radius:999px;font-size:11px;font-weight:700;color:white;background:var(--cape-navy);z-index:1;}
-.stay-card .body{padding:14px;}
-.stay-card h3{font-weight:700;font-size:16px;margin:0 0 4px;}
-.stay-card .meta{font-size:12px;color:var(--text-secondary);margin-bottom:8px;}
-.stay-card .amenities{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
-.stay-card .amenity{font-size:11px;background:var(--cape-cream);color:var(--cape-brown-dark);padding:3px 8px;border-radius:6px;}
-.stay-card .actions{display:flex;gap:8px;}
-.stay-card .actions a{flex:1;text-align:center;padding:8px;border-radius:10px;font-size:12px;font-weight:700;text-decoration:none;}
-.stay-card .actions .btn-view{background:var(--cape-navy);color:white;}
-.stay-card .actions .btn-book{background:var(--cape-cream);color:var(--cape-brown-dark);border:1px solid var(--divider);}
-.stay-card .src{font-size:11px;color:var(--text-secondary);margin:0 0 10px;}
-.stay-card .src a{color:inherit;text-decoration:underline;}
-</style>
 <script src="/js/mylist.js"></script>
 </head>
-<body>
-<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 App</a></div><button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button></div></nav>
+<body class="dc">
+<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/feed.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>App</a></div><button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button></div></nav>
 <div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()">
-    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 Open the App</a>
+    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>Open the App</a>
   </div></div>
 
-<section class="hero" style="min-height:50vh;"><div class="hero-overlay"></div><div class="hero-content" style="padding-top:80px;"><div class="hero-badge">🏨 Cape Cod Stays</div><h1 class="hero-title">Where to <span class="script">Stay</span></h1><p class="hero-subtitle">Hotels, B&amp;Bs, camping and vacation rentals. Compare prices on Booking.com and VRBO.</p></div></section>
+<section class="hero"><div class="hero-overlay"></div><div class="hero-content"><div class="hero-badge">Cape Cod Stays</div><h1 class="hero-title">Where to <span class="script">Stay</span></h1><p class="hero-subtitle">Hotels, B&amp;Bs, camping and vacation rentals. Compare prices on Booking.com and VRBO.</p></div></section>
 
 <section class="section page-wrap">
 <div class="filter-bar">
-<div class="filter-chip active" onclick="filterStays('all',this)">All</div>
-<div class="filter-chip" onclick="filterStays('hotel',this)">🏨 Hotels</div>
-<div class="filter-chip" onclick="filterStays('rental',this)">🏠 Rentals</div>
-<div class="filter-chip" onclick="filterStays('bnb',this)">💛 B&Bs</div>
-<div class="filter-chip" onclick="filterStays('camping',this)">⛺ Camping</div>
+<button type="button" class="filter-chip active" aria-pressed="true" onclick="filterStays('all',this)">All</button>
+<button type="button" class="filter-chip" aria-pressed="false" onclick="filterStays('hotel',this)"><span class="lc">Hotels</span></button>
+<button type="button" class="filter-chip" aria-pressed="false" onclick="filterStays('rental',this)"><span class="lc">Rentals</span></button>
+<button type="button" class="filter-chip" aria-pressed="false" onclick="filterStays('bnb',this)">B&Bs</button>
+<button type="button" class="filter-chip" aria-pressed="false" onclick="filterStays('camping',this)"><span class="lc">Camping</span></button>
 </div>
 
-<div class="affiliate-band" style="margin-bottom:20px;">
-<div><div class="label">🔍 Compare Prices</div><div class="title">Compare current Cape Cod prices on Booking.com and VRBO</div></div>
-<a href="https://www.booking.com/searchresults.html?ss=Cape+Cod&label=totallycapecod-stays" target="_blank" rel="noopener" class="btn btn-navy btn-sm" onclick="gtag('event','affiliate_click',{type:'booking',location:'stays_banner'})">Search →</a>
+<div class="affiliate-band">
+<div><div class="label">Compare Prices</div><div class="title">Compare current Cape Cod prices on Booking.com and VRBO</div></div>
+<a href="https://www.booking.com/searchresults.html?ss=Cape+Cod&label=totallycapecod-stays" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" onclick="gtag('event','affiliate_click',{type:'booking',location:'stays_banner'})">Search<span class=x> →</span></a>
 </div>
 
-<div class="stay-grid" id="stayGrid"></div>
+<div class="stay-grid rws" id="stayGrid"></div>
 
 </section>
 
@@ -103,13 +82,13 @@ function renderStays(){
   const grid=document.getElementById('stayGrid');
   const filtered=stayFilter==='all'?stays:stays.filter(s=>s.type===stayFilter);
   grid.innerHTML=filtered.map(s=>`
-    <div class="stay-card" id="stay-${mlKey(s)}">
-      <div class="cover${s.img?'':' tile-cover'}"${s.img?` style="background-image:url('${s.img}')"`:` style="background:linear-gradient(135deg,#2F6E80,#7BBCD0)"`}>${s.img?'':`<span class="tile-label">🏨 ${s.town}</span>`}</div>
+    <div class="stay-card rw" id="stay-${mlKey(s)}">
+      <div class="cover"><span class="tile-label">${s.town}</span></div>
       <div class="body">
-        <h3>${s.name}</h3>
-        <div class="meta">${s.town}${s.search?' · search':''}</div>
-        ${s.desc?`<p style="font-size:13px;color:var(--text-secondary);margin:0 0 6px;line-height:1.5;">${s.desc}</p>`:''}
-        ${s.site?`<p class="src">Source: <a href="${s.site}" target="_blank" rel="noopener">the property's website ↗</a></p>`:''}
+        <h2>${s.name}</h2>
+        <div class="meta">${s.town}${s.search?'<span class=dot aria-hidden=true> · </span>search':''}</div>
+        ${s.desc?`<p class="dsc">${s.desc}</p>`:''}
+        ${s.site?`<p class="src">Source: <a href="${s.site}" target="_blank" rel="noopener">the property's website<span class=x> ↗</span></a></p>`:''}
         ${mlBtn(s)}
         <div class="actions">
           <a href="https://www.booking.com/searchresults.html?ss=${encodeURIComponent(s.search?s.town+', Massachusetts':s.name+' '+s.town)}" target="_blank" rel="noopener" class="btn-view" onclick="gtag('event','affiliate_click',{type:'booking',item:'${s.name}',location:'stays_card'})">Booking.com</a>
@@ -119,7 +98,7 @@ function renderStays(){
     </div>
   `).join('');
 }
-function filterStays(tag,el){document.querySelectorAll('.filter-chip').forEach(c=>c.classList.remove('active'));el.classList.add('active');stayFilter=tag;renderStays();gtag('event','filter_click',{category:'stays',filter:tag});}
+function filterStays(tag,el){document.querySelectorAll('.filter-chip').forEach(c=>{c.classList.remove('active');c.setAttribute('aria-pressed','false')});el.classList.add('active');el.setAttribute('aria-pressed','true');stayFilter=tag;renderStays();gtag('event','filter_click',{category:'stays',filter:tag});}
 renderStays();
 </script>
 </body>

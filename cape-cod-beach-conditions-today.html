@@ -28,69 +28,43 @@
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-<style>
-  .conditions-table { width:100%; border-collapse:collapse; font-size:14px; }
-  .conditions-table th { background:var(--sea-deep); color:white; padding:10px 12px; text-align:left; font-weight:700; font-size:13px; }
-  .conditions-table td { padding:10px 12px; border-bottom:1px solid var(--divider); vertical-align:middle; }
-  .conditions-table tr:last-child td { border-bottom:none; }
-  .conditions-table tr:hover td { background:var(--sand-cream); }
-  .status-badge { display:inline-block; padding:3px 10px; border-radius:var(--radius-full); font-size:11px; font-weight:700; }
-  .status-open { background:#d4f0e6; color:#1a7a52; }
-  .status-mid { background:#fdecd4; color:#a05a00; }
-  .status-full { background:#fde0e0; color:#a01a1a; }
-  .crowd-dots { display:inline-flex; gap:3px; }
-  .crowd-dot { width:10px; height:10px; border-radius:50%; }
-  .dot-filled { background:var(--sea-deep); }
-  .dot-empty { background:var(--divider); }
-  .temp-badge { background:var(--sea-mist); color:var(--sea-deep); padding:3px 8px; border-radius:8px; font-weight:700; font-size:13px; }
-  .loading-msg { text-align:center; padding:40px; color:var(--text-secondary); font-size:15px; }
-  .error-msg { text-align:center; padding:30px; background:#fde0e0; border-radius:var(--radius-md); color:#a01a1a; }
-  .table-wrap { overflow-x:auto; border-radius:var(--radius-md); box-shadow:var(--shadow-sm); background:white; }
-  .updated-line { font-size:12px; color:var(--text-secondary); text-align:right; margin-top:8px; }
-  .icon-bool { font-size:15px; }
-  .sensor-link { color:inherit; text-decoration:underline; }
-  .reading-meta { font-size:12px; color:var(--text-secondary); }
-  @media(max-width:600px){
-    .conditions-table th:nth-child(4),
-    .conditions-table td:nth-child(4){ display:none; }
-  }
-</style>
+<style>.table-wrap{overflow:visible}.conditions-table,.conditions-table tbody{display:block}.conditions-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.conditions-table tbody{border-top:2px dashed var(--kraft)}.conditions-table tr{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:12px;align-items:baseline;padding:13px 0 12px;border-bottom:2px dashed var(--kraft)}.conditions-table td{grid-column:1/-1;padding:0}.conditions-table td:nth-child(1){grid-column:1;order:1;font-size:16px}.conditions-table td:nth-child(2){grid-column:2;order:1;font-size:15px;color:var(--mute)}.conditions-table td:nth-child(3){order:2}.conditions-table td:nth-child(4){order:4;margin-top:3px;font-size:15px;color:var(--mute)}.temp-badge{display:block;margin:3px 0 5px;font:900 clamp(28px,8vw,34px)/1.1 "Fraunces",Georgia,serif;color:var(--navy)}.sensor-link{color:inherit;text-decoration:underline}@media(min-width:1000px){.conditions-table tbody{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:48px}.conditions-table tr:nth-child(2){border-top:2px dashed var(--kraft)}.temp-badge{font-size:28px}}</style>
 <script src="/js/mylist.js"></script>
 </head>
-<body>
+<body class="dc">
 
 <nav class="site-nav" id="siteNav">
   <div class="nav-inner">
     <a href="/" class="nav-logo">Totally Cape Cod</a>
-    <div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 App</a></div>
+    <div class="nav-links"><a href="/feed.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>App</a></div>
     <button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button>
   </div>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()">
   <div class="mobile-menu-panel" onclick="event.stopPropagation()">
-    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 Open the App</a>
+    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>Open the App</a>
   </div>
 </div>
 
-<section class="hero" style="min-height:40vh;">
+<section class="hero">
   <div class="hero-overlay"></div>
-  <div class="hero-content" style="padding-top:80px;">
+  <div class="hero-content">
     <div class="hero-badge">Water Temps by Beach</div>
-    <h1 class="hero-title" style="font-size:clamp(28px,5vw,52px);">Cape Cod Beach <span class="script">Conditions</span> Today</h1>
-    <p class="hero-subtitle">Water temps by beach, from the nearest sensor · parking reports in the app</p>
+    <h1 class="hero-title">Cape Cod Beach <span class="script">Conditions</span> Today</h1>
+    <p class="hero-subtitle">Water temps by beach, from the nearest sensor<span class=dot aria-hidden=true> · </span>parking reports in the app</p>
   </div>
 </section>
 
 <section class="section page-wrap">
 
-  <p class="s-off" style="font-size:15px; line-height:1.7; color:var(--text); margin:0 0 16px; max-width:760px; background:#FFF6E5; border:1px solid #F1DFB8; border-radius:12px; padding:12px 14px;">
-    🍂 <strong>It's the off-season.</strong> At the six Cape Cod National Seashore beaches, lifeguards are typically on duty only
+  <p class="s-off lead-note">
+    <strong>It's the off-season.</strong> At the six Cape Cod National Seashore beaches, lifeguards are typically on duty only
     from late June through Labor Day, and apart from the Salt Pond and Province Lands visitor centers, park restrooms are
     open seasonally (<a href="https://www.nps.gov/caco/planyourvisit/hours.htm" target="_blank" rel="noopener">National Park Service</a>).
     Town beaches set their own seasons, so check the town and follow posted signs.
   </p>
-  <p style="font-size:15px; line-height:1.7; color:var(--text); margin:0 0 28px; max-width:760px;">
+  <p>
     Each beach shows the latest water temperature from its nearest working sensor —
     <a href="https://tidesandcurrents.noaa.gov/stationhome.html?id=8447930" target="_blank" rel="noopener">NOAA's Woods Hole station</a>,
     <a href="https://www.ndbc.noaa.gov/station_page.php?station=44020" target="_blank" rel="noopener">NOAA buoy 44020 in Nantucket Sound</a> or
@@ -100,25 +74,13 @@
     <span class="s-summer">For parking, the app shows reports from other beachgoers, kept for 3 hours after they're posted.</span>
   </p>
 
-  <div id="beachData">
-    <div class="loading-msg">⏳ Loading beach conditions…</div>
+  <div id="beachData" style="min-height:900px;">
+    <div class="loading-msg">Loading beach conditions…</div>
   </div>
 
-  <div style="margin-top:40px; padding:24px; background:var(--sea-mist); border-radius:var(--radius-md); text-align:center;">
-    <p style="margin:0 0 8px; font-size:13px; color:var(--text-secondary); font-weight:600; text-transform:uppercase; letter-spacing:.06em;">More Live Cape Cod Data</p>
-    <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
-      <a href="/cape-cod-water-temperature-today.html" style="background:white; padding:10px 18px; border-radius:var(--radius-full); font-size:13px; font-weight:700; color:var(--sea-deep); box-shadow:var(--shadow-sm);">🌡️ Water Temps Today</a>
-      <a href="/cape-cod-bridge-traffic.html" style="background:white; padding:10px 18px; border-radius:var(--radius-full); font-size:13px; font-weight:700; color:var(--sea-deep); box-shadow:var(--shadow-sm);">🌉 Bridge Traffic</a>
-      <a href="/cape-cod-live-music-tonight.html" style="background:white; padding:10px 18px; border-radius:var(--radius-full); font-size:13px; font-weight:700; color:var(--sea-deep); box-shadow:var(--shadow-sm);">🎵 Live Music Tonight</a>
-    </div>
-  </div>
+  <div class="sig"><p class="msg" style="margin:0 0 4px;">More Live Cape Cod Data</p><div class="links-row"><a href="/cape-cod-water-temperature-today.html">Water Temps Today</a><a href="/cape-cod-bridge-traffic.html">Bridge Traffic</a><a href="/cape-cod-live-music-tonight.html">Live Music Tonight</a></div></div>
 
-  <div style="margin-top:40px; background:var(--sand-light); border-radius:var(--radius-lg); padding:32px; text-align:center;">
-    <p style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--warm-brown-soft); margin:0 0 10px;">Get it live on your phone</p>
-    <h2 style="font-family:'Fraunces',serif; font-weight:900; font-size:26px; margin:0 0 8px; color:var(--warm-brown);">Open the Totally Cape Cod App</h2>
-    <p style="color:var(--text-secondary); font-size:14px; margin:0 0 20px;">Water temps, bridge traffic, tides &amp; tonight's events — all in one place.</p>
-    <a href="/app/" class="btn btn-primary" onclick="gtag('event','cta_click',{page:'beach-conditions',location:'bottom'})">Open the App →</a>
-  </div>
+  <div class="affiliate-band"><div><div class="label">Get it live on your phone</div><h2 class="title">Open the Totally Cape Cod App</h2><p>Water temps, bridge traffic, tides &amp; tonight's events — all in one place.</p></div><a href="/app/" class="btn btn-ghost" onclick="gtag('event','cta_click',{page:'beach-conditions',location:'bottom'})">Open the App<span class=x> →</span></a></div>
 
 </section>
 
@@ -182,7 +144,7 @@ async function loadData() {
         '<td><strong>' + b.name + '</strong></td>' +
         '<td>' + b.town + '</td>' +
         '<td><span class="temp-badge">' + (b.water_temp ? b.water_temp + '°F' : '—') + '</span></td>' +
-        '<td><span class="reading-meta">' + sensorHtml(b.water_temp_src) + (b.water_temp_at ? ' · checked ' + fmtDateTime(b.water_temp_at) : '') + '</span></td>' +
+        '<td><span class="reading-meta">' + sensorHtml(b.water_temp_src) + (b.water_temp_at ? '<span class=dot aria-hidden=true> · </span>checked ' + fmtDateTime(b.water_temp_at) : '') + '</span></td>' +
       '</tr>';
     }).join('');
 
@@ -194,13 +156,13 @@ async function loadData() {
           '<thead><tr>' +
             '<th>Beach</th>' +
             '<th>Town</th>' +
-            '<th>🌊 Water Temp</th>' +
+            '<th>Water Temp</th>' +
             '<th>Nearest sensor</th>' +
           '</tr></thead>' +
           '<tbody>' + rows + '</tbody>' +
         '</table>' +
       '</div>' +
-      '<p class="updated-line">Data file updated: ' + updatedAt + ' · <a href="/app/">More in the app →</a></p>';
+      '<p class="updated-line">Data file updated: ' + updatedAt + '<span class=dot aria-hidden=true> · </span><a href="/app/">More in the app<span class=x> →</span></a></p>';
 
   } catch (e) {
     console.error(e);

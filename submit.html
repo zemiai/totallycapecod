@@ -17,64 +17,28 @@
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-<style>
-  .submit-tabs { display:flex; gap:8px; margin-bottom:24px; flex-wrap:wrap; }
-  .submit-tab { flex:1; min-width:120px; padding:14px; border-radius:var(--radius-md); border:2px solid var(--divider); background:white; cursor:pointer; text-align:center; transition:all var(--transition-fast); }
-  .submit-tab:hover { border-color:var(--cape-navy); }
-  .submit-tab.active { border-color:var(--cape-navy); background:var(--cape-navy); color:white; }
-  .submit-tab .emoji { font-size:28px; display:block; margin-bottom:6px; }
-  .submit-tab .label { font-weight:700; font-size:14px; }
-  .submit-tab .sub { font-size:12px; opacity:0.7; margin-top:2px; }
-
-  .tier-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:20px 0; }
-  @media(max-width:768px){ .tier-cards{ grid-template-columns:1fr; } }
-  .tier-card { border:2px solid var(--divider); border-radius:var(--radius-md); padding:20px; background:white; cursor:pointer; transition:all var(--transition-fast); position:relative; }
-  .tier-card:hover { border-color:var(--gold); }
-  .tier-card.selected { border-color:var(--gold); background:linear-gradient(135deg, var(--cape-cream) 0%, white 100%); box-shadow:var(--shadow-gold); }
-  .tier-card .badge { position:absolute; top:-10px; left:50%; transform:translateX(-50%); background:var(--gold); color:white; font-size:10px; font-weight:700; padding:4px 12px; border-radius:var(--radius-full); text-transform:uppercase; letter-spacing:0.06em; }
-  .tier-card .price { font-family:'Fraunces',serif; font-weight:900; font-size:32px; color:var(--cape-brown-dark); margin:8px 0; }
-  .tier-card .price span { font-size:14px; font-weight:500; color:var(--text-secondary); }
-  .tier-card ul { list-style:none; padding:0; margin:12px 0 0; font-size:13px; }
-  .tier-card ul li { padding:5px 0; border-bottom:1px solid var(--divider); }
-  .tier-card ul li:last-child { border-bottom:none; }
-
-  .form-section { display:none; }
-  .form-section.active { display:block; animation:fadeIn 0.3s ease; }
-  @keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
-
-  .photo-note { border:1px solid var(--divider); border-radius:var(--radius-md); padding:14px 16px; background:var(--cape-cream); font-size:13px; line-height:1.55; color:var(--cape-brown-dark); }
-  .photo-note a { font-weight:700; }
-  .tier-note { font-size:13px; color:var(--text-secondary); margin:-6px 0 20px; }
-
-  .success-box { background:linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); border-radius:var(--radius-md); padding:24px; text-align:center; color:#065f46; }
-  .success-box h3 { font-family:'Fraunces',serif; font-weight:900; font-size:22px; margin:0 0 8px; }
-
-  .hero-mini { min-height:40vh; display:flex; align-items:flex-end; justify-content:center; padding:0 20px 40px; background:linear-gradient(180deg, var(--cape-sky) 0%, var(--cape-cream) 100%); position:relative; }
-  .hero-mini::before { content:''; position:absolute; inset:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); opacity:0.6; }
-  .hero-mini-overlay { position:absolute; inset:0; background:linear-gradient(180deg, rgba(26,58,108,0.1) 0%, rgba(26,58,108,0.35) 100%); }
-  .hero-mini-content { position:relative; z-index:2; text-align:center; max-width:600px; }
-</style>
+<style>.submit-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}.submit-tab{flex-direction:column;align-items:flex-start;justify-content:center;padding:6px 16px}.submit-tab .sub{font-size:14px;font-weight:400}.photo-note{margin:0 0 4px;padding:12px 0;border-top:2px dashed var(--kraft);border-bottom:2px dashed var(--kraft);font-size:16px}.photo-note a{font-weight:600}</style>
 <script src="/js/mylist.js"></script>
 </head>
-<body>
+<body class="dc">
 
 <nav class="site-nav" id="siteNav">
   <div class="nav-inner">
     <a href="/" class="nav-logo">Totally Cape Cod</a>
-    <div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 App</a></div>
+    <div class="nav-links"><a href="/feed.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>App</a></div>
     <button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button>
   </div>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()">
   <div class="mobile-menu-panel" onclick="event.stopPropagation()">
-    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 Open the App</a>
+    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>Open the App</a>
   </div>
 </div>
 
-<section class="hero-mini">
-  <div class="hero-mini-overlay"></div>
-  <div class="hero-mini-content" style="padding-top:80px;">
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
     <div class="hero-badge">Contribute</div>
     <h1 class="hero-title">Share Your Cape Cod</h1>
     <p class="hero-subtitle">Submit a hidden spot or share your photos for Cape visitors.</p>
@@ -85,23 +49,19 @@
 
   <!-- Tabs -->
   <div class="submit-tabs">
-    <div class="submit-tab active" onclick="switchSubmitTab('spot')">
-      <span class="emoji">📍</span>
+    <button type="button" class="submit-tab active" aria-pressed="true" onclick="switchSubmitTab('spot')">
+      
       <span class="label">Submit a Spot</span>
-      <div class="sub">Free · Share a hidden gem</div>
-    </div>
-    <div class="submit-tab" onclick="switchSubmitTab('photo')">
-      <span class="emoji">📸</span>
+      <div class="sub">Free<span class=dot aria-hidden=true> · </span>Share a hidden gem</div></button>
+    <button type="button" class="submit-tab" aria-pressed="false" onclick="switchSubmitTab('photo')">
+      
       <span class="label">Share a Photo</span>
-      <div class="sub">Free</div>
-    </div>
+      <div class="sub">Free</div></button>
   </div>
 
   <!-- Submit a Spot -->
   <div class="form-section active" id="tab-spot">
-    <div class="card" style="padding:28px;">
-      <h3 style="font-family:'Fraunces',serif; font-weight:900; font-size:22px; margin:0 0 6px; color:var(--cape-brown-dark);">Submit a Hidden Spot</h3>
-      <p style="color:var(--text-secondary); font-size:14px; margin:0 0 20px;">Found a secret beach, quiet pond, or amazing view? Share it with the community.</p>
+    <div class="fx"><h2 class="section-title">Submit a Hidden Spot</h2><p>Found a secret beach, quiet pond, or amazing view? Share it with the community.</p>
       <form onsubmit="handleSpotSubmit(event)">
         <div class="form-group">
           <label class="form-label">Spot Name</label>
@@ -140,18 +100,16 @@
           <label class="form-label">Your Email</label>
           <input type="email" class="form-input" placeholder="so we can credit you" required />
         </div>
-        <div class="photo-note">📸 Have a photo of the spot? This form can't take uploads, so email it to <a href="mailto:info@totallycapecod.com?subject=Photo%20for%20my%20spot%20submission">info@totallycapecod.com</a> after you submit.</div>
-        <button type="submit" class="btn btn-primary w-full" style="margin-top:20px;"
-                onclick="gtag('event','submit_form',{type:'spot'})">Submit Spot →</button>
+        <div class="photo-note">Have a photo of the spot? This form can't take uploads, so email it to <a href="mailto:info@totallycapecod.com?subject=Photo%20for%20my%20spot%20submission">info@totallycapecod.com</a> after you submit.</div>
+        <button type="submit" class="btn btn-primary" style="margin-top:12px;"
+                onclick="gtag('event','submit_form',{type:'spot'})">Submit Spot<span class=x> →</span></button>
       </form>
     </div>
   </div>
 
   <!-- Share a Photo -->
   <div class="form-section" id="tab-photo">
-    <div class="card" style="padding:28px;">
-      <h3 style="font-family:'Fraunces',serif; font-weight:900; font-size:22px; margin:0 0 6px; color:var(--cape-brown-dark);">Share Your Cape Cod Photos</h3>
-      <p style="color:var(--text-secondary); font-size:14px; margin:0 0 20px;">Tell us about your Cape Cod photo. If we use it on the site or our social channels, we'll credit you by name.</p>
+    <div class="fx"><h2 class="section-title">Share Your Cape Cod Photos</h2><p>Tell us about your Cape Cod photo. If we use it on the site or our social channels, we'll credit you by name.</p>
       <form onsubmit="handlePhotoSubmit(event)">
         <div class="form-group">
           <label class="form-label">Photo Title</label>
@@ -169,12 +127,12 @@
           <label class="form-label">Your Email</label>
           <input type="email" class="form-input" required />
         </div>
-        <div class="photo-note">📸 This form can't take uploads, so after you submit, email the photo to <a href="mailto:info@totallycapecod.com?subject=Photo%20submission">info@totallycapecod.com</a>.</div>
-        <div style="margin-top:12px; font-size:12px; color:var(--text-secondary);">
+        <div class="photo-note">This form can't take uploads, so after you submit, email the photo to <a href="mailto:info@totallycapecod.com?subject=Photo%20submission">info@totallycapecod.com</a>.</div>
+        <div class="msg">
           By submitting, you grant Totally Cape Cod permission to feature your photo with credit. You retain all rights.
         </div>
-        <button type="submit" class="btn btn-primary w-full" style="margin-top:16px;"
-                onclick="gtag('event','submit_form',{type:'photo'})">Share Photo →</button>
+        <button type="submit" class="btn btn-primary" style="margin-top:12px;"
+                onclick="gtag('event','submit_form',{type:'photo'})">Share Photo<span class=x> →</span></button>
       </form>
     </div>
   </div>
@@ -211,9 +169,9 @@ function toggleMobileMenu() {
 }
 
 function switchSubmitTab(tab) {
-  document.querySelectorAll('.submit-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.submit-tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-pressed', 'false'); });
   document.querySelectorAll('.form-section').forEach(s => s.classList.remove('active'));
-  event.currentTarget.classList.add('active');
+  event.currentTarget.classList.add('active'); event.currentTarget.setAttribute('aria-pressed', 'true');
   document.getElementById('tab-' + tab).classList.add('active');
   gtag('event','switch_tab',{tab});
 }
@@ -234,7 +192,7 @@ async function postSubmission(e, kind, contextLabel) {
   const form = e.target;
   const f = gatherForm(form);
   const btn = form.querySelector('button[type=submit]');
-  const orig = btn ? btn.textContent : '';
+  const orig = btn ? btn.innerHTML : '';
   if (btn) { btn.disabled = true; btn.textContent = 'Submitting…'; }
   const message = `${kind}\n` + Object.entries(f).map(([k, v]) => `${k}: ${v}`).join('\n');
   const email = f['Your Email'] || f['Email'] || '';
@@ -246,10 +204,10 @@ async function postSubmission(e, kind, contextLabel) {
     });
     ok = res.ok;
   } catch (_) { ok = false; }
-  if (btn) { btn.disabled = false; btn.textContent = orig; }
+  if (btn) { btn.disabled = false; btn.innerHTML = orig; }
   if (ok) {
     form.reset();
-    alert('🎉 Thank you! Your submission came through — we review every one. To include a photo, email it to info@totallycapecod.com.');
+    alert('Thank you! Your submission came through — we review every one. To include a photo, email it to info@totallycapecod.com.');
     gtag('event', 'submit_form', { type: contextLabel, success: true });
   } else {
     alert('Sorry — that didn\'t go through. Please try again in a moment, or email us at info@totallycapecod.com.');

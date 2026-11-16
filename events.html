@@ -23,56 +23,32 @@
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-<style>
-  .content-wrap{max-width:1080px;margin:0 auto;padding:0 20px 64px;}
-  .event-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
-  @media(max-width:760px){.event-grid{grid-template-columns:1fr;}}
-  .event-card{background:white;border-radius:var(--radius-md);padding:18px;box-shadow:var(--shadow-sm);border:1px solid rgba(0,0,0,0.03);} 
-  .event-card h3{font-family:'Fraunces',serif;font-weight:900;font-size:20px;margin:0 0 6px;color:var(--cape-brown-dark);} 
-  .event-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;flex-wrap:wrap;} 
-  .event-date{background:var(--cape-cream);padding:8px 12px;border-radius:12px;font-weight:800;color:var(--cape-brown-dark);font-size:12px;} 
-  .event-tags{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 12px;} 
-  .event-tag{font-size:11px;font-weight:700;padding:4px 8px;border-radius:999px;background:#f3f4f6;color:#374151;} 
-  .week-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:20px 0;}
-  @media(max-width:760px){.week-strip{grid-template-columns:repeat(2,1fr);}}
-  .week-box{background:white;border:1px solid var(--divider);border-radius:14px;padding:14px;text-align:center;}
-  .week-box .m{font-weight:800;color:var(--cape-navy);font-size:12px;text-transform:uppercase;letter-spacing:.06em;}
-  .week-box .v{font-family:'Fraunces',serif;font-weight:900;font-size:18px;color:var(--cape-brown-dark);margin-top:4px;}
-  .calendar-banner{background:linear-gradient(135deg,var(--cape-navy) 0%,var(--cape-navy-dark) 100%);color:white;border-radius:var(--radius-lg);padding:22px;display:flex;justify-content:space-between;gap:14px;align-items:center;flex-wrap:wrap;}
-  .calendar-banner a{background:white;color:var(--cape-navy);padding:12px 18px;border-radius:12px;font-weight:800;text-decoration:none;}
-</style>
 <script src="/js/mylist.js"></script>
 </head>
-<body>
-<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 App</a></div><button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button></div></nav>
+<body class="dc">
+<nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/feed.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>App</a></div><button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button></div></nav>
 <div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()">
-    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 Open the App</a>
+    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>Open the App</a>
   </div></div>
 
-<section class="hero" style="min-height:56vh;"><div class="hero-overlay"></div><div class="hero-content" style="padding-top:84px;max-width:860px;"><div class="hero-badge">Event calendar · <span data-season-label>Cape Cod</span></div><h1 class="hero-title">Cape Cod Events</h1><p class="hero-subtitle">Music, food, art, family and free events across the Cape, pulled from venue, chamber and town calendars.</p></div></section>
+<section class="hero"><div class="hero-overlay"></div><div class="hero-content"><div class="hero-badge">Event calendar<span class=dot aria-hidden=true> · </span><span data-season-label>Cape Cod</span></div><h1 class="hero-title">Cape Cod Events</h1><p class="hero-subtitle">Music, food, art, family and free events across the Cape, pulled from venue, chamber and town calendars.</p></div></section>
 
 <div class="content-wrap">
-  <div class="calendar-banner" style="margin-top:-28px;position:relative;z-index:2;">
-    <div><div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.8;font-weight:700;">Staying over?</div><div style="font-family:'Fraunces',serif;font-size:24px;font-weight:900;margin-top:4px;">Search Cape Cod hotels and rentals</div><div style="opacity:.9;font-size:14px;margin-top:6px;max-width:640px;">Compare places to stay on Booking.com.</div></div>
-    <a href="https://www.booking.com/searchresults.html?ss=Cape+Cod" target="_blank" rel="noopener" onclick="gtag('event','affiliate_click',{type:'booking',location:'events_banner'})">Search stays →</a>
-  </div>
+  <div class="affiliate-band"><div><div class="label">Staying over?</div><div class="title">Search Cape Cod hotels and rentals</div><p>Compare places to stay on Booking.com.</p></div><a class="btn btn-ghost" href="https://www.booking.com/searchresults.html?ss=Cape+Cod" target="_blank" rel="noopener" onclick="gtag('event','affiliate_click',{type:'booking',location:'events_banner'})">Search stays<span class=x> →</span></a></div>
 
   <!-- Live, sourced events (js/live-events.js). Replaced the old hand-typed summer 2026
        calendar, which had wrong dates (e.g. Wellfleet OysterFest is in October, not August). -->
-  <section class="section" style="padding-bottom:0;">
-    <p style="color:var(--text-secondary);max-width:720px;">Events are pulled daily from Cape venue, chamber and town calendars, plus the weekly farmers markets. Each one credits and links its source — tap through to the original listing, and double-check before you go, since times can change.</p>
+  <section class="section">
+    <p>Events are pulled daily from Cape venue, chamber and town calendars, plus the weekly farmers markets. Each one credits and links its source — tap through to the original listing, and double-check before you go, since times can change.</p>
   </section>
-  <section class="section" style="padding:0 0 8px;">
-    <a href="/guides/cape-cod-holiday-events-2026/" class="card" style="display:block;padding:16px 18px;text-decoration:none;color:inherit;">🎄 <strong>Planning for the holidays?</strong> See confirmed 2026 dates for Cape Cod's strolls, parades, Gardens Aglow and holiday markets →</a>
+  <section class="section">
+    <a href="/guides/cape-cod-holiday-events-2026/" class="holiday-link"><strong>Planning for the holidays?</strong> See confirmed 2026 dates for Cape Cod's strolls, parades, Gardens Aglow and holiday markets<span class=x> →</span></a>
   </section>
-  <div data-live-events data-controls data-limit="400" data-group="day"><p style="color:var(--text-secondary);">Loading upcoming events…</p></div>
+  <div data-live-events data-controls data-limit="400" data-group="day"><p class="loading-msg">Loading upcoming events…</p></div>
   <script src="/js/live-events.js" defer></script>
 
   <section class="section">
-    <div class="calendar-banner">
-      <div><div style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.8;font-weight:700;">Planning a longer stay?</div><div style="font-family:'Fraunces',serif;font-size:24px;font-weight:900;margin-top:4px;">Build a sample itinerary</div><div style="opacity:.9;font-size:14px;margin-top:6px;max-width:640px;">A day-by-day sample plan with beaches, food and things to do.</div></div>
-      <a href="/itinerary.html">Build itinerary →</a>
-    </div>
+    <div class="affiliate-band"><div><div class="label">Planning a longer stay?</div><div class="title">Build a sample itinerary</div><p>A day-by-day sample plan with beaches, food and things to do.</p></div><a class="btn btn-ghost" href="/itinerary.html">Build itinerary<span class=x> →</span></a></div>
   </section>
 </div>
 

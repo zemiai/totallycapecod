@@ -27,62 +27,37 @@
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-<style>
-  .temp-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(220px,1fr)); gap:16px; }
-  @media(max-width:480px){ .temp-grid{ grid-template-columns:1fr 1fr; gap:12px; } }
-  .temp-card { background:white; border-radius:var(--radius-md); padding:20px 18px; box-shadow:var(--shadow-sm); text-align:center; transition:transform var(--transition-fast), box-shadow var(--transition-fast); }
-  .temp-card:hover { transform:translateY(-2px); box-shadow:var(--shadow-md); }
-  .temp-display { font-size:48px; font-weight:800; line-height:1; margin:8px 0 4px; }
-  .temp-warm { color:#b4532a; }
-  .temp-mild { color:#8a6a1f; }
-  .temp-cool { color:var(--sea-deep); }
-  .temp-cold { color:#5056a1; }
-  .temp-unit { font-size:22px; vertical-align:super; }
-  .beach-name-card { font-weight:700; font-size:15px; color:var(--warm-brown); margin-bottom:4px; }
-  .beach-town-card { font-size:12px; color:var(--text-secondary); }
-  .temp-label-feel { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; margin-top:8px; }
-  .feel-cold { color:#5056a1; }
-  .sensor-link { color:inherit; text-decoration:underline; }
-  .sort-bar { display:flex; gap:10px; margin-bottom:20px; flex-wrap:wrap; }
-  .sort-btn { padding:8px 18px; border-radius:var(--radius-full); font-size:13px; font-weight:700; cursor:pointer; border:2px solid var(--divider); background:white; color:var(--text-secondary); transition:all var(--transition-fast); }
-  .sort-btn.active { background:var(--sea-deep); color:white; border-color:var(--sea-deep); }
-  .loading-msg { text-align:center; padding:40px; color:var(--text-secondary); font-size:15px; }
-  .error-msg { text-align:center; padding:30px; background:#fde0e0; border-radius:var(--radius-md); color:#a01a1a; }
-  .updated-line { font-size:12px; color:var(--text-secondary); margin-top:12px; text-align:right; }
-  .legend { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:20px; }
-  .legend-item { display:flex; align-items:center; gap:6px; font-size:12px; font-weight:600; }
-  .legend-dot { width:12px; height:12px; border-radius:50%; }
-</style>
+<style>.legend{display:flex;flex-wrap:wrap;gap:6px 18px;margin:0 0 14px;font-size:15px}.legend-item{display:inline-flex;align-items:center;gap:6px}.legend-dot{width:10px;height:10px;border-radius:50%}.sort-bar{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 14px;scrollbar-width:none}.temp-unit{margin-left:2px;font-size:.6em}.sensor-link{color:inherit;text-decoration:underline}</style>
 <script src="/js/mylist.js"></script>
 </head>
-<body>
+<body class="dc">
 
 <nav class="site-nav" id="siteNav">
   <div class="nav-inner">
     <a href="/" class="nav-logo">Totally Cape Cod</a>
-    <div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 App</a></div>
+    <div class="nav-links"><a href="/feed.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>App</a></div>
     <button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button>
   </div>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()">
   <div class="mobile-menu-panel" onclick="event.stopPropagation()">
-    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/">📱 Open the App</a>
+    <a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/my-list.html" class="mylist-link">My list<span class="mylist-count" hidden></span></a><a href="/app/"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18.5h2"/></svg>Open the App</a>
   </div>
 </div>
 
-<section class="hero" style="min-height:40vh;">
+<section class="hero">
   <div class="hero-overlay"></div>
-  <div class="hero-content" style="padding-top:80px;">
+  <div class="hero-content">
     <div class="hero-badge">Water Temps Today</div>
-    <h1 class="hero-title" style="font-size:clamp(26px,5vw,50px);">Cape Cod Water <span class="script">Temperature</span> Today</h1>
+    <h1 class="hero-title">Cape Cod Water <span class="script">Temperature</span> Today</h1>
     <p class="hero-subtitle">Readings from three sensors, matched to each beach</p>
   </div>
 </section>
 
 <section class="section page-wrap">
 
-  <p style="font-size:15px; line-height:1.7; color:var(--text); margin:0 0 16px; max-width:760px;">
+  <p>
     Each beach below shows the latest reading from its nearest working sensor:
     <a href="https://tidesandcurrents.noaa.gov/stationhome.html?id=8447930" target="_blank" rel="noopener">NOAA's Woods Hole station (8447930)</a>,
     <a href="https://www.ndbc.noaa.gov/station_page.php?station=44020" target="_blank" rel="noopener">NOAA buoy 44020 in Nantucket Sound</a>
@@ -91,30 +66,18 @@
     There's no sensor on the ocean side, so Atlantic-facing beaches such as Nauset, Coast Guard, Marconi and Race Point
     show the Cape Cod Bay reading — the water there isn't measured and may be warmer or colder.
   </p>
-  <p style="font-size:14px; line-height:1.6; color:var(--text); margin:0 0 28px; max-width:760px; background:var(--sea-mist); border-radius:12px; padding:12px 14px;">
-    🌊 The National Weather Service defines cold water as <strong>70°F or lower</strong> and explains the risk of cold shock on its
+  <p class="lead-note">
+    The National Weather Service defines cold water as <strong>70°F or lower</strong> and explains the risk of cold shock on its
     <a href="https://www.weather.gov/gyx/HazardOfColdWaterActivities" target="_blank" rel="noopener">Hazard of Cold Water Activities</a> page.
   </p>
 
-  <div id="tempData">
-    <div class="loading-msg">⏳ Loading live water temperatures…</div>
+  <div id="tempData" style="min-height:900px;">
+    <div class="loading-msg">Loading live water temperatures…</div>
   </div>
 
-  <div style="margin-top:40px; padding:24px; background:var(--sea-mist); border-radius:var(--radius-md); text-align:center;">
-    <p style="margin:0 0 8px; font-size:13px; color:var(--text-secondary); font-weight:600; text-transform:uppercase; letter-spacing:.06em;">More Live Cape Cod Data</p>
-    <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
-      <a href="/cape-cod-beach-conditions-today.html" style="background:white; padding:10px 18px; border-radius:var(--radius-full); font-size:13px; font-weight:700; color:var(--sea-deep); box-shadow:var(--shadow-sm);">🏖️ Beach Conditions</a>
-      <a href="/cape-cod-bridge-traffic.html" style="background:white; padding:10px 18px; border-radius:var(--radius-full); font-size:13px; font-weight:700; color:var(--sea-deep); box-shadow:var(--shadow-sm);">🌉 Bridge Traffic</a>
-      <a href="/cape-cod-live-music-tonight.html" style="background:white; padding:10px 18px; border-radius:var(--radius-full); font-size:13px; font-weight:700; color:var(--sea-deep); box-shadow:var(--shadow-sm);">🎵 Live Music Tonight</a>
-    </div>
-  </div>
+  <div class="sig"><p class="msg" style="margin:0 0 4px;">More Live Cape Cod Data</p><div class="links-row"><a href="/cape-cod-beach-conditions-today.html">Beach Conditions</a><a href="/cape-cod-bridge-traffic.html">Bridge Traffic</a><a href="/cape-cod-live-music-tonight.html">Live Music Tonight</a></div></div>
 
-  <div style="margin-top:40px; background:var(--sand-light); border-radius:var(--radius-lg); padding:32px; text-align:center;">
-    <p style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--warm-brown-soft); margin:0 0 10px;">Get it live on your phone</p>
-    <h2 style="font-family:'Fraunces',serif; font-weight:900; font-size:26px; margin:0 0 8px; color:var(--warm-brown);">Open the Totally Cape Cod App</h2>
-    <p style="color:var(--text-secondary); font-size:14px; margin:0 0 20px;">Water temps, bridge traffic, tides &amp; tonight's events — all in one place.</p>
-    <a href="/app/" class="btn btn-primary" onclick="gtag('event','cta_click',{page:'water-temp',location:'bottom'})">Open the App →</a>
-  </div>
+  <div class="affiliate-band"><div><div class="label">Get it live on your phone</div><h2 class="title">Open the Totally Cape Cod App</h2><p>Water temps, bridge traffic, tides &amp; tonight's events — all in one place.</p></div><a href="/app/" class="btn btn-ghost" onclick="gtag('event','cta_click',{page:'water-temp',location:'bottom'})">Open the App<span class=x> →</span></a></div>
 
 </section>
 
@@ -158,7 +121,7 @@ function tempClass(t) {
 }
 
 function nwsLabel(t) {
-  return t <= 70 ? '<div class="temp-label-feel feel-cold">Cold water by NWS definition (70°F or lower)</div>' : '';
+  return t <= 70 ? '<div class="lq">Cold water by NWS definition (70°F or lower)</div>' : '';
 }
 
 // Station pages for each sensor name used in data/beaches.json
@@ -185,16 +148,16 @@ function renderGrid(beaches) {
 
   var cards = sorted.filter(function(b){ return b.water_temp; }).map(function(b) {
     var cls = tempClass(b.water_temp);
-    return '<div class="temp-card">' +
-      '<div class="beach-name-card">' + b.name + '</div>' +
-      '<div class="beach-town-card">' + b.town + '</div>' +
-      '<div class="temp-display temp-' + cls + '">' + b.water_temp + '<span class="temp-unit">°F</span></div>' +
+    return '<div class="lr">' +
+      '<div class="ln">' + b.name + '</div>' +
+      '<div class="lt">' + b.town + '</div>' +
+      '<div class="lf ' + cls + '">' + b.water_temp + '<span class="temp-unit">°F</span></div>' +
       nwsLabel(b.water_temp) +
-      '<div style="font-size:11px;color:var(--text-secondary);margin-top:6px;">' + sensorHtml(b.water_temp_src) + (b.water_temp_at ? ' · checked ' + fmtWhen(b.water_temp_at) : ' · time unknown') + '</div>' +
+      '<div class="lm">' + sensorHtml(b.water_temp_src) + (b.water_temp_at ? '<span class=dot aria-hidden=true> · </span>checked ' + fmtWhen(b.water_temp_at) : '<span class=dot aria-hidden=true> · </span>time unknown') + '</div>' +
     '</div>';
   }).join('');
 
-  return cards || '<div style="text-align:center;padding:20px;color:var(--text-secondary);">No temperature data available right now.</div>';
+  return cards || '<div class="loading-msg">No temperature data available right now.</div>';
 }
 
 function fmtWhen(iso) {
@@ -205,8 +168,8 @@ function fmtWhen(iso) {
 }
 function setSort(mode, btn) {
   sortMode = mode;
-  document.querySelectorAll('.sort-btn').forEach(function(b){ b.classList.remove('active'); });
-  btn.classList.add('active');
+  document.querySelectorAll('.sort-btn').forEach(function(b){ b.classList.remove('active'); b.setAttribute('aria-pressed','false'); });
+  btn.classList.add('active'); btn.setAttribute('aria-pressed','true');
   document.getElementById('tempGrid').innerHTML = renderGrid(beachesAll);
   gtag('event','sort_click',{page:'water-temp',sort:mode});
 }
@@ -221,22 +184,22 @@ async function loadData() {
     if (!beaches.length) throw new Error('No beach data');
     beachesAll = beaches;
     var updatedAt = data.updated_at ? fmtWhen(data.updated_at) : 'unknown';
-    var staleNote = (data.updated_at && (Date.now() - new Date(data.updated_at).getTime()) > 6 * 3600000) ? ' · <strong>These readings are more than 6 hours old.</strong>' : '';
+    var staleNote = (data.updated_at && (Date.now() - new Date(data.updated_at).getTime()) > 6 * 3600000) ? '<span class=dot aria-hidden=true> · </span><strong>These readings are more than 6 hours old.</strong>' : '';
 
     container.innerHTML =
       '<div class="legend">' +
         '<span class="legend-item"><span class="legend-dot" style="background:#b4532a;"></span>Above 70°F</span>' +
         '<span class="legend-item"><span class="legend-dot" style="background:#8a6a1f;"></span>65–70°F</span>' +
-        '<span class="legend-item"><span class="legend-dot" style="background:var(--sea-deep);"></span>60–64°F</span>' +
+        '<span class="legend-item"><span class="legend-dot" style="background:#1A3A6C;"></span>60–64°F</span>' +
         '<span class="legend-item"><span class="legend-dot" style="background:#5056a1;"></span>Below 60°F</span>' +
       '</div>' +
       '<div class="sort-bar">' +
-        '<button class="sort-btn active" onclick="setSort(\'warmest\',this)">Warmest First</button>' +
-        '<button class="sort-btn" onclick="setSort(\'az\',this)">A–Z</button>' +
-        '<button class="sort-btn" onclick="setSort(\'town\',this)">By Town</button>' +
+        '<button class="sort-btn active" aria-pressed="true" onclick="setSort(\'warmest\',this)"><span class="lc">Warmest First</span></button>' +
+        '<button class="sort-btn" aria-pressed="false" onclick="setSort(\'az\',this)">A–Z</button>' +
+        '<button class="sort-btn" aria-pressed="false" onclick="setSort(\'town\',this)"><span class="lc">By Town</span></button>' +
       '</div>' +
-      '<div class="temp-grid" id="tempGrid">' + renderGrid(beaches) + '</div>' +
-      '<p class="updated-line">Data file updated: ' + updatedAt + staleNote + ' · <a href="/app/">Full data in the app →</a></p>';
+      '<div class="lg" id="tempGrid">' + renderGrid(beaches) + '</div>' +
+      '<p class="updated-line">Data file updated: ' + updatedAt + staleNote + '<span class=dot aria-hidden=true> · </span><a href="/app/">Full data in the app<span class=x> →</span></a></p>';
 
   } catch (e) {
     console.error(e);
