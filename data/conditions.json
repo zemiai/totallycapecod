@@ -2,12 +2,12 @@
   "today": {
     "date": "2026-11-16",
     "weather": {
-      "temp_high": 49,
-      "temp_low": 37,
+      "temp_high": 52,
+      "temp_low": 44,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "wind_mph": 3,
-      "wind_dir": "NW"
+      "wind_mph": 8,
+      "wind_dir": "W"
     },
     "sun": {
       "sunrise": "6:30 AM",
@@ -44,24 +44,12 @@
   },
   "forecast_7day": [
     {
-      "date": "2026-11-16",
-      "day": "Mon",
-      "temp_high": 49,
-      "condition": "Sunny",
-      "icon": "\u2600\ufe0f",
-      "temp_low": 37,
-      "sunrise": "6:30 AM",
-      "sunset": "4:18 PM",
-      "low_tide": "10:41 AM",
-      "high_tide": "4:43 AM"
-    },
-    {
       "date": "2026-11-17",
       "day": "Tue",
       "temp_high": 52,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "temp_low": 42,
+      "temp_low": 44,
       "sunrise": "6:32 AM",
       "sunset": "4:18 PM",
       "low_tide": "11:36 AM",
@@ -73,7 +61,7 @@
       "temp_high": 58,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "temp_low": 46,
+      "temp_low": 47,
       "sunrise": "6:33 AM",
       "sunset": "4:17 PM",
       "low_tide": "12:22 AM",
@@ -82,7 +70,7 @@
     {
       "date": "2026-11-19",
       "day": "Thu",
-      "temp_high": 57,
+      "temp_high": 55,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
       "temp_low": 47,
@@ -94,10 +82,10 @@
     {
       "date": "2026-11-20",
       "day": "Fri",
-      "temp_high": 60,
+      "temp_high": 59,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "temp_low": 48,
+      "temp_low": 49,
       "sunrise": "6:35 AM",
       "sunset": "4:15 PM",
       "low_tide": "1:56 AM",
@@ -106,10 +94,10 @@
     {
       "date": "2026-11-21",
       "day": "Sat",
-      "temp_high": 56,
+      "temp_high": 55,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "temp_low": 48,
+      "temp_low": 49,
       "sunrise": "6:36 AM",
       "sunset": "4:15 PM",
       "low_tide": "2:42 AM",
@@ -121,7 +109,7 @@
       "temp_high": 59,
       "condition": "Rain",
       "icon": "\ud83c\udf27\ufe0f",
-      "temp_low": 47,
+      "temp_low": 50,
       "sunrise": "6:38 AM",
       "sunset": "4:14 PM",
       "low_tide": "3:29 AM",
@@ -129,5 +117,5 @@
     }
   ],
   "version": "1.0",
-  "updated_at": "2026-11-16T13:32:45Z"
+  "updated_at": "2026-11-16T23:21:05Z"
 }
