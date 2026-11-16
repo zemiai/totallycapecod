@@ -82,16 +82,71 @@
     .g-body h2,.g-faq,.g-sources{scroll-margin-top:84px;}
   }
 </style>
-
+<style>
+.ga{--paper:#FDF8F2;--ink:#4A4038;--mute:#625749;--navy:#1A3A6C;--kraft:#D4A574;--kraftd:#9A6F3C;--sand:#F5E6D3;--bay:#2F6B57;--line:#E4D6C2;max-width:720px;margin:0 auto;padding:78px 18px 56px;font-size:17px;line-height:1.65;color:var(--ink)}
+.ga [hidden]{display:none!important}
+.ga a{color:var(--navy)}
+.ga a:focus-visible,.ga summary:focus-visible,.ga .ga-scroll:focus-visible{outline:3px solid var(--navy);outline-offset:2px;border-radius:6px}
+.ga h1,.ga h2,.ga h3{font-family:'Fraunces',Georgia,serif;color:var(--navy);margin:0}
+.ga .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.ga-crumbs{font-size:15px;color:var(--mute);margin-bottom:14px}
+.ga-hero h1{font-weight:900;font-size:clamp(32px,8vw,48px);line-height:1.06;letter-spacing:-.015em;margin:0 0 14px}
+.ga-hero .dek{font-size:19px;line-height:1.5;margin:0 0 14px;max-width:35rem}
+.ga-by{display:flex;flex-wrap:wrap;gap:2px 20px;font-size:15px;color:var(--mute);padding:12px 0 14px;border-bottom:2px dashed var(--kraft)}
+.ga-by a{color:var(--navy)}
+.ga-fig{margin:18px 0 0}.ga-fig img{width:100%;height:auto;object-fit:cover;border-radius:12px;background:#D9C8B0}
+.ga-fig figcaption{font-size:15px;line-height:1.45;color:var(--mute);margin-top:7px}
+.ga-trust{display:flex;gap:12px;align-items:flex-start;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;margin:22px 0;font-size:17px;line-height:1.5}
+.ga-trust p{margin:0}.gd-i{flex:none;display:block}.gd-tick{margin-top:2px;color:var(--bay)}
+.ga-jump{position:sticky;top:73px;z-index:40;display:flex;align-items:center;gap:6px;background:var(--paper);border-bottom:1px solid var(--line);margin:0 -18px;padding:0 18px}
+.ga-jump .lbl{flex:none;font-size:15px;color:var(--mute);padding-right:4px}
+.ga-jump ul{display:flex;gap:2px;list-style:none;margin:0;padding:0;overflow-x:auto;scrollbar-width:thin}
+.ga-jump a{display:flex;align-items:center;min-height:44px;padding:0 12px;white-space:nowrap;font-weight:600;font-size:16px;text-decoration:none;color:var(--ink);border-bottom:3px solid transparent}
+.ga-jump a:hover{border-bottom-color:var(--navy)}
+.ga-body{padding-top:6px}
+.ga-body>*{max-width:35rem}.ga-body>.ga-scroll{max-width:none}
+.ga-body h2{font-weight:900;font-size:30px;line-height:1.12;margin:44px 0 12px;scroll-margin-top:130px}
+.ga-body h3{font-weight:800;font-size:22px;line-height:1.2;margin:28px 0 8px;scroll-margin-top:130px}
+.ga-body p{margin:0 0 14px}.ga-body ul,.ga-body ol{padding-left:22px;margin:0 0 14px}.ga-body li{margin:0 0 8px}
+.ga-body a{text-decoration:underline;text-underline-offset:2px}
+.ga-body blockquote{font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:18px;line-height:1.5;color:var(--mute);border-left:1px solid var(--kraftd);padding:2px 0 2px 14px;margin:20px 0}
+.ga-body hr{border:0;border-top:2px dashed var(--kraft);margin:28px 0}
+.ga-scroll{overflow-x:auto;margin:18px 0}
+.ga-scroll table{border-collapse:collapse;font-size:15px;line-height:1.45;width:100%}.ga-scroll table.wide{min-width:560px}
+.ga-scroll th,.ga-scroll td{text-align:left;padding:9px 10px;border-bottom:1px dashed var(--kraft);vertical-align:top}
+.ga-scroll th{background:var(--sand);color:var(--ink)}
+.ga-faq{margin-top:44px;max-width:35rem}.ga-faq h2{font-weight:900;font-size:30px;line-height:1.1;margin:0 0 10px}
+.ga-faq details{border-bottom:1px dashed var(--kraft);padding:4px 0}
+.ga-faq summary{display:flex;align-items:center;min-height:48px;font-weight:600;color:var(--navy);cursor:pointer}
+.ga-faq p{margin:4px 0 12px}
+.ga-note{font-size:15px;line-height:1.55;border-top:1px solid var(--line);padding-top:14px;margin:30px 0 0;color:var(--mute);max-width:35rem}
+sup.cite-q{font-size:.68em;line-height:0;margin-left:1px;white-space:nowrap}
+sup.cite-q a{position:relative;color:#566A75!important;text-decoration:none!important;font-weight:600}
+sup.cite-q a+a::before{content:","}
+sup.cite-q a::after{content:"";position:absolute;inset:-14px -4px}
+sup.cite-q a:hover{color:var(--navy)!important;text-decoration:underline!important}
+.live-events-embed{margin:16px 0}
+@media(min-width:700px){.ga-fig img{aspect-ratio:21/9!important}}
+@media(max-width:999px){.ga-jump{top:61px}}
+@media(max-width:768px){.ga-jump{top:73px}}
+@media(max-width:480px){.ga{padding-left:14px;padding-right:14px}.ga-jump{margin-left:-14px;margin-right:-14px;padding:0 14px}}
+</style>
+<style>
+.hub-g{margin-top:36px}.hub-g h2{font-weight:900;font-size:30px;line-height:1.1}
+.hub-g ul{list-style:none;margin:8px 0 0;padding:0;max-width:38rem}
+.hub-g li{padding:16px 0;border-bottom:2px dashed var(--kraft)}
+.hub-g li a{font:800 21px/1.25 'Fraunces',Georgia,serif;color:var(--navy);text-decoration:none}.hub-g li a:hover{text-decoration:underline}
+.hub-g li p{margin:6px 0 0;font-size:16px;line-height:1.5}.hub-g li .when{font-size:15px;color:var(--mute)}
+</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Cape Cod Guides", "url": "https://totallycapecod.com/guides/", "description": "Researched, source-cited guides to Cape Cod — events, seasons, beaches, wildlife and travel planning.", "hasPart": [{"@type": "Article", "headline": "Cape Cod Holiday Gift Shops 2026: A Town-by-Town List, Checked Shop by Shop", "url": "https://totallycapecod.com/guides/cape-cod-holiday-gift-shops-2026/"}, {"@type": "Article", "headline": "Sagamore and Bourne Bridge Traffic: Peak Times and When to Cross", "url": "https://totallycapecod.com/guides/sagamore-bourne-bridge-traffic-best-times/"}, {"@type": "Article", "headline": "Cape Cod Holiday Events 2026: Strolls, Parades, Lights and Markets", "url": "https://totallycapecod.com/guides/cape-cod-holiday-events-2026/"}, {"@type": "Article", "headline": "Cape Cod in November 2026: What's Open, What's On and What to Expect", "url": "https://totallycapecod.com/guides/cape-cod-in-november/"}, {"@type": "Article", "headline": "Whales and Seals on Cape Cod in Winter: Where to Look and How Close You Can Get", "url": "https://totallycapecod.com/guides/whales-and-seals-cape-cod-winter/"}]}</script>
 </head>
 <body>
 <nav class="site-nav" id="siteNav"><div class="nav-inner"><a href="/" class="nav-logo">Totally Cape Cod</a><div class="nav-links"><a href="/feed.html">📍 Near You</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/events">Events</a><a href="/guides/">Guides</a><a href="/app/">📱 App</a></div><button class="nav-mobile-toggle" type="button" aria-label="Menu" aria-controls="mobileMenu" onclick="toggleMobileMenu()">☰</button></div></nav><div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()"><div class="mobile-menu-panel" onclick="event.stopPropagation()"><a href="/">Home</a><a href="/events">Events</a><a href="/beaches.html">Beaches</a><a href="/eats.html">Eats</a><a href="/stays.html">Stays</a><a href="/experiences.html">Experiences</a><a href="/feed.html">📍 Near You</a><a href="/itinerary.html">Plan a Trip</a><a href="/guides/">Guides</a><a href="/photos.html">Photos</a><a href="/about.html">About</a><a href="/app/">📱 Open the App</a></div></div>
-<main class="g-wrap" style="max-width:1000px;">
-<div class="g-crumbs"><a href="/">Home</a> › Guides</div>
-<h1 class="g-title">Cape Cod Guides</h1>
-<p class="g-dek">Local guides to Cape Cod's events, seasons, beaches and wildlife. Every fact is linked to the source it came from — <a href="/guides/standards/">here's how we check</a>.</p>
-<div class="g-cards" style="margin-top:22px;"><a class="g-card" href="/guides/cape-cod-holiday-gift-shops-2026/"><span>Holidays 2026</span><b>Cape Cod Holiday Gift Shops 2026: A Town-by-Town List, Checked Shop by Shop</b><span>Updated November 15, 2026</span></a><a class="g-card" href="/guides/sagamore-bourne-bridge-traffic-best-times/"><span>Getting Around</span><b>Sagamore and Bourne Bridge Traffic: Peak Times and When to Cross</b><span>Updated November 13, 2026</span></a><a class="g-card" href="/guides/cape-cod-holiday-events-2026/"><span>Holidays 2026</span><b>Cape Cod Holiday Events 2026: Strolls, Parades, Lights and Markets</b><span>Updated November 13, 2026</span></a><a class="g-card" href="/guides/cape-cod-in-november/"><span>Seasons</span><b>Cape Cod in November 2026: What&#x27;s Open, What&#x27;s On and What to Expect</b><span>Updated November 10, 2026</span></a><a class="g-card" href="/guides/whales-and-seals-cape-cod-winter/"><span>Winter wildlife</span><b>Whales and Seals on Cape Cod in Winter: Where to Look and How Close You Can Get</b><span>Updated November 8, 2026</span></a></div>
+<main class="ga">
+<div class="ga-crumbs"><a href="/">Home</a> › Guides</div>
+<header class="ga-hero"><h1>Cape Cod Guides</h1>
+<p class="dek">Local guides to Cape Cod's events, seasons, beaches and wildlife. Every fact is linked to the source it came from — <a href="/guides/standards/">here's how we check</a>.</p></header>
+<section class="hub-g"><h2>Holidays</h2><ul><li><a href="/guides/cape-cod-holiday-gift-shops-2026/">Cape Cod Holiday Gift Shops 2026: A Town-by-Town List, Checked Shop by Shop</a><p>Each of the 32 chamber-listed shops was checked on November 15, 2026 for published hours, recent posts or a stated reopening date.</p><p class="when">Updated November 15, 2026</p></li><li><a href="/guides/cape-cod-holiday-events-2026/">Cape Cod Holiday Events 2026: Strolls, Parades, Lights and Markets</a><p>2026 dates for Cape Cod Christmas strolls, parades and tree lightings by town: Chatham, Falmouth, Hyannis, Sandwich, Holly Folly and more, with organizer links.</p><p class="when">Updated November 13, 2026</p></li></ul></section><section class="hub-g"><h2>Getting around</h2><ul><li><a href="/guides/sagamore-bourne-bridge-traffic-best-times/">Sagamore and Bourne Bridge Traffic: Peak Times and When to Cross</a><p>When Sagamore and Bourne bridge traffic peaks, per MassDOT traffic studies and holiday advisories, plus construction news and how to check live delays.</p><p class="when">Updated November 13, 2026</p></li></ul></section><section class="hub-g"><h2>Seasons</h2><ul><li><a href="/guides/cape-cod-in-november/">Cape Cod in November 2026: What&#x27;s Open, What&#x27;s On and What to Expect</a><p>Cape Cod in November 2026: NOAA weather normals, sunset times, which beaches, ferries and buses still run, plus confirmed events, markets and Thanksgiving.</p><p class="when">Updated November 10, 2026</p></li></ul></section><section class="hub-g"><h2>Wildlife</h2><ul><li><a href="/guides/whales-and-seals-cape-cod-winter/">Whales and Seals on Cape Cod in Winter: Where to Look and How Close You Can Get</a><p>When right whales visit Cape Cod Bay, where to see seals, the 500-yard whale law, seal distances, and who to call about stranded seals or sea turtles.</p><p class="when">Updated November 8, 2026</p></li></ul></section>
 </main>
 <footer class="site-footer"><div class="footer-inner"><div><div class="footer-brand">Totally Cape Cod</div><p class="footer-desc">Cape Cod beaches, events and eats, linked to their sources.</p></div><div class="footer-links"><div class="footer-heading">Explore</div><a href="/beaches.html">Beaches</a><a href="/eats.html">Restaurants</a><a href="/events">Events</a><a href="/experiences.html">Experiences</a><a href="/best-beaches-2026.html">Beaches by region</a><a href="/hidden-gems.html">Cape Cod detours</a><a href="/photos.html">Cape Cod photos</a></div><div class="footer-links"><div class="footer-heading">Guides</div><a href="/guides/">All guides</a><a href="/guides/standards/">How we fact-check</a><a href="/contact.html">Report an error</a></div></div><div class="footer-bottom">© 2026 Totally Cape Cod. Affiliate links help keep this guide free.</div></footer><script>function toggleMobileMenu(){document.getElementById("mobileMenu").classList.toggle("show");}</script>
 </body>

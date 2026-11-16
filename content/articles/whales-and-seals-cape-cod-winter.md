@@ -8,6 +8,7 @@ date: 2026-10-26
 updated: 2026-11-08
 author: versel-johnson
 cluster: wildlife
+hero_photo: nps-atlantic-surf-misty-morning
 keywords:
   - right whales cape cod bay
   - where to see seals on cape cod
