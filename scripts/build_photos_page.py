@@ -90,7 +90,6 @@ def main() -> None:
 <meta property="og:url" content="{SITE}/photos.html" />
 <meta property="og:image" content="{SITE}/{esc(data['photos'][0]['file'])}" />
 <meta name="twitter:card" content="summary_large_image" />
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0YM9WQLWK"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}gtag('js',new Date());gtag('config','G-Q0YM9WQLWK');</script>
 <script src="/js/pixel.js" defer></script>
 <link rel="stylesheet" href="css/tcc.css" />
