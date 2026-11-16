@@ -8,6 +8,7 @@ date: 2026-10-26
 updated: 2026-11-13
 author: versel-johnson
 cluster: holidays
+layout: classic
 keywords:
   - cape cod christmas events 2026
   - cape cod christmas stroll 2026

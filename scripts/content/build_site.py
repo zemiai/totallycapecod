@@ -404,6 +404,8 @@ def render_article(meta: dict, body: str, authors: dict, all_articles: list) -> 
     slug = meta["slug"]
     if meta.get("layout") == "directory":
         return render_directory(meta, body, authors, all_articles)
+    if (meta.get("layout") or "article") != "classic":
+        return render_prose(meta, body, authors, all_articles)
     url = f"{SITE}/guides/{slug}/"
     a = authors[meta["author"]]
     sp = bool(meta.get("sources_page"))          # opt-in: references live on /guides/<slug>/sources/
@@ -564,12 +566,12 @@ def validate_directory(meta: dict, body: str) -> list[str]:
     return errs
 
 
-def trust_box(meta: dict, n_sources: int, with_icon: bool = False) -> str:
+def trust_box(meta: dict, n_sources: int, with_icon: bool = False, default_line: bool = False, cls: str = "gd-trust") -> str:
     slug = meta["slug"]
-    line = meta.get("trust_line")
+    line = meta.get("trust_line") or (f"Last checked {pretty_date(str(meta['updated']))}." if default_line else None)
     lead = f"<strong>{esc(line)}</strong> " if line else ""
     ic = icon("check", "gd-i gd-tick") if with_icon else ""
-    return (f'<div class="gd-trust">{ic}<p>{lead}{n_sources} sources back this page. '
+    return (f'<div class="{cls}">{ic}<p>{lead}{n_sources} sources back this page. '
             f'<a href="/guides/{esc(slug)}/sources/">See sources and how we checked</a></p></div>')
 
 
@@ -579,7 +581,7 @@ def render_sources_page(meta: dict, body: str, authors: dict) -> str:
     main_url = f"{SITE}/guides/{slug}/"
     sources = sorted(meta.get("sources") or [], key=lambda s: s["id"])
     _, secs = split_body(body)
-    method = [(t, r) for t, r in secs if t == "How this list was made"]
+    method = [(t, r) for t, r in secs if t in METHOD_TITLES]
     method_html = "".join(md_to_html(f"## {t}\n\n{r}", slug) for t, r in method)
     disclosure = (meta.get("disclosure") or ("This guide was researched with the help of AI tools and checked line by line "
                   "against the sources listed below before publishing.")).replace("listed below", "listed on this page")
@@ -596,11 +598,9 @@ def render_sources_page(meta: dict, body: str, authors: dict) -> str:
             + f"""<main class="g-wrap">
 <div class="g-crumbs"><a href="/">Home</a> › <a href="/guides/">Guides</a> › <a href="/guides/{esc(slug)}/">{esc(meta.get("kicker") or "Guide")}</a> › Sources</div>
 <h1 class="g-title">Sources and method</h1>
-<p class="g-dek">This page holds how the list was made, the numbered sources and the saved excerpts behind <a href="/guides/{esc(slug)}/">{esc(meta["title"])}</a>.</p>
+<p class="g-dek">This page holds {"how the list was made, " if method else ""}the numbered sources and the saved excerpts behind <a href="/guides/{esc(slug)}/">{esc(meta["title"])}</a>.</p>
 <p><a href="/guides/{esc(slug)}/">Back to the guide</a><br><a href="/guides/standards/">How we fact-check</a></p>
-<article class="g-body">
-{method_html}
-</article>
+{('<article class="g-body">' + chr(10) + method_html + chr(10) + '</article>') if method_html else ""}
 <section class="g-sources" id="sources"><h2>Sources</h2><ol>{build_src_items(slug, sources)}</ol></section>
 <div class="g-note">📝 {esc(disclosure)} Spot something out of date? <a href="/contact.html">Tell us</a> and we'll fix it.</div>
 <p><a href="/guides/{esc(slug)}/">Back to the guide</a><br><a href="/guides/standards/">Read our editorial and fact-checking standards</a></p>
@@ -933,7 +933,7 @@ def render_directory(meta: dict, body: str, authors: dict, all_articles: list) -
            '<div class="gd-barb"><button class="gd-btn" id="gd-show" type="button">Show my list</button>'
            '<a class="gd-btn" id="gd-map" href="#" target="_blank" rel="noopener">Map my list</a>'
            '<button class="gd-btn" id="gd-listshare" type="button">Share my list</button></div></div>')
-    return (head(f'{meta.get("seo_title") or meta["title"]} | Totally Cape Cod', meta["description"], url, ld, extra=DIR_CSS)
+    return (head(f'{meta.get("seo_title") or meta["title"]} | Totally Cape Cod', meta["description"], url, ld, extra=DIR_CSS + "<style>" + KR_CSS + "</style>")
             + f"""{SPRITE}<main class="gd">
 {crumbs}
 {hero}
@@ -955,7 +955,7 @@ def render_directory(meta: dict, body: str, authors: dict, all_articles: list) -
 {after_html}
 {trust_box(meta, len(sources), True)}
 {share}
-{plan}
+{keep_reading(meta, all_articles)}
 <div class="gd-note">📝 {esc(disclosure)} Spot something out of date? <a href="/contact.html">Tell us</a> and we'll fix it.</div>
 {bar}
 </main>
@@ -966,25 +966,196 @@ def render_directory(meta: dict, body: str, authors: dict, all_articles: list) -
 """)
 
 
+# ------------------------------------------------------- prose guide layout (default) ---
+# Default for every article that is not `layout: directory` or `layout: classic`.
+# `layout: classic` renders the original page exactly (used for the events guide until its season ends).
+METHOD_TITLES = ("How this list was made", "How this guide was made")
+
+
+def has_sources_page(meta: dict) -> bool:
+    return (meta.get("layout") or "article") != "classic"
+
+
+def photo_figure(photo_id: str, aspect: str = "16/9") -> str:
+    pj = json.loads((ROOT / "data" / "photos.json").read_text(encoding="utf-8"))
+    ph = next(p for p in pj["photos"] if p["id"] == photo_id)
+    who = pj["photographers"][ph["photographer"]]
+    if ph.get("credit"):
+        credit = f'<a href="{esc(ph["source_url"])}" target="_blank" rel="noopener">{esc(ph["credit"])}</a>'
+    else:
+        credit = f'Photo: <a href="{esc(ph["source_url"])}" target="_blank" rel="noopener">{esc(who["name"])}</a>'
+    return (f'<figure class="ga-fig"><img src="/{esc(ph["file"])}" width="{ph["width"]}" height="{ph["height"]}" alt="{esc(ph["alt"])}" '
+            f'loading="lazy" decoding="async" style="aspect-ratio:{aspect}">'
+            f'<figcaption>{esc(ph["title"])}, {esc(ph["place"])}. {credit}</figcaption></figure>')
+
+
+def keep_reading(meta: dict, all_articles: list) -> str:
+    """Up to three other guides (same cluster first, then newest), plus events and the app."""
+    others = [m for (m, _) in all_articles if m["slug"] != meta["slug"]]     # already newest first
+    same = [m for m in others if meta.get("cluster") and m.get("cluster") == meta.get("cluster")]
+    pick = (same + [m for m in others if m not in same])[:3]
+    rows = "".join(f'<li><a href="/guides/{esc(m["slug"])}/">{esc(m["title"])}</a><p>{esc(m["description"])}</p></li>' for m in pick)
+    return (f'<section class="kr"><h2>Keep reading</h2><ul>{rows}</ul>'
+            '<p class="more"><a class="kr-btn" href="/events">Browse Cape Cod events</a>'
+            '<a class="kr-btn" href="/app/">Open the free app</a></p></section>')
+
+
+KR_CSS = """
+.kr{margin-top:44px}.kr h2{font-weight:900;font-size:30px;line-height:1.1;margin:0 0 6px}
+.kr ul{list-style:none;margin:0;padding:0;max-width:35rem}.kr li{padding:16px 0;border-bottom:2px dashed var(--kraft)}
+.kr li a{font:800 20px/1.25 'Fraunces',Georgia,serif;color:var(--navy);text-decoration:none}.kr li a:hover{text-decoration:underline}
+.kr li p{margin:6px 0 0;font-size:16px;line-height:1.5;color:var(--mute)}
+.kr .more{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}
+.kr-btn{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border:1.5px solid var(--navy);border-radius:22px;color:var(--navy);font:600 16px/1 'Inter',sans-serif;text-decoration:none;background:#fff}
+.kr-btn:hover{background:var(--sand)}
+"""
+
+ART_CSS = """<style>
+.ga{--paper:#FDF8F2;--ink:#4A4038;--mute:#625749;--navy:#1A3A6C;--kraft:#D4A574;--kraftd:#9A6F3C;--sand:#F5E6D3;--bay:#2F6B57;--line:#E4D6C2;max-width:720px;margin:0 auto;padding:78px 18px 56px;font-size:17px;line-height:1.65;color:var(--ink)}
+.ga [hidden]{display:none!important}
+.ga a{color:var(--navy)}
+.ga a:focus-visible,.ga summary:focus-visible,.ga .ga-scroll:focus-visible{outline:3px solid var(--navy);outline-offset:2px;border-radius:6px}
+.ga h1,.ga h2,.ga h3{font-family:'Fraunces',Georgia,serif;color:var(--navy);margin:0}
+.ga .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.ga-crumbs{font-size:15px;color:var(--mute);margin-bottom:14px}
+.ga-hero h1{font-weight:900;font-size:clamp(32px,8vw,48px);line-height:1.06;letter-spacing:-.015em;margin:0 0 14px}
+.ga-hero .dek{font-size:19px;line-height:1.5;margin:0 0 14px;max-width:35rem}
+.ga-by{display:flex;flex-wrap:wrap;gap:2px 20px;font-size:15px;color:var(--mute);padding:12px 0 14px;border-bottom:2px dashed var(--kraft)}
+.ga-by a{color:var(--navy)}
+.ga-fig{margin:18px 0 0}.ga-fig img{width:100%;height:auto;object-fit:cover;border-radius:12px;background:#D9C8B0}
+.ga-fig figcaption{font-size:15px;line-height:1.45;color:var(--mute);margin-top:7px}
+.ga-trust{display:flex;gap:12px;align-items:flex-start;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;margin:22px 0;font-size:17px;line-height:1.5}
+.ga-trust p{margin:0}.gd-i{flex:none;display:block}.gd-tick{margin-top:2px;color:var(--bay)}
+.ga-jump{position:sticky;top:73px;z-index:40;display:flex;align-items:center;gap:6px;background:var(--paper);border-bottom:1px solid var(--line);margin:0 -18px;padding:0 18px}
+.ga-jump .lbl{flex:none;font-size:15px;color:var(--mute);padding-right:4px}
+.ga-jump ul{display:flex;gap:2px;list-style:none;margin:0;padding:0;overflow-x:auto;scrollbar-width:thin}
+.ga-jump a{display:flex;align-items:center;min-height:44px;padding:0 12px;white-space:nowrap;font-weight:600;font-size:16px;text-decoration:none;color:var(--ink);border-bottom:3px solid transparent}
+.ga-jump a:hover{border-bottom-color:var(--navy)}
+.ga-body{padding-top:6px}
+.ga-body>*{max-width:35rem}.ga-body>.ga-scroll{max-width:none}
+.ga-body h2{font-weight:900;font-size:30px;line-height:1.12;margin:44px 0 12px;scroll-margin-top:130px}
+.ga-body h3{font-weight:800;font-size:22px;line-height:1.2;margin:28px 0 8px;scroll-margin-top:130px}
+.ga-body p{margin:0 0 14px}.ga-body ul,.ga-body ol{padding-left:22px;margin:0 0 14px}.ga-body li{margin:0 0 8px}
+.ga-body a{text-decoration:underline;text-underline-offset:2px}
+.ga-body blockquote{font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:18px;line-height:1.5;color:var(--mute);border-left:1px solid var(--kraftd);padding:2px 0 2px 14px;margin:20px 0}
+.ga-body hr{border:0;border-top:2px dashed var(--kraft);margin:28px 0}
+.ga-scroll{overflow-x:auto;margin:18px 0}
+.ga-scroll table{border-collapse:collapse;font-size:15px;line-height:1.45;width:100%}.ga-scroll table.wide{min-width:560px}
+.ga-scroll th,.ga-scroll td{text-align:left;padding:9px 10px;border-bottom:1px dashed var(--kraft);vertical-align:top}
+.ga-scroll th{background:var(--sand);color:var(--ink)}
+.ga-faq{margin-top:44px;max-width:35rem}.ga-faq h2{font-weight:900;font-size:30px;line-height:1.1;margin:0 0 10px}
+.ga-faq details{border-bottom:1px dashed var(--kraft);padding:4px 0}
+.ga-faq summary{display:flex;align-items:center;min-height:48px;font-weight:600;color:var(--navy);cursor:pointer}
+.ga-faq p{margin:4px 0 12px}
+.ga-note{font-size:15px;line-height:1.55;border-top:1px solid var(--line);padding-top:14px;margin:30px 0 0;color:var(--mute);max-width:35rem}
+sup.cite-q{font-size:.68em;line-height:0;margin-left:1px;white-space:nowrap}
+sup.cite-q a{position:relative;color:#566A75!important;text-decoration:none!important;font-weight:600}
+sup.cite-q a+a::before{content:","}
+sup.cite-q a::after{content:"";position:absolute;inset:-14px -4px}
+sup.cite-q a:hover{color:var(--navy)!important;text-decoration:underline!important}
+.live-events-embed{margin:16px 0}
+@media(min-width:700px){.ga-fig img{aspect-ratio:21/9!important}}
+@media(max-width:999px){.ga-jump{top:61px}}
+@media(max-width:768px){.ga-jump{top:73px}}
+@media(max-width:480px){.ga{padding-left:14px;padding-right:14px}.ga-jump{margin-left:-14px;margin-right:-14px;padding:0 14px}}
+</style>
+"""
+
+
+def render_prose(meta: dict, body: str, authors: dict, all_articles: list) -> str:
+    slug = meta["slug"]
+    url = f"{SITE}/guides/{slug}/"
+    a = authors[meta["author"]]
+    cb = f"/guides/{slug}/sources/"
+    sources = sorted(meta.get("sources") or [], key=lambda s: s["id"])
+    faq = meta.get("faq") or []
+    main_body = body
+    if any(re.search(rf"(?m)^## {re.escape(t)}\s*$", body) for t in METHOD_TITLES):
+        intro, secs = split_body(body)
+        main_body = intro + "".join(f"\n\n## {t}\n\n{r}" for t, r in secs if t not in METHOD_TITLES)
+    body_html = md_to_html(main_body, slug, cb)
+    body_html = re.sub(r"<table>(.*?)</table>",
+                       lambda m: ('<div class="ga-scroll" tabindex="0" role="region" aria-label="Table, scrolls sideways"><table'
+                                  + (' class="wide"' if len(re.findall(r"<th[ >]", m.group(1))) >= 3 else "") + ">" + m.group(1) + "</table></div>"),
+                       body_html, flags=re.S)
+    heads = re.findall(r'<h2 id="([^"]+)">(.*?)</h2>', body_html, flags=re.S)
+    jump = ""
+    if len(heads) >= 3:
+        links = "".join(f'<li><a href="#{hid}">{re.sub(r"<[^>]+>", "", txt)}</a></li>' for hid, txt in heads)
+        jump = f'<nav class="ga-jump" aria-label="In this guide"><span class="lbl">In this guide</span><ul>{links}</ul></nav>'
+    ld = article_ld(meta, a, url, sources, faq)
+    byline = (f'<p class="ga-by"><span>By <a href="/authors/{esc(meta["author"])}/" rel="author">{esc(a["name"])}</a></span>'
+              f'<span>Updated <time datetime="{meta["updated"]}">{pretty_date(meta["updated"])}</time></span>'
+              f'<span><a href="/guides/standards/">How we fact-check</a></span></p>')
+    fig = photo_figure(meta["hero_photo"]) if meta.get("hero_photo") else ""
+    faq_html = ""
+    if faq:
+        items = "".join(f'<details><summary>{esc(q["q"])}</summary><p>{cite_html(markdown.markdown(q["a"])[3:-4], slug, cb)}</p></details>' for q in faq)
+        faq_html = f'<section class="ga-faq" id="quick-answers"><h2>Quick answers</h2>{items}</section>'
+    disclosure = (meta.get("disclosure") or ("This guide was researched with the help of AI tools and checked line by line "
+                  "against the sources listed below before publishing.")).replace("listed below", "listed on the sources page")
+    scripts = '<script src="/js/live-events.js" defer></script>' if "data-live-events" in body_html else ""
+    return (head(f'{meta.get("seo_title") or meta["title"]} | Totally Cape Cod', meta["description"], url, ld, extra=ART_CSS + "<style>" + KR_CSS + "</style>")
+            + f"""{SPRITE}<main class="ga">
+<div class="ga-crumbs"><a href="/">Home</a> › <a href="/guides/">Guides</a></div>
+<header class="ga-hero"><h1>{esc(meta["title"])}</h1><p class="dek">{esc(meta["description"])}</p>{byline}{fig}</header>
+{trust_box(meta, len(sources), True, True, "ga-trust")}
+{jump}
+<article class="ga-body">
+{body_html}
+</article>
+{faq_html}
+{trust_box(meta, len(sources), True, True, "ga-trust")}
+<div class="ga-note">📝 {esc(disclosure)} Spot something out of date? <a href="/contact.html">Tell us</a> and we'll fix it.</div>
+{keep_reading(meta, all_articles)}
+</main>
+{FOOTER}
+{scripts}
+</body>
+</html>
+""")
+
+
+CLUSTER_LABELS = {"holidays": "Holidays", "seasons": "Seasons", "bridges": "Getting around", "wildlife": "Wildlife"}
+
+
 def render_hub(articles: list) -> str:
     url = f"{SITE}/guides/"
     ld = [{"@context": "https://schema.org", "@type": "CollectionPage", "name": "Cape Cod Guides", "url": url,
            "description": "Researched, source-cited guides to Cape Cod — events, seasons, beaches, wildlife and travel planning.",
            "hasPart": [{"@type": "Article", "headline": m["title"], "url": f"{SITE}/guides/{m['slug']}/"} for m, _ in articles]}]
-    cards = "".join(card(m) for m, _ in articles) or '<p class="muted">Guides are on the way.</p>'
+    groups: dict = {}
+    for m, _ in articles:                              # articles are newest first, so clusters sort by newest guide
+        groups.setdefault(m.get("cluster") or "other", []).append(m)
+    sections = ""
+    for cl, ms in groups.items():
+        rows = "".join(f'<li><a href="/guides/{esc(m["slug"])}/">{esc(m["title"])}</a><p>{esc(m["description"])}</p>'
+                       f'<p class="when">Updated {esc(pretty_date(m["updated"]))}</p></li>' for m in ms)
+        sections += f'<section class="hub-g"><h2>{esc(CLUSTER_LABELS.get(cl) or cl.replace("-", " ").capitalize())}</h2><ul>{rows}</ul></section>'
+    if not sections:
+        sections = '<p class="muted">Guides are on the way.</p>'
     return (head("Cape Cod Guides — Researched, Source-Cited Local Guides | Totally Cape Cod",
                  "Cape Cod guides you can trust: events, seasons, beaches, wildlife and trip planning — every fact linked to its source.",
-                 url, ld, og_type="website")
-            + f"""<main class="g-wrap" style="max-width:1000px;">
-<div class="g-crumbs"><a href="/">Home</a> › Guides</div>
-<h1 class="g-title">Cape Cod Guides</h1>
-<p class="g-dek">Local guides to Cape Cod's events, seasons, beaches and wildlife. Every fact is linked to the source it came from — <a href="/guides/standards/">here's how we check</a>.</p>
-<div class="g-cards" style="margin-top:22px;">{cards}</div>
+                 url, ld, og_type="website", extra=ART_CSS + "<style>" + HUB_CSS + "</style>")
+            + f"""<main class="ga">
+<div class="ga-crumbs"><a href="/">Home</a> › Guides</div>
+<header class="ga-hero"><h1>Cape Cod Guides</h1>
+<p class="dek">Local guides to Cape Cod's events, seasons, beaches and wildlife. Every fact is linked to the source it came from — <a href="/guides/standards/">here's how we check</a>.</p></header>
+{sections}
 </main>
 {FOOTER}
 </body>
 </html>
 """)
+
+
+HUB_CSS = """
+.hub-g{margin-top:36px}.hub-g h2{font-weight:900;font-size:30px;line-height:1.1}
+.hub-g ul{list-style:none;margin:8px 0 0;padding:0;max-width:38rem}
+.hub-g li{padding:16px 0;border-bottom:2px dashed var(--kraft)}
+.hub-g li a{font:800 21px/1.25 'Fraunces',Georgia,serif;color:var(--navy);text-decoration:none}.hub-g li a:hover{text-decoration:underline}
+.hub-g li p{margin:6px 0 0;font-size:16px;line-height:1.5}.hub-g li .when{font-size:15px;color:var(--mute)}
+"""
 
 
 def render_author(aid: str, a: dict, articles: list) -> str:
@@ -1120,7 +1291,7 @@ def build_sitemap(articles: list, authors: dict) -> str:
     for m, _ in articles:
         loc = f"{SITE}/guides/{m['slug']}/"
         entries[loc] = dict(loc=loc, lastmod=m["updated"], changefreq=m.get("changefreq", "weekly"), priority=str(m.get("priority", "0.8")))
-        if m.get("sources_page"):
+        if has_sources_page(m):
             sloc = loc + "sources/"
             entries[sloc] = dict(loc=sloc, lastmod=m["updated"], changefreq="monthly", priority="0.4")
     rows = []
@@ -1186,7 +1357,7 @@ def main_build(check_only: bool = False) -> int:
         return 0
     for meta, body in articles:
         write(ROOT / "guides" / meta["slug"] / "index.html", render_article(meta, body, authors, articles))
-        if meta.get("sources_page"):
+        if has_sources_page(meta):
             write(ROOT / "guides" / meta["slug"] / "sources" / "index.html", render_sources_page(meta, body, authors))
     write(ROOT / "guides" / "index.html", render_hub(articles))
     write(ROOT / "guides" / "standards" / "index.html", render_standards())
