@@ -729,7 +729,7 @@
       "title": "Nut House Candle Company (shop website)",
       "checked": "2026-11-15",
       "via": "live page",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261117121556/https://nuthousecandleco.com/",
       "excerpts": [
         {
           "quote": "626 Main Street, Dennis Port, MA 02639",
@@ -767,7 +767,7 @@
       "title": "Ross Coppelman, Goldsmith (shop website)",
       "checked": "2026-11-15",
       "via": "live page",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261117121757/https://rosscoppelman.com/",
       "excerpts": [
         {
           "quote": "1439 Route 6A, East Dennis, MA 02641",
@@ -809,7 +809,7 @@
       "title": "Stage Stop Candy (shop website)",
       "checked": "2026-11-15",
       "via": "live page",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261117123652/https://stagestopcandy.com/",
       "excerpts": [
         {
           "quote": "411 Main Street, Dennis Port, MA 02639",
@@ -1036,7 +1036,8 @@
           "quote": "October 18 at 7:32 AM (per notes)",
           "supports": "Date of Mrs. Mitchell's Gifts's newest Facebook activity found: October 18, 2026"
         }
-      ]
+      ],
+      "archive_note": "not archivable (login wall)"
     },
     {
       "id": 53,
