@@ -5,7 +5,7 @@ slug: cape-cod-holiday-events-2026
 kicker: "Holidays 2026"
 description: "2026 dates for Cape Cod Christmas strolls, parades and tree lightings by town: Chatham, Falmouth, Hyannis, Sandwich, Holly Folly and more, with organizer links."
 date: 2026-10-26
-updated: 2026-11-13
+updated: 2026-11-17
 author: versel-johnson
 cluster: holidays
 layout: classic
@@ -224,6 +224,11 @@ sources:
     publisher: "Wellfleet Chamber of Commerce"
     url: "https://www.wellfleetchamber.com/wellfleet-winter-stroll/"
     accessed: 2026-11-13
+  - id: 37
+    title: "Breakfast With Santa 2026 @ The Wayside Inn (8am & 10am)"
+    publisher: "Chatham Chamber of Commerce & Merchants Association (CMA Events, Eventbrite)"
+    url: "https://www.eventbrite.com/e/breakfast-with-santa-2026-the-wayside-inn-8am-10am-registration-2004825011578"
+    accessed: 2026-11-17
 ---
 
 Village strolls, lighted parades, Santa arriving by boat or fire truck, holiday markets and a garden full of lights: here are the 2026 dates Cape Cod organizers have announced so far, town by town and weekend by weekend, each linked to its source. A few haven't posted 2026 dates yet; they're at the end, and we'll update this guide as organizers announce. <!-- nocite -->
@@ -323,7 +328,7 @@ The Hyannis Main Street Business Improvement District also lists Hyannis Holiday
 
 ## Second weekend of December: December 11–13
 
-**Chatham's Christmas by the Sea (December 11–13).** The Chatham Chamber of Commerce lists a Friday night Christmas stroll and tree lighting on Main Street, Breakfast with Santa at the Wayside Inn on Saturday morning, and live entertainment and activities around town on Saturday and Sunday [15]. The chamber's Breakfast with Santa flyer gives two seatings on Saturday, December 12, at 8:00 and 10:00 AM in The Wild Goose Tavern at The Wayside Inn, 512 Main Street, and says tickets are coming soon [15]. Times for the stroll and the other activities aren't posted yet, and the chamber says to check back for more detailed weekend activities [15].
+**Chatham's Christmas by the Sea (December 11–13).** The Chatham Chamber of Commerce lists a Friday night Christmas stroll and tree lighting on Main Street, Breakfast with Santa at the Wayside Inn on Saturday morning, and live entertainment and activities around town on Saturday and Sunday [15]. The chamber's Breakfast with Santa flyer gives two seatings on Saturday, December 12, at 8:00 and 10:00 AM in The Wild Goose Tavern at The Wayside Inn, 512 Main Street [15]. Tickets are now on sale on Eventbrite and are required for both adults and children; the listing says the breakfast is likely to sell out and that refunds are issued only for cancellations before December 9 [37]. Times for the stroll and the other activities aren't posted yet, and the chamber says to check back for more detailed weekend activities [15].
 
 **Osterville Christmas Stroll & Open House (from Friday, December 11).** The Osterville Business and Professional Association's calendar lists its Christmas Stroll & Open House starting Friday, December 11, in Osterville Village at Main Street and Wianno Avenue [27]. The association describes a festive Friday night when the village glows with twinkling lights, carolers and open-late shops [28].
 
@@ -341,7 +346,7 @@ The Hyannis Main Street Business Improvement District also lists Hyannis Holiday
 
 ## Still waiting on 2026 dates
 
-We couldn't find 2026 dates for these as of November 13, 2026. For planning, here's when each ran in 2025, according to the Cape Cod Chamber of Commerce [10]: <!-- nocite -->
+We couldn't find 2026 dates for these as of November 17, 2026. For planning, here's when each ran in 2025, according to the Cape Cod Chamber of Commerce [10]: <!-- nocite -->
 
 | Event | 2025 dates |
 |---|---|

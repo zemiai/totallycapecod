@@ -157,6 +157,12 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://totallycapecod.com/guides/cape-cod-holiday-events-2026/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://totallycapecod.com/guides/cape-cod-holiday-gift-shops-2026/</loc>
     <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
@@ -179,12 +185,6 @@
     <lastmod>2026-11-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://totallycapecod.com/guides/cape-cod-holiday-events-2026/</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://totallycapecod.com/guides/cape-cod-in-november/</loc>
