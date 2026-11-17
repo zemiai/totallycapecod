@@ -882,7 +882,8 @@
           "quote": "+1 508-457-0530",
           "supports": "Phone number of Celebrations of Cape Cod"
         }
-      ]
+      ],
+      "archive_note": "not archivable (login wall)"
     },
     {
       "id": 46,
@@ -906,7 +907,7 @@
       "title": "Masterson Made (shop website)",
       "checked": "2026-11-15",
       "via": "live page",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261117122045/https://www.mastersonmade.com/about",
       "excerpts": [
         {
           "quote": "89 Water Street, Woods Hole, MA 02543",
