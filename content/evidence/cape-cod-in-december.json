@@ -1,0 +1,1030 @@
+{
+  "slug": "cape-cod-in-december",
+  "article_updated": "2026-11-17",
+  "saved": "2026-11-17",
+  "about": "Verbatim excerpts from every source this guide cites, saved so each fact can be traced and re-checked. Excerpts are short; see each URL (and its archived copy, when added) for full context.",
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=normals-monthly-1991-2020&stations=USW00094720&format=json&dataTypes=MLY-TMAX-NORMAL,MLY-TMIN-NORMAL,MLY-TAVG-NORMAL,MLY-PRCP-NORMAL&includeStationName=true",
+      "publisher": "NOAA National Centers for Environmental Information",
+      "title": "U.S. Climate Normals 1991–2020, monthly: Hyannis Barnstable Muni AP (USW00094720)",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "{\"DATE\":\"12\",\"MLY-TAVG-NORMAL\":\"    37.2\",\"MLY-TMIN-NORMAL\":\"    29.3\",\"STATION\":\"USW00094720\",\"MLY-PRCP-NORMAL\":\"    4.68\",\"MLY-TMAX-NORMAL\":\"    45.2\",\"NAME\":\"HYANNIS BARNSTABLE MUNI AP, MA US\"}",
+          "supports": "December 1991-2020 normals at Hyannis Barnstable Muni AP: avg high 45.2 F, avg low 29.3 F, mean 37.2 F, precipitation 4.68 in"
+        },
+        {
+          "quote": "{\"DATE\":\"11\",\"MLY-TAVG-NORMAL\":\"    45.4\",\"MLY-TMIN-NORMAL\":\"    37.3\",\"STATION\":\"USW00094720\",\"MLY-PRCP-NORMAL\":\"    4.13\",\"MLY-TMAX-NORMAL\":\"    53.5\",\"NAME\":\"HYANNIS BARNSTABLE MUNI AP, MA US\"}",
+          "supports": "November normals: avg high 53.5 F, avg low 37.3 F, mean 45.4 F, precipitation 4.13 in"
+        },
+        {
+          "quote": "{\"DATE\":\"01\",\"MLY-TAVG-NORMAL\":\"    32.0\",\"MLY-TMIN-NORMAL\":\"    24.1\",\"STATION\":\"USW00094720\",\"MLY-PRCP-NORMAL\":\"    3.90\",\"MLY-TMAX-NORMAL\":\"    39.9\",\"NAME\":\"HYANNIS BARNSTABLE MUNI AP, MA US\"}",
+          "supports": "January normals: avg high 39.9 F, avg low 24.1 F, precipitation 3.90 in"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-12-01&coords=41.65,-70.28&tz=-5",
+      "publisher": "U.S. Naval Observatory, Astronomical Applications Department",
+      "title": "Sun and Moon Data for One Day: December 1, 2026, Hyannis area",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "\"phen\": \"Rise\", \"time\": \"06:49\" ... \"phen\": \"Set\", \"time\": \"16:12\" ... \"phen\": \"End Civil Twilight\", \"time\": \"16:43\"",
+          "supports": "On 2026-12-01 at Hyannis (41.65N, 70.28W), EST: sunrise 6:49, sunset 4:12 PM, civil twilight ends 4:43 PM"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-12-15&coords=41.65,-70.28&tz=-5",
+      "publisher": "U.S. Naval Observatory, Astronomical Applications Department",
+      "title": "Sun and Moon Data for One Day: December 15, 2026, Hyannis area",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "\"phen\": \"Rise\", \"time\": \"07:01\" ... \"phen\": \"Set\", \"time\": \"16:12\" ... \"phen\": \"End Civil Twilight\", \"time\": \"16:43\"",
+          "supports": "On 2026-12-15 at Hyannis, EST: sunrise 7:01, sunset 4:12 PM, civil twilight ends 4:43 PM"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-12-21&coords=41.65,-70.28&tz=-5",
+      "publisher": "U.S. Naval Observatory, Astronomical Applications Department",
+      "title": "Sun and Moon Data for One Day: December 21, 2026, Hyannis area",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "\"phen\": \"Rise\", \"time\": \"07:05\" ... \"phen\": \"Set\", \"time\": \"16:14\" ... \"phen\": \"End Civil Twilight\", \"time\": \"16:45\"",
+          "supports": "On 2026-12-21 at Hyannis, EST: sunrise 7:05, sunset 4:14 PM, civil twilight ends 4:45 PM"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2026-12-31&coords=41.65,-70.28&tz=-5",
+      "publisher": "U.S. Naval Observatory, Astronomical Applications Department",
+      "title": "Sun and Moon Data for One Day: December 31, 2026, Hyannis area",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "\"phen\": \"Rise\", \"time\": \"07:08\" ... \"phen\": \"Set\", \"time\": \"16:21\" ... \"phen\": \"End Civil Twilight\", \"time\": \"16:52\"",
+          "supports": "On 2026-12-31 at Hyannis, EST: sunrise 7:08, sunset 4:21 PM, civil twilight ends 4:52 PM"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "url": "https://aa.usno.navy.mil/api/seasons?year=2026&tz=-5",
+      "publisher": "U.S. Naval Observatory, Astronomical Applications Department",
+      "title": "Earth's Seasons and Apsides, 2026 (Eastern Standard Time)",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "{\"day\": 21, \"month\": 12, \"phenom\": \"Solstice\", \"time\": \"15:50\", \"year\": 2026}",
+          "supports": "December solstice: December 21, 2026, 3:50 PM EST (tz=-5)"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "url": "https://www.weather.gov/safety/winter-noreaster",
+      "publisher": "NOAA National Weather Service",
+      "title": "Nor'easters",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "These storms may occur at any time of year but are most frequent and most violent between September and April.",
+          "supports": "Nor'easters most frequent and violent September-April"
+        },
+        {
+          "quote": "so called because the winds over the coastal area are typically from the northeast.",
+          "supports": "named for northeast winds"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "url": "https://www.nps.gov/caco/planyourvisit/conditions.htm",
+      "publisher": "National Park Service, Cape Cod National Seashore",
+      "title": "Current Park Conditions",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Salt Pond Visitor Center Open: Staff and volunteers are on duty to assist with orientation information and provide maps and brochures. Films and exhibits are available. Open 9 am to 4:30 pm.",
+          "supports": "Salt Pond Visitor Center open 9 AM-4:30 PM"
+        },
+        {
+          "quote": "The satellite restroom building in the parking lot will closed for work beginning December 1. Portable toilets will be available.",
+          "supports": "Salt Pond satellite restroom building closing for work from Dec 1; portable toilets"
+        },
+        {
+          "quote": "Province Lands Visitor Center Closed: The visitor center has closed for the season. ... Open: Restrooms in the parking area are open year-round.",
+          "supports": "Province Lands VC closed for season; parking-area restrooms open year-round"
+        },
+        {
+          "quote": "Closed: Restrooms and showers Closed: Beach entrance fee collection and annual pass sales have ended for the season.",
+          "supports": "Beaches open; restrooms/showers closed (Race Point: vault toilets and showers; Herring Cove: bathhouse restrooms and showers); fee collection and pass sales ended for the season"
+        },
+        {
+          "quote": "Head of the Meadow Beach Open: Vault toilets in parking lot are open year-round. ... Herring Cove Beach Open: Vault toilets in parking lot are open year-round.",
+          "supports": "Head of the Meadow and Herring Cove open, vault toilets open year-round"
+        },
+        {
+          "quote": "All eleven walking trails in the park are open for use. Closed: Beginning November 30, a small stretch of the Nauset Marsh trail around the bridge will be closed for approximately one month while park staff replace the wooden planks.",
+          "supports": "All 11 trails open; Nauset Marsh Trail stretch closed from Nov 30 for about a month"
+        },
+        {
+          "quote": "Leashed pets are permitted on Head of the Meadow Bike Trail year-round, and on the Nauset and Province Lands bike trails from November 1 through April 30.",
+          "supports": "Leashed pets on Nauset/Province Lands bike trails Nov 1-Apr 30"
+        },
+        {
+          "quote": "The ORV Corridor has entered the Limited Access offseason. The corridor will reopen in April 2027.",
+          "supports": "ORV corridor offseason, reopens April 2027"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "url": "https://www.nps.gov/caco/planyourvisit/hours.htm",
+      "publisher": "National Park Service, Cape Cod National Seashore",
+      "title": "Operating Hours & Seasons",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Cape Cod National Seashore is open year-round. ... From November through April, some visitor facilities are closed.",
+          "supports": "Seashore open year-round; some facilities closed Nov-Apr"
+        },
+        {
+          "quote": "Lifeguards are typically on duty at the six national seashore beaches from late June through Labor Day.",
+          "supports": "Lifeguard season"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "url": "https://www.nps.gov/caco/planyourvisit/visitorcenters.htm",
+      "publisher": "National Park Service, Cape Cod National Seashore",
+      "title": "Visitor Centers",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Salt Pond Visitor Center is Cape Cod National Seashore's year-round visitor orientation facility.",
+          "supports": "Salt Pond is the year-round visitor center"
+        },
+        {
+          "quote": "The outdoor decks are open all year, weather-permitting.",
+          "supports": "Province Lands outdoor decks open all year"
+        },
+        {
+          "quote": "Located in Eastham",
+          "supports": "Salt Pond Visitor Center is in Eastham"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "url": "https://www.nps.gov/caco/planyourvisit/hunting-fishing.htm",
+      "publisher": "National Park Service, Cape Cod National Seashore",
+      "title": "Hunting at Cape Cod National Seashore",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Hunting is permitted according to state hunting regulations except as further restricted by federal rules and regulations.",
+          "supports": "Hunting permitted per state regulations, with federal restrictions"
+        },
+        {
+          "quote": "Hunting or the possession of a loaded weapon is prohibited on or within 500 feet of established bicycle and official nature trails.",
+          "supports": "500-foot trail buffer"
+        },
+        {
+          "quote": "All hunting is prohibited from March 1 through August 31, except for the spring turkey hunt.",
+          "supports": "Closed hunting period"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "url": "https://www.steamshipauthority.com/schedules",
+      "publisher": "The Steamship Authority",
+      "title": "Ferry Schedules for Nantucket & Martha's Vineyard",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "We provide the most frequent daily service, year-round, between the mainland of Cape Cod and the Islands of Martha’s Vineyard and Nantucket.",
+          "supports": "Year-round daily service to both islands"
+        },
+        {
+          "quote": "Martha's Vineyard Ferry Schedules October 23, 2026-January 5, 2027",
+          "supports": "Current MV schedule period"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "url": "https://www.hylinecruises.com/nantucket-ferry/",
+      "publisher": "Hy-Line Cruises",
+      "title": "Nantucket Ferry",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "we’ve been providing seasonal ferry service since 1973 and year-round service since December 1995.",
+          "supports": "Year-round Hyannis-Nantucket service since December 1995"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "url": "https://www.hylinecruises.com/marthas-vineyard-ferry/",
+      "publisher": "Hy-Line Cruises",
+      "title": "Martha's Vineyard Ferry",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Martha’s Vineyard Ferry service has ended for the season – see you in 2027!",
+          "supports": "Hy-Line Hyannis-MV ferry ended for the season"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "url": "https://capecodrta.org/bus_routes/flex/",
+      "publisher": "Cape Cod Regional Transit Authority",
+      "title": "FLEX: Harwich ⇄ Provincetown",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Sept 8, 2026 – Jan 22, 2027 Monday through Saturday",
+          "supports": "FLEX Mon-Sat schedule Sept 8, 2026-Jan 22, 2027"
+        },
+        {
+          "quote": "No service on Thanksgiving, Christmas or New Year’s Day.",
+          "supports": "No FLEX service Christmas or New Year's Day"
+        },
+        {
+          "quote": "Free Fares on all Fixed Routes!!",
+          "supports": "Free fares on fixed routes"
+        },
+        {
+          "quote": "* No service on Saturday / school vacations",
+          "supports": "Asterisked trips do not run Saturdays or school vacations"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "url": "https://capecodrta.org/bus_routes/h2o-hyannis-orleans/",
+      "publisher": "Cape Cod Regional Transit Authority",
+      "title": "H2O: Hyannis ⇄ Orleans",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Sept 8, 2026 – Jan 22, 2027 Monday through Saturday",
+          "supports": "H2O Mon-Sat schedule"
+        },
+        {
+          "quote": "No service on Thanksgiving, Christmas or New Year’s Day.",
+          "supports": "No H2O service Christmas or New Year's Day"
+        },
+        {
+          "quote": "* No service on Saturday / school vacations",
+          "supports": "Asterisked trips do not run Saturdays or school vacations"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "url": "https://capecodrta.org/bus_routes/sealine/",
+      "publisher": "Cape Cod Regional Transit Authority",
+      "title": "Sealine: Hyannis ⇄ Falmouth / Woods Hole",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Sept 8, 2026 – Jan 22, 2027 Monday through Saturday",
+          "supports": "Sealine Mon-Sat schedule"
+        },
+        {
+          "quote": "No service on Thanksgiving, Christmas or New Year’s Day.",
+          "supports": "No Sealine service Christmas or New Year's Day"
+        },
+        {
+          "quote": "* No service on Saturday / school vacations",
+          "supports": "Asterisked trips do not run Saturdays or school vacations"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "url": "https://www.fisheries.noaa.gov/national/endangered-species-conservation/reducing-vessel-strikes-north-atlantic-right-whales",
+      "publisher": "NOAA Fisheries",
+      "title": "Reducing Vessel Strikes to North Atlantic Right Whales",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Cape Cod Bay, MA Slow Zone: Effective November 14–29, 2026",
+          "supports": "Cape Cod Bay Slow Zone Nov 14-29, 2026"
+        },
+        {
+          "quote": "Right Whale Slow Zones and Dynamic Management Areas (DMAs) are voluntary programs NOAA Fisheries uses to notify vessel operators to slow down to avoid right whales.",
+          "supports": "Slow Zones are voluntary"
+        },
+        {
+          "quote": "mariners are encouraged to avoid these areas or reduce speeds to 10 knots or less while transiting through them. ... Right Whale Slow Zones are based on both visual and acoustic triggers.",
+          "supports": "10 knots or less; visual and acoustic detections"
+        },
+        {
+          "quote": "Most vessels 65 feet or longer must travel at 10 knots or less in certain locations (called Seasonal Management Areas) ... Cape Cod Bay, January 1–May 15",
+          "supports": "Cape Cod Bay SMA Jan 1-May 15 for vessels 65 ft+"
+        },
+        {
+          "quote": "For a period of 15 days after a whale is detected",
+          "supports": "Slow Zones last 15 days after a detection"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "url": "https://www.massaudubon.org/places-to-explore/wildlife-sanctuaries/wellfleet-bay/projects/sea-turtles",
+      "publisher": "Mass Audubon, Wellfleet Bay Wildlife Sanctuary",
+      "title": "Protecting Sea Turtles on Cape Cod",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Cold-stunned sea turtle strandings mainly take place from November to mid-January",
+          "supports": "Stranding season"
+        },
+        {
+          "quote": "Onshore winds wash them onto beaches, mostly along the shore of Cape Cod Bay.",
+          "supports": "Mostly Cape Cod Bay"
+        },
+        {
+          "quote": "Do not put it back in the water. Carefully move the turtle above the high tide line.",
+          "supports": "What to do"
+        },
+        {
+          "quote": "Cover it completely with seaweed or wrack—never cover it with sand. Mark it with an obvious piece of debris ... Call the Wellfleet Bay hotline at 508-349-2615, Option 2",
+          "supports": "Cover, mark, call hotline"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "url": "https://www.orleansfarmersmarket.org",
+      "publisher": "Orleans Farmers' Market",
+      "title": "Orleans Farmers' Market",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "December through April 10 am to noon We are Inside at 5 Namskaket Road Orleans, MA",
+          "supports": "Winter indoor location and hours"
+        },
+        {
+          "quote": "Our market is year round, operating 50 weeks a year, taking a break the week after Thanksgiving and Christmas.",
+          "supports": "50 weeks a year; breaks after Thanksgiving and Christmas"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "url": "https://ccmnh.org/hours",
+      "publisher": "Cape Cod Museum of Natural History",
+      "title": "Hours",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Fall 2026 Hours: Wednesdays - Sundays 10am -3pm Last admission 2:30pm",
+          "supports": "Fall 2026 hours"
+        },
+        {
+          "quote": "WINTER HOLIDAYS MONDAY, DECEMBER 21ST - SATURDAY, DECEMBER 26TH",
+          "supports": "Closed Dec 21-26"
+        },
+        {
+          "quote": "Christmas Eve and Day, Boxing Day, New Year's Eve and Day.",
+          "supports": "Holiday closures incl. New Year's Eve and Day"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "url": "https://heritagemuseumsandgardens.org/gardens-aglow-faq/",
+      "publisher": "Heritage Museums & Gardens",
+      "title": "Gardens Aglow FAQ",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Gardens Aglow takes place from 4:30-8:30 pm on the following dates:",
+          "supports": "Hours"
+        },
+        {
+          "quote": "Monday, December 21 Tuesday, December 22 Wednesday, December 23 Saturday, December 26 Sunday, December 27",
+          "supports": "Late-December dates; no Dec 24 or 25; last date Dec 27"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "url": "https://sandwichglassmuseum.org/",
+      "publisher": "Sandwich Glass Museum (Sandwich Historical Society)",
+      "title": "Sandwich Glass Museum (home page)",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Open 7 Days a Week 9:30 - 5 Live Glassblowing Demonstrations Hourly on the hour through Dec 30, except Thanksgiving Day, Christmas Eve and Christmas Day.",
+          "supports": "Hours and demonstrations"
+        },
+        {
+          "quote": "Closed Thanksgiving Day, Christmas Eve and Christmas Day.",
+          "supports": "Christmas closures"
+        },
+        {
+          "quote": "Closed Dec 31-Jan 31",
+          "supports": "Winter closure"
+        },
+        {
+          "quote": "Ticket Prices Adult: $15",
+          "supports": "Adult admission"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "url": "https://jfkhyannismuseum.org/",
+      "publisher": "JFK Hyannis Museum",
+      "title": "JFK Hyannis Museum (home page)",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Open December 3, 4, 5 & 6 and then 10, 11, 12 from 10 AM to 6 PM",
+          "supports": "Early-December hours"
+        },
+        {
+          "quote": "Open December 17, 18, 19, 21, 22 and 23 from 10 AM to 4 PM Open December 28, 29 and 30 from 10 AM to 4 PM Closed December 24, 25, 26 and 31.",
+          "supports": "Later-December hours and closures"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "url": "https://cahoonmuseum.org/visit/",
+      "publisher": "Cahoon Museum of American Art",
+      "title": "Visit",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Open March 18 – December 20, 2026 Wednesday – Sunday, 10:00am-4:00pm",
+          "supports": "Season end and hours"
+        },
+        {
+          "quote": "Adults: $12.00",
+          "supports": "Adult admission"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "url": "https://www.ccmoa.org/wrap-it-up",
+      "publisher": "Cape Cod Museum of Art",
+      "title": "Wrap It Up!",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "November 12, 2026, through Sunday, January 3, 2027. Wrap it Up! is open to the public, free of admission, during regular Museum hours.",
+          "supports": "Exhibit dates; free"
+        },
+        {
+          "quote": "Open Year Round Tuesday - Saturday 10 am to 4 pm Sunday 12 to 4 pm Closed Mondays",
+          "supports": "Museum hours"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "url": "https://www.cultural-center.org/small-wonders",
+      "publisher": "Cultural Center of Cape Cod",
+      "title": "Small Wonders 2026",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "a juried show of art that's reasonably priced and measures no more than 12\" on any side",
+          "supports": "Description"
+        },
+        {
+          "quote": "The show will fill our Great Hall from November 18-December 19.",
+          "supports": "Dates"
+        },
+        {
+          "quote": "Exhibit closes: Saturday, December 19",
+          "supports": "Closing day"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "url": "https://paam.org/",
+      "publisher": "Provincetown Art Association and Museum",
+      "title": "Provincetown Art Association and Museum (home page)",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "General admission: $15. Free for PAAM members and children 17 and under. Museum Hours: Open Wednesday-Sunday from 12-5pm.",
+          "supports": "PAAM admission and hours"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "url": "https://caperep.org/show/the-hundred-aker-wood/",
+      "publisher": "Cape Rep Theatre",
+      "title": "The Hundred Aker Wood",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Date: November 12, 2026 — December 13, 2026 Days & Times: Thursday - Saturday at 7:30 pm Sunday at 2:00 pm",
+          "supports": "Run and times"
+        },
+        {
+          "quote": "Saturday Matinees 11/14, 11/21, 11/27, 11/28, 12/05 and 12/12 at 2:00 pm",
+          "supports": "December Saturday matinees"
+        },
+        {
+          "quote": "Price: $45; $30 for 35 and under; $25 for 18 and under.",
+          "supports": "Prices"
+        },
+        {
+          "quote": "A World Premiere Musical by Macklin Devine, Paddo Devine, Seamus Devine and Maura Hanlon",
+          "supports": "World premiere musical and its writers"
+        },
+        {
+          "quote": "3299 Main Street, P.O. Box 1305, Brewster, MA 02631",
+          "supports": "Address"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "url": "https://capecodtheatrecompany.org/2026season/",
+      "publisher": "Cape Cod Theatre Company (Harwich Junior Theatre)",
+      "title": "2026 Season",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Disney's FROZEN December 4 - January 3 Fridays at 7pm Saturdays and Sundays at 2pm Plus Vacation Week Shows: Mon 12/28, Tues 12/29, & Wed 12/30 at 2pm",
+          "supports": "Dates and times (weekdays match 2026; 2026 Season page)"
+        },
+        {
+          "quote": "THEATRE: 105 Division St. West Harwich, MA 02671",
+          "supports": "Address"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "url": "https://cotuit.org/shows-events/a-christmas-carol-the-musical",
+      "publisher": "Cotuit Center for the Arts",
+      "title": "SOLD OUT: A Christmas Carol: The Musical",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Tickets for A Christmas Carol have SOLD OUT ! Please click here to join our waitlist!",
+          "supports": "Sold out, waitlist"
+        },
+        {
+          "quote": "Thurs 12/17, Fri 12/18, Sat 12/19, Sun 12/20",
+          "supports": "Final December performances"
+        },
+        {
+          "quote": "4404 Falmouth Road Cotuit, MA 02635",
+          "supports": "Venue address"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "url": "https://cotuit.org/",
+      "publisher": "Cotuit Center for the Arts",
+      "title": "Cotuit Center for the Arts (home page)",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "SOLD OUT: A Christmas Carol: The Musical Nov 24 — Dec 20, 2026",
+          "supports": "Run with year"
+        },
+        {
+          "quote": "15th Annual Ukulele Festival Dec 06, 2026",
+          "supports": "Ukulele Festival date with year"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "url": "https://provincetowntheater.org/whats-on/2026-season/",
+      "publisher": "Provincetown Theater",
+      "title": "2026 Season",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "The Search for Signs of Intelligent Life in the Universe By Lily Tomlin and Jane Wagner November 19 - December 6, 2026",
+          "supports": "Run with year and authors"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "url": "https://provincetowntheater.org/whats-on/the-search-for-intelligent-signs-in-the-universe/",
+      "publisher": "Provincetown Theater",
+      "title": "The Search for Signs of Intelligent Life in the Universe",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Performance Dates November 19 – December 6 Thursdays – Saturdays at 7 pm, Sundays at 2 pm",
+          "supports": "Times"
+        },
+        {
+          "quote": "238 Bradford Street P.O. Box 625 Provincetown, MA 02657",
+          "supports": "Address"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "url": "https://www.capecodmusicsociety.org/",
+      "publisher": "Cape Cod Music Society",
+      "title": "Christmas Around the World – Holiday Hits 2026",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Dec 04, 2026, 7:00 PM – 9:00 PM EST Chatham Bars Inn, 297 Shore Rd, Chatham",
+          "supports": "Dec 4 concert"
+        },
+        {
+          "quote": "Dec 06, 2026, 7:00 PM – 9:00 PM EST First Congregational Church of Falmouth",
+          "supports": "Dec 6 concert"
+        },
+        {
+          "quote": "Dec 11, 2026, 7:00 PM – 10:00 PM Barnstable Comedy Club, 3171 Main St, Barnstable",
+          "supports": "Dec 11 concert"
+        },
+        {
+          "quote": "Dec 12, 2026, 4:00 PM – 6:00 PM EST St. Christopher's Episcopal Church, 625 Main St, Chatham",
+          "supports": "Dec 12 concert"
+        },
+        {
+          "quote": "Dec 13, 2026, 4:00 PM – 6:00 PM EST Provincetown Art Association and Museum, 460 Commercial St, Provincetown",
+          "supports": "Dec 13 concert"
+        },
+        {
+          "quote": "Cape Cod Music Society presents - The Cape Cod String Quartet and Frien",
+          "supports": "Performers (Cape Cod String Quartet and Friends)"
+        },
+        {
+          "quote": "Tickets: $60.00 Students and Children Free!",
+          "supports": "Falmouth concert: students and children free"
+        },
+        {
+          "quote": "Tickets: $60.00 Children and Students Free!",
+          "supports": "St. Christopher's concert: children and students free"
+        },
+        {
+          "quote": "Tickets: $55.00",
+          "supports": "PAAM concert price"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "url": "https://chathamchorale.org/events/candlelight-christmas-music-to-brighten-the-season/",
+      "publisher": "Chatham Chorale",
+      "title": "A Candlelight Christmas",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "First Congregational Church of Chatham, Saturday, December 19, 2026 (2:00pm)",
+          "supports": "Dec 19 2 PM concert"
+        },
+        {
+          "quote": "650 Main St, Chatham, MA 02633",
+          "supports": "Address"
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "url": "https://chathamchorale.org/",
+      "publisher": "Chatham Chorale",
+      "title": "Chatham Chorale (home page, concert list)",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "December 20, 2026 First Congregational Church of Chatham Sunday A Candlelight Christmas 2:00 pm - 4:00 pm",
+          "supports": "Sunday Dec 20 2 PM"
+        },
+        {
+          "quote": "December 20, 2026 First Congregational Church of Chatham Sunday A Candlelight Christmas 5:00 pm - 7:00 pm",
+          "supports": "Sunday Dec 20 5 PM"
+        },
+        {
+          "quote": "Barnstable Performing Arts Center Friday Holiday Pops – Holiday on the Cape 744 West Main St, Hyannis",
+          "supports": "Barnstable Performing Arts Center is in Hyannis"
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "url": "https://capesymphony.org/calendar/41-cs-presents/1132-ana-gasteyers-sugar-and-booze-holiday-spectacular",
+      "publisher": "Cape Symphony",
+      "title": "Ana Gasteyer's Sugar and Booze Holiday Spectacular",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Date: December 12, 2026 7:30 pm - 9:00 pm",
+          "supports": "Date and time"
+        },
+        {
+          "quote": "Location: Barnstable Performing Arts Center",
+          "supports": "Venue"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "url": "https://capesymphony.org/calendar/flat?date=2026-12-01",
+      "publisher": "Cape Symphony",
+      "title": "Calendar, December 2026",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "A Taste of Jazz: Ken Field & Sue Goldberg Fri. 4 Dec, 2026 5:30 pm - 8:00 pm",
+          "supports": "Dec 4 (also Sat Dec 5)"
+        },
+        {
+          "quote": "A Taste of Jazz: Chris Taylor Trio Sat. 19 Dec, 2026 5:30 pm - 8:00 pm",
+          "supports": "Dec 19 (Dec 11, 12, 18 also listed)"
+        },
+        {
+          "quote": "A Taste of Jazz: Steve Kirby Gypsy Jazz Trio Sat. 26 Dec, 2026 5:30 pm - 8:00 pm",
+          "supports": "Dec 26"
+        },
+        {
+          "quote": "an intimate live music and dining experience at twenty-eight Atlantic",
+          "supports": "Venue"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "url": "https://cotuit.org/shows-events/14th-annual-ukulele-festival-2",
+      "publisher": "Cotuit Center for the Arts",
+      "title": "15th Annual Ukulele Festival",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "15th Annual Ukulele Festival Dec 6 6:00pm – 8:00pm",
+          "supports": "Time"
+        },
+        {
+          "quote": "Admission: $20 – FREE if you bring a ukulele and join the onstage “Uke-A-Long” finale.",
+          "supports": "Admission"
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "url": "https://capecodmaritimemuseum.org/events-and-lectures/capecodmaritimemuseum-sea-monsters",
+      "publisher": "Cape Cod Maritime Museum",
+      "title": "History on Tap: Sea Monsters",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "HISTORY ON TAP: Sea Monsters Thursday, December 3, 2026 5:00 PM 6:30 PM Cape Cod Maritime Museum 135 South Street",
+          "supports": "Date, time, venue"
+        },
+        {
+          "quote": "Senior Physical Scientist Glen Gawarkiewicz of the Woods Hole Oceanographic Institution",
+          "supports": "Speaker"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "url": "https://www.capecodwinery.com/events/holiday-artisan-market",
+      "publisher": "Cape Cod Winery",
+      "title": "Holiday Artisan Market",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Holiday Artisan Market Saturday, December 12, 2026 12:00 PM 3:00 PM",
+          "supports": "Date and time"
+        },
+        {
+          "quote": "Join us in our Merry Market with 10 local vendors!",
+          "supports": "10 vendors"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "url": "https://members.easthamchamber.com/events/details/carols-on-the-green-12-05-2026-1548",
+      "publisher": "Eastham Chamber of Commerce",
+      "title": "Carols on the Green",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Date: December 5, 2026 Time: 4:00 PM - 5:00 PM EST",
+          "supports": "Date and time"
+        },
+        {
+          "quote": "join the brilliant and talented Nauset Honors Chorus as they lead us in a sing-along of your favorite Christmas songs.",
+          "supports": "Description"
+        },
+        {
+          "quote": "Location: Windmill Green 2515 State Highway Eastham, MA 02642 Fees/Admission: Free Includes Light Refreshments",
+          "supports": "Location and free admission"
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "url": "https://www.massaudubon.org/programs/wellfleet-bay/103680-owl-prowl",
+      "publisher": "Mass Audubon, Wellfleet Bay Wildlife Sanctuary",
+      "title": "Owl Prowl (December 4)",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Fri, Dec 04, 2026 3:45 pm - 5:15 pm",
+          "supports": "Dec 4 date and time"
+        },
+        {
+          "quote": "Adult Members $14 Adult Nonmembers $18",
+          "supports": "Price"
+        },
+        {
+          "quote": "listening and watching for Great Horned Owls, Eastern Screech-Owls, and other nocturnal wildlife",
+          "supports": "Description"
+        },
+        {
+          "quote": "Location: Wellfleet Bay Wildlife Sanctuary, South Wellfleet",
+          "supports": "Location"
+        },
+        {
+          "quote": "Who Adults & Families with children 10 - 17",
+          "supports": "Audience"
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "url": "https://www.massaudubon.org/programs/wellfleet-bay/103681-owl-prowl",
+      "publisher": "Mass Audubon, Wellfleet Bay Wildlife Sanctuary",
+      "title": "Owl Prowl (December 18)",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Fri, Dec 18, 2026 3:45 pm - 5:15 pm",
+          "supports": "Dec 18 date and time"
+        },
+        {
+          "quote": "Adult Members $14 Adult Nonmembers $18",
+          "supports": "Price"
+        },
+        {
+          "quote": "Who Adults & Families with children 10 - 17",
+          "supports": "Audience"
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "url": "https://www.massaudubon.org/programs/wellfleet-bay/103682-winter-birding-ducks-loons-grebes",
+      "publisher": "Mass Audubon, Wellfleet Bay Wildlife Sanctuary",
+      "title": "Winter Birding: Ducks, Loons & Grebes",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Sat, Dec 05, 2026 8:00 am - 10:00 am",
+          "supports": "Date and time"
+        },
+        {
+          "quote": "Location: Herring Pond, Eastham",
+          "supports": "Location"
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "url": "https://www.massaudubon.org/programs/wellfleet-bay/103683-exploring-coastal-cape-cod-bound-brook-island",
+      "publisher": "Mass Audubon, Wellfleet Bay Wildlife Sanctuary",
+      "title": "Exploring Coastal Cape Cod: Bound Brook Island",
+      "checked": "2026-11-17",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Sat, Dec 19, 2026 9:00 am - 12:00 pm",
+          "supports": "Date and time"
+        },
+        {
+          "quote": "Location: Bound Brook Island, Wellfleet",
+          "supports": "Location"
+        }
+      ]
+    }
+  ],
+  "gaps": []
+}
