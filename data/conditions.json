@@ -1,67 +1,55 @@
 {
   "today": {
-    "date": "2026-11-18",
+    "date": "2026-11-19",
     "weather": {
-      "temp_high": 58,
-      "temp_low": 44,
+      "temp_high": 59,
+      "temp_low": 43,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "wind_mph": 8,
+      "wind_mph": 5,
       "wind_dir": "W"
     },
     "sun": {
-      "sunrise": "6:33 AM",
-      "sunset": "4:17 PM",
-      "civil_twilight_end": "4:47 PM",
+      "sunrise": "6:34 AM",
+      "sunset": "4:16 PM",
+      "civil_twilight_end": "4:46 PM",
       "source": "sunrise-sunset.org"
     },
     "tides": [
       {
-        "time": "12:22 AM",
+        "time": "1:10 AM",
         "type": "low",
         "height_ft": 0.2
       },
       {
-        "time": "6:22 AM",
+        "time": "7:09 AM",
         "type": "high",
-        "height_ft": 4.2
+        "height_ft": 4.5
       },
       {
-        "time": "12:34 PM",
+        "time": "1:33 PM",
         "type": "low",
-        "height_ft": 0.5
+        "height_ft": 0.4
       },
       {
-        "time": "6:27 PM",
+        "time": "7:24 PM",
         "type": "high",
         "height_ft": 4.5
       }
     ],
     "tides_source": "NOAA Tides & Currents, Chatham station 8447435",
-    "water_temp_f": 54,
+    "water_temp_f": 53,
     "water_temp_source": "Cape Cod Bay buoy (NDBC 44090)",
     "weather_source": "National Weather Service (api.weather.gov)"
   },
   "forecast_7day": [
     {
-      "date": "2026-11-18",
-      "day": "Wed",
-      "temp_high": 58,
-      "condition": "Sunny",
-      "icon": "\u2600\ufe0f",
-      "temp_low": 44,
-      "sunrise": "6:33 AM",
-      "sunset": "4:17 PM",
-      "low_tide": "12:22 AM",
-      "high_tide": "6:22 AM"
-    },
-    {
       "date": "2026-11-19",
       "day": "Thu",
-      "temp_high": 55,
+      "temp_high": 59,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "temp_low": 46,
+      "temp_low": 43,
       "sunrise": "6:34 AM",
       "sunset": "4:16 PM",
       "low_tide": "1:10 AM",
@@ -70,10 +58,10 @@
     {
       "date": "2026-11-20",
       "day": "Fri",
-      "temp_high": 59,
+      "temp_high": 60,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "temp_low": 49,
+      "temp_low": 44,
       "sunrise": "6:35 AM",
       "sunset": "4:15 PM",
       "low_tide": "1:56 AM",
@@ -82,10 +70,10 @@
     {
       "date": "2026-11-21",
       "day": "Sat",
-      "temp_high": 55,
+      "temp_high": 57,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "temp_low": 49,
+      "temp_low": 45,
       "sunrise": "6:36 AM",
       "sunset": "4:15 PM",
       "low_tide": "2:42 AM",
@@ -94,10 +82,10 @@
     {
       "date": "2026-11-22",
       "day": "Sun",
-      "temp_high": 58,
-      "condition": "Rain",
-      "icon": "\ud83c\udf27\ufe0f",
-      "temp_low": 53,
+      "temp_high": 60,
+      "condition": "Sunny",
+      "icon": "\u2600\ufe0f",
+      "temp_low": 52,
       "sunrise": "6:38 AM",
       "sunset": "4:14 PM",
       "low_tide": "3:29 AM",
@@ -109,7 +97,7 @@
       "temp_high": 59,
       "condition": "Rain",
       "icon": "\ud83c\udf27\ufe0f",
-      "temp_low": 42,
+      "temp_low": 39,
       "sunrise": "6:39 AM",
       "sunset": "4:13 PM",
       "low_tide": "4:17 AM",
@@ -118,16 +106,28 @@
     {
       "date": "2026-11-24",
       "day": "Tue",
-      "temp_high": 48,
-      "condition": "Rain",
-      "icon": "\ud83c\udf27\ufe0f",
-      "temp_low": 38,
+      "temp_high": 43,
+      "condition": "Sunny",
+      "icon": "\u2600\ufe0f",
+      "temp_low": 28,
       "sunrise": "6:40 AM",
       "sunset": "4:13 PM",
       "low_tide": "5:06 AM",
       "high_tide": "10:56 AM"
+    },
+    {
+      "date": "2026-11-25",
+      "day": "Wed",
+      "temp_high": 43,
+      "condition": "Sunny",
+      "icon": "\u2600\ufe0f",
+      "temp_low": 35,
+      "sunrise": "6:41 AM",
+      "sunset": "4:12 PM",
+      "low_tide": "5:56 AM",
+      "high_tide": "11:43 AM"
     }
   ],
   "version": "1.0",
-  "updated_at": "2026-11-18T21:51:38Z"
+  "updated_at": "2026-11-19T14:20:23Z"
 }
