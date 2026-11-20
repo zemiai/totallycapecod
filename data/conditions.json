@@ -3,10 +3,10 @@
     "date": "2026-11-20",
     "weather": {
       "temp_high": 62,
-      "temp_low": 44,
+      "temp_low": 49,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "wind_mph": 3,
+      "wind_mph": 6,
       "wind_dir": "W"
     },
     "sun": {
@@ -38,7 +38,7 @@
       }
     ],
     "tides_source": "NOAA Tides & Currents, Chatham station 8447435",
-    "water_temp_f": 53,
+    "water_temp_f": 54,
     "water_temp_source": "Cape Cod Bay buoy (NDBC 44090)",
     "weather_source": "National Weather Service (api.weather.gov)"
   },
@@ -49,7 +49,7 @@
       "temp_high": 62,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "temp_low": 44,
+      "temp_low": 49,
       "sunrise": "6:35 AM",
       "sunset": "4:15 PM",
       "low_tide": "1:56 AM",
@@ -58,10 +58,10 @@
     {
       "date": "2026-11-21",
       "day": "Sat",
-      "temp_high": 59,
+      "temp_high": 58,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "temp_low": 46,
+      "temp_low": 48,
       "sunrise": "6:36 AM",
       "sunset": "4:15 PM",
       "low_tide": "2:42 AM",
@@ -70,7 +70,7 @@
     {
       "date": "2026-11-22",
       "day": "Sun",
-      "temp_high": 60,
+      "temp_high": 63,
       "condition": "Rain",
       "icon": "\ud83c\udf27\ufe0f",
       "temp_low": 54,
@@ -82,7 +82,7 @@
     {
       "date": "2026-11-23",
       "day": "Mon",
-      "temp_high": 60,
+      "temp_high": 62,
       "condition": "Rain",
       "icon": "\ud83c\udf27\ufe0f",
       "temp_low": 41,
@@ -97,7 +97,7 @@
       "temp_high": 47,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "temp_low": 32,
+      "temp_low": 37,
       "sunrise": "6:40 AM",
       "sunset": "4:13 PM",
       "low_tide": "5:06 AM",
@@ -106,10 +106,10 @@
     {
       "date": "2026-11-25",
       "day": "Wed",
-      "temp_high": 44,
+      "temp_high": 47,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "temp_low": 35,
+      "temp_low": 40,
       "sunrise": "6:41 AM",
       "sunset": "4:12 PM",
       "low_tide": "5:56 AM",
@@ -118,10 +118,10 @@
     {
       "date": "2026-11-26",
       "day": "Thu",
-      "temp_high": 50,
+      "temp_high": 53,
       "condition": "Rain",
       "icon": "\ud83c\udf27\ufe0f",
-      "temp_low": 43,
+      "temp_low": 45,
       "sunrise": "6:42 AM",
       "sunset": "4:12 PM",
       "low_tide": "6:48 AM",
@@ -129,5 +129,5 @@
     }
   ],
   "version": "1.0",
-  "updated_at": "2026-11-20T13:57:07Z"
+  "updated_at": "2026-11-20T21:46:15Z"
 }
