@@ -1,0 +1,1003 @@
+{
+  "slug": "things-to-do-on-cape-cod-in-winter",
+  "article_updated": "2026-11-20",
+  "saved": "2026-11-20",
+  "about": "Verbatim excerpts from every source this guide cites, saved so each fact can be traced and re-checked. Excerpts are short; see each URL (and its archived copy, when added) for full context.",
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=normals-monthly-1991-2020&stations=USW00094720&format=json&dataTypes=MLY-TMAX-NORMAL,MLY-TMIN-NORMAL,MLY-TAVG-NORMAL,MLY-PRCP-NORMAL&includeStationName=true",
+      "publisher": "NOAA National Centers for Environmental Information",
+      "title": "U.S. Climate Normals 1991–2020, monthly: Hyannis Barnstable Muni AP (USW00094720)",
+      "checked": "2026-11-20",
+      "via": "live page (NCEI API)",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "{\"DATE\":\"12\",\"MLY-TAVG-NORMAL\":\"    37.2\",\"MLY-TMIN-NORMAL\":\"    29.3\",\"STATION\":\"USW00094720\",\"MLY-PRCP-NORMAL\":\"    4.68\",\"MLY-TMAX-NORMAL\":\"    45.2\",\"NAME\":\"HYANNIS BARNSTABLE MUNI AP, MA US\"}",
+          "supports": "December normals: avg high 45.2 F, avg low 29.3 F, precipitation 4.68 in"
+        },
+        {
+          "quote": "{\"DATE\":\"01\",\"MLY-TAVG-NORMAL\":\"    32.0\",\"MLY-TMIN-NORMAL\":\"    24.1\",\"STATION\":\"USW00094720\",\"MLY-PRCP-NORMAL\":\"    3.90\",\"MLY-TMAX-NORMAL\":\"    39.9\",\"NAME\":\"HYANNIS BARNSTABLE MUNI AP, MA US\"}",
+          "supports": "January normals: avg high 39.9 F, avg low 24.1 F, precipitation 3.90 in"
+        },
+        {
+          "quote": "{\"DATE\":\"02\",\"MLY-TAVG-NORMAL\":\"    32.9\",\"MLY-TMIN-NORMAL\":\"    24.8\",\"STATION\":\"USW00094720\",\"MLY-PRCP-NORMAL\":\"    3.17\",\"MLY-TMAX-NORMAL\":\"    41.0\",\"NAME\":\"HYANNIS BARNSTABLE MUNI AP, MA US\"}",
+          "supports": "February normals: avg high 41.0 F, avg low 24.8 F, precipitation 3.17 in"
+        },
+        {
+          "quote": "{\"DATE\":\"03\",\"MLY-TAVG-NORMAL\":\"    38.1\",\"MLY-TMIN-NORMAL\":\"    30.3\",\"STATION\":\"USW00094720\",\"MLY-PRCP-NORMAL\":\"    4.25\",\"MLY-TMAX-NORMAL\":\"    45.9\",\"NAME\":\"HYANNIS BARNSTABLE MUNI AP, MA US\"}",
+          "supports": "March normals: avg high 45.9 F, avg low 30.3 F, precipitation 4.25 in"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2027-01-15&coords=41.65,-70.28&tz=-5",
+      "publisher": "U.S. Naval Observatory, Astronomical Applications Department",
+      "title": "Sun and Moon Data for One Day: January 15, 2027, Hyannis area",
+      "checked": "2026-11-20",
+      "via": "live page (USNO API)",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "\"phen\": \"Set\", \"time\": \"16:36\"",
+          "supports": "Sunset 4:36 PM EST on 2027-01-15 at Hyannis (41.65N, 70.28W)"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2027-02-15&coords=41.65,-70.28&tz=-5",
+      "publisher": "U.S. Naval Observatory, Astronomical Applications Department",
+      "title": "Sun and Moon Data for One Day: February 15, 2027, Hyannis area",
+      "checked": "2026-11-20",
+      "via": "live page (USNO API)",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "\"phen\": \"Set\", \"time\": \"17:14\"",
+          "supports": "Sunset 5:14 PM EST on 2027-02-15 at Hyannis"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "url": "https://www.nps.gov/caco/planyourvisit/hours.htm",
+      "publisher": "National Park Service, Cape Cod National Seashore",
+      "title": "Operating Hours & Seasons",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Cape Cod National Seashore is open year-round",
+          "supports": "Seashore open year-round"
+        },
+        {
+          "quote": "From November through April, some visitor facilities are closed.",
+          "supports": "some facilities closed November through April"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "url": "https://www.nps.gov/caco/planyourvisit/conditions.htm",
+      "publisher": "National Park Service, Cape Cod National Seashore",
+      "title": "Current Park Conditions",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Open 9 am to 4:30 pm.",
+          "supports": "Salt Pond Visitor Center hours (listed under Salt Pond Visitor Center)"
+        },
+        {
+          "quote": "The satellite restroom building in the parking lot will closed for work beginning December 1. Portable toilets will be available.",
+          "supports": "Salt Pond satellite restroom closes Dec 1; portable toilets"
+        },
+        {
+          "quote": "Closed: The visitor center has closed for the season.",
+          "supports": "Province Lands Visitor Center closed for the season"
+        },
+        {
+          "quote": "Open: Restrooms in the parking area are open year-round.",
+          "supports": "Province Lands parking-area restrooms open year-round"
+        },
+        {
+          "quote": "Beginning November 30, a small stretch of the Nauset Marsh trail around the bridge will be closed for approximately one month while park staff replace the wooden planks.",
+          "supports": "Nauset Marsh Trail partial closure"
+        },
+        {
+          "quote": "Leashed pets are permitted on Head of the Meadow Bike Trail year-round, and on the Nauset and Province Lands bike trails from November 1 through April 30.",
+          "supports": "pets on bike trails"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "url": "https://www.nps.gov/caco/planyourvisit/visitorcenters.htm",
+      "publisher": "National Park Service, Cape Cod National Seashore",
+      "title": "Visitor Centers",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Salt Pond Visitor Center is Cape Cod National Seashore's year-round visitor orientation facility. Located in Eastham, the center has a theater, America's National Parks store, museum, and restrooms.",
+          "supports": "Salt Pond is the year-round visitor center; theater, store, museum, restrooms"
+        },
+        {
+          "quote": "The Province Lands Visitor Center is open from May through October.",
+          "supports": "Province Lands open May-October"
+        },
+        {
+          "quote": "The outdoor decks are open all year, weather-permitting.",
+          "supports": "Province Lands decks open all year"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "url": "https://www.nps.gov/caco/planyourvisit/guide-to-trails.htm",
+      "publisher": "National Park Service, Cape Cod National Seashore",
+      "title": "Hiking Trails",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "there are 11 walking trails at the seashore that are open year-round.",
+          "supports": "11 walking trails open year-round"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "url": "https://www.nps.gov/caco/ranger-guided-activities.htm",
+      "publisher": "National Park Service, Cape Cod National Seashore",
+      "title": "Ranger-Guided Activities",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Ranger and volunteer-guided programs are generally offered from May through October.",
+          "supports": "ranger programs May-October"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "url": "https://www.nps.gov/caco/planyourvisit/guiding-lights.htm",
+      "publisher": "National Park Service, Cape Cod National Seashore",
+      "title": "Lighthouses",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "The Keeper's Shop and tours are typically available from early May through the end of October.",
+          "supports": "Highland Light shop and tours early May-end of October"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "url": "https://www.massaudubon.org/places-to-explore/wildlife-sanctuaries/wellfleet-bay",
+      "publisher": "Mass Audubon",
+      "title": "Wellfleet Bay Wildlife Sanctuary",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Nature Center Daily 9:00 am-5:00 pm Trails Daily dawn to dusk 5 miles",
+          "supports": "Wellfleet Bay hours and trail miles"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "url": "https://www.massaudubon.org/places-to-explore/wildlife-sanctuaries/wellfleet-bay/trails",
+      "publisher": "Mass Audubon",
+      "title": "Trails at Wellfleet Bay",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "The temporary boardwalk to Try Island has been removed for the season, so Try Island and the Boardwalk Trail are now only accessible during low tide.",
+          "supports": "Try Island boardwalk removed; low tide only"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "url": "https://www.massaudubon.org/places-to-explore/wildlife-sanctuaries/long-pasture",
+      "publisher": "Mass Audubon",
+      "title": "Long Pasture Wildlife Sanctuary",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Nature Center Tuesday-Sunday 9:00 am-3:00 pm Trails Daily dawn to dusk 2.5 miles",
+          "supports": "Long Pasture hours and trail miles"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "url": "https://www.fws.gov/refuge/monomoy",
+      "publisher": "U.S. Fish & Wildlife Service",
+      "title": "Monomoy National Wildlife Refuge",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Refuge Hours (Morris Island): 7 days per week, year-round, 1/2 hour before sunrise to 1/2 hour after sunset.",
+          "supports": "Morris Island hours"
+        },
+        {
+          "quote": "leashed dogs are permitted on designated trails from September 16 through April 30.",
+          "supports": "leashed dogs Sept 16-Apr 30"
+        },
+        {
+          "quote": "The U.S. Department of the Interior’s Wildland Fire Service plans to conduct an additional prescribed burn at Monomoy National Wildlife Refuge in December 2026",
+          "supports": "additional prescribed burn at the refuge in December 2026 (planned by the Interior Department's Wildland Fire Service)"
+        },
+        {
+          "quote": "Access to all of South Monomoy Island (including the lighthouse) will be restricted while burning is in progress",
+          "supports": "South Monomoy access restricted during burning"
+        },
+        {
+          "quote": "A first burn was conducted on 11/17/26",
+          "supports": "first burn November 17, 2026"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "url": "https://www.mass.gov/locations/nickerson-state-park",
+      "publisher": "Mass.gov (Department of Conservation and Recreation)",
+      "title": "Nickerson State Park",
+      "checked": "2026-11-20",
+      "via": "web fetch (mass.gov blocks scripted requests)",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Sunrise to sunset",
+          "supports": "park hours"
+        },
+        {
+          "quote": "1,900-acre Nickerson State Park is located in Brewster, MA on Cape Cod.",
+          "supports": "1,900 acres, Brewster"
+        },
+        {
+          "quote": "You can visit 8 freshwater ponds, 4 stocked year-round with trout.",
+          "supports": "8 ponds, 4 stocked year-round"
+        },
+        {
+          "quote": "An 8-mile bike path connects you to the 26-mile Cape Cod Rail Trail, a paved trail through 6 Cape Cod towns.",
+          "supports": "8-mile bike path connects to the Rail Trail"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "url": "https://www.mass.gov/locations/cape-cod-rail-trail",
+      "publisher": "Mass.gov (Department of Conservation and Recreation)",
+      "title": "Cape Cod Rail Trail",
+      "checked": "2026-11-20",
+      "via": "web fetch (mass.gov blocks scripted requests)",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Ride, walk or run through 6 Cape Cod towns as you follow the Cape Cod Rail Trail.",
+          "supports": "6 towns"
+        },
+        {
+          "quote": "Sunrise to sunset",
+          "supports": "hours"
+        },
+        {
+          "quote": "26 mile paved trail",
+          "supports": "paved"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "url": "https://www.falmouthicearena.com/public-skating",
+      "publisher": "Falmouth Ice Arena",
+      "title": "Public Skating Information",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Public Skating will be held every Friday starting on 09/11/2026 from 7:30pm - 8:40pm through 06/25/2027 (unless otherwise noted)",
+          "supports": "Friday public skate through June 25, 2027"
+        },
+        {
+          "quote": "Public Skating: $8.00 per person",
+          "supports": "price"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "url": "https://www.charlesmoorearena.org/public-skate",
+      "publisher": "Charles Moore Arena",
+      "title": "Public Skate on Cape Cod",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "$10 admission, $4 skate rentals Tues/Thurs/Fri from 11:30-1:30pm + Sundays (seasonally) from 1:30-3:30pm",
+          "supports": "Orleans public skate schedule (Sundays seasonally) and price"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "url": "https://sandwichglassmuseum.org/pages/plan-your-visit",
+      "publisher": "Sandwich Glass Museum",
+      "title": "Plan Your Visit",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "January: Closed The museum galleries will be open by appointment only in January while we conduct annual maintenance.",
+          "supports": "January by appointment only"
+        },
+        {
+          "quote": "Winter Hours February 1 - March 30 Monday – Tuesday: Closed Wednesday – Sunday: 9:30 – 4:00",
+          "supports": "Feb 1-Mar 30 hours"
+        },
+        {
+          "quote": "OPEN Washington's Birthday",
+          "supports": "open Washington's Birthday"
+        },
+        {
+          "quote": "Live Glassblowing Demonstrations occur every hour on the hour.",
+          "supports": "hourly glassblowing"
+        },
+        {
+          "quote": "Adult (age 15-64): $15",
+          "supports": "adult admission"
+        },
+        {
+          "quote": "Winter Hours Feb 1 - March 31 Wednesday thru Sunday 9:30 am - 4:00 pm",
+          "supports": "homepage-style footer gives March 31 end; guide says 'late March'"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "url": "https://jfkhyannismuseum.org/hours-admissions-directions/",
+      "publisher": "John F. Kennedy Hyannis Museum",
+      "title": "Museum Admission & Hours",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "January 2027 through mid-April we are open Thursday, Friday and Saturday from 10 a.m. to 4 p.m.",
+          "supports": "Jan 2027-mid-April hours"
+        },
+        {
+          "quote": "Adults (18-64) $14",
+          "supports": "adult admission"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "url": "https://www.ccmoa.org/visitus",
+      "publisher": "Cape Cod Museum of Art",
+      "title": "Visit Us",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "We are open 52 weeks a year!",
+          "supports": "open year-round"
+        },
+        {
+          "quote": "Tuesdays - Saturdays 10:00 am to 4:00 pm Sundays 12:00 pm - 4:00 pm",
+          "supports": "hours"
+        },
+        {
+          "quote": "Admission Adults: $15 Seniors, 62+: $12 Age 21 & Younger: FREE!",
+          "supports": "admission"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "url": "https://www.ccmoa.org/upcoming-exhibitions",
+      "publisher": "Cape Cod Museum of Art",
+      "title": "Upcoming Exhibitions",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "11/19/26 – 2/28/27 BothAnd",
+          "supports": "BothAnd runs to Feb 28, 2027"
+        },
+        {
+          "quote": "collaborative exhibition of poetry by Brett Warren and visual art by Lauren Wolk",
+          "supports": "BothAnd description"
+        },
+        {
+          "quote": "12/17/26 – 03/07/2 New Ground: Recent Acquisitions to the CCMoA Permanent Collection",
+          "supports": "New Ground opens Dec 17, 2026 (end date truncated on page)"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "url": "https://paam.org/visit/",
+      "publisher": "Provincetown Art Association and Museum",
+      "title": "Visit",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "PAAM is open Wednesday – Sunday from 12-5pm. Closed Monday and Tuesday.",
+          "supports": "hours"
+        },
+        {
+          "quote": "open on New Years Day and Monday holidays (Martin Luther King Jr. Day, President’s Day,",
+          "supports": "open New Year's Day, MLK Day, Presidents' Day"
+        },
+        {
+          "quote": "General Admission is $15",
+          "supports": "admission"
+        },
+        {
+          "quote": "Youth 17-years old and under: Free admission",
+          "supports": "youth free"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "url": "https://paam.org/exhibitions/",
+      "publisher": "Provincetown Art Association and Museum",
+      "title": "Exhibitions: Now On View",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Members' Juried November 6, 2026 – January 17, 2027",
+          "supports": "Members' Juried dates"
+        },
+        {
+          "quote": "Recent Gifts to the Collection October 23, 2026 – January 31, 2027",
+          "supports": "Recent Gifts dates"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "url": "https://capecodmaritimemuseum.org/",
+      "publisher": "Cape Cod Maritime Museum",
+      "title": "Cape Cod Maritime Museum",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "winter Museum Hours: Wed-Sat 10AM - 4PM",
+          "supports": "winter hours"
+        },
+        {
+          "quote": "Adults (18+): $10.00",
+          "supports": "adult admission"
+        },
+        {
+          "quote": "January 7, 2027 Whale Biology, Conservation, and Migration: A Naturalist’s Perspective",
+          "supports": "Jan 7 talk"
+        },
+        {
+          "quote": "January 21, 2027 Time At Sea: The Story of Marine Chronometers",
+          "supports": "Jan 21 talk"
+        },
+        {
+          "quote": "February 4, 2027 Saving a Surfboat: Bringing a 1944 Coast Guard Boat to Best in Show",
+          "supports": "Feb 4 talk"
+        },
+        {
+          "quote": "February 18, 2027 Relighting Gay Head: Restoring a First-Order Fresnel Lens",
+          "supports": "Feb 18 talk"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "url": "https://www.fisheries.noaa.gov/new-england-mid-atlantic/outreach-and-education/woods-hole-science-aquarium-visiting",
+      "publisher": "NOAA Fisheries",
+      "title": "Visiting the Woods Hole Science Aquarium",
+      "checked": "2026-11-20",
+      "via": "web fetch (NOAA site blocks scripted requests)",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "We are open all year, but days and hours may vary.",
+          "supports": "open all year; hours may vary"
+        },
+        {
+          "quote": "Indoor aquarium: Monday-Friday, 11:00 a.m. to 4:00 p.m.",
+          "supports": "hours"
+        },
+        {
+          "quote": "Closed weekends and on all federal holidays.",
+          "supports": "closed weekends and federal holidays"
+        },
+        {
+          "quote": "There is no admission charge.",
+          "supports": "free"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "url": "https://ccmnh.org/hours",
+      "publisher": "Cape Cod Museum of Natural History",
+      "title": "Hours",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Fall 2026 Hours: Wednesdays - Sundays 10am -3pm",
+          "supports": "fall 2026 hours"
+        },
+        {
+          "quote": "MONDAY, DECEMBER 21ST - SATURDAY, DECEMBER 26TH",
+          "supports": "winter holiday closure"
+        },
+        {
+          "quote": "New Year's Eve and Day",
+          "supports": "closed New Year's Eve and Day"
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "url": "https://www.whoi.edu/who-we-are/visit-whoi/ocean-science-discovery-center/",
+      "publisher": "Woods Hole Oceanographic Institution",
+      "title": "Ocean Science Discovery Center",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Nov - Mid-April: CLOSED",
+          "supports": "closed November to mid-April"
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "url": "https://www.atlanticwhiteshark.org/shark-center-chatham",
+      "publisher": "Atlantic White Shark Conservancy",
+      "title": "Shark Center Chatham",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Please note that the Shark Center is now closed for regular general admission for the season.",
+          "supports": "closed for the season"
+        },
+        {
+          "quote": "Stay tuned for our updated calendar for 2027!",
+          "supports": "2027 calendar to come"
+        },
+        {
+          "quote": "We will reopen again for select holiday events in October - December.",
+          "supports": "select holiday events"
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "url": "https://highfieldhallandgardens.org/",
+      "publisher": "Highfield Hall & Gardens",
+      "title": "Highfield Hall & Gardens",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "GALLERY HOURS May 19, 2026 - October 25, 2026",
+          "supports": "2026 gallery season"
+        },
+        {
+          "quote": "Grounds open daily, year-round from dawn to dusk",
+          "supports": "grounds open year-round"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "url": "https://www.orleansfarmersmarket.org/",
+      "publisher": "Orleans Farmers' Market",
+      "title": "Orleans Farmers' Market",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Inside Every Saturday December through April 10 am to noon at 5 Namskaket Road Orleans, MA",
+          "supports": "indoor winter market"
+        },
+        {
+          "quote": "Back Outside May 1, 2027",
+          "supports": "back outside May 1, 2027"
+        },
+        {
+          "quote": "Our market is year round, operating 50 weeks a year, taking a break the week after Thanksgiving and Christmas.",
+          "supports": "50 weeks; breaks"
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "url": "https://coastalstudies.org/news/ccs-researchers-make-seasons-first-sighting-of-north-atlantic-right-whales-in-cape-cod-bay-2/",
+      "publisher": "Center for Coastal Studies",
+      "title": "CCS researchers make season's first sighting of North Atlantic right whales in Cape Cod Bay (Dec. 8, 2025)",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "They typically arrive in Cape Cod Bay in early winter, with many remaining through mid-May.",
+          "supports": "right whales early winter through mid-May"
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "url": "https://coastalstudies.org/our-work/seal-research/cape-cod-seals/",
+      "publisher": "Center for Coastal Studies",
+      "title": "Cape Cod Seals",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Females in this area, such as Monomoy Island in Nantucket Sound, give birth to one, white-coated pup from late December to mid February.",
+          "supports": "gray seal pupping"
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "url": "https://www.massaudubon.org/places-to-explore/wildlife-sanctuaries/wellfleet-bay/projects/sea-turtles",
+      "publisher": "Mass Audubon, Wellfleet Bay Wildlife Sanctuary",
+      "title": "Protecting Sea Turtles on Cape Cod",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Cold-stunned sea turtle strandings mainly take place from November to mid-January",
+          "supports": "stranding season"
+        },
+        {
+          "quote": "Do not assume a turtle is dead and do not put it back in the water",
+          "supports": "don't put back in water"
+        },
+        {
+          "quote": "Carefully move the turtle above the high tide line. Never grab or hold the turtle by the head or flippers. Cover it completely with seaweed or wrack—never cover it with sand.",
+          "supports": "move and cover"
+        },
+        {
+          "quote": "Mark it with an obvious piece of debris like buoys, or driftwood, or draw a big arrow in the sand. Call the Wellfleet Bay hotline at 508-349-2615, Option 2",
+          "supports": "mark and call"
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "url": "https://www.capesymphony.org/orchestra/2026-27-season/passport-to-spain",
+      "publisher": "Cape Symphony",
+      "title": "Passport to Spain",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "January 23 & 24, 2027",
+          "supports": "dates"
+        },
+        {
+          "quote": "Sat 4:00 PM, Sun 3:00 PM",
+          "supports": "times"
+        },
+        {
+          "quote": "Barnstable Performing Arts Center 744 West Main Street, Hyannis, MA 02601",
+          "supports": "venue"
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "url": "https://www.capesymphony.org/cape-symphony-presents/high-horse",
+      "publisher": "Cape Symphony",
+      "title": "High Horse",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Friday, February 12, 2027",
+          "supports": "date"
+        },
+        {
+          "quote": "Thacher Hall",
+          "supports": "venue"
+        },
+        {
+          "quote": "on February 12 at 7:00 PM.",
+          "supports": "time"
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "url": "https://www.capesymphony.org/orchestra/2026-27-season/samba-at-the-symphony",
+      "publisher": "Cape Symphony",
+      "title": "Samba at the Symphony",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "February 27 & 28, 2027",
+          "supports": "dates"
+        },
+        {
+          "quote": "Sat 7:30 PM, Sun 3:00 PM",
+          "supports": "times"
+        },
+        {
+          "quote": "Barnstable Performing Arts Center",
+          "supports": "venue"
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "url": "https://falmouththeatreguild.org/our-2026-2027-season/cuckoos-nest/",
+      "publisher": "Falmouth Theatre Guild",
+      "title": "One Flew Over the Cuckoo's Nest",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "January 22 – February 6, 2027",
+          "supports": "run"
+        },
+        {
+          "quote": "Friday 7:30pm Saturday 2:00pm Sunday 2:00pm",
+          "supports": "show times"
+        },
+        {
+          "quote": "$30* adults | $28* seniors (62+) | $25* under 18 * Includes $3 service fee",
+          "supports": "prices, including $3 service fee"
+        },
+        {
+          "quote": "58 Highfield Drive",
+          "supports": "venue"
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "url": "https://www.massaudubon.org/programs/wellfleet-bay/104488-winter-birding-ducks-loons-grebes",
+      "publisher": "Mass Audubon, Wellfleet Bay Wildlife Sanctuary",
+      "title": "Winter Birding: Ducks, Loons & Grebes (January 2, 2027)",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Sat, Jan 02, 2027 9:00 am - 10:00 am",
+          "supports": "date/time"
+        },
+        {
+          "quote": "This program meets at Macmillan Wharf in Provincetown",
+          "supports": "location"
+        },
+        {
+          "quote": "Adult Members $10 Adult Nonmembers $12",
+          "supports": "price (members / nonmembers)"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "url": "https://www.massaudubon.org/programs/long-pasture/104384-owl-prowl",
+      "publisher": "Mass Audubon, Long Pasture Wildlife Sanctuary",
+      "title": "Owl Prowl (Long Pasture, January 8, 2027)",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Fri, Jan 08, 2027 4:00 pm - 5:30 pm",
+          "supports": "date/time"
+        },
+        {
+          "quote": "Adults & Families with children 10 and older",
+          "supports": "audience"
+        },
+        {
+          "quote": "Long Pasture Wildlife Sanctuary, Cummaquid",
+          "supports": "location"
+        },
+        {
+          "quote": "Adult Members $14 Adult Nonmembers $18",
+          "supports": "price (members / nonmembers)"
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "url": "https://www.massaudubon.org/programs/wellfleet-bay/104494-owl-prowl",
+      "publisher": "Mass Audubon, Wellfleet Bay Wildlife Sanctuary",
+      "title": "Owl Prowl (Wellfleet Bay, January 15, 2027)",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Fri, Jan 15, 2027 4:00 pm - 5:30 pm",
+          "supports": "date/time"
+        },
+        {
+          "quote": "listening and watching for Great Horned Owls, Eastern Screech-Owls, and other nocturnal wildlife stirring in the winter woods.",
+          "supports": "description"
+        },
+        {
+          "quote": "Adult Members $14 Adult Nonmembers $18",
+          "supports": "price (members / nonmembers)"
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "url": "https://www.massaudubon.org/programs/wellfleet-bay/104499-twilight-trek-full-moon-over-wellfleet-bay",
+      "publisher": "Mass Audubon, Wellfleet Bay Wildlife Sanctuary",
+      "title": "Twilight Trek: Full Moon over Wellfleet Bay (January 22, 2027)",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Fri, Jan 22, 2027 4:15 pm - 5:45 pm",
+          "supports": "date/time"
+        },
+        {
+          "quote": "Adult Members $14 Adult Nonmembers $18",
+          "supports": "price (members / nonmembers)"
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "url": "https://www.massaudubon.org/programs/wellfleet-bay/104505-cheep-eats-winter-owls",
+      "publisher": "Mass Audubon, Wellfleet Bay Wildlife Sanctuary",
+      "title": "Cheep Eats: Winter Owls",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Sun, Jan 24, 2027 2:00 pm - 2:45 pm",
+          "supports": "date/time"
+        },
+        {
+          "quote": "The full program takes place indoors. A hot beverage and a sweet treat are included.",
+          "supports": "indoors; drink and treat"
+        },
+        {
+          "quote": "Adult Members $7 Adult Nonmembers $9",
+          "supports": "price (members / nonmembers)"
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "url": "https://www.massaudubon.org/programs/wellfleet-bay/104513-exploring-coastal-cape-cod-pamet-area",
+      "publisher": "Mass Audubon, Wellfleet Bay Wildlife Sanctuary",
+      "title": "Exploring Coastal Cape Cod: Pamet Area",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Sat, Feb 06, 2027 1:00 pm - 4:00 pm",
+          "supports": "date/time"
+        },
+        {
+          "quote": "Bearberry Hill",
+          "supports": "location"
+        },
+        {
+          "quote": "Adult Members $35 Adult Nonmembers $42",
+          "supports": "price (members / nonmembers)"
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "url": "https://www.massaudubon.org/programs/wellfleet-bay/104515-cape-cod-natural-history-conference",
+      "publisher": "Mass Audubon, Wellfleet Bay Wildlife Sanctuary",
+      "title": "Cape Cod Natural History Conference",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Sat, Mar 06, 2027 8:30 am - 3:30 pm",
+          "supports": "date/time"
+        },
+        {
+          "quote": "The conference runs indoors at the Tilden Arts Center on the Cape Cod Community College campus in West Barnstable.",
+          "supports": "location"
+        },
+        {
+          "quote": "Adult Members $25 Adult Nonmembers $25",
+          "supports": "price (members / nonmembers)"
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "url": "https://cotuit.org/shows-events/casting-call-for-bee-gees-musical-revue",
+      "publisher": "Cotuit Center for the Arts",
+      "title": "Casting Call: Bee Gees Musical Revue",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Audition for Cotuit's Bee Gees musical revue, coming March 2027.",
+          "supports": "coming March 2027"
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "url": "https://www.capetrain.com/",
+      "publisher": "Cape Cod Central Railroad",
+      "title": "Cape Cod Central Railroad",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "join us in 2027! Tickets will be available in January!",
+          "supports": "2027 tickets in January"
+        }
+      ]
+    }
+  ],
+  "gaps": []
+}

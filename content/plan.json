@@ -116,7 +116,8 @@
       "keywords": ["cape cod in winter", "cape cod winter activities", "things to do in cape cod in winter", "cape cod winter activities for kids", "cape cod winter getaways for couples"],
       "window": {"from": "11-01", "to": "02-28"},
       "priority": 20,
-      "status": "queued",
+      "status": "published",
+      "published": "2026-11-20",
       "brief": "Year-round attractions with official winter hours (museums, National Seashore trails and visitor centers per NPS), winter wildlife, winter farmers markets, confirmed winter events with organizers.",
       "data": ["events"],
       "min_notes": 10
