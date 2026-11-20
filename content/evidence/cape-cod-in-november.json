@@ -1,6 +1,6 @@
 {
   "slug": "cape-cod-in-november",
-  "article_updated": "2026-11-10",
+  "article_updated": "2026-11-20",
   "saved": "2026-11-10",
   "about": "Verbatim excerpts from every source this guide cites, saved so each fact can be traced and re-checked. Excerpts are short; see each URL (and its archived copy, when added) for full context.",
   "sources": [
@@ -333,7 +333,7 @@
       "url": "https://baystatecruisecompany.com/schedule-fares/",
       "publisher": "Bay State Cruise Company",
       "title": "Provincetown Ferry 2026 Schedules and Fares",
-      "checked": "2026-11-10",
+      "checked": "2026-11-20",
       "via": "live page",
       "archived": "https://web.archive.org/web/20261110122924/https://baystatecruisecompany.com/schedule-fares/",
       "excerpts": [
@@ -348,6 +348,10 @@
         {
           "quote": "The Ferry trip times will be 25 minutes-35minutes longer than usual. This Slow Zone will remain in place through our Nov 15th sailing schedule.",
           "supports": "NOAA right-whale Slow Zone adds 25–35 minutes to trips through the Nov 15 schedule."
+        },
+        {
+          "quote": "The 2026 Provincetown Ferry Season has concluded. We will begin our 2027 season on May 17th.",
+          "supports": "Nov 15, 2026 was the last sailing of the season"
         }
       ]
     },
@@ -599,7 +603,7 @@
       "url": "https://www.falmouthfarmersmarket.org/",
       "publisher": "Falmouth Farmers Market",
       "title": "Falmouth Farmers Market",
-      "checked": "2026-11-10",
+      "checked": "2026-11-20",
       "via": "live page",
       "archived": "https://web.archive.org/web/20261113115838/https://www.falmouthfarmersmarket.org/",
       "excerpts": [
@@ -610,6 +614,10 @@
         {
           "quote": "market in the parking lot of Mullen Hall School with some of your favorite vendors.",
           "supports": "Location: Mullen Hall School parking lot"
+        },
+        {
+          "quote": "Our Harvest Market will be held Tuesday, November 24, 10:00-2:00 at Marine Park.",
+          "supports": "last 2026 market: Harvest Market, Tue Nov 24, 10-2, Marine Park"
         }
       ]
     },

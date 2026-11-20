@@ -5,7 +5,7 @@ slug: cape-cod-in-november
 kicker: "Seasons"
 description: "Cape Cod in November 2026: NOAA weather normals, sunset times, which beaches, ferries and buses still run, plus confirmed events, markets and Thanksgiving."
 date: 2026-11-10
-updated: 2026-11-10
+updated: 2026-11-20
 author: versel-johnson
 cluster: seasons
 keywords:
@@ -334,7 +334,7 @@ Check each town's page before you park. For current conditions, see [Cape Cod be
 
 **Island ferries.** The Steamship Authority runs daily, year-round service from Cape Cod to Martha's Vineyard and Nantucket [14]; its current Martha's Vineyard schedule runs from October 23, 2026, to January 5, 2027 [14]. Hy-Line Cruises has run year-round Hyannis–Nantucket service since December 1995 [16], but its Hyannis–Martha's Vineyard ferry has ended for the season [15].
 
-**Boston and Plymouth to Provincetown.** Bay State Cruise Company's fast ferry runs weekends only through November 15, 2026, and it says trips are 25 to 35 minutes longer than usual because of a right whale Slow Zone that stays in place through that last sailing [17]. City Cruises' Provincetown Fast Ferry runs seasonally, mid-May through mid-October [18], and Captain John Boats' Plymouth–Provincetown ferry is closed for the season [19].
+**Boston and Plymouth to Provincetown.** Bay State Cruise Company's fast ferry ran weekends only through November 15, 2026, its last sailing of the season [17]. City Cruises' Provincetown Fast Ferry runs seasonally, mid-May through mid-October [18], and Captain John Boats' Plymouth–Provincetown ferry is closed for the season [19].
 
 **Whale watching.** Hyannis Whale Watcher Cruises' last trip of 2026 was Sunday, November 1 [20], and Captain John Boats is closed until spring [19]. Right whales can show up early, though: last season's first right whale was reported from Race Point Beach by a member of the public on October 26, 2025, and the first aerial survey of the season flew on November 3, 2025 [45].
 
@@ -342,48 +342,44 @@ Our [winter whales and seals guide](/guides/whales-and-seals-cape-cod-winter/) c
 
 **Cold-stunned sea turtles.** Mass Audubon says sea turtle strandings on Cape Cod mainly happen from November to mid-January, mostly along Cape Cod Bay [46]. If you find one, call its Wellfleet Bay hotline at 508-349-2615, option 2 [46].
 
-**Buses.** CCRTA's FLEX (Harwich–Provincetown), H2O (Hyannis–Orleans) and Sealine (Hyannis–Falmouth–Woods Hole) routes run Monday through Saturday on the schedule for September 8, 2026, to January 22, 2027 [21][22][23]. All three run a Saturday schedule on Veterans Day, November 11, and have no service on Thanksgiving [21][22][23]. The Provincetown–North Truro Shuttle ran through October 11, 2026 [24], and the Hyannis Trolley is a summer service, Memorial Day to Labor Day [25]. CCRTA's home page advertises free fares on all fixed routes [26].
+**Buses.** CCRTA's FLEX (Harwich–Provincetown), H2O (Hyannis–Orleans) and Sealine (Hyannis–Falmouth–Woods Hole) routes run Monday through Saturday on the schedule for September 8, 2026, to January 22, 2027 [21][22][23]. None of the three runs on Thanksgiving [21][22][23]. The Provincetown–North Truro Shuttle ran through October 11, 2026 [24], and the Hyannis Trolley is a summer service, Memorial Day to Labor Day [25]. CCRTA's home page advertises free fares on all fixed routes [26].
 
 **Driving over?** Check [live Sagamore and Bourne bridge traffic](/cape-cod-bridge-traffic.html) before you leave, especially on Thanksgiving weekend. <!-- nocite -->
 
 ## Museums, cranberries and markets
 
-- **Cape Cod Museum of Natural History, Brewster:** fall 2026 hours are Wednesday through Sunday, 10 AM to 3 PM, with last admission at 2:30 PM; it's closed on Veterans Day, November 11, and Thanksgiving Day, November 26 [28].
+- **Cape Cod Museum of Natural History, Brewster:** fall 2026 hours are Wednesday through Sunday, 10 AM to 3 PM, with last admission at 2:30 PM; it's closed Thanksgiving Day, November 26 [28].
 - **Heritage Museums & Gardens, Sandwich:** now closed for its main season [29]. It reopens for Gardens Aglow, 4:30 to 8:30 PM, starting Friday, November 27 [50]; all dates are in our [holiday events guide](/guides/cape-cod-holiday-events-2026/).
 - **Cranberries:** the Cape Cod Cranberry Growers' Association says the harvest runs once a year from mid-September through early November [27].
 - **Orleans Farmers' Market:** outdoors every Saturday from 9 AM to noon at 19 Old Colony Way through November 21 [30]. It's year-round, but it takes a break the week after Thanksgiving; from December through April it moves inside to 5 Namskaket Road, 10 AM to noon [30]. It has also moved inside to 5 Namskaket Road in wet weather this fall, so check its site before you go [30].
-- **Falmouth Farmers Market:** Sundays from 10 AM to 1 PM in the Mullen Hall School parking lot, through November 15, 2026 [31].
+- **Falmouth Farmers Market:** its Sunday market in the Mullen Hall School parking lot ran through November 15, 2026; its last market of the year is the Harvest Market, Tuesday, November 24, 10 AM to 2 PM at Marine Park [31].
 
 ## Events through the rest of November 2026
 
-Dates below were confirmed on organizers', venues' or local chambers of commerce's pages on November 10, 2026. <!-- nocite -->
+Dates below were confirmed on organizers', venues' or local chambers of commerce's pages on November 10, 2026, and rechecked on November 20, 2026. <!-- nocite -->
 
 | Date (2026) | Event | Where |
 |---|---|---|
-| Wed, Nov 11, 11 AM | Veterans Day ceremony [32] | Chatham Community Center, 702 Main St [32] |
-| Thu, Nov 12, 5–6:30 PM | History on Tap: Restoring Cranberry Bogs to Natural Conditions [39] | Cape Cod Maritime Museum, Hyannis [39] |
-| Nov 12–Dec 13 | *The Hundred Aker Wood* (musical) [36] | Cape Rep Theatre, Brewster [36] |
-| Fri, Nov 13, 5:30–9:30 PM | In the Whale [38] | Cape Cod Museum of Natural History, Brewster [38] |
-| Fri–Sat, Nov 13–14, 20–21, 27–28, 5:30–8 PM | A Taste of Jazz [34] | twenty-eight Atlantic, Wequassett Resort, Harwich [34] |
-| Sat, Nov 14, 9 AM–3 PM | Holly Berry Bazaar [35] | Nauset Regional Middle School, Orleans [35] |
-| Sat, Nov 14 | A Different Drummer Holiday Craft Fair [48] | Monomoy Regional High School, Harwich [48] |
-| Sat, Nov 14, 9:15 AM–1 PM | State of Wellfleet Harbor Conference [37] | Nauset Regional High School, Eastham [37] |
-| Sat–Sun, Nov 14–15 | Cape Symphony: Music from West Side Story and the Americas [33] | Barnstable Performing Arts Center, Hyannis [33] |
-| Nov 18–Dec 19 | Small Wonders 2026 exhibit [49] | Cultural Center of Cape Cod, South Yarmouth [49] |
-| Thu, Nov 19, 5–6:30 PM | History on Tap: A Look Back at the Cape Cod Canal's Bridges [39] | Cape Cod Maritime Museum, Hyannis [39] |
+| Through Sun, Dec 13 | *The Hundred Aker Wood* (musical) [36] | Cape Rep Theatre, Brewster [36] |
+| Fri–Sat, Nov 20–21, 27–28, 5:30–8 PM | A Taste of Jazz [34] | twenty-eight Atlantic, Wequassett Resort, Harwich [34] |
+| Through Dec 19 | Small Wonders 2026 exhibit [49] | Cultural Center of Cape Cod, South Yarmouth [49] |
 
 **Details:**
 
-- ***The Hundred Aker Wood*** is a world-premiere musical adaptation of A.A. Milne's Winnie-the-Pooh stories by Macklin Devine, Paddo Devine, Seamus Devine and Maura Hanlon [36]. Shows are Thursday through Saturday at 7:30 PM and Sunday at 2 PM, with added Saturday 2 PM matinees, including November 14 and 21; tickets are $45, $30 for ages 35 and under, and $25 for 18 and under [36].
-- **In the Whale** includes a walk-in reconstruction of a humpback whale, a guided aquarium tour and a documentary about Michael Packard with an intro and Q&A by director David Abel; tickets are $50 per person and non-refundable [38].
-- **Holly Berry Bazaar** admission is free; it's the Cape Cod Hospital Auxiliary Orleans Branch's largest fundraiser of the year [35].
-- **The State of Wellfleet Harbor Conference,** in its 24th year, is free for members and nonmembers; doors open at 8:45 AM [37].
-- **Cape Symphony's West Side Story program** plays Saturday at 4 PM and Sunday at 3 PM, with a talk for ticketholders one hour before each performance [33].
+- ***The Hundred Aker Wood*** is a world-premiere musical adaptation of A.A. Milne's Winnie-the-Pooh stories by Macklin Devine, Paddo Devine, Seamus Devine and Maura Hanlon [36]. Shows are Thursday through Saturday at 7:30 PM and Sunday at 2 PM, with added Saturday 2 PM matinees, including November 21; tickets are $45, $30 for ages 35 and under, and $25 for 18 and under [36].
 - **Small Wonders** is a juried show of art measuring no more than 12 inches on any side, not counting the frame, with an opening reception on Friday, November 20, from 5 to 7 PM [49].
+
+**Earlier in November (now past):**
+
+- Chatham's Veterans Day ceremony was Wednesday, November 11 [32].
+- The Cape Cod Maritime Museum's History on Tap talks were Thursday, November 12 (restoring cranberry bogs) and Thursday, November 19 (the Cape Cod Canal's bridges) [39].
+- In the Whale was Friday, November 13, at the Cape Cod Museum of Natural History [38].
+- The Holly Berry Bazaar [35], A Different Drummer Holiday Craft Fair [48] and the State of Wellfleet Harbor Conference [37] were Saturday, November 14.
+- Cape Symphony's Music from West Side Story and the Americas played November 14–15 [33].
 
 More listings, updated daily from organizers' calendars, are on our [events page](/events) and [live music tonight](/cape-cod-live-music-tonight.html). <!-- nocite -->
 
-{{events from="2026-11-11" to="2026-11-30" limit="25" group="day"}}
+{{events from="2026-11-20" to="2026-11-30" limit="25" group="day"}}
 
 ## Thanksgiving week: November 25–29
 
