@@ -5,7 +5,7 @@ slug: cape-cod-holiday-events-2026
 kicker: "Holidays 2026"
 description: "2026 dates for Cape Cod Christmas strolls, parades and tree lightings by town: Chatham, Falmouth, Hyannis, Sandwich, Holly Folly and more, with organizer links."
 date: 2026-10-26
-updated: 2026-11-17
+updated: 2026-11-20
 author: versel-johnson
 cluster: holidays
 layout: classic
@@ -26,7 +26,7 @@ faq:
   - q: "When is the Falmouth Christmas parade in 2026?"
     a: "Sunday, December 6, 2026, at noon, rain or shine, according to the Falmouth Chamber of Commerce's 2026 parade packet, which has the 63rd annual parade staging on Dillingham Avenue [34]. The chamber's tentative schedule has it heading along Main Street to the Village Green [3]."
   - q: "When is the Chatham Christmas stroll in 2026?"
-    a: "Chatham's Christmas by the Sea weekend is Friday through Sunday, December 11–13, 2026, starting with a Friday night Christmas stroll and tree lighting on Main Street, according to the Chatham Chamber of Commerce [15]."
+    a: "Chatham's Christmas by the Sea weekend is Friday through Sunday, December 11–13, 2026, according to the Chatham Chamber of Commerce. The Christmas Stroll with the Merchants on Main runs Friday, December 11, from 4 to 9 PM, with a Light Parade with Santa at about 5:30 PM and the tree lighting at Sears Park at about 5:45 PM [15]."
   - q: "When is the Hyannis Christmas stroll in 2026?"
     a: "The organizers' Hyannis Holiday website lists the Main Street Stroll on Saturday, December 5, 2026, from 11 AM to 3 PM on the Hyannis Village Green, and the Harbor Boat Parade from 4 to 6 PM at Hyannis Harbor, with the parade starting at 4:45 PM [11]. The holiday weekend starts with a Sip & Shop on Friday, December 4, from 5 to 8 PM [11][13]."
   - q: "When is the Mashpee Christmas parade in 2026?"
@@ -118,7 +118,7 @@ sources:
     title: "Christmas by the Sea"
     publisher: "Chatham Chamber of Commerce"
     url: "https://www.chathaminfo.com/2026/08/01/christmasbythesea/"
-    accessed: 2026-11-09
+    accessed: 2026-11-20
   - id: 16
     title: "Christmas in Harwich Weekend: Be Part of the Magic!"
     publisher: "Harwich Chamber of Commerce"
@@ -328,7 +328,17 @@ The Hyannis Main Street Business Improvement District also lists Hyannis Holiday
 
 ## Second weekend of December: December 11–13
 
-**Chatham's Christmas by the Sea (December 11–13).** The Chatham Chamber of Commerce lists a Friday night Christmas stroll and tree lighting on Main Street, Breakfast with Santa at the Wayside Inn on Saturday morning, and live entertainment and activities around town on Saturday and Sunday [15]. The chamber's Breakfast with Santa flyer gives two seatings on Saturday, December 12, at 8:00 and 10:00 AM in The Wild Goose Tavern at The Wayside Inn, 512 Main Street [15]. Tickets are now on sale on Eventbrite and are required for both adults and children; the listing says the breakfast is likely to sell out and that refunds are issued only for cancellations before December 9 [37]. Times for the stroll and the other activities aren't posted yet, and the chamber says to check back for more detailed weekend activities [15].
+**Chatham's Christmas by the Sea (December 11–13).** The Chatham Chamber of Commerce's 2026 schedule [15]:
+
+- **Friday, Dec. 11, 4–9 PM:** Christmas Stroll with the Merchants on Main, with events inside individual shops [15].
+- **Friday, about 5:30 PM:** Light Parade with Santa, starting at the Community Center [15].
+- **Friday, about 5:45 PM:** Tree Lighting Ceremony at Sears Park, at Main Street and Seaview Street [15].
+- **Friday, 6–9 PM:** horse and carriage rides on Main Street, with the line starting at Town Hall [15].
+- **Saturday, Dec. 12, 8 and 10 AM:** Breakfast with Santa at The Wayside Inn, 512 Main Street [15]. Tickets are on sale on Eventbrite and are required for both adults and children; the listing says the breakfast is likely to sell out and that refunds are issued only for cancellations before December 9 [37].
+- **Saturday, 1–4 PM:** Santa's Workshop at the Chamber Information Booth, 533 Main Street [15].
+- **Saturday, 2–4:30 PM:** live entertainment on Main Street [15].
+- **Saturday, 4 PM:** "Christmas Around the World," performed by the Cape Cod String Quartet & Friends at St. Christopher's Church, 625 Main Street [15].
+- **Saturday and Sunday from 10 AM:** holiday shopping with the merchants on Main Street, and the Chatham Orpheum Theater, 637 Main Street, shows "Hexed" both days, with the time still to be announced [15].
 
 **Osterville Christmas Stroll & Open House (from Friday, December 11).** The Osterville Business and Professional Association's calendar lists its Christmas Stroll & Open House starting Friday, December 11, in Osterville Village at Main Street and Wianno Avenue [27]. The association describes a festive Friday night when the village glows with twinkling lights, carolers and open-late shops [28].
 
@@ -346,7 +356,7 @@ The Hyannis Main Street Business Improvement District also lists Hyannis Holiday
 
 ## Still waiting on 2026 dates
 
-We couldn't find 2026 dates for these as of November 17, 2026. For planning, here's when each ran in 2025, according to the Cape Cod Chamber of Commerce [10]: <!-- nocite -->
+We couldn't find 2026 dates for these as of November 20, 2026. For planning, here's when each ran in 2025, according to the Cape Cod Chamber of Commerce [10]: <!-- nocite -->
 
 | Event | 2025 dates |
 |---|---|
@@ -364,7 +374,7 @@ This list fills in automatically as Cape Cod venues, chambers and organizers pos
 ## Planning tips
 
 - **Confirm before you drive.** Falmouth's 2026 schedule is still marked tentative, so call ahead [3].
-- **Check back for times.** Chatham's chamber says more detailed weekend activities are coming [15], and Centerville is posting performance details closer to its stroll [25].
+- **Check back for details.** Chatham hasn't set a time for the Orpheum movie [15], Wellfleet's tree lighting has no start time posted yet [18], and Centerville will post performance details closer to its stroll [25].
 - **Check the bridges.** See [live Sagamore and Bourne bridge delays](/cape-cod-bridge-traffic.html) before you leave. <!-- nocite -->
 - **Shopping while you stroll.** See our [town-by-town list of Cape Cod holiday gift shops](/guides/cape-cod-holiday-gift-shops-2026/), with the hours each shop publishes. <!-- nocite -->
 - **Keep the list in your pocket.** Live events, tides and bridge traffic are in the free [Totally Cape Cod app](/app/). <!-- nocite -->
