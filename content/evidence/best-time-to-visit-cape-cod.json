@@ -1,0 +1,531 @@
+{
+  "slug": "best-time-to-visit-cape-cod",
+  "article_updated": "2026-11-20",
+  "saved": "2026-11-20",
+  "about": "Verbatim excerpts from every source this guide cites, saved so each fact can be traced and re-checked. Excerpts are short; see each URL (and its archived copy, when added) for full context.",
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=normals-monthly-1991-2020&stations=USW00094720&format=json&dataTypes=MLY-TMAX-NORMAL,MLY-TMIN-NORMAL,MLY-TAVG-NORMAL,MLY-PRCP-NORMAL&includeStationName=true",
+      "publisher": "NOAA National Centers for Environmental Information",
+      "title": "U.S. Climate Normals 1991–2020, monthly: Hyannis Barnstable Muni AP (USW00094720)",
+      "checked": "2026-11-20",
+      "via": "live page (NCEI API)",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "{\"DATE\":\"01\",\"MLY-TAVG-NORMAL\":\"    32.0\",\"MLY-TMIN-NORMAL\":\"    24.1\",\"STATION\":\"USW00094720\",\"MLY-PRCP-NORMAL\":\"    3.90\",\"MLY-TMAX-NORMAL\":\"    39.9\",\"NAME\":\"HYANNIS BARNSTABLE MUNI AP, MA US\"}",
+          "supports": "January normals: avg high 39.9 F, low 24.1 F, precipitation 3.90 in"
+        },
+        {
+          "quote": "{\"DATE\":\"02\",\"MLY-TAVG-NORMAL\":\"    32.9\",\"MLY-TMIN-NORMAL\":\"    24.8\",\"STATION\":\"USW00094720\",\"MLY-PRCP-NORMAL\":\"    3.17\",\"MLY-TMAX-NORMAL\":\"    41.0\",\"NAME\":\"HYANNIS BARNSTABLE MUNI AP, MA US\"}",
+          "supports": "February normals: avg high 41.0 F, low 24.8 F, precipitation 3.17 in"
+        },
+        {
+          "quote": "{\"DATE\":\"03\",\"MLY-TAVG-NORMAL\":\"    38.1\",\"MLY-TMIN-NORMAL\":\"    30.3\",\"STATION\":\"USW00094720\",\"MLY-PRCP-NORMAL\":\"    4.25\",\"MLY-TMAX-NORMAL\":\"    45.9\",\"NAME\":\"HYANNIS BARNSTABLE MUNI AP, MA US\"}",
+          "supports": "March normals: avg high 45.9 F, low 30.3 F, precipitation 4.25 in"
+        },
+        {
+          "quote": "{\"DATE\":\"04\",\"MLY-TAVG-NORMAL\":\"    46.9\",\"MLY-TMIN-NORMAL\":\"    38.5\",\"STATION\":\"USW00094720\",\"MLY-PRCP-NORMAL\":\"    3.90\",\"MLY-TMAX-NORMAL\":\"    55.2\",\"NAME\":\"HYANNIS BARNSTABLE MUNI AP, MA US\"}",
+          "supports": "April normals: avg high 55.2 F, low 38.5 F, precipitation 3.90 in"
+        },
+        {
+          "quote": "{\"DATE\":\"05\",\"MLY-TAVG-NORMAL\":\"    56.5\",\"MLY-TMIN-NORMAL\":\"    48.0\",\"STATION\":\"USW00094720\",\"MLY-PRCP-NORMAL\":\"    3.42\",\"MLY-TMAX-NORMAL\":\"    65.0\",\"NAME\":\"HYANNIS BARNSTABLE MUNI AP, MA US\"}",
+          "supports": "May normals: avg high 65.0 F, low 48.0 F, precipitation 3.42 in"
+        },
+        {
+          "quote": "{\"DATE\":\"06\",\"MLY-TAVG-NORMAL\":\"    65.7\",\"MLY-TMIN-NORMAL\":\"    57.5\",\"STATION\":\"USW00094720\",\"MLY-PRCP-NORMAL\":\"    3.14\",\"MLY-TMAX-NORMAL\":\"    73.9\",\"NAME\":\"HYANNIS BARNSTABLE MUNI AP, MA US\"}",
+          "supports": "June normals: avg high 73.9 F, low 57.5 F, precipitation 3.14 in"
+        },
+        {
+          "quote": "{\"DATE\":\"07\",\"MLY-TAVG-NORMAL\":\"    72.8\",\"MLY-TMIN-NORMAL\":\"    64.8\",\"STATION\":\"USW00094720\",\"MLY-PRCP-NORMAL\":\"    2.68\",\"MLY-TMAX-NORMAL\":\"    80.8\",\"NAME\":\"HYANNIS BARNSTABLE MUNI AP, MA US\"}",
+          "supports": "July normals: avg high 80.8 F, low 64.8 F, precipitation 2.68 in"
+        },
+        {
+          "quote": "{\"DATE\":\"08\",\"MLY-TAVG-NORMAL\":\"    71.6\",\"MLY-TMIN-NORMAL\":\"    63.4\",\"STATION\":\"USW00094720\",\"MLY-PRCP-NORMAL\":\"    3.25\",\"MLY-TMAX-NORMAL\":\"    79.7\",\"NAME\":\"HYANNIS BARNSTABLE MUNI AP, MA US\"}",
+          "supports": "August normals: avg high 79.7 F, low 63.4 F, precipitation 3.25 in"
+        },
+        {
+          "quote": "{\"DATE\":\"09\",\"MLY-TAVG-NORMAL\":\"    64.4\",\"MLY-TMIN-NORMAL\":\"    55.8\",\"STATION\":\"USW00094720\",\"MLY-PRCP-NORMAL\":\"    3.85\",\"MLY-TMAX-NORMAL\":\"    73.1\",\"NAME\":\"HYANNIS BARNSTABLE MUNI AP, MA US\"}",
+          "supports": "September normals: avg high 73.1 F, low 55.8 F, precipitation 3.85 in"
+        },
+        {
+          "quote": "{\"DATE\":\"10\",\"MLY-TAVG-NORMAL\":\"    54.5\",\"MLY-TMIN-NORMAL\":\"    45.7\",\"STATION\":\"USW00094720\",\"MLY-PRCP-NORMAL\":\"    4.33\",\"MLY-TMAX-NORMAL\":\"    63.4\",\"NAME\":\"HYANNIS BARNSTABLE MUNI AP, MA US\"}",
+          "supports": "October normals: avg high 63.4 F, low 45.7 F, precipitation 4.33 in"
+        },
+        {
+          "quote": "{\"DATE\":\"11\",\"MLY-TAVG-NORMAL\":\"    45.4\",\"MLY-TMIN-NORMAL\":\"    37.3\",\"STATION\":\"USW00094720\",\"MLY-PRCP-NORMAL\":\"    4.13\",\"MLY-TMAX-NORMAL\":\"    53.5\",\"NAME\":\"HYANNIS BARNSTABLE MUNI AP, MA US\"}",
+          "supports": "November normals: avg high 53.5 F, low 37.3 F, precipitation 4.13 in"
+        },
+        {
+          "quote": "{\"DATE\":\"12\",\"MLY-TAVG-NORMAL\":\"    37.2\",\"MLY-TMIN-NORMAL\":\"    29.3\",\"STATION\":\"USW00094720\",\"MLY-PRCP-NORMAL\":\"    4.68\",\"MLY-TMAX-NORMAL\":\"    45.2\",\"NAME\":\"HYANNIS BARNSTABLE MUNI AP, MA US\"}",
+          "supports": "December normals: avg high 45.2 F, low 29.3 F, precipitation 4.68 in"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "url": "https://www.ncei.noaa.gov/access/coastal-water-temperature-guide/all_table.html",
+      "publisher": "NOAA National Centers for Environmental Information",
+      "title": "Coastal Water Temperature Guide: All Coastal Regions table",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Monthly Average Temperature (°F) for Northern Atlantic Coast",
+          "supports": "table is monthly averages, deg F; columns JAN-DEC"
+        },
+        {
+          "quote": "Woods Hole, MA 36.8 34.7 38.1 45.5 54.8 64.0 71.2 72.6 69.4 61.7 51.7 42.9",
+          "supports": "Woods Hole monthly averages Jan-Dec"
+        },
+        {
+          "quote": "Chatham, Lydia Cove, MA 39.8 38.5 42.0 49.1 56.5 63.3 68.7 68.8 66.1 59.7 50.4 43.9",
+          "supports": "Chatham Lydia Cove monthly averages Jan-Dec"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "url": "https://www.ncei.noaa.gov/products/coastal-water-temperature-guide",
+      "publisher": "NOAA National Centers for Environmental Information",
+      "title": "Coastal Water Temperature Guide",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "The NCEI Coastal Water Temperature Guide (CWTG) was decommissioned on May 5, 2025. The data are still available.",
+          "supports": "decommissioned May 5, 2025; data still available"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "url": "https://irmaservices.nps.gov/v3/rest/stats/visitation?unitCodes=CACO&startMonth=1&startYear=2025&endMonth=12&endYear=2025",
+      "publisher": "National Park Service (IRMA visitor use statistics)",
+      "title": "Visitation statistics, Cape Cod National Seashore, January–December 2025",
+      "checked": "2026-11-20",
+      "via": "live page (NPS IRMA API)",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "<Month>1</Month>...<RecreationVisitors>115743</RecreationVisitors>...<Month>2</Month>...<RecreationVisitors>116150</RecreationVisitors>...<Month>3</Month>...<RecreationVisitors>151050</RecreationVisitors>",
+          "supports": "Jan-Mar 2025 recreation visits"
+        },
+        {
+          "quote": "<Month>4</Month>...<RecreationVisitors>228787</RecreationVisitors>...<Month>5</Month>...<RecreationVisitors>322040</RecreationVisitors>...<Month>6</Month>...<RecreationVisitors>463276</RecreationVisitors>",
+          "supports": "Apr-Jun 2025"
+        },
+        {
+          "quote": "<Month>7</Month>...<RecreationVisitors>548533</RecreationVisitors>...<Month>8</Month>...<RecreationVisitors>672062</RecreationVisitors>...<Month>9</Month>...<RecreationVisitors>452870</RecreationVisitors>",
+          "supports": "Jul-Sep 2025; August highest of the year"
+        },
+        {
+          "quote": "<Month>10</Month>...<RecreationVisitors>312539</RecreationVisitors>...<Month>11</Month>...<RecreationVisitors>175743</RecreationVisitors>...<Month>12</Month>...<RecreationVisitors>123978</RecreationVisitors>",
+          "supports": "Oct-Dec 2025"
+        },
+        {
+          "quote": "<UnitCode>CACO</UnitCode><UnitName>Cape Cod NS</UnitName><Year>2025</Year>",
+          "supports": "unit and year"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2027-01-15&coords=41.65,-70.28&tz=-5&dst=true",
+      "publisher": "U.S. Naval Observatory, Astronomical Applications Department",
+      "title": "Sun and Moon Data for One Day: January 15, 2027, Hyannis area",
+      "checked": "2026-11-20",
+      "via": "live page (USNO API)",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "\"phen\": \"Rise\", \"time\": \"07:06  ST\"",
+          "supports": "sunrise 7:06 AM Jan 15, 2027"
+        },
+        {
+          "quote": "\"phen\": \"Set\", \"time\": \"16:36  ST\"",
+          "supports": "sunset 4:36 PM"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2027-04-15&coords=41.65,-70.28&tz=-5&dst=true",
+      "publisher": "U.S. Naval Observatory, Astronomical Applications Department",
+      "title": "Sun and Moon Data for One Day: April 15, 2027, Hyannis area",
+      "checked": "2026-11-20",
+      "via": "live page (USNO API)",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "\"phen\": \"Rise\", \"time\": \"06:01  DT\"",
+          "supports": "sunrise 6:01 AM EDT Apr 15, 2027"
+        },
+        {
+          "quote": "\"phen\": \"Set\", \"time\": \"19:22  DT\"",
+          "supports": "sunset 7:22 PM EDT"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2027-06-15&coords=41.65,-70.28&tz=-5&dst=true",
+      "publisher": "U.S. Naval Observatory, Astronomical Applications Department",
+      "title": "Sun and Moon Data for One Day: June 15, 2027, Hyannis area",
+      "checked": "2026-11-20",
+      "via": "live page (USNO API)",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "\"phen\": \"Rise\", \"time\": \"05:06  DT\"",
+          "supports": "sunrise 5:06 AM EDT Jun 15, 2027"
+        },
+        {
+          "quote": "\"phen\": \"Set\", \"time\": \"20:17  DT\"",
+          "supports": "sunset 8:17 PM EDT"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "url": "https://aa.usno.navy.mil/api/rstt/oneday?date=2027-10-15&coords=41.65,-70.28&tz=-5&dst=true",
+      "publisher": "U.S. Naval Observatory, Astronomical Applications Department",
+      "title": "Sun and Moon Data for One Day: October 15, 2027, Hyannis area",
+      "checked": "2026-11-20",
+      "via": "live page (USNO API)",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "\"phen\": \"Rise\", \"time\": \"06:53  DT\"",
+          "supports": "sunrise 6:53 AM EDT Oct 15, 2027"
+        },
+        {
+          "quote": "\"phen\": \"Set\", \"time\": \"18:00  DT\"",
+          "supports": "sunset 6:00 PM EDT"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "url": "https://www.nps.gov/caco/planyourvisit/hours.htm",
+      "publisher": "National Park Service, Cape Cod National Seashore",
+      "title": "Operating Hours & Seasons",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Cape Cod National Seashore is open year-round. The most popular months to visit the park are June through September.",
+          "supports": "open year-round; most popular months"
+        },
+        {
+          "quote": "During the busy summer season, all roads and facilities are open and a full range of programs are available to enjoy. From November through April, some visitor facilities are closed.",
+          "supports": "summer full operations; Nov-Apr closures"
+        },
+        {
+          "quote": "Lifeguards are typically on duty at the six national seashore beaches from late June through Labor Day.",
+          "supports": "lifeguard season"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "url": "https://www.nps.gov/caco/planyourvisit/fees.htm",
+      "publisher": "National Park Service, Cape Cod National Seashore",
+      "title": "Fees & Passes",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Cape Cod National Seashore beach entrance fees are collected in spring, summer, and fall.",
+          "supports": "fee seasons"
+        },
+        {
+          "quote": "Private Vehicle $25.00",
+          "supports": "vehicle pass price"
+        },
+        {
+          "quote": "The pass permits access to any of the six Cape Cod National Seashore beaches late-May through mid-September during that calendar year.",
+          "supports": "annual pass coverage"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "url": "https://www.nps.gov/caco/planyourvisit/visitorcenters.htm",
+      "publisher": "National Park Service, Cape Cod National Seashore",
+      "title": "Visitor Centers",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Salt Pond Visitor Center is Cape Cod National Seashore's year-round visitor orientation facility.",
+          "supports": "Salt Pond year-round"
+        },
+        {
+          "quote": "The Province Lands Visitor Center is open from May through October.",
+          "supports": "Province Lands May-Oct"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "url": "https://www.nps.gov/caco/ranger-guided-activities.htm",
+      "publisher": "National Park Service, Cape Cod National Seashore",
+      "title": "Ranger-Guided Activities",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Ranger and volunteer-guided programs are generally offered from May through October.",
+          "supports": "ranger programs May-Oct"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "url": "https://www.nps.gov/caco/planyourvisit/guiding-lights.htm",
+      "publisher": "National Park Service, Cape Cod National Seashore",
+      "title": "Lighthouses",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "The Keeper's Shop and tours are typically available from early May through the end of October.",
+          "supports": "Highland Light season"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "url": "https://whalewatch.com/",
+      "publisher": "Dolphin Fleet",
+      "title": "Dolphin Fleet Whale Watch",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Dolphin Fleet runs from April – October with multiple trips per day.",
+          "supports": "April-October season"
+        },
+        {
+          "quote": "We're closed for the winter and look forward to welcoming you aboard again in April 2027.",
+          "supports": "reopens April 2027"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "url": "https://coastalstudies.org/news/ccs-researchers-make-seasons-first-sighting-of-north-atlantic-right-whales-in-cape-cod-bay-2/",
+      "publisher": "Center for Coastal Studies",
+      "title": "CCS researchers make season's first sighting of North Atlantic right whales in Cape Cod Bay (Dec. 8, 2025)",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "They typically arrive in Cape Cod Bay in early winter, with many remaining through mid-May.",
+          "supports": "right whale timing"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "url": "https://www.hylinecruises.com/marthas-vineyard-ferry/",
+      "publisher": "Hy-Line Cruises",
+      "title": "Martha's Vineyard Ferry Schedule & Information",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "We've been taking passengers to the Vineyard seasonally, May through October, since 1971",
+          "supports": "seasonal May-October"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "url": "https://baystatecruisecompany.com/",
+      "publisher": "Bay State Cruise Company",
+      "title": "Provincetown Fast Ferry",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "We will begin our 2027 season on May 17th",
+          "supports": "2027 season starts May 17"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "url": "https://provincetownportuguesefestival.com/",
+      "publisher": "Provincetown Portuguese Festival",
+      "title": "Provincetown Portuguese Festival",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Celebrating Provincetown's 31st Festival and 80th Blessing of the Fleet June 25th - June 27th, 2027",
+          "supports": "dates"
+        },
+        {
+          "quote": "leading up to the Fishermen's Mass and Blessing of the Fleet on Sunday.",
+          "supports": "Blessing of the Fleet on Sunday"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "url": "https://falmouthfireworks.org/",
+      "publisher": "Falmouth Fireworks Committee",
+      "title": "Falmouth Fireworks",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "The 2027 Falmouth Fireworks display will take place on Sunday, July 4",
+          "supports": "date"
+        },
+        {
+          "quote": "Dusk around 9:00 PM",
+          "supports": "time"
+        },
+        {
+          "quote": "Rain Date: Monday , July 5, 2027",
+          "supports": "rain date"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "url": "https://capecodfairgrounds.com/",
+      "publisher": "Cape Cod Fairgrounds",
+      "title": "Cape Cod Fairgrounds (Barnstable County Fair)",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "July 19-25, 2027",
+          "supports": "fair dates"
+        },
+        {
+          "quote": "at the Cape Cod Fairgrounds",
+          "supports": "location"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "url": "https://woodsholefilmfestival.org/",
+      "publisher": "Woods Hole Film Festival",
+      "title": "Woods Hole Film Festival 2027",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Saturday, July 31 - Saturday, August 7, 2027",
+          "supports": "festival dates"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "url": "https://ptown.org/calendars/carnival/",
+      "publisher": "Provincetown Business Guild",
+      "title": "Carnival: Ptown's Original Summer Celebration",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "The 49th Annual Provincetown Carnival August 14-21, 2027",
+          "supports": "dates"
+        },
+        {
+          "quote": "The 49th Carnival parade will roll down Commercial Street on Thursday, August 19.",
+          "supports": "parade"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "url": "https://falmouthroadrace.com/",
+      "publisher": "Falmouth Road Race, Inc.",
+      "title": "ASICS Falmouth Road Race",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "August 15, 2027",
+          "supports": "race date (race countdown)"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "url": "https://business.chathaminfo.com/events/details/the-chatham-band-concerts-2026-29257",
+      "publisher": "Chatham Chamber of Commerce",
+      "title": "The Chatham Band Concerts 2026",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "The 2026 summer season begins on Friday, July 3 and runs every Friday night to September 4. Concerts start at 8 PM.",
+          "supports": "2026 season"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "url": "https://capecodmarathon.com/",
+      "publisher": "Cape Cod Marathon",
+      "title": "Cape Cod Marathon Weekend",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "2027 Cape Cod Marathon Weekend Presented by Shipwrecked will take place on October 9 & 10, 2027",
+          "supports": "dates"
+        },
+        {
+          "quote": "CELEBRATING 50 YEARS!",
+          "supports": "50th year"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "url": "https://www.wellfleetoa.org/faqs",
+      "publisher": "Wellfleet Oyster Alliance",
+      "title": "FAQs (Wellfleet OysterFest)",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "OysterFest takes place Saturday, October 17, and Sunday, October 18, 2026.",
+          "supports": "2026 dates"
+        }
+      ]
+    }
+  ],
+  "gaps": []
+}

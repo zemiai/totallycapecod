@@ -129,7 +129,8 @@
       "cluster": "planning",
       "keywords": ["best time to visit cape cod", "best time of year to visit cape cod", "cape cod weather by month", "best time to visit cape cod in the fall", "when's the best time to visit cape cod massachusetts"],
       "priority": 22,
-      "status": "queued",
+      "status": "published",
+      "published": "2026-11-20",
       "brief": "Month-by-month: NOAA/NWS climate normals, water temperature ranges from NOAA buoys if sourced, lifeguard and beach fee seasons (towns/NPS), whale watch seasons from operators, big annual events with organizer-confirmed months.",
       "min_notes": 12
     },

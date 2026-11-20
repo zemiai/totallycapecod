@@ -145,6 +145,18 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://totallycapecod.com/guides/best-time-to-visit-cape-cod/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://totallycapecod.com/guides/best-time-to-visit-cape-cod/sources/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
     <loc>https://totallycapecod.com/guides/is-cape-cod-worth-visiting/</loc>
     <lastmod>2026-11-20</lastmod>
     <changefreq>weekly</changefreq>
