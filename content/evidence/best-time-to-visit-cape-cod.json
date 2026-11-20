@@ -139,7 +139,7 @@
       "title": "Sun and Moon Data for One Day: January 15, 2027, Hyannis area",
       "checked": "2026-11-20",
       "via": "live page (USNO API)",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261120145032/https://aa.usno.navy.mil/api/rstt/oneday?date=2027-01-15&coords=41.65,-70.28&tz=-5&dst=true",
       "excerpts": [
         {
           "quote": "\"phen\": \"Rise\", \"time\": \"07:06  ST\"",
@@ -158,7 +158,7 @@
       "title": "Sun and Moon Data for One Day: April 15, 2027, Hyannis area",
       "checked": "2026-11-20",
       "via": "live page (USNO API)",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261120145043/https://aa.usno.navy.mil/api/rstt/oneday?date=2027-04-15&coords=41.65,-70.28&tz=-5&dst=true",
       "excerpts": [
         {
           "quote": "\"phen\": \"Rise\", \"time\": \"06:01  DT\"",
@@ -177,7 +177,7 @@
       "title": "Sun and Moon Data for One Day: June 15, 2027, Hyannis area",
       "checked": "2026-11-20",
       "via": "live page (USNO API)",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261120145103/https://aa.usno.navy.mil/api/rstt/oneday?date=2027-06-15&coords=41.65,-70.28&tz=-5&dst=true",
       "excerpts": [
         {
           "quote": "\"phen\": \"Rise\", \"time\": \"05:06  DT\"",
@@ -196,7 +196,7 @@
       "title": "Sun and Moon Data for One Day: October 15, 2027, Hyannis area",
       "checked": "2026-11-20",
       "via": "live page (USNO API)",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261120145117/https://aa.usno.navy.mil/api/rstt/oneday?date=2027-10-15&coords=41.65,-70.28&tz=-5&dst=true",
       "excerpts": [
         {
           "quote": "\"phen\": \"Rise\", \"time\": \"06:53  DT\"",
@@ -215,7 +215,7 @@
       "title": "Operating Hours & Seasons",
       "checked": "2026-11-20",
       "via": "live page",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261118061731/https://www.nps.gov/caco/planyourvisit/hours.htm",
       "excerpts": [
         {
           "quote": "Cape Cod National Seashore is open year-round. The most popular months to visit the park are June through September.",
@@ -280,7 +280,7 @@
       "title": "Ranger-Guided Activities",
       "checked": "2026-11-20",
       "via": "live page",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261120145540/https://www.nps.gov/caco/ranger-guided-activities.htm",
       "excerpts": [
         {
           "quote": "Ranger and volunteer-guided programs are generally offered from May through October.",
@@ -295,7 +295,7 @@
       "title": "Lighthouses",
       "checked": "2026-11-20",
       "via": "live page",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261120145607/https://www.nps.gov/caco/planyourvisit/guiding-lights.htm",
       "excerpts": [
         {
           "quote": "The Keeper's Shop and tours are typically available from early May through the end of October.",
@@ -310,7 +310,7 @@
       "title": "Dolphin Fleet Whale Watch",
       "checked": "2026-11-20",
       "via": "live page",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261120145634/https://whalewatch.com/",
       "excerpts": [
         {
           "quote": "Dolphin Fleet runs from April – October with multiple trips per day.",
@@ -329,7 +329,7 @@
       "title": "CCS researchers make season's first sighting of North Atlantic right whales in Cape Cod Bay (Dec. 8, 2025)",
       "checked": "2026-11-20",
       "via": "live page",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261120145753/https://coastalstudies.org/news/ccs-researchers-make-seasons-first-sighting-of-north-atlantic-right-whales-in-cape-cod-bay-2/",
       "excerpts": [
         {
           "quote": "They typically arrive in Cape Cod Bay in early winter, with many remaining through mid-May.",
@@ -344,7 +344,7 @@
       "title": "Martha's Vineyard Ferry Schedule & Information",
       "checked": "2026-11-20",
       "via": "live page",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261120145824/https://www.hylinecruises.com/marthas-vineyard-ferry/",
       "excerpts": [
         {
           "quote": "We've been taking passengers to the Vineyard seasonally, May through October, since 1971",
@@ -374,7 +374,7 @@
       "title": "Provincetown Portuguese Festival",
       "checked": "2026-11-20",
       "via": "live page",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261120150142/https://provincetownportuguesefestival.com/",
       "excerpts": [
         {
           "quote": "Celebrating Provincetown's 31st Festival and 80th Blessing of the Fleet June 25th - June 27th, 2027",
@@ -393,7 +393,7 @@
       "title": "Falmouth Fireworks",
       "checked": "2026-11-20",
       "via": "live page",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261120150237/https://falmouthfireworks.org/",
       "excerpts": [
         {
           "quote": "The 2027 Falmouth Fireworks display will take place on Sunday, July 4",
@@ -416,7 +416,7 @@
       "title": "Cape Cod Fairgrounds (Barnstable County Fair)",
       "checked": "2026-11-20",
       "via": "live page",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261120150320/https://capecodfairgrounds.com/",
       "excerpts": [
         {
           "quote": "July 19-25, 2027",
@@ -435,7 +435,7 @@
       "title": "Woods Hole Film Festival 2027",
       "checked": "2026-11-20",
       "via": "live page",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261119212710/https://woodsholefilmfestival.org/",
       "excerpts": [
         {
           "quote": "Saturday, July 31 - Saturday, August 7, 2027",
@@ -450,7 +450,7 @@
       "title": "Carnival: Ptown's Original Summer Celebration",
       "checked": "2026-11-20",
       "via": "live page",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261120150414/https://ptown.org/calendars/carnival/",
       "excerpts": [
         {
           "quote": "The 49th Annual Provincetown Carnival August 14-21, 2027",
@@ -484,7 +484,7 @@
       "title": "The Chatham Band Concerts 2026",
       "checked": "2026-11-20",
       "via": "live page",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261120150829/https://business.chathaminfo.com/events/details/the-chatham-band-concerts-2026-29257",
       "excerpts": [
         {
           "quote": "The 2026 summer season begins on Friday, July 3 and runs every Friday night to September 4. Concerts start at 8 PM.",
@@ -499,7 +499,7 @@
       "title": "Cape Cod Marathon Weekend",
       "checked": "2026-11-20",
       "via": "live page",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261120150944/https://capecodmarathon.com/",
       "excerpts": [
         {
           "quote": "2027 Cape Cod Marathon Weekend Presented by Shipwrecked will take place on October 9 & 10, 2027",
