@@ -128,7 +128,7 @@
   </url>
   <url>
     <loc>https://totallycapecod.com/guides/</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -140,7 +140,19 @@
   </url>
   <url>
     <loc>https://totallycapecod.com/authors/versel-johnson/</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://totallycapecod.com/guides/is-cape-cod-worth-visiting/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://totallycapecod.com/guides/is-cape-cod-worth-visiting/sources/</loc>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>

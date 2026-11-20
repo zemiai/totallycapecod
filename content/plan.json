@@ -103,7 +103,8 @@
       "cluster": "planning",
       "keywords": ["is cape cod worth visiting", "is cape cod expensive", "is cape cod busy in september", "is cape cod worth visiting in the off season", "is cape cod an island"],
       "priority": 18,
-      "status": "queued",
+      "status": "published",
+      "published": "2026-11-20",
       "brief": "Balanced answer for first-timers: what the Cape offers (Cape Cod National Seashore facts from NPS), how seasons differ, crowds/traffic realities, costs only if an authoritative source gives figures, geography facts (peninsula vs island, the canal).",
       "min_notes": 10
     },

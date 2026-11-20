@@ -1,0 +1,431 @@
+{
+  "slug": "is-cape-cod-worth-visiting",
+  "article_updated": "2026-11-20",
+  "saved": "2026-11-20",
+  "about": "Verbatim excerpts from every source this guide cites, saved so each fact can be traced and re-checked. Excerpts are short; see each URL (and its archived copy, when added) for full context.",
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://irmaservices.nps.gov/v3/rest/stats/visitation?unitCodes=CACO&startMonth=1&startYear=2025&endMonth=12&endYear=2025",
+      "publisher": "National Park Service",
+      "title": "Visitation by month, Cape Cod National Seashore, 2025 (IRMA visitor use statistics)",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "<Month>1</Month>...<RecreationVisitors>115743</RecreationVisitors>...<Month>2</Month>...<RecreationVisitors>116150</RecreationVisitors>...<UnitName>Cape Cod NS</UnitName><Year>2025</Year>",
+          "supports": "January 115,743 and February 116,150 recreation visits, 2025"
+        },
+        {
+          "quote": "<Month>4</Month>...<RecreationVisitors>228787</RecreationVisitors>...<Month>5</Month>...<RecreationVisitors>322040</RecreationVisitors>",
+          "supports": "April 228,787 and May 322,040 recreation visits, 2025"
+        },
+        {
+          "quote": "<Month>6</Month>...<RecreationVisitors>463276</RecreationVisitors>...<Month>7</Month>...<RecreationVisitors>548533</RecreationVisitors>...<Month>8</Month>...<RecreationVisitors>672062</RecreationVisitors>",
+          "supports": "June 463,276, July 548,533, August 672,062 (highest month of 2025)"
+        },
+        {
+          "quote": "<Month>9</Month>...<RecreationVisitors>452870</RecreationVisitors>...<Month>10</Month>...<RecreationVisitors>312539</RecreationVisitors>",
+          "supports": "September 452,870 and October 312,539 recreation visits, 2025"
+        },
+        {
+          "quote": "<Month>3</Month>...<RecreationVisitors>151050</RecreationVisitors>...<Month>11</Month>...<RecreationVisitors>175743</RecreationVisitors>...<Month>12</Month>...<RecreationVisitors>123978</RecreationVisitors>",
+          "supports": "remaining months; the 12 monthly RecreationVisitors values for 2025 sum to 3,682,771 and none exceeds August's 672,062"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "url": "https://www.nps.gov/caco/learn/news/tourism-to-cape-cod-national-seashore-contributes-%24754-million-to-local-economy.htm",
+      "publisher": "National Park Service, Cape Cod National Seashore",
+      "title": "Tourism to Cape Cod National Seashore contributes $754 million to local economy (Sept. 26, 2025)",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "A new National Park Service report shows that 3.8 million visitors to Cape Cod National Seashore in 2024 spent $598 million in communities near the park.",
+          "supports": "3.8 million visitors in 2024"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "url": "https://www.nps.gov/articles/cape-cod-national-seashore.htm",
+      "publisher": "National Park Service",
+      "title": "Cape Cod National Seashore (article)",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "When Congress set aside 44,000 acres in 1961, it was the first time a national park was carved out of such a populated area.",
+          "supports": "44,000 acres in 1961; first national park carved out of such a populated area"
+        },
+        {
+          "quote": "An experiment in cooperative stewardship, it was an attempt to conserve a treasured resource in partnership with six towns and some 600 private landowners within its boundaries.",
+          "supports": "cooperative stewardship with six towns and some 600 private landowners"
+        },
+        {
+          "quote": "The national seashore occupies much of outer Cape Cod, a large peninsula extending 60 miles into the Atlantic from the coast of Massachusetts.",
+          "supports": "peninsula extending 60 miles; seashore occupies much of the outer Cape"
+        },
+        {
+          "quote": "Cape Cod National Seashore is on the Atlantic Flyway",
+          "supports": "Atlantic Flyway"
+        },
+        {
+          "quote": "More than 40 species rest and feed on the beaches, including federally endangered roseate terns.",
+          "supports": "more than 40 bird species; roseate terns"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "url": "https://www.nps.gov/caco/index.htm",
+      "publisher": "National Park Service, Cape Cod National Seashore",
+      "title": "Cape Cod National Seashore (home page)",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Forty miles of pristine sandy beach, marshes, ponds, and uplands support diverse species. Lighthouses, cultural landscapes, and wild cranberry bogs offer a glimpse of Cape Cod's past",
+          "supports": "forty miles of beach, marshes, ponds, uplands; lighthouses, cultural landscapes, cranberry bogs"
+        },
+        {
+          "quote": "Choose from one of eleven hiking trails at Cape Cod National Seashore.",
+          "supports": "eleven hiking trails"
+        },
+        {
+          "quote": "Enjoy Six National Seashore Beaches Swim when there are lifeguards on duty, from late June through Labor Day.",
+          "supports": "six beaches; lifeguards late June through Labor Day"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "url": "https://www.nps.gov/caco/planyourvisit/hours.htm",
+      "publisher": "National Park Service, Cape Cod National Seashore",
+      "title": "Operating Hours & Seasons",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Cape Cod National Seashore is open year-round. The most popular months to visit the park are June through September.",
+          "supports": "open year-round; most popular months June–September"
+        },
+        {
+          "quote": "During the busy summer season, all roads and facilities are open and a full range of programs are available to enjoy. From November through April, some visitor facilities are closed.",
+          "supports": "summer: all roads and facilities open; Nov–Apr some facilities closed"
+        },
+        {
+          "quote": "Lifeguards are typically on duty at the six national seashore beaches from late June through Labor Day.",
+          "supports": "lifeguard season"
+        },
+        {
+          "quote": "Restrooms at Salt Pond Visitor Center in Eastham and Province Lands Visitor Center in Provincetown are open year-round. Other restrooms in the park are open seasonally from late spring to early fall.",
+          "supports": "restrooms"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "url": "https://www.nps.gov/caco/planyourvisit/visitorcenters.htm",
+      "publisher": "National Park Service, Cape Cod National Seashore",
+      "title": "Visitor Centers",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Salt Pond Visitor Center is Cape Cod National Seashore's year-round visitor orientation facility. Located in Eastham",
+          "supports": "Salt Pond year-round, Eastham"
+        },
+        {
+          "quote": "The Province Lands Visitor Center is open from May through October.",
+          "supports": "Province Lands May–October"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "url": "https://www.nps.gov/caco/planyourvisit/fees.htm",
+      "publisher": "National Park Service, Cape Cod National Seashore",
+      "title": "Fees & Passes",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "This park does not accept cash. ... Private Vehicle $25.00 Pass is for one private, non-commercial vehicle",
+          "supports": "no cash; $25 per vehicle"
+        },
+        {
+          "quote": "Per Person $15.00 Pass is for one person 16 years of age or older — entering on foot or by bicycle.",
+          "supports": "$15 per person, 16 and older, foot or bike"
+        },
+        {
+          "quote": "Annual Entrance - Park $60.00 Passes are available at beach entrances during times when fees are normally collected. ... Valid for the current season.",
+          "supports": "$60 annual pass"
+        },
+        {
+          "quote": "The pass permits access to any of the six Cape Cod National Seashore beaches late-May through mid-September during that calendar year.",
+          "supports": "annual pass coverage late May–mid-September"
+        },
+        {
+          "quote": "Entrance fees are only required seasonally at park beaches and are not required in most other parts of the park. Cape Cod National Seashore beach entrance fees are collected in spring, summer, and fall.",
+          "supports": "fees seasonal, beaches only; collected spring/summer/fall"
+        },
+        {
+          "quote": "All passes (including the America the Beautiful series) are only sold during the months that the fees are collected. Passes can ONLY be purchased at beach entrances and are NOT sold at park visitor centers.",
+          "supports": "passes only at beach entrances, only in fee months"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "url": "https://www.mass.gov/doc/cape-cod-bridges-feis-chapter-1-introduction/download",
+      "publisher": "Massachusetts Department of Transportation",
+      "title": "Cape Cod Bridges Program Final Environmental Impact Statement, Chapter 1: Introduction",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "These bridges — which provide the only roadway connections between Cape Cod and the mainland",
+          "supports": "only roadway connections"
+        },
+        {
+          "quote": "the Cape Cod peninsula in Barnstable County, which comprises 15 towns with a year-round population of approximately 230,000 residents.",
+          "supports": "peninsula; 15 towns; ~230,000"
+        },
+        {
+          "quote": "These bridges also serve as the gateway to Cape Cod for millions of annual visitors to the region during the height of the popular summer tourist season between Memorial Day and Labor Day.",
+          "supports": "millions of annual visitors; Memorial Day–Labor Day"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "url": "https://www.mass.gov/doc/cape-cod-bridges-feis-chapter-4-section-44-maritime-transportation-traffic-and-safety/download",
+      "publisher": "Massachusetts Department of Transportation",
+      "title": "Cape Cod Bridges Program FEIS, Chapter 4, Section 4.4: Maritime Transportation, Traffic, and Safety",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Cape Cod Canal is a sea-level 17.4-mile-long navigable waterway",
+          "supports": "17.4-mile sea-level waterway"
+        },
+        {
+          "quote": "an 8.1-mile-long land cut connecting Buzzards Bay in the southwest and Cape Cod Bay in the northeast.",
+          "supports": "land cut connecting Buzzards Bay and Cape Cod Bay"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "url": "https://www.mass.gov/info-details/history-of-the-canal-and-bridges",
+      "publisher": "Massachusetts Department of Transportation (sourced from the U.S. Army Corps of Engineers)",
+      "title": "History of the Cape Cod Canal and bridges",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Finally, on July 29, 1914, the Cape Cod Canal was opened as a privately operated toll waterway",
+          "supports": "opened July 29, 1914, private toll waterway"
+        },
+        {
+          "quote": "the U.S. Army Corps of Engineers (USACE) assumed control over the canal in 1928.",
+          "supports": "USACE control 1928"
+        },
+        {
+          "quote": "The bridges were built simultaneously, and were dedicated on June 22, 1935, and then opened to traffic.",
+          "supports": "bridges dedicated June 22, 1935, then opened to traffic"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "url": "https://www.mass.gov/doc/chapter-2-3/download",
+      "publisher": "Massachusetts Department of Transportation",
+      "title": "Cape Cod Canal Transportation Study, Chapter 2: Existing Environmental Conditions",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "The study team collected traffic data during a summer period and a non summer period in 2014",
+          "supports": "the study's counts are from 2014"
+        },
+        {
+          "quote": "daily traffic volumes on the Bourne and Sagamore Bridge are 49% and 59% higher in the summer, respectively, compared to non-summer periods.",
+          "supports": "49% / 59% higher in summer"
+        },
+        {
+          "quote": "the average traffic volumes crossing the Canal Bridges during February are only 54% (Bourne Bridge) to 60% (Sagamore Bridge) of the volumes crossing these bridges during August.",
+          "supports": "February vs August"
+        },
+        {
+          "quote": "summer Saturday peak period, a period of high traffic demand because vacation rentals on the Cape generally begin and end on Saturday.",
+          "supports": "summer Saturdays and rentals"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "url": "https://www.mass.gov/doc/cape-cod-bridges-feis-chapter-4-section-42-transportation-traffic-and-safety/download",
+      "publisher": "Massachusetts Department of Transportation",
+      "title": "Cape Cod Bridges Program FEIS, Chapter 4, Section 4.2: Transportation, Traffic, and Safety",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Traffic volumes and congestion levels in the vicinity of Cape Cod Canal are typically the highest during the summer",
+          "supports": "summer highest"
+        },
+        {
+          "quote": "85% of the year, traffic volumes within the Study Area are equal to or lower than the Fall Weekday PM period. It is standard practice to use this method to determine the design period.",
+          "supports": "85% of the year; design period"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "url": "https://capecodcommission.org/about-us/newsroom/initial-2020-census-results-released",
+      "publisher": "Cape Cod Commission",
+      "title": "Initial 2020 Census results released (Jan. 20, 2022)",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "The 2020 count is 228,996 residents, higher than the count of 215,888 in 2010",
+          "supports": "2020 Census count of 228,996, reported by the Commission"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "url": "https://www.mass.gov/info-details/cape-cod-housing-snapshot",
+      "publisher": "Massachusetts Executive Office of Housing and Livable Communities",
+      "title": "Cape Cod Housing Snapshot",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Approximately 36% of housing units in Barnstable County are classified as “seasonal, recreational, or occasional use” properties, and 10% of the homes in the region were listed on the short-term rental registry and actively rented.",
+          "supports": "36% seasonal; 10% short-term rentals"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=normals-monthly-1991-2020&stations=USW00094720&format=json&dataTypes=MLY-TMAX-NORMAL,MLY-TMIN-NORMAL,MLY-TAVG-NORMAL,MLY-PRCP-NORMAL&includeStationName=true",
+      "publisher": "NOAA National Centers for Environmental Information",
+      "title": "U.S. Climate Normals 1991–2020, monthly: Hyannis Barnstable Muni AP (USW00094720)",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "{\"DATE\":\"01\",\"MLY-TAVG-NORMAL\":\"    32.0\",\"MLY-TMIN-NORMAL\":\"    24.1\",\"STATION\":\"USW00094720\",\"MLY-PRCP-NORMAL\":\"    3.90\",\"MLY-TMAX-NORMAL\":\"    39.9\",\"NAME\":\"HYANNIS BARNSTABLE MUNI AP, MA US\"}",
+          "supports": "January row"
+        },
+        {
+          "quote": "{\"DATE\":\"04\",\"MLY-TAVG-NORMAL\":\"    46.9\",\"MLY-TMIN-NORMAL\":\"    38.5\",\"STATION\":\"USW00094720\",\"MLY-PRCP-NORMAL\":\"    3.90\",\"MLY-TMAX-NORMAL\":\"    55.2\",\"NAME\":\"HYANNIS BARNSTABLE MUNI AP, MA US\"}",
+          "supports": "April row"
+        },
+        {
+          "quote": "{\"DATE\":\"07\",\"MLY-TAVG-NORMAL\":\"    72.8\",\"MLY-TMIN-NORMAL\":\"    64.8\",\"STATION\":\"USW00094720\",\"MLY-PRCP-NORMAL\":\"    2.68\",\"MLY-TMAX-NORMAL\":\"    80.8\",\"NAME\":\"HYANNIS BARNSTABLE MUNI AP, MA US\"}",
+          "supports": "July row"
+        },
+        {
+          "quote": "{\"DATE\":\"09\",\"MLY-TAVG-NORMAL\":\"    64.4\",\"MLY-TMIN-NORMAL\":\"    55.8\",\"STATION\":\"USW00094720\",\"MLY-PRCP-NORMAL\":\"    3.85\",\"MLY-TMAX-NORMAL\":\"    73.1\",\"NAME\":\"HYANNIS BARNSTABLE MUNI AP, MA US\"}",
+          "supports": "September row"
+        },
+        {
+          "quote": "{\"DATE\":\"10\",\"MLY-TAVG-NORMAL\":\"    54.5\",\"MLY-TMIN-NORMAL\":\"    45.7\",\"STATION\":\"USW00094720\",\"MLY-PRCP-NORMAL\":\"    4.33\",\"MLY-TMAX-NORMAL\":\"    63.4\",\"NAME\":\"HYANNIS BARNSTABLE MUNI AP, MA US\"}",
+          "supports": "October row"
+        },
+        {
+          "quote": "{\"DATE\":\"12\",\"MLY-TAVG-NORMAL\":\"    37.2\",\"MLY-TMIN-NORMAL\":\"    29.3\",\"STATION\":\"USW00094720\",\"MLY-PRCP-NORMAL\":\"    4.68\",\"MLY-TMAX-NORMAL\":\"    45.2\",\"NAME\":\"HYANNIS BARNSTABLE MUNI AP, MA US\"}",
+          "supports": "December row"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "url": "https://www.eastham-ma.gov/410/Beach-Parking-Daily-Passes",
+      "publisher": "Town of Eastham",
+      "title": "Beach Parking & Daily Passes",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Stickers or Day Passes are required at the bay beaches, freshwater ponds and pull-off areas starting June 20, 2026. The final day of the season where stickers and passes are required is Labor Day Monday September 7.",
+          "supports": "2026 season; ended Labor Day Sept 7"
+        },
+        {
+          "quote": "$30 per vehicle: cash or check only (no credit cards or venmo)",
+          "supports": "$30 daily pass, cash or check"
+        },
+        {
+          "quote": "The Recreation and Beach Department manages seven bay beaches, three freshwater ponds",
+          "supports": "seven bay beaches, three ponds"
+        },
+        {
+          "quote": "Town of Eastham daily passes and Visitor Beach stickers are not valid at the Cape Cod National Seashore (Ocean Beaches).",
+          "supports": "not valid at Seashore"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "url": "https://www.mass.gov/locations/cape-cod-rail-trail",
+      "publisher": "Massachusetts Department of Conservation & Recreation",
+      "title": "Cape Cod Rail Trail",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Ride, walk or run through 6 Cape Cod towns as you follow the Cape Cod Rail Trail. There’s plenty to see along the 25-mile trail",
+          "supports": "25-mile trail, 6 towns"
+        },
+        {
+          "quote": "Hours Sunrise to sunset Parking Parking at Nickerson State Park charged Memorial Day through October 31 MA resident $5 Non-MA resident $20 Free parking for trail users is available at:",
+          "supports": "hours; Nickerson parking; free trailhead parking"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "url": "https://www.recreation.gov/gateways/200",
+      "publisher": "Recreation.gov (U.S. Army Corps of Engineers)",
+      "title": "Cape Cod Canal",
+      "checked": "2026-11-20",
+      "via": "live page",
+      "archived": null,
+      "excerpts": [
+        {
+          "quote": "Cape Cod Canal is managed by Us Army Corps of Engineers",
+          "supports": "USACE managed"
+        },
+        {
+          "quote": "This gateway to Cape Cod offers 14 miles of paved surfaces for walking, jogging, bicycling, fishing and hiking.",
+          "supports": "14 miles of paved surfaces"
+        }
+      ]
+    }
+  ],
+  "gaps": []
+}
