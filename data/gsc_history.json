@@ -78,5 +78,19 @@
    "falmouth christmas parade 2026": 9.7,
    "cape cod traffic": 71.5
   }
+ },
+ {
+  "date": "2026-11-21",
+  "clicks": 77,
+  "impressions": 4130,
+  "ctr": 1.86,
+  "avg_position": 39.8,
+  "tracked": {
+   "bourne bridge traffic": 56.6,
+   "cape cod events this weekend": 60.7,
+   "cape cod christmas events 2026": 6,
+   "falmouth christmas parade 2026": 9.7,
+   "cape cod traffic": 71.5
+  }
  }
 ]
