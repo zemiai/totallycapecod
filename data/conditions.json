@@ -38,7 +38,7 @@
       }
     ],
     "tides_source": "NOAA Tides & Currents, Chatham station 8447435",
-    "water_temp_f": 53,
+    "water_temp_f": 54,
     "water_temp_source": "Cape Cod Bay buoy (NDBC 44090)",
     "weather_source": "National Weather Service (api.weather.gov)"
   },
@@ -129,5 +129,5 @@
     }
   ],
   "version": "1.0",
-  "updated_at": "2026-11-22T13:16:16Z"
+  "updated_at": "2026-11-22T20:40:51Z"
 }
