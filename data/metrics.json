@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-23T21:55:26Z",
+ "generated_at": "2026-11-24T20:31:29Z",
  "meta_ads": {
   "skipped": "FB_ADS_TOKEN / FB_AD_ACCOUNT_ID not set"
  },
@@ -8,14 +8,14 @@
  },
  "ga4": {
   "window": "last_7d",
-  "sessions": 278,
-  "users": 264,
+  "sessions": 285,
+  "users": 272,
   "purchases": 0,
   "by_campaign": {
-   "(organic)": 138,
-   "(direct)": 127,
-   "(ai-assistant)": 8,
-   "(referral)": 5
+   "(organic)": 144,
+   "(direct)": 124,
+   "(ai-assistant)": 9,
+   "(referral)": 8
   }
  },
  "gsc": {
@@ -23,29 +23,37 @@
   "permission": "siteFullUser",
   "window": "28d vs previous 28d (data lags ~3 days)",
   "current": {
-   "from": "2026-10-24",
-   "to": "2026-11-20",
-   "clicks": 80,
-   "impressions": 4227,
-   "ctr": 1.89,
-   "avg_position": 38.2
+   "from": "2026-10-25",
+   "to": "2026-11-21",
+   "clicks": 89,
+   "impressions": 4486,
+   "ctr": 1.98,
+   "avg_position": 35.5
   },
   "previous": {
-   "from": "2026-09-26",
-   "to": "2026-10-23",
+   "from": "2026-09-27",
+   "to": "2026-10-24",
    "clicks": 3,
-   "impressions": 3432,
-   "ctr": 0.09,
-   "avg_position": 49.9
+   "impressions": 3628,
+   "ctr": 0.08,
+   "avg_position": 50.0
   },
   "top_queries": [
    {
     "key": "cape cod events",
     "clicks": 3,
     "impressions": 80,
-    "position": 38.7,
-    "position_before": 41.3,
-    "moved_up_by": 2.6
+    "position": 38.4,
+    "position_before": 41.4,
+    "moved_up_by": 3.0
+   },
+   {
+    "key": "cape cod weather in november",
+    "clicks": 0,
+    "impressions": 43,
+    "position": 7.1,
+    "position_before": null,
+    "moved_up_by": null
    },
    {
     "key": "falmouth christmas stroll 2026",
@@ -59,225 +67,217 @@
     "key": "events cape cod this weekend,602,1477,40.76%,1.94",
     "clicks": 0,
     "impressions": 39,
-    "position": 30.9,
-    "position_before": 32.2,
-    "moved_up_by": 1.3
+    "position": 30.6,
+    "position_before": 32.1,
+    "moved_up_by": 1.5
    },
    {
     "key": "cape cod shows,73,293,24.91%,5.77",
     "clicks": 0,
     "impressions": 38,
-    "position": 28.3,
-    "position_before": 33.6,
-    "moved_up_by": 5.3
-   },
-   {
-    "key": "cape cod events this weekend,3273,10158,32.22%,3.77",
-    "clicks": 0,
-    "impressions": 37,
-    "position": 30.9,
-    "position_before": 30.8,
-    "moved_up_by": -0.1
-   },
-   {
-    "key": "cape cod events tomorrow,119,297,40.07%,1.51",
-    "clicks": 0,
-    "impressions": 36,
-    "position": 39.8,
-    "position_before": 28.0,
-    "moved_up_by": -11.8
+    "position": 27.9,
+    "position_before": 33.5,
+    "moved_up_by": 5.6
    },
    {
     "key": "cape cod this weekend events,116,281,41.28%,1.14",
     "clicks": 0,
+    "impressions": 37,
+    "position": 22.1,
+    "position_before": 25.1,
+    "moved_up_by": 3.0
+   },
+   {
+    "key": "cape cod events this weekend,3273,10158,32.22%,3.77",
+    "clicks": 0,
     "impressions": 36,
-    "position": 22.7,
-    "position_before": 24.9,
-    "moved_up_by": 2.2
+    "position": 30.7,
+    "position_before": 30.9,
+    "moved_up_by": 0.2
    },
    {
     "key": "cape cod events this week,198,569,34.8%,1.76",
     "clicks": 0,
     "impressions": 35,
-    "position": 42.4,
-    "position_before": 49.5,
-    "moved_up_by": 7.1
+    "position": 39.8,
+    "position_before": 49.9,
+    "moved_up_by": 10.1
+   },
+   {
+    "key": "cape cod events tomorrow,119,297,40.07%,1.51",
+    "clicks": 0,
+    "impressions": 35,
+    "position": 39.5,
+    "position_before": 28.4,
+    "moved_up_by": -11.1
    },
    {
     "key": "what to do cape cod this weekend,104,177,58.76%,3.59",
     "clicks": 0,
     "impressions": 35,
-    "position": 56.7,
+    "position": 55.6,
     "position_before": 64.3,
-    "moved_up_by": 7.6
+    "moved_up_by": 8.7
    },
    {
     "key": "what's happening on cape cod this weekend,227,472,48.09%,1.75",
     "clicks": 0,
     "impressions": 35,
-    "position": 50.7,
-    "position_before": 48.3,
-    "moved_up_by": -2.4
+    "position": 49.8,
+    "position_before": 48.5,
+    "moved_up_by": -1.3
    },
    {
     "key": "cape cod calendar of events,540,1184,45.61%,1.34",
     "clicks": 0,
     "impressions": 34,
-    "position": 31.4,
+    "position": 30.5,
     "position_before": 31.4,
-    "moved_up_by": 0.0
+    "moved_up_by": 0.9
    },
    {
     "key": "cape cod events,3946,8988,43.9%,1.42",
     "clicks": 0,
     "impressions": 34,
-    "position": 35.5,
-    "position_before": 39.2,
+    "position": 35.1,
+    "position_before": 38.8,
     "moved_up_by": 3.7
    },
    {
     "key": "cape cod happenings this weekend,141,331,42.6%,3.03",
     "clicks": 0,
     "impressions": 34,
-    "position": 47.9,
+    "position": 46.9,
     "position_before": 55.6,
-    "moved_up_by": 7.7
+    "moved_up_by": 8.7
    },
    {
     "key": "downtown cape cod events calendar today,83,361,22.99%,1.83",
     "clicks": 0,
     "impressions": 34,
-    "position": 47.8,
-    "position_before": 52.2,
-    "moved_up_by": 4.4
+    "position": 47.0,
+    "position_before": 52.4,
+    "moved_up_by": 5.4
    },
    {
     "key": "events on cape cod this weekend,1075,3112,34.54%,1.88",
     "clicks": 0,
     "impressions": 34,
-    "position": 38.7,
-    "position_before": 40.8,
-    "moved_up_by": 2.1
+    "position": 37.0,
+    "position_before": 41.6,
+    "moved_up_by": 4.6
    },
    {
     "key": "free cape cod events calendar this weekend,268,1718,15.6%,2.41",
     "clicks": 0,
     "impressions": 34,
-    "position": 25.0,
-    "position_before": 23.8,
-    "moved_up_by": -1.2
+    "position": 24.4,
+    "position_before": 24.0,
+    "moved_up_by": -0.4
    },
    {
-    "key": "things to do this weekend cape cod,432,890,48.54%,1.86",
+    "key": "labor day events cape cod,75,142,52.82%,1.91",
     "clicks": 0,
     "impressions": 34,
-    "position": 62.1,
-    "position_before": 67.0,
-    "moved_up_by": 4.9
+    "position": 61.1,
+    "position_before": 60.9,
+    "moved_up_by": -0.2
    },
    {
     "key": "cape cod august events,56,98,57.14%,1.47",
     "clicks": 0,
     "impressions": 33,
-    "position": 37.5,
-    "position_before": 39.4,
-    "moved_up_by": 1.9
+    "position": 36.1,
+    "position_before": 39.0,
+    "moved_up_by": 2.9
    },
    {
     "key": "cape cod entertainment calendar,65,163,39.88%,2.38",
     "clicks": 0,
     "impressions": 33,
-    "position": 46.3,
-    "position_before": 48.2,
-    "moved_up_by": 1.9
+    "position": 43.2,
+    "position_before": 48.8,
+    "moved_up_by": 5.6
+   },
+   {
+    "key": "cape cod event calendar,188,414,45.41%,2.68",
+    "clicks": 0,
+    "impressions": 33,
+    "position": 50.9,
+    "position_before": 59.5,
+    "moved_up_by": 8.6
+   },
+   {
+    "key": "cape cod events calendar this month,380,1470,25.85%,1.98",
+    "clicks": 0,
+    "impressions": 33,
+    "position": 37.5,
+    "position_before": 29.4,
+    "moved_up_by": -8.1
    },
    {
     "key": "cape cod events tonight,60,164,36.59%,1.49",
     "clicks": 0,
     "impressions": 33,
-    "position": 49.5,
-    "position_before": 50,
-    "moved_up_by": 0.5
+    "position": 48.6,
+    "position_before": 50.5,
+    "moved_up_by": 1.9
+   },
+   {
+    "key": "cape cod festivals 2025,515,1235,41.7%,1.56",
+    "clicks": 0,
+    "impressions": 33,
+    "position": 42.1,
+    "position_before": 44.6,
+    "moved_up_by": 2.5
    },
    {
     "key": "cape cod labor day weekend,110,656,16.77%,4.44",
     "clicks": 0,
     "impressions": 33,
-    "position": 58.1,
-    "position_before": 46.7,
-    "moved_up_by": -11.4
+    "position": 58.3,
+    "position_before": 47.2,
+    "moved_up_by": -11.1
    },
    {
     "key": "cape cod weekend events,124,382,32.46%,2.13",
     "clicks": 0,
     "impressions": 33,
-    "position": 42.4,
+    "position": 41.2,
     "position_before": 43.5,
-    "moved_up_by": 1.1
+    "moved_up_by": 2.3
    },
    {
     "key": "events in cape cod this weekend,464,1123,41.32%,2.23",
     "clicks": 0,
     "impressions": 33,
-    "position": 34.2,
-    "position_before": 32.4,
-    "moved_up_by": -1.8
+    "position": 34.0,
+    "position_before": 32.1,
+    "moved_up_by": -1.9
    },
    {
     "key": "festivals on cape cod this weekend,971,6274,15.48%,4.63",
     "clicks": 0,
     "impressions": 33,
-    "position": 55.1,
-    "position_before": 51.8,
-    "moved_up_by": -3.3
+    "position": 53.1,
+    "position_before": 52.7,
+    "moved_up_by": -0.4
    },
    {
-    "key": "cape cod activities today,91,240,37.92%,3.66",
+    "key": "things to do this weekend cape cod,432,890,48.54%,1.86",
     "clicks": 0,
-    "impressions": 32,
-    "position": 64.6,
-    "position_before": 59.2,
-    "moved_up_by": -5.4
-   },
-   {
-    "key": "cape cod event calendar,188,414,45.41%,2.68",
-    "clicks": 0,
-    "impressions": 32,
-    "position": 52.9,
-    "position_before": 59.4,
-    "moved_up_by": 6.5
-   },
-   {
-    "key": "cape cod event,57,119,47.9%,1.76",
-    "clicks": 0,
-    "impressions": 32,
-    "position": 31.2,
-    "position_before": 28.8,
-    "moved_up_by": -2.4
-   },
-   {
-    "key": "cape cod events august 2025,335,1222,27.41%,2.13",
-    "clicks": 0,
-    "impressions": 32,
-    "position": 29.0,
-    "position_before": 45.8,
-    "moved_up_by": 16.8
-   },
-   {
-    "key": "cape cod events calendar this month,380,1470,25.85%,1.98",
-    "clicks": 0,
-    "impressions": 32,
-    "position": 39.1,
-    "position_before": 29,
-    "moved_up_by": -10.1
+    "impressions": 33,
+    "position": 62.0,
+    "position_before": 66.8,
+    "moved_up_by": 4.8
    },
    {
     "key": "cape cod events calendar today,108,518,20.85%,2.96",
     "clicks": 0,
     "impressions": 32,
     "position": 54.7,
-    "position_before": 61.3,
-    "moved_up_by": 6.6
+    "position_before": 60.9,
+    "moved_up_by": 6.2
    }
   ],
   "tracked_keywords": [
@@ -535,9 +535,9 @@
    },
    {
     "keyword": "cape cod in december",
-    "position": null,
+    "position": 7.5,
     "position_before": null,
-    "impressions": 0,
+    "impressions": 2,
     "clicks": 0
    },
    {
@@ -563,9 +563,9 @@
    },
    {
     "keyword": "is cape cod worth visiting",
-    "position": null,
+    "position": 6.3,
     "position_before": null,
-    "impressions": 0,
+    "impressions": 3,
     "clicks": 0
    },
    {
@@ -633,9 +633,9 @@
    },
    {
     "keyword": "best time to visit cape cod",
-    "position": null,
+    "position": 5.1,
     "position_before": null,
-    "impressions": 0,
+    "impressions": 16,
     "clicks": 0
    },
    {
@@ -846,32 +846,48 @@
    {
     "key": "https://totallycapecod.com/events",
     "clicks": 3,
-    "impressions": 2793,
-    "position": 46.9,
-    "position_before": 49.5,
-    "moved_up_by": 2.6
+    "impressions": 2760,
+    "position": 45.8,
+    "position_before": 49.6,
+    "moved_up_by": 3.8
    },
    {
     "key": "https://totallycapecod.com/guides/cape-cod-holiday-events-2026/",
-    "clicks": 71,
-    "impressions": 931,
-    "position": 6.0,
+    "clicks": 76,
+    "impressions": 973,
+    "position": 5.9,
     "position_before": null,
     "moved_up_by": null
    },
    {
     "key": "https://totallycapecod.com/",
     "clicks": 5,
-    "impressions": 649,
-    "position": 65.8,
-    "position_before": 73.2,
-    "moved_up_by": 7.4
+    "impressions": 619,
+    "position": 65.0,
+    "position_before": 73.3,
+    "moved_up_by": 8.3
+   },
+   {
+    "key": "https://totallycapecod.com/guides/best-time-to-visit-cape-cod/",
+    "clicks": 1,
+    "impressions": 125,
+    "position": 7.9,
+    "position_before": null,
+    "moved_up_by": null
+   },
+   {
+    "key": "https://totallycapecod.com/guides/cape-cod-in-november/",
+    "clicks": 1,
+    "impressions": 61,
+    "position": 5.5,
+    "position_before": null,
+    "moved_up_by": null
    },
    {
     "key": "https://totallycapecod.com/guides/whales-and-seals-cape-cod-winter/",
     "clicks": 1,
-    "impressions": 40,
-    "position": 5.5,
+    "impressions": 41,
+    "position": 5.4,
     "position_before": null,
     "moved_up_by": null
    },
@@ -892,6 +908,30 @@
     "moved_up_by": null
    },
    {
+    "key": "https://totallycapecod.com/guides/cape-cod-in-december/",
+    "clicks": 0,
+    "impressions": 23,
+    "position": 6.7,
+    "position_before": null,
+    "moved_up_by": null
+   },
+   {
+    "key": "https://totallycapecod.com/guides/things-to-do-on-cape-cod-in-winter/",
+    "clicks": 1,
+    "impressions": 19,
+    "position": 8.4,
+    "position_before": null,
+    "moved_up_by": null
+   },
+   {
+    "key": "https://totallycapecod.com/guides/sagamore-bourne-bridge-traffic-best-times/",
+    "clicks": 0,
+    "impressions": 8,
+    "position": 7.6,
+    "position_before": null,
+    "moved_up_by": null
+   },
+   {
     "key": "https://totallycapecod.com/cape-cod-beach-conditions-today.html",
     "clicks": 0,
     "impressions": 7,
@@ -904,6 +944,14 @@
     "clicks": 0,
     "impressions": 7,
     "position": 14.7,
+    "position_before": null,
+    "moved_up_by": null
+   },
+   {
+    "key": "https://totallycapecod.com/guides/is-cape-cod-worth-visiting/",
+    "clicks": 0,
+    "impressions": 7,
+    "position": 5,
     "position_before": null,
     "moved_up_by": null
    },
@@ -940,26 +988,50 @@
     "moved_up_by": null
    },
    {
-    "key": "https://totallycapecod.com/guides/best-time-to-visit-cape-cod/",
-    "clicks": 0,
-    "impressions": 2,
-    "position": 6.5,
-    "position_before": null,
-    "moved_up_by": null
-   },
-   {
-    "key": "https://totallycapecod.com/guides/is-cape-cod-worth-visiting/",
-    "clicks": 0,
-    "impressions": 2,
-    "position": 5.5,
-    "position_before": null,
-    "moved_up_by": null
-   },
-   {
     "key": "https://totallycapecod.com/guides/whales-and-seals-cape-cod-winter/sources/",
     "clicks": 0,
+    "impressions": 4,
+    "position": 5,
+    "position_before": null,
+    "moved_up_by": null
+   },
+   {
+    "key": "https://totallycapecod.com/guides/cape-cod-in-november/sources/",
+    "clicks": 1,
+    "impressions": 3,
+    "position": 3.3,
+    "position_before": null,
+    "moved_up_by": null
+   },
+   {
+    "key": "https://totallycapecod.com/guides/cape-cod-holiday-gift-shops-2026/",
+    "clicks": 0,
+    "impressions": 3,
+    "position": 9.3,
+    "position_before": null,
+    "moved_up_by": null
+   },
+   {
+    "key": "https://totallycapecod.com/guides/cape-cod-in-december/sources/",
+    "clicks": 0,
+    "impressions": 3,
+    "position": 8,
+    "position_before": null,
+    "moved_up_by": null
+   },
+   {
+    "key": "https://totallycapecod.com/guides/sagamore-bourne-bridge-traffic-best-times/sources/",
+    "clicks": 0,
     "impressions": 2,
-    "position": 1.5,
+    "position": 6,
+    "position_before": null,
+    "moved_up_by": null
+   },
+   {
+    "key": "https://totallycapecod.com/guides/cape-cod-holiday-gift-shops-2026/sources/",
+    "clicks": 0,
+    "impressions": 1,
+    "position": 8,
     "position_before": null,
     "moved_up_by": null
    }
@@ -968,62 +1040,62 @@
    {
     "q": "activities cape cod,145,1027,14.12%,2.99",
     "clicks": 0,
-    "impressions": 3,
-    "position": 54.7
+    "impressions": 4,
+    "position": 58.2
    },
    {
     "q": "activities on cape cod this weekend,67,121,55.37%,1.63",
     "clicks": 0,
-    "impressions": 2,
-    "position": 62.5
+    "impressions": 3,
+    "position": 61.7
+   },
+   {
+    "q": "best things to do on cape cod this weekend,159,1487,10.69%,2.65",
+    "clicks": 0,
+    "impressions": 1,
+    "position": 1
+   },
+   {
+    "q": "best time to visit cape cod",
+    "clicks": 0,
+    "impressions": 16,
+    "position": 5.1
    },
    {
     "q": "canal day buzzards bay,151,624,24.2%,2.92",
     "clicks": 0,
-    "impressions": 9,
-    "position": 71.8
+    "impressions": 8,
+    "position": 72.1
    },
    {
     "q": "cape cod 4th of july 2025,174,1372,12.68%,3.39",
     "clicks": 0,
-    "impressions": 6,
-    "position": 38.2
+    "impressions": 7,
+    "position": 37
    },
    {
     "q": "cape cod activities this weekend,520,1233,42.17%,2.03",
     "clicks": 0,
     "impressions": 9,
-    "position": 38.7
+    "position": 37.6
    },
    {
     "q": "cape cod activities today,91,240,37.92%,3.66",
     "clicks": 0,
     "impressions": 11,
-    "position": 64.5
+    "position": 62.6
    },
    {
     "q": "cape cod activities,765,7745,9.88%,2.65",
     "clicks": 0,
-    "impressions": 2,
-    "position": 78
+    "impressions": 1,
+    "position": 79
    },
    {
     "q": "cape cod app",
     "clicks": 0,
     "impressions": 1,
     "position": 1
-   },
-   {
-    "q": "cape cod august events,56,98,57.14%,1.47",
-    "clicks": 0,
-    "impressions": 8,
-    "position": 30.4
-   },
-   {
-    "q": "cape cod beer events",
-    "clicks": 0,
-    "impressions": 1,
-    "position": 37
    }
   ],
   "sitemaps": [
