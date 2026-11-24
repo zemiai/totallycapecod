@@ -5,7 +5,7 @@ slug: cape-cod-holiday-events-2026
 kicker: "Holidays 2026"
 description: "2026 dates for Cape Cod Christmas strolls, parades and tree lightings by town: Chatham, Falmouth, Hyannis, Sandwich, Holly Folly and more, with organizer links."
 date: 2026-10-26
-updated: 2026-11-20
+updated: 2026-11-24
 author: versel-johnson
 cluster: holidays
 layout: classic
@@ -90,10 +90,10 @@ sources:
     url: "https://www.capetrain.com/rides/the-polar-express-train-ride/"
     accessed: 2026-11-08
   - id: 10
-    title: "Holiday Strolls Across Cape Cod (published Nov. 18, 2025)"
+    title: "Twinkling Lights and Festive Nights: Holiday Strolls across Cape Cod (Nov. 5, 2026)"
     publisher: "Cape Cod Chamber of Commerce"
     url: "https://www.capecodchamber.org/articles/stories/post/holiday-strolls-across-cape-cod/"
-    accessed: 2026-11-08
+    accessed: 2026-11-24
   - id: 11
     title: "Hyannis Holiday: Cape Cod's Winter Wonderland Weekend"
     publisher: "Hyannis Holiday organizers (Arts Barnstable, Greater Hyannis Civic Association, Hyannis Main Street BID, Love Live Local and partners)"
@@ -242,6 +242,7 @@ Village strolls, lighted parades, Santa arriving by boat or fire truck, holiday 
 | Fri, Dec 4 | Brewster | Christmas Tree and Windmill Lighting [5] |
 | Fri, Dec 4 | Harwich Port | Harwich Port Stroll and Doane Park tree lighting [16] |
 | Fri, Dec 4 | Wellfleet | Tree Lighting & Sing-Along [18] |
+| Fri–Sun, Dec 4–6 | Wellfleet | Wellfleet Stroll [10] |
 | Fri–Sat, Dec 4–5 | Hyannis | Hyannis Holiday weekend [11] |
 | Sat, Dec 5 | Wellfleet | Shop Wonderful Wellfleet [36] |
 | Fri–Sun, Dec 4–6 | Falmouth | Holidays by the Sea (tentative); village stroll Sat, Dec 5 [3] |
@@ -253,6 +254,7 @@ Village strolls, lighted parades, Santa arriving by boat or fire truck, holiday 
 | Fri–Sun, Dec 11–13 | Chatham | Christmas by the Sea [15] |
 | Sat, Dec 12 | Mashpee | Holiday Stroll and Chamber parade [23] |
 | Sun, Dec 13 | Sandwich | Town-Wide Stroll [24] |
+| Sun, Dec 13 | Dennis | Dennis Village Stroll [10] |
 
 ## Season openers: mid-November through Thanksgiving weekend
 
@@ -312,6 +314,8 @@ The Hyannis Main Street Business Improvement District also lists Hyannis Holiday
 
 **Wellfleet Tree Lighting & Sing-Along (Friday, December 4).** On the Town Hall Green, the Wellfleet Chamber of Commerce starts with a short tree-lighting ceremony followed by caroling led by local musicians, including carolers from Wellfleet Elementary School, with free hot cocoa and goody bags for kids while supplies last [18]. The chamber's page doesn't list a start time yet [18].
 
+**Wellfleet Stroll (December 4–6).** The Cape Cod Chamber of Commerce lists the Wellfleet Stroll from Friday, December 4, through Sunday, December 6, starting with the tree lighting, with Wellfleet Preservation Hall's Holiday Bazaar Craft Fair running all weekend with over 20 local vendors [10]. On Saturday, December 5, 2026, Shop Wonderful Wellfleet is a holiday shopping contest: at each participating store, the first 10 shoppers who spend $25 or more get a holiday gift and an entry to win a cookie tin of gift cards from participating shops [36].
+
 **Wequassett Resort, Harwich (December 4–5).** The resort's tree lighting is Friday, December 4, at 4:30 PM at its Main Fountain, with Christmas lights, carols and hot cocoa [22]. On Saturday, December 5, its annual Merry Market runs from 1 to 5 PM, Santa arrives at 3 PM, and fireworks go up over Pleasant Bay at 5:15 PM [6]. The resort is at 2173 Head of the Bay Road (Route 28), and extra parking is available at Lighthouse Charter School in Harwich, with shuttles from 2 to 8 PM [6].
 
 **Holly Folly, Provincetown (opens December 4).** The Provincetown Business Guild's Holly Folly runs all four weekends in December: December 4–6, 11–13, 18–20 and 25–27 [19]. The Provincetown Chamber of Commerce lists Holly Folly for Friday through Sunday, December 4–6, 2026 [4]. Opening-weekend highlights include the Holly Dolly Folly Follies holiday variety show on Friday at 8 PM, the Jingle Bell Fun Run & Brunch Fundraiser on Saturday at 10 AM, and Holigays! with the Boston Gay Men's Chorus on Saturday at 8 PM [19].
@@ -346,6 +350,8 @@ The Hyannis Main Street Business Improvement District also lists Hyannis Holiday
 
 **Sandwich Town-Wide Stroll (Sunday, December 13, 11 AM–4 PM).** This year the Sandwich Chamber of Commerce is expanding its annual Village Stroll into a town-wide event, inviting businesses in the Village, East Sandwich and South Sandwich to host holiday cheer, live entertainment, giveaways and special shopping [24].
 
+**Dennis Village Stroll (Sunday, December 13).** The Cape Cod Chamber of Commerce lists the Dennis Village Stroll on the Village Green, with strolling Victorian carolers, trolley rides, crafts with Mrs. Claus and storytelling with St. Nick, plus a chance to take a selfie with Buddy the Elf and Santa at Corporation Beach on the way [10].
+
 **Holly Folly's second weekend, Provincetown (December 11–13).** The weekend includes Bingo Crosby on Sunday, December 13, at 1 PM [19].
 
 ## Later in December
@@ -354,16 +360,15 @@ The Hyannis Main Street Business Improvement District also lists Hyannis Holiday
 - **Holly Folly's last two weekends:** December 18–20 and 25–27 in Provincetown [19].
 - **Last chances:** Holidays at Highfield runs through December 20 [29], Brewster for the Holidays through December 23 [5], Gardens Aglow through December 27 [1] and Glassblower's Christmas through December 30 [32].
 
-## Still waiting on 2026 dates
+## Still waiting on details
 
-We couldn't find 2026 dates for these as of November 20, 2026. For planning, here's when each ran in 2025, according to the Cape Cod Chamber of Commerce [10]: <!-- nocite -->
+As of November 24, 2026, we were still waiting on times or final details for these 2026 events: <!-- nocite -->
 
-| Event | 2025 dates |
-|---|---|
-| Dennis Village Stroll | Sun, Dec 14 [10] |
-| Wellfleet Winter Stroll | Fri–Sun, Dec 5–7 [10] |
-
-For Wellfleet, the 2026 events we found are the chamber's Tree Lighting & Sing-Along on Friday, December 4 [18], and Shop Wonderful Wellfleet, a holiday shopping contest, on Saturday, December 5, 2026 [36]. At each participating store, the first 10 shoppers who spend $25 or more get a holiday gift and an entry to win a cookie tin of gift cards from participating shops [36].
+- **Wellfleet Tree Lighting & Sing-Along:** no start time on the chamber's page yet [18].
+- **Chatham:** the time for the Orpheum's "Hexed" screenings is still to be announced [15].
+- **Osterville Christmas Stroll & Open House:** listed from Friday, December 11, with no times yet [27].
+- **Falmouth Holidays by the Sea:** the chamber's 2026 schedule is still marked tentative [3].
+- **Dennis Village Stroll and Wellfleet's Holiday Bazaar Craft Fair:** the Cape Cod Chamber of Commerce lists the dates but no times [10].
 
 ## More holiday events, updated daily
 

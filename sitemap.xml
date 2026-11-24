@@ -157,6 +157,12 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://totallycapecod.com/guides/cape-cod-holiday-events-2026/</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://totallycapecod.com/guides/best-time-to-visit-cape-cod/</loc>
     <lastmod>2026-11-20</lastmod>
     <changefreq>weekly</changefreq>
@@ -203,12 +209,6 @@
     <lastmod>2026-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://totallycapecod.com/guides/cape-cod-holiday-events-2026/</loc>
-    <lastmod>2026-11-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://totallycapecod.com/guides/cape-cod-in-december/</loc>
