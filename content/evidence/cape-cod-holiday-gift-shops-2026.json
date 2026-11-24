@@ -1302,7 +1302,7 @@
       "title": "Oceana (shop website)",
       "checked": "2026-11-15",
       "via": "live page",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261124115649/https://oceanacapecod.com/pages/contact",
       "excerpts": [
         {
           "quote": "One Main Street Square, Orleans, MA 02653",
@@ -1393,7 +1393,7 @@
       "title": "Cabot's Candy Factory (shop website)",
       "checked": "2026-11-15",
       "via": "live page",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261124115753/https://www.cabotscandy.com/pages/contact",
       "excerpts": [
         {
           "quote": "276 Commercial Street Provincetown, MA 02657",
@@ -1412,7 +1412,7 @@
       "title": "Cabot's Candy Factory (shop website)",
       "checked": "2026-11-15",
       "via": "live page",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261124115820/https://www.cabotscandy.com/",
       "excerpts": [
         {
           "quote": "Shop our candy collection of saltwater taffy, fudge, brittle, bulk candies, classic candy, sugar free candy, candy gifts, and more.",
@@ -1457,7 +1457,8 @@
           "quote": "+1 508-487-2850",
           "supports": "Phone number of Provincetown Fudge Factory"
         }
-      ]
+      ],
+      "archive_note": "not archivable (login wall)"
     },
     {
       "id": 73,
@@ -1481,7 +1482,7 @@
       "title": "Wave Cape Cod (shop website)",
       "checked": "2026-11-15",
       "via": "live page",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261124115856/https://www.wavecapecod.com/",
       "excerpts": [
         {
           "quote": "130 Route 6A Sandwich, Massachusetts 02563-2018",

@@ -11,7 +11,7 @@
       "title": "U.S. Climate Normals 1991–2020, monthly: Hyannis Barnstable Muni AP (USW00094720)",
       "checked": "2026-11-20",
       "via": "live page (NCEI API)",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261124114617/https://www.ncei.noaa.gov/access/services/data/v1?dataset=normals-monthly-1991-2020&stations=USW00094720&format=json&dataTypes=MLY-TMAX-NORMAL,MLY-TMIN-NORMAL,MLY-TAVG-NORMAL,MLY-PRCP-NORMAL&includeStationName=true",
       "excerpts": [
         {
           "quote": "{\"DATE\":\"01\",\"MLY-TAVG-NORMAL\":\"    32.0\",\"MLY-TMIN-NORMAL\":\"    24.1\",\"STATION\":\"USW00094720\",\"MLY-PRCP-NORMAL\":\"    3.90\",\"MLY-TMAX-NORMAL\":\"    39.9\",\"NAME\":\"HYANNIS BARNSTABLE MUNI AP, MA US\"}",
@@ -238,7 +238,7 @@
       "title": "Fees & Passes",
       "checked": "2026-11-20",
       "via": "live page",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261124114733/https://www.nps.gov/caco/planyourvisit/fees.htm",
       "excerpts": [
         {
           "quote": "Cape Cod National Seashore beach entrance fees are collected in spring, summer, and fall.",
@@ -261,7 +261,7 @@
       "title": "Visitor Centers",
       "checked": "2026-11-20",
       "via": "live page",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261124114800/https://www.nps.gov/caco/planyourvisit/visitorcenters.htm",
       "excerpts": [
         {
           "quote": "Salt Pond Visitor Center is Cape Cod National Seashore's year-round visitor orientation facility.",
