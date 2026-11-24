@@ -1,8 +1,22 @@
 {
   "version": "1.0",
-  "updated_at": "2026-11-24T10:22:16Z",
+  "updated_at": "2026-11-24T22:44:23Z",
   "_hermes_note": "Auto-fed from the iNaturalist API: recent whale + white-shark sightings in a Cape Cod bounding box (Cape Cod Bay, Stellwagen, Outer Cape, Monomoy, Nantucket Sound), last 14 days. User/operator submissions are preserved and merged. No API key required.",
   "recent_sightings": [
+    {
+      "id": "inat-416762272",
+      "species": "minke",
+      "count": 1,
+      "lat": 42.229,
+      "lng": -70.2206,
+      "location": "87JF6QHH+JQ",
+      "reported_by": "iNaturalist \u00b7 zacpeterson",
+      "reported_at": "2026-11-22T15:56:00Z",
+      "time_ago": "2 days ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/767579537/medium.jpg",
+      "notes": "Common Minke Whale",
+      "source_url": "https://www.inaturalist.org/observations/416762272"
+    },
     {
       "id": "inat-416480605",
       "species": "seal",
@@ -12,10 +26,38 @@
       "location": "Off Cape Cod",
       "reported_by": "iNaturalist \u00b7 zacpeterson",
       "reported_at": "2026-11-22T15:23:00Z",
-      "time_ago": "1 day ago",
+      "time_ago": "2 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/767023031/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/416480605"
+    },
+    {
+      "id": "inat-416762921",
+      "species": "dolphin",
+      "count": 1,
+      "lat": 42.2394,
+      "lng": -70.2396,
+      "location": "87JF6QQ6+Q5",
+      "reported_by": "iNaturalist \u00b7 zacpeterson",
+      "reported_at": "2026-11-22T14:27:00Z",
+      "time_ago": "2 days ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/767580799/medium.jpg",
+      "notes": "Common Dolphin",
+      "source_url": "https://www.inaturalist.org/observations/416762921"
+    },
+    {
+      "id": "inat-416762917",
+      "species": "dolphin",
+      "count": 1,
+      "lat": 42.2395,
+      "lng": -70.2397,
+      "location": "Off Cape Cod",
+      "reported_by": "iNaturalist \u00b7 zacpeterson",
+      "reported_at": "2026-11-22T14:25:00Z",
+      "time_ago": "2 days ago",
+      "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/767580790/medium.jpg",
+      "notes": "Common Dolphin",
+      "source_url": "https://www.inaturalist.org/observations/416762917"
     },
     {
       "id": "inat-416326251",
@@ -26,7 +68,7 @@
       "location": "Cape Cod National Seashore, Barnstable County, US-MA, US",
       "reported_by": "iNaturalist \u00b7 chapajmb",
       "reported_at": "2026-11-22T12:55:28Z",
-      "time_ago": "1 day ago",
+      "time_ago": "2 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/766714888/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/416326251"
@@ -40,10 +82,24 @@
       "location": "\u7f8e\u56fd\u9ebb\u8428\u8bf8\u585e\u5dde\u666e\u7f57\u6e29\u65af\u6566",
       "reported_by": "iNaturalist \u00b7 tianshuo",
       "reported_at": "2026-11-21T17:59:00Z",
-      "time_ago": "2 days ago",
+      "time_ago": "3 days ago",
       "photo_url": "https://static.inaturalist.org/photos/766988948/medium.jpg",
       "notes": "Atlantic Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/416464263"
+    },
+    {
+      "id": "inat-416791421",
+      "species": "humpback",
+      "count": 1,
+      "lat": 41.9284,
+      "lng": -70.0733,
+      "location": "Wellfleet, MA 02667, USA",
+      "reported_by": "iNaturalist \u00b7 jack_willard",
+      "reported_at": "2026-11-21T15:24:35Z",
+      "time_ago": "3 days ago",
+      "photo_url": "https://static.inaturalist.org/photos/767639473/medium.jpg",
+      "notes": "Humpback Whale",
+      "source_url": "https://www.inaturalist.org/observations/416791421"
     },
     {
       "id": "inat-415845729",
@@ -54,7 +110,7 @@
       "location": "Provincetown, MA, US",
       "reported_by": "iNaturalist \u00b7 destynnie_berard",
       "reported_at": "2026-11-20T11:53:53Z",
-      "time_ago": "3 days ago",
+      "time_ago": "4 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/765776421/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/415845729"
@@ -68,7 +124,7 @@
       "location": "Wellfleet, MA, USA",
       "reported_by": "iNaturalist \u00b7 destynnie_berard",
       "reported_at": "2026-11-19T21:41:00Z",
-      "time_ago": "4 days ago",
+      "time_ago": "5 days ago",
       "photo_url": "https://inaturalist-open-data.s3.amazonaws.com/photos/765540032/medium.jpg",
       "notes": "Grey Seal",
       "source_url": "https://www.inaturalist.org/observations/415723277"
