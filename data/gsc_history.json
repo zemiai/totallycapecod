@@ -137,5 +137,26 @@
    "is cape cod worth visiting": 6.3,
    "best time to visit cape cod": 5.1
   }
+ },
+ {
+  "date": "2026-11-25",
+  "clicks": 100,
+  "impressions": 4895,
+  "ctr": 2.04,
+  "avg_position": 31.9,
+  "tracked": {
+   "bourne bridge traffic": 56.6,
+   "cape cod events this weekend": 50,
+   "cape cod christmas events 2026": 6,
+   "falmouth christmas parade 2026": 9.7,
+   "things to do in cape cod in november": 10,
+   "cape cod traffic": 71.5,
+   "cape cod in december": 5.3,
+   "cape cod in december weather": 9,
+   "is cape cod worth visiting": 6.2,
+   "cape cod in winter": 9.5,
+   "things to do in cape cod in winter": 17,
+   "best time to visit cape cod": 5.0
+  }
  }
 ]
