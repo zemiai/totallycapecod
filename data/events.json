@@ -1,28 +1,10 @@
 {
   "version": "1.0",
-  "updated_at": "2026-11-26T03:45:46Z",
+  "updated_at": "2026-11-26T19:15:49Z",
   "window_days": 45,
-  "count": 132,
+  "count": 133,
   "_hermes_note": "Real Cape Cod events scraped from chambers + venues. update_events.py",
   "events": [
-    {
-      "id": "the-hundred-aker-wood-20261125",
-      "tag": "\ud83d\udcc5 EVENT",
-      "category": "event",
-      "time": "Wed Nov 25",
-      "title": "The Hundred Aker Wood",
-      "venue": "",
-      "town": "Eastham",
-      "info": "",
-      "price": "",
-      "lat": 41.83,
-      "lng": -69.974,
-      "img": null,
-      "source": "Eastham",
-      "credit": "Eastham Chamber of Commerce",
-      "source_url": "https://members.easthamchamber.com/events/details/the-hundred-aker-wood-11-25-2026-5994",
-      "start": "2026-11-25T00:00:00+00:00"
-    },
     {
       "id": "the-hundred-aker-wood-20261126",
       "tag": "\ud83d\udcc5 EVENT",
@@ -1014,6 +996,24 @@
       "start": "2026-12-03T00:00:00+00:00"
     },
     {
+      "id": "tech-drop-in-at-the-brewster-ladies-library-20261203",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Thu Dec 3",
+      "title": "Tech Drop In at the Brewster Ladies Library",
+      "venue": "",
+      "town": "Brewster",
+      "info": "",
+      "price": "",
+      "lat": 41.7601,
+      "lng": -70.0819,
+      "img": null,
+      "source": "Brewster",
+      "credit": "Brewster Chamber of Commerce",
+      "source_url": "https://members.brewster-capecod.com/events/details/tech-drop-in-at-the-brewster-ladies-library-12-03-2026-8969",
+      "start": "2026-12-03T00:00:00+00:00"
+    },
+    {
       "id": "history-on-tap-sea-monsters-20261203",
       "tag": "\ud83c\udf99\ufe0f TALK",
       "category": "talk",
@@ -1803,6 +1803,24 @@
       "source": "Eastham",
       "credit": "Eastham Chamber of Commerce",
       "source_url": "https://members.easthamchamber.com/events/details/eastham-for-the-holidays-gift-local-eastham-12-12-2026-5952",
+      "start": "2026-12-12T00:00:00+00:00"
+    },
+    {
+      "id": "the-hundred-aker-wood-20261212",
+      "tag": "\ud83d\udcc5 EVENT",
+      "category": "event",
+      "time": "Sat Dec 12",
+      "title": "The Hundred Aker Wood",
+      "venue": "",
+      "town": "Eastham",
+      "info": "",
+      "price": "",
+      "lat": 41.83,
+      "lng": -69.974,
+      "img": null,
+      "source": "Eastham",
+      "credit": "Eastham Chamber of Commerce",
+      "source_url": "https://members.easthamchamber.com/events/details/the-hundred-aker-wood-12-12-2026-6010",
       "start": "2026-12-12T00:00:00+00:00"
     },
     {
