@@ -5,7 +5,7 @@ slug: cape-cod-holiday-events-2026
 kicker: "Holidays 2026"
 description: "2026 dates for Cape Cod Christmas strolls, parades and tree lightings by town: Chatham, Falmouth, Hyannis, Sandwich, Holly Folly and more, with organizer links."
 date: 2026-10-26
-updated: 2026-11-24
+updated: 2026-11-27
 author: versel-johnson
 cluster: holidays
 layout: classic
@@ -268,7 +268,7 @@ Village strolls, lighted parades, Santa arriving by boat or fire truck, holiday 
 
 **Gardens Aglow at Heritage Museums & Gardens, Sandwich (from November 27).** Gardens Aglow 2026 runs November 27–29, December 2–6, December 8–13, December 15–23 and December 26–27, from 4:30 to 8:30 PM nightly with last entry at 8 PM [1]. General admission for non-members is $30 for adults and $20 for youth ages 3–17; children 2 and under are free but need a reservation, and Heritage strongly advises buying online in advance because walk-up sales aren't guaranteed [1].
 
-**Spectacle of Trees, JFK Hyannis Museum (from November 27).** The museum is open for its Spectacle of Trees on November 27 and 28 from 10 AM to 6 PM, on Sunday, November 29, from noon to 6 PM, and on December 3–6 and 10–12 from 10 AM to 6 PM [31].
+**Spectacle of Trees, JFK Hyannis Museum (from November 27).** The museum is open for its Spectacle of Trees on November 27 and 28 from 10 AM to 6 PM, on Sunday, November 29, from noon to 6 PM, and on December 3–6 and 10–12 from 10 AM to 6 PM [31]. The Hyannis Holiday website lists different Spectacle of Trees hours, noon to 6 PM from November 27 to December 12 and 10 AM to 6 PM on stroll day, Saturday, December 5 [11], so check with the museum before you go.
 
 **The Cape Cod Christmas Market, Mashpee (Friday, November 27).** Lemonadio.com and its partners list The Cape Cod Christmas Market in Mashpee on Friday, November 27, 2026, on their Facebook event page [2]. Check that page for hours, location and any other dates. <!-- nocite -->
 
@@ -312,7 +312,7 @@ The Hyannis Main Street Business Improvement District also lists Hyannis Holiday
 - **Saturday, Dec. 5, 8:30 and 10:30 AM:** the Brewster Recreation Department's Breakfast with Santa at Ocean Edge Resort & Golf Club, 2907 Main Street. It's $12 per person, children 2 and under are free, and seating is limited, so register ahead [5].
 - **Sunday, Dec. 6, 11 AM–1 PM:** meet Santa at the Cape Cod Museum of Natural History; admission for the event is free [5].
 
-**Wellfleet Tree Lighting & Sing-Along (Friday, December 4).** On the Town Hall Green, the Wellfleet Chamber of Commerce starts with a short tree-lighting ceremony followed by caroling led by local musicians, including carolers from Wellfleet Elementary School, with free hot cocoa and goody bags for kids while supplies last [18]. The chamber's page doesn't list a start time yet [18].
+**Wellfleet Tree Lighting & Sing-Along (Friday, December 4).** On the Town Hall Green, the Wellfleet Chamber of Commerce starts with a short tree-lighting ceremony followed by caroling led by local musicians, including carolers from Wellfleet Elementary School, with free hot cocoa and goody bags for kids while supplies last [18]. This year's highlights include a performance by local artist Jordan Renzi, Mr. Staker and Wellfleet Elementary School students leading holiday songs, and treats from the school's PTO [18]. The chamber's page doesn't list a start time yet [18].
 
 **Wellfleet Stroll (December 4–6).** The Cape Cod Chamber of Commerce lists the Wellfleet Stroll from Friday, December 4, through Sunday, December 6, starting with the tree lighting, with Wellfleet Preservation Hall's Holiday Bazaar Craft Fair running all weekend with over 20 local vendors [10]. On Saturday, December 5, 2026, Shop Wonderful Wellfleet is a holiday shopping contest: at each participating store, the first 10 shoppers who spend $25 or more get a holiday gift and an entry to win a cookie tin of gift cards from participating shops [36].
 
@@ -362,7 +362,7 @@ The Hyannis Main Street Business Improvement District also lists Hyannis Holiday
 
 ## Still waiting on details
 
-As of November 24, 2026, we were still waiting on times or final details for these 2026 events: <!-- nocite -->
+As of November 27, 2026, these 2026 events were still missing times or final details when we last checked each organizer's page: <!-- nocite -->
 
 - **Wellfleet Tree Lighting & Sing-Along:** no start time on the chamber's page yet [18].
 - **Chatham:** the time for the Orpheum's "Hexed" screenings is still to be announced [15].
