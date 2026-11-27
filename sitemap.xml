@@ -128,7 +128,7 @@
   </url>
   <url>
     <loc>https://totallycapecod.com/guides/</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -140,7 +140,19 @@
   </url>
   <url>
     <loc>https://totallycapecod.com/authors/versel-johnson/</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://totallycapecod.com/guides/cape-cod-new-years-eve-2026/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://totallycapecod.com/guides/cape-cod-new-years-eve-2026/sources/</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
