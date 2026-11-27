@@ -1,8 +1,8 @@
 {
   "version": "1.0",
-  "updated_at": "2026-11-26T19:15:49Z",
+  "updated_at": "2026-11-27T03:46:31Z",
   "window_days": 45,
-  "count": 133,
+  "count": 134,
   "_hermes_note": "Real Cape Cod events scraped from chambers + venues. update_events.py",
   "events": [
     {
@@ -21,24 +21,6 @@
       "source": "Eastham",
       "credit": "Eastham Chamber of Commerce",
       "source_url": "https://members.easthamchamber.com/events/details/the-hundred-aker-wood-11-26-2026-5996",
-      "start": "2026-11-26T00:00:00+00:00"
-    },
-    {
-      "id": "sound-healing-salt-therapy-experience-experience-deep-peace-",
-      "tag": "\ud83d\udcc5 EVENT",
-      "category": "event",
-      "time": "Thu Nov 26",
-      "title": "Sound Healing & Salt Therapy Experience Experience deep peace as crystal singing bowls harmonize your energy inside our warm, glowing salt cave. Feel stress melt away with every soothing vibration.",
-      "venue": "",
-      "town": "Orleans",
-      "info": "",
-      "price": "",
-      "lat": 41.7901,
-      "lng": -69.9873,
-      "img": null,
-      "source": "Orleans",
-      "credit": "Orleans Chamber of Commerce",
-      "source_url": "https://members.orleanscapecod.org/events/details/sound-healing-salt-therapy-experience-11-26-2026-21025",
       "start": "2026-11-26T00:00:00+00:00"
     },
     {
@@ -489,6 +471,42 @@
       "source": "Orleans",
       "credit": "Orleans Chamber of Commerce",
       "source_url": "https://members.orleanscapecod.org/events/details/tis-the-season-2026-breakfast-with-santa-mrs-claus-9-00am-seating-25637",
+      "start": "2026-11-28T00:00:00+00:00"
+    },
+    {
+      "id": "christmas-at-the-artist-cottages-20261128",
+      "tag": "\ud83c\udfa8 ART",
+      "category": "art",
+      "time": "Sat Nov 28",
+      "title": "Christmas at the Artist Cottages",
+      "venue": "",
+      "town": "Orleans",
+      "info": "",
+      "price": "",
+      "lat": 41.7901,
+      "lng": -69.9873,
+      "img": null,
+      "source": "Orleans",
+      "credit": "Orleans Chamber of Commerce",
+      "source_url": "https://members.orleanscapecod.org/events/details/christmas-at-the-artist-cottages-25642",
+      "start": "2026-11-28T00:00:00+00:00"
+    },
+    {
+      "id": "nauset-model-railroad-club-holiday-open-house-days-model-tra",
+      "tag": "\ud83c\udfa8 ART",
+      "category": "art",
+      "time": "Sat Nov 28",
+      "title": "Nauset Model Railroad Club Holiday Open House Days Model train exhibits with running trains at the Nauset Model Railroad Club",
+      "venue": "",
+      "town": "Orleans",
+      "info": "",
+      "price": "",
+      "lat": 41.7901,
+      "lng": -69.9873,
+      "img": null,
+      "source": "Orleans",
+      "credit": "Orleans Chamber of Commerce",
+      "source_url": "https://members.orleanscapecod.org/events/details/nauset-model-railroad-club-holiday-open-house-days-11-28-2026-25508",
       "start": "2026-11-28T00:00:00+00:00"
     },
     {
