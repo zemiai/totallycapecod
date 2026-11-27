@@ -1617,7 +1617,7 @@
       "title": "Jobi Pottery and Gallery (shop website)",
       "checked": "2026-11-15",
       "via": "live page",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261127124116/https://jobipottery.com/",
       "excerpts": [
         {
           "quote": "508-349-3350",
@@ -1647,7 +1647,7 @@
       "title": "Truro Vineyards of Cape Cod (shop website)",
       "checked": "2026-11-15",
       "via": "live page",
-      "archived": null,
+      "archived": "https://web.archive.org/web/20261127124245/https://trurovineyardsofcapecod.com/visit-us/",
       "excerpts": [
         {
           "quote": "11 Shore Road (Route 6A) North Truro, MA 02652",
@@ -1734,7 +1734,8 @@
           "quote": "post about 10h old on Nov 15, 2026 (per notes)",
           "supports": "Date of Wellfleet Marine Retail Store's newest Facebook activity found: November 15, 2026"
         }
-      ]
+      ],
+      "archive_note": "not archivable (login wall)"
     },
     {
       "id": 85,
