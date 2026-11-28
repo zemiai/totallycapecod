@@ -1,40 +1,40 @@
 {
   "today": {
-    "date": "2026-11-27",
+    "date": "2026-11-28",
     "weather": {
-      "temp_high": 61,
-      "temp_low": 44,
-      "condition": "Rain",
-      "icon": "\ud83c\udf27\ufe0f",
-      "wind_mph": 13,
-      "wind_dir": "SW"
+      "temp_high": 52,
+      "temp_low": 43,
+      "condition": "Sunny",
+      "icon": "\u2600\ufe0f",
+      "wind_mph": 14,
+      "wind_dir": "W"
     },
     "sun": {
-      "sunrise": "6:43 AM",
+      "sunrise": "6:44 AM",
       "sunset": "4:11 PM",
       "civil_twilight_end": "4:42 PM",
       "source": "sunrise-sunset.org"
     },
     "tides": [
       {
-        "time": "1:20 AM",
+        "time": "2:16 AM",
         "type": "high",
         "height_ft": 5.0
       },
       {
-        "time": "7:44 AM",
+        "time": "8:41 AM",
         "type": "low",
-        "height_ft": 0.1
+        "height_ft": 0.2
       },
       {
-        "time": "1:27 PM",
+        "time": "2:25 PM",
         "type": "high",
-        "height_ft": 6.5
+        "height_ft": 6.3
       },
       {
-        "time": "8:47 PM",
+        "time": "9:41 PM",
         "type": "low",
-        "height_ft": -0.5
+        "height_ft": -0.4
       }
     ],
     "tides_source": "NOAA Tides & Currents, Chatham station 8447435",
@@ -44,21 +44,9 @@
   },
   "forecast_7day": [
     {
-      "date": "2026-11-27",
-      "day": "Fri",
-      "temp_high": 61,
-      "condition": "Rain",
-      "icon": "\ud83c\udf27\ufe0f",
-      "temp_low": 44,
-      "sunrise": "6:43 AM",
-      "sunset": "4:11 PM",
-      "low_tide": "7:44 AM",
-      "high_tide": "1:20 AM"
-    },
-    {
       "date": "2026-11-28",
       "day": "Sat",
-      "temp_high": 54,
+      "temp_high": 52,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
       "temp_low": 43,
@@ -70,10 +58,10 @@
     {
       "date": "2026-11-29",
       "day": "Sun",
-      "temp_high": 56,
+      "temp_high": 54,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "temp_low": 47,
+      "temp_low": 46,
       "sunrise": "6:45 AM",
       "sunset": "4:11 PM",
       "low_tide": "9:40 AM",
@@ -82,10 +70,10 @@
     {
       "date": "2026-11-30",
       "day": "Mon",
-      "temp_high": 58,
+      "temp_high": 61,
       "condition": "Rain",
       "icon": "\ud83c\udf27\ufe0f",
-      "temp_low": 37,
+      "temp_low": 36,
       "sunrise": "6:46 AM",
       "sunset": "4:10 PM",
       "low_tide": "10:43 AM",
@@ -94,7 +82,7 @@
     {
       "date": "2026-12-01",
       "day": "Tue",
-      "temp_high": 47,
+      "temp_high": 45,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
       "temp_low": 37,
@@ -106,10 +94,10 @@
     {
       "date": "2026-12-02",
       "day": "Wed",
-      "temp_high": 49,
+      "temp_high": 48,
       "condition": "Sunny",
       "icon": "\u2600\ufe0f",
-      "temp_low": 41,
+      "temp_low": 40,
       "sunrise": "6:49 AM",
       "sunset": "4:10 PM",
       "low_tide": "12:28 AM",
@@ -126,8 +114,20 @@
       "sunset": "4:09 PM",
       "low_tide": "1:23 AM",
       "high_tide": "7:21 AM"
+    },
+    {
+      "date": "2026-12-04",
+      "day": "Fri",
+      "temp_high": 56,
+      "condition": "Sunny",
+      "icon": "\u2600\ufe0f",
+      "temp_low": 47,
+      "sunrise": "6:51 AM",
+      "sunset": "4:09 PM",
+      "low_tide": "2:16 AM",
+      "high_tide": "8:16 AM"
     }
   ],
   "version": "1.0",
-  "updated_at": "2026-11-27T14:56:45Z"
+  "updated_at": "2026-11-28T14:06:04Z"
 }
